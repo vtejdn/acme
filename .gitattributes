@@ -1,0 +1,13 @@
+# LF line endings for text files across platforms; binary bytes stay untouched.
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.md text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.md.in text eol=lf
+*.py text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.ps1 text eol=lf
+*.pdf binary
+# JSON/JSONL are LF text wherever they live.
+*.json text eol=lf
+*.jsonl text eol=lf

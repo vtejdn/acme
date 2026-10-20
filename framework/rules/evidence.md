@@ -1,0 +1,58 @@
+# Claims and Evidence
+
+## Claims and Evidence
+
+Label substantive claims so that their evidential status is visible.
+Use the following distinctions, or equally explicit wording:
+
+| Label | Meaning |
+| --- | --- |
+| Source-verified result | A statement checked in an identified source, with a precise locator and the relevant hypotheses. This does not imply that its proof has been independently checked. |
+| Conjecture | A precise statement whose truth remains open in the current investigation. |
+| Proof draft | A proposed argument awaiting review or containing explicitly identified gaps. |
+| Checked proof | A complete argument whose recorded review found no unresolved gaps under the stated hypotheses. Record who or what performed the check and its scope; this is not a claim of formal verification. |
+| Computational observation | Evidence from a specified computation, with its parameters and limitations. |
+| Refuted claim | A statement contradicted by a verified counterexample or argument, with the evidence linked. |
+
+An incomplete argument remains a proof draft even when experiments support its conclusion.
+Reserve "formally verified" for claims actually checked by an identified proof assistant, with the artifact, environment, and successful check recorded.
+
+For project claims, record provenance, mathematical status, and review status separately using the [Claim assessment rules](claims.md#separate-assessment-fields).
+The optional [Role field](claims.md#claim-role) describes a lemma, theorem or corollary independently of these assessments.
+Separate extraction provenance from actual proof dependencies, and preserve the original complete proof when introducing a new lemma-based proof under the [proof-version rules](claims.md#proof-versions).
+These descriptive labels do not replace assessment fields.
+In particular, a source-verified statement need not have an independently reviewed proof, and a complete candidate argument awaiting review remains a proof draft.
+
+Before treating a new result as established in the research status, perform a separate review of its assumptions, dependencies, and proof.
+Prefer an independent reviewer when available; otherwise disclose that the review was a self-review.
+An independent review belongs to fixed R; a small self-review or unknown-relationship finding may be a named fixed L section with its actual scope.
+Unchecked dependencies remain explicit conditions on downstream conclusions.
+
+A complete substantively revised proof may be `proved` and `self-reviewed` with its actual new fixed argument and covering finding.
+Earlier independent review does not transfer to changed inputs, and changing a label supplies no new inspection.
+Separately organized independent review is required at key mathematical points and for the full logical chain after Task completion; assign that work through the existing Task workflow and retain its actual scope and any pending obligation.
+This does not require independent approval of every intermediate Claim.
+
+For substantial multi-lemma results, use the [completion-audit procedure](proof-audits.md).
+Work backward from the conclusion and forward through the construction, verify each hypothesis interface, rule out dependency cycles, and compare the final scope with the original task, including temporary restrictions and boundary cases.
+Review findings and the achieved scope determine completion; a checklist of attempts or artifact builds does not.
+
+
+### Finding-level review relationships
+
+The R/L finding owns its actual checking relationship; the C/T decision owns adoption and the aggregate assessment.
+Use a `Review relationships` table with columns `Review` and `Relationship`, linking each finding to its real local anchor.
+Allowed relationships are `self-reviewed`, `independently reviewed` and `unknown`; an omitted row means unknown, never independent.
+Explain the actual review arrangement and inspected scope in the finding's existing account.
+Do not derive a finding's relationship from a consumer label or physical version.
+
+For a new independently reviewed acceptance, selected findings explicitly classified as independently reviewed must be in fixed R and together cover the exact required inputs through their Review bindings.
+Complementary independent statement and argument findings can supply this coverage.
+A self-reviewed aggregate does not turn its independently checked parts into self-reviews;
+a later independent argument finding can reuse an unchanged independent statement finding.
+A new C/T physical version cannot turn a retained self-review into independent evidence.
+Unknown historical relationships remain unknown and old assessments remain historical;
+supplement only evidence necessary for an actual new classification.
+Preserve known finding relationships and fixed scopes.
+Corrections to a known finding use new review evidence, not a rewritten relationship.
+This structural check does not certify mathematical correctness or require a new review registry.
