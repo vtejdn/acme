@@ -1,9 +1,9 @@
 # acme
 
-Human authors: start with the [user manual](user-manual.md) or [中文使用手册](user-manual/用户手册.md).
+Human authors: start with the [user manual](user-manual/user-manual.md) or [中文使用手册](user-manual/用户手册.md).
 
 This mathematical research repository uses ACME, Autonomous and Collaborative Mathematical Exploration.
-[AGENTS.md](AGENTS.md) is the short reading entrance and cross-activity guidance; the [action guide](agent-actions.md) owns the function-to-action path.
+[AGENTS.md](AGENTS.md) is the short reading entrance and cross-activity guidance; the [action guide](framework/agent-actions.md) owns the function-to-action path.
 The [framework rules](framework/readme.md) govern topics, the [material format](framework/material-format.md) owns exact declarations and acquisition inputs, and [script documentation](scripts/readme.md) owns optional interfaces and effects.
 
 Use the [mathematical entrance](mathematics/readme.md) to reach actual [Task contracts](mathematics/tasks/index.md), [Claim assessments](mathematics/claims/index.md) and [strategies](mathematics/strategies/index.md).
@@ -17,5 +17,6 @@ Ordinary installed-rule use and separately authorized maintenance follow [instru
 
 Distinct repositories reuse chosen findings under [intake rules](framework/rules/intake.md), with actual provenance, private-literature exclusion and separate [output-attachment responsibilities](framework/rules/intake.md#computation-output-attachments).
 
-The three root human-author documents retain their original provenance; copying them does not confer public status.
-See [About](about.md), [AI disclosure](ai-disclosure-for-human-authors.md) and [editing guidance](editing-guide-for-human-authors.md).
+The About and AI disclosure documents retain their original provenance; copying them does not confer public status.
+See [About](user-manual/about.md) and [AI disclosure](user-manual/ai-disclosure-for-human-authors.md).
+For material edits, follow the [record and maintenance rules](framework/rules/records.md#substantive-material-retention) and [writing rules](framework/rules/writing.md).

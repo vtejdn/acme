@@ -12,10 +12,10 @@ The current release identifier is maintained in the [export manifest](export-man
 
 ## Read for the actual action
 
-The [bootstrap](../AGENTS.md) supplies cross-activity constraints; the [action guide](../agent-actions.md) is the single function-to-action entrance.
+The [bootstrap](../AGENTS.md) supplies cross-activity constraints; the [action guide](agent-actions.md) is the single function-to-action entrance.
 Choose its applicable function and governing topic rules from the catalog below, with directly needed materials rather than every rule or the full human manual.
 Topic rules own responsibilities and conditions; the [material format](material-format.md) owns exact declarations and acquisition inputs, and [script documentation](../scripts/readme.md) owns optional interfaces and side effects.
-For framework setup and ordinary human use, see the [user manual](../user-manual.md) and [request suggestions](../user-manual/user-instructions/user-instructions.md).
+For framework setup and ordinary human use, see the [user manual](../user-manual/user-manual.md) and [request suggestions](../user-manual/user-instructions/user-instructions.md).
 Ordinary installed-rule use and separately authorized maintenance follow [instruction scope](rules/preferences.md#instruction-scope).
 
 ## Rule catalog

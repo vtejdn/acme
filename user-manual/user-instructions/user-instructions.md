@@ -1,6 +1,6 @@
 # Human Request Examples
 
-[User manual](../../user-manual.md)
+[User manual](../user-manual.md)
 
 Use ordinary language to describe your objective, the object to work on and any scope or stopping condition.
 These examples suggest useful requests; they are not fixed syntax, a complete command language or mandatory wording.
@@ -44,7 +44,9 @@ State the intended depth and scope explicitly, especially for a broad audit.
 ## Find, register or read literature
 
 Original literature stays in local storage and is excluded from cross-repository intake.
+Public accessibility alone permits no redistribution of the local originals through Git, uploads, J, attachments or large copied passages.
 Request independent source acquisition when you need the original text.
+Fingerprints use actual obtained local bytes; acquisition-only failure records access facts without requiring a new U.
 
 | Example request | When useful | Information to provide | Expected result |
 | --- | --- | --- | --- |
@@ -63,8 +65,11 @@ Acquisition, contents, source inspection and proof review remain separate outcom
 | “Revise this statement without changing its hypotheses or quantifiers.” | Make a precise wording change. | The active source, intended logical meaning and any required notation. | The requested text change and verification of its actual scope. |
 | “Use source A as a style model; source B may be reused except Section 4.” | Give scoped writing/reuse choices. | The manuscript or author-wide scope, exact sources and exceptions. | Choices applied at that scope, with truthful attribution and mathematical fit. |
 
+Map all citations actually present in current TeX, including uses with plainly stated pending checks; adequate source evidence is required to call an application verified.
+Personal/document choices select permitted defaults and style without waiving evidence, preservation, role/Task authority, stopped conditions or private-source/publication boundaries.
+
 A style reference does not itself authorize text reuse, and changing the operator does not change the responsible author's choices.
-The manual's [writing explanation](../../user-manual.md#use-literature-computations-and-manuscripts) helps distinguish these choices.
+The manual's [writing explanation](../user-manual.md#use-literature-computations-and-manuscripts) helps distinguish these choices.
 
 ## Compute, maintain or reuse work
 
@@ -77,7 +82,7 @@ The manual's [writing explanation](../../user-manual.md#use-literature-computati
 
 Administrative conflicts follow framework rules; an unclear rule is reported for human ruling.
 A mathematical recheck approval alone does not authorize substantive editing of another author's material.
-The manual explains [collaboration](../../user-manual.md#collaborate-and-acquire-external-work) and [computational limits](../../user-manual.md#use-literature-computations-and-manuscripts).
+The manual explains [collaboration](../user-manual.md#collaborate-and-acquire-external-work) and [computational limits](../user-manual.md#use-literature-computations-and-manuscripts).
 
 ## Commit and push
 

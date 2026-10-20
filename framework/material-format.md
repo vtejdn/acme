@@ -99,17 +99,17 @@ The unit body owns the statement, hypotheses, definitions, adaptations and limit
 Material `vN` and the inspected external source version are distinct.
 Changed substantive content gets a new fixed material version; source key or layout maintenance retains the ordinary coordinated-reference obligations.
 
-The artifact's [registry source association](rules/literature.md#artifact-source-association) owns supplied selected/obtained addresses, edition facts, known fingerprints and necessary current limitations.
+For ordinary local source preparation, the artifact's [registry source association](rules/literature.md#artifact-source-association) owns selected/obtained addresses, edition facts, fingerprints computed from actual locally obtained bytes and necessary current limitations.
 The agent establishes the association under the [common responsibility](rules/workflow.md#agent-and-tool-responsibilities).
 Tools report actual fetch and byte facts; U prose, bibliography and URL spelling do not select a source or produce a work/edition verdict.
 Inspect an unestablished response before local-file registration, reusing applicable prior judgments.
 
-Explicit onward copying preserves those facts and the U's inspection scope.
-A known fingerprint constrains exact bytes; successful copying and a new digest cannot resolve identity or coverage limits.
-Separate artifacts keep separate availability outcomes, without a new confirmation field or source register.
+Explicit onward copying preserves the whole authored U, its original provenance, inspected edition/passages and inspection limits, with the chosen bibliography correspondence and receiving unit position/text.
+It carries no original publications, private source accounts or literature fingerprints and establishes no receiver-local possession.
+When original text is needed, use adequate receiver-local evidence or ordinary authorized local source preparation.
 
 The [source-input rule](rules/literature.md#artifact-source-association) requires an explicitly supplied file for byte reuse; a bibliography key or missing source cannot select the receiver's file or replace its account.
-Registered PDF, HTML and resource attachments share truthful obtained/unavailable results, distinct from the authored-copy operation's required material/J inputs.
+Local registration of PDF, HTML and resources reports separate truthful obtained/unavailable results; these private sources are outside authored-material intake and its required material/J inputs.
 Current literal fields alone declare addresses/edition: old source prose stays undeclared, without implying unavailable bytes or being rewritten during reading.
 
 C/T `support` or `dependency` rows may select the exact U file and its unit anchor with their actual applicability scope.
@@ -120,7 +120,8 @@ Ordinary prose links, adjacent units and cited PDFs do not expand mathematical c
 
 U is independently selectable by direct intake.
 Retain original source, exact revision/unit, whole fixed document and actual inspection facts.
-Supply the chosen existing/new bibliography target and needed registered artifacts explicitly; copying does not endorse mathematical statements.
+Supply the chosen existing/new bibliography target, whole authored U, original provenance, actual inspection facts and prepared receiving unit position/text explicitly; copying does not endorse mathematical statements.
+Intake reads no sender-private PDF, HTML, resources or registry and creates no receiving Artifact account, fingerprint, availability assertion or holding.
 Canonical and typesetting bibliography fields follow the [bibliographic content boundary](rules/literature.md#bibliography-content); U/registry owns inspected-artifact identity and limits.
 Work metadata does not authorize retrieving a different edition or rewriting the U merely to obtain a PDF.
 

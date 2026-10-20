@@ -18,8 +18,7 @@ from ..core import identity as identity
 from . import version as version
 
 MANIFEST = version.MANIFEST
-HUMAN_FILES = ('about.md', 'editing-guide-for-human-authors.md',
-               'ai-disclosure-for-human-authors.md')
+HUMAN_FILES = ('user-manual/about.md', 'user-manual/ai-disclosure-for-human-authors.md')
 
 
 def command_environment():
@@ -258,11 +257,14 @@ def load_plan(source, destination, repository, author=None):
     for item in copies:
         relative(item)
     ordinary_roots = {*HUMAN_FILES, '.gitignore', '.gitattributes', 'AGENTS.md',
-                      'user-manual.md', 'user-manual/用户手册.md', 'user-manual/user-instructions/user-instructions.md', 'user-manual/user-instructions/用户指令.md', 'agent-actions.md'}
+                      'user-manual/user-manual.md', 'user-manual/用户手册.md',
+                      'user-manual/agent-harness.md', 'user-manual/git-repository.md',
+                      'user-manual/collaboration.jpg', 'user-manual/workflow.jpg',
+                      'user-manual/user-instructions/user-instructions.md', 'user-manual/user-instructions/用户指令.md'}
     r.require(all(p in ordinary_roots or p.startswith('framework/') or p.startswith('scripts/')
                   for p in copies), 'Direct copies may contain only framework files, tools and declared human documents.')
     r.require(MANIFEST in copies and all(f in copies for f in HUMAN_FILES),
-              'The manifest and three exact human files must be direct-copy entries.')
+              'The manifest and declared human documents must be direct-copy entries.')
     templates = manifest['templates']
     r.require(isinstance(templates, dict), 'Template destinations must be explicit.')
     generated = manifest['generated']

@@ -1,7 +1,6 @@
 """Explicit bibliographic updates, factual fetch and selected local-source retention."""
 import hashlib
 from pathlib import Path
-import re
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 from ..core import repository as r, paths, links, source_files
@@ -24,7 +23,7 @@ def fetch_html(url, timeout=12):
     return fetch(url, timeout, source_format='html')
 
 
-def fetch_source(urls, output, *, root, source_format='pdf', expected_sha256=None, retrieve=None):
+def fetch_source(urls, output, *, root, source_format='pdf', retrieve=None):
     """Return an unestablished response for inspection, without registering it."""
     urls = list(dict.fromkeys(urls))
     r.require(1 <= len(urls) <= 2, 'Supply one or two exact retrieval addresses.')
@@ -36,7 +35,6 @@ def fetch_source(urls, output, *, root, source_format='pdf', expected_sha256=Non
         output = output.relative_to(root)
     destination = paths.material_path(root, output)
     r.require(not destination.exists(), 'Local output already exists; choose an unoccupied destination.')
-    expected_sha256 = _fingerprint(expected_sha256)
     retrieve = retrieve or (fetch_html if source_format == 'html' else fetch)
     attempts = []
     for url in urls:
@@ -46,9 +44,6 @@ def fetch_source(urls, output, *, root, source_format='pdf', expected_sha256=Non
             response.update(final_url=final, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
             info = source_files.validate(raw, 'response.' + source_format)
             response['format_facts'] = _json_info(info)
-            response['expected_sha256'] = expected_sha256
-            response['matches_expected'] = None if expected_sha256 is None else response['sha256'] == expected_sha256
-            r.require(response['matches_expected'] is not False, 'Response fingerprint differs from the supplied expected fingerprint.')
             destination.parent.mkdir(parents=True, exist_ok=True)
             r.write_bytes(destination, raw, exclusive=True, root=root)
             attempts.append(response)
@@ -61,12 +56,6 @@ def fetch_source(urls, output, *, root, source_format='pdf', expected_sha256=Non
 
 def _json_info(info):
     return {field: sorted(value) if isinstance(value, set) else value for field, value in info.items()}
-
-
-def _fingerprint(value):
-    if value is None: return None
-    r.require(isinstance(value, str) and re.fullmatch(r'[0-9a-fA-F]{64}', value), 'Use an exact SHA-256 fingerprint.')
-    return value.lower()
 
 
 def _local_bytes(filename):
@@ -112,20 +101,17 @@ def _choose(entries, entry, *, existing_key, new_work, chosen_key, field_updates
 
 def register(repo, entry=None, *, existing_key=None, new_work=False, chosen_key=None, field_updates=None,
              local_pdf=None, local_html=None, html_name='source.html', source_format='pdf', suffix='',
-             expected_sha256=None, timeout=30, source_facts=None, registry_update=None):
+             timeout=30, source_facts=None, registry_update=None):
     """Register the agent's chosen work/artifact association from explicit local bytes."""
     r.require(local_pdf is None or local_html is None, 'Select one actual source format per registration.')
     if local_html is not None: source_format = 'html'
     r.require(source_format in {'pdf', 'html'}, 'Source registration supports PDF or original HTML.')
     r.require(not suffix or (suffix.startswith('--') and paths.valid_pdf_name('Abc26'+suffix+'.pdf')), 'Use an explicit --edition artifact suffix.')
-    expected_sha256 = _fingerprint(expected_sha256)
     snapshot = _entry_snapshot(repo, existing_key)
     supplied = local_html if source_format == 'html' else local_pdf
     raw = _local_bytes(supplied)
     if raw is not None:
         source_files.validate(raw, 'source.' + source_format)
-        r.require(expected_sha256 is None or hashlib.sha256(raw).hexdigest() == expected_sha256,
-                  'Supplied artifact does not match the expected fingerprint.')
     with r.locked(repo.root, timeout=timeout):
         entries = bib.parse((repo.root/bib.BIB).read_text(encoding='utf-8-sig')) if (repo.root/bib.BIB).exists() else {}
         key = _choose(entries, entry, existing_key=existing_key, new_work=new_work, chosen_key=chosen_key,
@@ -134,7 +120,7 @@ def register(repo, entry=None, *, existing_key=None, new_work=False, chosen_key=
             r.require(not suffix and html_name.lower().endswith(('.html', '.htm')), 'Select a contained original HTML filename.')
             filename = key + '/' + html_name
         else: filename = key + suffix + '.pdf'
-        return _publish(repo, entries, key, filename, raw, expected_sha256, source_facts, registry_update)
+        return _publish(repo, entries, key, filename, raw, source_facts, registry_update)
 
 
 def _facts(current, supplied):
@@ -158,7 +144,8 @@ def _new_account(repo, request, digest, facts):
     key,filename,raw = request['key'],request['filename'],request['raw']
     body = '### '+key+': source artifact\n\n'
     body += ('Bibliography: `'+key+'` in [references.bib](references.bib).\n'
-             'Recorded by '+repo.actor()+'.\nAcquisition date: '+repo.now()+'.\n\n')
+             'Recorded by '+repo.actor()+'.\n')
+    body += ('Access date: ' if raw is None else 'Acquisition date: ')+repo.now()+'.\n\n'
     body += 'Artifact: ['+filename+'](pdf/'+quote(filename,safe='/._-')+'). '
     body += 'Selected local artifact is unavailable.' if raw is None else 'Retained unchanged.'
     if digest: body += ' SHA-256 `'+digest+'`.'
@@ -181,25 +168,26 @@ def prepare_sources(repo, entries, requests, text, *, registry_update=None):
     updated = prepared_text(text,registry_update) if registry_update is not None else text
     gathered, pending, expected, results = {}, {}, {}, {}
     for request in requests:
+        r.require('expected_sha256' not in request, 'Supplied fingerprint inputs are not supported; use actual local bytes.')
         key,filename,raw = request['key'],request['filename'],request['raw']
         r.require(key in entries,'Register the chosen work before its source: '+key)
         target = paths.source_path(repo.root,paths.PDF_ROOT/filename,work_key=key)
         name = (paths.PDF_ROOT/filename).as_posix()
         old_bytes = target.read_bytes() if target.exists() else None
         expected[name] = old_bytes
-        constraint = _fingerprint(request.get('expected_sha256'))
-        digest = hashlib.sha256(raw).hexdigest() if raw is not None else constraint
+        digest = hashlib.sha256(raw).hexdigest() if raw is not None else None
         if raw is not None:
             source_files.validate(raw,filename)
-            r.require(constraint is None or constraint == digest,'Selected artifact differs from the expected fingerprint: '+filename)
             r.require(old_bytes is None or old_bytes == raw,'Different bytes occupy the selected artifact address: '+filename)
         else:
             r.require(old_bytes is None,'Selected source destination/account is occupied: '+filename+'; supply the chosen bytes.')
-        # Only an unambiguous explicit old line can supply a known byte constraint.
+        # Preserve only the selected account's unambiguous existing baseline.
         old_rows = [(actual,sha) for _,body in storage._accounts(text)
                     if any(actual == filename for actual,_ in storage.declarations(body,strict=False))
                     for actual,sha in storage.declarations(body,strict=False)]
         old_constraints = {sha for actual,sha in old_rows if actual == filename and sha} if len(old_rows) == 1 else set()
+        if raw is None and old_constraints:
+            digest = next(iter(old_constraints))
         r.require(not old_constraints or old_constraints == {digest},
                   ('Selected source destination/account is occupied with a registered fingerprint: ' if raw is None else
                    'Supplied artifact differs from its registered fingerprint: ')+filename+'; '+repr(sorted(old_constraints)))
@@ -253,10 +241,10 @@ def publish_files(repo, pending, expected):
         raise
 
 
-def _publish(repo, entries, key, filename, raw, expected_sha256, source_facts, registry_update=None):
+def _publish(repo, entries, key, filename, raw, source_facts, registry_update=None):
     expected = {name:(repo.root/name).read_bytes() if (repo.root/name).exists() else None for name in (bib.BIB,REGISTRY)}
     text = expected[REGISTRY].decode('utf-8-sig') if expected[REGISTRY] is not None else '# Source acquisition registry\n'
-    request = {'key':key,'filename':filename,'raw':raw,'expected_sha256':expected_sha256,'source_facts':source_facts}
+    request = {'key':key,'filename':filename,'raw':raw,'source_facts':source_facts}
     updated,pending,source_expected,results = prepare_sources(repo,entries,[request],text,registry_update=registry_update)
     expected.update(source_expected)
     if updated != text: pending[REGISTRY] = updated.encode('utf8')
@@ -266,20 +254,18 @@ def _publish(repo, entries, key, filename, raw, expected_sha256, source_facts, r
     return results[filename]
 
 
-def register_resource(repo, key, local_file, relative, *, source_facts=None, expected_sha256=None, timeout=30, registry_update=None):
+def register_resource(repo, key, local_file, relative, *, source_facts=None, timeout=30, registry_update=None):
     """Copy one explicitly selected resource and preserve its recorded limitations."""
     raw = _local_bytes(local_file)
     name = key + '/' + relative
     r.require(paths.valid_source_name(name) and not name.lower().endswith(('.pdf','.html','.htm')),
               'Select a contained related resource; entry pages use source registration.')
     if raw is not None: source_files.validate(raw, name)
-    expected_sha256 = _fingerprint(expected_sha256)
-    r.require(raw is None or expected_sha256 is None or hashlib.sha256(raw).hexdigest() == expected_sha256, 'Resource differs from the expected fingerprint.')
     with r.locked(repo.root, timeout=timeout):
         entries = bib.parse((repo.root/bib.BIB).read_text(encoding='utf-8-sig'))
         r.require(key in entries, 'Register the chosen work before its resource.')
         # The common publisher retains the same literal source account facts.
-        return _publish(repo, entries, key, name, raw, expected_sha256, source_facts, registry_update)
+        return _publish(repo, entries, key, name, raw, source_facts, registry_update)
 
 
 def register_work(repo, entry=None, *, existing_key=None, new_work=False, chosen_key=None, field_updates=None, timeout=30):

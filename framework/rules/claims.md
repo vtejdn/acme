@@ -235,9 +235,12 @@ Use the inert [record template](../templates/claim.md), replacing placeholders w
 A template is neither authorization nor a completed record.
 
 For partial ACME intake, the executing agent must examine necessary dependencies against the actual statement, argument and review scope.
-A received argument does not establish an unconditional proved/refuted conclusion when a necessary premise loses support.
-Preserve the argument and source provenance with a truthful draft/open local assessment; retain a conditional result only at its already established conditional scope.
-Explain verified background or independent-support exceptions in existing dependency scope, following the [intake rules](intake.md); this is no new proof review or approval.
+Collection alone preserves the imported C's original selected decision, visibly attributed as a source assessment, while actual acquired scope and unavailable selected inputs remain in intake provenance/navigation.
+Do not change the source status, append a receiving decision or invent a local consumer, duplicate C or assessment overlay.
+An unmapped background reference is not automatically an indispensable missing premise.
+When a real local consumer has an indispensable unsupported premise, state that limitation there; a local Claim uses `open`, `proof draft` or `conditional` as its actual mathematics warrants, without accepting an unconditional proved/refuted conclusion from unsupported input.
+Do not relabel the source result or manufacture a narrower conditional theorem solely because an input was not acquired.
+Explain adequate verified background or independent support in the consumer's existing dependency scope, following the [intake rules](intake.md); this is no new proof review or approval.
 
 ## Revised proofs and review continuity
 

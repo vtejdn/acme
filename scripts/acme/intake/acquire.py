@@ -234,7 +234,7 @@ def _require_review_claim(doc, anchor):
         path = origin['path'] if origin else target.path
         if names.parse(path).kind == 'C': targets.append(target)
     r.require(targets and all(not source_refs.external(target.path) for target in targets),
-              'Selected R finding requires its exact fixed C target acquired first or in this operation.')
+              'Selected R finding requires its exact fixed C target already acquired, explicitly mapped or selected in this operation.')
 
 
 def manifest(source, selections, *, files=()):
@@ -512,6 +512,12 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             r.require(not r.paths.in_pdf_store(original['path']), 'Private local literature is outside intake.')
             local_path, separator, local_anchor = row['local'].partition('#')
             r.safe_path(repo.root, local_path)
+            original_id = names.parse(original['path'])
+            if original_id.kind == 'C':
+                local_id = names.parse(local_path)
+                r.require(local_id.kind == 'C' and local_id.version == original_id.version,
+                          'Explicit C mapping requires the same kind and physical version: '
+                          + original['path'] + ' -> ' + local_path)
             key = original['repository'], original['path'], original['revision'], original.get('anchor','')
             selected_mapping = qualified_mapping if 'sender' in row else supplied_mapping
             if 'sender' in row: r.require(row['sender'] == source.transport, 'Foreign mapping belongs to this selected sender.')

@@ -6,7 +6,7 @@ Follow the [kind-specific rules](../../framework/rules/computations.md#when-to-r
 
 Programs, verification programs, required original inputs and the concise README use `programs/<J>/`.
 Generated results, certificates and verification data use the Git-ignored `mathematics/computation/outputs/<J>/`.
-Both homes retain the exact same J identity, including acquired author/repository spelling.
+Both homes retain the exact same J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 Use the [README template](../../framework/templates/computation.md) and [computation rules](../../framework/rules/computations.md).
 Keep logs only for troubleshooting and checkpoints only for useful continuation.
 Preserve necessary mathematics, inputs, finite results, actual checking relationships and reproduction limits in existing responsible materials.

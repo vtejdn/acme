@@ -64,7 +64,7 @@ Continuing mathematical arguments belong in D, with useful findings and failures
 Programs, verification programs, required original inputs and the concise README use `mathematics/computations/programs/<J>/`.
 Generated results, certificates and verification data use `mathematics/computation/outputs/<J>/`.
 The plural program path and singular output path are intentional.
-Use the exact existing J directory identity, including the original author/repository spelling of an acquired group.
+Use the exact existing J directory identity, including the receiving authorN/repoN and established receiving serial of an acquired group.
 Both homes belong to that one J; output separation creates no new identity or per-run directory.
 The shared output root is local to the checkout and ignored by Git through `/mathematics/computation/outputs/`.
 Generic discovery, ordinary staging and clean framework export exclude it.
@@ -104,7 +104,9 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
 ## Files and Reproducibility
 
 - Use `mathematics/computations/programs/Author_J_W0001/` for a local program home, with the author's chosen research line and an independent J counter.
-  Imported groups retain their original author, repository and serial, for example `Author_SourceRepository_J_W0001/`.
+  Imported groups use the receiving external identities and explicitly chosen receiving serial in both program and output homes, for example `author3_repo2_J_W0007/`.
+  Preserve the original research line and physical version where applicable, and the exact original author, repository, source family/serial, path and revision in existing provenance/correspondence.
+  Repeated acquisition and later versions reuse the established receiving family; original and immediate transport identities remain distinct.
   Every group has one entrance `readme.md`, with the minimal author/source header and the [template](../templates/computation.md) sections: Question and scope, Files, Reproduction, Results and limits.
   These examples are inert.
 - Group one coherent calculation with its actual programs, inputs, outputs and checks across the two declared homes.
@@ -137,7 +139,7 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
 - Verification scripts compare the mathematical payload, including scope-relevant inputs, range, tolerance and normalization.
   Remove persistent input/program/output fingerprints, saved digest baselines, digest warnings and digest acceptance gates, including historical values and their writers/readers.
   Preserve exact mathematical checks; incidental time/path metadata or raw bytes are not the mathematical target.
-  Source-artifact and intake fingerprints retain their separate provenance role.
+  Literature-file fingerprints computed from actual local bytes retain their separate accidental-damage checking role in the source registry; intake carries no literature baseline.
 
 ## Evidence and Limits
 

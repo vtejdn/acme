@@ -1,6 +1,10 @@
 # Repository Organization
 
-All written records must be in English, including notes, reports, documentation and code comments.
+Locally authored research records, framework rules, reports and code comments use English by default.
+Official non-English human-facing translations maintained alongside their responsible originals are permitted in any language and explain the same framework without becoming a competing rule authority.
+Existing Chinese guides retain that role; planned German, French, Japanese and later editions gain navigation/export entries only when their actual files are added.
+An arbitrary non-English research note is not an official translation.
+Other explicitly authorized document-language scopes retain their actual instructions and role boundaries; original quotations and acquired material retain their source-preservation rules.
 Directory names use short lowercase English words without spaces; registered citation keys keep their case.
 
 The root README is an entry point.
@@ -81,7 +85,7 @@ The [computation rule](computations.md) gives no generic execution-environment a
 Normalize historical installation/root portions while preserving necessary relative suffixes, program/argument identity, dates, outcomes, parameters, payloads and limitations;
 identify normalized commands as such, without claiming a new run or literal original argv.
 Discard obsolete host locations without creating a secrets inventory.
-Public URLs/DOIs, original source identities/fingerprints, quoted source text, fictional controls, mathematical notation and agent names retain their actual roles.
+Public URLs/DOIs, original source identities, actual locally computed literature-file fingerprints, quoted source text, fictional controls, mathematical notation and agent names retain their actual roles.
 Locator cleanup does not rewrite Git history or weaken fixed-mathematics preservation.
 
 ## Material Responsibilities
@@ -96,7 +100,7 @@ Search and cite these by the actual conclusion and applicability; no separate me
 
 Retained computation programs, verification programs, required original inputs and concise accounts use `mathematics/computations/programs/<J>/` under the [computation rules](computations.md).
 Generated results, certificates and verification data use the Git-ignored `mathematics/computation/outputs/<J>/`.
-Both homes preserve the same registered J identity, including acquired author/repository spelling.
+Both homes preserve the same registered J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 The collection entrance/index remains at `mathematics/computations/`.
 The program README supplies navigation, actual input/output locators and reproduction context, without a second assessment or review.
 Generic discovery and clean export skip live output; explicit contained reads and selected transfers remain available.

@@ -133,7 +133,8 @@ Remove obsolete purely administrative references; necessary mathematical or revi
 
 Remove persistent mathematical digests, including historical values and their writers/readers, for authored mathematics, review content, J inputs/programs/outputs and manuscript sources/builds/PDFs.
 Preserve the actual reviewed inputs, verdict, relationship, scope, limits and useful failures through canonical paths, physical versions, anchors and available source revisions.
-Literature-PDF artifact fingerprints and acquired-source object fingerprints remain in their responsible provenance; transient input-change comparisons may be used without a saved mathematical digest.
+Literature-file fingerprints computed from actual local bytes remain at the sole source registry for accidental-damage checking; authored-material intake carries no literature baseline.
+Transient input-change comparisons may be used without a saved mathematical digest.
 No hash-history log, replacement manifest or mathematical byte gate is introduced.
 The retired C/T JSON records, snapshots and discovery products are not a second reader or authoring API.
 

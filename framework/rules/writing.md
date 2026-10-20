@@ -448,20 +448,25 @@ Do not turn `review.md` into a build log, citation inventory, general prose-edit
 Retain a historical review only when its actual reviewer relationship, checked scope, findings or limitations remain useful, and clearly identify the manuscript state it examined.
 Build and visual facts belong in the document `readme.md`; retain historical build or visual facts in `review.md` only when they establish the scope of a particular review.
 
-Before recording a proposed citation in `citation.md`, check whether fixed source evidence covers the exact source edition and passages needed.
+When mapping a current citation in `citation.md`, check whether fixed source evidence covers the exact source edition and passages needed, and state any unresolved check honestly.
 An adequate fixed U or complete relevant C/L source account supplies this evidence at its existing responsible home, without copying, relocation or an extra U solely for citation.
 Check its actual source edition, precise inspected passages, source statement or definition, hypotheses and normalization, inspection depth and unresolved limitations against the manuscript use.
 A local result's proof status, a bare citation or a bibliography entry alone supplies no source-inspection evidence.
 When an actual edition, passage or inspection gap remains, follow the existing [literature-acquisition](literature.md#literature-acquisition), [progressive-reading](literature.md#progressive-reading), and [source-audit](literature-audits.md#organization-and-stable-units) procedures for that gap and retain the necessary finding at its appropriate existing or new fixed U/C/L home under the [common content decision](records.md#substantive-material-retention).
 U is the ordinary home for an independent reusable source-audit unit; an integrated project deduction or synthesis keeps its adequate C/L account and actual source/adaptation facts.
 Acquisition-only work retains its bibliography/registry responsibility without creating a source unit.
-Only after adequate fixed source evidence is available, record the manuscript-specific application in `citation.md` if the source is actually cited in the current TeX, linking to the exact responsible fixed evidence and applicable definition entries, and keeping manuscript-specific applicability, claims, notation, terminology and remaining gaps in the citation map.
+Record every application actually cited in current TeX, linking adequate fixed evidence and applicable definition entries where available and keeping manuscript-specific applicability, claims, notation, terminology and gaps in the same citation map.
+Adequate fixed source evidence is required before describing the application as verified or using it as established support at its claimed scope; adequate retained U/C/L evidence can suffice without a new local PDF.
 If a source audit finds or checks a source not cited in the current TeX, retain any necessary finding at its responsible source-level home and do not add a `citation.md` entry.
 Stylistic consultation and bibliography-only work follow the same source-preparation duties at their actual scope; only citations present in the current TeX receive citation-map entries.
 It adds no approval step and does not broaden the source-audit scope required by existing literature rules.
 
 The project `citation.md` maps every external citation use actually present in the current TeX, grouped by canonical citation key.
-Each use identifies its manuscript claim or passage, TeX section and environment label or distinctive passage, source edition and precise inspected locator, relevant source hypotheses/normalization/setting and why they match, notation or terminology conversion, citation role and what it does not support, and the linked U unit or other exact source evidence with any unresolved point.
+For a use supported by adequate fixed evidence, identify its manuscript claim or passage, TeX section and environment label or distinctive passage, source edition and precise inspected locator, relevant source hypotheses/normalization/setting and why they match, notation or terminology conversion, citation role and what it does not support, and the linked U unit or other exact source evidence with any unresolved point.
+For unchecked or partially checked uses, plainly identify the actual TeX use, intended role, known edition/locator, evidence actually available, precise unresolved checks and resulting limitation.
+Unknown edition, passage or evidence remains explicitly unknown; do not invent an inspected locator, fixed U link, inspected hypotheses/normalization or completed applicability check.
+Use ordinary authored descriptions without a new status enum or lifecycle, then update the same entry when the actual gaps are resolved.
+Pending verification alone does not require deleting a draft citation and supplies no proof acceptance.
 The map is not an inventory of consulted works or uncited bibliography entries.
 Do not copy source-audit evidence into the map or make the map the sole inspection record.
 Source-only facts and inspection limits stay at their responsible source-level home; project C/L content retains its own mathematical responsibility.

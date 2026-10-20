@@ -8,7 +8,9 @@ A template does not justify a process-only record.
 
 Use one `readme.md` at `mathematics/computations/programs/<J>/`, with actual programs, verification programs and required original inputs.
 Generated results, certificates and verification data belong at the Git-ignored `mathematics/computation/outputs/<J>/`.
-Both homes share the same J identity; imported groups retain their original author, repository and serial.
+Both homes share the same J identity; imported groups use receiving `authorN_repoN_J_Fxxxx` identities and explicitly chosen receiving serials.
+Preserve the original research line and physical version where applicable, and original author, repository, source family/serial, path and revision in existing provenance/correspondence.
+Repeated acquisition and later versions reuse the established receiving family, distinguishing original identity from immediate transport.
 See the [computation rules](../rules/computations.md#computation-output-location).
 The inert example below uses `Author_J_W0001`; replace it and its file rows with the actual retained group and files.
 Do not invent programs, data or a run to fill the template.

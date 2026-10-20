@@ -32,7 +32,9 @@ No semantic return detector, alias resolver, global replacement identity or hist
 
 C/U/L/J and eligible C-related R findings are selected explicitly.
 The agent chooses the precise assessment/finding/anchor, needed mathematical inputs and source files; C selection does not automatically acquire related R findings.
-A chosen R requires its exact fixed C target already acquired or selected in the same operation.
+A chosen R requires its exact fixed C target already acquired, explicitly mapped to an existing local C, or selected in the same operation.
+An explicit mapping identifies the actual physical C version and required anchors; the agent judges correspondence from the actual materials, without a mathematical-equivalence or additional-review verdict from the mapping itself.
+Map an existing local original directly, without reacquisition, a self repoN or conversion to an external original.
 U retains the exact authored source edition, inspected passages and limits, with explicitly chosen bibliography correspondence.
 The agent also chooses its receiving source-key/unit position and precise local declaration/reference edits before publication.
 Occupancy is shared across authors and displayed origin prefixes within the canonical receiving source key.
@@ -42,6 +44,10 @@ Whole-document source-key or anchor substitution cannot establish reference corr
 The local `mathematics/literature/pdf/` store is outside intake, whether it is an ordinary directory or a top-level directory junction.
 U `source_artifacts`, `source_bibliography`, `holding` and `source_updates`, and operation-level source updates, are retired inputs and must fail before private-store access or publication.
 Intake reads no private source documents and imports no local Artifact account, fingerprint, availability or holding relationship.
+Original literature PDFs, HTML and resources remain outside Git tracking, uploads and outgoing material transfers even when publicly reachable.
+Material subject to copyright or distribution restrictions cannot enter intake through J, an attachment, another directory or a large copied passage.
+The agent judges actual content and permitted disclosure; scripts enforce known excluded paths and explicit selections without a copyright classifier.
+Audit prose that discloses protected or private source content follows the same [restricted-material boundary](literature.md#unpublished-material).
 Bibliography and authored inspection metadata establish no receiver-local source document or matching inspected edition.
 L can carry a whole account or anchored scope, including failed attempts.
 J selects its README, core program, inputs and indispensable evidence explicitly; regeneration, execution and validation are separate activities.
@@ -73,6 +79,8 @@ Never bind an unrelated same-named local file, create a stub, silently crop a fi
 
 Necessary unacquired mathematics remains a specific limitation at the real consumer.
 Source-assessed Claims and review findings remain visibly attributed to their source; installation is neither proof nor the recipient's judgment.
+Collection alone preserves the source C's selected decision as a source assessment, with actual acquisition scope and limitations in the existing intake provenance/navigation.
+Do not append a receiving decision to the original or manufacture a local consumer or assessment overlay.
 A consumer records its actual use, assumptions and applicability in its existing dependencies, support, decision or exposition.
 No duplicate Claim, new Task, standalone adoption form or whole-source re-review is needed merely to cite external mathematics.
 

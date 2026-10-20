@@ -1,6 +1,6 @@
 # Repository Entry Points
 
-Read [readme.md](readme.md), select the relevant function in [agent-actions.md](agent-actions.md), then read its governing [framework rules](framework/readme.md) and directly needed materials.
+Read [readme.md](readme.md), select the relevant function in [agent-actions.md](framework/agent-actions.md), then read its governing [framework rules](framework/readme.md) and directly needed materials.
 The action guide is the single function-to-action entrance; unrelated functions and the human manual are not required reading for each operation.
 Reuse unchanged material already read; links back to an entrance do not restart this sequence.
 

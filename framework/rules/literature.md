@@ -76,7 +76,7 @@ Publication checks both the input path and its resolved target, including exclud
 Whole-repository traversal skips the entire mount before descent.
 An unavailable registered source page/PDF/resource is a nonblocking availability notice, separate from an invalid format/path or an actually missing required mathematical input.
 No acknowledgment, bypass flag or read-triggered download is needed.
-Never-downloaded artifacts need no hash or fictional acquisition; retain a recorded fingerprint for an unavailable selected artifact.
+Never-obtained local artifacts have no fingerprint or fictional acquisition; retain an actually established local baseline if that file later becomes unavailable.
 Availability says nothing about mathematical verification.
 
 <a id="selected-source-checks"></a>
@@ -104,7 +104,7 @@ Reuse adequate existing judgments within their actual scope without a confirmati
 Byte input is the file explicitly supplied to the operation.
 An existing work key chooses bibliography, not a local artifact; neither a missing input, matching suffix nor target fingerprint selects local bytes.
 To reuse an actual local file, pass it through the existing PDF, HTML or resource file argument with its actual source facts and limitations.
-With no supplied bytes, a free destination retains the chosen source's truthful unavailable account and any supplied known fingerprint.
+With no supplied bytes, a free destination records truthful unavailability without a fresh fingerprint; a selected existing absent artifact retains its already recorded local baseline.
 An occupied destination reports an address conflict and preserves its existing bytes/account instead of substituting that file or rewriting its provenance.
 Pure bibliographic updates do not create an artifact acquisition.
 
@@ -125,14 +125,18 @@ Before publication, the prepared selected account must be unique and its fingerp
 Check the exact expected old text before strict evaluation of the prepared result, so an explicit resolution can repair old ambiguity without selecting an old first/last candidate or borrowing a comparison fingerprint.
 Use the [public local-registration inputs](../../scripts/readme.md#local-source-retrieval-and-registration) with the existing short lock, stale-input checks and rollback boundary.
 
-A known expected fingerprint remains an exact-byte constraint: a mismatch cannot be reported as satisfying it.
-A new digest describes only the obtained bytes.
+Compute a new registered fingerprint only from actual locally obtained document/resource bytes, after the agent establishes the source association.
+The sole registry's local baseline serves accidental-damage checking; comparison with different supplied bytes must preserve existing source bytes and baseline on failure.
+Supplied or foreign hashes establish no local baseline, and authored-material intake obtains no literature fingerprint or sender-local integrity baseline.
+If an old hash's local provenance is unknown, retain that uncertainty rather than inferring historical local possession.
+Hashing an error page or unestablished response is at most a transient byte fact about that response, not the intended publication's registered fingerprint.
 Local source registration preserves the responsible account's actual limitations; an original U retains its own authored inspection scope.
 Neither a matching hash nor successful copying resolves identity, edition suitability or completeness.
 Source availability is reported independently of those judgments.
-No prior hash is required for truthful registration of a never-acquired artifact.
+Changing the local key/path for the same retained bytes preserves its actual baseline and consumers.
 
-Retain the selected addresses, edition facts and any known expected fingerprint for unavailable outcomes, so an authorized later operation can explicitly retry the same address.
+Retain selected addresses, edition facts and an actually established prior local baseline for unavailable outcomes, so an authorized later operation can explicitly retry the same address.
+Never-obtained local artifacts have no fingerprint; no caller-supplied hash or prepared registry update may establish one without actual obtained bytes.
 Update current availability at the actual returned artifact address and resolve a limitation only after the relevant fact or agent judgment is established; successful copying alone does not clear it.
 Preserve necessary contents/holding links.
 There is no automatic retry, conflict classifier, parallel source register or retry-history archive.
@@ -264,7 +268,13 @@ Reuse an existing adequate artifact.
 A different URL, filename, or byte encoding does not by itself identify a new work or justify retaining a duplicate.
 
 Attempt a bounded public-source download with a timeout and finite retries as part of the actual operation, after reusing an adequate local copy.
-A failure completes the bibliographic registration and appropriate U with a dated exact-source limitation and an unavailable-artifact notice in its actual format; it does not create a queue, background retry or repeated attempts at each check.
+A failure completes known bibliographic information and the actual acquisition/access account with the failure, known exact locator/edition, access date and unavailable artifact.
+Acquisition-only failure creates no U and claims no source inspection; a never-obtained local artifact has no fingerprint, while an established local baseline survives later absence.
+Link adequate existing U evidence without erasing its historical checked scope or treating the current access failure as a new inspection.
+Retain new or revised U/C/L only for necessary substantive inspection content at its actual depth under the [common content decision](records.md#substantive-material-retention) and fixed-version rules.
+A receiving inspection contribution uses its author's own evidence home rather than revising an acquired original.
+Genuine online/partial-source inspection may coexist with a failed download; title-page or bibliographic identity checking alone is no theorem/definition/proof audit.
+Failure does not block unrelated authorized work or create a queue, background retry or repeated attempts at each check.
 Validate the retrieved artifact before recording successful retention: confirm its intended format, readable content, expected title, authors and version.
 A file extension or successful HTTP response is insufficient; an error/login page, dynamic empty shell or HTML response saved with a PDF extension is not the selected mathematical source.
 Preserve the actual retrieval URL and acquisition date, and compute the SHA-256 of each retained file.
@@ -358,11 +368,11 @@ Clean installations receive this rule and the generic usage entrance with an oth
 
 These rules cover monographs, papers, and unpublished manuscripts.
 Adding a source does not assign a full audit.
-At intake, register its identity, file/version, source type, publication status, access classification, known provenance, and fingerprint.
-An exception-registered source carries the exception registration fields — access date, exact locator, no-local-artifact declaration and failure record — instead of file and fingerprint.
+During ordinary local source acquisition/registration, register identity, actual file/version, source type, publication status, access classification, known provenance and the fingerprint computed from actual locally obtained bytes.
+An exception-registered source carries access date, exact locator, no-current-local-artifact declaration and failure record; only a previously established local fingerprint survives absence, and a never-obtained artifact has none.
 Keep source type, publication status, and access as separate fields under the classifications below.
 Inspect the title page and, as useful, the abstract, contents, index, or preface; label subject tags as provisional.
-User-supplied sources may be registered for future research without an active goal, using the intake purpose stated above.
+User-supplied sources may be registered for future research without an active goal, using the acquisition purpose stated above.
 Do not invent a research objective or claim that unread chapters have been reviewed.
 
 For each research task, follow this sequence.
@@ -413,6 +423,10 @@ This also applies to revealing audit notes and derived search queries.
 Generic public mathematical terminology may be searched when it does not disclose private content.
 If access classification is unknown, establish it before external disclosure.
 General permission for public literature searches does not authorize disclosure of private material.
+Material subject to copyright or distribution restrictions, especially original literature PDFs, stays outside Git tracking, uploads and outgoing material transfers.
+The local source store's original PDF, HTML and resource files remain excluded even when publicly reachable; public availability alone selects no redistribution.
+Relocating originals into J, attachments, another directory or large copied passages does not make them transferable agent-authored material.
+The agent judges actual content and permitted disclosure, including revealing audit prose; scripts enforce known excluded paths and explicit publication boundaries without a copyright classifier.
 
 ## 1. Citation Keys and Filenames
 
@@ -503,7 +517,8 @@ Do not overwrite a U's inspected edition with a different canonical primary edit
    Check that the file contains the intended source rather than an error or login response; apply the restricted-material rules before external disclosure.
    For an exception-registered source, verify the same identity fields against the identified online page at the registered locator instead, including that it is the intended source rather than an error or login response.
 3. Assign keys under the identity and changed-source rules above.
-   Validate the acquired artifact and record its existing storage fingerprint as an accident reminder; an exception-registered source has no local artifact or fingerprint and carries the exception registration fields instead.
+   Validate the actual locally obtained artifact and compute/record its storage fingerprint for accidental-damage checking.
+   A never-obtained artifact has no fingerprint; a previously obtained file that later becomes unavailable retains its established local baseline and actual access limitations.
 4. Complete the known bibliographic fields and appropriate entry type in canonical references.bib, then record acquisition and artifact facts in registry.md: actual source URL or supplied provenance, identified edition/version, purpose and relevant record link.
    A retained artifact records acquisition date, actual path and storage details; an exception-registered source records access date, exact locator, an explicit no-local-artifact declaration and the failure record.
    Keep source inspection and proof-review scope in U or the responsible audit material, linked from the registry.

@@ -3,7 +3,7 @@
 The standard-library runtime lives in classified `scripts/acme/` packages with thin root command entries.
 Every maintained runtime module is explicitly exported.
 Run from the checkout root, or pass `--root ROOT`.
-The [agent action guide](../agent-actions.md) selects the work and governing rules; this document describes optional CLI interfaces and their actual side effects.
+The [agent action guide](../framework/agent-actions.md) selects the work and governing rules; this document describes optional CLI interfaces and their actual side effects.
 
 Use these optional tools for the chosen mechanical operation under the [agent/tool responsibility](../framework/rules/workflow.md#agent-and-tool-responsibilities).
 A simple authorized edit can be made directly; no aggregate command or tool PASS replaces content judgment.
@@ -95,7 +95,7 @@ Whole fixed documents remain intact, and one concise operation records the actua
 ## Local source retrieval and registration
 
 `material.py fetch-source --url ADDRESS --output LOCAL --format pdf|html` fetches at most two supplied addresses and returns actual requested/final URLs, byte length, format/decoding facts and digest.
-Optional `--expected-sha256 HASH` enforces an already known byte constraint.
+Its digest is a transient response-byte fact, not a registered local baseline or source-identity verdict.
 Fetching does not register a work/edition association.
 Inspect a first or otherwise unestablished response before assigning it; tools do not classify identity or reject HTML by error/login keywords.
 Use ordinary download tools when adequate, and keep disposable fetch output under the [temporary-storage rule](../framework/rules/organization.md#temporary-storage).
@@ -104,10 +104,13 @@ Use ordinary download tools when adequate, and keep disposable fetch output unde
 Supplied fields are exact updates under the [bibliographic content boundary](../framework/rules/literature.md#bibliography-content); no automatic same-work decision or field fusion occurs.
 Register an inspected local PDF with `--local-pdf FILE` and optional `--artifact-suffix=--arxiv-v2`, or original HTML with `--local-html FILE --html-name source.html`.
 Explicitly name the actual file for local reuse.
-A named path observed missing can record an unavailable artifact at a free destination, retaining supplied URLs, expected hash and limitations; an occupied file/account reports a conflict and keeps its existing facts.
+A named path observed missing can record an unavailable artifact at a free destination, retaining supplied URLs and limitations without a fresh fingerprint.
+For an existing absent artifact, retain its already recorded local baseline without a caller-supplied hash; an occupied file reports a conflict and keeps its existing bytes/account.
 Neither an existing work key nor a receiver fingerprint supplies the missing bytes.
 HTML filenames may have contained subdirectories; original bytes/native anchors remain intact.
-`--selected-url`, `--obtained-url`, `--source-version` and `--limitation` supply facts; `--expected-sha256` constrains known bytes.
+`--selected-url`, `--obtained-url`, `--source-version` and `--limitation` supply facts.
+Registration computes new PDF/HTML/resource fingerprints only from supplied actual local bytes and compares the selected existing registry baseline, preserving bytes/account on mismatch.
+Fetch, registration and resource APIs accept no supplied expected hash; a prepared registry update cannot establish a fresh hash for absent bytes.
 Registration does not fetch.
 Omitting both local options is bibliography-only and creates no artifact account.
 Related resources use the same availability rule and explicit accounts, without a crawl or conversion.

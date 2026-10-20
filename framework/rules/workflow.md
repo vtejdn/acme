@@ -1,7 +1,7 @@
 # Research Workflow
 
 Follow explicit human instructions and applicable agent instructions.
-These are the common research defaults; repository settings and document choices keep their recorded scope.
+Selectable research defaults follow [preference precedence](preferences.md#scope-and-adoption) within its permitted scope; repository settings and document choices do not by themselves waive evidence, preservation or authority boundaries.
 
 <a id="agent-and-tool-responsibilities"></a>
 ## Agent and tool responsibilities

@@ -121,7 +121,7 @@ Check the actual diff and repair the incoming references instead of retaining an
 Remove historical mathematical digest values and present byte-binding requirements while preserving the actual checked statement/argument, verdict, scope, limits and checking relationship.
 An unchanged relocation may repair exact input locators without implying a review of later mathematics; a mathematical change still requires the ordinary version/review process.
 A truthful historical account of a comparison may remain where useful, without a retained digest or retention promise.
-Literature-PDF and intake fingerprints remain only in responsible source provenance.
+Literature-file fingerprints computed from actual local bytes remain only at the sole source registry for accidental-damage checking; intake carries no literature baseline.
 A maintained path alone does not promise a historical byte image, and a byte comparison does not certify mathematical harmlessness.
 
 ## Reviewing an Argument

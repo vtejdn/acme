@@ -1,6 +1,6 @@
 # About
 Our framework supports mathematical research through collaboration between human researchers and autonomous AI agents.
-Its goal is to explore the frontier of mathematis, develop precise questions, and preserve research that can be inspected, reused, and continued.
+Its goal is to explore the frontier of mathematics, develop precise questions, and preserve research that can be inspected, reused, and continued.
 
 ## Human
 Human researchers define the research objectives and authorized scope, clarify mathematical intent, and guide scientific priorities.

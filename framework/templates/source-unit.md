@@ -16,13 +16,15 @@ Material vN does not identify the inspected edition.
 Do not infer proof inspection from an accepted source statement.
 The content model below can also remain inline in an existing multi-unit audit until its explicit conversion.
 
-Under the [agent/tool responsibility](../rules/workflow.md#agent-and-tool-responsibilities), establish the actual inspected work/edition and retain its supplied source addresses, edition facts and current limitations in the existing [registry account](../rules/literature.md#artifact-source-association).
+Under the [agent/tool responsibility](../rules/workflow.md#agent-and-tool-responsibilities), establish the actual inspected work/edition.
+Ordinary local source preparation retains actual source addresses, edition facts, locally computed file fingerprints and current limitations in the existing [registry account](../rules/literature.md#artifact-source-association).
 The `source-version` describes performed inspection; ordinary comparisons and dependencies keep their mathematical roles and select no download.
 Tools report requested/final addresses and bytes without deciding work/edition identity.
 
-Registration of an inspected local file and explicit onward copying preserve the source facts, limitations and original U scope.
-A known fingerprint constrains exact bytes; a new digest or successful copy supplies no identity, edition or completeness judgment.
-No added confirmation field, compulsory source audit or prior fingerprint is required.
+Local registration computes a fingerprint from the actual obtained file for accidental-damage checking, without establishing identity, edition, inspection or completeness.
+Authored-material intake copies the whole U and bibliography with its original provenance, inspected edition/passages, limits and prepared receiving position/text; it carries no original publications, private source accounts or literature fingerprints.
+It establishes no receiver-local possession; obtain needed original text through ordinary authorized source preparation or reuse adequate local evidence.
+No duplicate U, added confirmation field, compulsory source audit or prior fingerprint is required.
 
 Copy and adapt the following within the appropriate source review.
 Replace the illustrative ID and anchor before use; do not prefill checks as completed.

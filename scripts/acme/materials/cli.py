@@ -57,7 +57,6 @@ def argument_parser():
     command.add_argument('--url', action='append', required=True)
     command.add_argument('--output', type=Path, required=True)
     command.add_argument('--format', choices=['pdf', 'html'], required=True)
-    command.add_argument('--expected-sha256')
     command = commands.add_parser('register-source', parents=[root], help='Apply chosen bibliographic fields and retain explicitly associated local bytes')
     command.add_argument('--file', type=Path, required=True, help='One new entry or exact chosen field updates; - reads stdin')
     choice = command.add_mutually_exclusive_group(required=True)
@@ -68,7 +67,6 @@ def argument_parser():
     command.add_argument('--local-html', type=Path, help='Explicit original HTML input; a missing file records unavailability at a free destination')
     command.add_argument('--html-name', default='source.html')
     command.add_argument('--artifact-suffix', default='')
-    command.add_argument('--expected-sha256')
     command.add_argument('--selected-url', action='append', default=None)
     command.add_argument('--obtained-url', action='append', default=None)
     command.add_argument('--source-version', action='append', default=None)
@@ -119,7 +117,7 @@ def main(argv=None):
                                      mapping=json.loads(supplied(args.mapping)) if args.mapping else ())
         elif args.command == 'fetch-source':
             from ..intake import literature
-            output = literature.fetch_source(args.url, args.output, root=repo.root, source_format=args.format, expected_sha256=args.expected_sha256)
+            output = literature.fetch_source(args.url, args.output, root=repo.root, source_format=args.format)
         elif args.command == 'register-source':
             from ..intake import bibliography, literature
             entries = bibliography.parse(supplied(args.file))
@@ -127,14 +125,14 @@ def main(argv=None):
             options = {'existing_key': args.existing_key, 'new_work': args.new_work, 'chosen_key': args.chosen_key, 'timeout': args.maintenance_wait}
             entry = next(iter(entries.values()))
             if args.local_pdf is None and args.local_html is None:
-                shared.require(not any((args.artifact_suffix, args.expected_sha256, args.selected_url, args.obtained_url, args.source_version, args.limitation, args.registry_update)),
+                shared.require(not any((args.artifact_suffix, args.selected_url, args.obtained_url, args.source_version, args.limitation, args.registry_update)),
                                'Artifact facts require the explicitly associated local artifact.')
                 output = {'key': literature.register_work(repo, entry, **options)}
             else:
                 facts = {name: value for name, value in (('urls', args.selected_url), ('obtained_urls', args.obtained_url),
                          ('versions', args.source_version), ('limitations', args.limitation)) if value is not None}
                 output = literature.register(repo, entry, local_pdf=args.local_pdf, local_html=args.local_html,
-                    html_name=args.html_name, suffix=args.artifact_suffix, expected_sha256=args.expected_sha256,
+                    html_name=args.html_name, suffix=args.artifact_suffix,
                     source_facts=facts or None,
                     registry_update=json.loads(supplied(args.registry_update)) if args.registry_update else None, **options)
         else:

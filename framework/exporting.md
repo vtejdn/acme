@@ -46,11 +46,14 @@ New non-Git outputs receive Git initialization once.
 The manifest alone owns the current framework version.
 No export receipt, source-commit snapshot or copied-file registry is persisted.
 The export contains common framework files and empty research structures, without actual research, source artifacts, intake/execution facts or personal profiles.
-The [general manual](../user-manual.md) and its [Chinese translation](../user-manual/用户手册.md) introduce ACME, environment, installation and ordinary use.
+The [general manual](../user-manual/user-manual.md) and its [Chinese translation](../user-manual/用户手册.md) introduce ACME, environment, installation and ordinary use.
 The [human request suggestions](../user-manual/user-instructions/user-instructions.md) and [Chinese edition](../user-manual/user-instructions/用户指令.md) explain example requests and expected outcomes.
-[AGENTS.md](../AGENTS.md) remains the short bootstrap and cross-activity guidance, and the English [agent action guide](../agent-actions.md) owns the function-to-action entrance.
+[AGENTS.md](../AGENTS.md) remains the short bootstrap and cross-activity guidance, and the English [agent action guide](agent-actions.md) owns the function-to-action entrance.
 The installed [topic rules](readme.md) govern responsibilities and conditions; the [material format](material-format.md) owns exact declarations/acquisition inputs, and [script documentation](../scripts/readme.md) owns optional interfaces and side effects.
 All these guides accompany the export and their navigation resolves within the installed output.
+The manual's actual collaboration and workflow diagrams accompany it at their explicit manifest paths.
+Official non-English human-facing editions may be maintained in any language alongside their responsible originals, explaining the same framework without a competing rule authority.
+German, French and Japanese editions are planned; add actual paths to guide navigation and the explicit manifest only when those editions exist.
 Generic entrances, empty collections, common tools, templates and guides remain self-exportable.
 The repository identity is fresh; the source's Git history and remotes are never copied.
 

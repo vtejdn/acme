@@ -19,7 +19,12 @@ Changing a local actor does not alter another author's adopted manuscript choice
 An author without a profile uses general mathematical standards plus any explicit manuscript choices.
 Do not create empty profiles, borrow another author's settings or ask for routine missing defaults.
 
-For non-writing topics, use the current explicit instruction, then an explicit Task/document choice, then the bound operator's applicable current active policy, then that operator's default, then the common framework rule.
+For non-writing defaults and delegated choices within the installed framework's permitted scope, use the current explicit instruction, then an explicit Task/document choice, then the bound operator's applicable current active policy, then that operator's default, then the common framework default.
+This selects ordinary method/route preferences and permitted execution limits; a higher applicable choice overrides only the conflicting selectable portion without routine exception approval.
+Personal defaults, active policies and document choices do not by themselves waive truthful mathematics/attribution, fixed-version and exact-source preservation, applicable acceptance/review evidence, actual author/role and Task/E authority, stopped conditions or private-source/publication boundaries.
+Writing retains its four layers for notation, terminology, presentation, source/model choice and style; those choices cannot turn an unchecked citation into verified evidence or change another material's assessment.
+Task/decision/E changes use their existing scoped procedures and actual authority; framework-obligation changes require a separately explicit maintenance assignment under its actual role and scope.
+Current human instructions retain their actual authority, including an already authorized named role exception, without transferring authorship or rewriting past evidence.
 The operator comes from the existing Git worktree research.actor binding and repository/people.json, not a Task's author, Git display name or agent nickname.
 Profiles are selected automatically without a separate repository adoption.
 A checkout has one binding shared by its chats; it is not a per-chat identity.
