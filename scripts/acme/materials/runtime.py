@@ -82,7 +82,7 @@ class Reader:
         else:
             humans.person(self.repo, doc.identity.author)
         route_paths = ()
-        if doc.identity.kind == 'S':
+        if doc.identity.kind in 'ST':
             tree = getattr(self.repo, 'selected_tree', None)
             if tree is None:
                 from . import discovery
@@ -96,6 +96,9 @@ class Reader:
             return (not candidate.is_file() if tree is None or getattr(tree, 'ref', None) == 'WORKTREE'
                     else target not in tree.names)
         documents.check(doc, self.read, paths=route_paths, unavailable_output=unavailable_output)
+        if doc.identity.kind == 'T' and doc.task_type == 'ordinary':
+            from ..execution import records
+            doc.execution = records.check(self.repo, doc.path)
         if doc.identity.kind == 'J':
             missing = {target for target, _anchor in self.destinations(doc.path, doc.text)
                        if unavailable_output(target)}

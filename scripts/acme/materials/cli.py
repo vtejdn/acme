@@ -43,7 +43,7 @@ def argument_parser():
     for name in ('show', 'check', 'routes', 'indexes'):
         command = commands.add_parser(name, parents=[root]); command.add_argument('paths', nargs='+')
     command = commands.add_parser('discover', parents=[root]); command.add_argument('--kind', choices=list('CTSRDJLU'))
-    command = commands.add_parser('intake', parents=[root], help='Copy explicitly selected C/R/U/L/J objects at a fixed source revision')
+    command = commands.add_parser('intake', parents=[root], help='Receive prepared mathematical units at a fixed source revision')
     command.add_argument('--source', type=Path, required=True); command.add_argument('--revision', required=True)
     command.add_argument('--source-repository', required=True, help='Registered receiving repoN for the immediate sender')
     command.add_argument('--correspondence', type=Path, required=True, help='Prepared repository and qualified author mappings')
@@ -53,6 +53,11 @@ def argument_parser():
     command.add_argument('--instruction', required=True); command.add_argument('--initiator')
     command.add_argument('--maintenance-wait', type=float, default=30)
     command.add_argument('--refresh-j', action='store_true', help='Permit selected file replacement for the same original J; the agent maintains current consumers and needed inputs')
+    command = commands.add_parser('import', parents=[root], help='Install explicitly selected own content and directed necessary dependencies')
+    command.add_argument('--source', type=Path, required=True)
+    command.add_argument('--plan', type=Path, required=True, help='Prepared roots and entries; - reads stdin')
+    command.add_argument('--author')
+    command.add_argument('--maintenance-wait', type=float, default=30)
     command = commands.add_parser('fetch-source', parents=[root], help='Fetch supplied addresses for inspection without registering an association')
     command.add_argument('--url', action='append', required=True)
     command.add_argument('--output', type=Path, required=True)
@@ -75,15 +80,17 @@ def argument_parser():
     command.add_argument('--maintenance-wait', type=float, default=30)
     command = commands.add_parser('create', parents=[root])
     command.add_argument('--kind', required=True, choices=list('CTSRDJL'))
-    context = command.add_mutually_exclusive_group(required=True)
+    context = command.add_mutually_exclusive_group()
     context.add_argument('--line'); context.add_argument('--task')
     command.add_argument('--author'); command.add_argument('--file', type=Path, required=True, help='Authored Markdown, or - for stdin')
+    command.add_argument('--new-decision', action='append', default=[], help='Explicit actual new decision anchor to check; file addition implies no new decision')
     for name in ('revise', 'append-decision', 'select'):
         help_text = 'Append a decision; unchanged Claim role organization retains its selected assessment' if name == 'append-decision' else None
         command = commands.add_parser(name, parents=[root], help=help_text); command.add_argument('path')
         command.add_argument('--expect', type=fixed_locator, required=name != 'revise')
         if name == 'select': command.add_argument('--decision', type=fixed_locator, required=True)
         else: command.add_argument('--file', type=Path, required=True)
+        if name == 'revise': command.add_argument('--new-decision', action='append', default=[])
         if name == 'append-decision': command.add_argument('--candidate', action='store_true')
     return parser
 
@@ -115,6 +122,10 @@ def main(argv=None):
                                      source_repository=args.source_repository, correspondence=json.loads(supplied(args.correspondence)),
                                      instruction=args.instruction, initiator=args.initiator, files=args.include, timeout=args.maintenance_wait, refresh_j=args.refresh_j,
                                      mapping=json.loads(supplied(args.mapping)) if args.mapping else ())
+        elif args.command == 'import':
+            from . import importing
+            output = importing.import_content(repo, args.source, json.loads(supplied(args.plan)),
+                                              author=args.author, timeout=args.maintenance_wait)
         elif args.command == 'fetch-source':
             from ..intake import literature
             output = literature.fetch_source(args.url, args.output, root=repo.root, source_format=args.format)
@@ -137,9 +148,11 @@ def main(argv=None):
                     registry_update=json.loads(supplied(args.registry_update)) if args.registry_update else None, **options)
         else:
             if args.command == 'create':
-                doc = writer.create(repo, kind=args.kind, body=supplied(args.file), line=args.line, task=args.task, author=args.author)
+                doc = writer.create(repo, kind=args.kind, body=supplied(args.file), line=args.line, task=args.task,
+                                    author=args.author, new_decisions=args.new_decision)
             elif args.command == 'revise':
-                doc = writer.revise(repo, args.path, body=supplied(args.file), expected_current=args.expect)
+                doc = writer.revise(repo, args.path, body=supplied(args.file), expected_current=args.expect,
+                                    new_decisions=args.new_decision)
             elif args.command == 'append-decision':
                 doc = writer.append_decision(repo, args.path, decision=supplied(args.file), expected_current=args.expect, select=not args.candidate)
             else:

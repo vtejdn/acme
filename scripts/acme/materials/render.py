@@ -18,7 +18,8 @@ def views(repo):
     # Validate discovery collisions, registered original sources and numeric revision ordering.
     discovery.families(selected, reader.read, source_info=reader.source_info)
     fixed = [p for p in selected if reader.document(p).identity.kind in 'CT']
-    outputs = indexes.views(fixed, reader.read, source_info=reader.source_info)
+    outputs = indexes.views(fixed, reader.read, source_info=reader.source_info,
+                            strategy_paths=[path for path in selected if reader.document(path).identity.kind == 'S'])
     routes = [reader.document(p) for p in selected if reader.document(p).identity.kind in 'SL']
     outputs.update(navigation.views(routes, reader.read, source_info=reader.source_info,
                                     unavailable=reader.unavailable, paths=selected))

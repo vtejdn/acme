@@ -3,7 +3,9 @@
 ## Responsibility and version boundary
 
 A Task owns its mathematical question, hypotheses, completion criteria and selected lifecycle decision.
-Every local Task family has one stable E at execution/Author_E_F0001.md in every lifecycle state.
+Every ordinary individual local Task family has one stable E at execution/Author_E_F0001.md in every lifecycle state.
+A joint T is only a common contract and coordination entrance, with no E, directly associated S, team allowance or direct execution.
+Continue its goal through the actual human's selected individual T, adopted joint contract and stable E under the [Task rule](tasks.md#joint-tasks-and-participation).
 All physical Task versions, authorized resumptions and later reactivations share that address.
 Task setup prepares its minimal non-running E together with the Task; initialization supplies no research authority, budget or claim about past execution.
 A completed Task retains the same concise ended/non-running E.
@@ -35,7 +37,7 @@ Once a monitoring failure is resolved, discard its retry narrative unless a real
 
 ## Mathematics and operational entrances
 
-Each Task version may contain one useful unanchored operational link to its stable family E, outside mathematical support/review relations, in any lifecycle state.
+Each ordinary Task version may contain one useful unanchored operational link to its stable family E, outside mathematical support/review relations, in any lifecycle state.
 All other mathematical materials must not reference E, E events or administrative records as evidence, dependencies, chronology, handoff sources or side notes.
 Remove the whole administrative clause while preserving any real mathematical, reproduction or review qualification at its responsible home.
 The action guide and deterministic family address locate E without a separate navigation registry.
@@ -54,4 +56,11 @@ The optional scripts/execution.py check --task PATH checks only that selected cu
 Its --view option reads the actual WORKTREE, INDEX or fixed Git postimage, without recovering state from another view.
 It authenticates no instruction, judges no custom condition, fetches no account reading and controls no platform scheduler.
 Generic submission and ordinary prose maintenance do not scan execution histories or require E-change acknowledgments.
+For personal import, the agent reads the actual source and local execution conditions, preserves an existing E and prepares or reuses the ordinary family's one stable boundary.
+Write only the necessary effective stop, allowance and continuation conditions chosen by the agent; a new boundary remains non-running and omits unrelated source event/session history.
+Moving a Task does not automatically copy its source E, and any helper writes only the execution content or exact edits the agent explicitly prepared.
+No history classifier, retention marker, migration record or replacement archive is required.
+A source assignment still running must stop before a moved assignment obtains another writer.
+Import, participation and a new local number do not resume research, permit overlapping writers or reset a shared allowance.
+Reject a conflicting family type before changing any E or fixed contract.
 Existing exclusive-create, stale-input, expected-text and short publication-lock protections remain applicable to their concrete writes.

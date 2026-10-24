@@ -1,8 +1,9 @@
 # Current execution boundary example
 
-Use one execution/Author_E_F0001.md for every local Task family in any lifecycle state.
+Use one execution/Author_E_F0001.md for every ordinary individual local Task family in any lifecycle state.
 Replace the illustrative Task path/decision with the actual relevant selection.
 Task setup uses not-running and supplies no authority or allowance; completed families retain the same ended/non-running E.
+This template applies to ordinary individual Tasks; a joint coordination T has no E and is continued through the actual human's individual Task.
 
 ~~~markdown
 # Current execution boundary

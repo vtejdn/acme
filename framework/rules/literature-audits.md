@@ -1,6 +1,5 @@
 # Source Audit Rules
 
-<a id="default-audit-scope"></a>
 ## Default Audit Scope
 
 Literature intake and source audits **exclude associated Lean code by default**.
@@ -78,6 +77,7 @@ Explain the proof mechanism and the depth of inspection: statement only, selecte
 Identify steps and dependencies not checked.
 Record direct reading versus secondary reporting, source access limitations, edition/version, errata considered, and what evidence supports each verification fact.
 Do not infer an independent proof check from the presence of a theorem in a published source.
+Framework source reviews concern agent inspection; an independent classification requires the separate isolated mathematical context in the [review arrangements](proof-audits.md#review-arrangements), while the source author's assertions and human instructions remain distinct facts.
 
 When a source unit supports a [goal](tasks.md), route, or project claim, link the relevant IDs and say what the unit supplies.
 Identify limitations and conditions it does not supply.
@@ -105,11 +105,11 @@ When an agent recognizes a known result, apply the [source-check trigger](knowle
 Record the source's role under the [dependency distinctions](claims.md#dependencies-and-corrections).
 Recognition from memory, a theorem name, and local proof review do not themselves verify a bibliographic attribution.
 A verified source may identify the known result without being a premise of that particular proof.
-If attribution remains unverified, retain that follow-up explicitly while assessing a complete, independently supported local argument on its own evidence; do not make it conditional solely for the missing citation.
+If attribution remains unverified, retain that follow-up explicitly while assessing a complete, independently supported local argument on its own evidence; a missing attribution alone does not make that mathematical argument unresolved.
 An argument actually relying on the unverified theorem still has an unresolved mathematical input.
 
 Keep an input unresolved when its statement lacks adequate source evidence, its applicability is unchecked, a relevant objection remains, or a required local extension has not been proved.
-Claims relying on those unresolved obligations remain conditional.
+Claims whose conclusions require those unresolved obligations remain open.
 Detailed proof review is required when a suspected error, critical nonstandard input, incompatible conventions, a local extension requiring new reasoning, a relevant version discrepancy, or the explicit task makes statement and applicability checks insufficient.
 Inspect the affected steps and necessary dependencies without automatically reviewing the entire source or every reference.
 

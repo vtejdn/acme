@@ -5,9 +5,9 @@ An actual new review of fixed mathematics may add necessary evidence; retain exa
 Process announcements and link checks are not such reviews.
 Follow the [kind-specific rules](../../../framework/rules/proof-audits.md#review-scope-and-records).
 
-Independent project-review accounts belong to fixed R here, including partial, negative, unresolved and unadopted findings.
+Formal project-review findings belong to fixed R here for every actual agent relationship, including partial, negative, unresolved and unadopted findings.
 Record actual inputs, scope and relationship; location alone does not establish independence.
-Suitable self-review or unknown findings may be in R or fixed L.
+The finding records self-review, independent review or genuine older/source unknown without a C/T aggregate review grade.
 Source inspection remains in U and checker programs/data remain in J.
 See the [review rules](../../../framework/rules/proof-audits.md).
 

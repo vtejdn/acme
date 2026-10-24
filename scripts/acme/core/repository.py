@@ -5,7 +5,7 @@ module has no independent C/T record, snapshot, contribution or intake producer.
 """
 import argparse
 from contextlib import contextmanager
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 import errno
 import json
 import os
@@ -21,7 +21,7 @@ from . import identity as identity
 from ..framework import version as version
 
 MAX_BYTES = 32 * 1024 * 1024
-STAMP = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}[+-]\d{2}:\d{2}")
+STAMP = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}")
 
 
 class ResearchError(ValueError):
@@ -104,22 +104,13 @@ def write_bytes(path, data, *, exclusive=False, root=None):
             unlink(temporary, root=root)
 
 
-def zone(offset):
-    require(bool(re.fullmatch(r"[+-]\d{2}:\d{2}", offset)), "Timezone must be an offset such as +08:00.")
-    hours, minutes = map(int, offset[1:].split(":"))
-    require(hours <= 14 and minutes < 60 and (hours < 14 or minutes == 0), "Invalid timezone offset.")
-    return timezone(timedelta(minutes=(hours * 60 + minutes) * (1 if offset[0] == "+" else -1)))
-
-
-def timestamp(offset):
-    return datetime.now(zone(offset)).isoformat(timespec="minutes")
+def timestamp():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M")
 
 
 def valid_stamp(value):
     require(isinstance(value, str) and STAMP.fullmatch(value), f"Invalid minute timestamp: {value!r}")
-    parsed = datetime.fromisoformat(value)
-    zone(value[-6:])
-    return parsed
+    return datetime.strptime(value, "%Y-%m-%dT%H:%M").replace(tzinfo=timezone.utc)
 
 
 def safe_path(root, relative):
@@ -211,12 +202,11 @@ class Repository:
         self.config = read_json(self.home / "config.json", root=self.root)
         identity.key(self.config['repository'])
         identity.registry(self)
-        zone(self.config['timezone'])
 
 
     @classmethod
-    def initialize(cls, root, username, repository, offset='+08:00', url=None, **kwargs):
-        return identity.initialize(root, username, repository, offset, url, **kwargs)
+    def initialize(cls, root, username, repository, url=None, **kwargs):
+        return identity.initialize(root, username, repository, url, **kwargs)
 
 
     def actor(self):
@@ -229,7 +219,7 @@ class Repository:
 
 
     def now(self):
-        return timestamp(self.config["timezone"])
+        return timestamp()
 
 
 
@@ -274,23 +264,33 @@ def main(argv=None):
     commands = parser.add_subparsers(dest='command', required=True)
     p = commands.add_parser('init')
     p.add_argument('--username', required=True); p.add_argument('--repository', required=True)
-    p.add_argument('--timezone', default='+08:00'); p.add_argument('--url')
+    p.add_argument('--url')
     p.add_argument('--git-name'); p.add_argument('--git-email'); p.add_argument('--github-account')
     p = commands.add_parser('source-add')
     p.add_argument('--name', required=True); p.add_argument('--facts', required=True); p.add_argument('--url')
     p = commands.add_parser('source-author')
     p.add_argument('--repository', required=True); p.add_argument('--name', required=True)
     p.add_argument('--facts', required=True); p.add_argument('--author')
+    p.add_argument('--local-human', help='Explicitly adopted same-human correspondence, never inferred from a name')
     p = commands.add_parser('identity-bind'); p.add_argument('person')
     p = commands.add_parser('identity-add'); p.add_argument('person'); p.add_argument('--display-name', required=True)
     p.add_argument('--maintenance-wait', type=float, default=30)
     p.add_argument('--git-name'); p.add_argument('--git-email'); p.add_argument('--github-account')
     p = commands.add_parser('profile'); p.add_argument('--topic', choices=['writing', 'execution'], required=True)
     p.add_argument('--author'); p.add_argument('--subfield'); p.add_argument('--document')
+    p = commands.add_parser('framework-update-check', help='Read the shared daily official-version result without upgrading.')
+    p.add_argument('--force', action='store_true', help='Explicitly recheck despite the current UTC day cache.')
+    p.add_argument('--offline', action='store_true', help='Prevent the metadata request for this work round.')
+    p = commands.add_parser('framework-update-notified', help='Record a reminder actually presented to the human.')
+    p.add_argument('version', help='The newer official version actually presented.')
     args = parser.parse_args(argv)
     try:
-        if args.command == 'init':
-            repo = Repository.initialize(args.root, args.username, args.repository, args.timezone, args.url,
+        if args.command == 'framework-update-check':
+            result = version.check_update(args.root, force=args.force, offline=args.offline)
+        elif args.command == 'framework-update-notified':
+            result = version.record_update_notification(args.root, args.version)
+        elif args.command == 'init':
+            repo = Repository.initialize(args.root, args.username, args.repository, args.url,
                 git_name=args.git_name, git_email=args.git_email, github_account=args.github_account)
             result = repo.config
         else:
@@ -305,7 +305,8 @@ def main(argv=None):
                 result = external.register_repository(repo, args.name, args.facts, args.url)
             elif args.command == 'source-author':
                 from . import external
-                result = external.register_person(repo, args.repository, args.name, args.facts, args.author)
+                result = external.register_person(repo, args.repository, args.name, args.facts, args.author,
+                                                  local_human=args.local_human)
             else:
                 result = identity.register(repo, args.person, args.display_name, args.git_name, args.git_email, args.github_account, timeout=args.maintenance_wait)
         print(json.dumps(result, ensure_ascii=False, indent=2))

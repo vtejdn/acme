@@ -111,6 +111,9 @@ def families(paths_to_read, read, *, source_info=None):
         require(len(set(revisions)) == len(revisions), 'Multiple entrances own the same version: ' + family)
         ordered = sorted(entries, key=lambda doc: doc.identity.version or 0)
         entry = ordered[-1]
+        if entry.identity.kind == 'T':
+            from . import tasks
+            tasks.validate(entry, read, previous=ordered[:-1])
         require(entry.identity.kind not in 'CT' or entry.current is not None,
                 'The current family entrance needs an explicit selected decision, including after archival versions.')
         selected = None
@@ -130,5 +133,8 @@ def families(paths_to_read, read, *, source_info=None):
             row['acquisition'] = source_info(entry) if source_info else {'origin': entry.header}
         if entry.identity.kind == 'U':
             row.update(unit=entry.identity.unit, source_inspection=documents.source_unit_scope(entry))
+        if entry.identity.kind == 'T':
+            row.update(task_type=entry.task_type,
+                       joint_task=vars(entry.joint_task) if entry.joint_task else None)
         result.append(row)
     return result

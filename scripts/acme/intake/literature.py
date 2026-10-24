@@ -220,25 +220,9 @@ def prepare_sources(repo, entries, requests, text, *, registry_update=None):
 
 
 def publish_files(repo, pending, expected):
-    """Recheck captured inputs under the caller's lock; restore only our writes."""
-    for name,old in expected.items():
-        target = target_path(repo.root,name)
-        r.require((target.read_bytes() if target.exists() else None) == old,
-                  'Selected input changed during preparation: '+name)
-    written = []
-    try:
-        for name,raw in pending.items():
-            target = target_path(repo.root,name)
-            old = expected[name]
-            if old == raw: continue
-            r.write_bytes(target,raw,exclusive=old is None)
-            written.append(name)
-    except BaseException:
-        for name in reversed(written):
-            target = target_path(repo.root,name)
-            if expected[name] is None: target.unlink()
-            else: r.write_bytes(target,expected[name])
-        raise
+    """Publish through the shared guard with the actual source-store locator."""
+    from ..core.publication import publish_files as publish
+    return publish(repo, pending, expected, locate=target_path)
 
 
 def _publish(repo, entries, key, filename, raw, source_facts, registry_update=None):

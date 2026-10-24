@@ -5,6 +5,7 @@
 /.pytest_cache/
 /.venv/
 /repository/.lock
+/repository/framework-update-check.json
 # Local credentials must not enter Git history.
 /profiles/*/secrets.md
 __pycache__/
@@ -15,12 +16,11 @@ __pycache__/
 /mathematics/literature/pdf
 /mathematics/literature/**/*.pdf
 
-# Manuscript build outputs stay local, except paper/main.pdf.
+# Manuscript build outputs stay local by default; author PDF choices are document-local.
 /mathematics/manuscripts/**/build/
 /mathematics/manuscripts/**/output/
 /mathematics/manuscripts/**/_minted*/
 /mathematics/manuscripts/**/*.pdf
-!/mathematics/manuscripts/**/paper/main.pdf
 /mathematics/manuscripts/**/*.aux
 /mathematics/manuscripts/**/*.log
 /mathematics/manuscripts/**/*.toc
@@ -54,6 +54,45 @@ __pycache__/
 /mathematics/manuscripts/**/*.nlo
 /mathematics/manuscripts/**/*.nls
 /mathematics/manuscripts/**/*.nlg
+
+# Presentation build outputs stay local by default.
+/mathematics/presentations/**/build/
+/mathematics/presentations/**/output/
+/mathematics/presentations/**/_minted*/
+/mathematics/presentations/**/*.pdf
+/mathematics/presentations/**/*.aux
+/mathematics/presentations/**/*.log
+/mathematics/presentations/**/*.toc
+/mathematics/presentations/**/*.out
+/mathematics/presentations/**/*.lof
+/mathematics/presentations/**/*.lot
+/mathematics/presentations/**/*.fls
+/mathematics/presentations/**/*.fdb_latexmk
+/mathematics/presentations/**/*.synctex
+/mathematics/presentations/**/*.synctex.gz
+/mathematics/presentations/**/*.bbl
+/mathematics/presentations/**/*.blg
+/mathematics/presentations/**/*.bcf
+/mathematics/presentations/**/*.run.xml
+/mathematics/presentations/**/*.dvi
+/mathematics/presentations/**/*.xdv
+/mathematics/presentations/**/*.ps
+/mathematics/presentations/**/*.nav
+/mathematics/presentations/**/*.snm
+/mathematics/presentations/**/*.vrb
+/mathematics/presentations/**/*.idx
+/mathematics/presentations/**/*.ind
+/mathematics/presentations/**/*.ilg
+/mathematics/presentations/**/*.glo
+/mathematics/presentations/**/*.gls
+/mathematics/presentations/**/*.glg
+/mathematics/presentations/**/*.glsdefs
+/mathematics/presentations/**/*.acn
+/mathematics/presentations/**/*.acr
+/mathematics/presentations/**/*.alg
+/mathematics/presentations/**/*.nlo
+/mathematics/presentations/**/*.nls
+/mathematics/presentations/**/*.nlg
 
 # Talk build outputs stay local after relocation from manuscript projects.
 /mathematics/talks/**/build/

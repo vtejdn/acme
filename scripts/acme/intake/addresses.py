@@ -55,6 +55,20 @@ def plan(root, *, files=(), moves=None, updates=None):
     for name in files:
         file = _location(root, name)
         r.require(file.is_file(), 'Selected file is unavailable: '+name)
+        if name in moves or name in updates:
+            from ..materials import identity, documents
+            from ..core import identity as humans
+            try:
+                candidate = identity.parse(name)
+            except ValueError:
+                candidate = None
+            if candidate:
+                entrance = name
+                if candidate.kind == 'J':
+                    parts = PurePosixPath(name).parts
+                    entrance = PurePosixPath(*parts[:parts.index(candidate.name) + 1], 'readme.md').as_posix()
+                ident, _header, _body = documents.author_header(entrance, _location(root, entrance).read_text(encoding='utf-8-sig'))
+                humans.require_author(r.Repository(root), ident.author, ident.source_repository)
         if name in moves:
             destination = _location(root, moves[name])
             r.require(paths.in_pdf_store(Path(name)) == paths.in_pdf_store(Path(moves[name])),
@@ -168,6 +182,51 @@ def publish(changes, moves):
     return {'rewritten':len(changes),'relocated':len(moves)}
 
 
+def _reserve_unit_moves(root, changes, moves):
+    """Advance true destination U positions before the selected move publishes."""
+    from ..materials import identity, discovery, documents
+    selected, retiring = [], []
+    for source, destination in moves.items():
+        if not source.is_relative_to(root) or not destination.is_relative_to(root): continue
+        old_name, new_name = source.relative_to(root).as_posix(), destination.relative_to(root).as_posix()
+        old_candidate, new_candidate = identity.candidate(old_name), identity.candidate(new_name)
+        if not old_candidate or old_candidate['kind'] != 'U' or not new_candidate or new_candidate['kind'] != 'U': continue
+        old, new = identity.parse(old_name), identity.parse(new_name)
+        retiring.append(old)
+        if (identity.namespace(old), old.number) == (identity.namespace(new), new.number): continue
+        selected.append((source,new))
+    if not retiring: return
+    config_path = root/'repository/config.json'
+    config = r.read_json(config_path,root=root)
+    state = identity.material_next(config)
+    for old in retiring:
+        key = identity.namespace(old)
+        r.require(state.get(key,0) > old.number,
+                  'Initialize the retiring U namespace from an agent-confirmed issued upper bound: ' + key)
+    prepared = json.loads(changes[config_path]) if config_path in changes else config
+    identity.material_next(prepared,config)
+    reserved, positions = prepared, set()
+    for source,ident in sorted(selected,key=lambda item:(identity.namespace(item[1]),item[1].number)):
+        position = identity.namespace(ident), ident.number
+        if position in positions: continue
+        folder = root/'mathematics/audits/literature'/ident.source_key
+        existing_paths = [path.relative_to(root).as_posix() for path in folder.glob('*.md')
+                    if identity.candidate(path.relative_to(root).as_posix())
+                    and identity.candidate(path.relative_to(root).as_posix())['kind'] == 'U']
+        existing = [identity.parse(path) for path in existing_paths]
+        occupied, _ = discovery.unit_positions(existing_paths,lambda name:discovery.unit_header(root,name))
+        raw = changes.get(source,source.read_bytes()).decode('utf-8-sig')
+        _, header, _ = documents.author_header(moves[source].relative_to(root).as_posix(),raw)
+        established = occupied.get((ident.source_key,ident.number)) == discovery.unit_origin(ident,header)
+        reserved = identity.reserve(reserved,ident,existing,established=established)
+        positions.add(position)
+    if reserved['material_next'] != state:
+        # The caller holds the shared lock; publish rollback never owns this state.
+        r.write_json(config_path,{**config,'material_next':reserved['material_next']},root=root)
+    if config_path in changes:
+        changes[config_path] = r.encoded(reserved)
+
+
 def rename(root, entries, mapping, *, files=(), moves=None, updates=None):
     root = Path(root).resolve()
     moves, updates = moves or {}, updates or {}
@@ -185,6 +244,7 @@ def rename(root, entries, mapping, *, files=(), moves=None, updates=None):
     chosen = bib.parse(updated)
     if updated != original.decode('utf-8-sig'): changes[root/bib.BIB] = updated.encode('utf8')
     _check_operations(root,selected,changes,relocations)
+    _reserve_unit_moves(root,changes,relocations)
     result = publish(changes,relocations)
     entries.clear(); entries.update(chosen)
     return result

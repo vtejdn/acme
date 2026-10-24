@@ -1,22 +1,31 @@
-# acme
+# ACME: Autonomous and Collaborative Mathematical Exploration
 
-Human authors: start with the [user manual](user-manual/user-manual.md) or [中文使用手册](user-manual/用户手册.md).
+To human authors: all you need is the [user manual](user-manual/user-manual.md), [用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md) or [ユーザーマニュアル](user-manual/ユーザーマニュアル.md).
 
 This mathematical research repository uses ACME, Autonomous and Collaborative Mathematical Exploration.
-[AGENTS.md](AGENTS.md) is the short reading entrance and cross-activity guidance; the [action guide](framework/agent-actions.md) owns the function-to-action path.
-The [framework rules](framework/readme.md) govern topics, the [material format](framework/material-format.md) owns exact declarations and acquisition inputs, and [script documentation](scripts/readme.md) owns optional interfaces and effects.
+This entrance orients agents working in the existing checkout under the actual human instruction.
+At each work-round start, follow the [local-rule reading and daily official check](framework/agent-actions.md#start-a-work-round) and the [current-rule duty](framework/rules/workflow.md#proportionate-execution), independently of public-query availability.
+A newer-version reminder leaves the current assignment and upgrade authorization separate.
+[AGENTS.md](AGENTS.md) is the short reading entrance and cross-activity guidance; [agent-actions.md](framework/agent-actions.md) owns the function-to-action path.
+The [framework rules](framework/readme.md) govern each topic, the [material format](framework/material-format.md) owns exact declarations and acquisition inputs, and [script documentation](scripts/readme.md) owns optional interfaces and side effects.
 
-Use the [mathematical entrance](mathematics/readme.md) to reach actual [Task contracts](mathematics/tasks/index.md), [Claim assessments](mathematics/claims/index.md) and [strategies](mathematics/strategies/index.md).
-Responsible materials own mathematics, status and evidence; indexes are navigation, and computational observations retain their checked scope.
-[Manuscripts](mathematics/manuscripts/index.md) present selected mathematics and document-local reviews.
+## Responsible materials
 
-The [identity rules](framework/rules/identity.md) govern human registration, checkout binding and direct collaboration.
-An explicitly bootstrapped author is registered and bound; an authorless export starts empty and unbound.
-No source personal policies, signatures or research/execution authorizations were copied.
-Ordinary installed-rule use and separately authorized maintenance follow [instruction scope](framework/rules/preferences.md#instruction-scope).
+Use [mathematics/readme.md](mathematics/readme.md) to reach Task contracts, Claim assessments, strategies and exact supporting materials.
+Current mathematical status and authority belong to their responsible materials and selected decisions; indexes supply navigation.
+Keep precise statements, complete necessary arguments, source scope, useful failures and actual review limits inspectable.
+Distinguish conjecture, finite observation, self-reviewed proof and independently reviewed result.
+
+| Entrance | Responsible scope |
+| --- | --- |
+| [Framework](framework/readme.md) and [action guide](framework/agent-actions.md) | Applicable action, topic rules and optional tools |
+| [Repository identity](repository/readme.md), [identity rules](framework/rules/identity.md) and [preferences](framework/rules/preferences.md) | Human registration, operator attribution, checkout binding, collaboration and scoped choices |
+| [Tasks](mathematics/tasks/index.md), [Claims](mathematics/claims/index.md), [strategies](mathematics/strategies/index.md) | Exact authorized objectives, assessments and routes |
+| [Literature](mathematics/literature/readme.md) and [manuscripts](mathematics/manuscripts/index.md) | Actual source facts, inspected mathematics and document-local work |
+| [Script interfaces](scripts/readme.md) | Explicit mechanical operations and side effects |
+
+The [export manifest](framework/export-manifest.json) owns the installed framework version.
 
 Distinct repositories reuse chosen findings under [intake rules](framework/rules/intake.md), with actual provenance, private-literature exclusion and separate [output-attachment responsibilities](framework/rules/intake.md#computation-output-attachments).
 
-The About and AI disclosure documents retain their original provenance; copying them does not confer public status.
-See [About](user-manual/about.md) and [AI disclosure](user-manual/ai-disclosure-for-human-authors.md).
 For material edits, follow the [record and maintenance rules](framework/rules/records.md#substantive-material-retention) and [writing rules](framework/rules/writing.md).

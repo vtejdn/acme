@@ -1,6 +1,7 @@
 # LF line endings for text files across platforms; binary bytes stay untouched.
 .gitattributes text eol=lf
 .gitignore text eol=lf
+LICENSE text eol=lf
 *.md text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.md.in text eol=lf
 *.py text eol=lf

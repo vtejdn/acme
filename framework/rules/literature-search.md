@@ -1,7 +1,5 @@
 # Literature Search
 
-<a id="autonomous-literature-search"></a>
-
 ## Autonomous Literature Search
 
 For local source discovery, use the [edition-specific contents routes](literature.md#searchable-contents): known work through its registry artifact account, unknown topic through ordinary text search of the contents collection.

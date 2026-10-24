@@ -105,6 +105,12 @@ def validate_routes(documents, read, *, paths=()):
                 'Ambiguous route identity: ' + document.path)
         families[key] = document.path
         loaded[document.path] = route(document)
+        for association in loaded[document.path].tasks:
+            task = materials.parse(association.target.path, read(association.target.path))
+            require(task.task_type == 'ordinary' and not task.identity.source_repository,
+                    'A Strategy associates with a local individual Task, never a joint Task.')
+            require(not association.target.anchor or links.anchor_occurrences(task.text)[association.target.anchor] == 1,
+                    'Strategy Task anchor is absent or ambiguous.')
 
     for document in documents:
         if document.identity.kind == 'S':
@@ -129,7 +135,8 @@ def validate_routes(documents, read, *, paths=()):
                         raise ValueError('Unresolved route parent.')
                 target = loaded[parent.path].document
                 require(target.identity.kind == 'S', 'Route parent must name a Strategy.')
-                require(parent.anchor in links.anchors_text(target.text), 'Route parent anchor missing.')
+                require(links.anchor_occurrences(target.text)[parent.anchor] == 1,
+                        'Route parent anchor missing or ambiguous.')
                 visit(parent.path)
             except ValueError as error:
                 raise ValueError(place + ': ' + str(error)) from error
@@ -218,8 +225,8 @@ def views(documents, read, *, source_info=None, unavailable=None, paths=()):
             loaded[loc.path] = materials.parse(loc.path, read(loc.path))
         document = loaded[loc.path]
         register_task(document)
-        require(not loc.anchor or loc.anchor in links.anchors_text(document.text),
-                'Navigation target anchor missing: ' + loc.path + '#' + loc.anchor)
+        require(not loc.anchor or links.anchor_occurrences(document.text)[loc.anchor] == 1,
+                'Navigation target anchor missing or ambiguous: ' + loc.path + '#' + loc.anchor)
         return document
 
     hierarchy = validate_routes(documents, read, paths=paths)

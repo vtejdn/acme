@@ -2,7 +2,7 @@
 
 ## What an agent harness is
 
-An agent harness is the runtime layer that turns a large language model into a working agent.
+An agent harness is software that lets you give a large language model a task and allows it to work with files and other tools.
 The model is the engine; the harness is the chassis, gearbox and steering wheel.
 The same model can behave very differently under different harnesses because the harness controls tools, context, permissions and the execution loop.
 
@@ -19,17 +19,18 @@ A typical harness provides:
 This list is limited to the mainstream harnesses that provide a standalone app which can be downloaded, installed and used directly.
 Model support varies by plan, region and release, so check the official documentation before committing to a setup.
 
-| Harness | Interface | Models and providers | Notes |
-| --- | --- | --- | --- |
-| Claude Code | Desktop app, CLI, IDE extensions | Anthropic Claude (Opus, Sonnet, Haiku) through the Anthropic API, Amazon Bedrock or Google Vertex AI | Official support focuses on Claude; community routers can reach other models but are not official |
-| DeepSeek Harness (DSH) | Desktop app, Web GUI, CLI | DeepSeek series | Other providers depend on its configuration |
-| Factory Droid | Desktop app, CLI, CI | Claude, GPT and Gemini models, configured per enterprise | Commercial |
-| Goose | Desktop app, CLI | Anthropic, OpenAI, Google, Ollama and OpenRouter | Open source |
-| OpenAI Codex | Desktop app, CLI, IDE extension, cloud workspace | OpenAI GPT and Codex models | Open-source models can be added through a custom provider |
-| OpenCode | Desktop app, terminal TUI and CLI | More than 75 providers through Models.dev, including OpenAI, Anthropic, Google, DeepSeek and local models | Open source |
+| Harness | Models and providers | Notes |
+| --- | --- | --- |
+| Claude Code | Anthropic Claude (Opus, Sonnet, Haiku) through the Anthropic API, Amazon Bedrock or Google Vertex AI | Official support focuses on Claude; community routers can reach other models but are not official |
+| DeepSeek Harness (DSH) | DeepSeek series | Other providers depend on its configuration |
+| Factory Droid |  Claude, GPT and Gemini models, configured per enterprise | Commercial |
+| Goose | Anthropic, OpenAI, Google, Ollama and OpenRouter | Open source |
+| OpenAI Codex | OpenAI GPT and Codex models | Open-source models can be added through a custom provider |
+| OpenCode | More than 75 providers through Models.dev, including OpenAI, Anthropic, Google, DeepSeek and local models | Open source |
 
-## IDEs with harness support
+## <a id="notion-ide"></a>IDEs with harness support
 
+An IDE (integrated development environment) is an application that lets you edit files, run programs and manage a project in one workspace.
 The following IDEs can host one or more harnesses, either as built-in agents or as installable plugins.
 The plugin column lists representative integrations, not a guarantee of compatibility; check the IDE marketplace and the harness documentation.
 

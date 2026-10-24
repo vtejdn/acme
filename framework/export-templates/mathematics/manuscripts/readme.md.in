@@ -4,7 +4,10 @@ See the [current index](index.md) and [framework rules](../../framework/readme.m
 
 Create a manuscript project only when authorized writing needs it.
 Use the assigned local Task family as its root, such as `Author_T_F0001/`.
-Manuscript projects and source Tasks are outside mathematical intake.
+Manuscript projects and another human's ordinary Task/E execution authority are outside mathematical intake.
+A necessary fixed joint coordination contract may be received for actual continued collaboration under the [joint-Task conditions](../../framework/rules/tasks.md#joint-tasks-and-participation), with no E or adoption of another participant's Task, strategies or execution authority.
+Your own selected Tasks and manuscript sources, settings and necessary dependencies may be imported under the [personal-import rule](../../framework/rules/intake.md#personal-import), preserving authorship and effective execution conditions.
+Importing your own manuscript creates no unrequested Task or execution authority.
 Put the project title, responsible owner, exact Task/material inputs and document/build entries in its README.
 Standard children such as `paper/main.tex` inherit the unique project attribution without changing publication bylines or repeating the root name.
 

@@ -1,6 +1,5 @@
 # Research Strategies
 
-<a id="autonomous-strategy-management"></a>
 ## Autonomous Strategy Management
 
 Within an authorized research goal, agents may **add, revise, split, merge, reprioritize, pause, and restart strategies autonomously**.
@@ -23,7 +22,7 @@ Route management preserves the original objective, actual mathematical review an
 
 <a id="writable-route-boundary"></a>
 Route revisions and predecessor-disposition changes below apply to local writable materials.
-Cross-author route administration follows the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts); preserve substantive mathematics and coordinate concurrent edits.
+Route body maintenance belongs to the same established human under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts); other humans contribute through their own materials and references.
 Publish a substantive contribution under its responsible human's own material identity with exact links, and apply the actual conflict procedure when needed.
 When deriving a local successor from a public source material, record the precise source revision or identifiable formulation and the obligations actually carried in the local successor.
 Do not change the source route's disposition, priority or history.
@@ -79,6 +78,9 @@ Cross-route and cross-Task reuse uses precise references rather than additional 
 Each child retains explicit Task associations and the exact scope served, including any additional Task.
 Public source Strategies remain at their original repository/revision/path; a local adaptation uses its own S and an explicit source reference.
 S is not an acquired material kind.
+Needed external S mathematics may be explicitly adapted by intake into an appropriate fixed receiving home, preserving its actual source scope.
+An S associates with an ordinary individual Task, never directly with a joint coordination T.
+For a shared goal, use the actual relationship joint T to individual T to that individual's S, compare collaborators' usable routes and failures, and choose useful diversity without forbidding replication.
 
 Ordinary child selection is covered by the existing Task authorization.
 A parent link cannot activate an unrelated Task, expand its contract or resume a stopped execution run.
@@ -105,7 +107,6 @@ Public source references remain explicit repository/revision/path locators; malf
 - Keep the route concise and link full proofs, computations and reviews.
   Its own fields govern route navigation; a derived index row cannot change them.
 
-<a id="rolling-document-regime"></a>
 ### Rolling-Document Regime
 
 A strategy file is a rolling document, not a versioned material: it never mints a `name_vN.md` version file.

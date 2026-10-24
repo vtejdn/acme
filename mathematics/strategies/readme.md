@@ -16,7 +16,8 @@ A local successor may reference a public source route without changing its dispo
 Record its precise source formulation and carried obligations under the [route ownership boundary](../../framework/rules/strategies.md#writable-route-boundary).
 Reciprocal updates belong only in locally writable materials; matching authorship does not make a public source writable.
 
-Routine return-link, path and format maintenance in another registered author's local writable S needs no actor change, duplicate feedback, approval or warning log.
+Authored S bodies are revised only by the established same human; shared registration and derived navigation retain their normal maintenance scope.
 Substantive contributions use the responsible human's own numbered materials linked to the original under the [identity rule](../../framework/rules/identity.md).
 Tool capability does not authorize substantive cross-author rewriting or takeover of another human's Task/E.
 Received originals keep their separate provenance and feedback boundary.
+For a joint goal, each S belongs to the collaborator's ordinary individual T; compare useful existing routes and failures, with intentional replication and cross-checking still permitted.

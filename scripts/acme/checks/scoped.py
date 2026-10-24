@@ -1,8 +1,7 @@
-"""Check explicit selected material fields and affected Git-tree references."""
-from pathlib import Path, PurePosixPath
+"""Check explicit selected material fields and changed Git-tree references."""
+from pathlib import Path
 import re
 import subprocess
-from urllib.parse import unquote
 from ..core import repository as r
 from ..core import identity as identity
 from ..core import links as links
@@ -32,40 +31,6 @@ def delta(tree, before):
     changed.update(tree.names - before.names)
     changed.update(before.names - tree.names)
     return changed, renames
-
-
-def incoming_candidates(tree, targets):
-    """Git text discovery only: no filesystem walk and no validation of candidates."""
-    if not targets:
-        return set()
-    # Markdown destinations permit arbitrary percent encoding, including ASCII
-    # letters normally left literal by quote(). Discover those exact basename
-    # spellings too; subsequent link parsing still decides actual relationships.
-    def spelling(value):
-        def encoded(char):
-            return ''.join('%' + ''.join('[' + digit.lower() + digit.upper() + ']'
-                if digit in 'ABCDEF' else digit for digit in f'{byte:02X}')
-                for byte in char.encode('utf-8'))
-        return ''.join('(' + re.escape(char) + '|' + encoded(char) + ')' for char in value)
-
-    patterns = [spelling(Path(target).name) for target in sorted(targets)]
-    patterns += [spelling(Path(target).stem) for target in sorted(targets) if target.endswith('.json')]
-    if len(targets) > 80 or (len(targets) > 1 and sum(map(len, patterns)) > 12000):
-        ordered = sorted(targets)
-        middle = len(ordered) // 2
-        return incoming_candidates(tree, ordered[:middle]) | incoming_candidates(tree, ordered[middle:])
-    args = ['git', 'grep', '-I', '-l', '-z', '-E']
-    if tree.ref == 'INDEX':
-        args.append('--cached')
-    for pattern in patterns:
-        args += ['-e', pattern]
-    if tree.ref not in ('INDEX', 'WORKTREE'):
-        args += [tree.ref]
-    args += ['--', '*.md', 'intake/*.json']
-    result = subprocess.run(args, cwd=tree.root, capture_output=True)
-    r.require(result.returncode in (0, 1), 'Cannot discover direct references: ' + result.stderr.decode(errors='replace'))
-    prefix = tree.ref + ':'
-    return {p.removeprefix(prefix) for p in result.stdout.decode().split('\0') if p}
 
 
 def view_for(tree):
@@ -149,7 +114,7 @@ def external_references(tree, selections):
         item = value['items'][int(match[1])]
         if match[3] == 'repository': return item['source']['repository'], None
         if match[3] == 'author':
-            r.require(item['kind'] in {'C', 'R', 'L', 'J'}, 'This item kind has no external author field.')
+            r.require(item['kind'] in {'C', 'T', 'R', 'L', 'J'}, 'This item kind has no external author field.')
             source = item['source']
             r.require(isinstance(source['author_name'], str) and source['author_name'].strip(),
                       'source.author_name needs the qualified original name.')
@@ -170,10 +135,10 @@ def external_references(tree, selections):
                 ident, values, _ = field(path, 'identity', documents.author_header, path, raw)
                 if ident.source_repository:
                     field(path, 'source_repository', external.repository, view, ident.source_repository)
-                    if ident.kind in 'CRLJ':
-                        original = names.parse(values['source_material'])
+                    if ident.kind in 'CTRLJ':
+                        original = names.parse(values['source_material']) if 'source_material' in values else None
                         field(path, 'author/source_material', external.person,
-                              view, ident.author, ident.source_repository, original.author)
+                              view, ident.author, ident.source_repository, original.author if original else None)
                 checked.append({'path': path, 'field': 'identity'})
             if 'source_links' in selected:
                 for start, _end, href in links.markdown_link_spans(raw):
@@ -211,10 +176,13 @@ def validate(tree, parents, author, authors_by_path=None):
     visited, owners, notices = set(), set(), []
     external_checked = external_changes(tree, parents, changed)
     visited.update(external_checked)
+    config_path = 'repository/config.json'
+    if config_path in changed:
+        names.material_next(view.config)
     for parent in parents:
-        config_path = 'repository/config.json'
         if config_path in parent.names:
             old = parent.json(config_path)
+            if config_path in changed: names.material_next(view.config, old)
             people_path = 'repository/people.json'
             previous = {p['id']: p for p in parent.json(people_path)['people']}
             current = {p['id']: p for p in identity.registry(view)['people']}
@@ -223,22 +191,34 @@ def validate(tree, parents, author, authors_by_path=None):
             for person in current.values():
                 for sig in person.get('git_identities', []):
                     r.require(signatures.get((sig['name'], sig['email'].casefold()), person['id']) == person['id'], 'Git identity reassigned to a different human.')
-    r.zone(view.config['timezone'])
     registry = 'mathematics/literature/registry.md'
     def local_only_location(path):
-        is_literature = r.paths.in_pdf_store(path)
-        if not is_literature and not path.lower().endswith('.pdf'): return False
-        r.require(is_literature or path.startswith('mathematics/manuscripts/'), 'Misplaced PDF: ' + path)
+        if not r.paths.in_pdf_store(path): return False
         label = 'PDF' if path.lower().endswith('.pdf') else 'source file'
         r.require(path not in tree.names, 'Local-only ' + label + ' must not be tracked: ' + path)
-        if is_literature: r.paths.source_path(tree.root, path)
         return True
     for path in sorted(tree.names):
         if r.paths.in_pdf_store(path): local_only_location(path)
     for path in sorted(changed & tree.names):
         local_only_location(path)
+        if re.fullmatch(r'execution/[^/]+_E_[A-Z][0-9]+\.md', path):
+            from ..execution import records
+            records.validate(view, records.parse(path, text(path)), path)
         if path.startswith('intake/') and path.endswith('.json'):
             value = tree.json(path); intake.validate_operation(view, path, value)
+            def selection(item):
+                source, local = item['source'], item['local']
+                return (item['kind'], source['repository'], source['revision'], source['path'],
+                        source.get('anchor', ''), local.get('anchor', ''))
+            prior_selections = set()
+            for parent in parents:
+                old_path = path if path in parent.names else next((old for old, new in renames.items()
+                                                                  if new == path and old in parent.names), None)
+                if old_path:
+                    prior_selections.update(selection(item) for item in parent.json(old_path)['items'])
+            added = [item for item in value['items'] if selection(item) not in prior_selections]
+            if added:
+                intake.validate_operation(view, path, {**value, 'items': added}, new_selection=True)
             if not any(path in parent.names for parent in parents):
                 r.require(value['recorded_by'] in (authors_by_path or {}).get(path, {author}), 'Intake recorder differs from the actual contributor.')
             visited.add(path)
@@ -262,50 +242,89 @@ def validate(tree, parents, author, authors_by_path=None):
                     for old_key in bib.parse(text(bib.BIB, parent)).keys() - current_bib.keys():
                         old_units = [p for p in tree.names if p.startswith('mathematics/audits/literature/' + old_key + '/')]
                         r.require(not old_units, 'Key maintenance left earlier source-unit history under the old key: ' + ', '.join(old_units))
-    interfaces = set()
-    for parent, (paths, _) in zip(parents, deltas):
-        for path in paths & parent.names:
-            removed = path not in tree.names
-            anchors_removed = markdown(path) and not removed and parent.anchors(path) - tree.anchors(path)
-            decision_changed = False
-            if not removed and path in canonical and names.parse(path).kind in 'CT':
-                decision_changed = documents.parse(path, text(path, parent), legacy=True).current != reader.document(path).current
-            if removed or anchors_removed or decision_changed: interfaces.add(path)
-            if removed:
-                for directory in PurePosixPath(path).parents:
-                    if directory.as_posix() != '.' and not any(p.startswith(directory.as_posix() + '/') for p in tree.names):
-                        interfaces.add(directory.as_posix())
-    incoming = incoming_candidates(tree, interfaces)
-    # Git grep omits new worktree files. Only interface changes require a scan.
-    if interfaces and tree.ref == 'WORKTREE':
-        tracked = set(subprocess.run(['git', 'ls-files', '-z'], cwd=tree.root, capture_output=True, check=True).stdout.decode().split('\0'))
-        tokens = {PurePosixPath(path).name for path in interfaces}
-        incoming.update(path for path in tree.names - tracked if markdown(path) and any(token in unquote(text(path)) for token in tokens))
-    direct = {path for path in incoming & canonical if any(target in interfaces for target, _ in reader.destinations(path, text(path)))}
-    selected = (changed | direct) & canonical
+    selected = changed & canonical
     siblings = set()
     for path in selected:
         siblings.update(discovery.selected(canonical, family=names.parse(path)))
     if siblings: discovery.families(siblings, reader.read, source_info=reader.source_info)
     for path in sorted(selected):
         doc = reader.check(path); owners.add(path)
+        contributors = (authors_by_path or {}).get(path, {author})
+        if not doc.identity.source_repository:
+            r.require(doc.identity.author in contributors,
+                      'Authored material belongs to its actual human; another human corrects it in a separate document: ' + path)
+        elif any(path in parent.names and tree.bytes(path) != parent.bytes(path) for parent in parents):
+            same_human = identity.source_author(view, doc.identity.author, doc.identity.source_repository).get('local_human')
+            r.require(same_human in contributors,
+                      'Changing a received authored body requires adopted same-human correspondence: ' + path)
+        if doc.identity.kind == 'T':
+            from ..materials import tasks
+            for parent in parents:
+                prior_tasks = [documents.parse(candidate, text(candidate, parent))
+                               for candidate in discovery.selected(parent.names, family=doc.identity)]
+                tasks.validate(doc, reader.read, previous=prior_tasks)
+        # Fixed versions retain a family; a genuinely new address must also
+        # respect the actual preimage's issued bound, including retired gaps.
+        def same_position(candidate):
+            if doc.identity.kind == 'U':
+                item = names.candidate(candidate)
+                return (item is not None and item['kind'] == 'U'
+                        and item['source_key'] == doc.identity.source_key and item['number'] == doc.identity.number)
+            return names.in_namespace(candidate, family=doc.identity)
+        existing = any(any(same_position(candidate) for candidate in parent.names) for parent in parents)
+        if names.namespace(doc.identity) is not None and not existing:
+            established = False
+            if doc.identity.source_repository:
+                for parent in parents:
+                    if config_path not in parent.names: continue
+                    for _record, operation in intake.operations(view_for(parent)):
+                        for item in operation['items']:
+                            if not isinstance(item, dict) or item.get('kind') != doc.identity.kind: continue
+                            local, source = item.get('local', {}), item.get('source', {})
+                            if (not isinstance(local, dict) or not isinstance(local.get('path'), str)
+                                    or not same_position(local['path'])): continue
+                            r.require(isinstance(source, dict), 'Missing selected original-family correspondence: ' + path)
+                            original = (source.get('repository'), names.parse(source['path']).family)
+                            if 'source_material' in doc.header:
+                                r.require(original == documents.original_family(doc),
+                                          'Established receiving position belongs to another original family: ' + path)
+                            else:
+                                r.require(source.get('author') == doc.identity.author
+                                          and names.parse(local['path']).family == doc.identity.family,
+                                          'A combined receiving family retains its actual single author and per-unit accounts.')
+                            established = True
+            for parent in parents or (None,):
+                names.check_issued(doc.identity, view.config,
+                    previous=parent.json(config_path) if parent is not None and config_path in parent.names else None,
+                    established=established)
         if path not in changed: continue
+        # Local C/T decisions and explicitly declared R finding scopes use the
+        # actual preimage; other material kinds do not author these declarations.
+        if doc.identity.kind not in 'CTR' or doc.identity.source_repository:
+            visited.add(path)
+            continue
         previous = []
         for parent in parents:
             old_path = path if path in parent.names else next((old for old, new in renames.items() if new == path and old in parent.names), None)
+            if old_path is None:
+                prior = [candidate for candidate in discovery.selected(parent.names, family=doc.identity)
+                         if names.parse(candidate).version < doc.identity.version]
+                if prior: old_path = documents.current(prior, doc.identity.family)
             if old_path:
                 old = documents.parse(old_path, text(old_path, parent), legacy=True)
                 if old.identity.family == doc.identity.family: previous.append((old, parent))
-        known = set().union(*(set(old.decisions) for old, _parent in previous)) if previous else set()
-        if doc.identity.kind in 'CT' and not doc.identity.source_repository:
-            for anchor in doc.decisions.keys() - known:
-                for old, parent in previous or [(None, None)]:
-                    review.check_decision(doc, doc.decisions[anchor], reader.read,
-                        repo=view,
-                        previous=old, previous_read=(lambda path, parent=parent: text(path, parent)) if parent else None)
+        if doc.identity.kind == 'R':
+            for old, _parent in previous or [(None, None)]:
+                review.check_findings(doc, previous=old)
+            visited.add(path)
+            continue
+        # A file/anchor difference does not date a mathematical decision or
+        # establish a new acceptance. Agents choose new-decision checks at the
+        # actual content scope; generic views retain historical precision.
         visited.add(path)
     def link_check(owner, target, anchor):
         r.paths.check_public_target(target)
+        if r.paths.in_pdf_store(target): return
         if r.paths.in_computation_outputs(target):
             candidate = r.safe_path(tree.root, target)
             present = candidate.is_file() if tree.ref == 'WORKTREE' else target in tree.names
@@ -315,20 +334,18 @@ def validate(tree, parents, author, authors_by_path=None):
         r.require(tree.modes.get(target) not in {'120000', '160000'}, 'Linked target is not an ordinary file: ' + target)
         if target == '.' or (target not in tree.names and any(p.startswith(target.rstrip('/') + '/') for p in tree.names)): return
         r.require(target in tree.names, owner + ': missing local target: ' + target)
-        r.require(not anchor or not target.endswith('.md') or anchor in tree.anchors(target), owner + ': missing anchor: ' + target + '#' + anchor)
-    for path in sorted((changed & tree.names) | incoming):
+        if anchor and target.endswith('.md'):
+            count = tree.anchor_counts(target)[anchor]
+            r.require(count == 1, owner + (': missing anchor: ' if not count else ': ambiguous anchor: ') + target + '#' + anchor)
+    for path in sorted(changed & tree.names):
         if markdown(path):
             raw = text(path)
-            if path in changed: r.require(not re.search(r'[ \t]+$', raw, re.M), path + ': trailing whitespace')
-            if path in changed:
-                outgoing = changed_registry(tree, parents, path) if path == registry else raw
-                for destination in reader.destinations(path, outgoing):
-                    link_check(path, *destination)
-            if path in incoming:
-                for target, anchor in reader.destinations(path, raw):
-                    if target in interfaces: link_check(path, target, anchor)
-            if path in changed: visited.add(path)
-        elif path in changed and path.endswith('.py'): ast.parse(tree.bytes(path), filename=path)
+            r.require(not re.search(r'[ \t]+$', raw, re.M), path + ': trailing whitespace')
+            outgoing = changed_registry(tree, parents, path) if path == registry else raw
+            for destination in reader.destinations(path, outgoing):
+                link_check(path, *destination)
+            visited.add(path)
+        elif path.endswith('.py'): ast.parse(tree.bytes(path), filename=path)
     return {'materials': len(owners), 'changed_paths': len(changed), 'checked_items': len(visited),
             'external_table_files': len(external_checked),
-            'reverse_interfaces': len(interfaces), 'reverse_candidates': len(incoming), 'notices': sorted(set(notices))}
+            'notices': sorted(set(notices))}

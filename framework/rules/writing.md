@@ -3,6 +3,10 @@
 Apply the [common sentence-oriented source layout](organization.md#sentence-oriented-source-layout) to maintained prose, preserving mathematical and typesetting structure.
 This shared format rule does not change the writing-choice hierarchy.
 
+Apply these general mathematical writing rules and the responsible author's author-wide, applicable subfield and manuscript-specific choices under the [four writing layers](preferences.md#scope-and-adoption) to all maintained natural-language prose under [mathematics/manuscripts/](../../mathematics/manuscripts/), not only prose compiled into TeX.
+This includes project and document `readme.md`, `writing.md`, `conventions.md`, `organization.md`, `review.md`, `citation.md` and prose in TeX sources; it governs terminology, notation and style in those records without changing their evidence, scope, findings or file responsibilities.
+Structured metadata, BibTeX fields, formulas, code, exact source quotations, acquired originals and generated outputs retain their native or responsible rules, while prose surrounding them remains governed by these writing rules.
+
 These general defaults apply to mathematical accuracy, necessary assumptions and conventions, logical justification and truthful attribution.
 Follow the [project and document requirements](#projects-and-documents) and the [four writing layers](preferences.md#scope-and-adoption) for the responsible author's actual choices.
 An author without a profile uses these general standards and any explicit manuscript choices; no other author's defaults are inherited.
@@ -12,17 +16,18 @@ Canonical [references.bib](../../mathematics/literature/references.bib) owns bib
 Source observations in responsible source records are evidence, not an additional policy layer.
 Keep a manuscript's choices at its existing [writing-choice home](#document-choices-and-final-review).
 
-<a id="projects-and-documents"></a>
 ## Projects and Documents
 
 Use one manuscript project per user-defined research goal by default, named by its assigned local Task family, such as `Author_T_F0001/`.
-Source Tasks and manuscript projects are outside mathematical intake.
+Another human's ordinary Task/E authority and manuscript projects are outside mathematical intake; own selected manuscripts may use [personal import](intake.md#personal-import).
 Use the actual author-designated line and numeric serial from the [Task index](../../mathematics/tasks/index.md).
 Omit a physical-version or topic suffix from the project root and put its title in the README.
 Create a project when manuscript work is needed within the user's authorized scope; a recorded goal does not require an empty manuscript project.
 
 A user may explicitly designate another home or directory name for a talk or presentation.
 Preserve that choice and apply the same author, source, writing, build and review responsibilities there; a presentation does not require a new Task merely to obtain a Task-named directory.
+Own manuscript import includes the selected active source chain, required figures, bibliography and mathematical support in an appropriate existing or designated receiving home, without sibling documents or an unrequested Task.
+Preserve document choices and actual review scope, adapt entrances and build paths, and run proportionate affected local build checks without treating a source build as a successful receiving build.
 Writing context and document navigation may link related authored documents, but authoritative C/L/U/R/J evidence remains independent of mutable presentation frames, draft theorem numbers and document-local review details.
 
 Inside each project, give each independently compiled TeX document its own purpose-named directory, such as `paper/`, `supplement/` or `research-note/`.
@@ -44,11 +49,11 @@ mathematics/manuscripts/
         introduction.tex
         main-result.tex
       figures/
-      main.pdf               # Local generated output; ignored by Git.
+      main.pdf               # Generated output; ignored by default.
     supplement/
       readme.md
       main.tex
-      main.pdf               # Local generated output; ignored by Git.
+      main.pdf               # Generated output; ignored by default.
 ```
 
 The document directory is the unit of compilation.
@@ -210,7 +215,6 @@ If different results from one source support different steps, make those corresp
 Distinguish terminology or background sources, mathematical results used in the argument and further deductions made in the present paper.
 Do not repeat explanations where a citation's role is already clear.
 
-<a id="community-conventions"></a>
 ## Community Conventions
 
 Apply actual adopted audience and terminology choices through the [scope rules](preferences.md#scope-and-adoption).
@@ -306,7 +310,6 @@ Style consultation and bibliography-only work use this sequence proportionately;
 Missing PDF bytes do not block unrelated work, while an unavailable indispensable passage remains a specific unresolved input.
 Neither registration nor a successful tool check establishes source identity, mathematical correctness, proof inspection or prose-reuse permission.
 
-<a id="citations-notation-and-versions"></a>
 ## Citations, Notation, and Versions
 
 Use persisted canonical citation keys and complete bibliographic fields in the repository's [references.bib](../../mathematics/literature/references.bib).
@@ -336,10 +339,10 @@ Distinct standalone documents or substantively different presentations may have 
 ## Truthful Review Scope
 
 Apply the author's actual writing and review procedures.
-Record what was checked, against which manuscript revision, with its limits and unresolved findings.
+Record what was checked, against which current manuscript revision, with its limits and unresolved findings.
 Claim whole-manuscript coverage only after that coverage was completed.
 A local check, successful build or style exemplar cannot establish whole-manuscript citation completeness or mathematical proof validity.
-Preserve prior review facts and explain corrections truthfully through the existing manuscript review record.
+When a check corrects the current text, record that finding truthfully in the current review entry rather than retaining the superseded review as history.
 No additional policy engine or per-term register is required.
 
 ## Document Choices and Final Review
@@ -374,7 +377,6 @@ Manuscript drafting and revision have the following execution and completion req
    Do not substitute reading the rules, pointing to an existing rule or a successful build for resolving a known violation.
    Do not report the requested revision complete while known violations within its scope remain unresolved.
 
-<a id="reproducible-local-builds"></a>
 ## Reproducible Local Builds
 
 Build each document from its own directory.
@@ -414,39 +416,45 @@ Its run products stay in the ignored `build/` workspace.
 The supplement README or a paper appendix maps the paper's proposition and equation numbers to what each script verifies, how to run it and the expected output.
 Certificate data, the machine-readable form of the paper's tables, travels with the manuscript attachment.
 
-<a id="files-kept-local"></a>
 ## Files Kept Local
 
-All PDFs in manuscript and author-designated presentation homes, including `mathematics/manuscripts/` and `mathematics/talks/`, and all TeX compilation products stay local and must not be committed or pushed.
-This includes PDFs used as figure inputs, intermediate output, logs, bibliography output, synchronization data and build caches.
-Retain editable figure sources or non-PDF inputs and document how any needed PDF figures are regenerated locally.
+Document PDFs and TeX compilation products stay local by default.
+The responsible author may explicitly choose which manuscript or presentation PDFs are eligible for Git tracking in their applicable author-wide writing profile or more specific document choices under the [preference hierarchy](preferences.md#scope-and-adoption).
+That choice covers only the stated author, documents and PDF paths; non-PDF compilation products remain local.
+Keep editable figure sources or other required inputs and document how local PDF figures are regenerated.
 
-The root [Git ignore rules](../../.gitignore) cover manuscript PDFs, standard auxiliary extensions and document build/cache directories.
-Standard TeX outputs alongside the source are already covered.
-Keep nonstandard inspection artifacts in an ignored `build/` subdirectory or extend the scoped ignore rules before generating them elsewhere.
-Retain the `build/` ignore rule for historical artifacts and computational reproduction workspaces.
-Do not force-add ignored outputs.
-Git ignore rules do not remove files already tracked, so inspect staged filenames before committing and correct any accidental tracking without deleting needed local source files.
+The root [Git ignore rules](../../.gitignore) provide generic defaults for manuscript, presentation and still-applicable talk collections, including PDFs, standard auxiliary extensions and build/cache directories.
+For an actual author PDF choice, prepare a small document-local `.gitignore` containing only the needed negated PDF path.
+Do not change generic defaults into an all-author exception or force-add an output without an applicable author choice.
+Read the actual responsible author and their selected preference before preparing files for delivery; extension and conventional directory alone do not decide permission.
+Git ignore rules do not remove files already tracked, so inspect the selected filenames and correct accidental tracking without deleting needed local files.
 
-The ignore rules cover the existing manuscript and presentation collections; another explicitly designated document home follows the same local-output duty.
-Original source PDFs in `mathematics/literature/` retain their existing acquisition and version rules.
-Local compilation and source versioning do not constitute journal submission or publication; those actions follow the repository's existing authorization rules.
+Standard TeX outputs alongside the source are covered by the defaults.
+Keep nonstandard inspection artifacts in an ignored `build/` subdirectory or extend scoped ignores before generating them elsewhere.
+Another author-designated document home follows the same duty to prepare its applicable ignores before generation.
+Personal PDF choices and document-local exceptions are not copied by a clean framework export.
+The private literature/source-store exclusions remain unchanged and no author-document choice permits source-store publication.
+Local compilation, PDF eligibility and source versioning do not authorize commit, push, journal submission or publication.
 
 <a id="manuscript-review-and-mathematical-provenance"></a>
-<a id="manuscript-review-and-citation-records"></a>
 ## Manuscript Review and Citation Records
 
 For drafting and revision, the current working manuscript is authoritative for statements, notation, definitions, organization and proof exposition, subject to current explicit human instructions and the [current-manuscript rule](#current-manuscript-authority).
 Read the actual TeX and direct mathematical/source inputs before deciding what the manuscript records must contain.
 
 The existing project or document `review.md` records mathematical scrutiny of the current manuscript exposition.
-Each retained review entry identifies the mathematical object and TeX location, the exact scope and manuscript state checked, the reviewer or review method and relationship, the evidence consulted, actual findings or corrections, and unresolved points and limits.
+Each retained review entry identifies the mathematical object and TeX location, the exact scope checked in the current working-tree TeX, the reviewer or review method and relationship, the evidence consulted, actual findings or corrections, and unresolved points and limits.
+These framework reviews describe actual agent inspection under the [agent and isolated-context boundary](proof-audits.md#review-arrangements); human authorship, suggestions and authorization are separate facts.
 An entry may review the complete written proof of an internal result whether or not an independent R exists.
 A manuscript-local review does not replace fixed R evidence required by a separate Claim or Task acceptance workflow.
 An audit of a fixed Claim does not automatically review its manuscript presentation.
 Do not turn `review.md` into a build log, citation inventory, general prose-editing diary, fixed R review or substitute proof.
-Retain a historical review only when its actual reviewer relationship, checked scope, findings or limitations remain useful, and clearly identify the manuscript state it examined.
-Build and visual facts belong in the document `readme.md`; retain historical build or visual facts in `review.md` only when they establish the scope of a particular review.
+After a change, reconcile only the affected entries.
+A scoped entry may remain while its reviewed text and conclusions still match the current authoritative manuscript; if the reviewed text has been superseded, review the current text and update the entry in place or remove it rather than retaining the former review as history.
+Do not retain historical full-manuscript reviews or superseded-state summaries in `review.md`.
+Before removing an entry, move any unique substantive mathematical result, argument, gap, counterexample or source finding to its responsible existing mathematical or source home under the [common content decision](records.md#substantive-material-retention).
+Do not transfer administrative review chronology or add a deletion receipt.
+Current build and layout facts belong in the document `readme.md`; do not retain historical build or visual summaries in `review.md`.
 
 When mapping a current citation in `citation.md`, check whether fixed source evidence covers the exact source edition and passages needed, and state any unresolved check honestly.
 An adequate fixed U or complete relevant C/L source account supplies this evidence at its existing responsible home, without copying, relocation or an extra U solely for citation.
@@ -481,12 +489,11 @@ A style-only edit, build, link check or citation-formatting check is not mathema
 Drafting that discovers a substantive mathematical change updates its responsible mathematical material before adoption.
 Neither a successful build nor a manuscript-local verdict supplies a fixed mathematical review for Claim or Task acceptance.
 
-<a id="manuscript-reference-boundary"></a>
 ## Manuscript Reference Boundary
 
 Manuscripts may be revised freely and frequently.
 Their project maps point forward to authoritative mathematics and source evidence.
-Authoritative mathematical materials must not depend on mutable manuscript or presentation content in any author-designated writing home, including `mathematics/manuscripts/` and `mathematics/talks/`, whether through links, paths, citations or ordinary prose.
+Authoritative mathematical materials must not depend on mutable manuscript or presentation content in any author-designated writing home, including `mathematics/manuscripts/` and `mathematics/presentations/`, whether through links, paths, citations or ordinary prose.
 This includes references to draft theorem, lemma or equation numbers, section or proof locations, and descriptions of how or where a mathematical input is used in a manuscript.
 Do not retain manuscript-context explanations in external mathematical materials.
 
@@ -498,7 +505,6 @@ From outside the actual writing home, only designated fixed entrance-navigation 
 Such links lead to the collection or stable project/document entrances without targeting or depending on internal sections, results, proofs, equations or review findings.
 Ordinary mathematical records are not navigation entrances.
 
-<a id="manuscript-index"></a>
 ## Manuscript Index
 
 `mathematics/manuscripts/index.md` manually links each project README and its independently compiled document entrances.
@@ -529,7 +535,7 @@ Terminology, shorthand and presentation choices that originate in internal resea
 They acquire standing in a manuscript only when its writing layers adopt them, and they are never attributed to a cited source.
 
 Claim materials own project statements and actual arguments.
-Independent project-mathematics review accounts belong to fixed R under [proof-audit rules](proof-audits.md), with applicable self-review or unknown findings also permitted in fixed L.
+Formal project-mathematics review findings of every agent relationship belong to fixed R under [proof-audit rules](proof-audits.md); L retains discussion and ordinary local checks, and manuscript-local reviews retain their document responsibility.
 Manuscript-specific reviews belong in the reviewed document README or an established project/document `review.md`, including independent manuscript reviews.
 Actual manuscript citation applications belong in `citation.md`; source-inspection evidence remains at its adequate responsible fixed U/C/L home.
 When drafting discovers a new substantive argument, changed hypothesis or mathematical error, update the responsible research record and assessment, then synchronize the manuscript.

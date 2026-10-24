@@ -42,7 +42,8 @@ def _path(repo, value):
 
 
 def _read(repo, path):
-    data = _path(repo, path).read_bytes()
+    data = (shared.read_from(repo, path) if path.startswith('execution/')
+            else _path(repo, path).read_bytes())
     return data.decode('utf-8-sig') if path.lower().endswith('.md') else data
 
 
@@ -50,6 +51,7 @@ def _actor(repo, author=None):
     actor = humans.actor(repo)
     author = actor if author is None else author
     require(humans.person(repo, author)['id'] == author, 'Use the registered author spelling.')
+    humans.require_author(repo, author)
     return author
 
 
@@ -79,8 +81,7 @@ def _owned_current(repo, path, expected_current):
     doc = documents.parse(path, _read(repo, path))
     require(doc.identity.kind not in 'CT' or (doc.current is not None and not getattr(doc, 'archival', False)),
             'An archival material is not a current authoring entrance.')
-    require(doc.identity.source_repository is None, 'Imported originals cannot be locally mutated.')
-    _actor(repo, doc.identity.author)
+    humans.require_author(repo, doc.identity.author, doc.identity.source_repository)
     family = _inventory(repo, family=doc.identity)
     require(all(ident.family == doc.identity.family for ident, _ in family), 'Material family collision ignoring case.')
     if doc.identity.version is not None:
@@ -92,7 +93,7 @@ def _owned_current(repo, path, expected_current):
     expected = vars(expected_current) if isinstance(expected_current, documents.Locator) else expected_current
     require(expected == actual, 'Stale expected current decision; read the current material again.')
     documents.check(doc, lambda target: _read(repo, target),
-                    paths=discovery.candidates(repo.root) if doc.identity.kind == 'S' else ())
+                    paths=discovery.candidates(repo.root) if doc.identity.kind in 'ST' else ())
     return doc
 
 
@@ -101,15 +102,18 @@ def _validated(repo, path, body):
     # New writes have a uniform newline convention; previous fixed files remain
     # untouched. Decision edits preserve existing text except the chosen section.
     doc = documents.parse(path, body)
-    require(doc.identity.source_repository is None, 'Imported originals cannot be locally mutated.')
-    _actor(repo, doc.identity.author)
+    humans.require_author(repo, doc.identity.author, doc.identity.source_repository)
     documents.check(doc, lambda target: body if target == path else _read(repo, target),
-                    paths=discovery.candidates(repo.root) if doc.identity.kind == 'S' else ())
+                    paths=discovery.candidates(repo.root) if doc.identity.kind in 'ST' else ())
     return doc
 
 
-def _check_new_decisions(repo, doc, anchors, *, previous=None):
+def _check_new_decisions(repo, doc, anchors, *, previous=None, new_date_anchors=None):
     anchors = list(anchors)
+    new_date_anchors = set(anchors if new_date_anchors is None else new_date_anchors)
+    from . import review as material_review
+    if doc.identity.kind == 'R':
+        material_review.check_findings(doc, previous=previous, read=lambda target: _read(repo, target))
     # A canonical-looking filename is not the evidence's authorship/provenance.
     # J children locate their program entrance, including native reports without
     # individual headers. This does not attribute output bytes to its generator
@@ -117,6 +121,9 @@ def _check_new_decisions(repo, doc, anchors, *, previous=None):
     # Do not traverse selected decisions or rejudge historical evidence.
     loaded = {doc.path}
     for anchor in anchors:
+        documents.new_decision(doc, doc.decisions[anchor])
+        if anchor in new_date_anchors:
+            shared.valid_stamp(doc.decisions[anchor].fields['date'])
         for role, loc, _scope in doc.decisions[anchor].relations:
             if role not in {'argument', 'support', 'dependency', 'review'}:
                 continue
@@ -139,7 +146,6 @@ def _check_new_decisions(repo, doc, anchors, *, previous=None):
                 or (doc.identity.kind == 'T' and doc.decisions[anchor].fields['status'] == 'completed')]
     if not accepted:
         return
-    from . import review as material_review
     from . import runtime as runtime
     for anchor in accepted:
         read = lambda target: doc.text if target == doc.path else _read(repo, target)
@@ -149,20 +155,31 @@ def _check_new_decisions(repo, doc, anchors, *, previous=None):
         runtime.validate_inputs(repo, replace(doc, current=documents.Locator(doc.path, anchor)), read)
 
 
-def _publish(repo, path, body, *, exclusive, new_decisions=False):
+def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None):
     doc = _validated(repo, path, body)
+    if doc.identity.source_repository:
+        from ..intake.acquire import material_info
+        material_info(repo, doc, read=lambda source: body if source == path else _read(repo, source))
     if new_decisions:
         require(not getattr(doc, 'archival', False) and not getattr(doc, 'historical_assessments', {}),
                 'New authoring cannot create archival material or historical-only assessments.')
-        _check_new_decisions(repo, doc, doc.decisions)
+        require(set(new_decisions) <= doc.decisions.keys(), 'Choose actual new decision anchors explicitly.')
+        _check_new_decisions(repo, doc, new_decisions, previous=previous)
+    if doc.identity.kind == 'T' and previous is not None:
+        from . import tasks
+        tasks.validate(doc, lambda source: body if source == path else _read(repo, source),
+                       paths=discovery.candidates(repo.root), previous=[previous])
+    if doc.identity.kind == 'R':
+        from . import review as material_review
+        material_review.check_findings(doc, previous=previous, read=lambda source: _read(repo, source))
     if doc.identity.kind in 'CT' and doc.current is not None:
         from . import runtime as runtime
         runtime.validate_inputs(repo, doc,
             lambda source: doc.text if source == doc.path else _read(repo, source))
     target = _path(repo, path)
-    if doc.identity.kind == 'T' and doc.identity.version == 1 and exclusive:
+    if doc.identity.kind == 'T' and doc.task_type == 'ordinary' and doc.identity.version == 1 and exclusive:
         from ..execution.records import address
-        from ..intake.literature import publish_files
+        from ..core.publication import publish_files
         execution = address(path)
         boundary = ('# Current execution boundary\n\n| Field | Value |\n| --- | --- |\n'
                     '| task | ' + doc.current.path + '#' + doc.current.anchor + ' |\n'
@@ -182,14 +199,18 @@ def _newlines(body):
 def _task_entrance(path, body):
     from ..execution.records import address
     from ..core import links
-    expected = address(path)
     entrances = [target for _, _, href in links.markdown_link_spans(body)
                  if (target := links.destination(path, href)) is not None and target[0].startswith('execution/')]
+    doc = documents.parse(path, body)
+    if doc.task_type == 'joint':
+        require(not entrances, 'A joint Task has no E link.')
+        return body
+    expected = address(path)
     require(not entrances or entrances == [(expected, '')], 'A Task may have one unanchored entrance to its family E.')
     return body if entrances else body.rstrip() + '\n\n## Execution boundary\n\n[Current execution boundary](../../' + expected + ').\n'
 
 
-def create(repo, *, kind, body, line=None, task=None, author=None, ):
+def create(repo, *, kind, body, line=None, task=None, author=None, new_decisions=()):
     """Allocate one local family and create its first authored Markdown file.
 
     ``body`` includes its explicit author header, title and (for C/T) decisions.
@@ -200,10 +221,20 @@ def create(repo, *, kind, body, line=None, task=None, author=None, ):
     if task is not None:
         parent = documents.parse(task, _read(repo, task))
         require(parent.identity.kind == 'T', 'The selected parent must be a Task.')
+        require(kind != 'S' or parent.task_type == 'ordinary', 'Strategies belong to individual Tasks, not joint Tasks.')
         documents.check(parent, lambda target: _read(repo, target))
     sequence = names.allocate([], author=actor, kind=kind, line=line, task=task)
-    existing = _inventory(repo, kind=kind, author=actor, line=sequence.line, local=True)
-    ident = names.allocate([item for item, _ in existing], author=actor, kind=kind, line=sequence.line)
+    with shared.locked(repo.root):
+        existing = [item for item, _ in _inventory(repo, kind=kind, author=actor, line=sequence.line, local=True)]
+        if kind == 'D':
+            ident = names.allocate(existing, author=actor, kind=kind, line=sequence.line)
+        else:
+            config = shared.read_json(repo.home / 'config.json', root=repo.root)
+            bound = names.allocation_bound(config, sequence, existing)
+            ident = names.allocate(existing, author=actor, kind=kind, line=sequence.line, next_number=bound)
+            config = names.reserve(config, ident, existing)
+            shared.write_json(repo.home / 'config.json', config, root=repo.root)
+            repo.config = config
     if kind in 'CTRL':
         ident = replace(ident, version=1)
     name = ident.name + ('/readme.md' if kind == 'J' else '.md')
@@ -211,12 +242,12 @@ def create(repo, *, kind, body, line=None, task=None, author=None, ):
     path = 'mathematics/' + home + '/' + name
     if kind == 'T': body = _task_entrance(path, body)
     try:
-        return _publish(repo, path, _newlines(body), exclusive=True, new_decisions=True)
+        return _publish(repo, path, _newlines(body), exclusive=True, new_decisions=new_decisions)
     except FileExistsError as error:
         raise ValueError('Material allocation collided; refresh this sequence and retry the explicit authored body.') from error
 
 
-def revise(repo, path, *, body, expected_current):
+def revise(repo, path, *, body, expected_current, new_decisions=()):
     """Create the next fixed vN without rewriting any earlier mathematical file.
 
     A revised C/T explicitly selects a new decision bound to its new statement or
@@ -224,11 +255,11 @@ def revise(repo, path, *, body, expected_current):
     ``select_decision`` operation, retaining that decision's historical scope.
     """
     with shared.locked(repo.root):
-        old, doc = _revise(repo, path, body, expected_current)
+        old, doc = _revise(repo, path, body, expected_current, new_decisions)
     return doc
 
 
-def _revise(repo, path, body, expected_current):
+def _revise(repo, path, body, expected_current, new_decisions=()):
     body = _newlines(body)
     previous = documents.parse(path, _read(repo, path))
     old = _owned_current(repo, path, expected_current)
@@ -245,7 +276,7 @@ def _revise(repo, path, body, expected_current):
         primary = 'statement' if ident.kind == 'C' else 'contract'
         require(next(loc for role, loc, _ in decision.relations if role == primary).path == target,
                 'The revision decision must bind its revised statement/contract, not silently carry an old disposition.')
-    doc = _publish(repo, target, body, exclusive=True, new_decisions=True)
+    doc = _publish(repo, target, body, exclusive=True, new_decisions=new_decisions, previous=old)
     return old, doc
 
 
@@ -324,4 +355,8 @@ def select_decision(repo, path, *, target, expected_current):
         require(doc.identity.kind in 'CT', 'Only Claims and Tasks select decisions.')
         target = _locator(target)
         _path(repo, target.path)
-        return _publish(repo, path, _select_text(doc, target), exclusive=False)
+        body = _select_text(doc, target)
+        proposed = documents.parse(path, body)
+        owner, chosen = documents.selection(proposed, lambda name: _read(repo, name))
+        documents.new_decision(owner, chosen)
+        return _publish(repo, path, body, exclusive=False)

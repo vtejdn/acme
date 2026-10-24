@@ -14,19 +14,21 @@ Describe what was actually checked and retain gaps; a local check alone does not
 When a review is registered or relied on for acceptance, provide the exact statement, support and review bindings below.
 
 Use an actual numbered fixed R material, such as `mathematics/audits/reviews/Author_R_F0001_v1.md`, with the short author header and exact input locators.
-A compact self-review or genuinely unknown-relationship finding can instead be a clearly named finding in existing fixed L material; link the actual finding from the adopting C/T decision.
-Every independent project-review account belongs to fixed R, including partial, negative, unresolved and unadopted findings about Claims, computations or Task completion.
+Every formal project-review finding belongs to fixed R, including self-review, independent review and genuinely unestablished historical/source relationships, with partial, negative, unresolved and unadopted findings retained at their actual scope.
 Several findings may share one appropriate R; a standalone local review needs no invented C.
-U inspections and J checker programs/outputs retain their own homes, with R linking the evidence and owning the independent conclusion.
+U inspections, manuscript-local reviews and J checker programs/outputs retain their own responsibilities, with formal project R findings linking their actual inputs and limits.
+Ordinary checks within an argument or discussion stay with that argument unless they constitute a separately relied-upon formal review; create no empty R for an open Claim.
 Review identity is separate from the inspected Claim or Task's number and physical version.
 
-Identify the timezone-bearing minute timestamp, human record author, reviewer or review method, self-review or independent-review relationship, and exact artifact reviewed.
+Identify the UTC minute timestamp of the review act, human record author, reviewer or review method, self-review or independent-review relationship, and exact artifact reviewed.
 A commit and file/anchor are useful when available; otherwise identify the dated revision and relevant sections.
 State whether the review covers the whole argument, a particular interface, source use, computations, or completion.
 An audit of an older revision does not automatically cover later substantive changes.
 
 Before acceptance identify the exact statement/contract, complete argument, selected support and direct dependencies, with path/version/anchor and actual applicability scope.
-New accepted C decisions select a fixed R/L finding whose [Review bindings](../material-format.md#review-bindings-for-new-accepted-decisions) cover the precise statement and argument; completed T decisions require coverage of contract and all declared support/dependencies.
+New accepted C decisions select a fixed R finding whose [Review bindings](../material-format.md#review-bindings-for-new-accepted-decisions) cover the precise statement and argument; completed T decisions require coverage of contract and all declared support/dependencies.
+For each finding actually selected by a genuinely new acceptance, require its matching explicit `Review relationships` row as well as those exact bindings.
+An explicit allowed historical/source `unknown` declaration differs from omission; neither it nor a self-reviewed finding is mechanically converted into an independent verdict.
 The C/T decision owns adoption, and the review owns its actual checks and limits.
 A review file, PASS text or unrelated finding in the same file does not select acceptance.
 Identify reviewed mathematics by canonical paths, physical versions, anchors and available source revisions; remove persistent mathematical digest records.
@@ -41,9 +43,9 @@ A [pure Claim role action](claims.md#claim-role) inherits its previously selecte
 Appending that organizational decision does not require historical bindings to be supplied or unknown relationships to be relabelled; an actual status or input change still needs its applicable review evidence.
 Task completion retains its own requirements.
 
-Use the selected Claim decision's actual review states: `unreviewed`, `under review`, `self-reviewed`, `independently reviewed`, or `changes required`.
-Report mathematical status separately from review status and provenance.
-A complete candidate awaiting review remains a `proof draft`; a `conditional` result must list its open assumptions.
+Current C decisions have no aggregate review-status or inferred review grade.
+R findings record each actual review relationship, input and scope separately from C's mathematical state and provenance.
+A complete candidate awaiting sufficient review and a target relying on an unresolved necessary premise stay open; precise proved implications and special cases keep their own stated scopes.
 Promotion to `proved` requires a complete argument, resolved dependencies, and recorded internal review.
 Independent review is preferred when available, but self-review is permitted and must be disclosed.
 
@@ -56,9 +58,9 @@ Review the project's own reasoning and the interfaces it uses without turning ev
 ### Review Arrangements and Disclosure
 
 Describe this review activity briefly in its audit or indexed review section.
-Keep human attribution under the [identity rules](identity.md), and state the actual human or agent review method in prose.
+Keep human attribution under the [identity rules](identity.md), and state the actual agent review arrangement in prose.
 The framework does not require individual agent IDs, session IDs, model registration or an additional reviewer registry.
-Human attribution fields alone establish neither personal human inspection nor independence of an agent review.
+All framework review relationships concern agent reviews; human authorship, advice and authorization are outside that review classification and supply no substitute finding.
 
 - Arrangement: describe the relationship to proof development, such as self-checking within the original reasoning or a separately organized review, and whether the purpose is an initial whole-proof review or a targeted recheck.
 - Inputs: state whether exploration notes, proof-generation dialogue, author explanations or previous review conclusions were supplied in the review context or consulted before the initial findings.
@@ -68,14 +70,22 @@ Human attribution fields alone establish neither personal human inspection nor i
   Point to the corresponding findings rather than duplicating the argument.
 
 Different sessions or models alone do not establish independence.
-Shared additional material does not by itself invalidate a review, but its use and limits must be disclosed.
-An `independently reviewed` classification needs an account of a separately organized review and the reasoning actually examined; agreement or a role label is insufficient.
+An independent inspection requires a distinct agent or subagent outside substantive proof development, without inherited or shared substantive mathematical context about the proof.
+Inherited proof-development discussion, mathematical summaries, author explanations or prior conclusions prevent that independent classification even when the agent contributed no proof step.
+Provide the fixed statement, proof, necessary mathematical dependencies, exact scope and applicable rules directly, without forwarding the proposing agents' mathematical conversation or summary.
+The same model may serve in a separate isolated review arrangement; another name, session, model or role label alone establishes neither separation nor isolation.
+An `independently reviewed` relationship records that actual arrangement and reasoning examined, without an agent registry, isolation certificate, transcript archive or automatic context classifier.
 Self-review remains permitted.
 These descriptions introduce no new review states, independence grades, or mandatory multiple-agent or multiple-model review.
 
 Preserve historical reviews at their recorded scope without inventing missing input conditions.
 This clarification alone requires neither rewriting their evidence nor a new mathematical review.
 A concrete unsupported independence claim or mathematical objection still follows the ordinary correction process.
+
+When an independent finding identifies a proof gap and that proof is repaired, independent review of the repair and affected interfaces/logical chain is required again.
+The repairer's self-check does not discharge this obligation; a reviewer who supplies a substantive repair cannot independently review that repaired contribution.
+Retain the old finding at its actual input and reuse unchanged applicable findings only at their true scopes.
+A whole-proof independent conclusion requires adequate coverage of the whole selected proof.
 
 ### Extracted Lemmas and Reorganized Proofs
 
@@ -110,13 +120,15 @@ Check actual applicability and assess the actual inherited review applicability 
 <a id="navigation-maintenance"></a>
 ## Navigation and Artifact Maintenance
 
-Links, nearby ownership labels, layout, spelling and wording in reviewed documents may be updated in place when the mathematical content, dependency use and review conclusions are unchanged; this is the maintenance track and needs no new material or C/T version, mathematical review, or formal correspondence artifact solely for the edit.
+The same established human may update links, nearby ownership labels, layout, spelling and wording in that human's reviewed documents in place when the mathematical content, dependency use and review conclusions are unchanged; this maintenance needs no new material or C/T version, mathematical review, or formal correspondence artifact solely for the edit.
 Check actual meaning: a sign, quantifier or hypothesis correction, or a link invoking a different theorem or supporting argument, follows the substantive-change rules.
-Administrative locations in another author's material may be repaired directly under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts).
-Its mathematical-conflict procedure requires approval for the actual scoped recheck without creating a blanket review gate or permission to substantively edit that author's material.
+A different human's later correction belongs in the correcting human's own suitable material with exact references, including administrative wording, paths and layout inside an authored body, under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts).
+Shared registration and derived navigation remain directly maintainable at their shared scope; initial intake preparation retains its separately authorized adaptation scope.
+Framework-development documents retain their assigned role permissions.
+The mathematical-conflict procedure requires approval for the actual scoped recheck without creating a blanket review gate or transferring authorship.
 Routine maintenance leaves the coherent edits and Git history; no operation entry, standalone report or per-file correspondence record is required.
 Keep the affected material decisions, locators and derived navigation coherent in place.
-Check the actual diff and repair the incoming references instead of retaining an obsolete directory solely for compatibility.
+Check the actual diff and repair incoming references within those same authorship and shared-navigation scopes instead of retaining an obsolete directory solely for compatibility.
 
 Remove historical mathematical digest values and present byte-binding requirements while preserving the actual checked statement/argument, verdict, scope, limits and checking relationship.
 An unchanged relocation may repair exact input locators without implying a review of later mathematics; a mathematical change still requires the ordinary version/review process.
@@ -193,7 +205,7 @@ Never correct status only in a generated row; record the responsible material de
 Update the affected Task contracts and strategy records as needed.
 Mark affected assessments as requiring recheck until the relevant dependencies and interfaces have been resolved.
 A changed contract of a previously completed Task requires an explicit reopening decision or a new completion decision with an applicable review of that exact changed contract and selected support/dependencies.
-Adopt the actual fixed R/L finding through the decision's `review` relation under the [Task lifecycle rule](tasks.md#task-records) and [review-binding contract](../material-format.md#review-bindings-for-new-accepted-decisions).
+Adopt the actual fixed R finding through the decision's `review` relation under the [Task lifecycle rule](tasks.md#task-records) and [review-binding contract](../material-format.md#review-bindings-for-new-accepted-decisions).
 A newly written review alone does not select completion, and T has no overall `review-status` field.
 Preserve the earlier completion decision and its true checked scope.
 Do not silently weaken the original target to retain a completed label.
@@ -213,22 +225,37 @@ No agent identity registry or independent approval for every intermediate Claim 
 
 ### Finding-level review relationships
 
-The R/L finding owns its actual checking relationship; the C/T decision owns adoption and the aggregate assessment.
+The R finding owns its actual checking relationship; the C/T decision owns its mathematical/lifecycle assessment and exact evidence adoption, without an aggregate review-status.
 Use a `Review relationships` table with columns `Review` and `Relationship`, linking each finding to its real local anchor.
-Allowed relationships are `self-reviewed`, `independently reviewed` and `unknown`; an omitted row means unknown, never independent.
+Allowed relationships are `self-reviewed`, `independently reviewed` and genuinely unestablished historical/source `unknown`; an omitted row is a missing declaration, distinct from an explicit unknown relationship.
+Newly authored or substantively revised formal findings supply their own matching relationship rows.
+Apply this requirement to the actual new or revised finding, not every unchanged older finding in the same R file.
 Explain the actual review arrangement and inspected scope in the finding's existing account.
 Do not derive a finding's relationship from a consumer label or physical version.
 
-For a new independently reviewed acceptance, selected findings explicitly classified as independently reviewed must be in fixed R and together cover the exact required inputs through their Review bindings.
-Complementary independent statement and argument findings can supply this coverage.
-A self-reviewed aggregate does not turn its independently checked parts into self-reviews;
-a later independent argument finding can reuse an unchanged independent statement finding.
+New accepted inputs require the selected findings' explicit relationships and exact applicable R bindings; tools neither select an independent-coverage mode from C nor infer one from the mixture of findings.
+Historical reading and genuine old-decision reselection retain honest missing-declaration display without backfill, and unchanged-assessment field-only or pure role-only maintenance retains its existing boundary.
+Do not rewrite acquired originals to manufacture declarations; retain the limitation and obtain conforming evidence for an actual new adoption.
+An actual independent whole-proof conclusion requires adequate independent coverage of its precise required inputs; complementary findings can supply that coverage when their scopes genuinely apply.
+Mixed self/independent findings keep their individual relationships and limitations without an aggregate independent verdict.
+A later independent argument finding can reuse an unchanged applicable independent statement finding.
 A new C/T physical version cannot turn a retained self-review into independent evidence.
 Unknown historical relationships remain unknown and old assessments remain historical;
-supplement only evidence necessary for an actual new classification.
+supplement only evidence necessary for an actual new adoption or required review.
 Preserve known finding relationships and fixed scopes.
 Corrections to a known finding use new review evidence, not a rewritten relationship.
 This structural check does not certify mathematical correctness or require a new review registry.
+
+<a id="review-retirement"></a>
+### Retirement of redundant old review containers
+
+For a genuinely unknown old finding, a separately arranged isolated agent may first inspect the exact mathematical inputs and form its own findings, then compare the old review as an explicit audit object.
+The new R records the actual new inspection, inputs, independent arrangement, scope and limits; it does not backdate a review or certify the old reviewer's independence.
+Retire the old finding only after sufficient actual replacement, retention of necessary mathematics and useful negative/limited findings, and truthful reconciliation of current and historical consumers.
+Never rewrite an old decision as if it had adopted a later review; retain a specific old finding when its necessary historical use cannot yet be reconciled.
+This is the bounded exception to old-container retention under the [record-preservation rule](records.md#authoritative-files), not an exception to retaining necessary evidence or actual past inputs and adoption facts.
+Absence of current consumers or a new PASS alone does not permit deletion.
+Delete a redundant container only when no other necessary content remains and its [allocation state](identity.md#allocation-and-concurrency) already preserves the issued family bound, without recycling its identity, a redirect, archive copy or permanent migration map.
 
 For acquired R/L findings, the adopting agent checks the original per-finding Review bindings and actual acquired/retained inputs.
 An independent relationship does not broaden inspection to other inputs in the same acquisition.
@@ -246,7 +273,7 @@ A concrete objection follows ordinary correction at the affected material and co
 A version alone neither certifies compatibility nor triggers a full re-audit; no obsolete parser, fingerprint registry or automated compatibility cascade is required.
 Structural provenance checks neither authenticate a declaration nor prove mathematics.
 
-Manuscript exposition, definition/citation use, document-wide consistency and build/layout review belong in the reviewed manuscript's document README or manuscript-local review record.
+Manuscript exposition, definition/citation use and document-wide consistency belong in the reviewed manuscript's current manuscript-local review record; build and layout facts belong in the document README.
 R reviews project mathematics: an actual C argument, T completion, computation or mathematical input separately assigned and checked.
 Appearance in a manuscript does not change that distinction.
 A manuscript finding about a possible proof defect stays local until the underlying mathematical object is separately reviewed; do not broaden the original review or redirect C/T acceptance to manuscript records.

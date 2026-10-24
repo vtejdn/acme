@@ -77,7 +77,8 @@ Create the required output directory on use.
 A shared helper receives the calling J's output location explicitly.
 Genuine cross-J dependencies use an explicitly specified retained file or native input parameter, without deriving a qualified name, searching alternatives or falling back to another local group.
 If the required file or supported binding is absent, report that execution limit.
-Maintain source programs and their callers; intake does not rewrite acquired native bytes, and already acquired originals retain their source boundary.
+Maintain source programs and their callers; intake preserves native bytes unless an explicitly selected `file_preparations` input supplies permissible adaptation under the responsible author's boundary.
+Preserve actual per-file originals and verify relevant behavior or mathematical-method changes.
 Keep meaningful child names for distinct mathematical scopes and distinguish author output from independent verification output.
 The documented generation command must work without root `tmp/` or `.tmp/` and without prior generated output, except declared input dependencies.
 An explicitly identified verification-only command requires its actual retained inputs.
@@ -105,7 +106,7 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
 
 - Use `mathematics/computations/programs/Author_J_W0001/` for a local program home, with the author's chosen research line and an independent J counter.
   Imported groups use the receiving external identities and explicitly chosen receiving serial in both program and output homes, for example `author3_repo2_J_W0007/`.
-  Preserve the original research line and physical version where applicable, and the exact original author, repository, source family/serial, path and revision in existing provenance/correspondence.
+  Preserve the exact original author, repository, research line, family/serial, physical version where applicable, path and revision in existing provenance/correspondence, separately from the chosen receiving identity.
   Repeated acquisition and later versions reuse the established receiving family; original and immediate transport identities remain distinct.
   Every group has one entrance `readme.md`, with the minimal author/source header and the [template](../templates/computation.md) sections: Question and scope, Files, Reproduction, Results and limits.
   These examples are inert.

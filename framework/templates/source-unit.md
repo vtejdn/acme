@@ -11,6 +11,7 @@ For same-work revisions, retain the key and identify the exact artifact version 
 Compare affected uses before carrying review forward; acquisition alone does not extend coverage or require another unit ID.
 
 For a new fixed reusable unit, use `<citation-key>/<Author>_U001_v1.md` in the source-specific audit, retaining its existing unit ID.
+New unit positions maintain the separate `U/SourceKey` [`material_next` entry](../material-format.md#material-family-allocation-state) across authors and origin prefixes; a same-original later physical version retains its established receiving position.
 Add the short author/origin header and the `Source and inspection` section from the [material input format](../material-format.md#fixed-source-unit-inputs).
 Material vN does not identify the inspected edition.
 Do not infer proof inspection from an accepted source statement.
@@ -22,7 +23,7 @@ The `source-version` describes performed inspection; ordinary comparisons and de
 Tools report requested/final addresses and bytes without deciding work/edition identity.
 
 Local registration computes a fingerprint from the actual obtained file for accidental-damage checking, without establishing identity, edition, inspection or completeness.
-Authored-material intake copies the whole U and bibliography with its original provenance, inspected edition/passages, limits and prepared receiving position/text; it carries no original publications, private source accounts or literature fingerprints.
+Authored-material intake retains complete necessary selected U content, required bibliography, original provenance, inspected edition/passages, limits and prepared receiving position/text; it carries no original publications, private source accounts or literature fingerprints.
 It establishes no receiver-local possession; obtain needed original text through ordinary authorized source preparation or reuse adequate local evidence.
 No duplicate U, added confirmation field, compulsory source audit or prior fingerprint is required.
 

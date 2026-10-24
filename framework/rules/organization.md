@@ -9,20 +9,25 @@ Directory names use short lowercase English words without spaces; registered cit
 
 The root README is an entry point.
 `framework/` owns portable rules/templates, `repository/` owns repository identity and human registration, `profiles/<human>/` owns applicable personal choices, and `mathematics/` owns research.
-`execution/` holds one stable E per executed Task.
+`execution/` holds one stable E per ordinary Task family; joint coordination Tasks have no E.
 `intake/<initiator>/` holds concise operation provenance.
 Classified runtime tools belong in `scripts/acme/`, with thin command entries in `scripts/`.
 
 Keep `mathematics/readme.md` as a short, stable directory entrance to Tasks, Claims, strategies and their responsible materials.
 It carries no rolling cross-Task progress narrative or refresh/completion-edit duty.
-A directory readme links rules and its separate index.
+An index is needed only to navigate a growing collection of actual research materials.
+For such a collection, the directory readme explains its purpose, governing rules and use, while the index locates the actual materials.
+Reuse an adequate responsible catalog instead of adding another list of the same objects.
+Fixed framework, rule, function, configuration and profile explanations, readme-only or single-document directories and rolling drafts need no index.
+A growing presentation collection uses the root and actual-author readme/index pairs, while an individual document readme keeps its substantive content; neither arrangement requires an index in every directory.
+Indexes confer no mathematical, review, lifecycle or execution authority.
+No directory classifier, exhaustive directory register or mandatory index in every folder is introduced.
 Live readings and execution disposition belong in E, with actual defaults selected by the [personal-policy rules](preferences.md).
 
 Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; bibliographic fields in mathematics/literature/references.bib and acquisition/artifact facts in its registry.md.
 Machine-local paths and secrets are not framework defaults.
 Link the responsible record when summarizing it.
 
-<a id="sentence-oriented-source-layout"></a>
 ## Sentence-oriented source layout
 
 Write maintained natural-language prose with one complete natural sentence per physical source line by default.
@@ -48,7 +53,7 @@ Substantive changes follow their own authorization, version and review rules.
   Do not break a row or use a structural container merely to avoid prose layout.
 - List continuations retain indentation and item boundaries.
   Preserve Markdown hard breaks, HTML structure, TeX comments, command boundaries and meaningful whitespace.
-- External and acquired originals retain source formatting, captured content and provenance.
+- Authorized receiving preparation follows the common [adaptation rule](records.md#receiving-and-adapting-selected-content), preserving necessary mathematics, human authorship and actual provenance without source-format or whole-copy constraints.
   Faithful quotations or transcriptions retain necessary source layout; local introductions and commentary follow this rule.
   Generated numerical output and third-party formats are outside prose migration.
 
@@ -77,7 +82,8 @@ The entrance is an ordinary directory or one top-level directory junction, and i
 Original HTML and explicitly retained related files use contained canonical work-key groups under the same entrance, following the [source-storage rule](literature.md#original-html-sources).
 General traversal, copying, publication and cleanup skip the whole source mount; group access does not make it a C/T/J output home.
 A needed durable external mount target belongs only in private setup.
-Runtime resolution, containment and junction checks still use real paths; do not serialize those host values into public reports.
+Concrete source operations use real paths for resolution, containment and junction checks; generic public links retain logical source navigation without resolving or reading the mount.
+Do not serialize host values into public reports.
 General public traversal and clean export exclude `profiles/*/secrets.md` before reading; a deliberately tracked/staged secret is a publication error.
 
 Record relative commands and the runtime/dependency details that affect actual reproduction, instead of installation paths.
@@ -108,7 +114,7 @@ Keep logs only for troubleshooting and checkpoints only for useful continuation,
 
 Source inspection belongs in mathematics/audits/literature/.
 Project Claim statements, selected assessments and arguments belong in C: select the actual reasoning in the same or another applicable fixed C.
-L retains exploration, useful failures, comparisons, syntheses and suitable self-review or unknown-relationship findings; it cannot carry a Claim argument.
+L retains exploration, useful failures, comparisons, syntheses and ordinary checks needed for that discussion; important substantial arguments belong in C and formal project-review findings of every agent relationship belong in R.
 Independent project-review accounts belong only in fixed R under mathematics/audits/reviews/, with exact inputs, scope and relationship.
 Source U inspection supplies no adopted project-proof review.
 All L materials live in mathematics/ledger/, including literature-related L.
@@ -118,7 +124,7 @@ Definition entries point to authoritative formulations under the definition rule
 Manuscript sources use mathematics/manuscripts/Author_T_SERIAL/<document>/ under an authorized local Task, with the actual author-designated line and serial.
 An explicitly user-designated talk or presentation home preserves its actual path and follows the same writing, source, build and review duties without requiring a new Task or research identity.
 Document navigation may connect related writing, while authoritative mathematical evidence remains independent of mutable writing outputs in every such home.
-Source Tasks and manuscript projects are outside intake.
+Own Tasks and selected manuscripts use personal import; intake excludes another human's ordinary Task/E authority and manuscript projects, with a narrow necessary joint-contract exception.
 Project titles belong in the README.
 Link to the responsible claims and reviews.
 Their writing choices do not change those assessments.

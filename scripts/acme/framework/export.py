@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path, PurePosixPath
 import shutil
 import shlex
@@ -18,7 +19,16 @@ from ..core import identity as identity
 from . import version as version
 
 MANIFEST = version.MANIFEST
-HUMAN_FILES = ('user-manual/about.md', 'user-manual/ai-disclosure-for-human-authors.md')
+HUMAN_FILES = ('user-manual/ai-disclosure-example.md',)
+DISPLAY_TOKENS = re.compile(r'\{\{(?:REPOSITORY_ABBREVIATION|REPOSITORY_NAME)\}\}')
+
+
+def display_value(value, label):
+    """Accept an independent reader-facing display value, preserving its text."""
+    r.require(type(value) is str, label + ' must be text.')
+    r.require(value != '' and '\n' not in value and '\r' not in value,
+              label + ' must be nonempty single-line text.')
+    return value
 
 
 def command_environment():
@@ -236,8 +246,10 @@ def restore_binding_config(path, before):
             command(path.parent, 'git', 'config', '--file', str(path), '--add', key, value)
 
 
-def load_plan(source, destination, repository, author=None):
+def load_plan(source, destination, repository, repository_name, repository_abbreviation, author=None):
     repository = identity.key(repository)
+    repository_name = display_value(repository_name, 'Repository display name')
+    repository_abbreviation = display_value(repository_abbreviation, 'Repository abbreviation')
     source = ordinary_chain(source).resolve()
     r.require(source.is_dir(), 'Source checkout does not exist.')
     destination = ordinary_chain(destination)
@@ -256,11 +268,17 @@ def load_plan(source, destination, repository, author=None):
     copies = list(manifest['copy'])
     for item in copies:
         relative(item)
-    ordinary_roots = {*HUMAN_FILES, '.gitignore', '.gitattributes', 'AGENTS.md',
+    ordinary_roots = {*HUMAN_FILES, '.gitignore', '.gitattributes', 'AGENTS.md', 'LICENSE',
                       'user-manual/user-manual.md', 'user-manual/用户手册.md',
+                      'user-manual/Benutzerhandbuch.md', 'user-manual/Manuel d’utilisation.md',
+                      'user-manual/ユーザーマニュアル.md',
                       'user-manual/agent-harness.md', 'user-manual/git-repository.md',
+                      'user-manual/git-repo.png',
                       'user-manual/collaboration.jpg', 'user-manual/workflow.jpg',
-                      'user-manual/user-instructions/user-instructions.md', 'user-manual/user-instructions/用户指令.md'}
+                      'user-manual/user-instructions/user-instructions.md', 'user-manual/user-instructions/用户指令.md',
+                      'user-manual/user-instructions/Anweisungsbeispiele.md',
+                      'user-manual/user-instructions/Exemples de consignes.md',
+                      'user-manual/user-instructions/指示例.md'}
     r.require(all(p in ordinary_roots or p.startswith('framework/') or p.startswith('scripts/')
                   for p in copies), 'Direct copies may contain only framework files, tools and declared human documents.')
     r.require(MANIFEST in copies and all(f in copies for f in HUMAN_FILES),
@@ -297,8 +315,9 @@ def load_plan(source, destination, repository, author=None):
     data = {p: source_file(source, p).read_bytes() for p in sorted(inputs)}
     r.require(data[MANIFEST] == manifest_bytes, 'Export manifest changed while planning.')
     return {'source': source, 'destination': destination, 'repository': repository,
+            'repository_name': repository_name, 'repository_abbreviation': repository_abbreviation,
             'actor': actor, 'destination_kind': target_kind,
-            'timezone': '+00:00', 'manifest': manifest, 'data': data,
+            'manifest': manifest, 'data': data,
             'copies': copies, 'templates': templates}
 
 
@@ -310,13 +329,12 @@ def write(path, data):
 
 def initialize(stage, plan):
     command(stage, 'git', '-c', 'init.templateDir=', 'init', '--quiet', '--template=')
-    now = r.timestamp(plan['timezone'])
     write(stage/'repository/config.json', r.encoded({
         'repository': plan['repository'],
-        'layout_format': 2, 'timezone': plan['timezone'], 'repository_url': None,
-        'registered_at': now}))
+        'layout_format': 2, 'repository_url': None, 'material_next': {},
+        'framework_update_check': True}))
     people = [] if plan['actor'] is None else [{
-        'id': plan['actor'], 'display_name': plan['actor'], 'registered_at': now,
+        'id': plan['actor'], 'display_name': plan['actor'],
         'registered_by': plan['actor'], 'git_identities': [], 'github_accounts': []}]
     write(stage/'repository/people.json', r.encoded({'people': people}))
     write(stage/'repository/repositories.json', r.encoded({'next': 1, 'repositories': []}))
@@ -364,8 +382,9 @@ def cleanup(stage, parent, token):
     shutil.rmtree(stage)
 
 
-def export(source, destination, *, repository, author=None, dry_run=False):
-    plan = load_plan(source, destination, repository, author)
+def export(source, destination, *, repository, repository_name, repository_abbreviation,
+           author=None, dry_run=False):
+    plan = load_plan(source, destination, repository, repository_name, repository_abbreviation, author)
     result = {'destination': str(plan['destination']), 'repository': plan['repository'],
               'actor': plan['actor'], 'framework_version': plan['manifest']['framework_version'],
               'copied_files': len(plan['copies']), 'templates': len(plan['templates']),
@@ -379,11 +398,12 @@ def export(source, destination, *, repository, author=None, dry_run=False):
     try:
         for target in plan['copies']:
             write(stage / target, plan['data'][target])
-        values = {'{{REPOSITORY}}': plan['repository']}
+        values = {'{{REPOSITORY_ABBREVIATION}}': plan['repository_abbreviation'],
+                  '{{REPOSITORY_NAME}}': plan['repository_name']}
         for target, template in plan['templates'].items():
             body = plan['data'][template].decode('utf-8')
-            for old, new in values.items():
-                body = body.replace(old, new)
+            # Substitute only original template occurrences; inserted display text is literal data.
+            body = DISPLAY_TOKENS.sub(lambda match: values[match.group(0)], body)
             write(stage / target, body.encode('utf-8'))
         for directory in plan['manifest']['empty_directories']:
             relative(directory)
@@ -403,11 +423,17 @@ def main():
     parser.add_argument('destination', type=Path)
     parser.add_argument('--source', type=Path, default=Path(__file__).resolve().parents[3])
     parser.add_argument('--repository', required=True, help='Explicit destination repository identity key.')
+    parser.add_argument('--repository-name', required=True,
+                        help='Explicit full human-facing repository name for the exported README.')
+    parser.add_argument('--repository-abbreviation', required=True,
+                        help='Explicit short human-facing repository abbreviation for the exported README.')
     parser.add_argument('--author', help='Explicit initial human to register and bind; omission leaves an empty, unbound registry.')
     parser.add_argument('--dry-run', action='store_true', help='Check source, identity and destination without creating files.')
     args = parser.parse_args()
     try:
         print(json.dumps(export(args.source, args.destination, repository=args.repository,
+                                repository_name=args.repository_name,
+                                repository_abbreviation=args.repository_abbreviation,
                                 author=args.author, dry_run=args.dry_run),
                          ensure_ascii=False, indent=2))
     except (OSError, ValueError, KeyError, TypeError) as error:

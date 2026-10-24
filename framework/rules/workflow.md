@@ -1,9 +1,9 @@
 # Research Workflow
 
 Follow explicit human instructions and applicable agent instructions.
+Apply the [core principles and interpretation](../readme.md#core-principles-and-interpretation) to every action and to conflicts, omissions, ambiguity and discretionary choices in this workflow.
 Selectable research defaults follow [preference precedence](preferences.md#scope-and-adoption) within its permitted scope; repository settings and document choices do not by themselves waive evidence, preservation or authority boundaries.
 
-<a id="agent-and-tool-responsibilities"></a>
 ## Agent and tool responsibilities
 
 The agent reads the actual materials and decides content, work/edition identity, necessary homes and inputs, review applicability and authorization.
@@ -15,7 +15,7 @@ For an explicit J source refresh, the agent identifies the same original and sel
 Copying selected files supplies no consumer or mathematical review, and earlier acquisition scopes do not select themselves as current dependencies.
 Explicit source declarations and same-line fingerprints separate primary artifact facts from Resource/holding relationships; the agent prepares actual account changes and the tools check every supplied input before selected batch publication.
 Typed namespace occupancy, fixed identity entrances, numerical/field constraints, OS locking, exclusive creation, stale-input refusal and rollback remain mechanical responsibilities.
-Direct collaboration, cross-author administrative maintenance and the two kinds of actual conflict follow the [identity rule](identity.md#collaboration-maintenance-and-conflicts).
+Direct collaboration, same-human body maintenance, shared navigation/registration and the two kinds of actual conflict follow the [identity rule](identity.md#collaboration-maintenance-and-conflicts).
 Apply its scoped mathematical-recheck approval only when that conflict actually arises; ordinary authorized research and maintenance keep their existing authority.
 
 <a id="record-ownership"></a>
@@ -27,12 +27,13 @@ Complete definitions, terminology and symbols retain their adequate U/C/L homes 
 Status belongs to its responsible material.
 A Claim's selected decision owns its current mathematical/review assessment; a Task's contract and selected decision own its authorized question and lifecycle.
 Each S owns route priority/disposition and exact Task associations.
-Fixed arguments, source units and computation groups own their actual mathematics, while R/L findings own their review scope.
+Fixed arguments, source units and computation groups own their actual mathematics, while formal R findings own their actual agent review scope and relationship.
 Indexes derive navigation rather than creating another status authority.
-Link the actual responsible material and preserve substantive change history there.
+Link the actual responsible material and preserve necessary mathematical and evidentiary change history there.
 
 The Claim index provides short per-Claim navigation.
-Detailed dependencies, extraction provenance, authorization history and proof-version transitions stay in the linked responsible records.
+Detailed dependencies, extraction provenance, necessary authority facts and proof-version transitions stay in the linked responsible records.
+Administrative and authorization chronology follow the [common content decision](records.md#substantive-material-retention), without a separate historical-retention duty.
 Task, strategy and ledger indexes organize their own objects; they must not accumulate duplicated cross-module progress reports or routine check logs.
 
 Current research choices and reusable route lessons belong in strategies; arguments, source checks, counterexamples and reviews stay at their responsible mathematical homes.
@@ -61,7 +62,7 @@ Exploration, candidate registration and acceptance can occur together within one
 | Action | Required scope and evidence |
 | --- | --- |
 | Explore a question or test a mechanism | Identify the current question, attempted range, provisional assumptions and what the next test could distinguish. The final statement, hypotheses or quantifiers may still be developing. An authorized experiment or conditional derivation does not require a Claim ID or a completed mathematical review before it can begin or continue. |
-| Register a candidate or organize a substantive reusable project statement | State the proposition precisely, identify actual inputs and gaps, and register its material/version under the [Claim rules](claims.md#claim-registration). Registration can use open, proof draft or conditional assessments as warranted; it does not certify the result. |
+| Register a candidate or organize a substantive reusable project statement | State the important proposition precisely, identify actual inputs and gaps, and register its material/version under the [Claim rules](claims.md#claim-registration). An unresolved candidate uses open; registration does not certify the result. |
 | Accept a result as established, adopt a checked refutation or report Task completion | For proved/refuted assessments, check the complete supporting argument or refutation, applicability, resolved mathematical dependencies and applicable [review evidence](proof-audits.md) under the [assessment rules](claims.md#separate-assessment-fields). For a Task, apply its stated completion criteria to its actual deliverable. Existing accepted inputs and compatible inherited reviews retain their recorded scope. |
 
 The following events determine when additional obligations apply:
@@ -89,16 +90,26 @@ Keep useful findings and failures at their responsible homes; a handoff links th
 Small interactive trials need no new record.
 The [temporary-storage boundary](organization.md#temporary-storage) permits operational isolation without creating a scratch-to-accepted stage.
 
-<a id="proportionate-execution"></a>
 ## Proportionate Execution
 
 Select the activity covered by the current instruction before reading or changing records: discussion, maintenance, Task setup, research advancement, or review.
-Read the entry rules and applicable activity rules, then follow the relevant object and its directly needed inputs.
-Reuse unchanged material already read in the current context; reread the relevant part when its content, authority or scope changes, or when a concrete uncertainty remains.
+Before starting or continuing affected work, read the current local [installed manifest](../export-manifest.json) and entrances, then the current rules governing that activity, the relevant object and its directly needed inputs.
+Reread the current needed entrances and governing rules before dependent operations when the installed framework version changes, an applicable rule's content, authority or scope changes, or the continued applicability of earlier actual reading cannot be established.
+This includes an upgrade during an existing assignment and local rule edits before version advancement; an unchanged version number does not establish unchanged applicable text.
+Old conversations, compressed summaries, persistent memory and recollection of an earlier framework version may locate relevant files but cannot replace the required current-file reading or establish that old instructions remain applicable.
+Reuse only actual reading in the current context whose continued applicability is established; a remembered assertion that the rules were read is insufficient.
+
+Reusing a daily public-version result, an unavailable result, disabled or offline network checks and delegation do not waive this current-rule duty.
+Subagents read the current rules needed for their assigned activity even when reusing the responsible main agent's metadata result.
+A newer official version that has not been installed does not replace the governing local rules or authorize treating remote instructions as current local authority.
+After an authorized upgrade, apply the rereading duty before resuming affected work, preserving the assignment's actual authorization and Task/E stopped conditions.
+
+Read only the assigned work's needed rules and direct inputs, without an unrelated full-framework or historical-library reread on every turn or tool call.
 A new tool call alone is not a reason to reread the same rules or an unrelated historical example.
 Use bounded searches/section reads.
 If output is truncated, recover the missing applicable text and exceptions before acting; a partial output is not a completed read.
-No reading receipt or full-library reread is required.
+Do not add a last-read-version field, reading register, rule fingerprints, receipts, signatures or a script that certifies reading or understanding.
+Current-file reading and judging the continued applicability of earlier actual reading remain agent responsibilities.
 
 Keep each fact in its responsible record and update only necessary consumers.
 Finish the affected edit/publication batch before regenerating its navigation and checking the final prepared bytes.
@@ -133,7 +144,7 @@ A descriptive anchor can be fixed before allocation; use the ID returned by the 
 Optional template sections need content that helps continuation, not placeholders proving that setup occurred.
 
 Register a clear assignment with its complete contract, actual human author and initial decision with date, proposed/active status, real authority/reason and exact contract relation.
-The optional writer `python scripts/material.py create --kind T --line F --file task.md` allocates and returns a canonical path.
+The optional writer `python scripts/material.py create --kind T --file task.md` allocates and returns a canonical path, defaulting an unspecified new Task to A under the [Task rule](tasks.md#task-records).
 An active assignment needs no invented setup review, second activation decision or execution run.
 
 Activation does not require a separate contract-review document.
@@ -143,7 +154,7 @@ Task setup alone does not require a Claim, strategy, audit file, mathematical-op
 Add related records only when the substantive work calls for them.
 
 Update necessary links and generated navigation when the new objective affects them, then check the final affected changes.
-Setup prepares the Task family's minimal non-running E and grants no execution, usage baseline or allowance.
+Setup prepares an ordinary Task family's minimal non-running E and grants no execution, usage baseline or allowance; a joint coordination T has no E and is used through the actual human's individual Task.
 Keep live run state out of the contract and the mathematical Task decision; use a stable link to the [execution rules](execution.md).
 If the instruction also authorizes immediate research, continue under those rules without another setup approval.
 An active Task does not resume a stopped run or bypass an applicable execution limit.
@@ -191,7 +202,8 @@ When choosing routes or responding to an obstruction, search the relevant Claims
 Explain consequential applicability, limitations and adaptations in the consuming route.
 Cite fixed evidence for mathematical reliance; a rolling route or source analogy is not proof.
 Useful lessons remain with the actual route or a substantive fixed synthesis, without a mandatory adoption form or reciprocal feedback obligation.
-Received originals remain unchanged; record a local adaptation with its exact source scope.
+Receive prepared local content under the common [adaptation rule](records.md#receiving-and-adapting-selected-content), retaining exact necessary source scope and the original human.
+Later corrections to another human's authored body belong in the correcting human's own material.
 
 If no active research objective is recorded, make that absence explicit and continue only work covered by the current instruction, such as framework maintenance or an authorized source study.
 A proposed question is not automatically an active task.
@@ -252,7 +264,7 @@ S dispositions and priorities belong in their own material, not an index reserva
 
 Organize Claim arguments by mathematical topic or mechanism in fixed C, following the [material-role rules](claims.md#record-kinds).
 The same or another applicable C contains the actual reasoning; L is not a Claim-argument home.
-Independent project-review accounts belong to fixed R; L may retain exploration, useful failures, comparisons, syntheses and actual self-review or unknown findings.
+All formal project-review findings belong to fixed R; L retains exploration, useful failures, comparisons, syntheses and ordinary checks needed for that discussion.
 All L materials belong in `mathematics/ledger/`.
 Retain actual mathematical chronology under the [ledger conventions](ledger.md#exploration-and-history); inert templates and examples do not represent completed work.
 
@@ -295,7 +307,7 @@ Revisit a blocked or refuted route only with an identified change in assumptions
 Audit notes should identify the claim or artifact reviewed, the checks performed, findings and their consequences, and any remaining limitations.
 Reviews must evaluate the argument itself rather than merely restating its conclusion.
 
-Each Task has one responsible main agent and one stable E.
+Each executing ordinary Task has one responsible main agent and one stable E; a joint coordination T has neither direct execution nor an E.
 Internal subagents receive bounded delegated work and coordinated write targets; they do not create parallel Task/E identities or independent allowances.
 Record substantive findings and actual review scope in the responsible mathematical materials.
 Independent parallel Tasks preferably use different line letters such as F and G; this recommendation does not reserve letters or change established identities.
@@ -328,7 +340,7 @@ When progress stalls, preserve the obstruction, consider another justified appro
 
 Preserve unrelated files and concurrent changes.
 Prefer small, reviewable edits and reproducible artifacts.
-Do not overwrite research history, remove source material, rewrite Git history, publish results, contact third parties, or incur costs without authorization covering that action.
+Do not overwrite necessary mathematical or review evidence, remove source material, rewrite Git history, publish results, contact third parties, or incur costs without authorization covering that action.
 These boundaries do not require repeated approval for work already authorized by the user.
 
 Execution permission and research authorization are separate.
@@ -347,10 +359,13 @@ Preserve unrelated staged work and recheck affected bytes if the batch changes.
 
 ## New Record Timestamps
 
-Newly made C/T decisions, actual substantive S decisions or recorded updates, and new operator, approval, intake and correction acts use the actual offset-bearing minute timestamp of that act, for example `2026-10-18T09:30+08:00`.
+Newly made C/T decisions, actual substantive S decisions or recorded updates, and new operator, approval, intake and correction acts use the actual UTC minute timestamp of that act, for example `2026-10-18T01:30`.
+All maintained framework timestamps use the exact UTC format `YYYY-MM-DDTHH:MM`, with no `Z`, numeric offset, seconds or fractional seconds.
 A new decision about older mathematics records the current decision time separately from the mathematics' known original date.
-Source publication dates, edition dates and retained historical evidence preserve their actual known precision; never invent minutes, timezone offsets or unknown historical facts.
+Source publication dates, edition dates and genuinely known year/month/date facts preserve their actual calendar precision; never invent minutes, timezone offsets or unknown historical facts.
+Existing necessary full timestamps are normalized to UTC minutes under the maintenance handbook, while obsolete administrative chronology is removed rather than converted.
 Routine path, heading, link or layout maintenance creates no new event or timestamp requirement.
+Apply the common [existing-decision boundary](records.md#existing-and-newly-made-mathematical-decisions) to receiving and all later selected-view checks; file or anchor addition alone dates no mathematical decision.
 This does not require a Strategy log entry for every edit, a timestamp for every paragraph or reconstruction of an acquired original's creation time.
 Human record authorship and mathematical-review evidence remain separate facts.
 
@@ -359,7 +374,8 @@ Human record authorship and mathematical-review evidence remain separate facts.
 Follow the [identity rules](identity.md) for the actual worktree operator and serial Git delivery.
 Inspect intended paths/index, authorship, resulting commit, outgoing branch and actual remote result.
 A plain commit/push does not run material scans or repeat unchanged construction/research checks.
-Publish already pending commits first, with only the existing smallest-blocker-repair exception; preserve concurrent work and verify the remote after an authorized push.
+Within the authorized remote-delivery sequence defined by the [identity rule](identity.md#submission-checks), publish its pending committed batch first, with only the existing smallest-blocker-repair exception; preserve concurrent work and verify the remote after an authorized push.
+Unpushed commits outside that sequence do not prevent local-only work or require remote inspection.
 
 At key proof points and after Task completion, assign a separately organized independent review through the existing Task workflow.
 State the responsible reviewer or arrangement and exact scope, including the full logical chain for the completion follow-up; preserve any unfinished obligation.
@@ -373,6 +389,9 @@ Fixing a result retains its exact statement, complete argument or counterexample
 Completing a Task checks the original hypotheses, quantifiers, every completion criterion and the whole logical support chain, reusing applicable fixed inputs and reviews.
 These are distinct outcomes; stopping execution, a completed writing round or a Git checkpoint does not resolve a Task.
 Arrange independent review where the research rules require it, without creating a new approval gate at every intermediate step.
+Framework reviews are agent reviews; independent inspection uses a separate agent outside substantive proof development without inherited or shared mathematical discussion, summaries or prior verdicts about that proof.
+Direct fixed statements, arguments and necessary dependencies are legitimate review inputs under the [review arrangement rule](proof-audits.md#review-arrangements).
+After an independently identified gap is repaired, independent re-review of the correction and affected chain remains required; neither the prover nor a substantive repair contributor independently reviews that repair.
 
 Repeat a check when relevant content/input/use changes, a repaired failure needs rechecking, or prior coverage leaves a concrete uncertainty.
 Reuse adequate source inspections, computations and fixed reviews; organization alone does not trigger historical reruns or recursive proof re-audits.

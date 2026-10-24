@@ -1,19 +1,38 @@
 # Human Identity and Numbering
 
+## Git and GitHub connection checks
+
+The agent establishes the actual target, relevant account or authentication channel and authority for the intended remote operation.
+Choose relevant connection checks using the actual transport and current evidence; an environment-local skill, gh login or a fixed preflight sequence is optional.
+Reuse adequate evidence while the target, account, channel and execution context remain applicable; recheck after a relevant change, an actual failure or when fresh remote branch state is needed.
+The authorized read itself may supply connection evidence.
+A gh authentication check concerns that gh account, an SSH Git operation uses its actual SSH channel, and an anonymous public HTTPS read needs neither gh authentication nor a repository remote.
+When useful, git ls-remote targets the selected remote or explicit URL, without assuming origin.
+Check the actual behavior of any diagnostic described as read-only; avoid silently refreshing credentials or changing configuration.
+On failure, report the relevant concrete error without exposing credentials and diagnose the actual environment and channel before inferring expiry or changing an account.
+A sandbox's lack of credential access does not establish expired credentials.
+Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
+Connection success grants no push, force-push, branch deletion, PR creation or other remote mutation.
+Local reading, edits, checks, commits and clean exports require no network preflight.
+The [daily metadata read](../versioning.md#official-version-check) retains its bounded public HTTPS endpoint, cache and separately authorized upgrade boundary.
+
 ## Stable keys and local attribution
 
-repository/people.json registers permanent human IDs, display names, timezone-bearing minute timestamps, accepted Git name/email pairs and associated GitHub logins.
+repository/people.json registers permanent human IDs, display names, actual registering humans, accepted Git name/email pairs and associated GitHub logins.
+New human/repository registrations contain no administrative registration timestamp; retained obsolete values are removed from maintained metadata rather than converted or kept as compatibility facts.
 Human/repository keys use letters, digits and internal hyphens; underscores separate identifier fields.
 Registration checks keys and GitHub logins without regard to case, rejects duplicate Git signature assignments, and retains canonical spelling.
 Display-name changes do not rename records.
 Correct mappings through traceable framework maintenance; never reassign a human key to somebody else.
 
-Each working copy binds research.actor and its worktree scope in Git's config.worktree, located with git rev-parse --git-path config.worktree.
+Each Git working copy binds research.actor and its worktree scope in Git's config.worktree, located with git rev-parse --git-path config.worktree.
 Sessions in the same checkout read the same binding; linked worktrees bind independently.
 identity-bind enables extensions.worktreeConfig and confirms only the selected checkout.
 It removes the legacy shared actor after installing that explicit binding.
 A new clone, a newly added worktree or a deliberately changed operator needs identity-bind.
 Unbound, unknown and automatically copied bindings refuse research writes.
+Ordinary folder use requires no Git installation or initialization; determine its operator from the currently explicitly identified human and existing human registration.
+Git binding, signature and delivery requirements apply to Git workspaces, and Git-dependent tools retain their actual prerequisites.
 Worktree scope uses Git's administration identity, so moving a working directory does not by itself change its operator.
 The global Git configuration is not changed.
 
@@ -44,18 +63,20 @@ Registered human collaborators work directly in the shared research repository a
 Additional parallel research copies are not recommended; this framework defines no coordination or management workflow for them.
 The checkout's actual operator binding remains shared by its chats and does not change another author's mathematical or manuscript choices.
 
-Each collaborator's agents may directly maintain administrative locations in shared files and another author's materials, including paths, links to the same object/version, derived navigation and purely administrative prose or layout.
-Preserve the mathematical object/version, hypotheses and quantifiers, definition/convention, argument, adopted inputs, source identity and review meaning.
-A short link, field or sentence change that alters any of these substantive facts is not administrative maintenance.
-Substantive mathematics remains in the responsible author's separate materials and authorized work; another collaborator records their actual contribution at their own responsible home with exact references.
+Each collaborator maintains shared registration and derived navigation at their responsible scope.
+Every authored mathematical document retains exactly one human author, including a joint Task.
+Initial intake preparation follows the [common adaptation rule](records.md#receiving-and-adapting-selected-content); later corrections to another human's document belong in the correcting human's own suitable material with exact references.
+This applies to administrative wording, paths and layout within an authored body as well as substantive mathematics.
+Only the same established human may directly revise the body under actual authority, fixed-version and evidence requirements.
+For an external representation, an explicitly adopted local_human correspondence in the existing external-person record can establish that relationship; names, a write argument or changing the checkout binding alone cannot.
 Do not take over another human's Task/E.
-Routine administration needs no per-author approval, additional review or maintenance receipt, and adds no runtime author-equality gate.
+Shared administration needs no per-author approval, additional review or maintenance receipt.
 Existing activity-specific roles and publication boundaries retain their scope.
 
 Classify an actual maintenance or integration conflict by its content into two kinds:
 
-- Resolve administrative inconsistencies directly under the applicable framework rule.
-  If that rule is unclear, report the concrete competing administrative content and the missing rule choice for a human ruling.
+- Resolve administrative inconsistencies directly using the [core principles](../readme.md#core-principles-and-interpretation) and applicable topic rules.
+  Act when they determine the choice; seek a human ruling only for a remaining decisive gap in intent, authority or facts, identifying the concrete competing content and missing choice.
 - For a substantive mathematical conflict, identify the competing statements/evidence and affected materials, then obtain human approval for the scoped mathematical recheck before performing it.
   Preserve the competing evidence rather than silently selecting, combining or rewriting one side as a resolution.
   Reuse explicit approval already given for that same recheck scope without requesting it again.
@@ -63,14 +84,15 @@ Classify an actual maintenance or integration conflict by its content into two k
 
 Reading enough to locate a difference does not establish a new mathematical verdict.
 This conflict procedure adds no approval to routine maintenance, ordinary authorized research in each author's own materials or an already authorized review.
-Administrative repairs in acquired material preserve original mathematics and actual acquisition provenance; do not replace captured original locators with receiving addresses or turn local feedback into a source amendment.
+Same-human repairs in acquired material preserve original mathematics and actual acquisition provenance; keep the actual input version separate from a receiving revision.
 Distinct research repositories reuse material through intake; another author in this shared repository does not by itself create an intake operation.
 That reuse covers permitted authored mathematics and bibliography, not either repository's private local literature documents or holding accounts.
 
 ## Identifier and repository identity
 
 Local fixed material paths use `Author_Kind_F0001_v1.md`; rolling S/D omit `_vN`.
-Imported C/R/L/J use receiving external identities such as `author3_repo2_C_F0001_v1.md`, with an explicitly chosen receiving family serial and exact original source binding.
+Imported C/T/R/L/J use receiving external identities such as `author3_repo2_C_F0001_v1.md`, with chosen local classification, line, serial and version and exact original per-unit source facts.
+External T is restricted to a necessary joint contract, with no E; own personal import uses ordinary local identities.
 J native files share their numbered group identity.
 U uses its separate `SourceKey/Author[_repoN]_U001_v1.md` source-key/unit placement contract without requiring an external-author number.
 The human key identifies authorship, not a paper byline, ownership permission or an automatic right to alter an acquired original.
@@ -82,7 +104,7 @@ D is a working address, stable during its current use and reusable after retirem
 A materially different statement/question gets its appropriate new family; a substantive new proof within an unchanged Claim gets a material revision.
 Source-unit numbers retain the existing sequence within their citation key, separate from research-line allocation.
 
-repository/config.json stores this repository's actual name, URL when known, timezone and necessary runtime settings.
+repository/config.json stores this repository's actual name, URL when known, necessary runtime settings and the compact `material_next` map of next unissued material-family numbers.
 It contains no global identity or local self-repository number.
 repository/people.json registers local humans by unique readable names such as Yin, Alice and Alice2, with actual Git/GitHub mappings and no shared active-user setting.
 Canonical external author numbers are reserved and cannot register or bind a local operator.
@@ -94,14 +116,14 @@ Names, addresses, foreign numbers and Git revisions alone do not prove identity 
 The agent prepares actual adopted source facts and explicit receiving correspondence, asking for a human ruling only for a real unresolved contradiction or collision.
 See the [local external format](../material-format.md#local-external-identities-and-prepared-correspondence).
 
-Acquired C/R/L/J retain the original source author name, path, line, family/version and fixed revision in provenance, while local filenames use receiving authorN/repoN and the explicitly selected receiving serial.
+Acquired C/T/R/L/J retain the original source author name, path, line, family/version, selected anchor and fixed revision in provenance, while local filenames describe the prepared receiving content independently.
 Repeated acquisition and later versions reuse the established receiving family.
 Onward transfer translates selected original facts through explicit receiving correspondence; foreign repoN/authorN tokens never implicitly identify receiving records.
 The immediate sender remains transport, separately from the original source.
 Do not reacquire this repository's own returning originals or create a self entry to do so.
 A distinct external contribution can use an existing local input through prepared exact correspondence without importing that input again.
 
-U retains its original source path, author and physical version while the receiving canonical work key and unit position may differ.
+U retains its original source path, author and input physical version in provenance; the receiving canonical work key, unit position and prepared physical version identify its local content separately.
 The receiving key/number defines one position across authors and external prefixes.
 Prepare precise declaration/reference edits, and validate affected final positions with unmoved siblings and all same-batch destinations.
 Preserve an established original repoN/family's receiving number across versions; a newly occupied position fails without automatic renumbering.
@@ -118,13 +140,28 @@ Historical acquired J scopes remain recorded facts; selected current scope and a
 ## Allocation and concurrency
 
 Each actual human author allocates within the relevant kind/line sequence.
-Independent material creation does not take the shared-maintenance lock: it exclusively creates the next destination and returns a clear retry instruction on a collision.
+For C/T/R/L/J and continuing S, `repository/config.json` keeps one `material_next` entry per actual author/origin/kind/research-line namespace, with positive integer next unissued numbers only.
+Local registered authors and receiving external authorN/repoN namespaces stay distinct; an original source serial or immediate sender does not replace the actual receiving namespace.
+U uses the same compact map with its separate citation-key/unit namespace across authors and origin prefixes, under the [allocation format](../material-format.md#material-family-allocation-state).
+D is outside this permanent counter because its retired working address can be reused.
+Retiring a material, replacing it through another author or line, or leaving its namespace empty does not decrease the bound or make an issued fixed identity available again.
+No per-deletion entry, issue date, retirement log, reserved-file stub, hash or migration registry is required.
+
+Before the first relevant allocation or retirement, initialize the affected entry from an agent-confirmed upper bound on previously issued family numbers.
+Surviving filenames supply only a lower bound; if the actual used-number upper bound is unresolved, resolve that concrete initialization question rather than resetting the counter or reconstructing Git history automatically.
+Under the existing short mutation lock, re-read the stored bound and current occupation, issue a new family and advance the bound without decreasing it after deletion or failure.
+The destination remains exclusively created and an occupation conflict fails clearly; unused gaps are acceptable.
+Direct agent authoring maintains this same current state instead of bypassing it.
+Installing a new explicitly chosen receiving family or U position also advances its actual namespace bound; a fresh number below that initialized bound is not available even if no file occupies it.
+An established imported family keeps its existing receiving correspondence across physical versions, and a next physical revision allocates no new family number.
+Clean bootstrap starts with an empty map and inherits none of another repository's counters.
+
 Revisions and append/select operations protect the actual same-material read, predecessor/current-main check, modification and publication under the short lock.
 Candidate appends preserve fresh history even when the selected decision is unchanged; stale selecting operations fail without silently retrying another predecessor.
 Coordinate direct edits to the same material.
 A duplicate L family at another home is an error, not a second allocation sequence.
 
-Identity registration, shared navigation publication, explicit bibliography updates and intake/U allocation use the OS lock at `repository/.lock`.
+Family-number issuance, identity registration, shared navigation publication, explicit bibliography updates and intake/U allocation use the OS lock at `repository/.lock`.
 Wait at most 30 seconds by default; `--maintenance-wait SECONDS` configures the bounded wait and zero fails immediately.
 Waiting is cancellable, uses monotonic time and emits one concise notice when contended.
 Persistent lock-file existence is normal.
@@ -147,9 +184,11 @@ A draft or unfinished result may be committed with its truthful status.
 Do not automatically run framework regressions, full material scans, recursive proof review or PDF-store hashing.
 Reuse applicable construction/research verification; repeat it only for relevant changes, repaired failures or uncovered uses.
 
-When push is authorized, use the repository's connectivity preflight and actual account, verify the target remote tip and branch relationship, push the authorized local tip and verify the remote result.
+When push is authorized, choose relevant checks for the actual target and account/channel under the [connection responsibilities](#git-and-github-connection-checks), verify the target remote tip and branch relationship, push the authorized local tip and verify the remote result.
 Connectivity alone authorizes no mutation.
-Publish an existing pending committed batch before constructing the next batch; a concrete blocker permits only the smallest committed repair and necessary references first.
+Within an authorized remote-delivery sequence, a pending batch is its already committed, unpublished work for the selected repository, branch, destination and delivery scope.
+Publish that batch before constructing the next delivery batch; a concrete blocker permits only the smallest committed repair and necessary references first.
+Other unpushed commits do not create that sequence; a local-only commit needs neither push authority nor a network check merely because earlier commits remain unpublished.
 A worktree-only fix does not repair committed HEAD.
 Preserve concurrent work and each contribution's authorship.
 Resolve divergence and inspect the affected delivery again if the local or remote tip changes.
@@ -183,9 +222,10 @@ These selected checks report the owning path, field and inconsistent number with
 Apply the [common maintenance boundary](records.md#substantive-material-retention): valid J/E/intake maintenance, coherent moves and authorized reproducible-output cleanup add no generic changed-file reminder.
 Concrete identity, reference, native-format, explicit-decision and review-binding errors remain observable; structural success supplies no mathematical review.
 Generic submission checks registry prose and source links at their ordinary public-reference/path scope, without a holding, edition, availability or private-byte verdict.
-Changed outgoing links and incoming links to affected public targets are separate scopes in the selected view.
-Read each discovered incoming consumer in full even when it has other changes, checking only its actual links to affected targets.
-Registry outgoing checks may stay within changed blocks, while unchanged unrelated broken links remain outside the incoming scope.
+Generic submission checks changed files' outgoing links; it does not discover unchanged incoming consumers or certify their coverage.
+The agent identifies necessary incoming consumers through scoped searches and reading, then selects their actual files and target locators for checking in the chosen view.
+Use the shared link and locator readers on that explicit scope, requiring exactly one occurrence for each selected Markdown anchor, including Strategy parents and navigation targets.
+Registry outgoing checks may stay within changed blocks; an explicit incoming check uses the selected consumer's complete text and designated targets.
 The agent chooses any needed [explicit source check](literature.md#selected-source-checks) in the actual requested view; selected source operations retain their own declaration and byte constraints.
 The agent selects actual bibliography references in mixed text; a token search is neither an active-citation verdict nor a completeness certificate.
 There is no aggregate research checker, automatic Git hook, publication certificate or verification registry.

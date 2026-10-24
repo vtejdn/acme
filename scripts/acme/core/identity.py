@@ -41,7 +41,7 @@ def validate_registry_value(data):
         r.require(name.casefold() not in seen, 'Human identity collision ignoring case: ' + name)
         seen.add(name.casefold())
         r.require(isinstance(person.get('display_name'), str) and person['display_name'].strip(), 'Human display name is required.')
-        r.valid_stamp(person['registered_at'])
+        if 'registered_at' in person: r.require(False, 'Administrative registration timestamps are retired.')
         for item in person.get('git_identities', []):
             r.require(all(isinstance(item.get(k), str) and item[k].strip() for k in ('name', 'email')), 'Incomplete Git identity.')
             pair = (item['name'], item['email'].casefold())
@@ -59,6 +59,32 @@ def person(repo, value):
     matches = [p for p in registry(repo)['people'] if p['id'].casefold() == value.casefold()]
     r.require(len(matches) == 1, 'Register the human identity before use: ' + value)
     return matches[0]
+
+
+def source_author(repo, author, source):
+    """Resolve the actual qualified source author in this supplied view."""
+    from . import external
+    if re.fullmatch(r'author[1-9][0-9]*', author):
+        return external.person(repo, author, source)
+    else:
+        # U keeps its readable original author and qualified source name.
+        matches = [item for item in external.table(repo, 'author')['people']
+                   if {'repository': source, 'name': author} in item.get('names', [])]
+        r.require(len(matches) == 1, 'Direct revision needs one adopted same-human source-author correspondence.')
+        return external.person(repo, matches[0]['id'], source, author)
+
+
+def require_author(repo, author, source=None):
+    """Use adopted human correspondence, never a caller's author argument."""
+    actual = actor(repo)
+    if source is None:
+        r.require(person(repo, author)['id'] == author == actual,
+                  'Correct another human\'s authored content in your own document with an exact reference.')
+    else:
+        row = source_author(repo, author, source)
+        r.require(row.get('local_human') == actual,
+                  'Direct revision needs adopted same-human correspondence in the external person record.')
+    return actual
 
 
 def worktree_enabled(root, runner=None):
@@ -155,7 +181,7 @@ def register(repo, value, display_name, git_name=None, git_email=None, github_ac
             registrar = value
         else:
             registrar = actor(repo)
-        entry = {'id': value, 'display_name': display_name, 'registered_at': repo.now(),
+        entry = {'id': value, 'display_name': display_name,
                  'git_identities': [{'name': git_name, 'email': git_email}] if git_name else [],
                  'github_accounts': [github_account] if github_account else [], 'registered_by': registrar}
         # Validate the proposed complete registry before publishing it.
@@ -165,21 +191,20 @@ def register(repo, value, display_name, git_name=None, git_email=None, github_ac
         return entry
 
 
-def initialize(root, username, repository, offset, url=None, git_name=None, git_email=None, github_account=None):
+def initialize(root, username, repository, url=None, git_name=None, git_email=None, github_account=None):
     root = Path(root).resolve()
     r.check_storage(root)
-    key(username); key(repository); r.zone(offset)
+    key(username); key(repository)
     r.require(bool(git_name) == bool(git_email), 'Provide Git name and email together.')
     r.require(not (root / 'repository/config.json').exists(), 'Repository is already initialized.')
     root.mkdir(parents=True, exist_ok=True)
     if not (root / '.git').exists():
         git(root, 'init', '--quiet')
     checkout(root)
-    now = r.timestamp(offset)
     config = {'repository': repository, 'layout_format': 2,
-              'timezone': offset, 'repository_url': url, 'registered_at': now}
+              'repository_url': url, 'material_next': {}, 'framework_update_check': True}
     people = {'people': [{'id': username, 'display_name': username,
-              'registered_at': now, 'registered_by': username,
+              'registered_by': username,
               'git_identities': [{'name': git_name, 'email': git_email}] if git_name else [],
               'github_accounts': [github_account] if github_account else []}]}
     validate_registry_value(people)

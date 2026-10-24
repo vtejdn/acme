@@ -41,7 +41,7 @@ The entrance is an ordinary directory or one top-level directory junction; symbo
 All PDF, original HTML and resource files in this store are local only, excluded from Git/GitHub and unavailable for acquisition by another repository.
 Keep links relative to that entrance; another checkout or storage target does not change source identity.
 Necessary persistent physical targets belong only in the responsible human's ignored `profiles/<human>/secrets.md`, under the [private-setup rule](organization.md#machine-local-locators).
-Runtime source access and containment checks still resolve the actual mount; public records keep logical relative locators.
+Concrete source access and file/group maintenance resolve the actual mount; public records keep logical relative locators.
 
 The mount supplies source access, not repository-owned output space.
 General repository scans, copies, cleanup, publication snapshots and generated navigation must not descend into it.
@@ -55,7 +55,8 @@ The agent selects any needed [source-check scope](#selected-source-checks), pres
 Local registration, explicit source reading and public U display use the actual selected declarations and necessary direct relationships.
 An unrelated malformed account is not a prerequisite for a selected operation; an explicitly requested whole-store inventory still checks its complete scope.
 Competing declarations or several possible primary artifacts require the agent to inspect the concrete candidates and supply chosen facts or a local account edit, rather than accepting the first or last link.
-Ordinary local-link containment checks do not audit holding, edition or source bytes.
+Generic public links into the logical source root, groups or named files check normalization, repository containment and protected paths without resolving the mount or checking source existence, format or native anchors.
+They do not audit holding, edition or source bytes.
 The sole artifact registration source is mathematics/literature/registry.md; rule examples and other Markdown files do not register artifacts.
 Each primary artifact has an explicit account; selected additional pages/resources carry their own locators and fingerprints where known.
 Its one `Artifact:` declaration names one exact local Markdown target; its single known fingerprint uses `SHA-256` followed by the inline-code hash on that same line.
@@ -142,7 +143,8 @@ Preserve necessary contents/holding links.
 There is no automatic retry, conflict classifier, parallel source register or retry-history archive.
 
 Local registration reports the obtained or unavailable result for each explicitly chosen PDF, original HTML page or resource.
-An unavailable local source retains its declared locator, supplied known hash and limitations independently of mathematical-material intake.
+An unavailable local source retains its declared locator, limitations and any previously established actual-local-byte baseline, independently of mathematical-material intake.
+An unknown historical hash remains uncertain provenance and does not establish local possession or a local integrity baseline.
 The agent determines the resulting limit on intended mathematical use at the actual consumer.
 This differs from the authored-material copy's promised C/R/U/L bodies or indispensable J files, which must exist before that operation can claim to copy them.
 Unsafe paths, invalid supplied formats, mismatching expected bytes and publication conflicts remain errors; no file suffix or resource-importance classifier decides necessity.
@@ -223,8 +225,6 @@ A work may serve several scoped roles with one artifact; reuse permission derive
 These are input-literature collections.
 The existing rules for unpublished and restricted material still govern external disclosure, and the manuscript build-output policy is unchanged.
 The current framework creates collection entrances, not an automatic selection of papers or permission to treat all literature as reusable prose.
-
-<a id="literature-acquisition"></a>
 
 ## Literature Acquisition
 

@@ -4,6 +4,7 @@
 
 Apply the [work-obligation rules](../rules/workflow.md#work-obligations) and [agent/tool responsibility](../rules/workflow.md#agent-and-tool-responsibilities).
 The optional `material.py create --kind S --line F --file route.md` writer, or an actual `--task PATH`, allocates the supplied route.
+Associate S with the actual ordinary individual T; a joint coordination T has no direct S or E.
 Replace illustrative paths with actual material locators; omit absent related claims and inapplicable fields.
 An exploratory route can begin with a question and explicitly provisional scope.
 
@@ -26,8 +27,8 @@ author: Author
 | parent | [Actual coordinating S](ACTUAL_PARENT_PATH#route) |
 
 Related claims, when present: links to actual Claim material
-Updated: 2026-10-18T09:30+08:00
-Use the actual offset-bearing minute timestamp for a new substantive decision or recorded update; retained history keeps its known precision.
+Updated: 2026-10-18T01:30
+Use the actual UTC minute timestamp for a new substantive decision or recorded update; genuinely known historical calendar precision is preserved.
 Omit the parent row for a root; replace the illustrative locator when used.
 Historical lineage, when applicable: predecessor / successors and the dated formulation and obligations actually inherited.
 A current parent is not lineage.
@@ -81,7 +82,7 @@ Apply the [route ownership boundary](../rules/strategies.md#writable-route-bound
 Explicit source references support reverse discovery without implying source adoption or supersession.
 Omit inapplicable sections; no replacement knowledge registry, version chain or retrospective is required for every ordinary action.
 
-Different local authorship is not a write-permission barrier.
-Coordinate concurrent edits; substantive contributions use the responsible human's own numbered materials linked to the original under the [identity rule](../rules/identity.md).
-Tool capability does not authorize a substantive cross-author rewrite.
+Only the established same human directly revises an authored body.
+Other humans put corrections and contributions in their own suitable materials with exact references under the [identity rule](../rules/identity.md).
+Coordinate concurrent writes and maintain shared registration/navigation at their actual scope.
 Preserve acquired-source provenance and historical mathematics.

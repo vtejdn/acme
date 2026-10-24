@@ -33,9 +33,10 @@ def validate_locator_targets(locators, read, paths=()):
         if item.get('anchor') and path.lower().endswith('.md'):
             if path not in anchors:
                 text = data[path].decode('utf-8-sig') if isinstance(data[path], bytes) else data[path]
-                anchors[path] = research_links.anchors_text(text)
-            r.require(item['anchor'] in anchors[path],
-                      'Received required anchor missing: ' + path + '#' + item['anchor'])
+                anchors[path] = research_links.anchor_occurrences(text)
+            r.require(anchors[path][item['anchor']] == 1,
+                      'Received required anchor missing: ' + path + '#' + item['anchor']
+                      if not anchors[path][item['anchor']] else 'Received required anchor ambiguous: ' + path + '#' + item['anchor'])
 
 
 def validate_locators(repo, locators, paths=(), material_data=None):

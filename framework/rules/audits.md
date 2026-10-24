@@ -10,7 +10,7 @@
 Original source artifacts remain in [mathematics/literature/](../../mathematics/literature/readme.md).
 Canonical bibliographic fields belong to references.bib and acquisition/artifact facts to registry.md.
 C owns its statement, selected assessment and actual argument, which may be in another applicable C; T owns its contract and lifecycle.
-Independent project-review accounts belong only to fixed R, while suitable L self-review or unknown findings retain their actual scope.
+All formal project-review findings belong to fixed R for every actual agent relationship, while ordinary checks may remain with the C argument or L discussion.
 U owns source inspection, not an adopted project-proof review.
 [repository/](../../repository/readme.md) owns repository and human identity, not Claim assessments.
 
@@ -26,7 +26,7 @@ Check whether the review covers the version now being used.
 - A computation or successful build establishes only what that check actually tests.
   Mathematical review, source review, formal verification, external review, and publication are separate facts.
 - Record the reviewer, date, checked artifact or version, review scope, and self-review or independent-review relationship.
-  No external or human reviewer is mandatory.
+  Framework review is agent inspection; human authorship, advice and authorization remain separate facts.
   Agreement between agents is not evidence in place of an argument.
   For project proof reviews, apply the [review arrangements and input disclosure](proof-audits.md#review-arrangements).
 - A material correction must identify the affected source units and project claims, review their downstream dependencies, and update the affected source or Claim assessments in their responsible records.

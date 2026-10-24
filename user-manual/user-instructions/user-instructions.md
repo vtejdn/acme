@@ -1,97 +1,121 @@
-# Human Request Examples
+# Instruction Examples
 
 [User manual](../user-manual.md)
 
-Use ordinary language to describe your objective, the object to work on and any scope or stopping condition.
-These examples suggest useful requests; they are not fixed syntax, a complete command language or mandatory wording.
-An example confers no authority until your actual instruction selects work within its applicable boundaries.
-The manual explains setup and how to read results; [script documentation](../../scripts/readme.md) supplies exact optional interfaces when needed.
+Use natural language to describe your goal.
+The examples below are grouped into [setup](#setup), [research](#research-instructions) and [administration](#administration-instructions) instructions.
+Adapt the wording to your actual question, files and scope.
 
-## Start or continue research
+## <a id="setup"></a>Setup instructions
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Investigate whether every object satisfying H has property P.” | Start a substantive mathematical question. | Domain, hypotheses, quantifiers, desired proof/counterexample, useful weaker results and execution limits. | A precise authorized question and research progress with actual evidence and gaps. |
-| “Continue Task F0001.” | Resume work on an existing objective. | The intended Task or material, changed priorities/limits and any actual resumption authority. | Work within current authority and stop conditions, or the concrete boundary preventing it. |
-| “Discuss these possible approaches before choosing one.” | Compare ideas without starting autonomous research. | The question, alternatives and the decision you need. | A scoped comparison and open issues, without silently activating a Task. |
+Use these examples to prepare your workspace, register your author identity and configure local resources.
+See the manual's [setup](../user-manual.md#setup) section for the sequence of installation and registration steps.
 
-Name the actual question or existing work; you need not choose internal material operations or a sequence of tools.
-The result should preserve your actual objective and existing execution boundaries.
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Download [ACME](https://github.com/vtejdn/acme) to `D:\acme`. | Check that the destination is suitable for installation, download the ACME framework files, preserve existing content, and report the version and any remaining setup steps. |
+| Install [Git](../git-repository.md#notion-git). | Check whether Git is already installed, install it if needed, and report the available version and any remaining setup steps. |
+| Tell me how to connect to [GitHub](../git-repository.md#notion-github). | Explain how to sign in, authenticate and connect to a remote repository, identifying any steps you need to complete yourself. |
+| I have signed in to GitHub. Test the connection. | Check the authenticated account and perform read-only connectivity tests for GitHub and the target repository. Report the result or the specific error. |
+| [Clone](../user-manual.md#notion-clone) [ACME](https://github.com/vtejdn/acme) to `D:\acme`. | Check that Git, access permissions and the destination are ready, clone the ACME repository including its version history, and report the branch, version and remaining initialization steps. |
+| Register me as Ali. | Register Ali as your author key; if the current folder is a Git working copy, also associate it with Ali. Preserve existing collaborators' identities. |
+| Set up Git and connect it to my repository <https://github.com/alice/acme>. | Configure this project's Git settings and the specified remote, check the actual commit identity and test access, while preserving existing commits and unrelated settings. |
+| Clone my collaborator's repository <https://github.com/alice/acme> and register me as Bob. | Clone the shared repository, register you as Bob, and associate the new Git working copy with Bob. Preserve existing authors and research materials, and report the Git commit identity settings. |
 
-## Close a round or stop work
+## Research instructions
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Close this round and organize the results.” | Finish the current research batch. | The round or materials and any specific deliverable. | Checked results, retained useful failures, remaining obligations and a continuation point. |
-| “Complete the Task against its original criteria.” | Assess whether the objective has been met. | The intended Task and any actual requested review scope. | Completion only if its original contract and evidence suffice; otherwise the exact unresolved criterion. |
-| “Finish the current work, then pause.” | Stop after the active batch is made usable. | Which work should finish and any retained checkpoint needed. | That closeout and a usable handoff, followed by the requested pause. |
-| “Stop execution now.” | End further advancement at the current boundary. | The intended run or object if context is ambiguous. | Preserved available findings and actual stop facts; no mathematical completion inferred. |
+Use these examples to work with literature and explore mathematical questions.
 
-Round closeout, execution stopping and Task completion have different outcomes.
-Specify which outcome you intend when the distinction affects the work.
+### Find, register or audit literature
 
-## Review work or request a check
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Inspect the local source abc26, register it and audit it. | Identify the work, edition and local original for abc26, and complete its bibliographic and file registration. If the original has a table of contents, prepare a searchable copy of it. Audit its mathematical content and record the scope checked, conclusions and unresolved issues. |
+| Audit Theorem 1.7 in abc26. | Locate Theorem 1.7 in the original, check its full statement, hypotheses, proof and the applicability of necessary dependencies, and record the findings, unchecked parts and specific gaps. |
+| Search for *On the construction of S* and try to register and audit it. | Identify the work and edition, check existing records and try to obtain the original. Record the bibliographic details and what was actually obtained. If the original has a table of contents, prepare a searchable copy. Audit the available content and identify anything unavailable. |
+| How is this definition used in the related literature? | Consult existing definition records and relevant original sources, compare objects, hypotheses, notation and uses, give precise citations, and distinguish source definitions from local reformulations or generalizations. |
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Review this proof and report concrete gaps.” | Assess mathematical correctness. | The exact argument, hypotheses and intended review depth; say whether edits are authorized. | Findings with checked scope, decisive reasoning and remaining limits. |
-| “Review the whole manuscript, including citations and build diagnostics.” | Inspect a complete document. | The active document, intended mathematical/citation/layout scope and any source restrictions. | Distinct mathematical, citation and build findings covering the requested scope. |
-| “Check the staged view” / “Check changes from BASE.” | Inspect a specific Git view. | INDEX, WORKTREE or the actual comparison base and selected scope. | Findings for those bytes; unstaged fixes do not repair another view. |
+### <a id="start-or-continue-research"></a>Start or continue a [Task](../user-manual.md#material-task)
 
-A mathematical review, structural check and source-byte inventory answer different questions.
-State the intended depth and scope explicitly, especially for a broad audit.
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Set up a Task in line W for Conjecture 1.3 in abc26. | Check the original statement, hypotheses and scope of Conjecture 1.3, and first look for an existing Task on the same question. If a new Task is needed, use [line W](../user-manual.md#notion-research-line-letter) and state its source, exact question and completion criteria. |
+| Set up a Task in line F with the goal 'if P, then Q'. | Specify the objects, hypotheses and quantifiers in P and Q, create a Task in line F with 'P implies Q' as its full objective, and state the completion criteria. |
+| Create a new Task to generalize Proposition P from finite dimensions to infinite dimensions. | Check the original proposition, specify the new objects, hypotheses and intended conclusion, create the Task, and retain the original proposition as a special case that the generalization must cover. |
+| Set up a Task to find a general formula in setting P that includes formula (1) in abc26. | Check the original formula's hypotheses and notation, specify setting P and the scope of the general formula, and create a Task whose completion criteria include a correct derivation and an explanation of how it covers the original formula. |
+| Start working on Task F0001 until 5% of the weekly allowance remains, then organize the results and pause. | Check the Task's current state and execution conditions, and confirm that the relevant weekly usage can be read before proceeding. Monitor the remaining allowance and stop advancement at the 5% threshold, organize results, open questions and a continuation point, then pause. |
+| Continue working on Task F0001. | Read the current objective, strategies, existing results and stopping conditions, then resume within the current authorization and limits that still apply. If a stopping condition remains in force, explain the specific reason preventing continuation. |
 
-## Find, register or read literature
+### Shared goals
 
-Original literature stays in local storage and is excluded from cross-repository intake.
-Public accessibility alone permits no redistribution of the local originals through Git, uploads, J, attachments or large copied passages.
-Request independent source acquisition when you need the original text.
-Fingerprints use actual obtained local bytes; acquisition-only failure records access facts without requiring a new U.
+| Example instruction | Expected agent actions |
+| --- | --- |
+| First inspect collaborators' routes, then choose a useful approach for my Task F0001. | Read the relevant routes, reusable results and informative failures, then choose or adapt your own Strategy within F0001's participation scope and existing execution conditions. Different routes can reduce repeated work; deliberate independent verification, replication and cross-checking remain appropriate. |
+| Establish a joint Task for this question and link it to Task F0001. | Check the shared question, hypotheses, scope and completion criteria, and establish or reuse an appropriate joint Task; link your F0001 to the version of the common contract actually adopted, specify your participation scope and individual completion criteria, and preserve existing execution conditions. Establishing the link alone does not start research. |
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Find existing results relevant to this question.” | Reuse knowledge before substantial proof work. | The question, hypotheses, known sources and any access constraints. | Relevant existing evidence, exact applicability and unresolved source checks. |
-| “Register this paper and prepare its contents if supplied.” | Retain an actual source for present or future use. | The actual work/edition, provided file or authorized address and any known access limitations. | Bibliographic/artifact facts, actual availability and applicable contents preparation, distinct from proof review. |
-| “Read this theorem's statement and hypotheses; do not audit its proof.” | Obtain a precise bounded source inspection. | Exact source/edition/passages and intended use. | The inspected statement, assumptions, applicability and honest depth limits. |
-| “Audit this source's proof, including its Lean code.” | Request the additional code/formalization scope. | Exact source, proof and code revision, intended trust/axiom checks and available tools. | Actual proof/code findings and the checks performed; associated Lean is otherwise excluded by default. |
 
-Acquisition, contents, source inspection and proof review remain separate outcomes.
+### Content imports
 
-## Write or revise a manuscript
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Import Task F0001 from my repository 〈repository URL〉. | Verify the source repository and your author identity, import F0001 and its necessary mathematical dependencies, and reuse adequate existing local materials; obtain required inputs from other authors through intake, and retain the joint contract link or prepare a complete standalone contract as appropriate. Preserve effective stopping conditions and allowances; import alone does not start research. |
+| Import my writing settings and manuscript F0001 from my repository 〈repository URL〉. | Import the selected personal writing settings that still apply, along with the source files, figures, bibliography and necessary mathematical support for manuscript F0001; preserve authorship and the scope of the settings, reuse existing local materials, repair references, perform necessary build checks, and report missing inputs and remaining issues. |
+| Receive materials related to Alice's Task A0001 from 〈repository URL〉. | Verify the source repository and Alice's author identity, select the results, arguments, computations and reviews related to A0001 that are needed for this request, and reuse adequate existing materials; preserve original authorship, exact sources, complete necessary mathematics and actual review limitations, and report unavailable necessary inputs. Conduct subsequent research under your own Task and authorization. |
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Prepare this manuscript from these established results.” | Present selected mathematics. | The actual document, author, audience, scope and sources to use. | A manuscript with actual citation/source support and applicable build checks. |
-| “Revise this statement without changing its hypotheses or quantifiers.” | Make a precise wording change. | The active source, intended logical meaning and any required notation. | The requested text change and verification of its actual scope. |
-| “Use source A as a style model; source B may be reused except Section 4.” | Give scoped writing/reuse choices. | The manuscript or author-wide scope, exact sources and exceptions. | Choices applied at that scope, with truthful attribution and mathematical fit. |
+### Other common instructions
 
-Map all citations actually present in current TeX, including uses with plainly stated pending checks; adequate source evidence is required to call an application verified.
-Personal/document choices select permitted defaults and style without waiving evidence, preservation, role/Task authority, stopped conditions or private-source/publication boundaries.
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Consider constructing an S using theory A; add this [strategy](../user-manual.md#material-strategy) to Task F0001. | Check the applicability of theory A and record the candidate construction as a research strategy for F0001. State its hypotheses, intended role, steps still to be verified and next action, and compare it with existing strategies to avoid duplication. |
+| Incorporate the discussion above into F0001's strategies. | Identify the approach discussed, update an existing strategy or create one as needed, retain its basis, open questions and next step, and associate it with F0001. |
+| Organize and record the discussion above according to the framework rules. | Preserve reusable statements and arguments, exploratory findings and other necessary evidence in the appropriate materials, with their hypotheses, sources and unresolved parts. Reuse existing records and repair references. |
+| Report on current progress with F0001. | Check the Task's current state, distinguish proved results, candidate arguments, computational observations and open questions, link the relevant materials, and explain what remains to achieve the original objective. |
+| Organize the results so far, then pause. | Finish checking and organizing the current round's work. Preserve useful results, failed attempts, remaining questions and a usable continuation point; record the pause and conditions that still apply, then stop further advancement. |
 
-A style reference does not itself authorize text reuse, and changing the operator does not change the responsible author's choices.
-The manual's [writing explanation](../user-manual.md#use-literature-computations-and-manuscripts) helps distinguish these choices.
+## Administration instructions
 
-## Compute, maintain or reuse work
+Use these examples for Git operations, environment settings and routine maintenance.
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Reproduce this computation with these parameters.” | Check a stated calculation. | The actual program, inputs, parameter range and result to reproduce. | The actual run, arithmetic mode, result and limits, including failure if it occurs. |
-| “Repair these links and navigation while preserving the mathematics.” | Perform routine shared maintenance. | The affected objects and intended same-object targets. | Direct administrative repair, including in another author's material, with meaning and provenance preserved. |
-| “Compare these conflicting statements before deciding a repair.” | Locate an actual integration conflict. | Both statements/evidence and affected materials; specify any already authorized mathematical recheck. | A concrete distinction between administrative inconsistency and a substantive mathematical conflict requiring scoped recheck approval. |
-| “Reuse this finding from repository B.” | Acquire mathematics from a distinct research repository. | Exact source revision, useful finding and intended local use. | Chosen scope, explicit local source/author correspondence, receiving placement and actual available/unavailable inputs; no automatic adoption. |
+### Commit and push
 
-Administrative conflicts follow framework rules; an unclear rule is reported for human ruling.
-A mathematical recheck approval alone does not authorize substantive editing of another author's material.
-The manual explains [collaboration](../user-manual.md#collaborate-and-acquire-external-work) and [computational limits](../user-manual.md#use-literature-computations-and-manuscripts).
+| Example instruction | Expected agent actions |
+| --- | --- |
+| [Commit](../user-manual.md#notion-commit) and [push](../user-manual.md#notion-push). | Determine the intended delivery scope and preserve unrelated staged work. Check the contributor identity, branch and destination remote; confirm connectivity, create the commit and push it, then report the scope committed and the remote result. |
+| Commit and push the changes in the manuscript directory for F0001. | Locate the manuscript project for F0001, commit only the changes in the specified directory that belong in Git, and preserve other work. Confirm the identity, destination and connection before pushing, and report the actual scope. |
+| Commit all workspace changes. | Check all workspace changes and their authorship, create a local commit of the content that belongs in Git, preserve files excluded by ignore rules, and report the commit scope and any remaining changes. |
+| Commit and push without any checks. | Skip content review, formatting checks, tests and extra scans. Perform only the scope, identity, destination and connectivity checks needed for Git delivery, then commit, push and report the result. |
 
-## Commit and push
+### Pull and merge
 
-| Example request | When useful | Information to provide | Expected result |
-| --- | --- | --- | --- |
-| “Commit these changes.” | Save a truthful local checkpoint. | The intended paths or full requested worktree scope and any message preference. | A local commit, actual delivered scope and remaining working state. |
-| “Push the current commits.” | Deliver an authorized local tip. | The intended branch/remote when context is ambiguous. | A verified remote result or concrete delivery blocker. |
-| “Commit and push after the requested corrections are complete.” | Make delivery depend on specific work. | The corrections, intended scope and actual delivery condition. | That condition checked first, followed by the authorized delivery when satisfied. |
+| Example instruction | Expected agent actions |
+| --- | --- |
+| [Pull](../user-manual.md#notion-pull) the latest remote changes and [merge](../user-manual.md#notion-merge) them into the [local branch](../user-manual.md#notion-git-branch). | Check the current branch and its corresponding remote, preserve local work, fetch and merge remote updates, and report the result. For conflicts affecting mathematical meaning, explain the specific differences and suggest how to proceed. |
 
-Draft or unfinished mathematics can be committed with its true status.
-Plain commit/push performs delivery without starting framework regressions, a whole-library audit, recursive proof review or source-store hashing.
-Expect the actual delivered scope, attribution and local or remote result to be stated clearly.
+### Environment settings
+
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Create a directory junction from [mathematics/literature/pdf](../../mathematics/literature/pdf) to `D:\MyLiterature`. | Check the project path and target directory, preserve existing sources, set up the directory junction to the specified folder, and confirm that source files are excluded from Git. |
+| Set the default [context length](../user-manual.md#notion-context-length) for this project's `<harness name>` to 512k. | Identify the [harness](../agent-harness.md) configuration for this project, confirm that the model and runtime support the requested length, and update this project's default. Explain how the change takes effect and whether it has been verified in use; report the actual limit if the requested setting is unsupported. |
+| Set my default Task stopping condition: pause when 5% of the weekly allowance remains. | Record this as your personal default execution preference, to apply when no more specific setting takes precedence. Preserve effective conditions on existing Tasks, and explain how the relevant weekly usage can be read. |
+
+### Routine maintenance
+
+| Example instruction | Expected agent actions |
+| --- | --- |
+| Defer the framework upgrade and continue the current work. | Keep the installed version and continue the authorized assignment; the reminder grants no upgrade permission. |
+| Disable automatic framework version checks for this repository. | Disable this repository's daily metadata check while preserving the current framework and research work. |
+| Enable automatic framework version checks for this repository. | Enable the repository's daily check; any later upgrade still requires your explicit request. |
+| Recheck the official framework version now. | Make one fresh bounded version check, report the installed and verified available versions or an unavailable result, and preserve any previous reminder. |
+| Upgrade this repository to the official framework version you just identified. | Identify the selected version, affected local framework files and actual material migration, preserve existing research and effective Task conditions, and perform the explicitly authorized upgrade. |
+| Inspect the files in `.tmp` and delete those that can be safely removed. | Check what the files are for and whether they are in use. First preserve any necessary content not yet saved in the research materials, then delete files confirmed to be disposable and unused by other active sessions. |
+
+## Writing manuscripts
+
+| Example instruction | Expected agent actions |
+| --- | --- |
+
+## Lean formalization
+
+| Example instruction | Expected agent actions |
+| --- | --- |

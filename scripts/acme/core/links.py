@@ -209,22 +209,24 @@ def visible_markdown(text, *, preserve_offsets=False):
     return markdown_views(text, preserve_offsets=preserve_offsets)[0]
 
 
-def anchors_text(text):
+def anchor_occurrences(text):
+    from collections import Counter
     # Markdown treats CRLF and CR as line endings, not heading content.
-    text = visible_markdown(text.replace('\r\n', '\n').replace('\r', '\n'))
-    # Blank code spans only for HTML anchors. For headings their contents are
-    # visible text and must still participate in the established slug scheme.
-    outside_code = []
-    position = 0
-    for code in code_spans(text):
-        outside_code.extend((text[position:code.start()], re.sub(r'[^\r\n]', ' ', code[0])))
-        position = code.end()
-    outside_code.append(text[position:])
-    values = set(re.findall(r'(?<!\\)<a\s+id=[\"\']?([^\"\'>\s]+)', ''.join(outside_code)))
-    for title in re.findall(r'^ {0,3}#{1,6}[ \t]+(.+?)[ \t]*$', text, re.M):
+    visible, structure = markdown_views(text.replace('\r\n', '\n').replace('\r', '\n'), preserve_offsets=True)
+    values = Counter(re.findall(r'(?<!\\)<a\s+id=[\"\']?([^\"\'>\s]+)', structure))
+    # A heading must start outside literals, while inline code contributes its
+    # visible text to the established heading slug.
+    for heading in re.finditer(r'^ {0,3}#{1,6}(?=[ \t])', structure, re.M):
+        end = visible.find('\n', heading.end())
+        title = visible[heading.end():end if end >= 0 else len(visible)].strip()
+        if not title: continue
         title = re.sub(r'[ \t]+#+[ \t]*$', '', title)
-        values.add(re.sub(r'[^\w\- ]', '', title.lower()).replace(' ', '-'))
+        values[re.sub(r'[^\w\- ]', '', title.lower()).replace(' ', '-')] += 1
     return values
+
+
+def anchors_text(text):
+    return set(anchor_occurrences(text))
 
 
 def _inline_link_spans(text):
@@ -358,7 +360,6 @@ def check_files(root, names):
                 target, anchor = selected
                 paths.check_public_target(target)
                 if paths.in_pdf_store(Path(target)):
-                    paths.source_path(root, target)
                     continue
                 if target not in targets:
                     located = paths.ordinary_path(root, target)
@@ -367,8 +368,9 @@ def check_files(root, names):
                 if not exists:
                     errors.append(name + ': missing local target ' + href)
                 elif anchor and located.suffix.lower() == '.md':
-                    if target not in anchors: anchors[target] = anchors_text(text(located))
-                    if anchor not in anchors[target]: errors.append(name + ': missing anchor ' + href)
+                    if target not in anchors: anchors[target] = anchor_occurrences(text(located))
+                    count = anchors[target][anchor]
+                    if count != 1: errors.append(name + (': missing anchor ' if not count else ': ambiguous anchor ') + href)
         except (OSError, ValueError, UnicodeError) as error:
             errors.append(name + ': ' + str(error))
     return errors

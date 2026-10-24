@@ -1,23 +1,51 @@
 # Agent Action Guide
 
 Choose the function matching the actual human instruction, object and existing authorization under [AGENTS.md](../AGENTS.md).
-Read its governing rules and directly needed materials; reuse unchanged inputs without reading unrelated functions or the full human manual.
+Read its current governing rules and directly needed materials; reuse actual current-context reading only while its applicability remains established under the [current-rule duty](rules/workflow.md#proportionate-execution), without reading unrelated functions or the full human manual.
 Topic rules own responsibilities and conditions, the [public material format](material-format.md) owns declarations and acquisition payloads, and [script documentation](../scripts/readme.md) owns optional interfaces and side effects.
 
 ## Scope and instruction handling
 
+Apply the [core principles and interpretation](readme.md#core-principles-and-interpretation) to all actions and use them to resolve framework conflicts, omissions, ambiguity and discretionary choices.
 Identify the responsible Task, material, manuscript, repository or selected paths before acting.
 Interpret a continuation in that object's actual context, evaluate explicit conditions before dependent actions, and order requested work by its dependencies.
 Clarify only missing information that determines the work while completing independent authorized work.
 Apply [instruction and policy scope](rules/preferences.md#instruction-scope) when distinguishing a correction, a personal choice, a Task change or separately authorized framework maintenance.
 
+## Start a work round
+
+Before starting or continuing affected work, read the current local [installed manifest](export-manifest.json) and entrances, select the actual activity and apply the [current-rule reading duty](rules/workflow.md#proportionate-execution).
+If the local version or applicable rule text has changed, or only an old summary, memory or uncertain prior reading is available, actually reread the current needed entrances and governing rules before dependent operations.
+Do this independently of same-day query reuse, an unavailable result, disabled checks or an offline instruction.
+Subagents reuse the main agent's metadata result and read the current rules needed for their own assignment.
+A newer official version that remains uninstalled leaves the current local rules in force.
+
+Apply the [official version-check rule](versioning.md#official-version-check) before the selected work.
+Read repository/config.json and the ignored repository/framework-update-check.json; honor an explicit offline instruction and the repository Boolean setting.
+Reuse the main agent's actual result in subagents and reuse a current UTC-day success or unavailable result without another request.
+For an enabled new-day attempt, use the [bounded metadata helper](../scripts/readme.md#official-framework-version-check) or the same explicit read-only operation; its short cache coordination precedes one network request, never a clone or framework replacement.
+The bounded public HTTPS metadata read requires no Git remote, gh login or optional connectivity skill; apply actual network permissions and explicit offline instructions.
+If the setting is invalid, the request fails or the cache cannot be saved, report the specific limitation and continue authorized work without claiming a confirmed public version.
+
+When a verified newer version has not been presented, tell the human the installed and available versions, link the official repository and ask whether to arrange the upgrade.
+Continue the current assignment while the choice is pending.
+After actually presenting the reminder, record only that notification fact through the helper.
+On an explicit recheck, force a fresh bounded attempt while retaining the actual notification state.
+On an explicit disable request, set framework_update_check to false in this repository's configuration, preserving other fields; on enable, set it to true.
+Keep this repository setting out of personal profiles.
+
+A request to upgrade selects separate framework-maintenance work under [instruction scope](rules/preferences.md#instruction-scope).
+Identify the actual official version, local files and material-migration needs before applying it, preserving research content and current Task/E conditions.
+A reminder, silence or metadata response does not authorize replacement files, version advancement, publication or research resumption.
+
 ## Start or continue research
 
 For a new objective, read the [Task setup rules](rules/workflow.md#new-task-setup), likely existing contracts and actual human assignment.
 Reuse an adequate existing Task or establish its precise question, hypotheses, quantifiers, scope, completion criteria and actual proposed/active decision.
-Setup prepares the family's minimal non-running E and creates no execution or fabricated review.
+Setup prepares an ordinary family's minimal non-running E; a joint coordination T has no E, and neither setup creates execution or a fabricated review.
 
 For continuation, read the selected T contract/decision, its stable E's current stopped conditions, applicable operator policy, current S and directly needed C/D/J/source evidence.
+For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
 Follow [execution rules](rules/execution.md#current-contents-and-retained-limits) before autonomous advancement.
 Use one responsible main agent and one stable E for the Task family; a new chat, revision or policy expiry does not reset allowance or resume a stopped run.
 An actually authorized continuation prepares the relevant exact Task reference and current conditions directly; a pointer update preserves stops unless actual resumption is authorized.
@@ -36,6 +64,8 @@ Retain complete necessary arguments, hypotheses, meaningful failed approaches, n
 Before substantial proof investment, apply [knowledge reuse](rules/knowledge-reuse.md#reuse-before-proof); a recognized established result triggers its source-check duty even during exploration.
 An open conjecture or conditional investigation need not already have a proof or completed review, but acceptance requires its real evidence and resolved applicable obligations.
 Distinguish an actual new statement/contract, a substantive revision, an unchanged-mathematics decision and routine maintenance under the [record rules](rules/records.md#identity-and-versions).
+For a new fixed or continuing S family, maintain its actual next unissued [allocation state](rules/identity.md#allocation-and-concurrency); revisions retain their family and D keeps its separate reusable-address boundary.
+Actually added C/T decisions use their real UTC minute time, while reading or reselecting an existing decision preserves genuinely known calendar precision.
 Keep fixed predecessors and exact decision anchors; navigation derives the responsible current selection.
 For an organizational Claim-role change, preserve the selected assessment and exact input/review relations and scopes under the [role rule](rules/claims.md#claim-role), without a new proof version or retrospective review-binding retrofit.
 Return the resulting material and its actual status, with any missing evidence explicit.
@@ -68,7 +98,10 @@ Read exact versions, hypotheses, arguments, dependencies and existing findings u
 Inspect the requested whole scope; do not substitute structural checking for mathematical scrutiny or silently expand a narrow source inspection into a full proof audit.
 Reproduce decisive computations or behavior where needed rather than mechanically repeating all prior tests.
 Source audits exclude associated Lean code unless expressly included; retain any reliance on unchecked code as a review limitation.
-Keep actual mathematical findings and checking relationships at their responsible R/L/U or manuscript review home.
+Keep formal project findings in R for every actual agent relationship, source inspection in U and manuscript-specific findings in their document review home.
+New or substantively revised findings declare their actual relationships explicitly; a genuinely new C/T acceptance selects findings with both matching relationship rows and exact required bindings, without backfilling unchanged historical findings.
+For independent review use a separate agent outside substantive proof development with isolated mathematical context; supply fixed inputs directly without the development discussion or its mathematical summary.
+After an independently identified gap is repaired, arrange independent re-review of the correction and affected chain; a substantive repair contributor cannot independently review that repair.
 Return actionable findings, inspected scope and limitations, distinguishing source inspection, proof review, build success and formal verification.
 A review request does not itself authorize substantive editing of another author's material; actual conflicts use the maintenance boundary below.
 
@@ -128,8 +161,9 @@ Return the real command, inputs, result and checked scope; finite or floating-po
 
 Read the actual change, responsible material, consumers and [common content decision](rules/records.md#substantive-material-retention).
 Apply the operative [collaboration and conflict rule](rules/identity.md#collaboration-maintenance-and-conflicts), including its preserved author, mathematical, source and review boundaries.
-Repair routine administrative locations directly across authors when the actual object/version and meaning stay unchanged; no per-author approval or maintenance receipt is needed.
-Resolve an administrative conflict under the applicable framework rule; if it is unclear, report the concrete competing content and missing rule choice for human ruling.
+For an old review container, apply only the bounded [retirement exception](rules/proof-audits.md#review-retirement), preserving necessary evidence and historical adoption facts and preparing its non-reuse allocation bound before deletion.
+Repair responsible shared registration and derived navigation directly; authored bodies use the same-human and separately attributed correction boundary without a per-author approval process.
+Resolve an administrative conflict using the core principles and applicable topic rules; act directly when they determine the choice, and report only a remaining decisive gap requiring human intent, authority or facts.
 For a substantive mathematical conflict, identify competing statements/evidence and affected materials and obtain approval for the scoped recheck before undertaking it, reusing existing explicit approval for that same scope.
 That approval alone neither transfers authorship nor authorizes substantive editing of another author's material.
 Preserve both sides' actual evidence, and keep substantive contributions in their responsible author's own materials.
@@ -139,33 +173,60 @@ Return the repaired administrative result or concrete remaining conflict and nee
 ## Acquire material from another research repository
 
 Use [intake](rules/intake.md#scope-and-routing) for distinct research repositories; another registered human in the same repository is direct collaboration.
-Read the exact source commit, eligible C/U/L/J or C-related R finding, intended scope, necessary inputs and actual original provenance before preparing explicit selections.
-R needs its exact fixed C already acquired, mapped or selected in the same operation; C does not automatically select R or its citation graph.
-Select bibliography targets and U positions across all authors/origin prefixes, then prepare the selected text under the [complete acquisition-input contract](material-format.md#direct-acquisition).
-Publish prepared bibliography, authored materials and the operation together after checking captured inputs and the actual affected final U namespaces.
+Read the exact source commit, selected mathematical unit or useful R finding, intended scope, necessary inputs and actual original provenance before preparing explicit selections.
+Judge preservation, adaptation and reuse, write the receiving material and required source facts, and inspect the actual result and directly affected references.
+Ordinary reading, editing, copying and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a condition of valid intake.
+R has no mandatory C target; choose actual necessary targets, reuse and limitations from the inspected finding, without acquiring every binding or citation.
+Receive needed S/D mathematics in a suitable fixed home and a necessary joint T contract under the [Task rule](rules/tasks.md#joint-tasks-and-participation), without another human's ordinary Task/E authority.
+Select bibliography targets and U positions across all authors/origin prefixes, then write the selected receiving content and necessary provenance under the [material format](material-format.md#direct-acquisition).
+Check actual resulting files, references and affected U positions, and retain the operation once at its responsible intake home.
+Coordinate affected writes only as needed for coherent results; optional helpers apply their input and publication protocols only when chosen.
 Private literature documents and their local registry/holding accounts are outside intake; reject the retired source/holding/update inputs before opening a private file.
 Preserve an established original registered repoN/family's local number across physical versions and reject an occupied prepared position without silently renumbering the body.
+Fresh receiving positions respect and advance their actual next unissued namespace bound, rather than reusing a retired number or allocating another family for an existing correspondence.
+An explicitly selected actual independent finding still in historical L needs complete prepared receiving R with its true targets, scope and limitations; available source content requires no source-repository upgrade.
+Ordinary whole historical L reading and unselected old findings retain their scope.
 Select indispensable J inputs and any [output attachments](rules/intake.md#computation-output-attachments) with actual provenance separately from the tracked program revision.
 Before an explicit J source refresh, confirm the same original, inspect the selected current scope and maintain necessary retained inputs and actual consumer references under the [intake rule](rules/intake.md#homes-and-independent-reuse).
 
-Preserve whole authentic fixed bodies, original authorship, registered source correspondence and physical version and exact original/local correspondence through onward transfer.
+Apply the common [adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving complete necessary selected mathematics and the single original human through adapted text, local numbering, justified splits/combinations and onward transfer.
+Keep the actual source version and selected scope separate from the receiving kind, line and version; use the existing operation for per-unit provenance.
 Localize only designated references or exact chosen mappings; unselected relative background links retain exact sender-fixed locators without automatic upstream tracing.
+Keep each actual Markdown file's own internal locators at its receiving location, and designate necessary existing inputs explicitly rather than invoking receiving-history discovery for background links.
 Translate explicit foreign-number locators only through prepared correspondence; unmapped ones remain raw context qualified by sender and fixed sending revision.
-Prepare external repoN/authorN records and explicit receiving C/R/L/J serials under the [external identity contract](material-format.md#local-external-identities-and-prepared-correspondence); another similarly named file is no substitute.
+Prepare external repoN/authorN records and explicit receiving C/T/R/L/J serials under the [external identity contract](material-format.md#local-external-identities-and-prepared-correspondence); another similarly named file is no substitute.
 Retain authored inspection limits, genuine unmapped references and actual missing necessary evidence at the consumer.
 Sender-local document references remain explicitly unacquired original-local context; acquire needed original text independently through ordinary authorized source preparation.
 Record the actual operation once in intake, preserving historical J scopes without asserting their current availability, automatic adoption, mathematical equivalence or imported execution authority.
 For local maintenance, prepare the selected operation item's exact path, actual anchor and file/artifact correspondences together with its material; validate the selected postimage before publication and preserve original/transport facts, scope, availability and unselected items.
 Return the chosen installed scope and limitations, preserving the source's actual inspection and review depth.
 
+## Import one's own selected content
+
+Establish the actual registered local human and explicitly selected own content under the [personal-import rule](rules/intake.md#personal-import).
+Read selected units, actual constituents, necessary forward mathematical dependencies and adequate receiving candidates under the common adaptation and existing-decision rules.
+Prepare ordinary local text, file arrangements and temporary locators; follow Task to needed S/C/L/R/D/J and other support to relevant U without reverse consumers or a whole-library expansion.
+Complete the action through ordinary reading, adaptation, editing, file copying and existing registration/allocation mechanisms, inspecting the actual resulting content and affected references.
+No dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is required.
+Reuse adequate local or already-intaken own material without identity conversion, duplicate local copies or acquired-history cleanup.
+Dispatch an actually needed other-author dependency separately through intake, including S/D mathematics, T-only/J-only R and a permitted joint parent.
+Resolve a participant's exact joint parent or prepare its complete standalone contract under the Task rule; preserve real obligations, attribution, review scope and effective execution conditions.
+Install only chosen applicable settings, manuscript sources and required native files in their appropriate homes, with proportionate affected build checks and no unrequested Task.
+For callers choosing the optional `material.py import` helper, its [input plan](material-format.md#personal-import-input) and publication protocol apply only to that interface.
+Coordinate affected own and foreign writes only as needed for coherent final references.
+Own content receives no external identity, intake operation, import-source record, permanent mapping or fabricated new decision.
+Read the actual source and local execution conditions and prepare or reuse the stable E under the [execution rule](rules/execution.md#current-contents-and-retained-limits), choosing only necessary effective conditions rather than automatically transporting the source E.
+Preserve actual stops/allowances; import alone starts no research, grants no parallel allowance and selects no autonomous Task.
+Return actual retained content, foreign acquisition scope, unavailable dependencies and remaining mathematical/build obligations.
+
 ## Commit or push requested work
 
 Read [serial delivery](rules/identity.md#submission-checks), the requested paths, existing index, actual operator/signature and intended branch/tree.
 Coordinate one stable delivery interval, preserve unrelated staged work and contributor identities, stage the intended deliverable, commit and confirm the actual resulting tree.
 Reinspect the affected delivery scope if relevant bytes or the index change; draft work may be committed with truthful status.
-For an authorized push, use the required connectivity guidance and actual account, verify the remote/base relationship and outgoing identities, push the intended tip and verify the remote result.
+For an authorized push, establish the actual target and account/channel under the [connection responsibilities](rules/identity.md#git-and-github-connection-checks), verify the remote/base relationship and outgoing identities, push the intended tip and verify the remote result.
 Ordinary delivery grants no force-push or history rewrite.
-Respect pending-batch ordering and its smallest concrete blocker-repair exception.
+Apply pending-batch ordering and its smallest concrete blocker-repair exception within the authorized remote-delivery sequence defined by the [identity rule](rules/identity.md#submission-checks); unrelated unpushed commits impose no remote check on local-only work.
 Plain commit/push performs delivery without launching framework regressions, whole-library scans, recursive proof review or source-store hashing.
 Reuse applicable verification and perform separately requested checks at their actual scope.
 Return the actual commit or confirmed remote result and remaining worktree state.
@@ -174,6 +235,7 @@ Return the actual commit or confirmed remote result and remaining worktree state
 
 Identify the requested object, scope and view: WORKTREE, INDEX or BASE-to-HEAD have distinct bytes under the [submission rules](rules/identity.md#submission-checks).
 Use the relevant [tool interface](../scripts/readme.md) when useful and inspect its actual results; an unstaged repair cannot fix a submitted view.
+Select necessary incoming consumers and their exact target locators through scoped searches and reading; generic submission checks changed outgoing links without discovering unchanged consumers.
 For a source-relationship check, choose the needed keys or artifacts and actual view under the [source-check rule](rules/literature.md#selected-source-checks); generic submission supplies no source verdict.
 An explicitly requested whole-store inventory retains that scope, while ordinary selected source/link work does not acquire it implicitly.
 Keep structural errors, source-byte facts, mathematical findings and review conclusions distinct; a structural pass certifies neither semantic preservation nor citation completeness.

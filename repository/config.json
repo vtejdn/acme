@@ -1,7 +1,7 @@
 {
+  "framework_update_check": true,
   "layout_format": 2,
-  "registered_at": "2026-10-20T10:11+00:00",
+  "material_next": {},
   "repository": "acme",
-  "repository_url": null,
-  "timezone": "+00:00"
+  "repository_url": null
 }

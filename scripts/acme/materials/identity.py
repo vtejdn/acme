@@ -128,9 +128,9 @@ def parse(path):
     require(match is not None, 'Noncanonical material name: ' + str(path))
     author, origin, kind, suffix, revision = match.groups()
     if origin is not None:
-        require(kind in 'CRLJ' and re.fullmatch(r'author[1-9][0-9]*', author)
+        require(kind in 'CTRLJ' and re.fullmatch(r'author[1-9][0-9]*', author)
                 and re.fullmatch(r'repo[1-9][0-9]*', origin),
-                'External C/R/L/J prefixes use receiving authorN_repoN records.')
+                'External C/T/R/L/J prefixes use receiving authorN_repoN records.')
     else:
         require(not re.fullmatch(r'author[1-9][0-9]*', author, re.I), 'Local material uses a registered readable local author name.')
     require(kind == 'J' or path.suffix == '.md', 'Authored text material uses Markdown.')
@@ -141,18 +141,98 @@ def parse(path):
     return Identity(author, origin, kind, line, number, int(revision) if revision else None)
 
 
-def allocate(existing, *, author, kind, line=None, task=None, source_repository=None):
-    """Return the next address; callers lock and recheck before creating files."""
+def namespace(ident):
+    """The permanent family counter, independent of a physical version."""
+    if ident.kind == 'D':
+        return None
+    if ident.kind == 'U':
+        return 'U/' + validate_source_key(ident.source_key)
+    require(ident.kind in {'C', 'T', 'R', 'L', 'J', 'S'}, 'Unknown permanent material family.')
+    origin = '_' + ident.source_repository if ident.source_repository else ''
+    return f'{ident.author}{origin}_{ident.kind}_{ident.line}'
+
+
+def _counter_key(value):
+    require(isinstance(value, str), 'Material counter namespace must be text.')
+    if value.startswith('U/'):
+        validate_source_key(value[2:])
+        return
+    match = re.fullmatch(r'(.+)_([CTRLJS])_([A-Z])', value)
+    require(match is not None, 'Invalid permanent material counter namespace: ' + value)
+    prefix, kind, line = match.groups()
+    name = f'{prefix}_{kind}_{line}0001' + ('_v1' if kind in 'CTRL' else '')
+    path = 'mathematics/' + (name + '/readme.md' if kind == 'J' else name + '.md')
+    require(namespace(parse(path)) == value, 'Noncanonical material counter namespace: ' + value)
+
+
+def material_next(config, previous=None):
+    """Validate compact next-unissued state and an explicitly supplied preimage."""
+    require(isinstance(config, dict) and isinstance(config.get('material_next'), dict),
+            'Initialize material_next from agent-confirmed issued upper bounds before allocation.')
+    state = config['material_next']
+    for key, value in state.items():
+        _counter_key(key)
+        require(type(value) is int and value > 0, 'Material next number must be a positive integer: ' + key)
+    if previous is not None:
+        old = material_next(previous) if 'material_next' in previous else {}
+        require(all(key in state and state[key] >= value for key, value in old.items()),
+                'Permanent material counters cannot be removed or decreased.')
+    return dict(state)
+
+
+def check_issued(ident, config, *, previous=None, established=False):
+    """Check a selected newly installed family against its authored counter."""
+    key = namespace(ident)
+    if key is not None:
+        require(material_next(config).get(key, 0) > ident.number,
+                'Advance material_next for the selected installed family: ' + key)
+        if previous is not None and 'material_next' in previous and not established:
+            require(ident.number >= material_next(previous).get(key, 1),
+                    'Fresh material position is below the previous next-unissued bound: ' + key)
+
+
+def allocation_bound(config, ident, existing=()):
+    """Read occupation as a lower bound; never infer an issued upper bound."""
+    key = namespace(ident)
+    state = material_next(config)
+    occupied = [item.number for item in existing if namespace(item) == key]
+    require(key in state or not occupied,
+            'Initialize the existing namespace from an agent-confirmed issued upper bound: ' + str(key))
+    return max(state.get(key, 1), max(occupied, default=0) + 1)
+
+
+def reserve(config, ident, existing=(), *, established=False):
+    """Prepare monotone state for a fresh family or established correspondence.
+
+    The caller holds the shared mutation lock and persists this state before
+    publishing material bytes; a later publication failure does not undo it.
+    """
+    key = namespace(ident)
+    if key is None:
+        return config
+    require(type(ident.number) is int and ident.number > 0, 'Reserve a positive family number.')
+    bound = allocation_bound(config, ident, existing)
+    require(established or ident.number >= bound,
+            'Fresh material position is below the next-unissued bound: ' + key)
+    state = material_next(config)
+    state[key] = max(bound, ident.number + 1)
+    return {**config, 'material_next': state}
+
+
+def allocate(existing, *, author, kind, line=None, task=None, source_repository=None, next_number=1):
+    """Compute a candidate address; the writer reserves it under the shared lock."""
     if task is not None:
         parent = parse(task)
         require(parent.kind == 'T', 'Parent must be a Task.')
         require(line is None or line == parent.line, 'Explicit line conflicts with the selected Task.')
         line = parent.line
-    require(line is not None and re.fullmatch('[A-Z]', line), 'A new independent line needs its author designation.')
+    if line is None: line = 'A'
+    require(re.fullmatch('[A-Z]', line), 'Use one uppercase research-line letter.')
     require(kind in {'C', 'T', 'S', 'R', 'D', 'J', 'L'}, 'Unknown material family.')
     require(re.fullmatch(r'[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', author), 'Invalid author key.')
     require(source_repository is None, 'Imported originals keep their source identity; do not allocate a replacement.')
     numbers = [x.number for x in existing if
                x.kind != 'U' and
                (x.author, x.source_repository, x.kind, x.line) == (author, None, kind, line)]
-    return Identity(author, None, kind, line, max(numbers, default=0) + 1)
+    require(type(next_number) is int and next_number > 0, 'Next family number must be a positive integer.')
+    return Identity(author, None, kind, line, max(next_number, max(numbers, default=0) + 1))

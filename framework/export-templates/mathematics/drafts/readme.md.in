@@ -40,7 +40,7 @@ Reuse an adequate existing fixed account rather than duplicate it.
 
 Link the relevant strategy, exact Claim/proof version and other evidence, explaining which route was tested, which implication failed or which applicability limit was discovered.
 Preserve fixed evidence and authorship.
-Received originals remain unchanged: place adaptations and scoped feedback in local materials with the source formulation and actual supporting evidence.
+Later corrections and adaptations by a different human belong in that human's own materials with the source formulation and actual supporting evidence.
 These references imply neither source endorsement nor automatic proof dependencies.
 Link complete calculations and audits at their existing homes without duplicating their narratives.
 
@@ -55,7 +55,7 @@ The main agent ensures necessary material organization at the end of each explor
    If the mathematics is already fixed and only redundant setup remains, update consumers and remove that residue without a new material.
    Preserve any unique argument, useful failure, review limitation or needed native work at its responsible destination: [Claims](../claims/readme.md), [Task contracts](../tasks/readme.md), [exploration and research records](../ledger/readme.md), [reviews](../audits/reviews/readme.md), [computations](../computations/readme.md), [definitions](../definitions/readme.md).
    A Claim argument belongs in the same or another applicable fixed C and contains the actual reasoning.
-   Independent project-mathematics review accounts belong to fixed R; manuscript-specific review stays with its manuscript; suitable exploration, comparisons, syntheses and self-review/unknown findings may remain in L.
+   Formal project-mathematics reviews of every actual agent relationship belong to fixed R; manuscript-specific review stays with its manuscript; exploration, comparisons, syntheses and ordinary in-discussion checks may remain in L.
    Follow the destination's identity/version rules; never overwrite an existing fixed version.
    Keep the author/repository prefix where applicable.
 2. Update the affected links and required fixed-material registration, and verify the fixed result contains the selected mathematics and necessary scripts/data.
@@ -70,7 +70,7 @@ This is a local research operation: no extra promotion approval, cleanup certifi
 Further development may use a working draft while the fixed result remains intact.
 Preserve actual publication, evidence and execution-authorization boundaries.
 
-Routine return-link, path and format maintenance in another registered author's local writable S material needs no actor change, duplicate feedback, approval or warning log.
+Authored bodies are revised only by the established same human; another human records a correction in that human's own material with exact references.
 Substantive contributions use the responsible human's own numbered materials linked to the original under the [identity rule](../../framework/rules/identity.md).
 Tool capability does not authorize a substantive cross-author rewrite or taking over another human's Task/E.
 Received originals retain their separate provenance and feedback boundary.

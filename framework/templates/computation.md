@@ -9,8 +9,9 @@ A template does not justify a process-only record.
 Use one `readme.md` at `mathematics/computations/programs/<J>/`, with actual programs, verification programs and required original inputs.
 Generated results, certificates and verification data belong at the Git-ignored `mathematics/computation/outputs/<J>/`.
 Both homes share the same J identity; imported groups use receiving `authorN_repoN_J_Fxxxx` identities and explicitly chosen receiving serials.
-Preserve the original research line and physical version where applicable, and original author, repository, source family/serial, path and revision in existing provenance/correspondence.
+Preserve the exact original author, repository, research line, family/serial, physical version where applicable, path and revision in existing provenance/correspondence, separately from the chosen receiving identity.
 Repeated acquisition and later versions reuse the established receiving family, distinguishing original identity from immediate transport.
+New J families maintain their actual [`material_next` namespace](../material-format.md#material-family-allocation-state); an established receiving correspondence or an output file does not allocate another family.
 See the [computation rules](../rules/computations.md#computation-output-location).
 The inert example below uses `Author_J_W0001`; replace it and its file rows with the actual retained group and files.
 Do not invent programs, data or a run to fill the template.
@@ -59,7 +60,9 @@ Resolve output defaults from the actual repository/J location, create the output
 For a nested entry, identify the containing J directly under `mathematics/computations/programs/`; self inputs, outputs and future locators must follow its actual qualified name.
 Shared helpers receive the calling J's output location explicitly.
 Document explicit parameters for genuine cross-J dependencies and the actual retained files chosen for them, with no same-name fallback or inferred qualified counterpart.
-Use the actual acquired program path when adapting a source command; intake copies native code without rewriting it.
+Use the actual acquired program path when adapting a source command.
+Intake preserves native code unless an explicitly selected `file_preparations` input supplies permissible adaptation under the responsible author's boundary.
+Preserve actual per-file originals and verify relevant behavior or mathematical-method changes.
 Keep author output, independent verification and smaller controls distinguishable.
 Ordinary commands do not rely on root `.tmp/` or undeclared previous output.
 Keep live limits, error handling, atomic publication and useful continuation interfaces.

@@ -56,12 +56,15 @@ def validate(repo, record, path):
               'Current E must name an exact decision in its own local Task family.')
     humans.person(repo, ident.author)
     doc = documents.parse(task, r.read_from(repo, task).decode('utf-8-sig'))
+    r.require(doc.task_type == 'ordinary', 'A joint Task cannot own an E or execute directly.')
     r.require(anchor in doc.decisions, 'Current E Task decision is absent: ' + record['task'])
     r.require(record['state'] in STATES, 'Invalid current execution state.')
     return {'path': path, **record}
 
 
 def check(repo, task):
+    doc = documents.parse(task, r.read_from(repo, task).decode('utf-8-sig'))
+    r.require(doc.task_type == 'ordinary', 'Select the actual human\'s individual Task/E to continue a joint goal.')
     path = address(task)
     return validate(repo, parse(path, r.read_from(repo, path).decode('utf-8-sig')), path)
 

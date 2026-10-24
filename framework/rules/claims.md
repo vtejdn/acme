@@ -10,7 +10,8 @@ Optional writers/checks handle supplied fields and locators; they do not decide 
 | --- | --- | --- |
 | Claim | Exact statement, assessment history and selected argument/review | One numbered C family, with precise mathematical anchors |
 | Claim argument | Actual fixed reasoning, hypotheses and dependency interfaces | The same or another applicable fixed C material; no empty redirect to a proof left in L |
-| Exploration or synthesis material | Useful attempts, comparisons and synthesis, with suitable self-review or unknown findings | Fixed L; independent project-review accounts belong to R |
+| Exploration or synthesis material | Useful attempts, comparisons, synthesis, failures and limitations | Fixed L; formal project review findings belong to R |
+| Formal project review | Actual agent inspection of fixed mathematical inputs, with its relationship, scope, findings and limits | Fixed R for self-review, independent review and retained unknown relationships |
 | Research operation | Mathematical reason, actual authorization when needed, extraction ancestry, before/after scope and outcome | A dated section at the responsible mathematical home; no separate operation-ID namespace |
 | Exploration or checkpoint | Continuing attempts, provisional obligations and useful failed findings | Rolling D while continuing; preserve consequential findings at a fixed mathematical home |
 
@@ -24,14 +25,14 @@ Retire D only after retaining its useful content in the responsible fixed home a
 Preserve old anchors and incoming references during a real move.
 A mathematical operation is identified by its responsible section and date, without another Claim identity merely for recording the operation.
 
-The operation section explains what changed and why; the proof supplies the argument; R independent findings and R/L self-review or unknown findings own actual checking; the C decision owns adoption, status and exact evidence.
+The operation section explains what changed and why; C supplies the substantial argument; R findings own actual formal checking; the C decision owns adoption, mathematical status and exact evidence.
 Keep shared version maps at their responsible mathematical home and link them from affected decisions.
 Do not duplicate full proofs or reviews in an operation log or let historical prose compete with the explicit Current assessment.
 
 For each Claim, its explicit Current assessment selects an exact decision and the proof/review relations that decision adopts.
 Later choices preserve older decisions and maps at their actual dates.
 A filename, edit date or completed operation does not select the proof.
-Role, mathematical status, review status and operation outcome remain distinct.
+Role, mathematical status, finding relationships and operation outcome remain distinct.
 
 <a id="claim-registration"></a>
 ## Claim Registration and Cross-References
@@ -41,7 +42,7 @@ Required candidate registration is not waived because related mathematics is alr
 Then apply the [exploration, registration and acceptance distinctions](workflow.md#work-obligations).
 An exploratory question, temporary hypothesis or trial calculation does not require a Claim ID merely to proceed.
 Register a precise conjecture or obligation when it needs a responsible material, and a substantive project statement when it is organized for reuse.
-A completed proof or review is not a registration prerequisite: use open, proof draft or conditional only according to their [actual meanings](#separate-assessment-fields), and identify the argument or gap.
+A completed proof or review is not a registration prerequisite: an important unresolved statement uses `open`, retaining its candidate argument, partial results and exact gaps.
 Once registered, the ordinary material, dependency and version rules apply; exploratory use does not permit silent changes to fixed mathematical decisions or support.
 
 - Complete the exact statement, initial decision and actual author header before registering the Claim; an open Claim needs no invented proof.
@@ -66,11 +67,11 @@ Once registered, the ordinary material, dependency and version rules apply; expl
 
 An authoritative claim record may include `role` of `lemma`, `theorem`, or `corollary` in its decision field table to describe its mathematical or expository use.
 Omission leaves it an ordinary claim; it does not indicate an open or less reliable result.
-Role is independent of provenance, mathematical status, review status, priority and Claim ID.
+Role is independent of provenance, mathematical status, review relationships, priority and Claim ID.
 A role change alone does not allocate a new ID or promote a result to `proved`.
 
 Adding, changing or removing only this role inherits the actual previously selected assessment; it does not re-adopt its proof.
-Keep mathematical and review statuses, all statement/argument/review relations, support/dependencies and their exact resolved paths, physical versions, anchors and declared scopes unchanged.
+Keep mathematical status, all statement/argument/review relations, support/dependencies and their exact resolved paths, physical versions, anchors and declared scopes unchanged.
 Relation row order is immaterial.
 A new decision date and necessary role reason/authority may record this organization.
 The agent judges that the actual edit is only organizational; tools compare these declarations, retain ordinary reference/enum/stale-selection checks and require no retrospective Review bindings or new mathematical version.
@@ -89,44 +90,45 @@ The Claim index may display or link the Role field when useful.
 Lemmas use the existing C namespace; source units retain their separate citation-key namespace.
 
 <a id="separate-assessment-fields"></a>
-## Separate Assessment Fields
+## Mathematical Assessment and Review Findings
 
 Provenance describes origin, not validity: use `project deduction`, `source specialization`, or `mixed`, with explicit source and project-input links.
 Do not infer novelty from this field.
 
 | Mathematical status | Meaning |
 | --- | --- |
-| `open` | A precise conjecture or unresolved obligation; no completed proof is recorded. |
-| `proof draft` | An argument is in development, has gaps, or is a complete candidate awaiting the required review. |
-| `conditional` | The conclusion is justified only under explicitly identified unresolved inputs or additional conditions. State them and do not report the unconditional target as established. |
+| `open` | An important precise statement is unresolved; partial results, reductions or a candidate argument can exist without satisfying the complete proved/refuted conditions. |
 | `proved` | A complete argument covers every hypothesis, quantifier and conclusion of the exact selected statement, its dependencies are resolved, and a recorded internal mathematical review found no remaining gap. This is project-level assessment. |
-| `refuted` | A checked counterexample or argument contradicts the registered statement at its stated scope. Link the evidence. |
+| `refuted` | A checked counterexample or argument disproves the exact registered statement in its stated scope, with resolved necessary dependencies and completed applicable internal review. |
 
 An open Claim may have no argument relation: the selected statement does not imply a proof.
 A restricted statement can be proved in full while a broader question remains unresolved: proving the assertion for every integer with `1 <= n <= 10` does not prove it for every positive integer.
 Preserve the broader Claim's truthful assessment and retain the narrower result at an adequate responsible home; materially different statements follow the ordinary family/version rules.
-A hypothesis stated in the exact theorem belongs to its scope and does not itself make a complete proof conditional.
-An unresolved premise used to justify the selected target remains an explicit conditional obligation; an incomplete argument remains a proof draft or another actually applicable unresolved assessment.
+A hypothesis stated in the exact theorem belongs to its scope and does not itself make the theorem unresolved.
+If only H implies Q is established and a necessary H remains unresolved, the Claim stating Q stays open.
+An independently useful implication H implies Q can have its own precise C statement and sufficient proof/review without establishing H or Q.
+Register an unresolved H separately only when it merits an important stable statement.
 Agents judge statement coverage and applicability; an enum check or status label alone cannot discharge a dependency.
 Supply the actual status explicitly in its decision.
-Argument-bearing proof-draft, conditional, proved or refuted judgments select actual reasoning in fixed C with precise scope.
+Proved or refuted judgments select complete actual reasoning in fixed C with precise scope.
 Do not leave the necessary Claim argument in L behind an empty C redirect or relabel it as support/dependency.
 A statement and argument may share a file only when the argument is explicitly selected.
 An open Claim can retain partial work or a formulation review without implying a completed proof.
 Intake preserves this distinction instead of fabricating support.
 
-Review status describes the review activity: `unreviewed`, `under review`, `self-reviewed`, `independently reviewed`, or `changes required`.
-A completed review records reviewer identity or role, date, artifact version or inspected content, checks, findings, and limits.
-Independent review means a separate reviewer actually examined the reasoning; agreement alone does not qualify.
-Describe the activity under the [review arrangements and disclosure rules](proof-audits.md#review-arrangements), without requiring individual agent registration.
+Current local C decisions have no aggregate `review-status` field or inferred review grade.
+Each selected R finding owns its actual `self-reviewed`, `independently reviewed` or genuinely unestablished historical/source `unknown` relationship, exact reviewed inputs, scope, findings and limits.
+An absent declaration differs from an explicit unknown relationship; no selected review means only that this decision selects no review evidence.
+An unfinished check or negative finding remains at its responsible account, independently of the reviewer's relationship.
+Describe the actual agent arrangement and isolated mathematical context under the [review rules](proof-audits.md#review-arrangements); human authorship or advice is not a framework review.
 
 Use `proved` only with a completed self-review or independent review and no unresolved mathematical dependency.
-A review can correctly find an argument conditional or incomplete.
+A review can correctly find an unresolved premise, incomplete argument or refutation; its relationship label supplies no mathematical promotion.
 A refutation also requires checked evidence.
 External review, formal verification, and publication are additional facts linked from the relevant Claim, audit or manuscript records; they are not implied by these labels.
 
 An [accepted external theorem](literature-audits.md#accepted-external-inputs) can count as a resolved dependency when its exact source statement, hypotheses, and applicability have been checked and no concrete objection affecting its use remains.
-Record the acceptance and actual source-proof inspection depth; not re-auditing an established proof does not by itself make the project claim `conditional`.
+Record the acceptance and actual source-proof inspection depth; an accepted applicable external theorem can resolve the dependency without re-auditing its entire source proof.
 Unchecked applicability, unsupported inputs, unresolved objections, and unproved adaptations remain mathematical obligations.
 This distinction does not waive review of the project's own argument or imply formal verification.
 
@@ -134,7 +136,11 @@ The descriptive label `Checked proof` corresponds to `proved` with recorded revi
 `Computational observation` remains evidence, not an automatic promotion to `proved`; an exact finite statement may be established only within the scope of its checked certificate and mathematical reduction.
 `Source-verified result` records source inspection and is managed at the source-unit level, without implying an independently checked source proof.
 
-<a id="dependencies-and-corrections"></a>
+Retain actual past `proof draft`, `conditional` and aggregate-review fields as historical/source facts; new local decisions and explicit reselection use the three states without the retired field.
+Removing only that field from a current local decision is routine maintenance when the mathematical assessment and all selected relations/scopes stay unchanged; preserve any necessary factual objection or limitation at its actual home first.
+No new mathematical version, administrative decision or retrospective binding is needed solely for that removal.
+When an open conjecture is refuted, retain its original fixed statement and refuted result instead of replacing it with a negation or weaker conjecture.
+
 ## Dependencies and Corrections
 
 Distinguish the following relations in the authoritative record:
@@ -167,7 +173,7 @@ Resolve or retain the attribution follow-up explicitly; do not invent a dependen
 Before promotion, check the transitive dependency chain for open obligations, incompatible assumptions, and circular reasoning.
 The recorded boundaries of accepted external theorems need not be expanded into recursive audits of their original proofs unless a relevant objection or the task requires it.
 When an input changes or fails, find its direct and indirect consumers, flag their review status, and inspect the affected implications.
-Retain `proved` only if a recorded unaffected or repaired argument still supports it; otherwise use the appropriate draft, conditional, or refuted assessment.
+Retain `proved` only if a recorded unaffected or adequately reviewed repaired argument still supports it; otherwise select open or refuted according to the actual exact statement and evidence.
 Do not mechanically equate failure of one proof with falsity of its conclusion.
 
 Update the responsible argument/review evidence first, then the affected material decisions, selections and dependencies, with actual Task/route consequences.
@@ -238,13 +244,13 @@ For partial ACME intake, the executing agent must examine necessary dependencies
 Collection alone preserves the imported C's original selected decision, visibly attributed as a source assessment, while actual acquired scope and unavailable selected inputs remain in intake provenance/navigation.
 Do not change the source status, append a receiving decision or invent a local consumer, duplicate C or assessment overlay.
 An unmapped background reference is not automatically an indispensable missing premise.
-When a real local consumer has an indispensable unsupported premise, state that limitation there; a local Claim uses `open`, `proof draft` or `conditional` as its actual mathematics warrants, without accepting an unconditional proved/refuted conclusion from unsupported input.
+When a real local consumer has an indispensable unsupported premise, state that limitation there; its exact unresolved Claim stays open without accepting an unconditional proved/refuted conclusion from unsupported input.
 Do not relabel the source result or manufacture a narrower conditional theorem solely because an input was not acquired.
 Explain adequate verified background or independent support in the consumer's existing dependency scope, following the [intake rules](intake.md); this is no new proof review or approval.
 
 ## Revised proofs and review continuity
 
-A complete revised proof with an actual applicable self-review may be recorded as `proved` and `self-reviewed`.
+A complete revised proof with resolved dependencies and an adequate actual agent self-review may support `proved`, with that finding's relationship recorded in R.
 Publish the new fixed mathematical argument and exact finding bindings; an old independent review does not transfer to changed inputs.
 Changing a review label alone supplies no independent inspection.
 Later independent adoption selects the actual separately organized finding without requiring another mathematical version merely for that review.
@@ -254,8 +260,11 @@ Key proof points and the full logical chain after Task completion require separa
 
 The existing renderer derives mathematics/claims/index.md from the fixed C families and explicit selected decisions: identity/title, selected assessment and exact argument/evidence locators.
 C owns every assessment and relation.
+The same index shows each selected finding's own declared relationship, exact input and authored scope separately; it infers no aggregate review level or proof verdict from them.
 The responsible publishing agent refreshes after relevant material changes; do not hand-edit generated rows.
 
 Fixing a result requires its complete argument or counterexample, actual source/compute inputs and truthful review relationship at the selected scope.
 Reuse applicable checked evidence; a new commit does not itself create new review obligations.
 A changed proof or uncovered use requires the relevant additional review.
+After an independent review identifies a gap and the proof is repaired, a separate context-isolated agent must independently review the correction and affected logical chain again.
+The repairer's self-check does not discharge that obligation, and a reviewer who contributes the repair cannot independently review that contribution.

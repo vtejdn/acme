@@ -62,9 +62,12 @@ class Tree:
         return self.json_cache[path]
 
     def anchors(self, path):
+        return set(self.anchor_counts(path))
+
+    def anchor_counts(self, path):
         if path not in self.anchor_cache:
-            from ..core.links import anchors_text
-            self.anchor_cache[path] = anchors_text(self.bytes(path).decode('utf-8-sig'))
+            from ..core.links import anchor_occurrences
+            self.anchor_cache[path] = anchor_occurrences(self.bytes(path).decode('utf-8-sig'))
         return self.anchor_cache[path]
 
     def close(self):

@@ -6,6 +6,9 @@ Keep the responsible material and its explicit current selection coherent in pla
 
 Use the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities) for content retention, mathematical effects and necessary homes.
 Optional structural checks and ordinary diffs do not make those judgments.
+Important independently reusable propositions and substantial complete arguments belong in adequate C materials; L retains exploration, comparison, synthesis, meaningful failure and unresolved directions.
+Formal project review findings belong in R for every actual agent relationship; ordinary checks needed within an argument or discussion need no separate R.
+Decide ownership from actual content and use, without a proof-length threshold, title classifier or automatic extraction.
 
 <a id="substantive-mathematical-operations"></a>
 ## Which Mathematical Operations Must Be Recorded
@@ -108,8 +111,7 @@ Reopening a failed route should identify a changed assumption, new mechanism, ne
 
 ## Review and Handoff
 
-Keep independent project-review accounts in fixed R under `mathematics/audits/reviews/`, with exact input locators and actual scope, including partial, negative and unadopted findings.
-A compact self-review or unknown-relationship finding may remain in fixed L with its own bindings and relationship.
+Keep all formal project-review findings in fixed R under `mathematics/audits/reviews/`, with exact input locators and actual agent relationship/scope, including self-review, independent review, older/source unknown, partial, negative and unadopted findings.
 L does not carry a Claim argument; link the actual fixed C reasoning.
 An independent finding cannot be relabeled merely to keep it in L.
 
@@ -131,7 +133,7 @@ Update actual consumers before removing redundant content, with the kind-specifi
 Keep unbound continuing mathematics in `mathematics/drafts/` using canonical rolling `Author_D_F0001.md` identities (with the chosen line), allocated by `material.py create --kind D --line F --file draft.md` through exclusive creation, without per-edit versions or a registry.
 Fixed support and acceptance evidence must first be promoted to their permanent homes.
 Move actual Markdown links, manuscript source maps, program inputs and substantive prose dependencies to the responsible fixed home before removing a completed draft.
-Claim arguments go to C, independent review accounts to R, suitable exploration/self-review findings to L, source inspection to U and programs to J.
+Substantial Claim statements and arguments go to C, formal project reviews to R, exploration and ordinary in-discussion checks to L, source inspection to U and programs to J.
 A retired D address may be reused without inheriting earlier scope or authority; preserve continuing work and needed programs/data.
 Already fixed material never becomes freely editable by moving it into drafts.
 

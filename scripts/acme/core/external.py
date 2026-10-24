@@ -58,6 +58,10 @@ def person(repo, value, source=None, name=None):
     rows = [row for row in table(repo, 'author')['people'] if row['id'] == value]
     r.require(len(rows) == 1, 'Register the selected external author: ' + value)
     row = rows[0]
+    if 'local_human' in row:
+        from . import identity
+        r.require(identity.person(repo, row['local_human'])['id'] == row['local_human'],
+                  'Use an adopted canonical local_human correspondence.')
     sources = references(row.get('source_repositories'), 'repo', PEOPLE + '[' + value + '].source_repositories')
     r.require(isinstance(row.get('names'), list), PEOPLE + '[' + value + '].names needs qualified source-name rows.')
     r.require(isinstance(row.get('facts'), str) and row['facts'].strip(),
@@ -133,7 +137,7 @@ def register_repository(repo, name, facts, url=None, *, timeout=30):
         return row
 
 
-def register_person(repo, source, name, facts, author=None, *, timeout=30):
+def register_person(repo, source, name, facts, author=None, *, local_human=None, timeout=30):
     r.require(isinstance(name, str) and name.strip() and isinstance(facts, str) and facts.strip(),
               'Supply the original source-local name and adopted identification facts.')
     with r.locked(repo.root, timeout=timeout):
@@ -152,11 +156,18 @@ def register_person(repo, source, name, facts, author=None, *, timeout=30):
             person(repo, author)
             row = next(row for row in people['people'] if row['id'] == author)
         owner = next(row for row in sources['repositories'] if row['id'] == source)
+        if local_human is not None:
+            from . import identity
+            r.require(identity.person(repo, local_human)['id'] == local_human,
+                      'Register the actual local human before adopting correspondence.')
+            r.require(row.get('local_human', local_human) == local_human,
+                      'Conflicting adopted same-human correspondence.')
+            row['local_human'] = local_human
         if source not in row['source_repositories']: row['source_repositories'].append(source)
         if author not in owner['authors']: owner['authors'].append(author)
         qualified = {'repository': source, 'name': name}
         if qualified not in row['names']: row['names'].append(qualified)
-        from ..intake.literature import publish_files
+        from .publication import publish_files
         pending = {REPOSITORIES: r.encoded(sources), PEOPLE: r.encoded(people)}
         expected = {path: r.read_from(repo, path) for path in pending}
         publish_files(repo, pending, expected)

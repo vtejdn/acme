@@ -17,6 +17,8 @@ Personal defaults live under profiles/<human>/, with writing/readme.md and actua
 Read the manuscript's responsible author and actual topic/readership, not merely the bound operator or Task line.
 Changing a local actor does not alter another author's adopted manuscript choices.
 An author without a profile uses general mathematical standards plus any explicit manuscript choices.
+An author may explicitly choose tracking exceptions for their document PDFs at the applicable writing-profile or document scope under the [local-output rule](writing.md#files-kept-local).
+Those choices do not waive local-only non-PDF build products or private literature exclusions, do not apply to another author and do not authorize commit, push or publication.
 Do not create empty profiles, borrow another author's settings or ask for routine missing defaults.
 
 For non-writing defaults and delegated choices within the installed framework's permitted scope, use the current explicit instruction, then an explicit Task/document choice, then the bound operator's applicable current active policy, then that operator's default, then the common framework default.
@@ -25,7 +27,8 @@ Personal defaults, active policies and document choices do not by themselves wai
 Writing retains its four layers for notation, terminology, presentation, source/model choice and style; those choices cannot turn an unchecked citation into verified evidence or change another material's assessment.
 Task/decision/E changes use their existing scoped procedures and actual authority; framework-obligation changes require a separately explicit maintenance assignment under its actual role and scope.
 Current human instructions retain their actual authority, including an already authorized named role exception, without transferring authorship or rewriting past evidence.
-The operator comes from the existing Git worktree research.actor binding and repository/people.json, not a Task's author, Git display name or agent nickname.
+In a Git workspace, the operator comes from the existing worktree research.actor binding and repository/people.json, not a Task's author, Git display name or agent nickname.
+Without Git, use the currently explicitly identified human and existing registration under the [identity rule](identity.md#stable-keys-and-local-attribution).
 Profiles are selected automatically without a separate repository adoption.
 A checkout has one binding shared by its chats; it is not a per-chat identity.
 Work directly in the shared repository and existing checkout under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts).
@@ -41,7 +44,9 @@ A changed Task target, hypotheses or execution conditions belongs in the respons
 Do not invent a profile or use one to store common framework semantics.
 
 Ordinary released installations use their installed rules by default.
-Research requests, corrections, check failures and preferences do not authorize framework edits, newer-framework retrieval or version changes.
+Research requests, corrections, check failures and preferences do not authorize framework edits, replacement-framework retrieval or version changes.
+The [daily public version check](../versioning.md#official-version-check) is a narrow read-only metadata exception during ordinary work, subject to explicit offline instructions and the repository setting.
+It neither authorizes retrieval or application of replacement files nor changes the installed version, mathematical status or Task/E authority.
 Explain a suggested common-rule difference at its actual scope and continue authorized work where possible.
 A separately explicit framework-maintenance assignment retains its own scope and actual responsibilities; an agent's name or a directory's presence does not assign that responsibility.
 
@@ -68,3 +73,4 @@ Bibliographic facts belong to the canonical references.bib, and artifact facts b
 
 Clean exports contain common guidance and empty mathematical structures, not live personal policies, named source selections, budgets or execution authorization.
 Explicit personal transfer retains the person and applicable scope; copying a policy grants no Task execution authority.
+The [personal-import path](intake.md#personal-import) installs only explicitly selected applicable settings in that actual human's existing responsible home, resolving conflicts from current precedence without directory-wide copying or revival of expired permission.
