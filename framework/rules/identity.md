@@ -13,7 +13,7 @@ On failure, report the relevant concrete error without exposing credentials and 
 A sandbox's lack of credential access does not establish expired credentials.
 Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
 Connection success grants no push, force-push, branch deletion, PR creation or other remote mutation.
-Local reading, edits, checks, commits and clean exports require no network preflight.
+Local reading, edits, checks, commits and file copying require no network preflight.
 The [daily metadata read](../versioning.md#official-version-check) retains its bounded public HTTPS endpoint, cache and separately authorized upgrade boundary.
 
 ## Stable keys and local attribution
@@ -26,7 +26,10 @@ For an invalid key, explain its concrete restriction and ask the author to choos
 The attribution name is nonempty single-line text, may contain spaces and Unicode and is independent of Git/GitHub identities.
 Use the existing id and display_name fields, preserving the exact supplied name and the permanent key.
 Complete the receiving License credit by a bounded edit using that name, preserving the existing license text and attribution notices; no License generator or extra signature field is required.
-An authorless export is valid preparation; collect both values at first actual registration, without renaming existing identities or relicensing existing repositories.
+An authorless copy or clone of the official blank repository is valid preparation; collect both values at first actual registration, without renaming existing identities or relicensing existing repositories.
+Personal use without Git may keep an absent or null repository name; Git research writing and delivery require the human's chosen or confirmed repository name under the [repository name rule](#repository-names-and-use-environments).
+An existing shared-repository clone preserves its identity, registrations and materials rather than repeating fresh setup.
+Use ordinary registration and, when Git is present, explicit checkout binding; copying files alone neither initializes Git nor binds a human.
 
 repository/people.json registers permanent human IDs, display names, actual registering humans, accepted Git name/email pairs and associated GitHub logins.
 New human/repository registrations contain no administrative registration timestamp; retained obsolete values are removed from maintained metadata rather than converted or kept as compatibility facts.
@@ -34,6 +37,39 @@ Human/repository keys use letters, digits and internal hyphens; underscores sepa
 Registration checks keys and GitHub logins without regard to case, rejects duplicate Git signature assignments, and retains canonical spelling.
 Display-name changes do not rename records.
 Correct mappings through traceable framework maintenance; never reassign a human key to somebody else.
+
+## Repository names and use environments
+
+Determine Git management from the selected folder's actual .git marker, including a Git worktree file, rather than executable availability or an enclosing checkout.
+Without Git management, one explicitly registered local human may research locally with an absent or null repository name, without uploading or publishing local research content.
+Authorized reads of the official framework and identified public research sources retain their actual instruction, offline and version-check conditions.
+No environment flag, placeholder repository name or second identity registry is needed.
+
+For a newly prepared unnamed personal configuration, use repository: null in repository/config.json while retaining necessary settings and human registration.
+Do not derive a repository name from a folder or author key.
+When enabling Git, register the human-chosen or explicitly confirmed repository name and explicitly bind the actual checkout before research writing or delivery, preserving existing content, allocation bounds and Task/E conditions.
+An existing actual named project needs no repeated first-project registration.
+Read-only material inspection and necessary setup or configuration repair remain available before registration.
+Repository names use ASCII letters, digits and internal hyphens without underscores or spaces; validate that choice separately from the independent human path key.
+Ask the human for an invalid choice's replacement rather than sanitizing it.
+
+A new project copied or cloned from the official blank source must distinguish the official acme name from its own registration.
+Prepare repository: null for a new unnamed personal copy; obtain the human's repository name when Git is used.
+The actual official repository retains its name, and an existing research-project clone preserves its registered identity and materials.
+An actual name registration or human-chosen update changes the configuration, necessary current README display of the repository name and direct current consumers, without changing the ACME framework name, human keys, material identities or historical source facts.
+
+Git use supports local research and native versioning without a GitHub account or remote.
+An existing Git-managed checkout keeps its Git and binding requirements if the executable becomes unavailable, without falling back to a personal-folder operator.
+Local Git operations require no network preflight; the separately configured daily public-version check keeps its own scope.
+
+When first establishing the actual GitHub project remote, after a relevant target change or for a remote operation needing fresh facts, compare the selected remote's repository name component with the registered local name.
+An official framework source, intake source or reference-only upstream is not automatically that project remote, and a GitHub login selects no repository.
+A difference permits a non-blocking suggestion to update the local registration and necessary current displays; keep the local name unless the human chooses the change.
+The mismatch alone blocks neither local research nor an otherwise authorized remote operation.
+Do not automatically rename the remote repository, derive a local choice by sanitizing the remote name or rewrite remote configuration to remove a mismatch.
+Use the actual target address, account/channel and authority independently of name matching, reusing still-applicable evidence without a reminder registry or comparison on each local read.
+
+## Checkout binding and personal operators
 
 Each Git working copy binds research.actor and its worktree scope in Git's config.worktree, located with git rev-parse --git-path config.worktree.
 Sessions in the same checkout read the same binding; linked worktrees bind independently.
@@ -184,6 +220,7 @@ Re-read shared state after acquiring the lock; do not hold it across network ret
 ## Git delivery
 
 Research proceeds in parallel; Git delivery in a shared worktree proceeds serially.
+Before research writing or delivery, a Git-managed project has its human-chosen registered name and the actual operator binding; native Git supplies no such authorization by itself.
 One responsible agent coordinates each intended batch, index and commit.
 Preserve another agent's staged work; identify actual paths rather than a research-line glob.
 Keep submitted files stable, inspect the exact index, and confirm the completed commit matches the intended deliverable.

@@ -1,7 +1,7 @@
 # Framework commands
 
 The standard-library runtime lives in classified `scripts/acme/` packages with thin root command entries.
-Every maintained runtime module is explicitly exported.
+The common scripts accompany the official starting repository and are usable after ordinary copying or cloning.
 Run from the checkout root, or pass `--root ROOT`.
 The [agent action guide](../framework/agent-actions.md) selects the work and governing rules; this document describes optional CLI interfaces and their actual side effects.
 
@@ -15,7 +15,7 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 | `research.py framework-update-notified VERSION` | Record a version reminder only after it has actually been presented to the human |
 | `research.py identity-bind HUMAN` | Bind the operator in this checkout's Git worktree configuration |
 | `research.py identity-add HUMAN --display-name "Actual name"` | Register a known human and supplied mappings; the empty unbound registry permits explicit first self-registration without automatic binding |
-| `research.py profile --topic execution` | Locate the bound operator's policy files; the agent applies them |
+| `research.py profile --topic execution` | Locate the actual local operator's policy files; the agent applies them |
 | `research.py profile --topic writing --author HUMAN --subfield free_probability` | Locate the actual author's writing layers |
 | `material.py create --kind D --line G --file -` | Allocate a responsible draft directly from stdin |
 | `material.py show PATH...` / `check PATH...` | Inspect explicit materials and direct required interfaces |
@@ -27,23 +27,27 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 | `material.py fetch-source --url ADDRESS --output LOCAL --format pdf` | Fetch supplied addresses and report actual response/byte facts without registration |
 | `material.py register-source --file entry.bib --existing-key KEY --local-pdf LOCAL` | Apply exact supplied fields and register an agent-chosen local source association |
 | `check-literature-storage.py` | Explicit whole-store registered-artifact inventory of presence, byte/format facts and recorded limitations |
-| `export-framework.py DESTINATION --repository KEY --repository-name NAME --repository-abbreviation ABBREVIATION` | Create a clean self-exportable repository outside the source checkout |
 
 Before repository or first-human setup, the agent collects the independent local path key and chosen License name under the [setup action](../framework/agent-actions.md#set-up-repository-or-human-identity).
 `init --username KEY --display-name NAME --repository REPOSITORY` and `identity-add KEY --display-name NAME` preserve those separate supplied values in id and display_name.
 Invalid keys and missing or whitespace-only/multiline names fail before identity setup; the agent requests an author-selected valid replacement instead of sanitizing or inferring a value.
 The agent completes the receiving License attribution through a bounded edit preserving its text and notices; these tools do not generate License credits.
 `research.py init` is an optional Git-bootstrap helper with its actual Git prerequisite; ordinary personal-folder file and author-registration work need not invoke it or `identity-bind`.
+For no-Git personal use, repository/config.json may omit repository or set it to null; a newly prepared unnamed configuration uses null without inventing a repository name.
+Ordinary material reading, author registration, local creation/revision, source registration and current-E checks retain their actual duties without a target Git prerequisite.
+Git research writing and delivery require the human-registered repository name and explicit checkout binding; read-only material inspection and necessary setup repair remain usable while a name is missing.
+Repository names are validated separately from human path keys under the [name rule](../framework/rules/identity.md#repository-names-and-use-environments).
+Git-backed source access and selected Git views require a Git executable and their actual named Git source/view; unavailable Git in a managed checkout does not select personal mode.
 
 ## Official framework version check
 
-The [version module](acme/framework/version.py) owns the exact official repository, published ref and manifest address under the [version rule](../framework/versioning.md#official-version-check).
-The two explicit research.py commands use the installed manifest, repository setting, local cache and public version metadata without requiring an operator binding or Git remote.
+The [version module](acme/framework/version.py) owns the exact official repository, published ref and version-metadata address under the [version rule](../framework/versioning.md#official-version-check).
+The two explicit research.py commands use the installed version metadata, repository setting, local cache and public version metadata without requiring an operator binding or Git remote.
 They do not run automatically on Repository construction, mathematical reading or every tool invocation.
 
-framework-update-check reads the repository Boolean setting, installed manifest and ignored repository/framework-update-check.json.
+framework-update-check reads the repository Boolean setting, installed version metadata and ignored repository/framework-update-check.json.
 Its normal action reuses today's result; --force requests an explicit same-day recheck, while --offline prevents a network attempt.
-A new enabled attempt first safely publishes today's unavailable placeholder under the short repository lock, makes one bounded read-only manifest request outside the lock, and safely publishes only the actual result.
+A new enabled attempt first safely publishes today's unavailable placeholder under the short repository lock, makes one bounded read-only version request outside the lock, and safely publishes only the actual result.
 The same lock prepares one opaque current-request claim at .tmp/framework-update-request.json, separate from the four-field cache.
 The latest started fresh request owns publication across processes; same-day reuse takes no ownership, and a later completed unavailable result supersedes an older response just as a success does.
 Publication checks both that owner and the UTC-day cache, preserves the latest notification and returns superseded with cache_saved false for an older response.
@@ -60,7 +64,7 @@ Status distinguishes success, unavailable, disabled, offline, configuration-erro
 Superseded means this request no longer owns publication because a later fresh request or UTC-day cache has taken precedence, so its older response does not overwrite the current facts.
 A null cache_saved means no write was needed; a false value with cache_error reports a publication limitation separately from any actually obtained metadata.
 The cache itself retains only last_attempt_on, result, latest_version and notified_version.
-Invalid identity/version, timeout, unavailable metadata and interruption never claim no update.
+Invalid version metadata, timeout, unavailable metadata and interruption never claim no update.
 An unsuccessful current-day result is not automatically retried.
 
 A reminder_due value is an agent action candidate, not notification or upgrade authorization.
@@ -68,14 +72,14 @@ Actually present the installed/newer versions, official repository link and upgr
 That command preserves the current attempt/result/version while recording only the actual notification.
 The agent owns the wording and choice; the helper never installs a framework or changes research authority.
 
-## Clean export
+## Installation and setup
 
-`export-framework.py` requires the repository identity key and the two independent display values.
-The key is stored in the fresh `repository/config.json`.
-The full name and abbreviation only render the exported root README heading; they are not derived from the key and are not stored as identity.
-Both display values must be nonempty single-line text, preserving their supplied spelling, spaces and Unicode.
-Optional `--author KEY --display-name NAME` registers and binds that explicitly selected key with its independent License name; either missing authorful setup value is refused without a fallback.
-Without --author, export keeps an empty unbound human registry and accepts no display-name; collect both actual author values at subsequent first registration.
+Use ordinary copying or cloning under the [installation action](../framework/agent-actions.md#install-the-framework).
+Project identity and requested README text are ordinary scoped edits; human registration and Git binding retain their separate explicit interfaces.
+For a new personal copy from the official blank tree, use an unnamed configuration unless the human supplied a name; the actual official repository and existing named project clones keep their real registrations.
+The agent may offer a non-blocking name update for the actually selected GitHub project remote; this is not an automatic comparison, remote rewrite or required CLI gate.
+The optional init helper does not run over an already copied repository/config.json and is not an installation prerequisite.
+Agent-led upgrades may use fixed official public files and ordinary recovery copies without a Git executable, preserving named or unnamed local state and marking the installed version only after required adaptation succeeds.
 
 ## Material authoring
 
@@ -148,7 +152,7 @@ Historical decisions retain real calendar precision and evidence through generic
 ## Current execution boundary
 
 `execution.py check --task TASK_PATH [--view WORKTREE|INDEX|FIXED_REF]` checks the explicitly selected family's current E fields, state and exact Task decision in that actual view.
-Prepare direct exact edits under the [execution rules](../framework/rules/execution.md), with the [current-E template](../framework/templates/execution-run.md).
+Prepare direct exact edits under the [execution rules](../framework/rules/execution.md), with the [current-E template](../framework/templates/execution/execution-run.md).
 The interface has no event writer, history replay, authority inference or platform scheduler control.
 
 ## Cross-repository intake
@@ -156,8 +160,14 @@ The interface has no event writer, history replay, authority inference or platfo
 Intake is an [agent-completed receiving action](../framework/agent-actions.md#acquire-material-from-another-research-repository): read the selected source and necessary candidates, judge preservation, adaptation and reuse, write the actual receiving material and required provenance, and inspect the result and affected references.
 Ordinary file operations and existing registration/allocation mechanisms suffice without a dedicated command, prepared-text payload, mapping plan or uniform batch protocol.
 The following payload, mapping and publication protocol applies only to callers choosing the optional helper.
+Before receiving U through either ordinary file operations or this helper, the agent completes [acquisition for its inspected original](../framework/rules/literature.md#acquisition-before-u-reception) to its actual reused, obtained or failed outcome.
+An actual failure is recorded at the responsible source home and directly reported to the human author with the work/edition, address when known, failure, availability and receiving limits.
+The helper handles authored content and chosen bibliography; it neither fetches the original, imports sender-private source accounts nor certifies that the agent fulfilled those prior duties.
 
 `material.py intake --source SOURCE --revision FULL_COMMIT --source-repository repoN --correspondence correspondence.json --selections - --instruction "Actual authorized scope"` reads the prepared JSON selection list from stdin.
+This optional helper needs a Git executable and the selected full commit in a local Git checkout representing the identified public GitHub source, including its registered source repository name.
+The receiving target may be an unnamed no-Git personal folder; source Git access supplies no target binding or naming requirement.
+Ordinary agent-led receiving through authorized public fixed-source reads and file operations remains available without this helper or a Git executable.
 Use the [complete acquisition-input contract](../framework/material-format.md#direct-acquisition) for eligible material/finding selections, bibliography targets, chosen U positions, exact expected-text edits or complete prepared text and retained provenance.
 The command copies selected authored materials and bibliography, without citation-graph expansion or automatic adoption.
 An explicitly selected actual independent finding in old L can be prepared in receiving fixed R with its true reviewer, targets, scope, relationship and limitations; retaining it as a current independent L finding is refused.
@@ -166,7 +176,10 @@ R has no mandatory C target; the agent chooses actual necessary targets or limit
 Within this helper, the agent explicitly designates necessary existing local inputs through --mapping; same-operation selections and neutral mixed publication supply the final receiving set, including an own imported T with another human's R.
 An unmapped background link never triggers receiving-history lookup or an unselected C body/decision read.
 Each actual Markdown file retains its own internal references at its receiving path, including included J documents, before cross-document exact mappings apply.
-Unselected relative background links become exact receiving registered sender-repoN/commit/path/anchor locators without reading linked materials or tracing their upstream provenance.
+Unselected relative background links to actual tracked files in the selected sending tree become exact receiving registered sender-repoN/commit/path/anchor locators without reading linked bodies or tracing upstream provenance.
+For an absent relative target, the helper preserves plain source-only reference context and reports the necessary input/correspondence adaptation, without manufacturing a fixed-commit file locator.
+That mechanical tree-entry fact neither classifies the file as output nor establishes outside-tree availability or generation; the agent supplies actual content judgment and necessary adaptation.
+Ordinary agent-led receiving remains valid without this helper or a prepared-text payload, using the sole current layout and retaining actual missing-input limits.
 Already explicit foreign-number locators use prepared namespace correspondence or a sender-qualified local mapping.
 Unmapped foreign locators become raw source context qualified by sender and fixed sending revision, without an active receiving-number link; selected originals still require their own provenance.
 The private literature store and its registry/holding accounts are excluded; retired source/holding/update inputs fail before private access or receiving publication.

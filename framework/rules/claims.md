@@ -237,7 +237,7 @@ If a review discovers a defect shared by the original argument, reassess every a
 
 ## Record Template
 
-Use the inert [record template](../templates/claim.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/claim.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 For partial ACME intake, the executing agent must examine necessary dependencies against the actual statement, argument and review scope.

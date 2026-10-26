@@ -1,6 +1,6 @@
 # ACME: Autonomous and Collaborative Mathematical Exploration
 
-To human authors: the [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md) or [ユーザーマニュアル](user-manual/ユーザーマニュアル.md)) is all you need.
+To human authors: the [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md), [ユーザーマニュアル](user-manual/ユーザーマニュアル.md) or [Manual de usuario](<user-manual/Manual de usuario.md>)) is all you need.
 
 This mathematical research repository uses ACME, Autonomous and Collaborative Mathematical Exploration.
 This entrance orients agents working in the existing checkout under the actual human instruction.
@@ -24,7 +24,7 @@ Distinguish conjecture, finite observation, self-reviewed proof and independentl
 | [Literature](mathematics/literature/readme.md) and [manuscripts](mathematics/manuscripts/index.md) | Actual source facts, inspected mathematics and document-local work |
 | [Script interfaces](scripts/readme.md) | Explicit mechanical operations and side effects |
 
-The [export manifest](framework/export-manifest.json) owns the installed framework version.
+The [version metadata](framework/version.json) owns the installed framework version.
 
 Distinct repositories reuse chosen findings under [intake rules](framework/rules/intake.md), with actual provenance, private-literature exclusion and separate [output-attachment responsibilities](framework/rules/intake.md#computation-output-attachments).
 

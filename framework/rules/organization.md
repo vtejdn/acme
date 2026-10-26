@@ -2,7 +2,7 @@
 
 Locally authored research records, framework rules, reports and code comments use English by default.
 Official non-English human-facing translations maintained alongside their responsible originals are permitted in any language and explain the same framework without becoming a competing rule authority.
-Existing Chinese guides retain that role; planned German, French, Japanese and later editions gain navigation/export entries only when their actual files are added.
+Existing Chinese guides retain that role; planned German, French, Japanese and later editions gain navigation entries only when their actual files are added.
 An arbitrary non-English research note is not an official translation.
 Other explicitly authorized document-language scopes retain their actual instructions and role boundaries; original quotations and acquired material retain their source-preservation rules.
 Directory names use short lowercase English words without spaces; registered citation keys keep their case.
@@ -22,6 +22,7 @@ Fixed framework, rule, function, configuration and profile explanations, readme-
 A growing presentation collection uses the root and actual-author readme/index pairs, while an individual document readme keeps its substantive content; neither arrangement requires an index in every directory.
 Indexes confer no mathematical, review, lifecycle or execution authority.
 No directory classifier, exhaustive directory register or mandatory index in every folder is introduced.
+A directory's existence alone requires no README; create one only for a distinct necessary purpose, keeping operative rules at their governing framework homes.
 Live readings and execution disposition belong in E, with actual defaults selected by the [personal-policy rules](preferences.md).
 
 Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; bibliographic fields in mathematics/literature/references.bib and acquisition/artifact facts in its registry.md.
@@ -84,7 +85,7 @@ General traversal, copying, publication and cleanup skip the whole source mount;
 A needed durable external mount target belongs only in private setup.
 Concrete source operations use real paths for resolution, containment and junction checks; generic public links retain logical source navigation without resolving or reading the mount.
 Do not serialize host values into public reports.
-General public traversal and clean export exclude `profiles/*/secrets.md` before reading; a deliberately tracked/staged secret is a publication error.
+General public traversal and common-framework copying exclude `profiles/*/secrets.md` before reading; a deliberately tracked/staged secret is a publication error.
 
 Record relative commands and the runtime/dependency details that affect actual reproduction, instead of installation paths.
 The [computation rule](computations.md) gives no generic execution-environment archive duty.
@@ -105,11 +106,11 @@ Reusable arguments, failed findings and reviewed constructions remain in their r
 Search and cite these by the actual conclusion and applicability; no separate method type or mandatory feedback workflow is used.
 
 Retained computation programs, verification programs, required original inputs and concise accounts use `mathematics/computations/programs/<J>/` under the [computation rules](computations.md).
-Generated results, certificates and verification data use the Git-ignored `mathematics/computation/outputs/<J>/`.
+Generated results, certificates and verification data use the Git-ignored `mathematics/computations/outputs/<J>/`.
 Both homes preserve the same registered J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 The collection entrance/index remains at `mathematics/computations/`.
 The program README supplies navigation, actual input/output locators and reproduction context, without a second assessment or review.
-Generic discovery and clean export skip live output; explicit contained reads and selected transfers remain available.
+Generic discovery and common-framework copying skip live output; explicit contained reads and selected transfers remain available.
 Keep logs only for troubleshooting and checkpoints only for useful continuation, preserving necessary mathematics and consumers before cleanup.
 
 Source inspection belongs in mathematics/audits/literature/.
@@ -137,7 +138,7 @@ Source observations remain in adequate U or compact source-reading accounts; com
 
 Use only root `.tmp/` for repository-managed disposable operational work; root `tmp/` is retired.
 Create a purpose-specific child only when needed.
-Permitted uses include isolated framework/Git/export fixtures, deliberate corruption controls on copies, one-time migration helpers, transient diagnostics and derived PDF text or page images used by a tool.
+Permitted uses include isolated framework/Git/installation fixtures, deliberate corruption controls on copies, one-time migration helpers, transient diagnostics and derived PDF text or page images used by a tool.
 Source PDFs, research programs, mathematical outputs and continuing proof drafts keep their responsible homes.
 A derived extraction is disposable only when its source remains available and any useful finding is recorded where it belongs.
 
@@ -162,9 +163,9 @@ No cleanup approval, temporary-file registry or per-file report is required.
 Before cleaning pre-existing temporary content, distinguish unique necessary material from already incorporated copies and disposable tooling.
 Historical mentions do not require retaining a duplicate; preserve the event and actual review scope without promising that an obsolete temporary path remains available.
 
-OS-managed temporary directories, third-party caches, atomic-write siblings, exporter staging beside its destination, J-local progress and manuscript build directories retain their actual technical roles.
+OS-managed temporary directories, third-party caches, atomic-write siblings, J-local progress and manuscript build directories retain their actual technical roles.
 They are not alternative root scratch areas and need not be forced into `.tmp/`.
-Temporary contents are neither committed nor copied into clean framework exports.
+Temporary contents are neither committed nor copied into the official framework starting repository.
 
 Manuscripts consume mathematical evidence, may change freely and frequently, and retain their own manuscript-review records.
 Mathematical materials outside `mathematics/manuscripts/` do not point to documents or specific internal content in that directory through links, paths, citations, internal numbering or prose explanations of manuscript context.

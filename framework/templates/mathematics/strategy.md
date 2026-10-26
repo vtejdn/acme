@@ -2,7 +2,7 @@
 
 ## Route Record Template
 
-Apply the [work-obligation rules](../rules/workflow.md#work-obligations) and [agent/tool responsibility](../rules/workflow.md#agent-and-tool-responsibilities).
+Apply the [work-obligation rules](../../rules/workflow.md#work-obligations) and [agent/tool responsibility](../../rules/workflow.md#agent-and-tool-responsibilities).
 The optional `material.py create --kind S --line F --file route.md` writer, or an actual `--task PATH`, allocates the supplied route.
 Associate S with the actual ordinary individual T; a joint coordination T has no direct S or E.
 Replace illustrative paths with actual material locators; omit absent related claims and inapplicable fields.
@@ -74,15 +74,15 @@ This is complete without editing the source or waiting for its author's response
 matching authorship alone does not make a received original writable.
 ```
 
-Use the [defined dispositions](../rules/strategies.md#route-dispositions), including `paused`, in the route itself; the index derives those fields.
+Use the [defined dispositions](../../rules/strategies.md#route-dispositions), including `paused`, in the route itself; the index derives those fields.
 Keep evidence, reasons and lineage in the affected route records;
 the stable mathematics entrance and other navigation must not maintain competing priorities or dispositions.
 
-Apply the [route ownership boundary](../rules/strategies.md#writable-route-boundary) and [hierarchy contract](../rules/strategies.md#strategy-hierarchy).
+Apply the [route ownership boundary](../../rules/strategies.md#writable-route-boundary) and [hierarchy contract](../../rules/strategies.md#strategy-hierarchy).
 Explicit source references support reverse discovery without implying source adoption or supersession.
 Omit inapplicable sections; no replacement knowledge registry, version chain or retrospective is required for every ordinary action.
 
 Only the established same human directly revises an authored body.
-Other humans put corrections and contributions in their own suitable materials with exact references under the [identity rule](../rules/identity.md).
+Other humans put corrections and contributions in their own suitable materials with exact references under the [identity rule](../../rules/identity.md).
 Coordinate concurrent writes and maintain shared registration/navigation at their actual scope.
 Preserve acquired-source provenance and historical mathematics.

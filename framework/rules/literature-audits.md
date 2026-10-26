@@ -173,7 +173,7 @@ Neither an unsuccessful search nor a review pause establishes nonexistence or no
 
 ## Record Template
 
-Use the inert [record template](../templates/source-unit.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/source-unit.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 Manuscript-specific review belongs with its document under the [manuscript review rules](writing.md#manuscript-review-and-mathematical-provenance).

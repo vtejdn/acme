@@ -16,7 +16,7 @@ This template applies to ordinary individual Tasks; a joint coordination T has n
 Setup grants no execution authority or allowance.
 ~~~
 
-Directly retain only still-effective conditions under the [execution rules](../rules/execution.md).
+Directly retain only still-effective conditions under the [execution rules](../../rules/execution.md).
 An absolute threshold uses threshold_percent without baseline conversion.
 Only an effective incremental allowance uses baseline_percent, limit_percent and window, with account/bucket when needed.
-Use ordinary prepared exact edits; the optional selected check reads the [current-E format](../material-format.md#current-execution-boundary), without events, history or authority inference.
+Use ordinary prepared exact edits; the optional selected check reads the [current-E format](../../material-format.md#current-execution-boundary), without events, history or authority inference.

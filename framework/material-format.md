@@ -100,7 +100,7 @@ A U key is `U/SourceKey`, such as `U/Src26`, and owns that canonical citation ke
 D has no permanent entry because its retired working address can be reused after retention and consumer repair.
 
 For example, `{"material_next": {"Alice_C_F": 8, "author3_repo2_R_G": 12, "U/Src26": 4}}` records only the next unissued positions in those illustrative namespaces.
-An empty clean bootstrap uses `"material_next": {}` without inheriting the exporting repository's numbers.
+The official blank starting repository uses `"material_next": {}`; copying an existing research repository preserves its actual issued-number bounds.
 Initialize an existing affected namespace from an agent-confirmed used-number upper bound before its first relevant allocation or retirement; surviving filenames alone cannot establish that no higher number was previously issued.
 Under the existing short mutation lock, issue or explicitly install the new position and advance its bound without decreasing it after deletion or failure.
 A fresh receiving number below that bound is unavailable even when its path is empty; gaps are acceptable.
@@ -145,7 +145,9 @@ Tools report actual fetch and byte facts; U prose, bibliography and URL spelling
 Inspect an unestablished response before local-file registration, reusing applicable prior judgments.
 
 Explicit onward reception preserves complete necessary selected U content, original provenance, inspected edition/passages and inspection limits, with the chosen bibliography correspondence and receiving unit position/text.
-It carries no original publications, private source accounts or literature fingerprints and establishes no receiver-local possession.
+Before finalizing this reception, complete the [original-acquisition procedure](rules/literature.md#acquisition-before-u-reception) for the actual work and inspected edition, reusing an adequate local original or obtaining, validating and registering the receiver's own source.
+On an actual failure, retain the truthful source account and directly report the work/edition, address when known, failure, availability and receiving limits to the human author before completing the authorized U receipt.
+Authored U intake carries no original publications, private source accounts or literature fingerprints and establishes no receiver-local possession.
 When original text is needed, use adequate receiver-local evidence or ordinary authorized local source preparation.
 
 The [source-input rule](rules/literature.md#artifact-source-association) requires an explicitly supplied file for byte reuse; a bibliography key or missing source cannot select the receiver's file or replace its account.
@@ -162,6 +164,7 @@ U is independently selectable by direct intake.
 Retain original source, exact revision/unit, complete necessary selected content and actual inspection facts under the [common adaptation rule](rules/records.md#receiving-and-adapting-selected-content).
 The agent chooses the existing/new bibliography target and receiving unit position, writes complete necessary U content and provenance, and inspects its actual declarations and references; reception does not endorse mathematical statements.
 Prepared-text and mapping payloads are optional helper inputs rather than prerequisites for receiving that content.
+Choosing that helper retains the same prior acquisition and failure-reporting duty, without adding a per-U receipt or importing private source accounts.
 Intake reads no sender-private PDF, HTML, resources or registry and creates no receiving Artifact account, fingerprint, availability assertion or holding.
 Canonical and typesetting bibliography fields follow the [bibliographic content boundary](rules/literature.md#bibliography-content); U/registry owns inspected-artifact identity and limits.
 Work metadata does not authorize retrieving a different edition or rewriting the U merely to obtain a PDF.
@@ -490,13 +493,16 @@ Agent-decided original/local locator correspondences use the mapping input descr
 Acquired mathematics uses its actual receiving typed home and complete necessary selected content under the common adaptation rule.
 Only supplied explicit mappings and same-operation selected input correspondences resolve locally.
 Unselected background references never trigger receiving acquisition-history lookup or an unselected C body/decision read.
-An unselected relative background reference uses `acme-source://repoN/FULL_COMMIT/sender/path#anchor` using the receiving registered sender without opening the linked material or tracing its upstream original.
+An unselected relative background reference to an actual tracked file in the selected sending Git tree uses `acme-source://repoN/FULL_COMMIT/sender/path#anchor` using the receiving registered sender without opening the linked material or tracing its upstream original.
+An absent relative target keeps source-only context, its actual source path/anchor and the containing material's reference revision, without an active fixed-commit file locator or invented bytes, generation or availability.
+The agent prepares necessary adaptation or input correspondence from actual content; a concrete unsupported transformation is reported rather than published as a false source claim.
+Ordinary file operations suffice, without a mandatory prepared payload, historical-layout dispatch or another current output root.
 Translate an already explicit foreign-number locator through prepared correspondence only; an unmapped locator becomes qualified raw source context, without an active receiving-number link.
 Unresolved references are reported as unmapped, rather than assumed necessary missing mathematics.
 For an unselected unversioned output, retain ordinary visible text instead of a link, using its actual label and reference context:
 
 ```text
-Required result (source-only unversioned output; not acquired; reference in sending repository named `Source` at material revision `FULL_COMMIT`; source path `mathematics/computation/outputs/Source_J_F0001/result.json#anchor`)
+Required result (source-only unversioned output; not acquired; reference in sending repository named `Source` at material revision `FULL_COMMIT`; source path `mathematics/computations/outputs/Source_J_F0001/result.json#anchor`)
 ```
 
 Its known reference context and anchor survive onward acquisition; no local same-named output or tracked-program revision supplies a binding.

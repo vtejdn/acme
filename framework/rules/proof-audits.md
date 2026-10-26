@@ -212,7 +212,7 @@ Do not silently weaken the original target to retain a completed label.
 
 ## Record Template
 
-Use the inert [record template](../templates/proof-audit.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/proof-audit.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 ## Independent review obligations

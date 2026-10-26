@@ -28,6 +28,8 @@ class GitSource:
         self.root, self.revision = Path(root).resolve(), revision
         self.names = self.tree.names
         self.config = self.tree.json('repository/config.json')
+        r.require(isinstance(self.config, dict), 'Repository configuration must be an object.')
+        humans.repository_name(self.config.get('repository'), required=True)
         self._entries = None
 
     @property
@@ -555,6 +557,12 @@ def _unit_text(raw, choice):
 
 def acquire(repo, source_root, selections, *, revision, instruction, source_repository, correspondence,
             initiator=None, files=(), timeout=30, refresh_j=False, mapping=(), batch=None):
+    """Receive prepared authored content after the caller's U acquisition duties.
+
+    Original-source acquisition and its actual failure report are agent actions
+    completed before U receipt; this helper neither fetches private originals
+    nor infers their edition, availability or the adequacy of source evidence.
+    """
     nonempty = lambda value: isinstance(value, str) and bool(value.strip())
     r.require(nonempty(instruction), 'Record the actual intake instruction.')
     for selection in selections:
@@ -878,6 +886,18 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                                  + '` at material revision `' + source.revision + '`; source path `' + locator + '`)')
                         replacements.append((first, last, value))
                         missing.append('Unselected unversioned output in ' + source.transport + ': ' + locator)
+                        continue
+                    elif destination is not None and path not in source.names:
+                        # A material's commit supplies reference context, not
+                        # versioned bytes for a file absent from that Git tree.
+                        # Do not infer an output role or another source layout.
+                        locator = path + ('#' + anchor if anchor else '')
+                        value = (label + ' (source-only reference; not acquired; absent from the selected sending Git tree; '
+                                 'reference in sending repository named `' + source.config['repository']
+                                 + '` at material revision `' + source.revision + '`; source path `' + locator + '`)')
+                        replacements.append((first, last, value))
+                        missing.append('Source reference absent from selected Git tree; prepare any necessary input or correspondence: '
+                                       + source.transport + ': ' + locator)
                         continue
                     else:
                         value = source_refs.make(reference_origin['repository'], reference_origin['revision'], reference_origin['path'], reference_origin.get('anchor', ''))

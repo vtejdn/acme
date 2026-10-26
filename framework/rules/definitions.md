@@ -104,7 +104,7 @@ If an operation also entails lemma extraction or theorem designation, the existi
 
 ## Record Template
 
-Use the inert [record template](../templates/definition-entry.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/definition-entry.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 Consumer navigation identifies the authoritative mathematical use from its forward references, never a manuscript TeX file, convention or review.

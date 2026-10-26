@@ -1,0 +1,15 @@
+# Ignore files by default; keep directories traversable for source exceptions.
+*
+!*/
+!.gitignore
+!*.md
+!*.tex
+!*.bib
+!*.sty
+!*.cls
+
+# Generated workspaces remain ignored even when they contain source-like files.
+build/
+figure/
+output/
+_minted*/

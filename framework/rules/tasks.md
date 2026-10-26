@@ -2,7 +2,7 @@
 
 ## Task Records
 
-Create a Task with its complete actual contract/decision, using the [Task template](../templates/task.md); the optional `material.py create --kind T --file task.md` allocates its numbered T family under `mathematics/tasks/`.
+Create a Task with its complete actual contract/decision, using the [Task template](../templates/mathematics/task.md); the optional `material.py create --kind T --file task.md` allocates its numbered T family under `mathematics/tasks/`.
 Use line A for a new Task when the human has not designated a series, without a routine question or topic-based letter inference.
 Continuation keeps the existing series; Task-derived material inherits its letter while retaining the author/kind/line's independent counter.
 An explicit line choice takes precedence, and an independent local material without a Task or line uses the same A fallback.
@@ -85,7 +85,7 @@ Mathematical consumers other than the permitted Task entrance do not refer to E 
 
 ## Record Template
 
-Use the inert [record template](../templates/task.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/task.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 Before closing a task, use the [completion review procedure](proof-audits.md) to compare the achieved conclusion with the original question.

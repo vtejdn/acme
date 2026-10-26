@@ -1,21 +1,21 @@
 # Computation
 
-Apply the [common content decision](../rules/records.md#substantive-material-retention) before retaining content, reusing an adequate responsible home.
+Apply the [common content decision](../../rules/records.md#substantive-material-retention) before retaining content, reusing an adequate responsible home.
 Then follow actual registration, reproduction, source and review duties.
 A template does not justify a process-only record.
 
 ## Computation Directory README
 
 Use one `readme.md` at `mathematics/computations/programs/<J>/`, with actual programs, verification programs and required original inputs.
-Generated results, certificates and verification data belong at the Git-ignored `mathematics/computation/outputs/<J>/`.
+Generated results, certificates and verification data belong at the Git-ignored `mathematics/computations/outputs/<J>/`.
 Both homes share the same J identity; imported groups use receiving `authorN_repoN_J_Fxxxx` identities and explicitly chosen receiving serials.
 Preserve the exact original author, repository, research line, family/serial, physical version where applicable, path and revision in existing provenance/correspondence, separately from the chosen receiving identity.
 Repeated acquisition and later versions reuse the established receiving family, distinguishing original identity from immediate transport.
-New J families maintain their actual [`material_next` namespace](../material-format.md#material-family-allocation-state); an established receiving correspondence or an output file does not allocate another family.
-See the [computation rules](../rules/computations.md#computation-output-location).
+New J families maintain their actual [`material_next` namespace](../../material-format.md#material-family-allocation-state); an established receiving correspondence or an output file does not allocate another family.
+See the [computation rules](../../rules/computations.md#computation-output-location).
 The inert example below uses `Author_J_W0001`; replace it and its file rows with the actual retained group and files.
 Do not invent programs, data or a run to fill the template.
-Use the minimal author/source header from the [material format](../material-format.md).
+Use the minimal author/source header from the [material format](../../material-format.md).
 
 ```markdown
 ---
@@ -33,11 +33,11 @@ Question, tested range, assumptions and arithmetic mode.
 | --- | --- |
 | [main.py](main.py) | Actual program role. |
 | [input.json](inputs/input.json) | Required original input and scope. |
-| [Result](../../../computation/outputs/Author_J_W0001/result.json) | Generated result; state actual local availability. |
+| [Result](../../outputs/Author_J_W0001/result.json) | Generated result; state actual local availability. |
 
 ## Reproduction
 Working directory, command, required inputs and dependency order.
-Default output: mathematics/computation/outputs/Author_J_W0001/.
+Default output: mathematics/computations/outputs/Author_J_W0001/.
 State precision, tolerance, seed and software dependencies when relevant to reproduction.
 Identify verification-only commands and their required existing evidence.
 
@@ -70,12 +70,12 @@ Publish complete output only after the claimed calculation succeeds.
 
 Required witnesses, non-reconstructible data and earlier results used as inputs remain preserved locally.
 The ignore rule is neither backup nor delivery; a clone can lack output.
-Use [explicit output attachments](../rules/intake.md#computation-output-attachments) when an actual transfer needs them.
+Use [explicit output attachments](../../rules/intake.md#computation-output-attachments) when an actual transfer needs them.
 A tracked program revision does not attribute an ignored file to its Git tree or establish its generator.
 Distinguish acquired-original attachments from receiver-generated results, without changing prior acquisition facts.
 No ordinary read, link repair or Git delivery implicitly runs the computation.
 
-Apply the [common maintenance boundary](../rules/records.md#substantive-material-retention) to output cleanup and concise account maintenance.
+Apply the [common maintenance boundary](../../rules/records.md#substantive-material-retention) to output cleanup and concise account maintenance.
 Preserve fixed mathematics, actual review scope and acquired originals.
 Full proofs belong in their responsible mathematical materials; the README supplies no separate Claim assessment or review.
-For candidate counterexamples, retain decisive evidence and outstanding checks under [counterexample validation](../rules/computations.md#counterexample-validation).
+For candidate counterexamples, retain decisive evidence and outstanding checks under [counterexample validation](../../rules/computations.md#counterexample-validation).

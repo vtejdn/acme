@@ -71,6 +71,6 @@ Questions, examples, silence and an agent preference do not create a policy.
 Keep manuscript-specific choices with their manuscript; source observations stay in responsible source-reading accounts.
 Bibliographic facts belong to the canonical references.bib, and artifact facts belong to the literature registry.
 
-Clean exports contain common guidance and empty mathematical structures, not live personal policies, named source selections, budgets or execution authorization.
+The official starting repository contains common guidance and empty mathematical structures, without live personal policies, named source selections, budgets or execution authorization.
 Explicit personal transfer retains the person and applicable scope; copying a policy grants no Task execution authority.
 The [personal-import path](intake.md#personal-import) installs only explicitly selected applicable settings in that actual human's existing responsible home, resolving conflicts from current precedence without directory-wide copying or revival of expired permission.

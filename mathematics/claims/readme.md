@@ -8,6 +8,6 @@ Use one numbered main-material family per formal Claim, with local addresses suc
 The external numbers identify the receiving registration; actual original human and repository facts remain in the external records, minimal source header and intake provenance.
 Keep the descriptive title in the document.
 
-See the [index](index.md), [material format](../../framework/material-format.md) and [Claim template](../../framework/templates/claim.md).
+See the [index](index.md), [material format](../../framework/material-format.md) and [Claim template](../../framework/templates/mathematics/claim.md).
 An explicit selected decision owns the current assessment and its exact statement, argument and review; the index is navigation only.
-No sample Claim is created by export.
+The official starting repository contains no sample Claim.

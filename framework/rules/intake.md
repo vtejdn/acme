@@ -2,7 +2,9 @@
 
 ## Scope and Routing
 
-Receive agent-selected mathematical units from an identified source at a full fixed Git revision in appropriate local C/R/U/L/J homes, or a necessary joint T contract.
+Receive agent-selected mathematical units from an identified public GitHub repository at a full fixed Git commit in appropriate local C/R/U/L/J homes, or a necessary joint T contract.
+The source is Git-managed; no non-Git source protocol is defined.
+The receiving personal folder may have neither Git nor a registered repository name while preserving the actual source repository, author, revision and acquired scope.
 Classify actual material, not its host or container.
 Different research repositories use intake; collaboration by another registered human in this shared repository follows the [direct-collaboration rule](identity.md#collaboration-maintenance-and-conflicts) without an intake operation merely for differing authors.
 Preserve original source authorship, path, physical version, scope and provenance through explicit receiving external identities; an onward sender remains distinct transport.
@@ -11,7 +13,9 @@ Matching display names do not establish human correspondence.
 Use the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities) for input scope, original-author correspondence, local reuse and source associations.
 The agent reads the selected sources and necessary receiving candidates, judges preservation, adaptation and reuse, writes the receiving material and required provenance, and inspects the actual result and affected references.
 Ordinary file operations and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a condition of valid intake.
+Without a Git executable, use authorized reads of the selected public fixed-source files and ordinary file operations; this does not upload or publish receiving research content.
 Optional helpers execute explicit choices under their own interfaces; those payload and publication protocols do not govern receiving actions that do not use them.
+The Git-based intake helper needs Git access to its selected source checkout, without requiring the receiving personal folder to be Git-managed or named.
 
 Another human's ordinary Task/E authority, live execution, profiles and manuscript projects are outside intake.
 Needed S/D mathematics may be explicitly adapted into its appropriate receiving mathematical home, retaining its actual original path and scope without inventing a Claim assessment or review.
@@ -41,6 +45,9 @@ For the optional command, existing local targets use explicit mappings without r
 An explicit mapping names the actual chosen version and anchor; the agent judges correspondence and review applicability.
 Map an existing local original directly, without reacquisition, a self repoN or conversion to an external original.
 U retains the exact authored source edition, inspected passages and limits, with explicitly chosen bibliography correspondence.
+Before U installation or registration, complete the receiver's ordinary [original-acquisition procedure](literature.md#acquisition-before-u-reception) to its reused, obtained or failed outcome, including direct failure reporting to the human author.
+Read the incoming work/edition facts needed for that procedure, reuse an adequate result for the same work and edition, and preserve the actual outcome and receiving limitations.
+This responsibility applies before calling an optional intake helper as well as before ordinary agent-led receipt; adequate incoming evidence does not bypass it.
 The agent also chooses its receiving source-key/unit position and precise local declaration/reference edits before publication.
 Occupancy is shared across authors and displayed origin prefixes within the canonical receiving source key.
 Existing original repoN/family correspondence preserves physical-version continuity; an occupied prepared position reports a conflict without silently choosing another number.
@@ -51,6 +58,7 @@ Whole-document source-key or anchor substitution cannot establish reference corr
 The local `mathematics/literature/pdf/` store is outside intake, whether it is an ordinary directory or a top-level directory junction.
 U `source_artifacts`, `source_bibliography`, `holding` and `source_updates`, and operation-level source updates, are retired inputs and must fail before private-store access or publication.
 Intake reads no private source documents and imports no local Artifact account, fingerprint, availability or holding relationship.
+The receiver's independent original acquisition remains a separate action at its own source home; an acquisition failure does not erase useful U evidence or decide its mathematical applicability.
 Original literature PDFs, HTML and resources remain outside Git tracking, uploads and outgoing material transfers even when publicly reachable.
 Material subject to copyright or distribution restrictions cannot enter intake through J, an attachment, another directory or a large copied passage.
 The agent judges actual content and permitted disclosure; scripts enforce known excluded paths and explicit selections without a copyright classifier.
@@ -73,8 +81,12 @@ Within the optional helper, supplied exact source/path/fragment mappings precede
 Its whole-file fallback changes the path and preserves the incoming fragment, while authentic same-document references retain their actual anchors.
 Determine internal references from each actual Markdown file's original and receiving paths, including included native documents, before applying cross-document mappings.
 An unmapped background reference does not invoke receiving history lookup or read an unselected C body/decision to infer reuse; the agent explicitly designates any actual needed local input.
-An otherwise unselected relative background reference retains its actual path and anchor at the receiving registered sender repoN and fixed sending commit.
+An otherwise unselected relative background reference to an actual tracked file in the selected sending Git tree retains its path and anchor at the receiving registered sender repoN and fixed sending commit.
 This locator identifies evidence present in the sender without opening the linked material or inferring upstream authorship, identity or revision from its header.
+If the relative target is absent from that Git tree, retain truthful source-only reference context and report the necessary input or correspondence adaptation instead of manufacturing an active fixed-commit file locator.
+The containing material's revision identifies its reference context, without establishing the referenced file's bytes, generation or availability outside the tree.
+The agent judges what is needed, obtains or reproduces authorized necessary input or retains its unresolved need at the actual consumer; obsolete mentions with no remaining purpose may be omitted or simplified under the common retention rule.
+An optional helper may use actual tree-entry facts for this mechanical distinction, without recognizing historical layouts, inferring an output role or adding another supported output home.
 An already explicit foreign-number locator is translated only through prepared namespace correspondence or an exact sender-qualified local mapping.
 If unmapped, retain its raw text as source context qualified by the sending repository and fixed sending revision, without an active receiving repoN link.
 Select a needed upstream object or supply its exact correspondence explicitly; missing or conflicting provenance still refuses an actual selected object.
@@ -84,6 +96,7 @@ For an unversioned computation output, without an explicitly selected attachment
 Do not turn that reference into a local link through a matching J name, basename, occupied output slot or prior program acquisition.
 The optional intake helper uses `output_attachments` for actual output correspondence; `--mapping` continues to describe fixed-revision material.
 Onward acquisition keeps existing source-only text and its original reference context without assigning the ignored output to a Git revision.
+Ordinary reading, editing and copying can complete the required adaptation without a prepared payload or mandatory helper; supplied helper inputs must support the actual chosen transformation.
 Report an unmapped original reference as unmapped; it does not by itself assert a missing necessary mathematical dependency.
 The agent records any actual missing necessary input at its consumer.
 Never bind an unrelated same-named file, create a stub, discard necessary selected mathematics or excuse an actually broken acquired local input.
@@ -120,7 +133,7 @@ Retain known original source separately from the current sender's transport role
 Unknown generation remains unknown; do not invent a revision for unversioned bytes.
 
 Programs and required original inputs use `mathematics/computations/programs/<J>/`.
-Explicit output attachments use `mathematics/computation/outputs/<J>/` with the same J identity.
+Explicit output attachments use `mathematics/computations/outputs/<J>/` with the same J identity.
 The optional intake tool accepts `output_attachments` in that J's selection.
 Each row supplies full repository-relative `source` and `local` file paths, `scope` and a `provenance` object.
 Its `generation` text states actual generation facts or that they are unknown; retain known original source and limitations there as applicable.
@@ -144,7 +157,7 @@ Never substitute another file, claim a necessary missing input was obtained, or 
 An occupied destination cannot be satisfied by missing source bytes.
 Acquisition-time availability and current selected-view presence are separate facts.
 The mathematical consumer retains any indispensable-input or reproduction limitation.
-Generic discovery and clean export exclude live output; explicit contained reads and transfers remain available.
+Generic discovery and common-framework copying exclude live output; explicit contained reads and transfers remain available.
 
 ## One Operation Record
 

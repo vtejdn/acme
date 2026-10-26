@@ -8,14 +8,13 @@ from pathlib import Path
 from urllib import request
 from ..core import repository as r
 
-MANIFEST = 'framework/export-manifest.json'
+VERSION_FILE = 'framework/version.json'
 RELEASE = re.compile(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)')
-ID = 'acme'
 OFFICIAL_REPOSITORY = 'https://github.com/vtejdn/acme'
 OFFICIAL_REF = 'main'
-OFFICIAL_MANIFEST_URL = (OFFICIAL_REPOSITORY.replace('https://github.com/',
+OFFICIAL_VERSION_URL = (OFFICIAL_REPOSITORY.replace('https://github.com/',
                          'https://raw.githubusercontent.com/', 1) + '/' +
-                         OFFICIAL_REF + '/' + MANIFEST)
+                         OFFICIAL_REF + '/' + VERSION_FILE)
 UPDATE_CACHE = 'repository/framework-update-check.json'
 UPDATE_CLAIM = '.tmp/framework-update-request.json'
 UPDATE_TIMEOUT = 10.0
@@ -24,63 +23,39 @@ UPDATE_LOCK_TIMEOUT = 2.0
 UPDATE_FIELDS = {'last_attempt_on', 'result', 'latest_version', 'notified_version'}
 
 
-def validate_manifest(manifest):
-    r.require(isinstance(manifest, dict), 'Invalid export manifest.')
-    value = manifest.get('framework_version')
+def validate_metadata(metadata):
+    r.require(isinstance(metadata, dict) and set(metadata) == {'framework_version'},
+              'Framework version metadata must contain only framework_version.')
+    value = metadata['framework_version']
     r.require(isinstance(value, str) and RELEASE.fullmatch(value) is not None,
               'framework_version must use MAJOR.MINOR.PATCH without leading zeros.')
-    if 'framework_id' in manifest or 'framework_name' in manifest:
-        r.require(manifest.get('framework_id') == 'acme' and manifest.get('framework_name') == 'Autonomous and Collaborative Mathematical Exploration',
-                  'Installed framework identity must be ACME / Autonomous and Collaborative Mathematical Exploration.')
     return value
 
 
 def installed(root):
-    """Lightweight identity of the installed ACME framework, or None when absent.
-
-    Discovery catalogs carry this identity (no fingerprints) so intake routing
-    can recognize ACME-lineage material."""
-    path = r.safe_path(Path(root), MANIFEST)
+    """Read the installed release metadata, or None when absent."""
+    path = r.safe_path(Path(root), VERSION_FILE)
     if not path.exists():
         return None
-    manifest = r.read_json(path)
-    validate_manifest(manifest)
-    if manifest.get('framework_id') != ID:
-        return None
-    return {'framework_id': ID, 'framework_version': manifest['framework_version']}
-
-
-def validate_context(value):
-    """A recorded framework stamp keeps its format; it is an import/export marker only."""
-    r.require(isinstance(value, dict) and isinstance(value.get('framework_id'), str) and
-              re.fullmatch(r'[a-z][a-z0-9-]*', value['framework_id']), 'Invalid framework identity.')
-    validate_manifest({'framework_version': value.get('framework_version')})
-
-
-def validate_stamps(record):
-    """Records may omit framework stamps; a present stamp keeps its format."""
-    value = record.get('framework')
-    if value is not None:
-        validate_context(value)
+    metadata = r.read_json(path)
+    validate_metadata(metadata)
+    return metadata
 
 
 def check(root, reader=None):
-    # Bare record-engine repositories need not install the exportable framework.
+    # Bare record-engine repositories need not install the common framework.
     # Submitted trees supply their own reader; unstaged files cannot repair them.
     try:
         if reader is None:
-            path = r.safe_path(Path(root), MANIFEST)
+            path = r.safe_path(Path(root), VERSION_FILE)
             if not path.exists():
-                r.require(not (Path(root) / 'framework/readme.md').exists() and
-                          not (Path(root) / 'scripts/export-framework.py').exists(),
-                          'Installed framework is missing its export manifest.')
+                r.require(not (Path(root) / 'framework/readme.md').exists(),
+                          'Installed framework is missing framework/version.json.')
                 return []
-            manifest = r.read_json(path)
+            metadata = r.read_json(path)
         else:
-            manifest = reader(MANIFEST)
-        validate_manifest(manifest)
-        # Layer 5: the review-compatibility policy is a lazy file. It is no
-        # longer read here; only the export manifest is validated.
+            metadata = reader(VERSION_FILE)
+        validate_metadata(metadata)
         return []
     except (OSError, ValueError, KeyError, TypeError) as error:
         return ['Framework version: ' + str(error)]
@@ -88,7 +63,7 @@ def check(root, reader=None):
 
 def release_tuple(value):
     """Compare the declared three integers, without lexical version ordering."""
-    validate_manifest({'framework_version': value})
+    validate_metadata({'framework_version': value})
     return tuple(int(part) for part in value.split('.'))
 
 
@@ -119,46 +94,44 @@ class _NoUpdateRedirect(request.HTTPRedirectHandler):
         return None
 
 
-def read_official_manifest(*, opener=None, monotonic=None):
-    """One bounded public GET; return bytes, never install or retain the manifest."""
+def read_official_version(*, opener=None, monotonic=None):
+    """One bounded public GET; return bytes without installing framework files."""
     clock = monotonic or time.monotonic
     started = clock()
     open_url = opener or request.build_opener(_NoUpdateRedirect()).open
-    query = request.Request(OFFICIAL_MANIFEST_URL, method='GET', headers={
+    query = request.Request(OFFICIAL_VERSION_URL, method='GET', headers={
         'Accept': 'application/json', 'Accept-Encoding': 'identity',
         'User-Agent': 'ACME-framework-version-check'})
     with open_url(query, timeout=UPDATE_TIMEOUT) as response:
-        r.require(response.geturl() == OFFICIAL_MANIFEST_URL,
-                  'Official manifest response changed the requested URL.')
-        r.require(response.status == 200, 'Official manifest response was not HTTP 200.')
+        r.require(response.geturl() == OFFICIAL_VERSION_URL,
+                  'Official version response changed the requested URL.')
+        r.require(response.status == 200, 'Official version response was not HTTP 200.')
         r.require(response.headers.get('Content-Encoding', 'identity').lower() == 'identity',
-                  'Official manifest response must not be compressed.')
+                  'Official version response must not be compressed.')
         length = response.headers.get('Content-Length')
         if length is not None:
             r.require(length.isdecimal() and int(length) <= UPDATE_MAX_BYTES,
-                      'Official manifest exceeds the response size limit.')
+                      'Official version metadata exceeds the response size limit.')
         chunks, size = [], 0
         # HTTPResponse.read1 returns one available block, so the elapsed budget
         # is checked between blocks instead of accumulating an unbounded body.
         while True:
             r.require(clock() - started < UPDATE_TIMEOUT,
-                      'Official manifest request exceeded its time budget.')
+                      'Official version request exceeded its time budget.')
             block = response.read1(min(16384, UPDATE_MAX_BYTES + 1 - size))
             r.require(clock() - started < UPDATE_TIMEOUT,
-                      'Official manifest request exceeded its time budget.')
+                      'Official version request exceeded its time budget.')
             if not block:
                 break
             size += len(block)
-            r.require(size <= UPDATE_MAX_BYTES, 'Official manifest exceeds the response size limit.')
+            r.require(size <= UPDATE_MAX_BYTES, 'Official version metadata exceeds the response size limit.')
             chunks.append(block)
         return b''.join(chunks)
 
 
 def _official_version(data):
-    manifest = json.loads(data.decode('utf-8-sig'))
-    validate_manifest(manifest)
-    r.require(manifest.get('framework_id') == ID, 'Official framework identity must be acme.')
-    return manifest['framework_version']
+    metadata = json.loads(data.decode('utf-8-sig'))
+    return validate_metadata(metadata)
 
 
 def _update_result(local, cache=None, *, status=None, attempted=False,
@@ -186,9 +159,9 @@ def check_update(root, *, force=False, offline=False, now=None, fetch=None):
     except (OSError, ValueError, KeyError, TypeError) as error:
         return _update_result(None, status='configuration-error', error=str(error))
     try:
-        identity = installed(root)
-        r.require(identity is not None, 'Installed ACME framework manifest is missing.')
-        local = identity['framework_version']
+        metadata = installed(root)
+        r.require(metadata is not None, 'Installed framework/version.json is missing.')
+        local = metadata['framework_version']
         cache = update_cache(root)
         if not enabled or offline:
             return _update_result(local, cache, status='disabled' if not enabled else 'offline')
@@ -217,7 +190,7 @@ def check_update(root, *, force=False, offline=False, now=None, fetch=None):
     # before publication, cannot leave partial JSON or a false success.
     outcome, diagnostics = dict(claim), {}
     try:
-        outcome['latest_version'] = _official_version((fetch or read_official_manifest)())
+        outcome['latest_version'] = _official_version((fetch or read_official_version)())
         outcome['result'] = 'success'
     except Exception as error:
         diagnostics['error'] = str(error)

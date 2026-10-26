@@ -240,7 +240,7 @@ A stale choice reports observed changes for fresh judgment; no heuristic reconci
 Keep retrieval and judgment outside the lock.
 Do not reserve keys, publish provisional artifacts, add a retry queue or rewrite existing consumers during routine registration.
 
-For U intake, explicitly choose the bibliography target and authored source unit; the private document store is outside that operation.
+For U intake, first complete [acquisition for the inspected original](#acquisition-before-u-reception), then explicitly choose the bibliography target and authored source unit; the private document store is outside authored-material intake.
 For ordinary local source acquisition, retain an actual contribution/container relation rather than inventing a same-key standalone PDF; tools do not infer holdings from filenames, sole HTML files or arbitrary U links.
 Distinct chosen artifacts keep separate destinations and availability/provenance facts.
 A missing edition neither borrows another edition's status nor blocks an available chosen artifact.
@@ -303,6 +303,21 @@ Acquisition does not extend earlier review coverage or require an audit of unrel
 Discovery, validated download, statement checking, and proof review are separate activities.
 A full source audit is not required merely to retain a relevant paper.
 Record verification only to the depth actually performed, and use the source-audit records for mathematical checks when the paper is subsequently used.
+
+### Acquisition before U reception
+
+Before installing or registering a selected incoming U, identify its original work and actual inspected edition from the necessary source-unit and bibliography facts, then initiate the ordinary acquisition procedure above.
+Reuse an adequate receiver-local original or obtain, validate and register the receiver's own selected source, completing the procedure to its actual reused, obtained or failed outcome before finalizing receipt.
+For several units of the same work and edition, reuse an adequate actual acquisition result rather than repeating a download or creating per-U source accounts.
+Sufficient incoming inspection evidence does not waive this acquisition step.
+The order applies to ordinary agent-led reception and to callers choosing the optional intake helper; the helper itself neither retrieves the original nor establishes that this responsibility was fulfilled.
+
+On failure, retain the truthful outcome at the existing responsible source home and directly report it to the human author.
+Identify the work, inspected edition, selected address when known, actual retrieval failure or access limitation, local availability and resulting limits on the receiving work.
+Do not invent a completed request, retained bytes, fingerprint or acquisition success; a new online-only exception still requires a real failed acquisition and its actual account.
+Useful incoming U evidence may still be received within the authorized scope, retaining its actual inspection limits and any unresolved obligations; failure does not by itself decide mathematical applicability or create another routine approval.
+Acquire the receiver's original independently, without importing sender-private documents, registry or holding accounts through authored-material intake.
+Merely citing already retained adequate fixed evidence is not another U reception and creates no new acquisition or failure fact; use the [first-citation route](#3-citations-elsewhere-in-the-repository) without a repeated download solely for formatting.
 
 <a id="searchable-contents"></a>
 ## Searchable tables of contents
@@ -500,21 +515,32 @@ Do not overwrite a U's inspected edition with a different canonical primary edit
 
 - Use the complete citation key in prose, for example `[Miy22]`.
   Do not use only an author and year, a bare numeric reference such as `[1]`, or wording such as "the paper above" as the sole identifier.
-- In Markdown, link the first occurrence of each work in each document to its registered source artifact, or to its registered online URL for an exception-registered source.
+- In Markdown, link the first occurrence of each work in each document to its actually registered source artifact, or to its registered online URL for a genuine exception-registered source.
   Resolve destinations relative to the current document; a root-level document uses a path such as `mathematics/literature/pdf/Src26.pdf`.
   Link destinations containing spaces may be enclosed in `<...>`.
+  When no original is locally held and adequate fixed source-inspection evidence covers the actual cited edition, result and present application, the first work citation may instead link to that exact U version/unit anchor or complete relevant fixed C/L account and passage anchor.
+  Identify that account as inspection evidence, rather than the original artifact or proof of local possession, and retain the complete work key, actual edition, result locator and inspection limits.
+  For newly received U, first complete the [required original-acquisition procedure](#acquisition-before-u-reception), preserving any actual failure and direct report; this citation route does not waive it or require repeating it solely for citation formatting.
+  A known original DOI or public URL may accompany the evidence link as a bibliographic locator, without becoming an online-only exception or acquisition evidence; do not invent or require a URL when adequate fixed evidence identifies the work and edition.
 - A review directly inside `mathematics/audits/literature/` uses the relative source path `../../literature/pdf/Src26.pdf`; a unit one directory deeper uses `../../../literature/pdf/Src26.pdf`.
   These are formatting examples, not registered artifacts.
 - When citing a specific result, include a locator, such as `[Miy22, Theorem 3.1]` or `[Miy22, Section 2.3]`.
   These examples illustrate formatting only; verify actual numbering against the source.
 - Page references default to the paper's printed page numbers.
   Explicitly write `PDF p. 5` when using the PDF viewer's page sequence.
-  When citing a version other than the primary version, identify the version, include the locator, and link to that version's file.
+  When citing a version other than the primary version, identify the version, include the locator, and link to that edition's actual source or qualifying exact fixed inspection evidence through the routes above.
 - Do not treat numbers in a paper's bibliography as this repository's citation keys.
   Register a referenced work separately when citing it directly.
   If relying only on the current paper's account, explicitly identify the secondary citation, for example "reference [11] in [Miy22], cited via [Miy22]."
 - Use the same keys in LaTeX and BibTeX, for example `\cite{Miy22}` and `@article{Miy22, ...}`.
   Code comments, computation records, and audit notes must also use these keys, adding result numbers where needed.
+
+Judge a fixed inspection account's adequacy from its actual source statement, hypotheses, conventions, passage coverage, inspection depth and unresolved limits against the present use.
+A bibliography entry, theorem name, valid link or locally proved conclusion alone does not provide source-inspection evidence.
+An unresolved edition, passage, hypothesis or applicability gap remains outstanding; when the original is needed, retain the source-preparation duty and actual acquisition outcome.
+Acceptance of an established source statement supplies neither independent inspection of its original proof nor project R review evidence.
+Reuse an adequate fixed account at its responsible U/C/L home without another U solely for citation, a new source registry, evidence-status field or citation classifier.
+Preserve existing acquisition facts, original provenance and fixed historical contents rather than rewriting them to adopt this clarified formatting.
 
 ## 5. Checklist for Adding or Updating Literature
 
@@ -559,4 +585,4 @@ Its presence produces an informational reminder, not a failure or a prerequisite
 Registration, bibliographic verification and actual source inspection remain separate substantive actions when needed.
 Do not invent metadata, allocate a key, delete the file or request acknowledgement just to clear the reminder.
 Missing required evidence and invalid registered artifacts retain their actual error diagnostics.
-Clean framework exports exclude personal literature; no pending-file inventory or exception list is maintained.
+Common-framework copying excludes personal literature; no pending-file inventory or exception list is maintained.

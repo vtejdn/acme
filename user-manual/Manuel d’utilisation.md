@@ -5,7 +5,7 @@
 ## ACME : Autonomous and Collaborative Mathematical Exploration
 
 ACME est un cadre léger pour la recherche mathématique autonome et collaborative.
-Il associe des règles en Markdown destinées aux agents d’IA à des scripts auxiliaires pour soutenir des recherches dans la durée et conserver des travaux qui peuvent être examinés, réutilisés et poursuivis.
+Il associe des règles en Markdown destinées aux [agents d’IA](#notion-agent) à des scripts auxiliaires pour soutenir des recherches dans la durée et conserver des travaux qui peuvent être examinés, réutilisés et poursuivis.
 Il répond à deux objectifs principaux : permettre à des agents d’IA autonomes de mener des recherches mathématiques sous la direction de mathématiciens humains et faciliter la collaboration entre auteurs humains.
 
 ### Mathématiciens humains
@@ -13,14 +13,14 @@ Il répond à deux objectifs principaux : permettre à des agents d’IA autonom
 Les mathématiciens humains ont la responsabilité de :
 
 1. Définir les questions de recherche, leur périmètre autorisé et les critères d’achèvement afin de lancer des [tâches de recherche (Task)](#material-task).
-2. Orienter avec les agents le développement des [stratégies de recherche](#material-strategy).
+2. Orienter avec les [agents](#notion-agent) le développement des [stratégies de recherche](#material-strategy).
 3. Apporter des idées, préciser l’intention mathématique, fixer les priorités scientifiques, questionner les arguments, affiner les questions et réorienter les recherches.
 4. Comprendre les résultats des recherches et explorer les frontières des connaissances mathématiques.
 5. Assumer la responsabilité des résultats mathématiques.
 
 ### Agents fondés sur des [LLM](#notion-llm)
 
-Dans le périmètre autorisé, les agents autonomes ont la responsabilité de :
+Dans le périmètre autorisé, les [agents](#notion-agent) autonomes ont la responsabilité de :
 
 1. Étudier la littérature et vérifier les résultats nécessaires à la recherche.
 2. Développer et évaluer des [stratégies de recherche](#material-strategy), repérer les lacunes et prendre de façon autonome les décisions méthodologiques courantes dans le cadre de la mission.
@@ -46,7 +46,7 @@ Différents mathématiciens ou équipes peuvent aussi collaborer entre dépôts 
 ### Déroulement du travail
 
 La recherche commence par un [Task](#material-task) défini par un humain et précisant les critères d’achèvement.
-Les agents consultent et réutilisent d’abord les documents de recherche et la littérature disponibles localement, puis recherchent au besoin des sources supplémentaires sur le Web.
+Les [agents](#notion-agent) consultent et réutilisent d’abord les documents de recherche et la littérature disponibles localement, puis recherchent au besoin des sources supplémentaires sur le Web.
 Ils vérifient l’applicabilité des résultats, développent des [stratégies](#material-strategy) et alternent tentatives de démonstration, calculs et recherches de contre-exemples.
 Chaque tentative éclaire la suivante : les constats utiles, les échecs et les questions non résolues sont conservés dans les documents de recherche appropriés, notamment les [Claims](#material-claim) et les [Ledgers](#material-ledger).
 Les stratégies évoluent dans le cadre de l’objectif autorisé.
@@ -73,11 +73,12 @@ Pour une recherche individuelle sur un seul appareil, utilisez un [environnement
 2. Choisissez un dossier sur votre appareil pour y conserver le cadre et les futurs documents de recherche.
 3. Choisissez le modèle et le fournisseur dans les paramètres ou le sélecteur de modèles.
 
-Pour synchroniser votre travail entre appareils, collaborer avec d’autres mathématiciens ou rendre vos résultats de recherche facilement accessibles, utilisez un [dépôt Git](git-repository.md#notion-git-repository) avec une plateforme cloud telle que [GitHub](git-repository.md#notion-github).
-Le cadre prend en charge la synchronisation et la collaboration fondées sur [Git](git-repository.md#notion-git).
+Sans [Git](git-repository.md#notion-git), le mode par défaut est la recherche personnelle sur votre appareil local.
+Pour synchroniser votre travail entre appareils ou collaborer au moyen d’un [dépôt Git](git-repository.md#notion-git-repository) partagé, vous pouvez choisir une plateforme d’hébergement telle que [GitHub](git-repository.md#notion-github).
+Téléverser les travaux de recherche et rendre un dépôt public sont deux choix distincts.
 
-4. Installez Git sur votre appareil ou demandez à un agent de l’installer dans l’environnement d’exécution choisi.
-5. (Facultatif) Si nécessaire, créez un compte sur une plateforme d’hébergement de dépôts ou connectez-vous, puis reliez votre espace de travail à un dépôt existant ou créez-en un.
+4. (Facultatif) Installez Git sur votre appareil ou demandez à un [agent](#notion-agent) de l’installer dans l’environnement d’exécution choisi.
+5. (Facultatif) Créez un compte sur une plateforme d’hébergement de dépôts ou connectez-vous, puis reliez votre espace de travail à un dépôt existant ou créez-en un.
 
 - Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
 
@@ -85,11 +86,12 @@ Le cadre prend en charge la synchronisation et la collaboration fondées sur [Gi
 
 Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, suivez plutôt les étapes de la section suivante.
 
-1. Demandez à un agent de télécharger le [cadre ACME](https://github.com/vtejdn/acme) dans le dossier de votre projet, ou de [cloner](#notion-clone) son dépôt si vous utilisez [Git](git-repository.md#notion-git).
-2. Choisissez une clé d’auteur unique, par exemple Alice ou Ali, et demandez à un agent de vous enregistrer comme auteur.
+1. Demandez à un [agent](#notion-agent) de télécharger le [cadre ACME](https://github.com/vtejdn/acme) dans le dossier de votre projet, ou de [cloner](#notion-clone) son dépôt si vous utilisez [Git](git-repository.md#notion-git).
+2. Choisissez une clé d’auteur unique, par exemple `Alice` ou `Ali`, et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`.
+   Demandez à un agent de vous enregistrer comme auteur et d’ajouter cette attribution.
    Dans un espace de travail Git, demandez à l’agent d’associer cette copie de travail à votre clé d’auteur afin que les nouveaux enregistrements portent la bonne attribution.
-3. (Facultatif, si vous utilisez Git) Configurez le nom et l’adresse électronique associés à vos [commits](#notion-commit), ou demandez à un agent de le faire.
-4. (Facultatif, si vous utilisez un [dépôt Git](git-repository.md#notion-git-repository)) Choisissez un nom court et reconnaissable pour votre dépôt de recherche et demandez à un agent de configurer son identité de dépôt.
+3. (Si vous utilisez Git) Configurez le nom et l’adresse électronique associés à vos [commits](#notion-commit), ou demandez à un agent de le faire.
+4. (Si vous utilisez Git) Choisissez ou confirmez un nom court pour votre [dépôt](git-repository.md#notion-git-repository) de recherche et demandez à un agent de vérifier qu’il est correctement enregistré dans le cadre.
 5. (Facultatif) Lorsque cela est approprié, nous vous recommandons vivement de partager vos travaux de recherche dans un dépôt public.
 
 - Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
@@ -97,10 +99,11 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 ### Rejoindre un [dépôt Git](git-repository.md#notion-git-repository) existant comme collaborateur
 
 1. Connectez-vous à la plateforme d’hébergement du dépôt et acceptez l’invitation de votre coauteur.
-2. Demandez à un agent de vous aider à configurer l’accès au dépôt partagé.
+2. Demandez à un [agent](#notion-agent) de vous aider à configurer l’accès au dépôt partagé.
 3. Donnez l’adresse du dépôt à un agent et demandez-lui de le [cloner](#notion-clone) dans un nouveau dossier local.
    Ouvrez ce dossier dans votre environnement d’exécution d’agents.
-4. Si vous n’êtes pas encore enregistré dans le dépôt de recherche, choisissez une clé d’auteur différente de celles de vos collaborateurs et demandez à un agent de vous enregistrer.
+4. Si vous n’êtes pas encore enregistré dans le dépôt de recherche, choisissez une clé d’auteur différente de celles de vos collaborateurs et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`,
+   puis demandez à un agent de vous enregistrer et d’ajouter cette attribution.
    Demandez à l’agent d’associer cette copie de travail à votre clé d’auteur dans ACME.
 5. Configurez le nom et l’adresse électronique utilisés pour vos [commits](#notion-commit) [Git](git-repository.md#notion-git), ou demandez à un agent de le faire.
 
@@ -110,13 +113,11 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 ### Commencer un Task
 
-1. (Facultatif) Fournissez la littérature pertinente ou demandez à un agent de la rechercher.
+1. (Facultatif) Fournissez la littérature pertinente ou demandez à un [agent](#notion-agent) de la rechercher.
    Demandez à l’agent de conserver les fichiers sources dans le [répertoire local de littérature](../mathematics/literature/pdf) et de vérifier les parties indiquées des articles pertinents au niveau de profondeur demandé.
 2. Définissez un [Task](#material-task) en discutant avec les agents, en précisant les questions, les contraintes et les critères d’achèvement.
    Vous pouvez choisir une [lettre de ligne de recherche](#notion-research-line-letter) pour organiser le Task et les documents associés.
-   Voir les [consignes courantes](#common-instructions) pour des exemples.
 3. Pour un travail autonome prolongé, précisez ou adoptez des limites d’exécution et des conditions d’arrêt.
-   Voir les [exemples de missions de recherche](<user-instructions/Exemples de consignes.md#start-or-continue-research>).
 4. Autorisez les actions nécessaires des outils lorsque cela vous est demandé et répondez aux questions posées par les agents.
 5. Réfléchissez aux documents mathématiques produits par les agents et comprenez-les ; aucun agent ne peut le faire à votre place.
    Discutez des mathématiques avec les agents pour approfondir et accélérer votre compréhension.
@@ -128,10 +129,10 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 ### Points d’attention
 
-- Les agents tenteront de télécharger la littérature publiquement accessible dans le [répertoire local de littérature](../mathematics/literature/pdf).
+- Les [agents](#notion-agent) tenteront de télécharger la littérature publiquement accessible dans le [répertoire local de littérature](../mathematics/literature/pdf).
   Ce répertoire est ignoré par [Git](git-repository.md#notion-git) par défaut.
   Si vous y placez vos propres documents privés, assurez-vous qu’il est ignoré par Git et qu’il n’est pas téléversé vers un dépôt public.
-- Si des collaborateurs devaient utiliser la même clé d’auteur, convenez de clés distinctes, par exemple Wang1 et Wang2.
+- Si des collaborateurs devaient utiliser la même clé d’auteur, convenez de clés distinctes, par exemple `Wang1` et `Wang2`.
 - Utilisez des [lettres de ligne de recherche](#notion-research-line-letter) différentes pour les [Tasks](#material-task) menés en parallèle par des agents principaux de recherche distincts.
   Choisissez ces lettres lors de la configuration des Tasks afin de séparer la numérotation des documents et de réduire les conflits d’écriture.
   Demandez aux agents de coordonner les modifications des fichiers partagés, notamment les index, la bibliographie et les enregistrements d’identité du dépôt.
@@ -144,7 +145,7 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 ### Habitudes utiles
 
-- Interrogez un agent dès que vous avez des questions sur le cadre.
+- Interrogez un [agent](#notion-agent) dès que vous avez des questions sur le cadre.
 - Si vous conservez la littérature dans un répertoire local synchronisé par un service cloud, demandez à un agent d’y relier le [répertoire local de littérature](../mathematics/literature/pdf) au moyen d’une jonction de répertoires (directory junction).
   Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce répertoire.
 - Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les de [Git](git-repository.md#notion-git).
@@ -163,54 +164,66 @@ En cours de rédaction.
 
 La version actuelle du cadre est 0.2.0.
 
-Au début du travail, l’agent vérifie au plus une fois par jour UTC si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
-Il indique alors la version installée et la version disponible et vous demande s’il faut organiser une mise à niveau ; le travail en cours peut continuer pendant votre décision.
+Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
+l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
+Si une nouvelle version est disponible, il indique la version installée et la version disponible et vous demande s’il faut organiser une mise à niveau ; le travail en cours peut continuer pendant votre décision.
 Un rappel n’installe ni ne met à niveau aucun fichier, et vous pouvez le différer.
 Vous pouvez demander de désactiver ou de réactiver les vérifications automatiques pour ce dépôt, de vérifier à nouveau immédiatement ou d’effectuer explicitement une mise à niveau.
-Si la version publique ne peut pas être confirmée, l’agent signale cette limite et poursuit le travail autorisé.
 
-### <a id="common-instructions"></a>Consignes courantes
+### <a id="common-instructions"></a>Exemples de consignes
 
 Les [exemples de consignes](<user-instructions/Exemples de consignes.md>) illustrent des demandes courantes et expliquent les résultats à attendre.
 
-### Répertoires à la racine
+### Répertoires et fichiers à la racine
 
+Les tableaux ci-dessous décrivent les principaux fichiers et répertoires à la racine du dépôt.
 Certains répertoires ne sont créés qu’en cas de besoin.
 
-| Répertoire | Fonction | Domaine |
-| --- | --- | --- |
-| [mathematics/](../mathematics/readme.md) | Contient les documents de recherche, les enregistrements bibliographiques, les calculs, les manuscrits et les présentations. | Espace de recherche |
-| [framework/](../framework/readme.md) | Contient les règles du cadre, les modèles de documents, les spécifications de format et les définitions d’exportation. | Cadre commun |
-| [repository/](../repository/readme.md) | Consigne l’identité du dépôt, les auteurs humains enregistrés et les correspondances avec les dépôts et auteurs externes. | Cadre commun |
-| profiles/ | Contient les politiques personnelles de recherche, les préférences d’exécution et les choix de rédaction mathématique. | Configuration personnelle |
-| execution/ | Consigne l’état d’exécution actuel, les limites effectives et les conditions d’arrêt de chaque famille de Tasks individuels ordinaires. | Exécution des Tasks |
-| intake/ | Consigne les opérations d’importation entre dépôts, y compris leur périmètre sélectionné et leur provenance. | Réutilisation entre dépôts |
-| [scripts/](../scripts/readme.md) | Fournit des outils facultatifs en ligne de commande pour l’enregistrement, la navigation, la vérification, l’importation, l’exportation et d’autres opérations mécaniques. | Outils du cadre |
-| [user-manual/](./) | Contient les guides d’utilisation, les explications de configuration et les exemples de consignes. | Documentation destinée aux humains |
-| .tmp/ | Contient les fichiers de travail jetables utilisés par les agents. | Travail temporaire |
-| .venv/ | Contient l’environnement virtuel Python local et ses dépendances installées. | Environnement d’exécution local |
-| .agents/ | Contient les skills d’agents propres au dépôt. | Outils pour agents |
-| .git/ | Contient l’historique [Git](git-repository.md#notion-git), les références, la configuration et les autres métadonnées de gestion de versions. | Espaces de travail Git |
-| .vscode/ | Contient la configuration de l’espace de travail VS Code et les recommandations d’extensions. | Configuration propre à l’éditeur |
-| .codex/ | Contient la configuration locale de Codex pour l’espace de travail. | Configuration propre à l’outil |
+| Chemin | Fonction |
+| --- | --- |
+| `.tmp/` | Contient les entrées temporaires et les fichiers intermédiaires créés par les [agents](#notion-agent) et supprimés après utilisation. |
+| `execution/` | Consigne l’état d’exécution actuel, les limites et les conditions d’arrêt des [Tasks](#material-task) de recherche individuels. |
+| [`framework/`](../framework/readme.md) | Contient les règles du cadre, les modèles de documents, les spécifications de format et les indications de version. |
+| `intake/` | Consigne les documents reçus d’autres [dépôts](git-repository.md#notion-git-repository), leurs sources et le périmètre de chaque acquisition. |
+| [`mathematics/`](../mathematics/readme.md) | Contient les documents de recherche, les enregistrements bibliographiques, les calculs, les manuscrits et les présentations. |
+| `profiles/` | Contient les politiques personnelles de recherche, les préférences d’exécution et les choix de rédaction mathématique. |
+| [`repository/`](../repository/readme.md) | Conserve les paramètres du dépôt, les enregistrements des auteurs et les correspondances avec les dépôts et auteurs externes. |
+| [`scripts/`](../scripts/readme.md) | Fournit des outils facultatifs en ligne de commande pour la configuration, la gestion des documents, la navigation et les vérifications. |
+| [`user-manual/`](./) | Contient les guides d’utilisation, les explications de configuration et les exemples de consignes. |
+| `.gitattributes` | Configure le traitement des fichiers texte et binaires par [Git](git-repository.md#notion-git), notamment les fins de ligne. |
+| `.gitignore` | Indique les fichiers et répertoires non suivis que Git doit ignorer. |
+| `AGENTS.md` | Fournit les consignes d’entrée qui orientent les agents vers les règles et documents applicables du cadre. |
+| `LICENSE` | Contient les conditions de licence et les mentions du dépôt. |
+| `readme.md` | Présente le dépôt et renvoie vers le manuel d’utilisation, les règles du cadre et les documents de recherche. |
+
+Selon vos outils et votre configuration, les répertoires suivants peuvent également être présents.
+
+| Chemin | Fonction |
+| --- | --- |
+| `.agents/` | Contient les skills d’agents propres au dépôt. |
+| `.claude/` | Contient les paramètres locaux de Claude Code pour cet espace de travail. |
+| `.codex/` | Contient la configuration locale de Codex pour cet espace de travail. |
+| `.git/` | Contient l’historique Git, les références, la configuration et les autres métadonnées de gestion de versions. |
+| `.venv/` | Contient l’environnement virtuel Python local et ses dépendances installées. |
+| `.vscode/` | Contient la configuration de l’espace de travail VS Code et les recommandations d’extensions. |
 
 ### Catégories de documents de recherche
 
 | Abréviation | Document | Emplacement | Fonction |
 | --- | --- | --- | --- |
-| T | [Tâche de recherche (Task)](#material-task) | [mathematics/tasks/](../mathematics/tasks/index.md) | Définit une question de recherche, son périmètre autorisé et ses critères d’achèvement, et consigne les décisions concernant son cycle de vie. |
-| S | [Stratégie de recherche (Strategy)](#material-strategy) | [mathematics/strategies/](../mathematics/strategies/index.md) | Développe et évalue une voie de recherche, organise les priorités et identifie les obstacles ainsi que les prochaines étapes. |
-| C | [Énoncé mathématique (Claim)](#material-claim) | [mathematics/claims/](../mathematics/claims/index.md) | Formule des énoncés mathématiques précis, conserve leurs arguments et dépendances, et consigne leur évaluation mathématique ainsi que les vérifications les concernant. |
-| R | [Compte rendu de vérification (Review)](#material-review) | [mathematics/audits/reviews/](../mathematics/audits/reviews/readme.md) | Consigne les vérifications mathématiques d’arguments précis du projet, notamment les éléments examinés, les constats, l’organisation de la vérification et ses limites. |
-| D | Brouillon (Draft) | [mathematics/drafts/](../mathematics/drafts/readme.md) | Fournit un espace de travail pour développer des arguments mathématiques, des calculs et des solutions alternatives encore à l’étude. |
-| L | [Carnet d’exploration (Ledger)](#material-ledger) | [mathematics/ledger/](../mathematics/ledger/readme.md) | Conserve les explorations, comparaisons, synthèses et tentatives infructueuses utiles, ainsi que les raisons et les résultats des modifications mathématiques substantielles. |
-| J | Calcul (Computation) | [mathematics/computations/programs/](../mathematics/computations/readme.md) | Organise les programmes et les données d’entrée nécessaires aux calculs reproductibles et consigne l’état des exécutions, leurs résultats et leurs limites. |
-| U | Unité de vérification de la littérature (Literature audit unit) | [mathematics/audits/literature/](../mathematics/audits/literature/readme.md) | Rend la littérature examinée réutilisable en consignant l’édition et les passages de la source, le contenu mathématique, l’applicabilité et les limites de l’examen. |
-| — | Manuscrit (Manuscript) | [mathematics/manuscripts/](../mathematics/manuscripts/index.md) | Permet d’élaborer des articles et des documents mathématiques associés, avec leur exposition, leurs citations, leurs choix de rédaction et leurs relevés de compilation. |
-| — | Présentation (Presentation) | [mathematics/presentations/](../mathematics/presentations/readme.md) | Permet de préparer des exposés et des diapositives pour un public donné, avec les fichiers sources, les choix de rédaction, les informations de compilation et les comptes rendus de vérification. |
+| T | [Tâche de recherche (Task)](#material-task) | [`mathematics/tasks/`](../mathematics/tasks/index.md) | Définit une question de recherche, son périmètre autorisé et ses critères d’achèvement, et consigne les décisions concernant son cycle de vie. |
+| S | [Stratégie de recherche (Strategy)](#material-strategy) | [`mathematics/strategies/`](../mathematics/strategies/index.md) | Développe et évalue une voie de recherche, organise les priorités et identifie les obstacles ainsi que les prochaines étapes. |
+| C | [Énoncé mathématique (Claim)](#material-claim) | [`mathematics/claims/`](../mathematics/claims/index.md) | Formule des énoncés mathématiques précis, conserve leurs arguments et dépendances, et consigne leur évaluation mathématique ainsi que les vérifications les concernant. |
+| R | [Compte rendu de vérification (Review)](#material-review) | [`mathematics/audits/reviews/`](../mathematics/audits/reviews/readme.md) | Consigne les vérifications mathématiques d’arguments précis du projet, notamment les éléments examinés, les constats, l’organisation de la vérification et ses limites. |
+| D | Brouillon (Draft) | [`mathematics/drafts/`](../mathematics/drafts/readme.md) | Fournit un espace de travail pour développer des arguments mathématiques, des calculs et des solutions alternatives encore à l’étude. |
+| L | [Carnet d’exploration (Ledger)](#material-ledger) | [`mathematics/ledger/`](../mathematics/ledger/readme.md) | Conserve les explorations, comparaisons, synthèses et tentatives infructueuses utiles, ainsi que les raisons et les résultats des modifications mathématiques substantielles. |
+| J | Calcul (Computation) | [`mathematics/computations/programs/`](../mathematics/computations/readme.md) | Organise les programmes et les données d’entrée nécessaires aux calculs reproductibles et consigne l’état des exécutions, leurs résultats et leurs limites. |
+| U | Unité de vérification de la littérature (Literature audit unit) | [`mathematics/audits/literature/`](../mathematics/audits/literature/readme.md) | Rend la littérature examinée réutilisable en consignant l’édition et les passages de la source, le contenu mathématique, l’applicabilité et les limites de l’examen. |
+| — | Manuscrit (Manuscript) | [`mathematics/manuscripts/`](../mathematics/manuscripts/index.md) | Permet d’élaborer des articles et des documents mathématiques associés, avec leur exposition, leurs citations, leurs choix de rédaction et leurs relevés de compilation. |
+| — | Présentation (Presentation) | [`mathematics/presentations/`](../mathematics/presentations/readme.md) | Permet de préparer des exposés et des diapositives pour un public donné, avec les fichiers sources, les choix de rédaction, les informations de compilation et les comptes rendus de vérification. |
 
 - Chaque calcul dispose d’un répertoire J numéroté contenant ses programmes, les données d’entrée nécessaires et un fichier `readme.md`.
-  Les sorties générées sont conservées séparément sous le chemin local `mathematics/computation/outputs/<J>/`, ignoré par [Git](git-repository.md#notion-git).
+  Les sorties générées sont conservées séparément sous le chemin local `mathematics/computations/outputs/<J>/`, ignoré par [Git](git-repository.md#notion-git).
 - Les unités de vérification de la littérature sont regroupées par clé de citation sous `mathematics/audits/literature/`.
 - L’[index des définitions](../mathematics/definitions/index.md) organise les définitions, la terminologie et les symboles par concept, avec des liens vers leurs formulations complètes dans les documents C, L ou U qui en sont responsables.
 - La [bibliographie](../mathematics/literature/references.bib) de référence consigne l’identité des publications et leurs clés de citation.
@@ -221,10 +234,13 @@ Certains répertoires ne sont créés qu’en cas de besoin.
 | Terme | Signification |
 | --- | --- |
 | <a id="notion-llm"></a>LLM (grand modèle de langage) | Modèle d’IA entraîné sur de grandes quantités de texte pour traiter et produire du langage, notamment des explications mathématiques et du code informatique. |
+| <a id="notion-agent"></a>Agent | Système d’IA fondé sur un [LLM](#notion-llm), capable de planifier et d’exécuter des tâches, d’utiliser des outils et d’adapter ses actions aux résultats. Il fonctionne au moyen d’un [environnement d’exécution d’agents](agent-harness.md), dans le périmètre et les limites autorisés par l’utilisateur humain. Il n’a pas encore évolué en [Agent](https://fr.wikipedia.org/wiki/Matrix_%28s%C3%A9rie_de_films%29#Les_Agents). |
+| <a id="notion-context"></a>Contexte (Context) | Informations dont dispose un LLM lors d’un appel au modèle, notamment les consignes, l’historique de la conversation, les documents fournis et les résultats des outils. Le contexte actuel peut ne contenir qu’une sélection ou un résumé de l’historique complet de la [session](#notion-session). |
 | <a id="notion-context-length"></a>Longueur de contexte (Context length) | Longueur totale maximale des entrées et de la sortie qu’un LLM peut traiter en une fois, généralement mesurée en tokens, de petites unités de texte. Elle comprend les consignes, l’historique de la conversation, les documents fournis et la réponse générée. |
+| <a id="notion-session"></a>Session | Interaction continue avec un [agent](#notion-agent), gérée par un [environnement d’exécution d’agents](agent-harness.md). Elle peut comporter plusieurs tours de conversation, chacun commençant généralement par un message de l’utilisateur et comprenant les réponses de l’agent ainsi que les opérations des outils. L’environnement conserve l’historique de la conversation et prépare le [contexte](#notion-context) de chaque appel au modèle ; pour respecter la [longueur de contexte](#notion-context-length) du modèle, il peut sélectionner ou résumer les parties antérieures de l’historique. |
 | Identifiant de document | Référence structurée identifiant un document et, le cas échéant, sa version. Par exemple, `Alice_C_F0007_v1.md` identifie un [Claim](#material-claim) par auteur, type, ligne de recherche, numéro de série et version. |
-| <a id="notion-research-line-letter"></a>Lettre de ligne de recherche | Lettre, telle que F dans `Alice_C_F0007_v1.md`, servant à organiser les documents de recherche numérotés. Les documents issus d’un Task héritent de sa lettre, mais reçoivent leurs propres numéros de série. Par défaut, la lettre A est utilisée lorsqu’aucune ligne n’est indiquée. |
-| Clé d’auteur | Clé stable enregistrée pour un auteur humain, par exemple Alice, utilisée dans les identifiants de documents et les enregistrements d’auteur. |
+| <a id="notion-research-line-letter"></a>Lettre de ligne de recherche | Lettre, telle que `F` dans `Alice_C_F0007_v1.md`, servant à organiser les documents de recherche numérotés. Les documents issus d’un Task héritent de sa lettre, mais reçoivent leurs propres numéros de série. Par défaut, la lettre `A` est utilisée lorsqu’aucune ligne n’est indiquée. |
+| Clé d’auteur | Clé stable enregistrée pour un auteur humain, par exemple `Alice`, utilisée dans les identifiants de documents et les enregistrements d’auteur. |
 | Famille de documents | Ensemble des versions conservées d’un même document, par exemple `Alice_C_F0007_v1.md` et `Alice_C_F0007_v2.md`. |
 | Version de document | Révision particulière conservée d’un document, par exemple la version `v1` ou `v2` d’un Claim. |
 | <a id="notion-main-research-agent"></a>Agent principal de recherche | Agent qui dirige le travail sur un [Task](#material-task), coordonne les éventuels sous-agents et veille à la cohérence des enregistrements de recherche. |
@@ -235,7 +251,7 @@ Certains répertoires ne sont créés qu’en cas de besoin.
 | <a id="notion-push"></a>Push | Envoi des commits locaux vers un dépôt Git distant afin d’y rendre le travail enregistré disponible. |
 | <a id="notion-pull"></a>Pull | Récupération des modifications d’un dépôt Git distant et intégration de celles-ci au travail local. |
 | <a id="notion-merge"></a>Fusion (Merge) | Intégration des modifications d’une autre [branche](#notion-git-branch) à la branche Git actuelle, avec résolution des modifications conflictuelles si nécessaire. |
-| <a id="notion-intake"></a>Importation (Intake) | Introduction dans votre dépôt de documents de recherche sélectionnés dans un autre dépôt ACME, en conservant l’attribution, l’origine et les limites de vérification. |
+| <a id="notion-intake"></a>Importation (Intake) | Introduction dans votre dépôt de documents de recherche sélectionnés dans un autre dépôt ACME public, en conservant l’attribution, l’origine et les limites de vérification. |
 | Clé de citation | Identifiant court d’une référence dans la bibliographie, utilisé pour la citer de manière cohérente dans les enregistrements de recherche et les manuscrits. |
 
 ### <a id="material-task"></a>Tâche de recherche (Task)
@@ -251,7 +267,7 @@ Un Task organise la recherche autour d’un objectif mathématique précis, de s
 | `completed` | Les critères d’achèvement convenus sont satisfaits, avec les éléments mathématiques justificatifs et la vérification requise. |
 | `retired` | La recherche a été abandonnée. Ses raisons, les constats utiles et les parties inachevées restent consignés. |
 
-- Un Task peut rester actif même si aucun agent n’y travaille à cet instant.
+- Un Task peut rester actif même si aucun [agent](#notion-agent) n’y travaille à cet instant.
 - Un Task rassemble les documents de recherche qui soutiennent votre investigation.
   Les manuscrits associés, rapports d’avancement et autres documents que vous demandez peuvent être réunis dans un projet tel que `mathematics/manuscripts/Alice_T_A0007/`.
 - Vous pouvez demander la réactivation d’un Task achevé afin de poursuivre le travail sur l’objectif de recherche concerné.
@@ -274,7 +290,7 @@ Une Strategy décrit une voie concrète vers un objectif de recherche, notamment
 
 - Un [Task](#material-task) peut comporter plusieurs stratégies, comme alternatives ou comme composantes d’une approche combinée.
   Achever, suspendre ou écarter une stratégie ne détermine pas à lui seul l’état de l’ensemble du Task.
-- Vous pouvez proposer des approches, demander à l’agent de comparer des possibilités ou préciser des priorités.
+- Vous pouvez proposer des approches, demander à l’[agent](#notion-agent) de comparer des possibilités ou préciser des priorités.
   Indiquez explicitement si une priorité ou un ordre doit rester fixe ; sinon, l’agent peut adapter son choix de voies dans le périmètre convenu.
 - Dans le périmètre autorisé, les agents autonomes peuvent ajouter ou réviser des stratégies, en modifier les priorités, les scinder, les fusionner, les suspendre ou les reprendre en fonction des constats et des ressources.
 - Une voie infructueuse peut néanmoins être instructive.
@@ -286,24 +302,24 @@ Un Claim consigne un énoncé mathématique important et précis ainsi que ce qu
 
 | État mathématique | Signification pour le lecteur |
 | --- | --- |
-| `open` | L’énoncé exact reste non résolu. Des résultats partiels, des réductions ou un argument proposé peuvent exister, mais les conditions permettant de le considérer comme démontré ou réfuté ne sont pas encore remplies. |
+| `open` | L’énoncé exact reste non résolu. Des résultats partiels, des réductions ou un argument proposé peuvent exister, mais les conditions pour `proved` ou `refuted` ne sont pas encore remplies. |
 | `proved` | Une démonstration complète établit l’énoncé exact sous les hypothèses indiquées. Tous les résultats d’appui nécessaires sont établis et applicables, et une [vérification](#material-review) mathématique consignée n’a relevé aucune lacune restante. |
 | `refuted` | Un contre-exemple ou un argument vérifié réfute l’énoncé exact dans le périmètre indiqué. Tous les résultats d’appui nécessaires sont établis et applicables, et une vérification mathématique consignée n’a relevé aucune lacune restante. |
 
 ### <a id="material-review"></a>Compte rendu de vérification (Review)
 
-Un Review consigne l’examen d’un énoncé ou d’un argument mathématique par un agent, notamment les éléments et le périmètre exacts de l’examen, les constats et les limites non résolues.
+Un Review consigne l’examen d’un énoncé ou d’un argument mathématique par un [agent](#notion-agent), notamment les éléments et le périmètre exacts de l’examen, les constats et les limites non résolues.
 
 | Relation du vérificateur au travail | Signification pour le lecteur |
 | --- | --- |
 | `self-reviewed` | La démonstration a été vérifiée par un agent qui a participé à son élaboration ou connaît la discussion mathématique dont elle est issue. |
-| `independently reviewed` | Un autre agent a vérifié la démonstration sans participer à son élaboration ni recevoir la discussion correspondante comme contexte propre. |
+| `independently reviewed` | Un autre agent a vérifié la démonstration sans participer à son élaboration ni recevoir la discussion correspondante comme [contexte](#notion-context) propre. |
 | `unknown` | La relation d’une vérification ancienne ou provenant d’une source n’est pas réellement établie ; cela n’implique ni une erreur ni un examen indépendant. |
 
 - Ces étiquettes décrivent la relation des agents vérificateurs à la démonstration, et non la justesse de celle-ci.
   L’absence de déclaration de cette relation diffère de `unknown` ; l’absence de vérification sélectionnée signifie que le Claim ne retient aucun élément de vérification.
 - La vérification par un autre agent reste une auto-vérification si celui-ci hérite de discussions ayant servi à élaborer la démonstration, de résumés mathématiques, d’explications de l’auteur ou de conclusions de vérifications antérieures.
-  Changer seulement de session ou de modèle ne suffit pas à établir l’indépendance.
+  Changer seulement de [session](#notion-session) ou de modèle ne suffit pas à établir l’indépendance.
 - L’[agent principal de recherche](#notion-main-research-agent) organise des vérifications indépendantes aux points clés de la démonstration et, après l’achèvement du [Task](#material-task), sur toute la chaîne logique.
   Vous pouvez également demander la vérification d’un résultat ou d’une étape de démonstration en particulier.
 
@@ -315,5 +331,5 @@ Une entrée peut expliquer ce qui a été étudié, sous quelles hypothèses, ce
 Un Ledger peut conserver des arguments partiels et des idées utiles même lorsqu’une recherche n’a pas encore produit de [Claim](#material-claim) autonome.
 Par exemple, des tentatives infructueuses ou non concluantes peuvent révéler des obstacles, distinguer des approches ou aider à éviter de refaire le même travail.
 
-- Vous pouvez demander à un agent de comparer des [stratégies](#material-strategy), d’expliquer une tentative infructueuse, de synthétiser les constats de plusieurs sources ou de conserver un raisonnement utile pour des travaux ultérieurs.
+- Vous pouvez demander à un [agent](#notion-agent) de comparer des [stratégies](#material-strategy), d’expliquer une tentative infructueuse, de synthétiser les constats de plusieurs sources ou de conserver un raisonnement utile pour des travaux ultérieurs.
 - Vous pouvez également demander à un agent de consigner tout ce que vous jugez mathématiquement substantiel et digne d’être conservé.

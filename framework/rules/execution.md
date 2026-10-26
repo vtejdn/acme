@@ -18,7 +18,7 @@ Do not change Task lifecycle merely to mirror an execution state.
 ## Current contents and retained limits
 
 E contains the current relevant exact Task path#decision, execution state and only necessary still-effective conditions.
-The [material format](../material-format.md#current-execution-boundary) defines its small field table; the [template](../templates/execution-run.md) illustrates it.
+The [material format](../material-format.md#current-execution-boundary) defines its small field table; the [template](../templates/execution/execution-run.md) illustrates it.
 Authorship and family derive from its address, without duplicate headers or identifiers.
 Keep mathematics, proof outlines, review findings, finite computation/failure scope and necessary inputs at their responsible mathematical homes.
 E may point to those homes when a current condition requires it, without repeating their findings or future research program.

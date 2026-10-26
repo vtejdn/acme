@@ -11,6 +11,7 @@ Recognition of a known result has its own [source-check trigger](#recognized-kno
 
 Prefer using established definitions, results and proof mechanisms to reconstructing them as project contributions.
 Use the [common source-preparation workflow](literature.md#source-preparation) during research, audit and writing; register needed complete definitions through def without duplicating adequate U/C/L content.
+Reusing already retained adequate fixed evidence does not itself reacquire the original; newly receiving U still completes the [required original-acquisition procedure](literature.md#acquisition-before-u-reception), including direct failure reporting.
 Before investing substantial work in a nontrivial intermediate claim, definition-related assertion, or main argument, state the exact needed conclusion and hypotheses, then search in this order:
 
 1. Check existing Claims, arguments, relevant source audits, related strategies, constructions, useful failures and prior search findings by the needed conclusion and problem features.

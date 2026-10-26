@@ -1,14 +1,14 @@
 # ACME Framework Versions
 
-The name is Autonomous and Collaborative Mathematical Exploration (ACME), with fixed framework_id: acme and framework_name: Autonomous and Collaborative Mathematical Exploration in the export manifest.
+The name is Autonomous and Collaborative Mathematical Exploration (ACME).
 Repository names and research IDs remain independent.
 
-The sole current framework release identifier is `framework_version` in the [export manifest](export-manifest.json).
+The sole current framework release identifier is `framework_version` in [framework/version.json](version.json), whose only field is framework_version.
 Use three nonnegative decimal integers, `MAJOR.MINOR.PATCH`, without leading zeros, a date prefix or a leading `v`.
 
 ## Scope and Compatibility
 
-The version covers portable rules, templates, tools and the export contract as one framework.
+The version covers common rules, templates, tools and installation guidance as one framework.
 Compatibility alone does not justify retaining non-substantive content, including administrative and authorization history; apply the [core principles](readme.md#core-principles-and-interpretation) and [content-retention rule](rules/records.md#substantive-material-retention).
 
 During development before 1.0.0, MAJOR remains zero; incompatible changes increment MINOR and other framework changes increment PATCH.
@@ -40,7 +40,7 @@ Current cross-repository intake requires both installations to support the mater
 
 Each commit published to the official ACME repository has its own stable version tag, named exactly by that commit's three-integer framework_version without a leading v.
 Preserve released identifiers and tag targets; different published contents require a new released version rather than reusing or retargeting one.
-The tag identifies the official source commit, while the installed manifest remains the sole local version authority.
+The tag identifies the official source commit, while the installed version metadata remains the sole local version authority.
 The official repository and published branch retain the [existing metadata source](#official-version-check), and actual publication follows the [connection and authority rules](rules/identity.md#git-and-github-connection-checks).
 This contract grants no commit, tagging or remote-publication authority by itself.
 
@@ -50,26 +50,28 @@ Explain necessary local merging, configuration or material adaptation, explicitl
 Use the actual predecessor and release candidate's Git path differences to check coverage; the agent judges handling and migration meaning rather than deriving them from a filename or byte difference.
 Finalize the note's name and scope with the chosen release identifier at closeout; a preparation draft does not establish a released tag or installed version.
 Keep notes concise, without blueprint plans, development discussions, construction logs or complete test reports.
-Distribute needed [upgrade notes](upgrade/) through the manifest copy list and clean export for the upgrade paths actually offered, without a duplicate changed-file register, local applied-upgrade history or general 0.x compatibility promise.
+Keep needed [upgrade notes](upgrade/) in the official starting repository for the upgrade paths actually offered, without a duplicate changed-file register, local applied-upgrade history or general 0.x compatibility promise.
 
 ## Upgrading an installed framework
 
-The [upgrade action](agent-actions.md#upgrade-installed-framework) is separate from daily metadata checking and blank-repository export.
+The [upgrade action](agent-actions.md#upgrade-installed-framework) is separate from daily metadata checking and fresh installation by ordinary copying or cloning.
 One explicit upgrade assignment covers ordinary retrieval, agent-selected adaptation and necessary checks; ask only for a decisive conflict, missing fact or operation outside that authority.
 
-1. Identify the installed version and selected official target, retrieve the official repository into a creator-owned child of root `.tmp/`, and fix the exact target commit.
-   Verify framework identity and agreement among target tag, manifest and target-version note before preparing installation; a later moving branch tip does not change the selected source.
-   Acquire only the history and tags useful for that comparison; a shallow checkout does not establish availability of older contents.
+1. Identify the installed version and selected official target, obtain its source in a creator-owned child of root `.tmp/`, and fix the exact target commit.
+   Verify the selected official source and agreement among target tag, version metadata and target-version note before preparing installation; a later moving branch tip does not change the selected source.
+   Without Git, use available public tag/commit evidence and an archive or selected fixed-source files through ordinary authorized reads and copying, without Git initialization or a required local clone.
+   For Git retrieval, acquire only the history and tags useful for that comparison; a shallow checkout does not establish availability of older contents.
+   Unavailable necessary source or migration facts remain explicit limitations, without marking the target installed.
 2. Read the applicable notes between installed and target versions, combine their affected paths and inspect the local files and necessary direct consumers.
    Use final target files directly, ordering intermediate adaptations only when their actual dependencies require it, without serial complete installations of skipped versions.
    Retrieve older tagged sources when needed to understand local changes or incomplete guidance, without assuming that installed local contents still equal the old official source.
    Resolve or report an unavailable necessary baseline or migration fact as a concrete gap, without assuming no adaptation or defaulting to a whole-library comparison.
-3. Before writes, preserve unrelated work and a recoverable baseline of affected contents using Git and necessary temporary preservation, without requiring a clean worktree, automatic stash or preliminary commit.
-   Select replacements and bounded merges from actual local roles; manifest copy/template/generated roles describe scope rather than authorize overwriting every listed target.
-   Preserve repository and human identities, configuration choices, allocation bounds, profiles, bibliography, source holdings, mathematics, manuscripts and effective Task/E conditions, without initializing empty state over them.
+3. Before writes, preserve unrelated work and a recoverable baseline of affected contents using ordinary recovery copies when Git is absent, or native Git and necessary temporary preservation when applicable, without requiring a clean worktree, automatic stash or preliminary commit.
+   Select replacements and bounded merges from the actual affected files and their local responsibilities; a common file path alone does not authorize overwriting its locally maintained content.
+   Preserve the actual named or unnamed configuration, human identities, allocation bounds, profiles, bibliography, source holdings, mathematics, manuscripts and effective Task/E conditions, without initializing empty state over them.
    Inspect mixed README, AGENTS, ignore and License contents before merging; retire a framework file only after judging its local role and necessary consumers, preserving authorship, original-source facts and actual decisions/review scope under existing rules.
    Accompanying human-manual and request-guide maintenance covers necessary links, version literals and comparable mechanical changes; body editing follows its actual separate human-document assignment.
-4. Complete adaptation and checks at the affected scope before marking the target installed version or reporting success, and verify the final manifest, files and required migrations agree.
+4. Complete adaptation and checks at the affected scope before marking the target installed version or reporting success, and verify the final version metadata, files and required migrations agree.
    On failure restore this operation's affected changes while preserving foreign work; incomplete restoration requires a truthful state and remaining-limit report rather than a completed-upgrade claim.
    Preserve any still-needed recovery content before cleanup or handoff; a handoff cannot depend on recovery files held only in `.tmp/`.
    Reread newly applicable rules before affected work continues, preserving current assignment, stopped conditions and allowances; upgrading selects or resumes no research.
@@ -77,14 +79,17 @@ One explicit upgrade assignment covers ordinary retrieval, agent-selected adapta
 
 Apply the existing connection, [content-retention](rules/records.md#substantive-material-retention), review, [current-rule reading](rules/workflow.md#proportionate-execution) and [temporary-cleanup](rules/organization.md#temporary-storage) duties at their actual scope.
 Ordinary agent reading, retrieval and prepared file operations suffice; this procedure requires no dedicated skill, mandatory installer, automatic semantic merger or generic migration engine.
+An authorized personal-folder upgrade works without a Git executable, never initializes Git and updates the installed version only after required adaptation and checks succeed.
 
 <a id="official-version-check"></a>
 ## Official version check and upgrade choice
 
-The common [version module](../scripts/acme/framework/version.py) owns the official repository address, published ref and manifest URL.
-The official source is the clean exported ACME framework; only its published main-branch export manifest supplies public release-version metadata.
+The common [version module](../scripts/acme/framework/version.py) owns the official repository address, published ref and version-metadata URL.
+The official source is the ACME starting repository; its published main-branch framework/version.json supplies public release-version metadata.
 Neither GitHub Releases, a research repository's origin nor development materials are required.
-Validate the exact framework_id acme and the existing three-integer release format, then compare integer tuples with the installed manifest's framework_version.
+Validate the one-field metadata and existing three-integer release format, then compare integer tuples with the installed framework_version.
+The official repository and fixed selected revision establish the retrieval source; version metadata supplies no authorship, source applicability or review verdict.
+The retired metadata address has no automatic fallback; an older checker may report unavailable until explicitly upgraded.
 Equal or older public versions cause no reminder or downgrade.
 The [current-rule reading duty](rules/workflow.md#proportionate-execution) applies independently of whether the public-version query runs or succeeds; an available official version does not replace the installed governing text.
 
@@ -120,5 +125,5 @@ An unanswered reminder, deferral or successful query grants no upgrade permissio
 
 An explicitly authorized upgrade follows the [installed-framework procedure](#upgrading-an-installed-framework) for its selected official version, affected local framework/configuration and actual material-migration scope.
 Apply the [current-rule reading duty](rules/workflow.md#proportionate-execution) before affected work resumes, preserving actual assignment authority and Task/E stopped conditions.
-Clean export initializes a blank repository and is not an overlay or upgrade of an existing research project.
+Fresh copying or cloning and upgrading an existing research project retain their separate setup and preservation responsibilities.
 Metadata-query failure leaves the public version unconfirmed and does not block unrelated authorized work.

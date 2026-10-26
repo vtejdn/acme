@@ -200,7 +200,10 @@ class Repository:
         check_storage(self.root)
         self.home = paths.internal_path(self.root, "repository")
         self.config = read_json(self.home / "config.json", root=self.root)
-        identity.key(self.config['repository'])
+        require(isinstance(self.config, dict), 'Repository configuration must be an object.')
+        # Reads and setup repair remain available before a Git repository name
+        # is registered; actual Git authoring checks it with the operator.
+        identity.repository_name(self.config.get('repository'))
         identity.registry(self)
 
 

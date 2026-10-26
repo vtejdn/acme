@@ -81,7 +81,9 @@ class Tree:
 
     def research_view(self):
         config = self.json('repository/config.json')
+        r.require(isinstance(config, dict), 'Repository configuration must be an object.')
         view = SimpleNamespace(root=self.root, home=self.root/'repository', config=config,
                                identity_registry=self.json('repository/people.json'), selected_tree=self)
-        identity.key(config['repository']); identity.registry(view)
+        identity.repository_name(config.get('repository'), required=True)
+        identity.registry(view)
         return view

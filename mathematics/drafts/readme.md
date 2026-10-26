@@ -5,7 +5,7 @@ Preserve useful failures and continuing work; setup-only residue needs no new ma
 Follow the [kind-specific rules](../../framework/rules/ledger.md#working-drafts-and-fixed-findings).
 
 Develop arguments, partial calculations, counterexample searches and continuing failure investigations directly here.
-Link continued/reusable programs and native data through their responsible [J group](../../framework/rules/computations.md#computation-output-location), with generated output in `mathematics/computation/outputs/<J>/`.
+Link continued/reusable programs and native data through their responsible [J group](../../framework/rules/computations.md#computation-output-location), with generated output in `mathematics/computations/outputs/<J>/`.
 This is durable research material, not an assertion of acceptance.
 Fix a valuable failed finding in ledger as soon as it is useful for continuation or changes a research decision;
 an unfinished Task is not a reason to retain that finding only in a mutable draft.

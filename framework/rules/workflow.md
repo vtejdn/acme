@@ -91,7 +91,7 @@ Existing execution limits, source-intake requirements and protected [main-theore
 Do not introduce a stage-transition approval, a mandatory Claim for every experiment, or an additional log or directory merely to apply this section.
 
 Continue arguments directly in D and continued/reusable programs in their responsible J program home.
-Generated output uses that J's `mathematics/computation/outputs/<J>/` home under the [computation rule](computations.md#computation-output-location).
+Generated output uses that J's `mathematics/computations/outputs/<J>/` home under the [computation rule](computations.md#computation-output-location).
 A failed or unreviewed attempt is still mathematical work, not a reason to place it in root temporary storage.
 Keep useful findings and failures at their responsible homes; a handoff links those materials.
 Small interactive trials need no new record.
@@ -100,7 +100,7 @@ The [temporary-storage boundary](organization.md#temporary-storage) permits oper
 ## Proportionate Execution
 
 Select the activity covered by the current instruction before reading or changing records: discussion, maintenance, Task setup, research advancement, or review.
-Before starting or continuing affected work, read the current local [installed manifest](../export-manifest.json) and entrances, then the current rules governing that activity, the relevant object and its directly needed inputs.
+Before starting or continuing affected work, read the current local [version metadata](../version.json) and entrances, then the current rules governing that activity, the relevant object and its directly needed inputs.
 Reread the current needed entrances and governing rules before dependent operations when the installed framework version changes, an applicable rule's content, authority or scope changes, or the continued applicability of earlier actual reading cannot be established.
 This includes an upgrade during an existing assignment and local rule edits before version advancement; an unchanged version number does not establish unchanged applicable text.
 Old conversations, compressed summaries, persistent memory and recollection of an earlier framework version may locate relevant files but cannot replace the required current-file reading or establish that old instructions remain applicable.

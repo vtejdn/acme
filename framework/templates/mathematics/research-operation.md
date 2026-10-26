@@ -1,14 +1,14 @@
 # Research Operation
 
-Before creating or retaining content with this template, apply the [common content decision](../rules/records.md#substantive-material-retention), reuse an adequate responsible home, and then follow this kind's actual registration, reproduction, source or review obligations.
+Before creating or retaining content with this template, apply the [common content decision](../../rules/records.md#substantive-material-retention), reuse an adequate responsible home, and then follow this kind's actual registration, reproduction, source or review obligations.
 A template does not justify a process-only record.
 
 ### Compact Research-Operation Template
 
-Use this for a [substantive operation or useful attempt](../rules/ledger.md#substantive-mathematical-operations), not every scratch calculation.
+Use this for a [substantive operation or useful attempt](../../rules/ledger.md#substantive-mathematical-operations), not every scratch calculation.
 An exploratory entry may remain in its existing responsible section.
 Fill version transitions, consumers, reviews and authorization only when they apply; a missing Claim or completed review does not prevent recording a useful attempt.
-Internal extraction needs no separate approval; for main-theorem designation or objective changes, apply the [result-organization policy](../rules/claims.md#lemma-extraction-and-approval); this field does not create an approval requirement for every operation.
+Internal extraction needs no separate approval; for main-theorem designation or objective changes, apply the [result-organization policy](../../rules/claims.md#lemma-extraction-and-approval); this field does not create an approval requirement for every operation.
 
 ```markdown
 # <Mathematical operation or coherent batch>

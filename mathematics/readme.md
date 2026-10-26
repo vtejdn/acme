@@ -20,4 +20,4 @@ C owns Claim arguments and selected assessments; T owns its contract and lifecyc
 D is a working address reusable only after retirement and consumer repair.
 
 [Framework rules](../framework/readme.md) govern work; [repository identity](../repository/readme.md) and source-acquisition evidence retain their separate responsibilities.
-A clean export contains no assigned Task or execution authorization.
+A fresh official starting repository contains no assigned Task or execution authorization.

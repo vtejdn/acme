@@ -14,6 +14,17 @@ def key(value):
     return value
 
 
+def repository_name(value, *, required=False):
+    """Validate the chosen repository name; personal folders may remain unnamed."""
+    if value is None:
+        r.require(not required,
+                  'Register the human-chosen repository name in repository/config.json before Git research writing or delivery; keep existing materials and use identity-bind for this checkout.')
+        return None
+    r.require(isinstance(value, str) and KEY.fullmatch(value),
+              'Repository names use letters, digits and internal hyphens; ask the human for a valid choice without deriving it from the author key or folder.')
+    return value
+
+
 def attribution_name(value):
     r.require(isinstance(value, str) and value.strip() and '\n' not in value and '\r' not in value,
               'Supply a nonempty single-line display_name for License attribution, separately from the author key.')
@@ -153,6 +164,7 @@ def actor(repo, *, runner=None):
         people = registry(repo)['people']
         r.require(len(people) == 1, 'Personal use without Git requires one explicitly registered local human.')
         return people[0]['id']
+    repository_name(repo.config.get('repository'), required=True)
     run = runner or git
     actual = run(repo.root, 'rev-parse', '--show-toplevel')
     r.require(Path(actual).resolve() == repo.root.resolve(),
@@ -215,7 +227,7 @@ def register(repo, value, display_name, git_name=None, git_email=None, github_ac
 def initialize(root, username, repository, url=None, git_name=None, git_email=None, github_account=None, *, display_name):
     root = Path(root).resolve()
     r.check_storage(root)
-    key(username); key(repository); attribution_name(display_name)
+    key(username); repository_name(repository, required=True); attribution_name(display_name)
     r.require(bool(git_name) == bool(git_email), 'Provide Git name and email together.')
     r.require(not (root / 'repository/config.json').exists(), 'Repository is already initialized.')
     config = {'repository': repository, 'layout_format': 2,

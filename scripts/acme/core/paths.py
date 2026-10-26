@@ -7,7 +7,7 @@ from urllib.parse import unquote
 
 PDF_ROOT = Path('mathematics/literature/pdf')
 LEGACY_PDF_ROOT = Path('literature/pdf')
-COMPUTATION_OUTPUT_ROOT = Path('mathematics/computation/outputs')
+COMPUTATION_OUTPUT_ROOT = Path('mathematics/computations/outputs')
 PROTECTED = {'.git', '.codex', '.agents'}
 # Shared environments and generated test caches contain no authored materials.
 EXCLUDED = PROTECTED | {'.tmp', '.generated', '.venv', '.pytest_cache', '__pycache__', 'build', 'output'}

@@ -70,18 +70,18 @@ Short disposable arithmetic may remain interactive or in an existing working dra
 Continuing mathematical arguments belong in D, with useful findings and failures retained in their responsible mathematical materials.
 
 Programs, verification programs, required original inputs and the concise README use `mathematics/computations/programs/<J>/`.
-Generated results, certificates and verification data use `mathematics/computation/outputs/<J>/`.
-The plural program path and singular output path are intentional.
+Generated results, certificates and verification data use `mathematics/computations/outputs/<J>/`, beside programs/ in the same computation collection.
 Use the exact existing J directory identity, including the receiving authorN/repoN and established receiving serial of an acquired group.
 Both homes belong to that one J; output separation creates no new identity or per-run directory.
-The shared output root is local to the checkout and ignored by Git through `/mathematics/computation/outputs/`.
-Generic discovery, ordinary staging and clean framework export exclude it.
+The shared output root is local to the checkout and ignored by Git through `/mathematics/computations/outputs/`, for files of every extension.
+Generic discovery, ordinary staging and common-framework copying exclude it.
 Explicit reads, declared verification inputs and selected intake attachments may access actual files there under the usual path-safety rules.
 
 Resolve default paths from the actual repository and J location, independently of the caller's working directory.
 The containing J is the directory directly under `mathematics/computations/programs/`, including any acquired repository component; a nested `programs/` or `checks/` directory is not the J identity.
 Self-group input defaults, output defaults and newly recorded locators follow that actual containing J after acquisition or onward transfer.
 Create the required output directory on use.
+Do not add placeholders or allocate a new J merely for output storage.
 A shared helper receives the calling J's output location explicitly.
 Genuine cross-J dependencies use an explicitly specified retained file or native input parameter, without deriving a qualified name, searching alternatives or falling back to another local group.
 If the required file or supported binding is absent, report that execution limit.
@@ -116,7 +116,7 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
   Imported groups use the receiving external identities and explicitly chosen receiving serial in both program and output homes, for example `author3_repo2_J_W0007/`.
   Preserve the exact original author, repository, research line, family/serial, physical version where applicable, path and revision in existing provenance/correspondence, separately from the chosen receiving identity.
   Repeated acquisition and later versions reuse the established receiving family; original and immediate transport identities remain distinct.
-  Every group has one entrance `readme.md`, with the minimal author/source header and the [template](../templates/computation.md) sections: Question and scope, Files, Reproduction, Results and limits.
+  Every group has one entrance `readme.md`, with the minimal author/source header and the [template](../templates/mathematics/computation.md) sections: Question and scope, Files, Reproduction, Results and limits.
   These examples are inert.
 - Group one coherent calculation with its actual programs, inputs, outputs and checks across the two declared homes.
   Use names reflecting actual roles, such as `main.py`, `verify.py`, `helpers.py`, `inputs/` and an authored `record.md` on the program side, with generated `data.json`, `verification.json` or certificate children on the output side.
@@ -200,7 +200,7 @@ This certifies failure of positive semidefiniteness without computing the full s
 
 ## Record Template
 
-Use the inert [README template](../templates/computation.md), replacing placeholders with actual evidence and omitting example files that do not exist.
+Use the inert [README template](../templates/mathematics/computation.md), replacing placeholders with actual evidence and omitting example files that do not exist.
 Record unavailable reproduction details explicitly.
 A template is neither authorization nor a completed record.
 

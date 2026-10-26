@@ -122,7 +122,7 @@ Strategy changes should cite the evidence that caused them.
 
 ## Record Template
 
-Use the inert [record template](../templates/research-operation.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/research-operation.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 ## Working drafts and fixed findings

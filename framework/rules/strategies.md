@@ -185,7 +185,7 @@ Do not confuse an allocation decision to pause with evidence that a strategy is 
 
 ## Record Template
 
-Use the inert [record template](../templates/strategy.md), replacing placeholders with actual evidence.
+Use the inert [record template](../templates/mathematics/strategy.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
 When a useful failed attempt changes a route or prevents repetition, fix its scope, evidence and limitations in ledger without waiting for Task completion.

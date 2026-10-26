@@ -1,6 +1,6 @@
 # Proof Audit
 
-Before creating or retaining content with this template, apply the [common content decision](../rules/records.md#substantive-material-retention), reuse an adequate responsible home, and then follow this kind's actual registration, reproduction, source or review obligations.
+Before creating or retaining content with this template, apply the [common content decision](../../rules/records.md#substantive-material-retention), reuse an adequate responsible home, and then follow this kind's actual registration, reproduction, source or review obligations.
 A template does not justify a process-only record.
 
 ## Inline Audit Template
@@ -8,10 +8,10 @@ A template does not justify a process-only record.
 Use this structure in a numbered fixed R material for every formal project-review account, whether agent self-review, independent review or a genuinely unknown older/source relationship.
 Partial, negative, unresolved and unadopted findings also belong to R; several findings may share an appropriate R.
 The optional `material.py create --kind R --line F --file review.md` writer uses the real author and supplied evidence.
-Its new fixed family uses the actual [`material_next` namespace](../material-format.md#material-family-allocation-state), so retirement cannot make that number available again.
-The reviewer judges actual coverage and applicability under the [common responsibility](../rules/workflow.md#agent-and-tool-responsibilities).
+Its new fixed family uses the actual [`material_next` namespace](../../material-format.md#material-family-allocation-state), so retirement cannot make that number available again.
+The reviewer judges actual coverage and applicability under the [common responsibility](../../rules/workflow.md#agent-and-tool-responsibilities).
 Expand only fields relevant to the argument while preserving necessary scope/evidence.
-Follow the [review arrangements and disclosure rules](../rules/proof-audits.md#review-arrangements); no individual agent identity is required.
+Follow the [review arrangements and disclosure rules](../../rules/proof-audits.md#review-arrangements); no individual agent identity is required.
 This template records the review; its field order does not prescribe when to read previous assessments.
 
 ```markdown

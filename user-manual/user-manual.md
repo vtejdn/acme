@@ -5,7 +5,7 @@
 ## ACME: Autonomous and Collaborative Mathematical Exploration
 
 ACME is a lightweight framework for autonomous and collaborative mathematical research.
-It combines Markdown rules for AI agents with auxiliary scripts to support sustained exploration and preserve research that can be inspected, reused and continued.
+It combines Markdown rules for [AI agents](#notion-agent) with auxiliary scripts to support sustained exploration and preserve research that can be inspected, reused and continued.
 It serves two main purposes: enabling autonomous AI agents to conduct mathematical research under the guidance of human mathematicians, and supporting collaboration among human authors.
 
 ### Human mathematicians
@@ -13,14 +13,14 @@ It serves two main purposes: enabling autonomous AI agents to conduct mathematic
 Human mathematicians are responsible for:
 
 1. Defining research questions, their authorized scope and completion criteria to initiate [Tasks](#material-task).
-2. Guiding the development of [Strategies](#material-strategy) together with agents.
+2. Guiding the development of [Strategies](#material-strategy) together with [agents](#notion-agent).
 3. Contributing ideas, clarifying mathematical intent, setting scientific priorities, challenging arguments, refining questions and redirecting investigations.
 4. Understanding the research outputs and exploring the frontiers of mathematical knowledge.
 5. Taking responsibility for the mathematical results.
 
 ### Agents powered by [LLMs](#notion-llm)
 
-Within the authorized scope, autonomous agents are responsible for:
+Within the authorized scope, autonomous [agents](#notion-agent) are responsible for:
 
 1. Studying literature and verifying the results needed for the investigation.
 2. Developing and evaluating research [Strategies](#material-strategy), identifying gaps, and making routine methodological decisions autonomously within the assignment.
@@ -46,7 +46,7 @@ Different mathematicians or teams can also collaborate across repositories by re
 ### Workflow
 
 Research begins with a human-defined [Task](#material-task) specifying completion criteria.
-Agents first consult and reuse relevant local research materials and literature, then search the web for additional sources when needed.
+[Agents](#notion-agent) first consult and reuse relevant local research materials and literature, then search the web for additional sources when needed.
 They check the applicability of results, develop [Strategies](#material-strategy), and iterate through proof attempts, computations and counterexample searches.
 Each attempt informs the next: useful findings, failures and unresolved questions are retained in the appropriate research materials, including [Claims](#material-claim) and [Ledgers](#material-ledger).
 Strategies adapt within the authorized objective.
@@ -72,50 +72,51 @@ For individual research on a single device, use a suitable [agent harness](agent
 2. Choose a folder on your device to store the framework and future research materials.
 3. Select the model and provider in the settings or model picker.
 
-To synchronize work across devices, collaborate with other mathematicians or make your research outputs readily accessible to others, use a [Git repository](git-repository.md#notion-git-repository) with a cloud platform such as [GitHub](git-repository.md#notion-github).
-The framework supports [Git](git-repository.md#notion-git)-based synchronization and collaboration.
+Without [Git](git-repository.md#notion-git), the default is personal research on your local device.
+To synchronize work across devices or collaborate through a shared [Git repository](git-repository.md#notion-git-repository), you may choose a hosting platform such as [GitHub](git-repository.md#notion-github).
+Uploading research records and making a repository public are separate choices.
 
-4. Install Git on your device, or ask an agent in your chosen harness to do it for you.
-5. (Optional) Create or sign in to a repository hosting account if needed, then connect to an existing repository or create a new one.
+4. (Optional) Install Git on your device, or ask an [agent](#notion-agent) in your chosen harness to do it for you.
+5. (Optional) Create or sign in to a repository hosting account, then connect to an existing repository or create a new one.
 
-- See [Setup instructions](user-instructions/user-instructions.md#setup).
+- See also [Setup instructions](user-instructions/user-instructions.md#setup).
 
 ### Step III. Install and initialize the framework
 
 If you are joining an existing research repository that already contains ACME, follow the steps in the next section instead.
 
-1. Ask an agent to download the [ACME framework](https://github.com/vtejdn/acme) into your project folder, or [clone](#notion-clone) its repository if you are using [Git](git-repository.md#notion-git).
-2. Choose a unique author key, such as Alice or Ali, and ask an agent to register you as an author.
+1. Ask an [agent](#notion-agent) to download the [ACME framework](https://github.com/vtejdn/acme) into your project folder, or [clone](#notion-clone) its repository if you are using [Git](git-repository.md#notion-git).
+2. Choose a unique author key, such as `Alice` or `Ali`, and independently choose the name to appear in the `LICENSE` attribution.
+   Ask an agent to register you as an author and add that attribution.
    In a Git workspace, ask the agent to associate this working copy with your author key so that new records use the correct authorship.
-3. (Optional, when using Git) Configure the name and email associated with your [commits](#notion-commit), or ask an agent to do so.
-4. (Optional, when using a [Git repository](git-repository.md#notion-git-repository)) Choose a short, recognizable name for your research repository and ask an agent to configure its repository identity.
+3. (When using Git) Configure the name and email associated with your [commits](#notion-commit), or ask an agent to do so.
+4. (When using Git) Choose or confirm a short name for your research [repository](git-repository.md#notion-git-repository) and ask an agent to ensure it is recorded correctly in the framework.
 5. (Optional) When appropriate, we strongly recommend sharing your research records through a public repository.
 
-- See [Setup instructions](user-instructions/user-instructions.md#setup).
+- See also [Setup instructions](user-instructions/user-instructions.md#setup).
 
 ### Join an existing [Git repository](git-repository.md#notion-git-repository) as a collaborator
 
 1. Sign in to the repository hosting platform and accept your coauthor's invitation.
-2. Ask an agent to help configure access to the shared repository.
+2. Ask an [agent](#notion-agent) to help configure access to the shared repository.
 3. Give the repository address to an agent and ask it to [clone](#notion-clone) the repository into a new local folder.
    Open that folder in your agent harness.
-4. If you are not yet registered in the research repository, choose an author key distinct from those of your collaborators and ask an agent to register you.
+4. If you are not yet registered in the research repository, choose an author key distinct from those of your collaborators and independently choose the name to appear in the `LICENSE` attribution,
+   then ask an agent to register you and add that attribution.
    Ask the agent to associate this working copy with your author key in ACME.
 5. Configure the name and email used for your [Git](git-repository.md#notion-git) [commits](#notion-commit), or ask an agent to do so.
 
-- See [Setup instructions](user-instructions/user-instructions.md#setup).
+- See also [Setup instructions](user-instructions/user-instructions.md#setup).
 
 ## Getting started
 
 ### Start a Task
 
-1. (Optional) Provide relevant literature or ask an agent to find it.
+1. (Optional) Provide relevant literature or ask an [agent](#notion-agent) to find it.
    Ask the agent to store source files in [the local literature directory](../mathematics/literature/pdf) and audit the specified portions of relevant articles at the requested depth.
 2. Establish a [Task](#material-task) through discussion with agents, specifying the questions, constraints and completion criteria.
    You may choose a [research-line letter](#notion-research-line-letter) to organize the Task and its related materials.
-   See [common instructions](#common-instructions) for examples.
 3. For sustained autonomous work, specify or adopt execution limits and stopping conditions.
-   See [research assignment examples](user-instructions/user-instructions.md#start-or-continue-research).
 4. Approve necessary tool actions when prompted, and respond to questions raised by agents.
 5. Think through and understand the mathematical materials produced by agents (no agent can do this for you).
    Discuss the mathematics with agents to deepen and accelerate your understanding.
@@ -123,14 +124,14 @@ If you are joining an existing research repository that already contains ACME, f
 6. (Optional, when using [Git](git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; use undo for local edits or revert commits when appropriate.
    When collaborating with other mathematicians, ask agents to handle [pushes](#notion-push), [pulls](#notion-pull), [merges](#notion-merge) and help resolve any conflicts.
 
-- See [research instruction examples](user-instructions/user-instructions.md#research-instructions).
+- See also [research instruction examples](user-instructions/user-instructions.md#research-instructions).
 
 ### Cautions
 
-- Agents will try to download publicly available literature to [the local literature directory](../mathematics/literature/pdf).
+- [Agents](#notion-agent) will try to download publicly available literature to [the local literature directory](../mathematics/literature/pdf).
   This directory is ignored by [Git](git-repository.md#notion-git) by default.
   If you put your own private material there, make sure this directory is ignored by Git and is not uploaded to a public repository.
-- If collaborators would otherwise use the same author key, agree on distinct keys, such as Wang1 and Wang2.
+- If collaborators would otherwise use the same author key, agree on distinct keys, such as `Wang1` and `Wang2`.
 - Use different [research-line letters](#notion-research-line-letter) for [Tasks](#material-task) that will be advanced concurrently by separate main research agents.
   Choose the letters during Task setup to separate material numbering and reduce write conflicts.
   Ask the agents to coordinate changes to shared files, including indexes, the bibliography and repository identity records.
@@ -143,7 +144,7 @@ If you are joining an existing research repository that already contains ACME, f
 
 ### Useful habits
 
-- Ask an agent whenever you have questions about the framework.
+- Ask an [agent](#notion-agent) whenever you have questions about the framework.
 - If you keep literature in a local directory synchronized by a cloud service, ask an agent to connect [the local literature directory](../mathematics/literature/pdf) to it through a directory junction.
   Grant the agent the permissions needed to read and manage files in that directory.
 - When agents automate related tasks involving credentials, store secrets appropriately and exclude them from [Git](git-repository.md#notion-git).
@@ -160,56 +161,68 @@ Under construction.
 
 ### Framework version
 
-Current framework version is 0.2.0.
+The current framework version is 0.2.0.
 
-At the start of work, the agent checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at most once per UTC day.
+When automatic checks are enabled and network access is permitted,
+the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.
 If one is available, it tells you the installed and available versions and asks whether to arrange an upgrade; your current work can continue while you decide.
 A reminder does not install or upgrade anything, and you may defer it.
 You can ask to disable or enable this repository's automatic checks, recheck now, or upgrade explicitly.
-If the public version cannot be confirmed, the agent reports that limitation and continues the authorized work.
 
-### Common instructions
+### Instruction examples
 
 The [instruction examples](user-instructions/user-instructions.md) illustrate common instructions and explain what results to expect.
 
-### Top-level directories
+### Top-level directories and files
 
+The tables below describe the main files and directories in the repository root.
 Some directories are created only when needed.
 
-| Directory | Purpose | Scope |
-| --- | --- | --- |
-| [mathematics/](../mathematics/readme.md) | Holds research materials, literature records, computations, manuscripts and presentations. | Research workspace |
-| [framework/](../framework/readme.md) | Holds framework rules, material templates, format specifications and export definitions. | Common framework |
-| [repository/](../repository/readme.md) | Records repository identity, registered human authors and external repository/author correspondences. | Common framework |
-| profiles/ | Holds personal research policies, execution preferences and mathematical writing choices. | Personal configuration |
-| execution/ | Records the current execution state, effective limits and stopping conditions of each ordinary individual Task family. | Task execution |
-| intake/ | Records cross-repository acquisition operations, including their selected scope and provenance. | Cross-repository reuse |
-| [scripts/](../scripts/readme.md) | Provides optional command-line tools for registration, navigation, checking, acquisition, export and other mechanical operations. | Framework tools |
-| [user-manual/](./) | Contains user guides, setup explanations and instruction examples. | Human-facing documentation |
-| .tmp/ | Holds disposable operational files used by agents. | Temporary work |
-| .venv/ | Holds the local Python virtual environment and its installed dependencies. | Local runtime |
-| .agents/ | Holds repository-local agent skills. | Agent tooling |
-| .git/ | Holds [Git](git-repository.md#notion-git) history, references, configuration and other version-control metadata. | Git workspaces |
-| .vscode/ | Holds VS Code workspace configuration and extension recommendations. | Editor-specific configuration |
-| .codex/ | Holds local Codex configuration for the workspace. | Tool-specific configuration |
+| Path | Purpose |
+| --- | --- |
+| `.tmp/` | Holds temporary inputs and byproducts created by [agents](#notion-agent) and removed after use. |
+| `execution/` | Records the current execution state, limits and stopping conditions for individual research [Tasks](#material-task). |
+| [`framework/`](../framework/readme.md) | Contains framework rules, material templates, format specifications and version guidance. |
+| `intake/` | Records which materials were received from other [repositories](git-repository.md#notion-git-repository), their sources and the scope of each acquisition. |
+| [`mathematics/`](../mathematics/readme.md) | Holds research materials, literature records, computations, manuscripts and presentations. |
+| `profiles/` | Holds personal research policies, execution preferences and mathematical writing choices. |
+| [`repository/`](../repository/readme.md) | Stores repository settings, author registrations and mappings to external repositories and authors. |
+| [`scripts/`](../scripts/readme.md) | Provides optional command-line tools for setup, material management, navigation and checks. |
+| [`user-manual/`](./) | Contains user guides, setup explanations and instruction examples. |
+| `.gitattributes` | Configures [Git](git-repository.md#notion-git) handling of text and binary files, including line endings. |
+| `.gitignore` | Specifies untracked files and directories that Git should ignore. |
+| `AGENTS.md` | Provides entry instructions that direct agents to the applicable framework rules and materials. |
+| `LICENSE` | Contains the repository’s license terms and notices. |
+| `readme.md` | Introduces the repository and links to the user manual, framework rules and research materials. |
+
+Depending on your tools and setup, you may also see the following directories.
+
+| Path | Purpose |
+| --- | --- |
+| `.agents/` | Holds repository-local agent skills. |
+| `.claude/` | Holds local Claude Code settings for this workspace. |
+| `.codex/` | Holds local Codex configuration for this workspace. |
+| `.git/` | Holds Git history, references, configuration and other version-control metadata. |
+| `.venv/` | Holds the local Python virtual environment and its installed dependencies. |
+| `.vscode/` | Holds VS Code workspace configuration and extension recommendations. |
 
 ### Categories of research materials
 
 | Abbreviation | Material | Location | Purpose |
 | --- | --- | --- | --- |
-| T | [Task](#material-task) | [mathematics/tasks/](../mathematics/tasks/index.md) | Defines a research question, its authorized scope and completion criteria, and records lifecycle decisions. |
-| S | [Strategy](#material-strategy) | [mathematics/strategies/](../mathematics/strategies/index.md) | Develops and evaluates a research route, organizes priorities, and identifies obstacles and next steps. |
-| C | [Claim](#material-claim) | [mathematics/claims/](../mathematics/claims/index.md) | States precise mathematical claims, preserves their arguments and dependencies, and records their mathematical and review assessments. |
-| R | [Review](#material-review) | [mathematics/audits/reviews/](../mathematics/audits/reviews/readme.md) | Records mathematical reviews of specified project arguments, including the inputs checked, findings, review arrangement and limitations. |
-| D | Draft | [mathematics/drafts/](../mathematics/drafts/readme.md) | Provides a working space for developing mathematical arguments, calculations and alternatives that are still being explored. |
-| L | [Ledger](#material-ledger) | [mathematics/ledger/](../mathematics/ledger/readme.md) | Preserves useful exploration, comparisons, syntheses and failed approaches, together with the reasons and outcomes of substantive mathematical changes. |
-| J | Computation | [mathematics/computations/programs/](../mathematics/computations/readme.md) | Organizes programs and required inputs for reproducible computations, and records run status, results and limitations. |
-| U | Literature audit unit | [mathematics/audits/literature/](../mathematics/audits/literature/readme.md) | Makes inspected literature reusable by recording the source edition and passages, mathematical content, applicability and inspection limits. |
-| — | Manuscript | [mathematics/manuscripts/](../mathematics/manuscripts/index.md) | Develops papers and related mathematical documents, with their exposition, citations, writing choices and build records. |
-| — | Presentation | [mathematics/presentations/](../mathematics/presentations/readme.md) | Develops talks and slides for a specified audience, with presentation sources, writing choices, build information and review records. |
+| T | [Task](#material-task) | [`mathematics/tasks/`](../mathematics/tasks/index.md) | Defines a research question, its authorized scope and completion criteria, and records lifecycle decisions. |
+| S | [Strategy](#material-strategy) | [`mathematics/strategies/`](../mathematics/strategies/index.md) | Develops and evaluates a research route, organizes priorities, and identifies obstacles and next steps. |
+| C | [Claim](#material-claim) | [`mathematics/claims/`](../mathematics/claims/index.md) | States precise mathematical claims, preserves their arguments and dependencies, and records their mathematical and review assessments. |
+| R | [Review](#material-review) | [`mathematics/audits/reviews/`](../mathematics/audits/reviews/readme.md) | Records mathematical reviews of specified project arguments, including the inputs checked, findings, review arrangement and limitations. |
+| D | Draft | [`mathematics/drafts/`](../mathematics/drafts/readme.md) | Provides a working space for developing mathematical arguments, calculations and alternatives that are still being explored. |
+| L | [Ledger](#material-ledger) | [`mathematics/ledger/`](../mathematics/ledger/readme.md) | Preserves useful exploration, comparisons, syntheses and failed approaches, together with the reasons and outcomes of substantive mathematical changes. |
+| J | Computation | [`mathematics/computations/programs/`](../mathematics/computations/readme.md) | Organizes programs and required inputs for reproducible computations, and records run status, results and limitations. |
+| U | Literature audit unit | [`mathematics/audits/literature/`](../mathematics/audits/literature/readme.md) | Makes inspected literature reusable by recording the source edition and passages, mathematical content, applicability and inspection limits. |
+| — | Manuscript | [`mathematics/manuscripts/`](../mathematics/manuscripts/index.md) | Develops papers and related mathematical documents, with their exposition, citations, writing choices and build records. |
+| — | Presentation | [`mathematics/presentations/`](../mathematics/presentations/readme.md) | Develops talks and slides for a specified audience, with presentation sources, writing choices, build information and review records. |
 
 - Each computation has a numbered J directory containing its programs, required inputs and `readme.md`.
-  Generated outputs are stored separately under the local, [Git](git-repository.md#notion-git)-ignored path `mathematics/computation/outputs/<J>/`.
+  Generated outputs are stored separately under the local, [Git](git-repository.md#notion-git)-ignored path `mathematics/computations/outputs/<J>/`.
 - Literature audit units are grouped by citation key under `mathematics/audits/literature/`.
 - The [definition index](../mathematics/definitions/index.md) organizes definitions, terminology and symbols by concept, with links to their complete formulations in the responsible C, L or U materials.
 - The canonical [bibliography](../mathematics/literature/references.bib) records publication identity and citation keys.
@@ -220,10 +233,13 @@ Some directories are created only when needed.
 | Term | Meaning |
 | --- | --- |
 | <a id="notion-llm"></a>LLM (large language model) | An AI model trained on large amounts of text to process and generate language, including mathematical explanations and computer code. |
+| <a id="notion-agent"></a>Agent | An AI system powered by an [LLM](#notion-llm) that can plan and carry out tasks, use tools and adjust its actions based on results. It works through an [agent harness](agent-harness.md) within the scope and limits authorized by the human user. It has not yet evolved into an [Agent](https://en.wikipedia.org/wiki/Agent_%28The_Matrix%29). |
+| <a id="notion-context"></a>Context | The information available to an LLM during a model call, including instructions, conversation history, supplied materials and tool results. The current context may contain only a selection or summary of the full [session](#notion-session) history. |
 | <a id="notion-context-length"></a>Context length | The maximum combined length of input and output an LLM can handle at once, usually measured in tokens (small units of text). This includes instructions, conversation history, supplied material and the generated response. |
+| <a id="notion-session"></a>Session | A continuing interaction with an [agent](#notion-agent), managed by an [agent harness](agent-harness.md). It may contain multiple conversation turns, each typically beginning with a user message and including the agent's responses and tool operations. The harness maintains the conversation history and prepares the [context](#notion-context) for each model call; to stay within the model's [context length](#notion-context-length), it may select or summarize earlier history. |
 | Material identifier | A structured reference identifying a material and, where applicable, its version. For example, `Alice_C_F0007_v1.md` identifies a [Claim](#material-claim) by author, kind, research line, serial number and version. |
-| <a id="notion-research-line-letter"></a>Research-line letter | A letter, such as F in `Alice_C_F0007_v1.md`, used to organize numbered research materials. Task-derived materials inherit the Task's letter but receive their own serial numbers. The default is A when no line is specified. |
-| Author key | A stable registered key for a human author, such as Alice, used in material identifiers and authorship records. |
+| <a id="notion-research-line-letter"></a>Research-line letter | A letter, such as `F` in `Alice_C_F0007_v1.md`, used to organize numbered research materials. Task-derived materials inherit the Task's letter but receive their own serial numbers. The default is `A` when no line is specified. |
+| Author key | A stable registered key for a human author, such as `Alice`, used in material identifiers and authorship records. |
 | Material family | The retained versions of the same material, such as `Alice_C_F0007_v1.md` and `Alice_C_F0007_v2.md`. |
 | Material version | A particular retained revision of a material, such as the `v1` or `v2` version of a Claim. |
 | <a id="notion-main-research-agent"></a>Main research agent | The agent leading work on a [Task](#material-task), coordinating any other subagents involved and keeping the research records consistent. |
@@ -234,7 +250,7 @@ Some directories are created only when needed.
 | <a id="notion-push"></a>Push | Sending local commits to a remote Git repository so that the recorded work is available there. |
 | <a id="notion-pull"></a>Pull | Retrieving changes from a remote Git repository and incorporating them into your local work. |
 | <a id="notion-merge"></a>Merge | Combining changes from another [branch](#notion-git-branch) into your current Git branch, resolving conflicting edits when necessary. |
-| <a id="notion-intake"></a>Intake | Bringing selected research materials from another ACME repository into your own, with their authorship, origin and review limitations preserved. |
+| <a id="notion-intake"></a>Intake | Bringing selected research materials from another public ACME repository into your own, with their authorship, origin and review limitations preserved. |
 | Citation key | A short identifier for a work in the bibliography, used to cite it consistently in research records and manuscripts. |
 
 ### <a id="material-task"></a>Task
@@ -250,7 +266,7 @@ A Task organizes research around a precise mathematical objective, its authorize
 | `completed` | The agreed completion criteria have been met, with supporting mathematical evidence and the required review. |
 | `retired` | The investigation has been discontinued. Its reasons, useful findings and unfinished parts remain recorded. |
 
-- A Task may remain active while no agent is currently working on it.
+- A Task may remain active while no [agent](#notion-agent) is currently working on it.
 - A Task brings together the research materials supporting your investigation.
   Related manuscripts, progress reports and other documents you request can be collected in a project such as `mathematics/manuscripts/Alice_T_A0007/`.
 - You may ask to reactivate a completed Task for further work on the relevant research objective.
@@ -273,7 +289,7 @@ A Strategy describes a concrete route towards a research objective, including it
 
 - A [Task](#material-task) may have several Strategies, either as alternatives or as parts of a combined approach.
   Completing, pausing or ruling out one Strategy does not by itself determine the status of the whole Task.
-- You can suggest approaches, ask the agent to compare alternatives, or specify priorities.
+- You can suggest approaches, ask the [agent](#notion-agent) to compare alternatives, or specify priorities.
   State explicitly if a priority or order must remain fixed; otherwise the agent may adapt its choice of routes within the agreed scope.
 - Within the authorized scope, autonomous agents may add, revise, reprioritize, split, merge, pause or restart Strategies as findings and resources change.
 - A failed route can still be informative.
@@ -285,24 +301,24 @@ A Claim records an important, precise mathematical statement and what is current
 
 | Mathematical status | Meaning for the reader |
 | --- | --- |
-| `open` | The exact statement remains unresolved. Partial results, reductions or a candidate argument may exist, but the conditions for proved or refuted have not yet been met. |
+| `open` | The exact statement remains unresolved. Partial results, reductions or a candidate argument may exist, but the conditions for `proved` or `refuted` have not yet been met. |
 | `proved` | A complete proof establishes the exact statement under its stated hypotheses. All necessary supporting results are established and applicable, and a recorded mathematical [review](#material-review) found no remaining gap. |
 | `refuted` | A checked counterexample or argument disproves the exact statement within its stated scope. All necessary supporting results are established and applicable, and a recorded mathematical review found no remaining gap. |
 
 ### <a id="material-review"></a>Review
 
-A Review records an agent's examination of a mathematical statement or argument, including the exact inputs and scope, findings and unresolved limits.
+A Review records an [agent](#notion-agent)'s examination of a mathematical statement or argument, including the exact inputs and scope, findings and unresolved limits.
 
 | Review relationship | Meaning for the reader |
 | --- | --- |
 | `self-reviewed` | The proof has been checked by an agent involved in developing it or familiar with the mathematical discussion that produced it. |
-| `independently reviewed` | A separate agent checked the proof without participating in its development or receiving the development discussion as its own context. |
+| `independently reviewed` | A separate agent checked the proof without participating in its development or receiving the development discussion as its own [context](#notion-context). |
 | `unknown` | The relationship of an older or source review is genuinely unestablished; this does not imply an error or an independent inspection. |
 
 - These labels describe the review agents' relationship to the proof, not whether the proof is correct.
   A missing relationship declaration differs from `unknown`; no selected review means that the Claim selects no review evidence.
 - Another agent still performs self-review if it inherits proof-development discussions, mathematical summaries, author explanations or earlier review conclusions.
-  A different session or model alone does not establish independence.
+  A different [session](#notion-session) or model alone does not establish independence.
 - The [main research agent](#notion-main-research-agent) arranges independent reviews at key proof points and, after [Task](#material-task) completion, of the full logical chain.
   You can also request a review of a particular result or proof step.
 
@@ -314,5 +330,5 @@ An entry may explain what was investigated, under which assumptions, what was tr
 A Ledger can preserve partial arguments and useful insights even when an investigation has not produced a standalone [Claim](#material-claim).
 For example, failed or inconclusive attempts can reveal obstructions, distinguish approaches or help avoid repeated work.
 
-- You can ask an agent to compare [Strategies](#material-strategy), explain a failed attempt, synthesize findings from several sources or preserve a useful line of reasoning for later work.
+- You can ask an [agent](#notion-agent) to compare [Strategies](#material-strategy), explain a failed attempt, synthesize findings from several sources or preserve a useful line of reasoning for later work.
 - You can also ask an agent to record anything that you consider mathematically substantial and worth recording.

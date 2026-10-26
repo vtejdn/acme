@@ -1,14 +1,15 @@
 # ACME: Autonomous and Collaborative Mathematical Exploration
 
-ACME is the Autonomous and Collaborative Mathematical Exploration framework (fixed identity: acme).
+ACME is the Autonomous and Collaborative Mathematical Exploration framework.
 Autonomous research operates within human-assigned objectives and authorization.
 Collaborative work follows the explicitly agreed scope.
 Framework identity is independent of each repository's own name and locally registered external correspondences.
 
-This directory owns portable rules, inert material templates and the explicit export contract.
+This directory owns common rules, inert material templates and version guidance.
 It contains no live research status, bibliographic registry or selected manuscript.
 
-The current release identifier is maintained in the [export manifest](export-manifest.json) under the [versioning rules](versioning.md).
+The current release identifier is maintained in the [version metadata](version.json) under the [versioning rules](versioning.md).
+Install the official starting repository by ordinary copying or cloning under the [installation action](agent-actions.md#install-the-framework).
 The [start-of-work action](agent-actions.md#start-a-work-round) applies [current-rule reading](rules/workflow.md#proportionate-execution) independently of daily public-version checks and any upgrade reminder.
 
 ## Core principles and interpretation
@@ -61,9 +62,10 @@ Ordinary installed-rule use and separately authorized maintenance follow [instru
 3. Rules for the current activity: [Tasks](rules/tasks.md), [strategies](rules/strategies.md), [Claims](rules/claims.md), [ledger operations](rules/ledger.md), [definitions](rules/definitions.md), [literature](rules/literature.md), [search](rules/literature-search.md), [audits](rules/audits.md), [source audits](rules/literature-audits.md), [proof audits](rules/proof-audits.md), or [computations](rules/computations.md).
 4. For writing: [manuscript and exposition rules](rules/writing.md), [preference scopes](rules/preferences.md), and the actual author's applicable profile and document choices.
 
-Templates under framework/templates/ are examples with placeholders.
+Templates under framework/templates/ are examples with placeholders, categorized by their actual purpose.
+Mathematical-material examples live in framework/templates/mathematics/; the current execution example lives in framework/templates/execution/.
 They neither assign a task nor register a result.
-New files are not implicitly eligible for export; the explicit export manifest controls copying and initialization.
+Common files need no export registration; actual copying and publication follow their authorized scope and content responsibilities.
 
 The [material-owned input format](material-format.md) defines canonical identity, exact C/T decisions, review bindings, source-unit inspection, route/feedback tables and bounded acquisition provenance.
 Authored mathematics owns its meaning and decisions; indexes are derived navigation.

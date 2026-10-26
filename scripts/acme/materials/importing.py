@@ -60,7 +60,7 @@ def _destination(repo, path, author):
                       'Use the selected kind\'s actual typed mathematical home.')
         elif ident.kind == 'J':
             r.require(path.startswith('mathematics/computations/programs/' + ident.name + '/')
-                      or path.startswith('mathematics/computation/outputs/' + ident.name + '/'),
+                      or path.startswith(r.paths.COMPUTATION_OUTPUT_ROOT.as_posix() + '/' + ident.name + '/'),
                       'Native J files use their actual program or output home.')
     else:
         allowed = (path.startswith('profiles/' + author + '/')

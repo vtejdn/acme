@@ -296,7 +296,7 @@ Do not create a parallel writing-only source-note collection or treat an observe
 
 External source records follow the [manuscript reference boundary](#manuscript-reference-boundary), without manuscript-specific context or reverse pointers.
 Preserve substantive distinctions, exact inspection scope and actual reuse permissions during maintenance.
-Clean exports contain unified source/definition guidance and empty definition navigation, without personal selections or live source notes.
+The official starting repository contains unified source/definition guidance and empty definition navigation, without personal selections or live source notes.
 
 <a id="source-preparation-for-writing"></a>
 ### Source preparation for research, audit and writing
@@ -424,18 +424,19 @@ The responsible author may explicitly choose which manuscript or presentation PD
 That choice covers only the stated author, documents and PDF paths; non-PDF compilation products remain local.
 Keep necessary editable figure sources, generation programs and reproducibility inputs in appropriate tracked source homes outside ignored workspace trees, and document how required local images are obtained or regenerated.
 
-The root [Git ignore rules](../../.gitignore) provide generic defaults for manuscript, presentation and still-applicable talk collections, including PDFs, standard auxiliary extensions and build/cache directories.
+The [manuscript](../../mathematics/manuscripts/.gitignore) and [presentation](../../mathematics/presentations/.gitignore) collection ignore rules ignore files by default, keep directories traversable and admit `.tex`, `.bib`, `.sty`, `.cls`, `.md` and `.gitignore` source files.
 Both `build/` and `figure/` directory trees at every document depth in `mathematics/manuscripts/` and `mathematics/presentations/` remain Git-ignored, including image resources regardless of extension.
-For an actual author PDF choice, prepare a small document-local `.gitignore` containing only the needed negated PDF path.
-That final-document PDF exception must not reopen either workspace tree.
+Admit other necessary editable inputs, generation programs and build configuration through narrowly scoped negated paths in the document's local `.gitignore`.
+For an actual author PDF choice, add only the selected PDF path to those local exceptions.
+These exceptions must not reopen ignored workspace trees.
 Do not change generic defaults into an all-author exception or force-add an output without an applicable author choice.
 Read the actual responsible author and their selected preference before preparing files for delivery; extension and conventional directory alone do not decide permission.
 Git ignore rules do not remove files already tracked, so inspect the selected filenames and correct accidental tracking without deleting needed local files.
 
-Standard TeX outputs alongside the source are covered by the defaults.
-Keep nonstandard inspection artifacts in an ignored `build/` subdirectory or extend scoped ignores before generating them elsewhere.
+TeX outputs and other generated file types remain ignored without an auxiliary-extension list.
+Keep nonstandard inspection artifacts in an ignored `build/` subdirectory.
 Another author-designated document home follows the same duty to exclude its `build/` and `figure/` trees and prepare its other applicable ignores before generation.
-Personal PDF choices and document-local exceptions are not copied by a clean framework export.
+Personal PDF choices and document-local exceptions are outside common-framework copying.
 The private literature/source-store exclusions remain unchanged and no author-document choice permits source-store publication.
 Local compilation, PDF eligibility and source versioning do not authorize commit, push, journal submission or publication.
 
@@ -461,6 +462,7 @@ Current build and layout facts belong in the document `readme.md`; do not retain
 
 When mapping a current citation in `citation.md`, check whether fixed source evidence covers the exact source edition and passages needed, and state any unresolved check honestly.
 An adequate fixed U or complete relevant C/L source account supplies this evidence at its existing responsible home, without copying, relocation or an extra U solely for citation.
+Use the [first-work citation route](literature.md#3-citations-elsewhere-in-the-repository) for the actual original or exact fixed inspection account, preserving the required prior acquisition outcome and failure report for newly received U.
 Check its actual source edition, precise inspected passages, source statement or definition, hypotheses and normalization, inspection depth and unresolved limitations against the manuscript use.
 A local result's proof status, a bare citation or a bibliography entry alone supplies no source-inspection evidence.
 When an actual edition, passage or inspection gap remains, follow the existing [literature-acquisition](literature.md#literature-acquisition), [progressive-reading](literature.md#progressive-reading), and [source-audit](literature-audits.md#organization-and-stable-units) procedures for that gap and retain the necessary finding at its appropriate existing or new fixed U/C/L home under the [common content decision](records.md#substantive-material-retention).
