@@ -192,14 +192,16 @@ def check_update(root, *, force=False, offline=False, now=None, fetch=None):
         cache = update_cache(root)
         if not enabled or offline:
             return _update_result(local, cache, status='disabled' if not enabled else 'offline')
-        instant = now or datetime.now(timezone.utc)
-        r.require(isinstance(instant, datetime) and instant.tzinfo is not None,
+        r.require(now is None or (isinstance(now, datetime) and now.utcoffset() is not None),
                   'The update clock must supply an aware datetime.')
-        today = instant.astimezone(timezone.utc).date().isoformat()
         with r.locked(root, timeout=UPDATE_LOCK_TIMEOUT):
+            instant = now or datetime.now(timezone.utc)
+            today = instant.astimezone(timezone.utc).date().isoformat()
             # Reread after the lock: another responsible agent may have claimed
             # this day while this caller was waiting.
             cache = update_cache(root)
+            if cache is not None and cache['last_attempt_on'] > today:
+                return _update_result(local, cache, status='superseded', saved=False)
             if cache is not None and cache['last_attempt_on'] == today and not force:
                 return _update_result(local, cache, reused=True, saved=True)
             claim = {'last_attempt_on': today, 'result': 'unavailable',

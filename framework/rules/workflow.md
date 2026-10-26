@@ -10,6 +10,13 @@ The agent reads the actual materials and decides content, work/edition identity,
 Reuse still-applicable judgments.
 Tools optionally execute explicitly chosen objects, field updates, files and mappings, and report bytes, paths, differences, request/response facts and structural constraints.
 Tool success supplies no semantic equivalence, source adequacy, review sufficiency or permission.
+For the actual operation, the agent chooses suitable available PDF reading, text extraction, page rendering, OCR and LaTeX compilation capabilities.
+Reuse applicable host tools, project environments and build settings, confirming only what that operation needs without a compulsory inventory or fixed tool sequence.
+If a dedicated capability is absent, choose an adequate general tool or actually available alternative source format after checking the relevant version and applicability; another format establishes only the features it exposes, not PDF layout.
+Supplement needed tools only within actual authorization and environment constraints, without automatic installation, configuration or bootstrap.
+When a capability limit leaves required work incomplete, tell the human author in the normal response or handoff which source passage, formula, page, build or check is affected, how that limits the claimed result and what useful action remains.
+Retain necessary substantive limits at their existing responsible home, continue unaffected authorized work and distinguish unperformed inspection or compilation from actual results.
+Apply the existing [progressive-reading](literature.md#progressive-reading), [local-build](writing.md#reproducible-local-builds) and [temporary-storage](organization.md#temporary-storage) duties; document build workspaces are not an alternate home for disposable literature text extraction or literature page images.
 Check the result and necessary direct consumers; record required facts in their existing homes without a confirmation flag, receipt or compulsory command.
 For an explicit J source refresh, the agent identifies the same original and selected current scope and maintains necessary retained inputs and actual consumers under the [intake rule](intake.md#homes-and-independent-reuse).
 Copying selected files supplies no consumer or mathematical review, and earlier acquisition scopes do not select themselves as current dependencies.
@@ -115,7 +122,7 @@ Keep each fact in its responsible record and update only necessary consumers.
 Finish the affected edit/publication batch before regenerating its navigation and checking the final prepared bytes.
 Do not check generated output while another command is still changing it.
 Repeat a passed check when relevant bytes change, a failure is repaired, or a new risk justifies the additional scope; do not repeat it merely for another status update.
-Explicit preparation, index and final commit-view checks inspect different bytes under the [delivery and check rules](identity.md#submission-checks); they are not automatic Git prerequisites.
+Working files, staged contents and committed trees are distinct; inspect the actual bytes needed for the requested operation under the [delivery rules](identity.md#submission-checks).
 
 Normal success needs a concise result.
 Expand diagnostic output for a failure, unexpected scope or a requested investigation.
@@ -172,8 +179,7 @@ Refresh navigation after the affected material/configuration batch has settled, 
 One responsible agent runs `python scripts/render-research-navigation.py`, and others reuse the result until relevant inputs change.
 It derives Claim, Task and strategy indexes without a catalog authority or a full proof/history audit.
 For bounded discovery use `material.py discover`, `indexes` or `routes` with their stated scope.
-An explicitly requested `check-research-submission.py --working-tree` inspects preparation only; INDEX and final BASE-to-HEAD are separate optional check contexts.
-Do not append a broad audit just because authoring/rendering finished.
+Use operation-local material and reference readers for the actual question; completed authoring or rendering adds no aggregate delivery audit.
 Run observations and execution queries do not trigger mathematical navigation regeneration.
 
 The following sequence applies to mathematical research advancement; discussion, maintenance and Task setup use their applicable scope above.
@@ -308,8 +314,23 @@ Audit notes should identify the claim or artifact reviewed, the checks performed
 Reviews must evaluate the argument itself rather than merely restating its conclusion.
 
 Each executing ordinary Task has one responsible main agent and one stable E; a joint coordination T has neither direct execution nor an E.
-Internal subagents receive bounded delegated work and coordinated write targets; they do not create parallel Task/E identities or independent allowances.
+The main research agent primarily coordinates the authorized Task, retaining an overall understanding of its objective, authority, progress and key mathematical interfaces.
+It starts, reuses and adjusts available harness subagents, coordinating dependencies, shared resources, overlapping writes and necessary review.
+It ensures required retention and closeout by doing or explicitly delegating that work, without routinely repeating the subagents' derivations or material operations.
+Internal subagents receive bounded delegated work and coordinated write targets; they share the Task/E authority, limits and stops rather than creating parallel identities or independent allowances.
+Within that scope, subagents autonomously develop and select strategies, continue Draft research, compute or organize materials.
+A subagent may request suitable parallel work from the main agent through ordinary coordination messages; the main agent arranges the additional subagents and their dependencies and writes.
+Assignments may adapt: a Preparation subagent may continue research in the same Draft when the assignment includes that work or the main agent extends it, without a replacement agent, copied Draft or handoff report.
+No fixed role hierarchy or one-to-one agent/S/D assignment is required.
+
+For Preparation, delegate the current question, useful existing entrances and working Draft to a subagent.
+That subagent decides how to search, read, compare and check applicability, how far to pursue dependencies and when preparation is sufficient for the current work, applying the actual source-reading duties.
+Keep its concise judgments, direct original-material locators and remaining gaps in the [working Draft](ledger.md#working-drafts-and-fixed-findings), reusing applicable Preparation and updating only what relevant changes or concrete doubts require.
+Use basic mechanical search, exact reading or current-selection parsing, and explicit reference or relation lookup; extend a helper only for a concrete necessary operation.
+Applicability, sufficiency and research organization remain agent judgments, without a prescribed search sequence, automatic context planner, mandatory new index or schema, agent registry or additional approval/reporting structure.
+
 Record substantive findings and actual review scope in the responsible mathematical materials.
+Apply the [independent-review boundary](proof-audits.md#review-arrangements): an agent that develops a proof or inherits its substantive development context cannot independently review that proof.
 Independent parallel Tasks preferably use different line letters such as F and G; this recommendation does not reserve letters or change established identities.
 Agreement between agents is not a substitute for a proof.
 
@@ -354,7 +375,7 @@ Report the failing operation and concrete evidence, preserve successful results 
 Ordinary Claim registration does not gain a scientific approval requirement merely because its command needs execution permission.
 Batch authorized operations where practical without hiding their effects or broadening their authority.
 
-Shared-worktree Git submission follows the [serial submission interval](identity.md#submission-checks): one coordinated batch and stable index/tip at a time, while unrelated research can continue.
+Shared-worktree Git delivery follows the [serial delivery interval](identity.md#submission-checks): one coordinated batch and stable index/tip at a time, while unrelated research can continue.
 Preserve unrelated staged work and recheck affected bytes if the batch changes.
 
 ## New Record Timestamps
@@ -395,7 +416,7 @@ After an independently identified gap is repaired, independent re-review of the 
 
 Repeat a check when relevant content/input/use changes, a repaired failure needs rechecking, or prior coverage leaves a concrete uncertainty.
 Reuse adequate source inspections, computations and fixed reviews; organization alone does not trigger historical reruns or recursive proof re-audits.
-The agent chooses any necessary [source-check scope and view](literature.md#selected-source-checks); generic submission adds no automatic holding reconstruction or private-source inspection.
+The agent chooses any necessary [source-check scope and view](literature.md#selected-source-checks); delivery adds no automatic holding reconstruction or private-source inspection.
 Explicit audit requests retain their specified independent scope.
 
 Indexes are navigation, never a second authority for status, evidence, findings, permissions or progress.

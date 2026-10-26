@@ -1,6 +1,6 @@
 # {{REPOSITORY_ABBREVIATION}}: {{REPOSITORY_NAME}}
 
-To human authors: all you need is the [user manual](user-manual/user-manual.md), [用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md) or [ユーザーマニュアル](user-manual/ユーザーマニュアル.md).
+To human authors: the [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md) or [ユーザーマニュアル](user-manual/ユーザーマニュアル.md)) is all you need.
 
 This mathematical research repository uses ACME, Autonomous and Collaborative Mathematical Exploration.
 This entrance orients agents working in the existing checkout under the actual human instruction.
@@ -20,7 +20,7 @@ Distinguish conjecture, finite observation, self-reviewed proof and independentl
 | --- | --- |
 | [Framework](framework/readme.md) and [action guide](framework/agent-actions.md) | Applicable action, topic rules and optional tools |
 | [Repository identity](repository/readme.md), [identity rules](framework/rules/identity.md) and [preferences](framework/rules/preferences.md) | Human registration, operator attribution, checkout binding, collaboration and scoped choices |
-| [Tasks](mathematics/tasks/index.md), [Claims](mathematics/claims/index.md), [strategies](mathematics/strategies/index.md) | Exact authorized objectives, assessments and routes |
+| [Tasks](mathematics/tasks/index.md), [Claims](mathematics/claims/index.md), [Strategies](mathematics/strategies/index.md) | Exact authorized objectives, assessments and routes |
 | [Literature](mathematics/literature/readme.md) and [manuscripts](mathematics/manuscripts/index.md) | Actual source facts, inspected mathematics and document-local work |
 | [Script interfaces](scripts/readme.md) | Explicit mechanical operations and side effects |
 

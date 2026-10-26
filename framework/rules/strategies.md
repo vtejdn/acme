@@ -7,6 +7,10 @@ Do not wait for a separate user request or approval for these ordinary methodolo
 A `proposed` strategy is a research candidate, not a request awaiting permission; an agent may activate it when there is a justified next step within scope.
 Explicit user constraints continue to govern.
 
+Subagents exercise these methodological choices within their delegated scope under the main agent's [research coordination](workflow.md#records-review-and-handoff).
+They may request suitable parallel work through ordinary coordination messages; the main agent adjusts assignments, dependencies, resources and overlapping writes without a fixed role hierarchy or one-to-one agent/S/D assignment.
+A Preparation subagent may continue the same Draft's research when its assignment includes that work or is extended, without a replacement agent, copied Draft or handoff report.
+
 Initial priorities for strategies and substrategies are a starting allocation.
 Once exploration begins, agents may freely adjust them according to actual findings, obstacles, expected effort and available resources, without first exhausting the initially preferred route or seeking separate approval.
 An initial ranking alone is not a continuing constraint; an explicit user requirement to keep a priority or sequence fixed remains binding.

@@ -182,8 +182,8 @@ def publish(changes, moves):
     return {'rewritten':len(changes),'relocated':len(moves)}
 
 
-def _reserve_unit_moves(root, changes, moves):
-    """Advance true destination U positions before the selected move publishes."""
+def _reserve_unit_moves(root, changes, moves, key_mapping):
+    """Reserve U positions and carry bounds of explicitly mapped key corrections."""
     from ..materials import identity, discovery, documents
     selected, retiring = [], []
     for source, destination in moves.items():
@@ -194,7 +194,10 @@ def _reserve_unit_moves(root, changes, moves):
         old, new = identity.parse(old_name), identity.parse(new_name)
         retiring.append(old)
         if (identity.namespace(old), old.number) == (identity.namespace(new), new.number): continue
-        selected.append((source,new))
+        same_unit = (key_mapping.get(old.source_key) == new.source_key
+                     and (old.author, old.source_repository, old.number, old.version) ==
+                         (new.author, new.source_repository, new.number, new.version))
+        selected.append((source,new,old if same_unit else None))
     if not retiring: return
     config_path = root/'repository/config.json'
     config = r.read_json(config_path,root=root)
@@ -206,7 +209,7 @@ def _reserve_unit_moves(root, changes, moves):
     prepared = json.loads(changes[config_path]) if config_path in changes else config
     identity.material_next(prepared,config)
     reserved, positions = prepared, set()
-    for source,ident in sorted(selected,key=lambda item:(identity.namespace(item[1]),item[1].number)):
+    for source,ident,old in sorted(selected,key=lambda item:(identity.namespace(item[1]),item[1].number)):
         position = identity.namespace(ident), ident.number
         if position in positions: continue
         folder = root/'mathematics/audits/literature'/ident.source_key
@@ -218,6 +221,15 @@ def _reserve_unit_moves(root, changes, moves):
         raw = changes.get(source,source.read_bytes()).decode('utf-8-sig')
         _, header, _ = documents.author_header(moves[source].relative_to(root).as_posix(),raw)
         established = occupied.get((ident.source_key,ident.number)) == discovery.unit_origin(ident,header)
+        if old is not None:
+            _, prior_header, _ = documents.author_header(source.relative_to(root).as_posix(), source.read_text(encoding='utf-8-sig'))
+            r.require((header.get('source_repository'), header.get('source_material')) ==
+                      (prior_header.get('source_repository'), prior_header.get('source_material')),
+                      'A chosen source-key correction preserves the original unit binding.')
+            state_now = identity.material_next(reserved)
+            state_now[identity.namespace(ident)] = max(state_now.get(identity.namespace(ident), 1), state[identity.namespace(old)])
+            reserved = {**reserved, 'material_next': state_now}
+            established = True
         reserved = identity.reserve(reserved,ident,existing,established=established)
         positions.add(position)
     if reserved['material_next'] != state:
@@ -244,7 +256,7 @@ def rename(root, entries, mapping, *, files=(), moves=None, updates=None):
     chosen = bib.parse(updated)
     if updated != original.decode('utf-8-sig'): changes[root/bib.BIB] = updated.encode('utf8')
     _check_operations(root,selected,changes,relocations)
-    _reserve_unit_moves(root,changes,relocations)
+    _reserve_unit_moves(root,changes,relocations,mapping)
     result = publish(changes,relocations)
     entries.clear(); entries.update(chosen)
     return result

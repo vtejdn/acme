@@ -48,7 +48,7 @@ Nutzen Sie diese Beispiele, um mit Literatur zu arbeiten und mathematische Frage
 
 ### Gemeinsame Ziele
 
-| Beispielanweisung | Erwartete Agentenaktionen |
+| Anweisungsbeispiel | Erwartete Aktionen des Agenten |
 | --- | --- |
 | Prüfen Sie zuerst die Ansätze der Mitwirkenden und wählen Sie dann eine nützliche Vorgehensweise für meinen Task F0001. | Die einschlägigen Ansätze, wiederverwendbaren Ergebnisse und aufschlussreichen Fehlschläge lesen und die eigene Strategy innerhalb des Beteiligungsumfangs und der bestehenden Ausführungsbedingungen von F0001 wählen oder anpassen. Unterschiedliche Ansätze können doppelte Arbeit verringern; bewusste unabhängige Überprüfung, Replikation und gegenseitige Kontrolle bleiben angemessen. |
 | Richten Sie für diese Frage einen gemeinsamen Task ein und verknüpfen Sie ihn mit Task F0001. | Die gemeinsame Fragestellung, Voraussetzungen, den Geltungsbereich und die Abschlusskriterien prüfen und einen geeigneten gemeinsamen Task einrichten oder wiederverwenden; Ihren Task F0001 mit der tatsächlich übernommenen Version des gemeinsamen Vertrags verknüpfen, Ihren Beteiligungsumfang und Ihre individuellen Abschlusskriterien festlegen und die bestehenden Ausführungsbedingungen beibehalten. Die Verknüpfung allein startet keine Forschung. |
@@ -56,11 +56,11 @@ Nutzen Sie diese Beispiele, um mit Literatur zu arbeiten und mathematische Frage
 
 ### Inhalte importieren
 
-| Beispielanweisung | Erwartete Agentenaktionen |
+| Anweisungsbeispiel | Erwartete Aktionen des Agenten |
 | --- | --- |
-| Importieren Sie Task F0001 aus meinem Repository 〈Repository-Adresse〉. | Das Quellrepository und Ihre Identität als Autor prüfen, F0001 samt den notwendigen mathematischen Abhängigkeiten importieren und ausreichende vorhandene lokale Materialien wiederverwenden; benötigte Beiträge anderer Autoren durch Intake übernehmen und je nach Situation die Verknüpfung zum gemeinsamen Vertrag beibehalten oder einen vollständigen eigenständigen Vertrag ausarbeiten. Gültige Stoppbedingungen und Kontingente beibehalten; der Import allein startet keine Forschung. |
-| Importieren Sie meine Schreibeinstellungen und das Manuskript F0001 aus meinem Repository 〈Repository-Adresse〉. | Die ausgewählten, weiterhin geltenden persönlichen Schreibeinstellungen sowie Quelldateien, Abbildungen, Bibliografie und notwendige mathematische Grundlagen des Manuskripts F0001 importieren; Autorenschaft und Geltungsbereich der Einstellungen bewahren, vorhandene lokale Materialien wiederverwenden, Verweise korrigieren, erforderliche Kompilierungsprüfungen durchführen und fehlende Eingaben sowie verbleibende Probleme angeben. |
-| Übernehmen Sie aus 〈Repository-Adresse〉 Materialien zu Alices Task A0001. | Das Quellrepository und Alices Autoridentität prüfen, die für diesen Auftrag benötigten Ergebnisse, Argumente, Berechnungen und Prüfberichte zu A0001 auswählen und ausreichende vorhandene Materialien wiederverwenden; bei der Übernahme ursprüngliche Autorenschaft, genaue Quellen, die vollständige notwendige Mathematik und tatsächliche Prüfungsgrenzen erhalten und nicht verfügbare notwendige Eingaben angeben. Spätere Forschung im Rahmen Ihres eigenen Tasks und Ihrer eigenen Freigabe durchführen. |
+| Importieren Sie Task F0001 aus meinem Repository `〈Repository-Adresse〉`. | Das Quellrepository und Ihre Identität als Autor prüfen, F0001 samt den notwendigen mathematischen Abhängigkeiten importieren und ausreichende vorhandene lokale Materialien wiederverwenden; benötigte Beiträge anderer Autoren durch Intake übernehmen und je nach Situation die Verknüpfung zum gemeinsamen Vertrag beibehalten oder einen vollständigen eigenständigen Vertrag ausarbeiten. Gültige Stoppbedingungen und Kontingente beibehalten; der Import allein startet keine Forschung. |
+| Importieren Sie meine Schreibeinstellungen und das Manuskript F0001 aus meinem Repository `〈Repository-Adresse〉`. | Die ausgewählten, weiterhin geltenden persönlichen Schreibeinstellungen sowie Quelldateien, Abbildungen, Bibliografie und notwendige mathematische Grundlagen des Manuskripts F0001 importieren; Autorenschaft und Geltungsbereich der Einstellungen bewahren, vorhandene lokale Materialien wiederverwenden, Verweise korrigieren, erforderliche Kompilierungsprüfungen durchführen und fehlende Eingaben sowie verbleibende Probleme angeben. |
+| Übernehmen Sie aus `〈Repository-Adresse〉` Materialien zu Alices Task A0001. | Das Quellrepository und Alices Autoridentität prüfen, die für diesen Auftrag benötigten Ergebnisse, Argumente, Berechnungen und Prüfberichte zu A0001 auswählen und ausreichende vorhandene Materialien wiederverwenden; bei der Übernahme ursprüngliche Autorenschaft, genaue Quellen, die vollständige notwendige Mathematik und tatsächliche Prüfungsgrenzen erhalten und nicht verfügbare notwendige Eingaben angeben. Spätere Forschung im Rahmen Ihres eigenen Tasks und Ihrer eigenen Freigabe durchführen. |
 
 ### Weitere häufige Anweisungen
 

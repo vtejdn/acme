@@ -33,7 +33,7 @@ Heading anchors retain their existing rules.
 
 Example-only bindings cannot cover a new accepting decision, and an example-only independent-review label cannot establish independence.
 Missing required coverage identifies the selected finding.
-Authoring, submission, intake and onward transfer read the same declarations, without adding acquisition or inventing historical bindings.
+Authoring, explicit material reading, intake and onward transfer read the same declarations, without adding acquisition or inventing historical bindings.
 Existing physical material and acquisition evidence remain unchanged.
 
 ## Identity and author header
@@ -277,7 +277,7 @@ It selects that decision unless `--candidate` is given.
 `select` changes only the designated current selector and may adopt an exact older decision in the same family, preserving that decision's original evidence and scope.
 Apply the common [existing-decision boundary](rules/records.md#existing-and-newly-made-mathematical-decisions): the agent judges new mathematical acts from content rather than file or anchor addition.
 Create/revise optionally accept repeated --new-decision ANCHOR to check explicitly selected actual new dates and acceptance bindings; append-decision explicitly makes its supplied new decision.
-Generic publication and all submission views preserve existing decision precision and review scope without retrospective bindings, an import marker or a history mechanism.
+Preserve existing decision precision and review scope in actual material work and delivery, without retrospective bindings, an import marker or a history mechanism.
 
 C/T revision, append and select require the exact current `--expect PATH#anchor`.
 The command protects its actual material read, expectation/current-main check, modification and publication under the short write lock and rejects a stale expectation before writing.
@@ -372,9 +372,9 @@ Malformed address candidates in that namespace remain errors, while unrelated na
 Explicit whole-material discovery and full-navigation regeneration retain their complete requested scope.
 Source-assessed status remains attributed to its original author and exact acquired scope.
 A missing unacquired original is an explicit source locator; a missing previously acquired local input is an error.
-Scoped submission checks the actual working, staged or base-to-HEAD view, without local holding enrichment or private-source byte checks.
+Explicit field, reference and source readers use the actual chosen files or Git view, without local holding enrichment or private-source byte checks outside their stated scope.
 Public U display retains local holding facts separately; optional [source checks](rules/literature.md#selected-source-checks) use their actual selected declarations and view.
-See [commands](../scripts/readme.md) and [identity checks](rules/identity.md#submission-checks).
+See [commands](../scripts/readme.md) and [operation-level checks](rules/identity.md#explicit-material-checks).
 
 ## Route and feedback tables
 
@@ -426,7 +426,7 @@ Record IDs are unique canonical numbers; repository `name` and both record types
 `authors` and `source_repositories` are lists of unique canonical references; each qualified `names` row has a registered `repository` from that person's source list and a nonempty original `name`.
 A qualified source/name pair belongs to one adopted author correspondence, without duplicate rows.
 Names, URLs and foreign numbers are identification facts, not automatic correspondence decisions.
-Generic submission checks table constraints; the agent selects necessary reference maintenance under the [identity rule](rules/identity.md#explicit-material-checks), without a consumer-coverage claim from table success.
+Registration operations retain their table constraints; the agent selects necessary reference maintenance under the [identity rule](rules/identity.md#explicit-material-checks), without a consumer-coverage claim from table success.
 Explicit reference checks read the chosen view's material headers, shared source locators and decoded intake fields; accepted scheme case and JSON escape spelling do not change their reference meaning.
 
 The optional intake helper takes `--source-repository repoN` for the registered immediate sender and an explicit `--correspondence FILE` object.
@@ -551,6 +551,11 @@ An acquired R/L finding retains its original checking relationship and selected 
 When relying on inherited source review evidence, a local accepted decision cites the actual acquired finding and supported local bindings.
 A lawful same-human R revision may also contain a genuine locally performed finding, consumed at its current fixed version and anchor with its own explicit relationship and exact bindings under the [new-review and acceptance requirements](#review-bindings-for-new-accepted-decisions).
 That local finding need not appear in its acquired input's historical operation; the input account remains limited to the actual acquired source scope rather than marking every finding in the revision as acquired.
+For onward selection from that revision, the agent explicitly chooses the current source or the exact fixed Input finding whose acquired scope is retained, including an existing acquisition selector when necessary.
+The optional helper uses `origin: "current"` or `origin: {"input": {"path": "EXACT_EARLIER_R.md", "anchor": "finding"}, "acquisition": "intake/Human/existing.json"}` with acquisition optional.
+The inherited locator must occur in the actual declared Inputs, retain the same original family/header binding and name a finding covered by the chosen earlier operation.
+An exact input anchor can differ from the selected current anchor when the agent has established that retained scope; spelling and ancestry alone establish no inheritance.
+No inherited/new marker is persisted, and the original reviewed-target account remains separate from the current receiving bindings.
 The acquired input supplies no relationship, reviewed-target coverage or verdict for a new local finding.
 In a mixed R revision, a retained finding keeps its supported historical Target syntax at the explicit input's actual scope, while new or changed findings meet current declaration requirements.
 The postimage may express retained targets as separate current-format rows without changing the fixed input or inventing another review.
@@ -595,7 +600,7 @@ Only T has an optional single task-level section named Task coordination with on
 
 Every physical version of a joint family declares task-type joint; the entire family has no E or directly associated S.
 Absence denotes ordinary only within a consistently ordinary family, which retains its stable E in every lifecycle state.
-Omitted/changed declarations and either direction of same-family type conversion are invalid in publication, import and selected-view checks, including against actual receiving preimages.
+Omitted/changed declarations and either direction of same-family type conversion remain invalid under the Task revision, import and execution rules, with the actual receiving inputs preserved.
 Add no type-history register or inherited missing declaration.
 An ordinary individual T may instead declare one joint-task row whose value is an exact Markdown link to an actual same-repository joint T physical version and its contract anchor.
 The joint T has no parent; reject duplicate, self, nested, cyclic, wrong-kind, non-joint and absent-contract targets.

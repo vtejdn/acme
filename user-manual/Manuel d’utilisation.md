@@ -1,6 +1,6 @@
 # Manuel d’utilisation
 
-[Exemples de consignes](<user-instructions/Exemples de consignes.md>)
+[Exemples de consignes](<user-instructions/Exemples de consignes.md>) · [Exemple de déclaration d’utilisation de l’IA](ai-disclosure-example.md)
 
 ## ACME : Autonomous and Collaborative Mathematical Exploration
 
@@ -12,7 +12,7 @@ Il répond à deux objectifs principaux : permettre à des agents d’IA autonom
 
 Les mathématiciens humains ont la responsabilité de :
 
-1. Définir les questions de recherche, leur périmètre autorisé et les critères d’achèvement afin de lancer des [Tasks](#material-task).
+1. Définir les questions de recherche, leur périmètre autorisé et les critères d’achèvement afin de lancer des [tâches de recherche (Task)](#material-task).
 2. Orienter avec les agents le développement des [stratégies de recherche](#material-strategy).
 3. Apporter des idées, préciser l’intention mathématique, fixer les priorités scientifiques, questionner les arguments, affiner les questions et réorienter les recherches.
 4. Comprendre les résultats des recherches et explorer les frontières des connaissances mathématiques.
@@ -37,10 +37,9 @@ Le dépôt peut être hébergé sur une plateforme telle que [GitHub](git-reposi
 Voir le [schéma de collaboration au moyen d’un dépôt Git](git-repo.png).
 
 Les collaborateurs d’un même dépôt peuvent établir un [Task](#material-task) conjoint pour un objectif mathématique commun, en précisant la question commune, les hypothèses et les critères d’achèvement ;
-chaque personne définit le périmètre de sa participation dans son propre Task et organise ses démarches au moyen de [stratégies de recherche (Strategy)](#material-strategy).
-Il est utile de comparer les démarches existantes, les résultats réutilisables et les échecs instructifs des collaborateurs et, lorsque cela aide, de choisir des stratégies différentes pour réduire les répétitions du travail mathématique.
-La vérification indépendante, la réplication et les contrôles croisés peuvent légitimement suivre délibérément la même démarche.
-Choisissez l’approche de votre propre Task dans son périmètre de participation et ses conditions d’exécution existantes ; ces recommandations laissent le choix mathématique aux collaborateurs.
+chaque participant précise son périmètre de participation dans son propre Task et organise des démarches de recherche concrètes au moyen de [stratégies de recherche (Strategy)](#material-strategy).
+Il est recommandé de choisir des stratégies de recherche différentes en concertation avec les collaborateurs, afin de limiter les efforts mathématiques redondants et d’utiliser plus efficacement les ressources de calcul pour l’IA.
+Pour une vérification indépendante, une réplication ou des contrôles croisés, il est également possible d’adopter délibérément la même démarche de recherche.
 
 Différents mathématiciens ou équipes peuvent aussi collaborer entre dépôts en recevant des documents sélectionnés par [Intake](#notion-intake) ; voir le [schéma de collaboration entre dépôts](collaboration.jpg).
 
@@ -93,6 +92,8 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 4. (Facultatif, si vous utilisez un [dépôt Git](git-repository.md#notion-git-repository)) Choisissez un nom court et reconnaissable pour votre dépôt de recherche et demandez à un agent de configurer son identité de dépôt.
 5. (Facultatif) Lorsque cela est approprié, nous vous recommandons vivement de partager vos travaux de recherche dans un dépôt public.
 
+- Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
+
 ### Rejoindre un [dépôt Git](git-repository.md#notion-git-repository) existant comme collaborateur
 
 1. Connectez-vous à la plateforme d’hébergement du dépôt et acceptez l’invitation de votre coauteur.
@@ -102,6 +103,8 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 4. Si vous n’êtes pas encore enregistré dans le dépôt de recherche, choisissez une clé d’auteur différente de celles de vos collaborateurs et demandez à un agent de vous enregistrer.
    Demandez à l’agent d’associer cette copie de travail à votre clé d’auteur dans ACME.
 5. Configurez le nom et l’adresse électronique utilisés pour vos [commits](#notion-commit) [Git](git-repository.md#notion-git), ou demandez à un agent de le faire.
+
+- Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
 
 ## Premiers pas
 
@@ -115,11 +118,13 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 3. Pour un travail autonome prolongé, précisez ou adoptez des limites d’exécution et des conditions d’arrêt.
    Voir les [exemples de missions de recherche](<user-instructions/Exemples de consignes.md#start-or-continue-research>).
 4. Autorisez les actions nécessaires des outils lorsque cela vous est demandé et répondez aux questions posées par les agents.
-5. Réfléchissez aux documents mathématiques fournis par les agents et comprenez-les ; aucun agent ne peut le faire à votre place.
+5. Réfléchissez aux documents mathématiques produits par les agents et comprenez-les ; aucun agent ne peut le faire à votre place.
    Discutez des mathématiques avec les agents pour approfondir et accélérer votre compréhension.
    Demandez des références pertinentes et questionnez de manière socratique les sources des arguments et des idées, en particulier lorsqu’un argument s’appuie sur les connaissances du modèle sans source explicite.
 6. (Facultatif, si vous utilisez [Git](git-repository.md#notion-git)) Enregistrez les modifications que vous souhaitez conserver dans des [commits](#notion-commit) ; au besoin, annulez les modifications locales ou utilisez un revert pour annuler des commits.
-   Lorsque vous collaborez avec d’autres mathématiciens, demandez aux agents de gérer les [pulls](#notion-pull), les [fusions](#notion-merge) et de vous aider à résoudre les conflits.
+   Lorsque vous collaborez avec d’autres mathématiciens, demandez aux agents de gérer les [pushs](#notion-push), les [pulls](#notion-pull), les [fusions](#notion-merge) et de vous aider à résoudre les conflits.
+
+- Voir les [exemples de consignes de recherche](<user-instructions/Exemples de consignes.md#research-instructions>).
 
 ### Points d’attention
 
@@ -156,7 +161,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.1.0.
+La version actuelle du cadre est 0.2.0.
 
 Au début du travail, l’agent vérifie au plus une fois par jour UTC si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
 Il indique alors la version installée et la version disponible et vous demande s’il faut organiser une mise à niveau ; le travail en cours peut continuer pendant votre décision.

@@ -137,6 +137,12 @@ Substantial Claim statements and arguments go to C, formal project reviews to R,
 A retired D address may be reused without inheriting earlier scope or authority; preserve continuing work and needed programs/data.
 Already fixed material never becomes freely editable by moving it into drafts.
 
+For delegated [Preparation](workflow.md#records-review-and-handoff), place concise ordinary prose after the Draft's identity header and before its research body, explaining useful results or methods, decisive conditions and limits, and actual remaining gaps.
+Put direct original-material locators beside the relevant judgments, using actual fixed material versions and anchors or source editions with theorem, section or page references as appropriate.
+Link adequate detailed materials and retain necessary new analysis in the Draft body or another responsible home, with the existing source and content-retention duties intact.
+Reuse still-applicable Preparation and update only what relevant changes or concrete doubts require; no rerun is mandatory each round.
+The same subagent may continue research in that Draft within its initial or extended assignment, without copying the Draft or creating a handoff report merely for the assignment change.
+
 Fix valuable failed explorations in ledger when they expose an obstruction, change the route or prevent repeated work, even while the Task remains unfinished.
 Preserve the attempted assertion, hypotheses/range, decisive evidence, exact failure or uncertainty, what remains possible and a useful next/reopening condition.
 Explain links to existing Tasks/routes, exact Claims/proofs, methods and computations where they matter; add concise return links in their responsible sections.

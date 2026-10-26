@@ -264,6 +264,7 @@ def main(argv=None):
     commands = parser.add_subparsers(dest='command', required=True)
     p = commands.add_parser('init')
     p.add_argument('--username', required=True); p.add_argument('--repository', required=True)
+    p.add_argument('--display-name', required=True, help='Independently supplied name for License attribution, not a path key.')
     p.add_argument('--url')
     p.add_argument('--git-name'); p.add_argument('--git-email'); p.add_argument('--github-account')
     p = commands.add_parser('source-add')
@@ -291,7 +292,8 @@ def main(argv=None):
             result = version.record_update_notification(args.root, args.version)
         elif args.command == 'init':
             repo = Repository.initialize(args.root, args.username, args.repository, args.url,
-                git_name=args.git_name, git_email=args.git_email, github_account=args.github_account)
+                git_name=args.git_name, git_email=args.git_email, github_account=args.github_account,
+                display_name=args.display_name)
             result = repo.config
         else:
             repo = Repository(args.root)

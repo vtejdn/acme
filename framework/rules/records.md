@@ -87,7 +87,7 @@ Shared registration and derived navigation retain their own maintenance duties.
 The agent judges from actual content whether preparation preserves an existing decision or makes a new one.
 Preserve genuine decisions' actual assessment/lifecycle, date precision, adopted evidence and review limits when applicable.
 A new file, anchor, physical version or absent Git preimage alone establishes no newly made mathematical decision or acceptance.
-Generic publication and WORKTREE, INDEX and BASE-to-HEAD checks validate field syntax, identities, exact references and selected-view availability without inferring new dates or retrospective review bindings from differences.
+Operation-local readers validate their chosen field syntax, identities, exact references and availability in the actual view, without inferring new dates or retrospective review bindings from differences.
 No copied-decision marker, import category, historical classifier, waiver, permanent mapping or preservation receipt is needed.
 A genuinely new decision uses its actual UTC minute and applicable present acceptance/review obligations, even when its mathematics is older.
 The optional explicit new-decision checks validate only the agent's chosen actual new scope; preserving an unsupported old assertion does not make it accepted.
@@ -297,7 +297,6 @@ python scripts/material.py revise mathematics/claims/Author_C_F0001_v1.md --expe
 python scripts/material.py append-decision mathematics/tasks/Author_T_F0001_v1.md --expect mathematics/tasks/Author_T_F0001_v1.md#decision-initial --file next-decision.md
 python scripts/material.py select mathematics/claims/Author_C_F0001_v1.md --expect mathematics/claims/Author_C_F0001_v1.md#decision-initial --decision mathematics/claims/Author_C_F0001_v1.md#decision-reviewed
 python scripts/render-research-navigation.py
-python scripts/check-research-submission.py --working-tree
 ```
 
 The allocator returns the actual next unissued family address under the [allocation state](identity.md#allocation-and-concurrency); D keeps its separate reusable-address rule.

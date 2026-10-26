@@ -388,8 +388,9 @@ Use the same output location for editor builds and command-line scripts.
 Do not add `-outdir=build`, an equivalent output-directory override or a second synchronized reading copy unless the user explicitly authorizes an exception.
 A standard command from that directory is `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex`.
 
-Track `main.tex`, included TeX sections, `.bib` inputs, required source `.sty`/`.cls` files, editable figure sources and build configuration or scripts.
+Track `main.tex`, included TeX sections, `.bib` inputs, required source `.sty`/`.cls` files, editable figure sources and build configuration or scripts in appropriate source homes outside ignored `build/` and `figure/` trees.
 Use relative paths and include or document every required input; avoid dependencies on absolute paths on one machine.
+Give usable instructions for obtaining or regenerating required local images, and state an unavailable required input at the document home rather than claiming a successful reproducible build.
 If documents share source files, keep those dependencies explicit and reproducible.
 This convention applies to independently compiled LaTeX documents, including summaries and TeX supplements.
 Page renders and other inspection artifacts may remain in an ignored `build/` subdirectory without making it a second TeX output location.
@@ -401,12 +402,12 @@ Before handing off a built manuscript, check compilation errors, unresolved cita
 Record the result and source revision in the document README.
 Fix substantive changes in the research records before updating their manuscript presentation; resolve typesetting issues in the manuscript sources.
 
-<a id="computational-supplements-and-independent-verifiers"></a>
 ### Computational Supplements and Independent Verifiers
 
 A manuscript that depends on computational certificates carries in its supplement an independent, thoroughly commented, human-readable standalone verifier written for peer review.
 The verifier re-derives the certificate conclusions from the paper's own statements and is self-contained.
-Use standard-library or NumPy-class public dependencies only, with no repository-internal paths or internal IDs.
+The agent selects necessary publicly obtainable dependencies for mathematical suitability, reproducibility and peer-review use cost under the [computation-tool responsibility](computations.md#computation-tool-selection), without a package-category restriction.
+Keep actual inputs, usable commands and relevant dependency information at the supplement's responsible home, with no repository-internal paths or internal IDs.
 The verifier is part of the manuscript and is maintained and submitted with it.
 
 The supplement verifier re-implements the argument rather than copying bytes.
@@ -421,17 +422,19 @@ Certificate data, the machine-readable form of the paper's tables, travels with 
 Document PDFs and TeX compilation products stay local by default.
 The responsible author may explicitly choose which manuscript or presentation PDFs are eligible for Git tracking in their applicable author-wide writing profile or more specific document choices under the [preference hierarchy](preferences.md#scope-and-adoption).
 That choice covers only the stated author, documents and PDF paths; non-PDF compilation products remain local.
-Keep editable figure sources or other required inputs and document how local PDF figures are regenerated.
+Keep necessary editable figure sources, generation programs and reproducibility inputs in appropriate tracked source homes outside ignored workspace trees, and document how required local images are obtained or regenerated.
 
 The root [Git ignore rules](../../.gitignore) provide generic defaults for manuscript, presentation and still-applicable talk collections, including PDFs, standard auxiliary extensions and build/cache directories.
+Both `build/` and `figure/` directory trees at every document depth in `mathematics/manuscripts/` and `mathematics/presentations/` remain Git-ignored, including image resources regardless of extension.
 For an actual author PDF choice, prepare a small document-local `.gitignore` containing only the needed negated PDF path.
+That final-document PDF exception must not reopen either workspace tree.
 Do not change generic defaults into an all-author exception or force-add an output without an applicable author choice.
 Read the actual responsible author and their selected preference before preparing files for delivery; extension and conventional directory alone do not decide permission.
 Git ignore rules do not remove files already tracked, so inspect the selected filenames and correct accidental tracking without deleting needed local files.
 
 Standard TeX outputs alongside the source are covered by the defaults.
 Keep nonstandard inspection artifacts in an ignored `build/` subdirectory or extend scoped ignores before generating them elsewhere.
-Another author-designated document home follows the same duty to prepare its applicable ignores before generation.
+Another author-designated document home follows the same duty to exclude its `build/` and `figure/` trees and prepare its other applicable ignores before generation.
 Personal PDF choices and document-local exceptions are not copied by a clean framework export.
 The private literature/source-store exclusions remain unchanged and no author-document choice permits source-store publication.
 Local compilation, PDF eligibility and source versioning do not authorize commit, push, journal submission or publication.

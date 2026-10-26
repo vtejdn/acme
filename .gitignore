@@ -16,8 +16,9 @@ __pycache__/
 /mathematics/literature/pdf
 /mathematics/literature/**/*.pdf
 
-# Manuscript build outputs stay local by default; author PDF choices are document-local.
+# Manuscript build and figure workspaces stay local; author PDF choices are document-local.
 /mathematics/manuscripts/**/build/
+/mathematics/manuscripts/**/figure/
 /mathematics/manuscripts/**/output/
 /mathematics/manuscripts/**/_minted*/
 /mathematics/manuscripts/**/*.pdf
@@ -55,8 +56,9 @@ __pycache__/
 /mathematics/manuscripts/**/*.nls
 /mathematics/manuscripts/**/*.nlg
 
-# Presentation build outputs stay local by default.
+# Presentation build and figure workspaces stay local.
 /mathematics/presentations/**/build/
+/mathematics/presentations/**/figure/
 /mathematics/presentations/**/output/
 /mathematics/presentations/**/_minted*/
 /mathematics/presentations/**/*.pdf

@@ -1,6 +1,6 @@
 # Benutzerhandbuch
 
-[Anweisungsbeispiele](user-instructions/Anweisungsbeispiele.md)
+[Anweisungsbeispiele](user-instructions/Anweisungsbeispiele.md) · [Beispiel einer Erklärung zur KI-Unterstützung](ai-disclosure-example.md)
 
 ## ACME: Autonomous and Collaborative Mathematical Exploration
 
@@ -12,7 +12,7 @@ Es verfolgt zwei Hauptziele: autonome KI-Agenten unter der Anleitung menschliche
 
 Menschliche Mathematiker sind dafür verantwortlich:
 
-1. Forschungsfragen, ihren freigegebenen Umfang und Abschlusskriterien festzulegen, um [Tasks](#material-task) anzustoßen.
+1. Forschungsfragen, ihren freigegebenen Umfang und Abschlusskriterien festzulegen, um [Forschungsaufgaben (Task)](#material-task) anzustoßen.
 2. Gemeinsam mit Agenten die Entwicklung von [Forschungsstrategien](#material-strategy) zu steuern.
 3. Ideen beizutragen, mathematische Absichten zu präzisieren, wissenschaftliche Prioritäten zu setzen, Argumente zu hinterfragen, Fragen zu verfeinern und Untersuchungen neu auszurichten.
 4. Die Forschungsergebnisse zu verstehen und die Grenzen des mathematischen Wissens zu erkunden.
@@ -37,10 +37,9 @@ Das Repository kann auf einer Plattform wie [GitHub](git-repository.md#notion-gi
 Siehe die [Abbildung zur Zusammenarbeit über ein Git-Repository](git-repo.png).
 
 Mitwirkende im selben Repository können für ein gemeinsames mathematisches Ziel einen gemeinsamen [Task](#material-task) einrichten, der die gemeinsame Fragestellung, Annahmen und Abschlusskriterien festlegt;
-jede Person bestimmt den Umfang ihrer Beteiligung in ihrem eigenen Task und organisiert ihre Forschungsansätze in [Strategien (Strategy)](#material-strategy).
-Es empfiehlt sich, die vorhandenen Ansätze, wiederverwendbaren Ergebnisse und aufschlussreichen Fehlschläge der Mitwirkenden zu vergleichen und, wo sinnvoll, unterschiedliche Strategien zu wählen, um doppelte mathematische Arbeit zu verringern.
-Für unabhängige Überprüfung, Replikation und gegenseitige Kontrolle kann es angemessen sein, bewusst denselben Ansatz zu verfolgen.
-Wählen Sie die Vorgehensweise für Ihren eigenen Task innerhalb seines Beteiligungsumfangs und der bestehenden Ausführungsbedingungen; diese Empfehlungen überlassen die mathematische Entscheidung den Mitwirkenden.
+jede teilnehmende Person präzisiert den Umfang ihrer Beteiligung im eigenen Task und organisiert konkrete Forschungsansätze mithilfe von [Strategien (Strategy)](#material-strategy).
+Es empfiehlt sich, in Absprache mit den Mitwirkenden unterschiedliche Forschungsstrategien zu wählen, um doppelte mathematische Arbeit zu verringern und KI-Rechenressourcen effizienter zu nutzen.
+Für unabhängige Überprüfung, Replikation oder gegenseitige Kontrolle kann bewusst derselbe Forschungsansatz gewählt werden.
 
 Verschiedene Mathematiker oder Teams können auch über Repository-Grenzen hinweg zusammenarbeiten, indem sie ausgewählte Materialien durch [Intake](#notion-intake) übernehmen; siehe die [Abbildung zur repositoryübergreifenden Zusammenarbeit](collaboration.jpg).
 
@@ -93,6 +92,8 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
 4. (Optional, bei Verwendung eines [Git-Repositories](git-repository.md#notion-git-repository)) Wählen Sie einen kurzen, leicht erkennbaren Namen für Ihr Forschungs-Repository und bitten Sie einen Agenten, dessen Repository-Identität einzurichten.
 5. (Optional) Wenn es angemessen ist, empfehlen wir nachdrücklich, Ihre Forschungsaufzeichnungen über ein öffentliches Repository zu teilen.
 
+- Siehe die [Anweisungsbeispiele zur Einrichtung](user-instructions/Anweisungsbeispiele.md#setup).
+
 ### Einem bestehenden [Git-Repository](git-repository.md#notion-git-repository) als Mitwirkender beitreten
 
 1. Melden Sie sich bei der Repository-Hosting-Plattform an und nehmen Sie die Einladung Ihres Mitautors an.
@@ -102,6 +103,8 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
 4. Wenn Sie im Forschungs-Repository noch nicht registriert sind, wählen Sie einen Autorenschlüssel, der sich von denen Ihrer Mitwirkenden unterscheidet, und bitten Sie einen Agenten, Sie zu registrieren.
    Bitten Sie den Agenten, diese Arbeitskopie in ACME mit Ihrem Autorenschlüssel zu verknüpfen.
 5. Konfigurieren Sie den Namen und die E-Mail-Adresse für Ihre [Git](git-repository.md#notion-git)-[Commits](#notion-commit) oder bitten Sie einen Agenten darum.
+
+- Siehe die [Anweisungsbeispiele zur Einrichtung](user-instructions/Anweisungsbeispiele.md#setup).
 
 ## Erste Schritte
 
@@ -115,11 +118,13 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
 3. Legen Sie für längerfristige autonome Arbeit Ausführungsgrenzen und Abbruchbedingungen fest oder übernehmen Sie bestehende.
    Siehe die [Beispiele für Forschungsaufträge](user-instructions/Anweisungsbeispiele.md#start-or-continue-research).
 4. Genehmigen Sie notwendige Werkzeugaktionen, wenn Sie dazu aufgefordert werden, und beantworten Sie Fragen der Agenten.
-5. Durchdenken und verstehen Sie die mathematischen Materialien, die Agenten Ihnen vorlegen; kein Agent kann Ihnen dies abnehmen.
+5. Durchdenken und verstehen Sie die von Agenten erarbeiteten mathematischen Materialien; kein Agent kann Ihnen dies abnehmen.
    Besprechen Sie die Mathematik mit Agenten, um Ihr Verständnis zu vertiefen und schneller voranzukommen.
    Bitten Sie um einschlägige Literaturangaben und hinterfragen Sie die Quellen von Argumenten und Ideen im sokratischen Gespräch, insbesondere wenn ein Argument ohne ausdrückliche Quellenbelege auf Modellwissen beruht.
 6. (Optional, bei Verwendung von [Git](git-repository.md#notion-git)) Halten Sie Änderungen, die Sie bewahren möchten, in einem [Commit](#notion-commit) fest; machen Sie bei Bedarf lokale Bearbeitungen rückgängig oder setzen Sie Commits durch einen Revert zurück.
-   Wenn Sie mit anderen Mathematikern zusammenarbeiten, bitten Sie Agenten, [Pulls](#notion-pull) und [Merges](#notion-merge) durchzuführen und beim Lösen von Konflikten zu helfen.
+   Wenn Sie mit anderen Mathematikern zusammenarbeiten, bitten Sie Agenten, [Pushes](#notion-push), [Pulls](#notion-pull) und [Merges](#notion-merge) durchzuführen und beim Lösen von Konflikten zu helfen.
+
+- Siehe die [Anweisungsbeispiele zur Forschung](user-instructions/Anweisungsbeispiele.md#research-instructions).
 
 ### Hinweise
 
@@ -156,7 +161,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.1.0.
+Die aktuelle Version des Rahmenwerks ist 0.2.0.
 
 Zu Arbeitsbeginn prüft der Agent höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.
 Er nennt dann die installierte und die verfügbare Version und fragt, ob ein Upgrade vorbereitet werden soll; Ihre laufende Arbeit kann während Ihrer Entscheidung fortgesetzt werden.

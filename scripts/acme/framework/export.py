@@ -246,7 +246,7 @@ def restore_binding_config(path, before):
             command(path.parent, 'git', 'config', '--file', str(path), '--add', key, value)
 
 
-def load_plan(source, destination, repository, repository_name, repository_abbreviation, author=None):
+def load_plan(source, destination, repository, repository_name, repository_abbreviation, author=None, display_name=None):
     repository = identity.key(repository)
     repository_name = display_value(repository_name, 'Repository display name')
     repository_abbreviation = display_value(repository_abbreviation, 'Repository abbreviation')
@@ -260,6 +260,10 @@ def load_plan(source, destination, repository, repository_name, repository_abbre
     actual = command(source, 'git', 'rev-parse', '--show-toplevel')
     r.require(Path(actual).resolve() == source, 'Export identity must belong to the exact source checkout.')
     actor = identity.key(author) if author is not None else None
+    r.require(actor is not None or display_name is None, 'A display name needs an explicitly selected author key.')
+    if actor is not None:
+        identity.attribution_name(display_name)
+        identity.validate_registry_value({'people': [{'id': actor, 'display_name': display_name}]})
     target_kind = destination_kind(destination, actor)
     manifest_bytes = source_file(source, MANIFEST).read_bytes()
     manifest = json.loads(manifest_bytes)
@@ -316,7 +320,7 @@ def load_plan(source, destination, repository, repository_name, repository_abbre
     r.require(data[MANIFEST] == manifest_bytes, 'Export manifest changed while planning.')
     return {'source': source, 'destination': destination, 'repository': repository,
             'repository_name': repository_name, 'repository_abbreviation': repository_abbreviation,
-            'actor': actor, 'destination_kind': target_kind,
+            'actor': actor, 'display_name': display_name, 'destination_kind': target_kind,
             'manifest': manifest, 'data': data,
             'copies': copies, 'templates': templates}
 
@@ -334,7 +338,7 @@ def initialize(stage, plan):
         'layout_format': 2, 'repository_url': None, 'material_next': {},
         'framework_update_check': True}))
     people = [] if plan['actor'] is None else [{
-        'id': plan['actor'], 'display_name': plan['actor'],
+        'id': plan['actor'], 'display_name': plan['display_name'],
         'registered_by': plan['actor'], 'git_identities': [], 'github_accounts': []}]
     write(stage/'repository/people.json', r.encoded({'people': people}))
     write(stage/'repository/repositories.json', r.encoded({'next': 1, 'repositories': []}))
@@ -359,7 +363,7 @@ if errors: raise ValueError('\\n'.join(errors))
 print('Checked portable output links and framework manifest.')
 ''')
     for script in ('research.py', 'material.py', 'execution.py', 'render-research-navigation.py',
-                   'check-research-submission.py', 'check-literature-storage.py', 'export-framework.py'):
+                   'check-literature-storage.py', 'export-framework.py'):
         command(stage, sys.executable, '-B', 'scripts/'+script, '--help')
     r.require(not (stage / 'repository/records').exists() and not (stage / 'repository/versions').exists(),
               'Export recreated retired C/T storage.')
@@ -383,8 +387,8 @@ def cleanup(stage, parent, token):
 
 
 def export(source, destination, *, repository, repository_name, repository_abbreviation,
-           author=None, dry_run=False):
-    plan = load_plan(source, destination, repository, repository_name, repository_abbreviation, author)
+           author=None, display_name=None, dry_run=False):
+    plan = load_plan(source, destination, repository, repository_name, repository_abbreviation, author, display_name)
     result = {'destination': str(plan['destination']), 'repository': plan['repository'],
               'actor': plan['actor'], 'framework_version': plan['manifest']['framework_version'],
               'copied_files': len(plan['copies']), 'templates': len(plan['templates']),
@@ -428,13 +432,14 @@ def main():
     parser.add_argument('--repository-abbreviation', required=True,
                         help='Explicit short human-facing repository abbreviation for the exported README.')
     parser.add_argument('--author', help='Explicit initial human to register and bind; omission leaves an empty, unbound registry.')
+    parser.add_argument('--display-name', help='Independent License attribution name; required with --author.')
     parser.add_argument('--dry-run', action='store_true', help='Check source, identity and destination without creating files.')
     args = parser.parse_args()
     try:
         print(json.dumps(export(args.source, args.destination, repository=args.repository,
                                 repository_name=args.repository_name,
                                 repository_abbreviation=args.repository_abbreviation,
-                                author=args.author, dry_run=args.dry_run),
+                                author=args.author, display_name=args.display_name, dry_run=args.dry_run),
                          ensure_ascii=False, indent=2))
     except (OSError, ValueError, KeyError, TypeError) as error:
         print('Framework export refused: ' + str(error), file=sys.stderr)

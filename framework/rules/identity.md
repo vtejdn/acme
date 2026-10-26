@@ -18,6 +18,16 @@ The [daily metadata read](../versioning.md#official-version-check) retains its b
 
 ## Stable keys and local attribution
 
+Before first human setup, ask together for the author-selected local path key and the independently selected License attribution name, explaining both purposes.
+Reuse values that the author explicitly supplied for this setup; ask for whichever value remains missing before registering, binding or adding that human's License credit.
+For example, Alice-Smith is an ASCII path key used in local authored-material paths such as SourceKey/Alice-Smith_U001_v1.md, while Alice Smith is the selected License name stored in display_name.
+Keys use the existing letters, digits and internal-hyphen grammar without spaces or underscores, and retain collision and reserved-name checks.
+For an invalid key, explain its concrete restriction and ask the author to choose another; never sanitize, transliterate or infer a replacement.
+The attribution name is nonempty single-line text, may contain spaces and Unicode and is independent of Git/GitHub identities.
+Use the existing id and display_name fields, preserving the exact supplied name and the permanent key.
+Complete the receiving License credit by a bounded edit using that name, preserving the existing license text and attribution notices; no License generator or extra signature field is required.
+An authorless export is valid preparation; collect both values at first actual registration, without renaming existing identities or relicensing existing repositories.
+
 repository/people.json registers permanent human IDs, display names, actual registering humans, accepted Git name/email pairs and associated GitHub logins.
 New human/repository registrations contain no administrative registration timestamp; retained obsolete values are removed from maintained metadata rather than converted or kept as compatibility facts.
 Human/repository keys use letters, digits and internal hyphens; underscores separate identifier fields.
@@ -32,6 +42,9 @@ It removes the legacy shared actor after installing that explicit binding.
 A new clone, a newly added worktree or a deliberately changed operator needs identity-bind.
 Unbound, unknown and automatically copied bindings refuse research writes.
 Ordinary folder use requires no Git installation or initialization; determine its operator from the currently explicitly identified human and existing human registration.
+Without Git, the default supported use is one local human working personally on local files, without local multi-author collaboration, checkout arbitration or signature/history checks.
+An authorless folder remains preparation until its actual first human is registered; the personal folder then uses that one registered human without inheriting an enclosing checkout's Git binding.
+Retain external originals' actual attribution, necessary provenance and the same-human or separately authored correction boundary when receiving them.
 Git binding, signature and delivery requirements apply to Git workspaces, and Git-dependent tools retain their actual prerequisites.
 Worktree scope uses Git's administration identity, so moving a working directory does not by itself change its operator.
 The global Git configuration is not changed.
@@ -167,7 +180,8 @@ Waiting is cancellable, uses monotonic time and emits one concise notice when co
 Persistent lock-file existence is normal.
 Re-read shared state after acquiring the lock; do not hold it across network retrieval, agent work, broad tests or long computation.
 
-## Submission checks
+<a id="submission-checks"></a>
+## Git delivery
 
 Research proceeds in parallel; Git delivery in a shared worktree proceeds serially.
 One responsible agent coordinates each intended batch, index and commit.
@@ -179,6 +193,7 @@ Ordinary coordination does not establish a new lock, permanent role or research-
 
 Plain commit/push requests perform Git delivery.
 Inspect intended scope, local actor, effective author/committer, actual outgoing commit identities, branch relationship and the intended tree.
+Use native Git status, diffs, the index and commit information as useful aids rather than a compulsory command sequence or framework delivery gate.
 Resolve concrete omissions, sensitive files or identity conflicts at their affected scope.
 A draft or unfinished result may be committed with its truthful status.
 Do not automatically run framework regressions, full material scans, recursive proof review or PDF-store hashing.
@@ -195,24 +210,24 @@ Resolve divergence and inspect the affected delivery again if the local or remot
 Commit/push requests do not authorize history rewriting or force-push; any rewrite requires explicit human authority.
 A supplied login is not authentication, and an email or remote URL does not establish the logged-in person.
 
+Let Git perform file merging, then inspect the actual affected result and resolve conflicts under the [maintenance rule](#collaboration-maintenance-and-conflicts).
+Git's lack of a text conflict establishes neither mathematical agreement, source applicability nor permission to edit another human's body.
+Inspect earlier versions only when the actual question needs them; no ordinary commit or merge requires every parent to contain a material, a BASE selector, preimage mapping or framework pass token.
+
 ### Explicit material checks
 
-`python scripts/check-research-submission.py` explicitly checks INDEX against its parent(s).
-`--working-tree` selects preparation bytes only; `--commits BASE` checks the final BASE-to-HEAD net change rather than replaying intermediate contents.
-`--push --github-account VERIFIED_LOGIN` adds an outgoing identity context to that explicit check; it performs no network push and does not authenticate the supplied login.
-An unstaged fix cannot repair a checked index or commit.
-
-These optional checks expose the requested view's bytes/differences, explicit identity/field/reference errors and declared review-binding consistency at the affected scope.
+Use useful operation-local material, field, source and reference readers for the explicitly chosen question and actual working files or Git view.
+These tools report their stated structural facts, without an aggregate submission verdict or automatic contribution/receiving-history reconstruction.
 Address discovery validates the requested kind; creation validates its actual author/origin, kind and line sequence, and mutation validates the selected family and its versions/direct inputs.
 Selected Strategy checks include actual ancestors, and an explicitly requested current-E check includes its selected Task decision.
 Candidate enumeration does not validate unrelated namespaces or silently drop malformed candidates that could occupy the selected namespace.
 Explicit full discovery or navigation regeneration retains its declared complete scope.
-An initial index checks its staged items, and a merge's actual differences are available against its parents.
-They do not infer same mathematics, relocations, review transfer or source identity.
-The agent judges fixed-version and actual-review obligations from content under the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities).
+The agent judges actual receiving versus local revision, chosen originals, contributors and author permissions from the real materials and instruction under the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities).
+Authored body changes, including layout maintenance, retain the same-human and separately authored correction requirements in the actual editing and receiving work.
+Keep fixed-version, source-preservation and actual-review duties at their responsible interfaces, reusing necessary existing evidence rather than replaying them as a commit audit.
 An unstaged repair cannot cure a defect in another selected view.
 
-Changes to the canonical external repository or author table check affected rows, allocation constraints and necessary table-local counterparts, including both association entrances, in the selected postimage.
+Registration operations and agent-prepared external-table maintenance preserve affected rows, allocation constraints and necessary table-local counterparts, including both association entrances.
 Before removing a registration or changing adopted source/author correspondence, the agent identifies necessary actual consumers and prepares their coherent repair from the provenance and current use.
 Ordinary searches may locate candidates, but neither candidate discovery nor a table-check PASS establishes complete consumer coverage.
 A registration change alone does not select unchanged material headers, source links, intake records or native configurations for checking.
@@ -221,8 +236,8 @@ These selected checks report the owning path, field and inconsistent number with
 
 Apply the [common maintenance boundary](records.md#substantive-material-retention): valid J/E/intake maintenance, coherent moves and authorized reproducible-output cleanup add no generic changed-file reminder.
 Concrete identity, reference, native-format, explicit-decision and review-binding errors remain observable; structural success supplies no mathematical review.
-Generic submission checks registry prose and source links at their ordinary public-reference/path scope, without a holding, edition, availability or private-byte verdict.
-Generic submission checks changed files' outgoing links; it does not discover unchanged incoming consumers or certify their coverage.
+Choose ordinary public-reference and path checks for needed registry prose or source links, without treating them as a holding, edition, availability or private-byte verdict.
+An outgoing-link check does not discover unchanged incoming consumers or certify their coverage.
 The agent identifies necessary incoming consumers through scoped searches and reading, then selects their actual files and target locators for checking in the chosen view.
 Use the shared link and locator readers on that explicit scope, requiring exactly one occurrence for each selected Markdown anchor, including Strategy parents and navigation targets.
 Registry outgoing checks may stay within changed blocks; an explicit incoming check uses the selected consumer's complete text and designated targets.

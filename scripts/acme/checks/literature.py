@@ -232,15 +232,6 @@ def source_catalog(registry_text, keys=None, *, artifact_names=None, holding_key
     return {'artifacts': artifacts, 'holdings': holdings, 'resources':resources}
 
 
-def preparatory_notices(root, registry_text):
-    """Names only: scoped submission does not hash unrelated literature."""
-    expected, _ = registered_pdfs(registry_text)
-    mount, _ = paths.pdf_storage(Path(root))
-    return [f'Unregistered local PDF: {item.name}; preparatory storage is allowed without registration or source inspection.'
-            for item in mount.iterdir() if item.is_file() and not paths.is_reparse(item)
-            and item.suffix.lower() == '.pdf' and item.name not in expected] if mount.is_dir() else []
-
-
 def holding_status(root, registry_text, key, selected=(), keys=None, *, catalog=None):
     """Display an explicit selection/holding and file presence without inspecting bytes."""
     catalog = catalog or source_catalog(registry_text, keys, artifact_names=selected or None, holding_keys=(key,))

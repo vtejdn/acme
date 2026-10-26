@@ -78,9 +78,13 @@ def main(argv=None):
     command.add_argument('--view', default='WORKTREE', help='Actual WORKTREE, INDEX or fixed commit postimage')
     args = parser.parse_args(argv)
     try:
-        from ..checks.submission import Tree
-        with Tree(args.root, args.view) as tree:
-            print(json.dumps(check(tree.research_view(), args.task), ensure_ascii=False, indent=2))
+        if args.view == 'WORKTREE':
+            result = check(r.Repository(args.root), args.task)
+        else:
+            from ..core.git_views import Tree
+            with Tree(args.root, args.view) as tree:
+                result = check(tree.research_view(), args.task)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     except (ValueError, OSError, KeyError, TypeError) as error:
         parser.exit(2, 'execution: ' + str(error) + '\n')

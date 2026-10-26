@@ -1,6 +1,6 @@
 # User Manual
 
-[Instruction examples](user-instructions/user-instructions.md)
+[Instruction examples](user-instructions/user-instructions.md) · [Example disclosure of AI assistance](ai-disclosure-example.md)
 
 ## ACME: Autonomous and Collaborative Mathematical Exploration
 
@@ -36,10 +36,10 @@ Mathematicians can collaborate through a shared [Git repository](git-repository.
 The repository can be hosted on a platform such as [GitHub](git-repository.md#notion-github), allowing collaborators to work on their own devices and synchronize changes.
 See the [Git repository collaboration diagram](git-repo.png).
 
-Collaborators in the same repository can establish a joint [Task](#material-task) for a common mathematical goal, specifying the shared question, hypotheses and completion criteria; each participant defines their scope of participation through their own Task and organizes research routes through [Strategies](#material-strategy).
-It is useful to compare collaborators' existing routes, reusable results and informative failures and, where helpful, choose different strategies to reduce repeated mathematical work.
-Deliberate independent verification, replication and cross-checking can appropriately follow the same route.
-Choose the approach for your own Task within its participation scope and existing execution conditions; these recommendations leave the mathematical choice to the collaborators.
+Collaborators in the same repository can establish a joint [Task](#material-task) for a common mathematical goal, specifying the shared question, hypotheses and completion criteria;
+each participant clarifies their scope of participation in their own Task and organizes specific research routes through [Strategies](#material-strategy).
+We recommend choosing different research strategies in consultation with your collaborators to reduce repeated mathematical work and make more effective use of AI computational resources.
+For independent verification, replication or cross-checking, collaborators may also deliberately adopt the same research approach.
 
 Different mathematicians or teams can also collaborate across repositories by receiving selected materials through [Intake](#notion-intake); see the [cross-repository collaboration diagram](collaboration.jpg).
 
@@ -91,6 +91,8 @@ If you are joining an existing research repository that already contains ACME, f
 4. (Optional, when using a [Git repository](git-repository.md#notion-git-repository)) Choose a short, recognizable name for your research repository and ask an agent to configure its repository identity.
 5. (Optional) When appropriate, we strongly recommend sharing your research records through a public repository.
 
+- See [Setup instructions](user-instructions/user-instructions.md#setup).
+
 ### Join an existing [Git repository](git-repository.md#notion-git-repository) as a collaborator
 
 1. Sign in to the repository hosting platform and accept your coauthor's invitation.
@@ -100,6 +102,8 @@ If you are joining an existing research repository that already contains ACME, f
 4. If you are not yet registered in the research repository, choose an author key distinct from those of your collaborators and ask an agent to register you.
    Ask the agent to associate this working copy with your author key in ACME.
 5. Configure the name and email used for your [Git](git-repository.md#notion-git) [commits](#notion-commit), or ask an agent to do so.
+
+- See [Setup instructions](user-instructions/user-instructions.md#setup).
 
 ## Getting started
 
@@ -113,11 +117,13 @@ If you are joining an existing research repository that already contains ACME, f
 3. For sustained autonomous work, specify or adopt execution limits and stopping conditions.
    See [research assignment examples](user-instructions/user-instructions.md#start-or-continue-research).
 4. Approve necessary tool actions when prompted, and respond to questions raised by agents.
-5. Think through and understand the mathematical materials agents provide (no agent can do this for you).
+5. Think through and understand the mathematical materials produced by agents (no agent can do this for you).
    Discuss the mathematics with agents to deepen and accelerate your understanding.
    Ask for relevant references and question the sources of arguments and ideas Socratically, especially when an argument relies on model knowledge without explicit source support.
 6. (Optional, when using [Git](git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; use undo for local edits or revert commits when appropriate.
-   When collaborating with other mathematicians, ask agents to handle [pulls](#notion-pull), [merges](#notion-merge) and help resolve any conflicts.
+   When collaborating with other mathematicians, ask agents to handle [pushes](#notion-push), [pulls](#notion-pull), [merges](#notion-merge) and help resolve any conflicts.
+
+- See [research instruction examples](user-instructions/user-instructions.md#research-instructions).
 
 ### Cautions
 
@@ -154,7 +160,7 @@ Under construction.
 
 ### Framework version
 
-Current framework version is 0.1.0.
+Current framework version is 0.2.0.
 
 At the start of work, the agent checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at most once per UTC day.
 If one is available, it tells you the installed and available versions and asks whether to arrange an upgrade; your current work can continue while you decide.

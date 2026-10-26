@@ -4,6 +4,14 @@ Routine naming, path, link and layout maintenance follows the [common content an
 It requires no new mathematical version, operation entry, standalone maintenance report or duplicate correspondence artifact.
 Keep the responsible material and its actual consumers coherent in place; substantive mathematics retains its version and review requirements.
 
+## Computation Tool Selection
+
+Within the actual assignment, explicit project requirements and environment constraints, the agent chooses mathematically suitable methods, Python runtimes, libraries and other computation tools.
+Choose according to applicability, required arithmetic or rigorous error control, reproducibility, dependency availability and actual use cost, reusing an adequate existing environment where applicable.
+Retain environment and dependency details only when they affect the method, result or reproduction under the existing J rules, without a default package bundle, library whitelist, compulsory solver, per-J environment or repeated full inventory.
+Apply the existing [evidence and arithmetic limits](#evidence-and-limits), [counterexample checks](#counterexample-validation) and [proof-review duties](proof-audits.md) at their actual scope; tool choice changes neither mathematical checking nor the actual agent-review relationship.
+Manuscript supplements retain their separate [standalone verifier boundary](writing.md#computational-supplements-and-independent-verifiers).
+
 ## When to Retain a Computation Record
 
 First apply the [common content decision](records.md#substantive-material-retention) to needed native work and adequate existing J homes, then the [work-obligation rules](workflow.md#work-obligations) and J reproduction duties below.

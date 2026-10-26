@@ -3,6 +3,7 @@
 Clean export bootstraps a blank research repository from the explicit [manifest](export-manifest.json).
 It is offline and performs no fetch, commit or push.
 It is not an upgrade or overlay of a research project.
+For an existing installation, use the [upgrade action](agent-actions.md#upgrade-installed-framework) and [version-specific upgrade procedure](versioning.md#upgrading-an-installed-framework).
 
 ```powershell
 python scripts/export-framework.py ../new-research --repository New-Research --repository-name "New Research" --repository-abbreviation "NR"
@@ -24,12 +25,15 @@ The exact target checkout is checked; an unrelated empty subdirectory is not its
 Existing Git metadata, refs, index, remotes and unrelated configuration remain intact.
 The exporter never installs staging Git metadata into an existing Git target or initializes it again.
 Without `--author`, an existing research binding is a conflict.
-With explicit `--author HUMAN`, only the selected human and necessary target binding/worktree configuration are initialized through the ordinary identity tool, with its main-worktree safeguards.
+With explicit `--author HUMAN --display-name "License name"`, only the selected human and necessary target binding/worktree configuration are initialized through the ordinary identity tool, with its main-worktree safeguards.
+The author supplies both independent values under the [setup action](agent-actions.md#set-up-repository-or-human-identity): HUMAN is the permanent local path key, while display-name is the desired License attribution spelling and may contain spaces or Unicode.
+Neither value is inferred from the other or a Git/GitHub identity; missing or invalid supplied values fail before setup mutations.
+After setup, the agent completes the target License credit with that chosen name, preserving license text and existing notices; the exporter does not generate or rewrite License credits.
 The target's administration scope is used, never staging's scope.
 
 Without `--author`, no source actor or human registry is read.
 The output has `people: []` and no actor binding.
-Register and then explicitly bind the actual human before authoring:
+Collect both author-selected values, register and then explicitly bind the actual human before authoring:
 
 ```powershell
 python scripts/research.py identity-add HUMAN --display-name "Human Name"
@@ -39,7 +43,7 @@ python scripts/research.py identity-bind HUMAN
 The first declaration in an empty, unbound registry is self-registration: `registered_by` is that declared key.
 It is not authentication and does not bind automatically.
 Later registrations require the actual bound registrar.
-Explicit `--author HUMAN` deliberately registers and binds only that key.
+Explicit `--author HUMAN --display-name "License name"` deliberately registers and binds only that key with its independent attribution name.
 No source signatures, profiles, personal choices or research/execution authority are inherited.
 
 The exporter captures allowlisted source bytes, checks only its actual portable output files/links, privacy boundaries, manifest facts and installed entrances in owned staging, rechecks target eligibility immediately before installation, and creates files exclusively.
@@ -52,6 +56,8 @@ New non-Git outputs receive Git initialization once.
 The manifest alone owns the current framework version.
 No export receipt, source-commit snapshot or copied-file registry is persisted.
 The export contains common framework files and empty research structures, without actual research, source artifacts, intake/execution facts or personal profiles.
+Its copied Git ignore rules preserve the manuscript and presentation `build/` and `figure/` exclusions under the [local document-output rule](rules/writing.md#files-kept-local).
+The manifest also distributes the version-specific [upgrade notes](upgrade/) needed for the upgrade paths offered by the release; they supply adaptation guidance without replacing the manifest's composition or installed-version authority.
 The general manual in [English](../user-manual/user-manual.md), [Chinese](../user-manual/用户手册.md), [German](../user-manual/Benutzerhandbuch.md), [French](<../user-manual/Manuel d’utilisation.md>) and [Japanese](../user-manual/ユーザーマニュアル.md) introduces ACME, environment, installation and ordinary use.
 The human request suggestions in [English](../user-manual/user-instructions/user-instructions.md), [Chinese](../user-manual/user-instructions/用户指令.md), [German](../user-manual/user-instructions/Anweisungsbeispiele.md), [French](<../user-manual/user-instructions/Exemples de consignes.md>) and [Japanese](../user-manual/user-instructions/指示例.md) explain example requests and expected outcomes.
 [AGENTS.md](../AGENTS.md) remains the short bootstrap and cross-activity guidance, and the English [agent action guide](agent-actions.md) owns the function-to-action entrance.

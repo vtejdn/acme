@@ -20,7 +20,7 @@ HOMES = {'C': 'claims', 'T': 'tasks', 'R': 'audits/reviews', 'L': 'ledger', 'J':
 
 class GitSource:
     def __init__(self, root, revision):
-        from ..checks.submission import Tree, git
+        from ..core.git_views import Tree, git
         r.require(re.fullmatch(r'[0-9a-f]{40}|[0-9a-f]{64}', revision or ''), 'Intake requires a full fixed source commit.')
         resolved = git(root, 'rev-parse', '--verify', revision + '^{commit}').decode().strip()
         r.require(resolved == revision, 'Source revision differs from the requested commit.')
@@ -270,8 +270,9 @@ def _mapped_author(source, repository, name):
     return matches[0]
 
 
-def _origin(source, doc, anchor='', record=None):
+def _origin(source, doc, anchor='', record=None, choice=None):
     if not doc.identity.source_repository:
+        r.require(choice in (None, 'current'), 'An ordinary original has its current source context.')
         repository, name = source.transport, doc.identity.author
         origin = {'repository': repository, 'revision': source.revision, 'path': doc.path, 'anchor': anchor}
     else:
@@ -300,9 +301,30 @@ def _origin(source, doc, anchor='', record=None):
             r.require(record is None, 'The selected acquisition record does not name this local revision.')
             info = material_info(source.source_view(), doc)
             r.require(info.get('inputs'), 'Onward transfer lacks its actual acquired input: ' + doc.path)
+            if doc.identity.kind == 'R':
+                r.require(choice is not None,
+                          'Choose current origin or an exact acquired input for the selected revised-R finding.')
+                if choice != 'current':
+                    r.require(isinstance(choice, dict) and set(choice) <= {'input', 'acquisition'} and 'input' in choice,
+                              'A selected inherited origin needs one exact input locator and optional acquisition selector.')
+                    selected = choice['input']
+                    r.require(isinstance(selected, dict) and set(selected) == {'path', 'anchor'}
+                              and all(isinstance(selected[key], str) and selected[key] for key in selected),
+                              'Supply the exact fixed input path and finding anchor.')
+                    r.require(any(entry['path'] == selected['path'] and entry['anchor'] in ('', selected['anchor'])
+                                  for entry in info['inputs']), 'The chosen origin is not a declared fixed revision input.')
+                    earlier = documents.parse(selected['path'], source.read(selected['path']).decode('utf-8-sig'))
+                    _require_review_finding(earlier, selected['anchor'])
+                    selected_record = choice.get('acquisition')
+                    r.require(selected_record is None or isinstance(selected_record, str), 'Select an existing acquisition record path.')
+                    r.require(any(item['local'].get('anchor', '') in ('', selected['anchor'])
+                                  for _path, item in _source_items(source, earlier, selected_record)),
+                              'The chosen existing acquisition does not cover this input finding.')
+                    return _origin(source, earlier, selected['anchor'], selected_record)
             return {'repository': source.transport, 'revision': source.revision,
                     'path': doc.path, 'anchor': anchor, 'author_name': doc.identity.author,
                     'author': _mapped_author(source, source.transport, doc.identity.author)}
+        r.require(choice is None, 'This directly acquired finding already has its recorded original context.')
         origin = _correspondence(matches, doc.path, record).copy()
         foreign = origin['repository']
         external.repository(source.source_view(), foreign)
@@ -387,7 +409,7 @@ def manifest(source, selections, *, files=()):
         r.require(isinstance(records, dict), 'Choose existing acquisition records by their selected source file path.')
         r.require(set(records) <= set(owned) and all(isinstance(value, str) for value in records.values()),
                   'Choose an existing acquisition record only for an actually selected file.')
-        origin = _origin(source, doc, anchor, records.get(path))
+        origin = _origin(source, doc, anchor, records.get(path), selection.get('origin'))
         if ((item.kind == 'R' or (item.kind == 'L' and local_kind == 'R'))
                 and (origin['repository'], origin['revision'], origin['path']) ==
                     (source.transport, source.revision, doc.path)):

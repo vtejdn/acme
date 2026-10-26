@@ -42,6 +42,9 @@ All PDF, original HTML and resource files in this store are local only, excluded
 Keep links relative to that entrance; another checkout or storage target does not change source identity.
 Necessary persistent physical targets belong only in the responsible human's ignored `profiles/<human>/secrets.md`, under the [private-setup rule](organization.md#machine-local-locators).
 Concrete source access and file/group maintenance resolve the actual mount; public records keep logical relative locators.
+When first authorized retention needs the missing entrance and no applicable external storage arrangement exists, create the ordinary Git-ignored mathematics/literature/pdf/ directory on demand without another approval or storage-choice question.
+Clean initialization and search-only or bibliography-only work may leave it absent.
+A broken junction, occupied non-directory entrance, contradictory arrangement or inaccessible configured target is a concrete limitation, not an absent unconfigured store; preserve it and continue independent work without silently substituting another store.
 
 The mount supplies source access, not repository-owned output space.
 General repository scans, copies, cleanup, publication snapshots and generated navigation must not descend into it.
@@ -85,7 +88,7 @@ Availability says nothing about mathematical verification.
 
 The agent reads the actual change and responsible materials, chooses any needed source keys or artifacts and reuses adequate still-applicable judgments.
 An edit, commit or push does not by itself require a new source check; no scope file, acknowledgment or mandatory command sequence is added.
-Generic submission checks ordinary public references, logical path containment and private-source tracking boundaries; it does not reconstruct holdings, validate source accounts or inspect private source bytes, fingerprints, formats or native HTML anchors.
+Choose explicit public-reference, path-containment and private-source exclusion checks for the actual scope; these do not reconstruct holdings, validate source accounts or inspect private source bytes, fingerprints, formats or native HTML anchors.
 For an explicitly chosen relationship check, reuse the shared reader with the selected holding keys or artifact names from the complete registry and bibliography of the actual requested WORKTREE, INDEX or commit postimage.
 A holding selection includes that key's unchanged genuine holdings and their directly referenced Artifact accounts, retaining real competition while excluding unrelated malformed accounts.
 Text diff fragments and an unstaged repair cannot replace the selected view's necessary declarations.
@@ -431,7 +434,11 @@ The agent judges actual content and permitted disclosure, including revealing au
 ## 1. Citation Keys and Filenames
 
 Use readable, simplified alpha-style ASCII addresses, omitting diacritics from the key.
-Exact reproduction of standard BibTeX alpha labels or typography is not required, and consistent existing keys need no rename solely for style conformance.
+Exact reproduction of standard BibTeX alpha labels or typography is not required.
+When an actual naming misuse is discovered, confirm the work and original naming basis and correct the key through coordinated maintenance, even if the incorrect address has been used consistently.
+For the stated ordinary single-author Smith work with year basis 2026, use Smi26 and the applicable existing collision suffix, rather than Smith26.
+Preserve legitimate existing allocations and original year bases; later publication metadata alone does not invalidate a correct earlier address.
+Judge misuse from actual source facts rather than key length or a regenerated current-metadata label, without a startup inventory or automatic whole-library normalization.
 Preserve the complete ordered author list and actual name/diacritic forms in references.bib.
 Identify surname components and source order correctly: ordinary single surnames use their three-character abbreviation; two through four authors contribute their surname initials; five or more contribute the first three names plus literal + before the year.
 Retain the supported short/compound surnames, particles and editor/organization fallbacks.
@@ -466,6 +473,8 @@ Identify same-work acquisitions or editions before resolving a shortened-key col
 ### Coordinated Key and Source-Unit Renaming
 
 For an adopted naming migration, the agent identifies the actual work correspondence and affected consumers, then supplies complete chosen keys, exact designated text edits or expected original text with prepared final text, and complete source/destination file pairs.
+This includes discovered naming errors: maintain the chosen bibliography, registry, artifacts, contents, U directory and nonregressing allocation bound, actual active citations and directly affected writing records together under their author/role permissions.
+Preserve original/transport intake facts while maintaining necessary receiving-side locators and correspondences, and retain a coherent usable state if a necessary target or consumer is unavailable.
 Tools change those explicit paths/fields without global text replacement, same-work inference or source-store discovery.
 Choosing a file does not select every matching citation, anchor or key token inside it.
 Designated edits check their expected original text; parsed entry keys and the defined single-key `crossref`/`xref` values use exact complete-key lookup.

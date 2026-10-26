@@ -206,6 +206,9 @@ A lawful same-human local revision retains its external identity and source head
 The original operation remains about that acquired input; a local revision neither creates another intake event nor changes the operation's local.path to the newer version.
 For onward selection including local additions, the selected unit's source is the actual revising repository at its fixed local-revision path, anchor and scope.
 Keep the earlier acquired input as a separate fixed reference in the responsible Inputs section or selected C/T support/dependency relation; do not attribute the added argument to the older original source or inherit its review.
+For a retained finding selected inside a mixed R revision, the agent instead chooses the exact declared fixed input finding and its existing acquisition account, preserving that finding's original source and reviewed-target scope separately from current transport and receiving bindings.
+The optional helper's [selected-origin input](../material-format.md#acquired-findings) expresses that choice or current origin explicitly; it validates declared input, family and actual acquired coverage without inferring inheritance from anchor spelling, text or ancestry.
+This transient choice creates no persistent inherited/new marker and changes neither the fixed input nor its earlier operation.
 
 The agent chooses each U's existing recipient work key or explicitly new work.
 Tools execute exact field updates and allocate only the chosen new identity, without DOI/eprint precedence or implicit field fusion.

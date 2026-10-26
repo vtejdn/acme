@@ -46,6 +46,9 @@ A Task/E link grants no execution authority.
 ## Main-agent responsibility and exact maintenance
 
 Each executing Task has one main agent, coordinating overlapping writes and any authorized harness subagents at responsible mathematical homes.
+Apply the [research coordination and Preparation duties](workflow.md#records-review-and-handoff) while retaining the current Task/E authority and shared resource limits and stops for every delegated assignment.
+Starting, reusing or extending a subagent assignment does not reset an allowance or resume a stopped Task.
+The main agent ensures required retention and closeout by doing or explicitly delegating the work; coordination does not require repeating each subagent's derivation or material operation.
 Internal subagents need no separate Task/E, human author or research line.
 A same-human replacement continues the same boundary after the former writer stops; another human does not inherit that Task/E or authority.
 No execution owner registry, lease service or multi-writer history protocol is needed.
@@ -55,7 +58,7 @@ Task revision leaves the same E unchanged unless an applicable exact update is s
 The optional scripts/execution.py check --task PATH checks only that selected current E's fields, state, exact Task decision, paths and necessary numeric ranges.
 Its --view option reads the actual WORKTREE, INDEX or fixed Git postimage, without recovering state from another view.
 It authenticates no instruction, judges no custom condition, fetches no account reading and controls no platform scheduler.
-Generic submission and ordinary prose maintenance do not scan execution histories or require E-change acknowledgments.
+Ordinary delivery and prose maintenance do not scan execution histories or require E-change acknowledgments.
 For personal import, the agent reads the actual source and local execution conditions, preserves an existing E and prepares or reuses the ordinary family's one stable boundary.
 Write only the necessary effective stop, allowance and continuation conditions chosen by the agent; a new boundary remains non-running and omits unrelated source event/session history.
 Moving a Task does not automatically copy its source E, and any helper writes only the execution content or exact edits the agent explicitly prepared.

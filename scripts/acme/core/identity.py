@@ -14,6 +14,12 @@ def key(value):
     return value
 
 
+def attribution_name(value):
+    r.require(isinstance(value, str) and value.strip() and '\n' not in value and '\r' not in value,
+              'Supply a nonempty single-line display_name for License attribution, separately from the author key.')
+    return value
+
+
 def git(root, *args, optional=False):
     result = subprocess.run(['git', *args], cwd=root, capture_output=True, text=True, encoding='utf-8')
     if optional and result.returncode == 1:
@@ -25,6 +31,13 @@ def git(root, *args, optional=False):
 def checkout(root):
     actual = git(root, 'rev-parse', '--show-toplevel')
     r.require(Path(actual).resolve() == Path(root).resolve(), 'Local identity must belong to this exact Git checkout.')
+
+
+def git_managed(root):
+    """An existing marker retains Git requirements, including broken markers."""
+    try: (Path(root) / '.git').lstat()
+    except FileNotFoundError: return False
+    return True
 
 
 def registry(repo):
@@ -136,6 +149,10 @@ def worktree_scope(root, runner=None):
 
 
 def actor(repo, *, runner=None):
+    if runner is None and not git_managed(repo.root):
+        people = registry(repo)['people']
+        r.require(len(people) == 1, 'Personal use without Git requires one explicitly registered local human.')
+        return people[0]['id']
     run = runner or git
     actual = run(repo.root, 'rev-parse', '--show-toplevel')
     r.require(Path(actual).resolve() == repo.root.resolve(),
@@ -167,13 +184,17 @@ def bind(repo, value):
 
 
 def register(repo, value, display_name, git_name=None, git_email=None, github_account=None, *, timeout=30):
+    key(value); attribution_name(display_name)
     with r.locked(repo.root, timeout=timeout):
         r.check_storage(repo.root)
         key(value)
         r.require(bool(git_name) == bool(git_email), 'Provide Git name and email together.')
         data = registry(repo)
         r.require(not any(p['id'].casefold() == value.casefold() for p in data['people']), 'Human identity is already registered.')
-        if not data['people']:
+        if not git_managed(repo.root):
+            r.require(not data['people'], 'Personal use without Git supports one local human; retain original authors as external identities.')
+            registrar = value
+        elif not data['people']:
             checkout(repo.root)
             r.require(not git(repo.root, 'config', '--get', 'research.actor', optional=True)
                       and not git(repo.root, 'config', '--get', 'research.actorWorktree', optional=True),
@@ -191,23 +212,25 @@ def register(repo, value, display_name, git_name=None, git_email=None, github_ac
         return entry
 
 
-def initialize(root, username, repository, url=None, git_name=None, git_email=None, github_account=None):
+def initialize(root, username, repository, url=None, git_name=None, git_email=None, github_account=None, *, display_name):
     root = Path(root).resolve()
     r.check_storage(root)
-    key(username); key(repository)
+    key(username); key(repository); attribution_name(display_name)
     r.require(bool(git_name) == bool(git_email), 'Provide Git name and email together.')
     r.require(not (root / 'repository/config.json').exists(), 'Repository is already initialized.')
-    root.mkdir(parents=True, exist_ok=True)
-    if not (root / '.git').exists():
-        git(root, 'init', '--quiet')
-    checkout(root)
     config = {'repository': repository, 'layout_format': 2,
               'repository_url': url, 'material_next': {}, 'framework_update_check': True}
-    people = {'people': [{'id': username, 'display_name': username,
+    people = {'people': [{'id': username, 'display_name': display_name,
               'registered_by': username,
               'git_identities': [{'name': git_name, 'email': git_email}] if git_name else [],
               'github_accounts': [github_account] if github_account else []}]}
     validate_registry_value(people)
+    for name in ('people.json', 'config.json', 'repositories.json', 'intake-people.json'):
+        r.require(not (root / 'repository' / name).exists(), 'Initialization target already has identity/configuration: ' + name)
+    root.mkdir(parents=True, exist_ok=True)
+    if not (root / '.git').exists():
+        git(root, 'init', '--quiet')
+    checkout(root)
     r.write_json(root / 'repository/people.json', people, exclusive=True, root=root)
     r.write_json(root / 'repository/config.json', config, exclusive=True, root=root)
     r.write_json(root / 'repository/repositories.json', {'next': 1, 'repositories': []}, exclusive=True, root=root)

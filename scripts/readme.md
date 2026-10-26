@@ -10,7 +10,7 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 
 | Command | Purpose |
 | --- | --- |
-| `research.py init --username HUMAN --repository KEY` | Initialize repository identity and actual human registration |
+| `research.py init --username HUMAN --display-name "License name" --repository KEY` | Initialize repository identity and separately chosen human key/name |
 | `research.py framework-update-check [--force] [--offline]` | Query or reuse daily official public version metadata; safely replace the ignored current cache |
 | `research.py framework-update-notified VERSION` | Record a version reminder only after it has actually been presented to the human |
 | `research.py identity-bind HUMAN` | Bind the operator in this checkout's Git worktree configuration |
@@ -24,11 +24,16 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 | `material.py indexes MATERIAL...` / `routes MATERIAL...` | Render bounded navigation as JSON |
 | `render-research-navigation.py` | Regenerate the three local derived indexes |
 | `execution.py check` | Check per-Task E documents and their recorded states |
-| `check-research-submission.py` | Explicitly check INDEX; --working-tree or --commits BASE selects another material view |
 | `material.py fetch-source --url ADDRESS --output LOCAL --format pdf` | Fetch supplied addresses and report actual response/byte facts without registration |
 | `material.py register-source --file entry.bib --existing-key KEY --local-pdf LOCAL` | Apply exact supplied fields and register an agent-chosen local source association |
 | `check-literature-storage.py` | Explicit whole-store registered-artifact inventory of presence, byte/format facts and recorded limitations |
 | `export-framework.py DESTINATION --repository KEY --repository-name NAME --repository-abbreviation ABBREVIATION` | Create a clean self-exportable repository outside the source checkout |
+
+Before repository or first-human setup, the agent collects the independent local path key and chosen License name under the [setup action](../framework/agent-actions.md#set-up-repository-or-human-identity).
+`init --username KEY --display-name NAME --repository REPOSITORY` and `identity-add KEY --display-name NAME` preserve those separate supplied values in id and display_name.
+Invalid keys and missing or whitespace-only/multiline names fail before identity setup; the agent requests an author-selected valid replacement instead of sanitizing or inferring a value.
+The agent completes the receiving License attribution through a bounded edit preserving its text and notices; these tools do not generate License credits.
+`research.py init` is an optional Git-bootstrap helper with its actual Git prerequisite; ordinary personal-folder file and author-registration work need not invoke it or `identity-bind`.
 
 ## Official framework version check
 
@@ -42,6 +47,9 @@ A new enabled attempt first safely publishes today's unavailable placeholder und
 The same lock prepares one opaque current-request claim at .tmp/framework-update-request.json, separate from the four-field cache.
 The latest started fresh request owns publication across processes; same-day reuse takes no ownership, and a later completed unavailable result supersedes an older response just as a success does.
 Publication checks both that owner and the UTC-day cache, preserves the latest notification and returns superseded with cache_saved false for an older response.
+The first claim lock reads the production UTC clock and current cache before writing a placeholder.
+Even --force cannot replace a valid later UTC-day cache with an earlier supplied or delayed clock; this preclaim superseded result has attempted false and cache_saved false, without fetching or changing another request's claim.
+Supersession after a request has claimed and fetched retains attempted true.
 Normal completion removes only the caller's matching claim; an abandoned claim can be replaced by a later eligible request and introduces no attempt history or cache field.
 The request uses a ten-second timeout, checks its elapsed budget between received blocks, limits the body to 256 KiB and refuses a redirect or a different actual URL.
 No Git authentication, clone, replacement-file retrieval or source registry is involved.
@@ -66,6 +74,8 @@ The agent owns the wording and choice; the helper never installs a framework or 
 The key is stored in the fresh `repository/config.json`.
 The full name and abbreviation only render the exported root README heading; they are not derived from the key and are not stored as identity.
 Both display values must be nonempty single-line text, preserving their supplied spelling, spaces and Unicode.
+Optional `--author KEY --display-name NAME` registers and binds that explicitly selected key with its independent License name; either missing authorful setup value is refused without a fallback.
+Without --author, export keeps an empty unbound human registry and accepts no display-name; collect both actual author values at subsequent first registration.
 
 ## Material authoring
 
@@ -193,6 +203,11 @@ Complete necessary mathematics, original single human and actual source/evidence
 Splits and same-author combinations retain complete per-unit provenance in the one concise intake operation, without an inaccurate sole-source header, archive or second mapping registry.
 For onward selection containing a local revision's additions, use the actual revising repository and fixed local-revision path/anchor as that selected unit's source, while keeping its earlier acquired input reference and original acquisition facts distinct.
 The earlier source or review does not thereby supply the locally added argument or its review.
+A selected finding in a later acquired-input R revision supplies an explicit origin choice: `"origin": "current"` for the current source, or `"origin": {"input": {"path": "EXACT_EARLIER_R.md", "anchor": "finding"}}` for a retained finding.
+The latter locator must be an actual declared fixed Input in the same original family and must be covered by its existing acquisition; optional `origin.acquisition` chooses that exact earlier operation when needed.
+The selected current anchor may differ from the input anchor; the agent judges the retained scope and correspondence.
+Missing, ambiguous, undeclared or uncovered choices fail rather than guessing origin from an anchor spelling, related Inputs or revision ancestry.
+This transient helper input selects existing facts; the stored operation has only its ordinary source/transport, local and scope accounts.
 New acquisition times use `YYYY-MM-DDTHH:MM` UTC, without `Z`, numeric offsets, seconds or fractions; genuinely date-only facts retain calendar precision and existing necessary full timestamps are normalized under the maintenance handbook.
 
 ## Personal import
@@ -255,7 +270,7 @@ No dedicated holding writer is provided; an unchanged holding needs no invocatio
 Local registration and selected readers use the affected accounts and necessary relationships, preserving literal source facts, independent availability outcomes and limitations.
 Unrelated malformed accounts do not block selected work; selected bad fields, byte conflicts and ambiguous primary candidates remain errors.
 An explicitly requested whole-store inventory keeps its complete scope.
-Reading, checking and submission do not fetch sources or establish source identity, and mathematical intake copies no local source account.
+Reading, checking and Git delivery do not fetch sources or establish source identity, and mathematical intake copies no local source account.
 Known-byte comparison and truthful unavailable outcomes follow the [source-association rule](../framework/rules/literature.md#artifact-source-association); neither extends U inspection.
 An authorized retry uses explicit fetch/inspect/register.
 
@@ -280,11 +295,13 @@ Contents are navigation, not U findings; state missing or unreadable coverage in
 
 ## Scoped checks and bibliography maintenance
 
-Optional scoped checking reads actual WORKTREE, INDEX or BASE-to-HEAD bytes under the [submission rules](../framework/rules/identity.md#submission-checks) and reports explicit identity/field/reference/review-binding errors.
+Use operation-local material, source and selected-reference readers for the explicitly chosen question and actual working files or Git view under the [check rules](../framework/rules/identity.md#explicit-material-checks).
+Ordinary staging, committing and merging use native Git and agent inspection under the [delivery rules](../framework/rules/identity.md#submission-checks), without an aggregate history audit, preimage mapping or pass token.
+The agent judges actual receiving, originals, contributors and author permissions from the real materials and instruction; useful business interfaces keep their own guards.
 Material candidate enumeration precedes strict validation of the chosen kind, author/origin/kind/line sequence, selected family or actual Strategy ancestors and Task/E family.
 Explicit full discovery/navigation still validates its complete promised scope.
-Changes to either canonical external table check affected registration rows, allocation constraints and necessary table-local counterparts in the actual selected view under the [basic relation contract](../framework/rules/identity.md#explicit-material-checks).
-`external_table_files` counts the changed tables checked; registration changes do not discover unchanged consumers or supply a consumer-coverage claim.
+Canonical external registration operations retain their row, allocation and necessary table-local correspondence checks under the [basic relation contract](../framework/rules/identity.md#explicit-material-checks).
+Registration or selected-reference checks do not discover unchanged consumers or supply a consumer-coverage claim.
 The agent identifies actual affected references and any coherent repair, choosing optional [selected reference reading](#selected-external-reference-reading) when useful.
 For agent-led bibliography maintenance under the existing short shared lock, `acme.intake.addresses.rename(root, entries, mapping, files=[...], moves={"exact/source": "exact/destination"}, updates={...})` applies the prepared selection.
 `mapping` uses complete parsed bibliography keys, retaining each supplied target spelling; only defined single-key `crossref` and `xref` values use the same exact lookup.
@@ -294,24 +311,26 @@ Each `updates` key names a selected Markdown, TeX, BibTeX or operation JSON file
 Edit spans use the [expected-text input contract](../framework/material-format.md#direct-acquisition); choose the actual local anchor separately from the bibliography key's spelling.
 Prepare the selected operation item's local path, actual anchor and file/artifact correspondences together; the existing operation/material contracts validate the selected postimage before writing.
 Affected U source-key namespaces include unmoved siblings and all same-batch targets after selected old positions are removed; cross-author/origin numeric occupancy and original-family continuity are checked before publication.
+An explicitly mapped bibliography-key correction that keeps a U's human, original binding, unit number and physical version carries its old next-unissued bound, including retired positions, into the destination namespace while preserving monotone existing counters.
+The agent selects actual citations, contents, writing records and local intake locators; literal examples and original-source/transport facts retain their exact scope and spelling.
 Original/transport identities, revisions, paths, anchors, scope, availability and unselected items remain unchanged.
 Only designated mixed-text citations, anchors and references change; selecting a file and key mapping performs no whole-body substitution.
 Mixed bibliography notes and literal examples retain their original text unless explicitly edited.
 The agent repairs actual active consumers and writing records; token lookup supplies no automatic active-citation refusal, completeness judgment or generic notice.
 It does not infer unchanged mathematics, relocation equivalence or review transfer.
 Valid J/E/intake maintenance emits no generic changed-file reminder.
-Generic submission checks registry prose and source links for ordinary public references, logical containment and forbidden tracking, without parsing source accounts or opening private source bytes.
-Generic submission checks changed outgoing links without discovering unchanged incoming consumers or reporting reverse-reference coverage.
+Ordinary public-reference checks on chosen registry prose or source links establish their stated logical-path scope without parsing source accounts or opening private source bytes.
+Outgoing-link checks do not discover unchanged incoming consumers or report reverse-reference coverage.
 The agent selects necessary incoming files and exact target locators through scoped searches and reading, then checks them in the requested view with the shared readers.
 
 The shared `acme.core.links.markdown_link_spans(text)` returns actual link destination spans in the original text, excluding the supported literal regions and comments.
 `links.destinations(document, text)` and `acme.materials.runtime.Reader.destinations(document, text)` project those same links to local targets, with the material reader retaining source-reference validation.
 For explicit working-file link checks, `links.check_files(root, selected_paths)` returns errors for the supplied public files; it does not discover consumers or assess mathematical dependencies.
-For a selected Git view, read the chosen consumers with `acme.checks.submission.Tree` and their destinations with the shared reader, then pass the designated local locators and `tree.bytes` to `acme.materials.validation.validate_locator_targets`.
+For a selected Git view, read the chosen consumers with `acme.core.git_views.Tree` and their destinations with the shared reader, then pass the designated local locators and `tree.bytes` to `acme.materials.validation.validate_locator_targets`.
 Selected Markdown anchors must occur exactly once; a repair in another view does not cure that selected view.
 Generic links into the logical literature root, group or source file receive containment and public-path checks without concrete source resolution, existence or native-anchor inspection.
 The agent applies fixed-version and actual-review obligations under the [common maintenance boundary](../framework/rules/records.md#substantive-material-retention).
-Checks are not Git prerequisites; `--push` is check context only and performs no network operation.
+These explicit checks are not Git prerequisites and perform no delivery operation.
 
 ### Selected external reference reading
 
@@ -319,7 +338,7 @@ For explicit external-reference checks, use the existing Git-view reader and `ac
 For example, with `root` bound to the actual checkout and the operation path chosen from that repository:
 
 ~~~python
-from acme.checks.submission import Tree
+from acme.core.git_views import Tree
 from acme.checks.scoped import external_references
 
 with Tree(root, 'INDEX') as tree:
@@ -345,7 +364,7 @@ The agent chooses any needed source check under the [source rule](../framework/r
 With `root` bound to the chosen checkout and the actual key substituted, an optional INDEX metadata read uses existing APIs:
 
 ~~~python
-from acme.checks.submission import Tree
+from acme.core.git_views import Tree
 from acme.checks import literature
 from acme.intake import bibliography
 
@@ -355,7 +374,7 @@ with Tree(root, 'INDEX') as tree:
     catalog = literature.source_catalog(registry, entries, holding_keys=['ChosenKey'])
 ~~~
 
-Use `WORKTREE` or the actual commit postimage in `Tree` for that requested view; BASE-to-HEAD submission checks the final `HEAD` postimage.
+Use `WORKTREE` or the actual commit postimage in `Tree` for that requested view.
 The shared reader also accepts explicit `artifact_names` for a chosen artifact scope; keep unchanged necessary declarations in the selected input.
 Actual local-file availability or explicitly requested byte checks concern physical files, independently of the Git metadata view.
 No new command, scope file or automatic per-edit source-check requirement is introduced.
