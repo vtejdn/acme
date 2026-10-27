@@ -75,9 +75,10 @@ Fixed source units use the source-key identity below; definitions retain their s
 ### Acquired receiving inputs in local revisions
 
 A lawful same-human local C/T/R/L revision retains its external identity and source header while identifying the actual acquired receiving input under the [record rule](rules/records.md#acquired-inputs-and-local-revisions).
-For L/R, use an ordinary `## Inputs` section containing an explicit Markdown link to the actual earlier fixed receiving input in the same family, any necessary anchor and prose explaining its adopted scope.
+For C/T/R/L alike, use the physical revision's own ordinary `## Inputs` section containing an explicit Markdown link to the actual earlier fixed receiving input in the same family, any necessary anchor and prose explaining its adopted scope.
 Other ordinary support links may share that section; the mechanical revision-input reader selects only explicitly linked earlier receiving versions in the same family.
-For C/T, use the current selected decision's existing support or dependency relation to the actual earlier receiving version in the same family, with its meaningful applicability scope.
+The current C/T selector chooses a decision independently of those physical input facts; changing it neither replaces nor removes the revision's Inputs.
+Support/dependency relations keep the selected decision's actual mathematical adoption and review obligations; an Inputs reference alone adds no selected support, review coverage or source verdict.
 The designated input's source_repository and source_material must match the retained revision header exactly; matching family membership does not choose an input or permit a different original source version.
 For example, an L revision may state:
 
@@ -88,8 +89,9 @@ For example, an L revision may state:
 ```
 
 These are ordinary mathematical input references that the existing readers may interpret mechanically, rather than a revision registry, copy marker or intake-specific payload required by downstream readers.
-A link outside the designated Inputs section or selected C/T relation does not by itself select an acquired input, and readers do not choose one from family order or surviving versions.
+A link outside the physical revision's Inputs section does not select an acquired input, and readers do not choose one from decisions, family order or surviving versions.
 Existing acquisition facts remain about the acquired input, separately from the current local revision and its added content or review obligations.
+No Inputs declaration is required merely for an unrelated local original or an actually acquired target already supported by its real operation.
 
 ### Material family allocation state
 
@@ -319,6 +321,8 @@ Only the rows for the actually selected finding count; another finding in the fi
 Use its actual `self-reviewed`, `independently reviewed` or permitted historical/source `unknown` relationship, rather than copying the illustrative self-review value.
 An explicit permitted `unknown` is distinguishable from omission; the structural rule neither requires all findings to be independent nor certifies mathematical sufficiency.
 Targets match exact physical paths and anchors.
+Retaining an external identity or source header does not make a local revision the earlier acquired physical target.
+An explicitly recorded acquisition correspondence applies only at its actual original and receiving scope; it supplies neither coverage of local additions nor equivalence of proofs.
 A new accepted C requires coverage of its statement and argument; a newly completed T requires coverage of its contract and every declared support/dependency.
 A changed draft, contract, support or proof therefore cannot reuse a binding to an older input.
 These are the review author's declared applicability boundaries, not a machine proof verdict or an inference from PASS text.
@@ -575,6 +579,14 @@ Acquisition alone supplies no recipient review verdict; corrections and limitati
 This section specifies the optional intake helper's prepared-text interface; the agent may instead complete receiving through ordinary file operations under the [common adaptation rule](rules/records.md#receiving-and-adapting-selected-content).
 For any eligible textual selection passed to that helper, prepared supplies either complete final local text as {"text": "..."} or precise expected-text edits under the existing links.edit_text contract.
 Prepared text uses final receiving local links and anchors; exact acme-source locators may still use the explicit mapping input.
+This includes receiver-local navigation to the logical literature root, work groups and named files, with lexical path checks without resolving the source mount or checking existence, private bytes or native fragments.
+Keeping such a reference asserts no local holding, availability or source inspection; actual sending-private links retain their source-only context and are not acquired.
+Ordinary body directory links retain their generic path and existence checks without reading directories as bytes.
+The initial check and publication guard also recognize parents necessarily created by the actual selected pending files, without requiring directory entries, placeholders or preparatory mkdir.
+Both checks refuse a file occupying any necessary ancestor directory position inside the receiving repository before allocation or material/operation writes, while absent ancestors remain available for the selected files to create.
+An actual directory keeps that role before Markdown file-anchor checks, including when its name ends in `.md`; a directory fragment is navigation rather than certified section evidence.
+Only Markdown targets use Markdown-anchor validation; preserving another file's native fragment certifies neither that fragment nor its content.
+Declared mathematical inputs and review targets retain their separate strict material, file, physical-version and coverage requirements.
 Without prepared, the existing whole-text path remains an explicit choice, without creating a whole-copy obligation.
 The local object supplies positive number and may choose kind, line, physical version and local anchor appropriate to the content; source identity and selected input anchor remain unchanged provenance.
 Needed S/D content requires an eligible fixed receiving kind rather than an invented source assessment.
@@ -621,6 +633,8 @@ The optional material.py import --source SOURCE_ROOT --plan PLAN.json installs e
 The plan contains roots (selected entry ids) and entries (unique id rows); dependencies explicitly name only agent-judged necessary forward inputs.
 Repeated nodes and cycles are processed once, and unselected entries are not read or installed.
 An own entry supplies source and local repository-relative file paths and optional prepared final text or exact edits.
+The helper's Markdown body pass uses the receiving path's canonical lowercase `.md` text-input convention; copying another constituent as bytes does not claim its body was checked as Markdown.
+For an own maintained guide requiring that contract, the agent prepares the actual `.md` destination, corrects its contents and necessary direct links, and preserves the real source path and fixed evidence without an automatic renamer or case-compatibility reader.
 For adapted older content, the helper reads necessary scalar author, origin, path and Task coordination/family-type facts separately from current receiving-schema validation.
 Obsolete source headers or an older Task layout alone do not require a source upgrade; the prepared receiving result still satisfies its actual current format and author/type boundaries.
 A differing existing rolling/profile/document file additionally supplies its exact expected receiving text; occupied fixed versions require adequate reuse or the appropriate new physical version.
@@ -648,6 +662,7 @@ The helper validates the prepared fields and pointer without classifying history
 ```
 
 Explicitly selected profile parts, manuscript sources, figures, bibliography, J programs, data and other constituent files each name their own source/local arrangement in the actual human's responsible home.
+An explicitly selected own private settings file retains its owning context for internal section navigation and exact expected updates, without making public-to-private links or reads of unselected private files permissible.
 No directory or textual link implicitly expands the selection.
 A reached foreign entry supplies intake with source_root, full revision, actual instruction, source_repository, correspondence, selections and any explicitly needed mapping/files under the existing intake contract.
 Only those foreign branches create intake operations; within this optional interface, neutral publication validates all own and foreign final references together, then rechecks its captured inputs and publishes the selected set under the short lock.

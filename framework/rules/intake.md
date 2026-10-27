@@ -188,6 +188,10 @@ Keep source reading and mathematical judgment outside short write locks.
 Protect actual fixed versions, necessary provenance, allocation and unrelated or competing writes with existing short-lock, expected-text, captured-input and rollback mechanisms where the selected operation needs them.
 Inspect resulting files, bibliography and affected U positions, without requiring every receiving action to construct a complete transaction plan or use one publication framework.
 Callers choosing the optional intake helper recheck its captured inputs after waiting and publish its selected batch and operation together under its short maintenance section.
+Before allocation or writes, its existing publication guard also rechecks the path containment, existence and only necessary target role of ordinary navigation selected for that operation, respecting pending prepared files without reading directories or native contents.
+The same selected postimage includes only parents necessarily supplied by those pending files; the initial check and guard both refuse a file occupying the required directory or any necessary ancestor directory position inside the receiving repository before allocation or material/operation writes.
+This refusal issues no number; a later failure after issuance retains the advanced bound under the existing [allocation rule](identity.md#allocation-and-concurrency).
+Logical source-store navigation retains its read-free lexical boundary; this recheck creates neither a source-file guard nor a promise of availability after publication.
 A later invalid/stale input or publication failure preserves prior selected content and unrelated competing writes without a durable transaction journal.
 Never silently overwrite a collision or roll back another operation's files.
 No permanent transaction archive is needed.
@@ -218,7 +222,7 @@ Acquisitions do not authorize rewriting source mathematical decisions.
 A lawful same-human local revision retains its external identity and source header and names the actual acquired receiving input and scope through ordinary references under the [record rule](records.md#acquired-inputs-and-local-revisions).
 The original operation remains about that acquired input; a local revision neither creates another intake event nor changes the operation's local.path to the newer version.
 For onward selection including local additions, the selected unit's source is the actual revising repository at its fixed local-revision path, anchor and scope.
-Keep the earlier acquired input as a separate fixed reference in the responsible Inputs section or selected C/T support/dependency relation; do not attribute the added argument to the older original source or inherit its review.
+Keep the earlier acquired input as a separate fixed reference in the physical revision's own Inputs section, independent of its current decision selector; do not attribute the added argument to the older original source or inherit its review.
 For a retained finding selected inside a mixed R revision, the agent instead chooses the exact declared fixed input finding and its existing acquisition account, preserving that finding's original source and reviewed-target scope separately from current transport and receiving bindings.
 The optional helper's [selected-origin input](../material-format.md#acquired-findings) expresses that choice or current origin explicitly; it validates declared input, family and actual acquired coverage without inferring inheritance from anchor spelling, text or ancestry.
 This transient choice creates no persistent inherited/new marker and changes neither the fixed input nor its earlier operation.
@@ -276,5 +280,6 @@ Retain only necessary effective moved-assignment conditions through agent-chosen
 Import alone selects no autonomous Task, activates no run, creates no fresh allowance and permits no overlapping execution writer.
 A joint T has no E and follows the shared-parent or standalone-contract dispositions in the Task rule.
 Settings retain only selected applicable scope and precedence; manuscript relocation retains author choices, actual review limits and proportionate build obligations without creating an unrequested Task.
+An explicitly selected own private settings file may retain internal section navigation and authorized expected-content reads; its links do not select other private files, and public owning documents still reject private targets before accessing their contents.
 For callers choosing the independent optional `material.py import`, its roots, dependency edges, prepared text, file arrangements and publication protocol follow the [input format](../material-format.md#personal-import-input).
 Those helpers protect their explicitly captured inputs, collisions, allocation and selected publication; they are not a required import pipeline, and only actual foreign branches create intake records.

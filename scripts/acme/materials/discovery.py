@@ -94,7 +94,7 @@ def inventory(root, kind=None):
 
 
 def families(paths_to_read, read, *, source_info=None):
-    """Derive family entrances and source-attributed status from supplied bytes."""
+    """Derive family entrances and the status of their exact selected decisions."""
     paths_to_read = list(paths_to_read)
     unit_positions(paths_to_read, read)
     grouped, spellings = {}, {}
@@ -119,14 +119,14 @@ def families(paths_to_read, read, *, source_info=None):
         selected = None
         if entry.current:
             try:
-                selected = documents.selected(entry, read)
+                selected = documents.selection(entry, read)[1]
             except FileNotFoundError:
                 require(bool(entry.identity.source_repository) and source_refs.external(entry.current.path),
                         'Missing selected local decision.')
         row = {'family': family, 'path': entry.path, 'title': entry.title, 'author': entry.identity.author,
                'kind': entry.identity.kind, 'source_repository': entry.identity.source_repository,
                'selected_decision': vars(entry.current) if entry.current else None,
-               'source_status' if entry.identity.source_repository else 'status': selected.fields['status'] if selected else None,
+               'status': selected.fields['status'] if selected else None,
                'versions': [{'path': doc.path, 'version': doc.identity.version, 'decisions': list(doc.decisions),
                              'historical_assessments': list(doc.historical_assessments), 'archival': doc.archival} for doc in ordered]}
         if entry.identity.source_repository:

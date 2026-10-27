@@ -161,7 +161,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.2.0.
+The current framework version is 0.4.0.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.

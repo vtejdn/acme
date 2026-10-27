@@ -9,6 +9,9 @@ Selectable research defaults follow [preference precedence](preferences.md#scope
 The agent reads the actual materials and decides content, work/edition identity, necessary homes and inputs, review applicability and authorization.
 Reuse still-applicable judgments.
 Tools optionally execute explicitly chosen objects, field updates, files and mappings, and report bytes, paths, differences, request/response facts and structural constraints.
+At an actual public-reference operation, normalize and classify the final selected target before watching, reading its contents or checking an anchor, using the existing access rules and designated view.
+Apply the actual navigation, declared mathematical-input, concrete source-file or selected private-owner contract; a body link or native fragment alone supplies no stronger file-access or evidence obligation.
+Keep a prohibited-target diagnostic, a missing necessary input and a stale selected fact distinct; do not expose private contents or automatically substitute another source, ancestor, input or decision to obtain success.
 Tool success supplies no semantic equivalence, source adequacy, review sufficiency or permission.
 For the actual operation, the agent chooses suitable available PDF reading, text extraction, page rendering, OCR and LaTeX compilation capabilities.
 Reuse applicable host tools, project environments and build settings, confirming only what that operation needs without a compulsory inventory or fixed tool sequence.

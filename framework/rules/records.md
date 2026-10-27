@@ -142,7 +142,8 @@ Approved intake uses its explicit fixed source/file scope, not arbitrary recursi
 ## Acquired inputs and local revisions
 
 An established same human may revise acquired C/T/R/L under ordinary authority, fixed-version, decision and review requirements while retaining the actual external identity and source header.
-The agent names the actual fixed receiving input and adopted scope in ordinary input, support or dependency references under the [material format](../material-format.md#acquired-receiving-inputs-in-local-revisions).
+The agent names the actual fixed receiving input and adopted scope in the physical C/T/R/L revision's own ordinary Inputs section under the [material format](../material-format.md#acquired-receiving-inputs-in-local-revisions).
+Those provenance inputs are independent of current decision selection; a decision's support/dependency relations retain their separate mathematical adoption and review meaning.
 Its actual source_repository and source_material agree exactly with the retained revision header; an arbitrary earlier member of the family or another original source version cannot substitute for that input.
 Keep the current local revision distinct from that acquired input and its original source facts; local additions do not become content or reviewed evidence of the earlier source.
 The existing intake operation continues to describe the version actually acquired, without a new acquisition event, another local.path entry or an edit to the old outcome for the local revision.

@@ -348,19 +348,15 @@ def original_family(document):
 
 
 def revision_inputs(document, read):
-    """Read explicitly designated earlier receiving inputs, never guess ancestry."""
+    """Read this physical revision's explicit inputs, independently of decisions."""
     chosen = []
-    if document.identity.kind in 'CT' and document.current:
-        chosen = [(loc, scope) for role, loc, scope in selected(document, read).relations
-                  if role in {'support', 'dependency'}]
-    else:
-        sections = MarkdownInput(document.text).sections('Inputs')
-        require(len(sections) <= 1, 'A material has at most one explicit Inputs section.')
-        if sections:
-            for _first, _last, label, _start, _end, href in links.markdown_link_details(sections[0][0].text):
-                destination = links.destination(document.path, href)
-                if destination is not None:
-                    chosen.append((Locator(*destination), label))
+    sections = MarkdownInput(document.text).sections('Inputs')
+    require(len(sections) <= 1, 'A material has at most one explicit Inputs section.')
+    if sections:
+        for _first, _last, label, _start, _end, href in links.markdown_link_details(sections[0][0].text):
+            destination = links.destination(document.path, href)
+            if destination is not None:
+                chosen.append((Locator(*destination), label))
     result = []
     for loc, scope in chosen:
         if source_refs.external(loc.path):

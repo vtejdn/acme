@@ -175,6 +175,10 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             own.append(path)
             continue
         target = _destination(repo, path, author)
+        source_parts = PurePosixPath(entry['source']).parts
+        if len(source_parts) >= 2 and source_parts[0].casefold() == 'profiles':
+            r.require(source_parts[1] == author or correspondence.get(source_parts[1]) == author,
+                      'Select only the actual importing human\'s own profile settings.')
         original = source.bytes(entry['source'])
         _source_author(entry['source'], original, author, correspondence)
         source_ident = material_identity(entry['source'])
@@ -224,7 +228,7 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
         own.append(path)
 
     def validate(read, view):
-        from .validation import validate_locator_targets
+        from .validation import validate_navigation_targets
         from ..execution import records
         from ..core import source_refs, external
         entrances = set(discovery.candidates(repo.root)) | set(batch.pending)
@@ -256,9 +260,9 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
                     if original is not None:
                         external.repository(view, original['repository'])
                     destination = links.destination(path, href)
-                    if destination is not None and not r.paths.in_pdf_store(destination[0]):
+                    if destination is not None:
                         locators.append({'path': destination[0], 'anchor': destination[1]})
-                validate_locator_targets(locators, read)
+                batch.guards.append(validate_navigation_targets(repo.root, path, locators, read, planned=batch.pending))
         if units:
             discovery.unit_positions(sorted(set(units)), read)
         for boundary in (path for path in batch.pending if path.startswith('execution/')):

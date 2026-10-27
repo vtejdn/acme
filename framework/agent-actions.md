@@ -280,6 +280,8 @@ Return the chosen installed scope and limitations, preserving the source's actua
 Establish the actual registered local human and explicitly selected own content under the [personal-import rule](rules/intake.md#personal-import).
 Read selected units, actual constituents, necessary forward mathematical dependencies and adequate receiving candidates under the common adaptation and existing-decision rules.
 Prepare ordinary local text, file arrangements and temporary locators; follow Task to needed S/C/L/R/D/J and other support to relevant U without reverse consumers or a whole-library expansion.
+Correct actual own document spelling, extension case and necessary direct references within maintenance authority, preserving original source and fixed material identities.
+When selecting the optional helper's Markdown body checks, prepare the canonical receiving `.md` path and correct public contents; a constituent's byte copy alone supplies no Markdown-body check.
 Complete the action through ordinary reading, adaptation, editing, file copying and existing registration/allocation mechanisms, inspecting the actual resulting content and affected references.
 No dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is required.
 Reuse adequate local or already-intaken own material without identity conversion, duplicate local copies or acquired-history cleanup.

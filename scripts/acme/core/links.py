@@ -367,6 +367,8 @@ def check_files(root, names):
                 located, exists = targets[target]
                 if not exists:
                     errors.append(name + ': missing local target ' + href)
+                elif located.is_dir():
+                    continue
                 elif anchor and located.suffix.lower() == '.md':
                     if target not in anchors: anchors[target] = anchor_occurrences(text(located))
                     count = anchors[target][anchor]

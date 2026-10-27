@@ -167,8 +167,8 @@ def check_findings(review, *, previous=None, read=None, finding=None):
     return relations, bound
 
 
-def original_locator(loc, read, origins=()):
-    """Compare exact originals, never display names or author spelling alone."""
+def original_locator(loc, read, origins=(), *, repo=None):
+    """Keep physical targets unless actual acquisition supplies correspondence."""
     if storage_paths.in_computation_outputs(loc.path):
         # Output locators never inherit the program README's acquired origin.
         # Actual attachment provenance is supplied in its intake operation.
@@ -198,7 +198,27 @@ def original_locator(loc, read, origins=()):
         if doc.identity.source_repository and owner != loc.path:
             actual = (actual[0], (PurePosixPath(actual[1]).parent / PurePosixPath(loc.path).relative_to(PurePosixPath(owner).parent)).as_posix())
         require(origin is None or actual == (origin['source_repository'], origin['source_material']), 'Conflicting original input identity.')
-        return (*actual, loc.anchor)
+        if not doc.identity.source_repository:
+            return None, loc.path, loc.anchor
+        if repo is not None:
+            from ..intake.acquire import material_info
+            info = material_info(repo, doc, read=read)
+            if info.get('inputs'):
+                return None, loc.path, loc.anchor
+            # An acquired container does not supply correspondence for every
+            # possible anchor or constituent. Use only its recorded exact scope.
+            originals = {(row['source']['repository'], row['source']['path'],
+                          row['source'].get('anchor', '') or loc.anchor)
+                         for row in info['acquisitions']
+                         if row['local']['path'] == loc.path
+                         and (row['local'].get('anchor', '') == loc.anchor
+                              or not row['local'].get('anchor') and not row['source'].get('anchor'))}
+            require(len(originals) <= 1, 'Conflicting original input scope: ' + loc.path)
+            if originals:
+                return next(iter(originals))
+        elif origin is not None and not documents.revision_inputs(doc, read):
+            return (*actual, loc.anchor)
+        return None, loc.path, loc.anchor
     return origin['source_repository'], origin['source_material'], loc.anchor
 
 
@@ -230,7 +250,7 @@ historical evidence; this function does not fabricate retrospective bindings.
     if not accepted or role_maintenance(owner, decision, previous, previous_read or read):
         return
     needed_roles = {'contract', 'support', 'dependency'} if kind == 'T' else {'statement', 'argument'}
-    needed = {original_locator(loc, read) for role, loc, _ in decision.relations if role in needed_roles}
+    needed = {original_locator(loc, read, repo=repo) for role, loc, _ in decision.relations if role in needed_roles}
     selected = [loc for role, loc, _ in decision.relations if role == 'review']
     require(needed and selected, 'An accepted decision needs its explicit inputs and adopted review.')
     covered, loaded, unavailable = set(), {}, False
@@ -254,7 +274,7 @@ historical evidence; this function does not fabricate retrospective bindings.
         else:
             targets = {target for finding, target, _scope in bindings(review, finding=loc) if finding == loc}
         for target in targets:
-            covered.add(original_locator(target, read))
+            covered.add(original_locator(target, read, repo=repo))
     missing = sorted(needed - covered, key=str)
     require(not missing, 'Selected review bindings do not cover the exact new accepted inputs: ' +
             ', '.join(str(item) for item in missing) + '; selected findings: ' +

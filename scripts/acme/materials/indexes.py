@@ -39,7 +39,7 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
         title = 'Claim' if kind == 'C' else 'Task'
         lines = ['# ' + title + ' Navigation', '',
                  'Derived from supplied material revisions and their explicit selections.',
-                 'Source assessments belong to their original authors; acquisition does not establish a recipient judgment.', '',
+                 'Status belongs to the exact selected decision; original lineage and acquisition remain separate facts.', '',
                  '| Family and entrance | Title | Author | Original repository | Selected decision | Status | Role | Statement or contract | Current argument | Review evidence |',
                  '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
         chosen = [row for row in rows if row['kind'] == kind]
@@ -89,7 +89,7 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
             origin = doc.identity.source_repository if imported else 'Local original'
             status = selected.fields['status'] if selected else 'Source decision outside acquired scope'
             values = [link(index, row['family'], {'path': row['path']}), cell(row['title']), cell(row['author']), cell(origin),
-                      link(index, doc.current.anchor or 'Original decision', vars(doc.current)), ('Source: ' if imported else '') + cell(status),
+                      link(index, doc.current.anchor or 'Original decision', vars(doc.current)), cell(status),
                       cell(selected.fields.get('role', 'Not stated') if selected else 'Unavailable'),
                       '; '.join(refs['statement' if kind == 'C' else 'contract']) or 'Unavailable',
                       '; '.join(refs['argument']) or 'Not selected', '; '.join(refs['review']) or 'Not selected']

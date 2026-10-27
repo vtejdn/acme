@@ -46,8 +46,7 @@ class GitSource:
         self.tree.close()
 
     def source_view(self):
-        from types import SimpleNamespace
-        return SimpleNamespace(root=self.root, home=self.root/'repository', selected_tree=self.tree)
+        return self.tree.research_view()
 
 
 def operations(repo):
@@ -626,8 +625,12 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             original = source_refs.parse(row['source'])
             r.require(original is not None, 'Mapping source must be an exact acme-source locator.')
             r.require(not r.paths.in_pdf_store(original['path']), 'Private local literature is outside intake.')
-            local_path, separator, local_anchor = row['local'].partition('#')
-            r.safe_path(repo.root, local_path)
+            local = links.destination('', row['local'])
+            r.require(local is not None, 'Mapping destination must be a relative local locator.')
+            local_path, local_anchor = local
+            r.paths.check_public_target(local_path)
+            if not r.paths.in_pdf_store(local_path):
+                r.paths.ordinary_path(repo.root, local_path)
             original_id = names.parse(original['path'])
             # The final target is structurally validated below. Its mathematical
             # correspondence is supplied by the agent; local adaptation has its
@@ -636,7 +639,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             selected_mapping = qualified_mapping if 'sender' in row else supplied_mapping
             if 'sender' in row: r.require(row['sender'] == source.transport, 'Foreign mapping belongs to this selected sender.')
             else: external.repository(repo, original['repository'])
-            destination = local_path, local_anchor if separator else ''
+            destination = local_path, local_anchor
             r.require(key not in selected_mapping or selected_mapping[key] == destination,
                       'Conflicting explicit original mappings.')
             selected_mapping[key] = destination
@@ -796,7 +799,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         planned_paths.update(batch.pending)
         combined = {target for target in planned_paths if len({(item['source']['repository'], item['source']['path'])
                     for item in plan if item['target'] == target}) > 1}
-        required_locators = []
+        navigation_targets = {}
         for item in plan:
             doc, origin, target = item['doc'], item['source'], item['target']
             missing = []
@@ -809,7 +812,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     path, anchor = destination if destination is not None else ('', '')
                     if destination is not None and path == owner:
                         local_anchor = (item['local_anchor'] if owner == doc.path and anchor == item['anchor'] else anchor)
-                        required_locators.append({'path': new_owner, 'anchor': local_anchor})
+                        navigation_targets.setdefault(new_owner, []).append({'path': new_owner, 'anchor': local_anchor})
                         replacements.append((start, end, '#' + quote(local_anchor, safe='._-') if local_anchor else ''))
                         continue
                     selected = destination if local_text and destination is not None else None
@@ -856,9 +859,11 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                         if selected is None:
                             whole = mapping.get((path, ''))
                             if whole and whole[0]: selected = (whole[0], anchor)
+                    if selected and selected[0]:
+                        r.paths.check_public_target(selected[0])
                     private = (original_reference if original_reference is not None and r.paths.in_pdf_store(original_reference['path'])
                                else {'repository': source.transport, 'path': path, 'anchor': anchor}
-                               if destination is not None and r.paths.in_pdf_store(path) else None)
+                               if not local_text and destination is not None and r.paths.in_pdf_store(path) else None)
                     if private:
                         locator = private['path'] + ('#' + private.get('anchor', '') if private.get('anchor') else '')
                         value = (label + ' (source-only local literature; not acquired; reference in sending repository named `'
@@ -869,12 +874,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                         continue
                     if selected and selected[0]:
                         local_path, local_anchor = selected
-                        if local_path not in planned_paths:
-                            snapshot.watch(local_path)
-                            data = r.read_from(repo, local_path)
-                            r.require(not local_anchor or links.anchor_occurrences(data.decode('utf-8-sig'))[local_anchor] == 1,
-                                      'Explicit mapped current anchor is missing or ambiguous: ' + local_path)
-                        required_locators.append({'path': local_path, 'anchor': local_anchor})
+                        navigation_targets.setdefault(new_owner, []).append({'path': local_path, 'anchor': local_anchor})
                         relative = posixpath.relpath(local_path, posixpath.dirname(new_owner)) if local_path != new_owner else ''
                         value = quote(relative, safe='/._-') + ('#' + quote(local_anchor, safe='._-') if local_anchor else '')
                     elif destination is not None and r.paths.in_computation_outputs(path):
@@ -960,8 +960,9 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         # postimage. Batch.commit runs these checks before taking the lock, then
         # rechecks all captured inputs under that lock before any publication.
         def validate(read, view):
-            from ..materials.validation import validate_locator_targets
-            validate_locator_targets(required_locators, read)
+            from ..materials.validation import validate_navigation_targets
+            for owner, locators in navigation_targets.items():
+                batch.guards.append(validate_navigation_targets(repo.root, owner, locators, read, planned=batch.pending))
             for item in metadata:
                 document = documents.parse(item['local']['path'], read(item['local']['path']))
                 relatives = snapshot.family(document.identity) if document.identity.kind == 'T' else ()

@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 from . import documents, identity, runtime, discovery, write as writer
 from ..core import repository as shared
+from ..core import source_refs
 
 
 def fixed_locator(value):
@@ -18,13 +19,13 @@ def fixed_locator(value):
 
 def result(doc, read, *, source_info=None):
     try:
-        selected = documents.selected(doc, read) if doc.current else None
+        selected = documents.selection(doc, read)[1] if doc.current else None
     except FileNotFoundError:
-        if not doc.identity.source_repository: raise
+        if not doc.identity.source_repository or not source_refs.external(doc.current.path): raise
         selected = None
     row = {'path': doc.path, 'identity': doc.identity.name, 'title': doc.title, 'author': doc.header['author'],
            'selected_decision': vars(doc.current) if doc.current else None,
-           'source_status' if doc.identity.source_repository else 'status': selected.fields['status'] if selected else None}
+           'status': selected.fields['status'] if selected else None}
     if doc.identity.source_repository:
         row['source'] = doc.header
         row['acquisition'] = source_info(doc) if source_info else None
