@@ -76,7 +76,9 @@ def write_json(path, value, *, exclusive=False, root=None):
     write_bytes(path, encoded(value), exclusive=exclusive, root=root)
 
 
-def write_bytes(path, data, *, exclusive=False, root=None):
+def write_bytes(path, data, *, exclusive=False, root=None, ownership=None):
+    # Shared publication may retain this attempt's temporary-file identity for
+    # recovery if an atomic install succeeds before this call can return.
     path = checked_path(root, path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path = checked_path(root, path)
@@ -87,6 +89,9 @@ def write_bytes(path, data, *, exclusive=False, root=None):
             stream.write(data)
             stream.flush()
             os.fsync(stream.fileno())
+            if ownership is not None:
+                info = os.fstat(stream.fileno())
+                ownership['file_id'] = (info.st_dev, info.st_ino)
         checked_path(root, temporary)
         checked_path(root, path)
         if exclusive:
@@ -99,6 +104,8 @@ def write_bytes(path, data, *, exclusive=False, root=None):
                 os.link(temporary, path)
         else:
             os.replace(temporary, path)
+        if ownership is not None:
+            ownership['installed'] = True
     finally:
         if Path(temporary).exists():
             unlink(temporary, root=root)
@@ -208,8 +215,9 @@ class Repository:
 
 
     @classmethod
-    def initialize(cls, root, username, repository, url=None, **kwargs):
-        return identity.initialize(root, username, repository, url, **kwargs)
+    def initialize(cls, root, username, repository, *, display_name, git_name=None, git_email=None, github_account=None):
+        return identity.initialize(root, username, repository, display_name=display_name,
+                                   git_name=git_name, git_email=git_email, github_account=github_account)
 
 
     def actor(self):
@@ -268,7 +276,6 @@ def main(argv=None):
     p = commands.add_parser('init')
     p.add_argument('--username', required=True); p.add_argument('--repository', required=True)
     p.add_argument('--display-name', required=True, help='Independently supplied name for License attribution, not a path key.')
-    p.add_argument('--url')
     p.add_argument('--git-name'); p.add_argument('--git-email'); p.add_argument('--github-account')
     p = commands.add_parser('source-add')
     p.add_argument('--name', required=True); p.add_argument('--facts', required=True); p.add_argument('--url')
@@ -294,7 +301,7 @@ def main(argv=None):
         elif args.command == 'framework-update-notified':
             result = version.record_update_notification(args.root, args.version)
         elif args.command == 'init':
-            repo = Repository.initialize(args.root, args.username, args.repository, args.url,
+            repo = Repository.initialize(args.root, args.username, args.repository,
                 git_name=args.git_name, git_email=args.git_email, github_account=args.github_account,
                 display_name=args.display_name)
             result = repo.config

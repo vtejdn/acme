@@ -34,7 +34,8 @@ If the setting is invalid, the request fails or the cache cannot be saved, repor
 
 When a verified newer version has not been presented, tell the human the installed and available versions, link the official repository and ask whether to arrange the upgrade.
 Continue the current assignment while the choice is pending.
-After actually presenting the reminder, record only that notification fact through the helper.
+After actually presenting the reminder, record only that notification fact in the existing four-field cache through the optional helper or adequate ordinary maintenance under the [cache rule](versioning.md#official-version-check).
+Preserve concurrent cache changes and the actual attempt/result/version fields; do not blindly overwrite the cache or create another notification register.
 On an explicit recheck, force a fresh bounded attempt while retaining the actual notification state.
 On an explicit disable request, set framework_update_check to false in this repository's configuration, preserving other fields; on enable, set it to true.
 Keep this repository setting out of personal profiles.
@@ -48,20 +49,23 @@ A reminder, silence or metadata response does not authorize replacement files, v
 For an authorized fresh installation, clone the [official starting repository](https://github.com/vtejdn/acme) or copy its files to the selected location using ordinary tools.
 Copying without Git omits the source .git and does not initialize Git; cloning follows Git's ordinary history and configuration behavior.
 Inspect the actual destination and selected files, preserving an existing checkout's .git, index, refs, configuration and unrelated files while resolving actual file conflicts.
-Determine the actual purpose from the human request and destination contents, rather than treating an official URL, clone command or folder name as a new-project instruction.
+Read the obtained framework version and its applicable entrances, then determine the actual purpose from the human request and destination contents, rather than treating an official URL, clone command, empty registry or folder name as a new-project instruction.
 An existing research installation follows the [upgrade action](#upgrade-installed-framework), without copying blank registries over its research state.
+Existing project identity, configuration or materials must not be reset as a blank installation or cleared to manufacture a new project.
 Copying an existing research repository is not fresh framework setup and supplies no new identity, reattribution or intake exemption.
 Source inspection, backup, review, upgrade preparation and maintenance of the official framework itself retain the actual source identity and notices without new-project registration or a project credit.
 
-When obtaining the official blank source to establish a new research project, continue directly with the [setup action](#set-up-repository-or-human-identity): collect only missing human key/name and any needed Git project name, register the human, append the scoped project notice and complete any necessary checkout binding.
-Reuse answers already supplied for that setup; while a required answer is pending, finish independent retrieval and preparation and leave the copy authorless, without inventing an identity or starting research.
+For an actual new research project obtained by downloading, copying, unpacking or cloning the official blank source, first prepare repository, repository_display_name and repository_abbr in repository/config.json as that project's human-chosen or explicitly confirmed values, or null for each missing choice.
+Apply this preparation to both Git and non-Git copies; a valid inherited acme key is not evidence of the human's project choice, although that same key remains valid when explicitly chosen or confirmed.
+Then continue directly with the [setup action](#set-up-repository-or-human-identity): collect the missing human key/name and project choices together, register the actual human, append the scoped project notice and complete any necessary checkout binding.
+Reuse answers already supplied for that setup; while the required human key or License name is missing, finish independent retrieval and preparation and leave the copy authorless, without inventing an identity or starting research.
 
-For a new personal project copied from the official blank repository without Git, prepare repository: null unless the human supplied a name, and do not accidentally adopt the official acme repository name.
-An absent or null name permits local registration, research and receiving selected public material without uploading local research content.
+A new research project does not inherit the official source's display choices or source remote as its own.
+Without Git, retain a supplied repository key or null when unnamed; either permits local registration, research and receiving selected public material without uploading local research content.
 Before research writing or Git delivery in a Git-managed project, obtain the human-chosen or explicitly confirmed repository name and complete the actual checkout binding, reusing an existing real project registration.
-Apply the [repository name rule](rules/identity.md#repository-names-and-use-environments) through ordinary scoped configuration and current README edits; preserve human keys, material identities and historical source facts.
+Apply the [repository name rule](rules/identity.md#repository-names-and-use-environments) through ordinary scoped configuration edits; maintain the README heading from the separate display name and abbreviation when both are known, preserving human keys, material identities and historical source facts.
 Keep reading and necessary setup repair available while the name is missing, without reinitializing the project or inventing a name from the folder or author.
-An existing shared-repository clone keeps its real identity, registrations and materials.
+An existing shared-repository clone keeps its real identity, project display settings, README heading, registrations and materials.
 Reuse the actual human's existing registration and bind the new Git checkout; supplement only genuinely missing human information and project notices, retaining existing authors and historical years under the [identity rules](rules/identity.md#stable-keys-and-local-attribution).
 An authorless copy or clone remains preparation, with no selected research Task or execution authority.
 Do not run research.py init over an already copied config.json or delete configuration merely to satisfy that optional Git-bootstrap helper.
@@ -93,6 +97,9 @@ Ordinary authorized retrieval, editing and selected checks need no additional ro
 Before first registration, ask: "What local author key should identify you in local literature and other authored-material paths, and what independently chosen name should appear in the repository's License attribution?"
 Explain that a key such as Alice-Smith uses ASCII letters, digits and internal hyphens without spaces or underscores, while the License name such as Alice Smith may contain spaces and Unicode and is stored as display_name.
 For a new Git research project, collect its human-chosen repository name with any missing key/name; an unnamed personal folder without Git may keep repository: null.
+Collect any missing project display name and abbreviation during actual setup, reusing established choices independently of the repository key and human attribution name.
+For a fresh official download or clone, prepare all three project settings as actual project choices or null before registration; an existing shared-project clone or upgrade retains its real project settings and authors.
+Unknown display choices remain null and retain the existing heading while independent authorized work continues; ask for the missing choices only when forming the project heading is needed.
 Reuse values explicitly supplied for the actual setup, ask only for missing values and request an author-selected valid replacement for an invalid key rather than changing it automatically.
 Apply the [identity setup rule](rules/identity.md#stable-keys-and-local-attribution) before registering or binding, keeping the key, attribution name and supplied Git/GitHub identities separate.
 Use existing registration interfaces or ordinary authorized metadata edits, then complete the selected root LICENSE project notice through a bounded edit under the [project-notice rule](rules/identity.md#project-notices-during-setup).
@@ -100,7 +107,13 @@ An existing corresponding notice is reused without duplicate attribution; preser
 For an already registered actual human, reuse that identity and add only missing applicable information or notices; a new checkout needs its own Git binding, not a new human registration.
 The optional init interface requires the independent --display-name; an authorless fresh copy or clone remains empty and unbound until actual registration.
 An already copied config.json uses existing registration and scoped configuration edits, without rerunning init or deleting configuration.
-Inspect the resulting people.json, root LICENSE, repository name and necessary binding, then report the installed version, completed setup and specific missing information; an identity tool's success alone does not complete project attribution.
+Git registration stores supplied signature/account mappings without setting user.name or user.email; binding selects the checkout operator without setting the commit signature.
+When a commit is actually needed, verify the effective Git signature against the actual contributor's registered mapping, reuse correct settings and limit necessary configuration to that checkout without changing global settings.
+When both project display choices are known, use ordinary bounded editing to maintain the root readme.md heading as `# <repository_abbr>: <repository_display_name>`, with faithful Markdown escaping and all remaining contents preserved.
+When choices are missing, report the missing project-title setup explicitly rather than presenting a retained template heading as a human choice.
+Changing only the repository key leaves those independent choices and heading unchanged; no new init arguments, generator, Git setup or remote operation is required.
+Inspect the resulting configuration, people.json, full root LICENSE and scoped project notice, README and necessary binding, then report the installed version, actual completed setup and specific missing information.
+A successful init or registration result alone does not establish a completed project title, License notice, effective Git signature or remote setup; add no completion receipt or state field.
 This setup selects no research Task or execution authority.
 For personal use in a folder without Git, use one explicitly identified local human and existing author registration; no Git binding, signature or local multi-author arrangement is required.
 Keep an authorless folder as preparation until that first registration, and use the folder's own human rather than an enclosing checkout's binding.
@@ -153,7 +166,7 @@ Return the resulting material and its actual status, with any missing evidence e
 
 Read the round's changed mathematics, computations, sources and directly affected consumers under the [workflow](rules/workflow.md) and common content decision.
 Check the claims being delivered and relevant inputs, reusing adequate existing evidence; retain useful partial results and failures at responsible homes.
-Repair actual references and derive affected navigation after source edits settle.
+Repair actual references and maintain affected navigation after source edits settle, through ordinary bounded edits or optional rendering.
 Retire a redundant D only after checking its actual historical uses and preserving any necessary content under the [draft rule](rules/ledger.md#working-drafts-and-fixed-findings).
 A setup-only residue whose mathematics is already fixed needs no replacement account or move receipt.
 For human-authorized joint Task work, judge the retained progress under the [collaboration rule](rules/tasks.md#shared-git-research), completing a useful coherent batch through the [delivery action](#commit-or-push-requested-work) under the default permissions and actual human limits, without a separate first or recurring delivery approval.
@@ -268,13 +281,18 @@ Return the repaired administrative result or concrete remaining conflict and nee
 ## Acquire material from another research repository
 
 Use [intake](rules/intake.md#scope-and-routing) for distinct research repositories; another registered human in the same repository is direct collaboration.
-Read the exact source commit, selected mathematical unit or useful R finding, intended scope, necessary inputs and actual original provenance before preparing explicit selections.
+Read each actually selected file or mathematical unit at the exact source commit, its intended scope, necessary inputs and receiving candidates before deciding what to copy, retain, reuse and adapt.
+Check its mathematics and claimed state for the intended use and confirm the real original human and source facts, preserving precise content, useful failures, unresolved inputs and actual review limits rather than treating format or tool success as acceptance.
 The intake source is an identified public GitHub repository at a full fixed Git commit; a receiving no-Git personal folder may remain unnamed.
 Keep the actual fixed Git names and required entry/blob facts through manifest, selected acquired-record validation, local-revision inputs and onward transfer, without checking same-named sending worktree objects.
 Prepare canonical receiving paths through actual correspondence, including an explicit native-child mapping when needed; fixed source names need no local alias resolution or renaming.
 Actual local sources and receiving publication retain their physical protections under the [intake rule](rules/intake.md#scope-and-routing).
 Use actual authorized public source reads and ordinary file operations when Git is unavailable; the optional Git-based source helper retains its own source-access prerequisite.
-Judge preservation, adaptation and reuse, write the receiving material and required source facts, and inspect the actual result and directly affected references.
+Prepare each selected result's local prose, classification, layout, numbering and references under current receiving rules, then inspect its actual text, author correspondence, exact references and necessary direct consumers.
+Sender framework versions, current-format support or missing installation metadata do not independently bar adequate receiving preparation or require a sender upgrade.
+If the optional helper cannot handle the actual old layout or input, report its interface limit and use an adequate ordinary path when the necessary mathematics, original identity, fixed-source facts and conforming local result can be established; do not weaken selected-helper checks or add historical parsers merely for compatibility.
+Keep conjectures, partial support, known failures and source assessments at their real state; established use or a new adoption retains its evidence and review duties without a whole-source reproof for ordinary receipt.
+Resolve or report a real mathematics, author/source or access gap at the affected unit or use, and continue independent authorized receiving work.
 Ordinary reading, editing, copying and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a condition of valid intake.
 R has no mandatory C target; choose actual necessary targets, reuse and limitations from the inspected finding, without acquiring every binding or citation.
 Receive needed S/D mathematics in a suitable fixed home and a necessary joint T contract under the [Task rule](rules/tasks.md#joint-tasks-and-participation), without another human's ordinary Task/E authority.
@@ -306,6 +324,8 @@ Prepare external repoN/authorN records and explicit receiving C/T/R/L/J serials 
 Retain authored inspection limits, genuine unmapped references and actual missing necessary evidence at the consumer.
 Sender-local document references remain explicitly unacquired original-local context; acquire needed original text independently through ordinary authorized source preparation.
 Record the actual operation once in intake, preserving historical J scopes without asserting their current availability, automatic adoption, mathematical equivalence or imported execution authority.
+Per-file handling retains necessary per-unit original and transport correspondence in that operation without per-file approvals, checklists, receipts, permanent mapping graphs or duplicate receiving accounts.
+New reasoning, different-author synthesis or substantive correction belongs to its actual contributor's own responsible material with exact references; initial adaptation does not relax the post-receipt same-human and fixed-source boundaries.
 For local maintenance, prepare the selected operation item's exact path, actual anchor and file/artifact correspondences together with its material; validate the selected postimage before publication and preserve original/transport facts, scope, availability and unselected items.
 Return the chosen installed scope and limitations, preserving the source's actual inspection and review depth.
 

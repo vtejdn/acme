@@ -31,8 +31,9 @@ Personal use without Git may keep an absent or null repository name; Git researc
 An existing shared-repository clone preserves its identity, registrations and materials rather than repeating fresh setup.
 Use ordinary registration and, when Git is present, explicit checkout binding; copying files alone neither initializes Git nor binds a human.
 
-repository/people.json registers permanent human IDs, display names, actual registering humans, accepted Git name/email pairs and associated GitHub logins.
+repository/people.json registers permanent human IDs, display names, accepted Git name/email pairs and associated GitHub logins.
 New human/repository registrations contain no administrative registration timestamp; retained obsolete values are removed from maintained metadata rather than converted or kept as compatibility facts.
+Local-human registrations contain no registered_by field or replacement registrar history; remove that retired field from maintained entries while preserving their other facts and actual checkout binding.
 Human/repository keys use letters, digits and internal hyphens; underscores separate identifier fields.
 Registration checks keys and GitHub logins without regard to case, rejects duplicate Git signature assignments, and retains canonical spelling.
 Display-name changes do not rename records.
@@ -41,7 +42,7 @@ Correct mappings through traceable framework maintenance; never reassign a human
 ### Project notices during setup
 
 After obtaining the official blank framework to establish a new research project, continue with the [installation and setup action](../agent-actions.md#install-the-framework), reusing actual supplied answers and collecting only missing information.
-An authorless copy remains preparation while required answers are pending; do not invent a name or replace an upstream notice.
+An authorless copy remains preparation while the required human key or License name is missing; do not invent a name or replace an upstream notice.
 Keep the root LICENSE in place, including its complete license text and applicable ACME and third-party notices, original names and years.
 The upstream Copyright 2026 Sheng Yin is an actual notice, not a replaceable project-author placeholder.
 Append the chosen project's notice after the complete existing text as a separate statement limited to that human's original contributions or actual modifications in this research project, excluding the upstream ACME framework and other authors' contributions.
@@ -86,9 +87,25 @@ Repository names use ASCII letters, digits and internal hyphens without undersco
 Ask the human for an invalid choice's replacement rather than sanitizing it.
 
 A new project copied or cloned from the official blank source must distinguish the official acme name from its own registration.
-Prepare repository: null for a new unnamed personal copy; obtain the human's repository name when Git is used.
+After identifying the actual new-project purpose, prepare repository, repository_display_name and repository_abbr as the project's actual human choices or null in both downloaded and Git-cloned blank copies, before treating them as project registration.
+An inherited valid acme key does not establish a human choice; the same key is permitted when the human explicitly chooses or confirms it, without an official-name detector or reserved-name ban.
+Without Git, retain a supplied repository key or null when unnamed; in a Git project, obtain the human's repository name before research writing or delivery, while independent reading and setup remain available.
 The actual official repository retains its name, and an existing research-project clone preserves its registered identity and materials.
-An actual name registration or human-chosen update changes the configuration, necessary current README display of the repository name and direct current consumers, without changing the ACME framework name, human keys, material identities or historical source facts.
+Determine that purpose from the human request and actual contents, without resetting existing project configuration or materials or using an empty registry alone as a fresh-installation signal.
+Source inspection, backup, framework maintenance and project upgrades retain their actual source or target identity and do not repeat new-project registration.
+An actual name registration or human-chosen update changes the repository key and its direct current consumers, without automatically changing independently chosen display settings or the README heading.
+Preserve the ACME framework name, human keys, material identities and historical source facts.
+
+repository_display_name and repository_abbr in repository/config.json hold the human-chosen project display name and abbreviation, independently of the repository key, human display_name, Git signature and remote address.
+Each known choice is nonempty single-line text, may contain spaces or Unicode and retains the human's actual spelling; missing choices are null.
+Reuse established project choices or collect the missing choices during actual setup, without deriving them from a folder, author, remote or official framework title.
+When both are known, the agent maintains the root readme.md heading as `# <repository_abbr>: <repository_display_name>` by ordinary bounded editing, escaping Markdown as needed to render the chosen text faithfully and retaining the remaining contents.
+Changing a display choice updates that current heading, without rewriting the ACME framework name or historical source facts.
+Missing choices retain null and the existing heading while independent authorized setup, reading and work continue; ask only for the missing choices when forming the project heading is needed.
+Report the missing title choices explicitly; a retained template heading is not a selected project name or completed display setup.
+A new research project copied or cloned from the official blank source starts with its own choices or null, rather than inheriting the official project's display settings.
+An existing shared-project clone retains its actual settings and heading, and personal-folder use needs no Git or remote setup for these choices.
+The optional init helper supplies null display defaults; ordinary configuration and README edits suffice, without new initialization arguments, a heading generator or synchronization mechanism.
 
 Git use supports local research and native versioning without a GitHub account or remote.
 An existing Git-managed checkout keeps its Git and binding requirements if the executable becomes unavailable, without falling back to a personal-folder operator.
@@ -96,7 +113,7 @@ Local Git operations require no network preflight; the separately configured dai
 
 When first establishing the actual GitHub project remote, after a relevant target change or for a remote operation needing fresh facts, compare the selected remote's repository name component with the registered local name.
 An official framework source, intake source or reference-only upstream is not automatically that project remote, and a GitHub login selects no repository.
-A difference permits a non-blocking suggestion to update the local registration and necessary current displays; keep the local name unless the human chooses the change.
+A difference permits a non-blocking suggestion to update the local repository key; keep the local name unless the human chooses the change, and maintain independent display settings only under their own choices.
 The mismatch alone blocks neither local research nor an otherwise authorized remote operation.
 Do not automatically rename the remote repository, derive a local choice by sanitizing the remote name or rewrite remote configuration to remove a mismatch.
 Use the actual target address, account/channel and authority independently of name matching, reusing still-applicable evidence without a reminder registry or comparison on each local read.
@@ -127,7 +144,10 @@ python scripts/research.py identity-add Another-Human --display-name "Another Hu
 ```
 
 Binding changes the operator; it does not change the Git name or email.
+Registration stores supplied Git signature and account mappings without configuring user.name or user.email.
 The effective Git signature must identify the actual contributor through the registered name/email mapping.
+Check it when a commit is actually needed, reusing correct settings and limiting any necessary changes to the selected checkout rather than global configuration.
+The author key, License display_name, project display settings, checkout operator, effective Git signature and selected remote retain their separate responsibilities; optional init success does not establish that all have been set.
 The identity-add example is not authorization to register a collaborator.
 Supply their actual Git/GitHub mappings through the options when available.
 Establish a source creator's correspondence before intake; matching display names alone are insufficient.
@@ -135,7 +155,8 @@ Establish a source creator's correspondence before intake; matching display name
 New local materials identify their actual registered human author.
 Apply the [collaboration and maintenance boundary](#collaboration-maintenance-and-conflicts) to cross-author work.
 Original imported authorship and exact source binding remain provenance through the receiving repository's registered external identities.
-Registration, acquisition and execution record their actual operator; reviews retain their actual checking relationship, and unknown historical attribution remains unknown.
+Git registration checks the current checkout operator without retaining a registrar history.
+Acquisition and execution record their actual operator; reviews retain their actual checking relationship, and unknown historical attribution remains unknown.
 
 <a id="collaboration-maintenance-and-conflicts"></a>
 ## Direct collaboration, maintenance and conflicts
@@ -189,7 +210,8 @@ D is a working address, stable during its current use and reusable after retirem
 A materially different statement/question gets its appropriate new family; a substantive new proof within an unchanged Claim gets a material revision.
 Source-unit numbers retain the existing sequence within their citation key, separate from research-line allocation.
 
-repository/config.json stores this repository's actual name, URL when known, necessary runtime settings and the compact `material_next` map of next unissued material-family numbers.
+repository/config.json stores this repository's actual key, separate project display name and abbreviation, necessary runtime settings and the compact `material_next` map of next unissued material-family numbers.
+Determine project remote addresses from native Git configuration and the actual selected target under the current instruction and authority, without a project URL mirror in config.json.
 It contains no global identity or local self-repository number.
 repository/people.json registers local humans by unique readable names such as Yin, Alice and Alice2, with actual Git/GitHub mappings and no shared active-user setting.
 Canonical external author numbers are reserved and cannot register or bind a local operator.
@@ -246,7 +268,8 @@ Candidate appends preserve fresh history even when the selected decision is unch
 Coordinate direct edits to the same material.
 A duplicate L family at another home is an error, not a second allocation sequence.
 
-Family-number issuance, identity registration, shared navigation publication, explicit bibliography updates and intake/U allocation use the OS lock at `repository/.lock`.
+Family-number issuance, coupled identity registration and intake/U allocation use the OS lock at `repository/.lock`, as do selected helpers for navigation or bibliography publication.
+Ordinary bounded navigation, bibliography prose and explanatory edits coordinate their actual write scope and preserve unrelated and concurrent content without universally entering a helper's lock and publication protocol.
 Wait at most 30 seconds by default; `--maintenance-wait SECONDS` configures the bounded wait and zero fails immediately.
 Waiting is cancellable, uses monotonic time and emits one concise notice when contended.
 Persistent lock-file existence is normal.

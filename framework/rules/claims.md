@@ -253,7 +253,8 @@ Key proof points and the full logical chain after Task completion require separa
 The existing renderer derives mathematics/claims/index.md from the fixed C families and explicit selected decisions: identity/title, selected assessment and exact argument/evidence locators.
 C owns every assessment and relation.
 The same index shows each selected finding's own declared relationship, exact input and authored scope separately; it infers no aggregate review level or proof verdict from them.
-The responsible publishing agent refreshes after relevant material changes; do not hand-edit generated rows.
+The responsible agent maintains affected navigation after relevant material changes, through ordinary bounded edits or the optional renderer, including populated generated rows.
+Preserve exact selections, source facts, other row values and necessary history; an index edit cannot establish a Claim assessment or review conclusion.
 
 Fixing a result requires its complete argument or counterexample, actual source/compute inputs and truthful review relationship at the selected scope.
 Reuse applicable checked evidence; a new commit does not itself create new review obligations.

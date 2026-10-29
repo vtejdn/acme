@@ -32,14 +32,9 @@ Dans le périmètre autorisé, les [agents](#notion-agent) autonomes ont la resp
 
 ### Collaboration
 
-Les mathématiciens peuvent collaborer au moyen d’un [dépôt Git](git-repository.md#notion-git-repository) commun, partager les documents de recherche et réutiliser les résultats des autres.
+Les mathématiciens peuvent [collaborer](#joint-task) au moyen d’un [dépôt Git](git-repository.md#notion-git-repository) commun, partager les documents de recherche et réutiliser les résultats des autres.
 Le dépôt peut être hébergé sur une plateforme telle que [GitHub](git-repository.md#notion-github), permettant aux collaborateurs de travailler sur leurs propres appareils et de synchroniser les modifications.
 Voir le [schéma de collaboration au moyen d’un dépôt Git](git-repo.png).
-
-Les collaborateurs d’un même dépôt peuvent établir un [Task](#material-task) conjoint pour un objectif mathématique commun, en précisant la question commune, les hypothèses et les critères d’achèvement ;
-chaque participant précise son périmètre de participation dans son propre Task et organise des démarches de recherche concrètes au moyen de [stratégies de recherche (Strategy)](#material-strategy).
-Il est recommandé de choisir des stratégies de recherche différentes en concertation avec les collaborateurs, afin de limiter les efforts mathématiques redondants et d’utiliser plus efficacement les ressources de calcul pour l’IA.
-Pour une vérification indépendante, une réplication ou des contrôles croisés, il est également possible d’adopter délibérément la même démarche de recherche.
 
 Différents mathématiciens ou équipes peuvent aussi collaborer entre dépôts en recevant des documents sélectionnés par [Intake](#notion-intake) ; voir le [schéma de collaboration entre dépôts](collaboration.jpg).
 
@@ -57,7 +52,7 @@ Voir le [schéma de déroulement du travail](workflow.jpg).
 ## <a id="setup"></a>Configuration
 
 Pour un nouveau projet de recherche, suivez les étapes I à III ci-dessous.
-Si vous rejoignez une collaboration existante, configurez votre espace de travail, puis suivez les étapes prévues pour rejoindre la collaboration.
+Si vous rejoignez une collaboration existante, [configurez votre espace de travail](#setup-workplace), puis suivez les étapes prévues pour [rejoindre la collaboration](#setup-collaboration).
 
 ### Étape I. Choisir des [LLM](#notion-llm) performants
 
@@ -65,7 +60,7 @@ Comparez les performances des LLM sur des problèmes mathématiques de niveau re
 Prenez comme points de repère [FrontierMath Tier 4](https://epoch.ai/frontiermath/tiers-1-4?tier=Tier+4+%28v2%29&view=graph&tab=leaderboard), [MathArena](https://matharena.ai/models), [Riemann-bench](https://surgehq.ai/benchmarks/riemann-bench) et d’autres évaluations pertinentes.
 Choisissez des modèles pour la recherche mathématique et les tâches administratives en tenant compte de leur caractère open source, de leur accessibilité et de leur coût.
 
-### Étape II. Configurer votre espace de travail
+### <a id="setup-workplace"></a>Étape II. Configurer votre espace de travail
 
 Pour une recherche individuelle sur un seul appareil, utilisez un [environnement d’exécution d’agents](agent-harness.md) adapté, donnant accès à un [LLM](#notion-llm) performant.
 
@@ -96,7 +91,7 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 - Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
 
-### Rejoindre un [dépôt Git](git-repository.md#notion-git-repository) existant comme collaborateur
+### <a id="setup-collaboration"></a>Rejoindre un [dépôt Git](git-repository.md#notion-git-repository) existant comme collaborateur
 
 1. Connectez-vous à la plateforme d’hébergement du dépôt et acceptez l’invitation de votre coauteur.
 2. Demandez à un [agent](#notion-agent) de vous aider à configurer l’accès au dépôt partagé.
@@ -111,11 +106,11 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 ## Premiers pas
 
-### Commencer un Task
+### Commencer un [Task](#material-task)
 
 1. (Facultatif) Fournissez la littérature pertinente ou demandez à un [agent](#notion-agent) de la rechercher.
    Demandez à l’agent de conserver les fichiers sources dans le [répertoire local de littérature](../mathematics/literature/pdf) et de vérifier les parties indiquées des articles pertinents au niveau de profondeur demandé.
-2. Définissez un [Task](#material-task) en discutant avec les agents, en précisant les questions, les contraintes et les critères d’achèvement.
+2. Définissez un Task en discutant avec les agents, en précisant les questions, les contraintes et les critères d’achèvement.
    Vous pouvez choisir une [lettre de ligne de recherche](#notion-research-line-letter) pour organiser le Task et les documents associés.
 3. Pour un travail autonome prolongé, précisez ou adoptez des limites d’exécution et des conditions d’arrêt.
 4. Autorisez les actions nécessaires des outils lorsque cela vous est demandé et répondez aux questions posées par les agents.
@@ -123,9 +118,23 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
    Discutez des mathématiques avec les agents pour approfondir et accélérer votre compréhension.
    Demandez des références pertinentes et questionnez de manière socratique les sources des arguments et des idées, en particulier lorsqu’un argument s’appuie sur les connaissances du modèle sans source explicite.
 6. (Facultatif, si vous utilisez [Git](git-repository.md#notion-git)) Enregistrez les modifications que vous souhaitez conserver dans des [commits](#notion-commit) ; au besoin, annulez les modifications locales ou utilisez un revert pour annuler des commits.
-   Lorsque vous collaborez avec d’autres mathématiciens, demandez aux agents de gérer les [pushs](#notion-push), les [pulls](#notion-pull), les [fusions](#notion-merge) et de vous aider à résoudre les conflits.
 
 - Voir les [exemples de consignes de recherche](<user-instructions/Exemples de consignes.md#research-instructions>).
+
+### <a id="joint-task"></a>Commencer un [Task](#material-task) conjoint
+
+Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour un objectif mathématique commun, en précisant la question commune, les hypothèses, le périmètre et les critères d’achèvement ; chaque participant fait progresser la recherche dans le cadre de son propre Task.
+
+1. Demandez à un [agent](#notion-agent) d’établir un Task conjoint ; si un collaborateur en a déjà établi un qui convient, passez directement à l’étape suivante.
+2. Demandez à l’agent d’établir ou de réutiliser votre Task individuel, de le relier au Task conjoint que vous avez convenu d’adopter avec vos collaborateurs et de préciser votre périmètre de participation et vos critères personnels d’achèvement.
+   Un Task individuel peut couvrir tout ou partie de la question commune ; ses critères d’achèvement peuvent être identiques à ceux du Task conjoint ou définis selon le périmètre de participation.
+   Les participants peuvent aussi se répartir le travail sur une même question : l’un peut chercher une démonstration, tandis qu’un autre cherche un contre-exemple.
+   Il est recommandé de choisir, en concertation avec les collaborateurs, différentes [stratégies de recherche (Strategy)](#material-strategy) afin de limiter les efforts mathématiques redondants et d’utiliser plus efficacement les ressources de calcul pour l’IA.
+   Pour une vérification indépendante, une réplication ou des contrôles croisés, il est également possible d’adopter délibérément la même démarche de recherche.
+3. Lors d’une recherche conjointe, l’[agent principal de recherche](#notion-main-research-agent) synchronise les mises à jour des collaborateurs avant chaque cycle au moyen d’opérations telles que les [pulls](#notion-pull) et les [fusions](#notion-merge) ;
+   au moment opportun, il enregistre dans des [commits](#notion-commit) les progrès de recherche pouvant être partagés et les transmet par des [pushs](#notion-push).
+   L’agent traite les conflits administratifs dans les limites de son autorité ; en cas de désaccord mathématique substantiel, il explique le problème et procède à une vérification sur la base d’une autorisation existante ou après avoir obtenu l’autorisation nécessaire.
+   Vous pouvez aussi demander de votre propre initiative des opérations de synchronisation telles que les pushs, les pulls et les fusions.
 
 ### Points d’attention
 
@@ -162,7 +171,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.5.0.
+La version actuelle du cadre est 0.6.0.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.

@@ -413,7 +413,9 @@ Current E updates are agent-prepared exact edits; checking validates fields and 
 
 ## Direct acquisition
 
-Intake is an [agent-completed receiving action](agent-actions.md#acquire-material-from-another-research-repository): read selected content and necessary candidates, judge adaptation and reuse, write actual receiving material and required provenance, and inspect the result and affected references.
+Intake is an [agent-completed receiving action](agent-actions.md#acquire-material-from-another-research-repository): read each actually selected file or unit and necessary context/candidates, judge what to retain, reuse, copy and adapt under current receiving rules, write actual receiving material and required provenance, and inspect the result and necessary direct consumers.
+Check selected mathematics, claimed status, real original authorship and sufficient fixed-source facts; retain exact content, useful failures and unresolved evidence rather than inferring correctness, equivalence or acceptance from a conforming declaration.
+Sender versions, current-format support or missing framework metadata alone do not prevent adequate receiving preparation or require changing the sender; actual source, author, evidence and receiving-result obligations remain.
 Ordinary file operations and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a receiving prerequisite.
 The resulting identities and provenance below remain required; command payloads and publication protocols apply only when choosing the optional intake helper.
 
@@ -581,6 +583,7 @@ Acquisition alone supplies no recipient review verdict; corrections and limitati
 ## Prepared receiving units
 
 This section specifies the optional intake helper's prepared-text interface; the agent may instead complete receiving through ordinary file operations under the [common adaptation rule](rules/records.md#receiving-and-adapting-selected-content).
+An unsupported old filename, layout or actual input is that helper's interface limit, not a universal receiving prohibition; an adequate ordinary path remains available when necessary source facts and a conforming local result can be established, without weakening this interface or adding historical parser branches.
 For any eligible textual selection passed to that helper, prepared supplies either complete final local text as {"text": "..."} or precise expected-text edits under the existing links.edit_text contract.
 Prepared text uses final receiving local links and anchors; exact acme-source locators may still use the explicit mapping input.
 Ordinary prepared local links resolve relative to the final receiving document and retain its selected objects and anchors, without sending-source mapping lookup or same-operation source-path substitution.

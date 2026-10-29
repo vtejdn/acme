@@ -1,10 +1,10 @@
 # Task Navigation
 
 Derived from supplied material revisions and their explicit selections.
-Source assessments belong to their original authors; acquisition does not establish a recipient judgment.
+Status belongs to the exact selected decision; original lineage and acquisition remain separate facts.
 
-| Family and entrance | Title | Author | Original repository | Selected decision | Status | Role | Statement or contract | Current argument | Review evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Family and entrance | Title | Author | Original repository | Selected decision | Status | Statement or contract | Current argument | Review evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 No task materials were supplied.
 
@@ -20,7 +20,7 @@ No participation declarations in the supplied Tasks.
 
 ## Fixed History
 
-Retained decisions and historical-only assessments keep their exact scope; history is navigation, not a new selection.
+Retained fixed decisions keep their exact scope; history is navigation, not a new selection.
 
-| Family | Material version | Decisions | Historical-only assessments |
-| --- | --- | --- | --- |
+| Family | Material version | Decisions |
+| --- | --- | --- |

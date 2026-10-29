@@ -205,18 +205,16 @@ def register(repo, value, display_name, git_name=None, git_email=None, github_ac
         r.require(not any(p['id'].casefold() == value.casefold() for p in data['people']), 'Human identity is already registered.')
         if not git_managed(repo.root):
             r.require(not data['people'], 'Personal use without Git supports one local human; retain original authors as external identities.')
-            registrar = value
         elif not data['people']:
             checkout(repo.root)
             r.require(not git(repo.root, 'config', '--get', 'research.actor', optional=True)
                       and not git(repo.root, 'config', '--get', 'research.actorWorktree', optional=True),
                       'Empty registry conflicts with an existing research binding.')
-            registrar = value
         else:
-            registrar = actor(repo)
+            actor(repo)
         entry = {'id': value, 'display_name': display_name,
                  'git_identities': [{'name': git_name, 'email': git_email}] if git_name else [],
-                 'github_accounts': [github_account] if github_account else [], 'registered_by': registrar}
+                 'github_accounts': [github_account] if github_account else []}
         # Validate the proposed complete registry before publishing it.
         proposed = {**data, 'people': data['people'] + [entry]}
         validate_registry_value(proposed)
@@ -224,16 +222,15 @@ def register(repo, value, display_name, git_name=None, git_email=None, github_ac
         return entry
 
 
-def initialize(root, username, repository, url=None, git_name=None, git_email=None, github_account=None, *, display_name):
+def initialize(root, username, repository, *, display_name, git_name=None, git_email=None, github_account=None):
     root = Path(root).resolve()
     r.check_storage(root)
     key(username); repository_name(repository, required=True); attribution_name(display_name)
     r.require(bool(git_name) == bool(git_email), 'Provide Git name and email together.')
     r.require(not (root / 'repository/config.json').exists(), 'Repository is already initialized.')
-    config = {'repository': repository, 'layout_format': 2,
-              'repository_url': url, 'material_next': {}, 'framework_update_check': True}
+    config = {'repository': repository, 'repository_display_name': None, 'repository_abbr': None,
+              'material_next': {}, 'framework_update_check': True}
     people = {'people': [{'id': username, 'display_name': display_name,
-              'registered_by': username,
               'git_identities': [{'name': git_name, 'email': git_email}] if git_name else [],
               'github_accounts': [github_account] if github_account else []}]}
     validate_registry_value(people)

@@ -33,6 +33,9 @@ Before repository or first-human setup, the agent collects the independent local
 Invalid keys and missing or whitespace-only/multiline names fail before identity setup; the agent requests an author-selected valid replacement instead of sanitizing or inferring a value.
 The agent appends a missing, separately scoped project notice after the complete root LICENSE under the [identity rule](../framework/rules/identity.md#project-notices-during-setup), preserving upstream names/years and applicable notices; these tools neither generate credits nor complete the whole installation action.
 `research.py init` is an optional Git-bootstrap helper with its actual Git prerequisite; ordinary personal-folder file and author-registration work need not invoke it or `identity-bind`.
+Initialization supplies null repository_display_name and repository_abbr defaults; the agent records actual project choices and maintains the README heading through ordinary edits under the [identity rule](../framework/rules/identity.md#repository-names-and-use-environments).
+The Python Repository.initialize and identity.initialize interfaces take display_name and optional Git identity arguments by keyword after repository.
+The former init --url and Python URL arguments are retired and refused before initialization writes; project remote addresses remain in native Git configuration, while source-add --url and fetch-source --url retain their source-address roles.
 For no-Git personal use, repository/config.json may omit repository or set it to null; a newly prepared unnamed configuration uses null without inventing a repository name.
 Ordinary material reading, author registration, local creation/revision, source registration and current-E checks retain their actual duties without a target Git prerequisite.
 Git research writing and delivery require the human-registered repository name and explicit checkout binding; read-only material inspection and necessary setup repair remain usable while a name is missing.
@@ -75,20 +78,27 @@ Invalid version metadata, timeout, unavailable metadata and interruption never c
 An unsuccessful current-day result is not automatically retried.
 
 A reminder_due value is an agent action candidate, not notification or upgrade authorization.
-Actually present the installed/newer versions, official repository link and upgrade choice to the human before calling framework-update-notified VERSION.
-That command preserves the current attempt/result/version while recording only the actual notification.
+Actually present the installed/newer versions, official repository link and upgrade choice to the human before recording the notification in the existing cache.
+The optional framework-update-notified VERSION command preserves the current attempt/result/version while recording only the actual notification; adequate ordinary maintenance may do the same under the existing cache and concurrency contract, without blind overwrites or a second register.
 The agent owns the wording and choice; the helper never installs a framework or changes research authority.
 
 ## Installation and setup
 
 Use ordinary copying or cloning under the [installation action](../framework/agent-actions.md#install-the-framework).
-For an actual new research project from the official blank source, the agent continues from acquisition to collecting missing key/name and any needed Git project name, registration, a scoped project notice and necessary binding, reusing already supplied answers.
-Pending answers leave an authorless preparation copy; official-source inspection, backup or upgrade preparation does not select that setup.
+First read the obtained framework version and entrances and distinguish an actual new research project from source inspection, backup, maintenance, an existing shared-project clone or upgrade using the human request and actual target contents.
+For an actual new research project downloaded, copied, unpacked or Git-cloned from the official blank source, the agent first sets repository, repository_display_name and repository_abbr to actual human choices or null through ordinary bounded configuration edits.
+This includes clearing an unchosen inherited repository key in a Git clone before treating it as a project registration; a human may explicitly choose or confirm the same acme key without a new name restriction.
+Collect missing human key/name and project choices together, reusing supplied answers, then register the actual human, append the scoped project notice and complete necessary checkout binding.
+Missing human key/name answers leave an authorless preparation copy; missing project choices remain null while independent authorized setup continues, and official-source inspection, backup or upgrade preparation does not select fresh setup.
 Project identity and requested README text are ordinary scoped edits; human registration and Git binding retain their separate explicit interfaces.
-For a new personal copy from the official blank tree, use an unnamed configuration unless the human supplied a name; the actual official repository and existing named project clones keep their real registrations.
+Without Git, use the supplied repository key or null when unnamed, without initializing Git; the actual official repository and existing named project clones keep their real registrations.
 The agent may offer a non-blocking name update for the actually selected GitHub project remote; this is not an automatic comparison, remote rewrite or required CLI gate.
 The optional init helper does not run over an already copied repository/config.json and is not an installation prerequisite.
 Use the applicable existing registration/binding interface or ordinary authorized metadata edits and inspect people.json, LICENSE and necessary configuration/binding together; a successful identity-add or init result alone does not establish a completed project notice.
+Human id, License display_name, project display name/abbreviation, registered Git/account mappings, checkout binding and effective Git signature are separate facts.
+Registration and binding do not configure user.name or user.email; check the effective signature when a commit is needed and keep necessary changes local to that checkout.
+Optional init success supplies no completed License notice, project display choices, README heading, effective commit signature or remote setup; report actual completed and missing items from the resulting files without a receipt or new status field.
+Retain the complete upstream License and attribution years and append only a missing notice for actual project contributions; unknown display choices stay null, with the retained heading reported as incomplete project-title setup.
 Existing research clones reuse their real project and human registrations and retain notices, while repeated setup and upgrades preserve scope and historical years without duplicate attribution or wholesale LICENSE replacement.
 Agent-led upgrades may use fixed official public files and ordinary recovery copies without a Git executable, preserving named or unnamed local state and marking the installed version only after required adaptation succeeds.
 
@@ -177,7 +187,11 @@ The interface has no event writer, history replay, authority inference or platfo
 
 ## Cross-repository intake
 
-Intake is an [agent-completed receiving action](../framework/agent-actions.md#acquire-material-from-another-research-repository): read the selected source and necessary candidates, judge preservation, adaptation and reuse, write the actual receiving material and required provenance, and inspect the result and affected references.
+Intake is an [agent-completed receiving action](../framework/agent-actions.md#acquire-material-from-another-research-repository): read each selected file or unit and necessary context/candidates, judge what to retain, reuse, copy and adapt under current receiving rules, write actual receiving material and required provenance, and inspect the result and necessary direct consumers.
+Verify the selected mathematics and claimed state for its intended use and the real original human and fixed-source facts, retaining exact content, useful failures, unresolved inputs and actual review limits.
+Sender framework versions, current-format support or missing installation metadata alone do not bar adequate receiving preparation or require changing the source repository.
+If the helper cannot handle a selected old filename, layout or input, report that interface limit and use an adequate ordinary path when necessary facts and a conforming local result can be established; its actual input and publication checks remain unchanged.
+Keep per-unit original and transport correspondence in the existing one-operation provenance home without per-file approvals, checklists, receipts or duplicate accounts; format or tool success establishes no mathematical adoption, and later different-author corrections retain their own authorship boundary.
 Ordinary file operations and existing registration/allocation mechanisms suffice without a dedicated command, prepared-text payload, mapping plan or uniform batch protocol.
 The following payload, mapping and publication protocol applies only to callers choosing the optional helper.
 Before receiving U through either ordinary file operations or this helper, the agent completes [acquisition for its inspected original](../framework/rules/literature.md#acquisition-before-u-reception) to its actual reused, obtained or failed outcome.
@@ -296,6 +310,9 @@ The tool authenticates no human identity, certifies no preservation/deduplicatio
 
 ## Local source retrieval and registration
 
+The following parameters, expected-text inputs and publication protocol apply to callers choosing these helpers.
+Ordinary authorized retrieval, inspection, copying and registration edits remain available without a helper invocation or prepared JSON, retaining the same work/edition association, actual local-byte fingerprints, source facts, private storage and Git exclusions and affected-write coordination.
+
 `material.py fetch-source --url ADDRESS --output LOCAL --format pdf|html` fetches at most two supplied addresses and returns actual requested/final URLs, byte length, format/decoding facts and digest.
 Its digest is a transient response-byte fact, not a registered local baseline or source-identity verdict.
 Fetching does not register a work/edition association.
@@ -340,7 +357,8 @@ An authorized retry uses explicit fetch/inspect/register.
 
 ## Shared publication
 
-Family-number issuance, identity registration, shared navigation, bibliography and intake/U allocation use the OS lock at `repository/.lock`.
+Family-number issuance, coupled identity registration and intake/U allocation use the OS lock at `repository/.lock`, as do explicitly selected navigation and bibliography helpers.
+Ordinary bounded navigation and bibliography prose edits coordinate actual affected writes without universally requiring this helper lock or publication protocol.
 C/T append/select and fixed-material revision protect their actual read, predecessor/current-main check and publication with the same short lock.
 Preparation of mathematical decisions remains outside the lock; a stale predecessor fails without retrying against another decision.
 An unselected candidate append reads fresh protected history and preserves every existing decision even when the selector has not changed.
@@ -348,6 +366,8 @@ Shared commands accept `--maintenance-wait SECONDS`, default 30; zero fails imme
 Waiting is cancellable and emits one notice.
 Re-read state after waiting; keep network, agent work and broad checks outside publication.
 File existence alone does not indicate a held lock.
+The shared publisher retains per-call atomic-write ownership information to recover a committed target even if its writer cannot return, while preserving competing targets and reporting any incomplete restoration.
+This is an in-memory recovery aid for selected publication, without a persistent transaction record or an additional requirement on ordinary text maintenance.
 
 ## Source contents
 

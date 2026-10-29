@@ -13,11 +13,19 @@ Fixed Git source keys retain their literal names through selection, byte retriev
 Use the selected entry and blob for each actually required input, retaining prohibited-source and ordinary-file restrictions without worktree fallback.
 
 Use the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities) for input scope, original-author correspondence, local reuse and source associations.
-The agent reads the selected sources and necessary receiving candidates, judges preservation, adaptation and reuse, writes the receiving material and required provenance, and inspects the actual result and affected references.
+The agent reads each actually selected file or unit and its necessary context and receiving candidates, checks its mathematical content, claimed status and true original author/source facts, and judges what to copy, retain, reuse and adapt under current local rules.
+Prepare the actual local content, classification, layout, numbering and references, then inspect the receiving text, author correspondence, exact references and necessary direct consumers; syntax, links or byte checks do not establish mathematical correctness, equivalence or review applicability.
+Preserve conjectures, conditional or partial evidence, useful failures and actual review gaps at their true scope; a new local format supplies no acceptance or invented source decision, relationship or date.
+Established use or a genuinely new adoption keeps its existing evidence and review duties without re-proving or independently reviewing all old results merely to receive them.
+Keep actual original human, repository, fixed revision, path, selected scope and necessary version/review facts, with onward transport separate; local authorN/repoN, kind or position changes do not transfer authorship or override an established original binding.
+The agent writes the selected receiving material and required per-unit provenance once in the existing operation, maintains registration and allocation state, and creates no per-file approval, checklist, receipt or permanent mapping graph.
 Ordinary file operations and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a condition of valid intake.
 Without a Git executable, use authorized reads of the selected public fixed-source files and ordinary file operations; this does not upload or publish receiving research content.
 Optional helpers execute explicit choices under their own interfaces; those payload and publication protocols do not govern receiving actions that do not use them.
 The Git-based intake helper needs Git access to its selected source checkout, without requiring the receiving personal folder to be Git-managed or named.
+The sender need not support current declarations or supply framework installation metadata; differing versions and unsupported source layouts alone require neither refusal nor changes to that repository.
+A helper's unsupported filename, layout or input is a limitation of that interface; when necessary mathematics, original identity and fixed-source facts suffice, the agent may prepare a conforming receiving result through ordinary operations without extending the parser.
+Keep actual missing inputs, substantive errors, unresolved author/source correspondence and access limits at the affected unit or intended use, while continuing independent authorized receiving work.
 
 Another human's ordinary Task/E authority, live execution, profiles and manuscript projects are outside intake.
 Needed S/D mathematics may be explicitly adapted into its appropriate receiving mathematical home, retaining its actual original path and scope without inventing a Claim assessment or review.

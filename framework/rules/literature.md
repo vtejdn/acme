@@ -121,7 +121,7 @@ Tools fetch only supplied addresses and report requested/final addresses and byt
 For an unestablished response, inspect the returned object before registering the local file under the chosen work/edition.
 Reuse adequate existing judgments within their actual scope without a confirmation field or repeated approval.
 
-Byte input is the file explicitly supplied to the operation.
+For the optional local-registration helper, byte input is the file explicitly supplied to the operation.
 An existing work key chooses bibliography, not a local artifact; neither a missing input, matching suffix nor target fingerprint selects local bytes.
 To reuse an actual local file, pass it through the existing PDF, HTML or resource file argument with its actual source facts and limitations.
 With no supplied bytes, a free destination records truthful unavailability without a fresh fingerprint; a selected existing absent artifact retains its already recorded local baseline.
@@ -136,14 +136,16 @@ The agent handles any actually needed historical fact at its responsible home.
 Ordinary comparisons and dependency links select no source.
 Local readers and storage display preserve recorded limitations rather than deriving a source verdict.
 
-For a change to an existing account through local registration, read its actual Artifact declaration, current facts and comparison, contents or holding context, then prepare the necessary expected-text edits or expected original text with prepared final text.
+When selecting the local-registration helper to change an existing account, read its actual Artifact declaration, current facts and comparison, contents or holding context, then prepare the necessary expected-text edits or expected original text with prepared final text.
 Explicit source facts are literal inputs; the agent decides which are current or superseded and retains necessary unrelated content in the prepared result.
 The writer requires this preparation when existing prose changes, rather than selecting a first link, merging accounts, stripping prefix-matching prose or appending a fallback account.
 An unchanged byte/fact operation may preserve the account as a no-op, and an explicitly chosen free account may render its minimal supplied facts.
 Competing accounts require judgment from their actual candidate contents.
 Before publication, the prepared selected account must be unique and its fingerprint and current facts must agree with the supplied inputs; local registration, selected catalog and local holding display observe those same persisted facts.
 Check the exact expected old text before strict evaluation of the prepared result, so an explicit resolution can repair old ambiguity without selecting an old first/last candidate or borrowing a comparison fingerprint.
-Use the [public local-registration inputs](../../scripts/readme.md#local-source-retrieval-and-registration) with the existing short lock, stale-input checks and rollback boundary.
+The [public local-registration inputs](../../scripts/readme.md#local-source-retrieval-and-registration), expected-text preparation, short lock, stale-input checks and rollback protocol apply to callers choosing that helper.
+Ordinary authorized reading, retrieval, copying and source-registration edits may complete the same needed work without that command or a prepared JSON payload.
+Inspect the selected work/edition and actual source bytes and account, preserve their real association, local-byte baseline, storage and Git exclusions, provenance and limitations, and coordinate the affected writes without overwriting competing content.
 
 Compute a new registered fingerprint only from actual locally obtained document/resource bytes, after the agent establishes the source association.
 The sole registry's local baseline serves accidental-damage checking; comparison with different supplied bytes must preserve existing source bytes and baseline on failure.

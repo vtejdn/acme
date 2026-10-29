@@ -70,7 +70,8 @@ This may be a compact section in the existing responsible record.
 Use the questions below as a content guide, not a mandatory standalone form for each calculation; omit inapplicable fields and retain the uncertainty where the target is still developing.
 
 Use fixed `Author_L_F0001_v1.md` materials in mathematics/ledger/ for substantive attempts and preserved assessments, with the actual research line and dates in the body.
-Create one through `material.py create --kind L --line F --file note.md`; later substantive revisions retain the previous physical version.
+Create one through ordinary authorized authoring or the optional `material.py create --kind L --line F --file note.md` writer; later substantive revisions retain the previous physical version.
+Either path maintains the existing material_next bound and necessary short-lock and exclusive-publication protections for fixed-family allocation under the [allocation rule](identity.md#allocation-and-concurrency).
 All L materials, including source-specific reading supplements and cross-source syntheses, use this location and the same author/line L sequence.
 Link the relevant source-audit home when applicable; source-local U records retain their own identities and inspection scope.
 Dates record chronology; material identities preserve the substantive account.
@@ -117,7 +118,7 @@ An independent finding cannot be relabeled merely to keep it in L.
 
 When correcting a claim, retain the failed statement and its mathematical scope in the correction history.
 Repairing its proof does not require a new ID; changing the statement materially does.
-Update affected dependencies and assessments in canonical records, publish new versions and regenerate affected navigation.
+Update affected dependencies and assessments in canonical records, publish new versions and maintain affected navigation through ordinary bounded edits or optional rendering.
 Strategy changes should cite the evidence that caused them.
 
 ## Record Template
@@ -130,7 +131,8 @@ A template is neither authorization nor a completed record.
 For draft retirement, apply the [common content decision](records.md#substantive-material-retention) first: already fixed mathematics needs no new L or other successor for leftover setup, and genuinely continuing work remains.
 Update actual consumers before removing redundant content, with the kind-specific duties intact.
 
-Keep unbound continuing mathematics in `mathematics/drafts/` using canonical rolling `Author_D_F0001.md` identities (with the chosen line), allocated by `material.py create --kind D --line F --file draft.md` through exclusive creation, without per-edit versions or a registry.
+Keep unbound continuing mathematics in `mathematics/drafts/` using canonical rolling `Author_D_F0001.md` identities with the chosen line, through ordinary authorized authoring or the optional `material.py create --kind D --line F --file draft.md` writer.
+Both paths use exclusive creation at an available reusable D address, without a fixed-family counter, per-edit versions or a registry.
 Fixed support and acceptance evidence must first be promoted to their permanent homes.
 Move actual Markdown links, manuscript source maps, program inputs and substantive prose dependencies to the responsible fixed home before removing a completed draft.
 Substantial Claim statements and arguments go to C, formal project reviews to R, exploration and ordinary in-discussion checks to L, source inspection to U and programs to J.

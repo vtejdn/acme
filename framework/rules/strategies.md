@@ -128,7 +128,7 @@ Use an available Git revision or captured evidence when exact earlier bytes are 
 Mathematical reliance cites fixed arguments with their actual hypotheses, not a rolling predecessor as proof support.
 
 Ordinary edits require no hash registration or separate maintenance report.
-A split or merge preserves meaningful lineage in the routes and regenerates the affected derived navigation.
+A split or merge preserves meaningful lineage in the routes and maintains affected derived navigation through ordinary bounded edits or optional rendering.
 
 ## Choosing and Revising a Route
 
@@ -196,4 +196,5 @@ Keep ongoing unbound arguments in mathematics/drafts/; strategy decisions remain
 
 The existing renderer derives mathematics/strategies/index.md from S Route declarations and actual source/feedback relationships: route identity/title, parent hierarchy, Task association and route disposition.
 S and the exact linked T/evidence own those meanings.
-Refresh after relevant inputs settle; do not hand-edit generated rows.
+After relevant inputs settle, maintain affected navigation through ordinary bounded edits or optional rendering, including populated generated rows.
+Preserve route values, exact links and source facts; changing the index cannot change the responsible S, T or evidence.

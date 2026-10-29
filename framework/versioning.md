@@ -34,7 +34,9 @@ Fixed mathematical evidence and historical review scope remain separate.
 
 A released identifier must not be reassigned to a different release.
 A version number is not an exact byte identity or a review verdict.
-Current cross-repository intake requires both installations to support the material-owned format and its exact original-source/acquisition boundaries.
+Cross-repository intake follows the receiving installation's current rules for the actual selected fixed-source content under the [common adaptation rule](rules/records.md#receiving-and-adapting-selected-content).
+Different sender versions, absent installation metadata or lack of current-format support alone do not forbid adequate receiving-side preparation or require changing the sender.
+The receiving agent checks the selected mathematics and claimed state for its intended use, original authorship and sufficient fixed-source facts, and prepares a conforming local result with the existing evidence and provenance duties intact.
 
 ## Official version tags and upgrade notes
 

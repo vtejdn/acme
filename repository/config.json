@@ -1,7 +1,7 @@
 {
   "framework_update_check": true,
-  "layout_format": 2,
   "material_next": {},
   "repository": "acme",
-  "repository_url": null
+  "repository_abbr": "ACME",
+  "repository_display_name": "Autonomous and Collaborative Mathematical Exploration"
 }

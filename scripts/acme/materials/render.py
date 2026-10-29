@@ -1,12 +1,11 @@
 """Derived material navigation; authored materials and intake keep authority."""
-from pathlib import Path
-import os
 from . import discovery as discovery
 from . import documents as documents
 from . import indexes as indexes
 from . import navigation as navigation
 from . import runtime as runtime
 from ..core import repository as shared
+from ..core import publication
 
 
 def views(repo):
@@ -74,19 +73,8 @@ def render(repo, *, timeout=30):
 
 
 def _publish(repo, outputs):
-        changed = shared.generated_changes(repo.root, outputs)
-        before = {path: shared.read_bytes(repo.root / path, root=repo.root)
-                  if (repo.root / path).exists() else None for path in changed}
-        written = []
-        try:
-            for path, data in changed.items():
-                shared.write_bytes(repo.root / path, data, root=repo.root)
-                written.append(path)
-        except Exception:
-            for path in reversed(written):
-                if before[path] is None:
-                    shared.unlink(repo.root / path, root=repo.root)
-                else:
-                    shared.write_bytes(repo.root / path, before[path], root=repo.root)
-            raise
-        return {'outputs': len(outputs), 'changed': len(changed)}
+    changed = shared.generated_changes(repo.root, outputs)
+    before = {path: shared.read_bytes(repo.root / path, root=repo.root)
+              if (repo.root / path).exists() else None for path in changed}
+    publication.publish_files(repo, changed, before)
+    return {'outputs': len(outputs), 'changed': len(changed)}

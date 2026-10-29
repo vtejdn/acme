@@ -61,21 +61,32 @@ No per-paragraph classification sheet, preservation hash, new registry, closeout
 ## Receiving and adapting selected content
 
 Apply the common content decision to both external intake and a human's own [personal import](intake.md#personal-import).
-Read the selected mathematical unit, necessary inputs and adequate receiving candidates before choosing local content, references or deduplication.
+Read each actually selected file or mathematical unit, its necessary context and inputs and adequate receiving candidates before choosing what to retain, reuse, copy or adapt under current receiving rules.
+Keep this reading at the selected scope rather than requiring a whole-source library or unselected history.
 Preserve exact questions, hypotheses, quantifiers, domains, definitions, conventions, conclusions, complete necessary arguments and consequential dependencies.
 Retain useful alternate proofs, counterexamples, failures, native inputs and actual source/review scope, attribution, uncertainty and unresolved obligations.
+Check mathematical correctness and claimed status at the intended use: conjectures, conditional conclusions, partial evidence, useful failures and review gaps retain their actual limits rather than becoming established results through format adaptation.
+For a substantive error or insufficient support, perform necessary checks within current authority or retain the concrete limitation; a failed argument may be received as useful failure evidence, not as a correct proof.
+Using a result as established support or making a new adoption retains its applicable evidence and review duties, without a universal reproof or new independent review of all source results merely for receipt.
 Adapt prose, classification, layout, numbering and references to current receiving rules without byte equality or a whole-source-container requirement.
 Confirmed sufficient local content is reused by exact reference; partial duplication retains its unique part, and unresolved equivalence remains unresolved.
 One author's units may be split or combined with complete necessary per-unit source correspondence; a synthesis of different authors belongs to its actual single synthesizing human with citations.
 An available older source can be adapted without changing its repository or fabricating an assessment, review, argument or missing evidence.
+The sender's framework version, current-format support or missing installation metadata supplies no independent receiving gate; the actual selected content, necessary facts and conforming local result determine whether adequate adaptation is possible.
+Confirm the original human and source correspondence from actual facts, preserving original and transport repository, fixed revision, path, selected scope and necessary physical-version and review facts independently of local numbering or classification.
+Neither the receiver, transporter nor Git commit signature becomes the mathematical author through copying or adaptation, and a supplied author value cannot replace an existing original-source binding.
 When a helper reads older material, keep the necessary source identity and Task-family facts separate from validation of the adapted receiving result.
 Obsolete source layout or administrative fields alone do not require a source upgrade or refusal of an otherwise adequate preparation.
 The agent judges preservation, correspondence, need and review applicability, writes the receiving content and required source facts, and inspects the actual result and affected references.
 Ordinary reading, editing, copying and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a receiving prerequisite.
 Optional helpers apply their payload, mapping and publication contracts only to callers choosing those interfaces; structural validation establishes no mathematical preservation or review-applicability verdict.
+If a helper cannot handle a selected older layout or actual input, report that interface limitation and use an adequate ordinary path when the required facts and local result can be established, without adding a compatibility reader or requiring a sender upgrade.
+Keep external receiving provenance once at its existing intake operation, with necessary per-unit correspondence; per-file judgment creates no per-file approval, checklist, receipt, permanent mapping graph or duplicate operation record.
+Unresolved mathematics, author contradictions, missing fixed-source facts and actual access restrictions remain explicit at the affected unit or use; continue independent authorized work that does not depend on them.
 
 Every authored mathematical document has exactly one human author.
 Initial authorized intake permits the preparation above while retaining the original human and source assessments truthfully.
+Different-author synthesis, new reasoning or substantive correction belongs to the actual contributor's own responsible material with exact original-source references, rather than being attributed to the original author as format adaptation.
 After receipt, another human explains a gap, correction, replacement argument, computation or synthesis in that human's own suitable document with exact references.
 Calling a body edit administrative does not permit changing another human's authored document.
 Only the established same human may directly revise it under actual authority, fixed-version and review rules.
@@ -287,7 +298,7 @@ Preserve the actual self-review/independent-review relationship; a command does 
 
 Apply the [result-organization policy](claims.md#lemma-extraction-and-approval): internal Claim organization and proof repair within an assigned scope need no additional approval.
 Main-theorem designation, objective changes and execution retain their actual authorization boundaries.
-Maintain all affected direct consumers and meaningful history, then derive navigation.
+Maintain all affected direct consumers and meaningful history, then update the affected navigation through ordinary bounded edits or optional rendering.
 Harmless shared-material maintenance causes no publication cascade.
 
 ## Commands
@@ -312,10 +323,10 @@ Substantive contributions use the responsible human's own numbered materials und
 Imported originals and fixed evidence retain their separate protection.
 `research.py` supplies initialization and human identity operations; it is not a parallel C/T producer.
 
-Correct evidence and affected material decisions first, render the three derived indexes, then perform the checks needed for the actual changed material or explicitly requested view.
+Correct evidence and affected material decisions first, maintain the affected derived navigation by ordinary bounded edits or optional rendering, then perform the checks needed for the actual changed material or explicitly requested view.
 Rendering plans before installing and writes only changed outputs, preserving no-op bytes/mtimes.
 It neither creates a catalog authority nor audits mathematical truth.
-Direct index edits are overwritten and cannot change acceptance.
+Ordinary index edits may maintain populated generated rows from their responsible materials; later rendering derives those rows again, and neither path changes acceptance.
 Writes are atomic per file, not a distributed or multi-file transaction.
 
 ## Interrupted local publication
@@ -324,5 +335,5 @@ Inspect an interrupted operation's actual files, current selection and reference
 Do not repeat a successful create/revise merely to recover its output.
 Preserve unrelated working and staged changes.
 The OS lock is released on process exit; persistent `repository/.lock` is normal.
-Repair coherent sources, regenerate only needed navigation and run the scoped check.
+Repair coherent sources, maintain only needed navigation through ordinary bounded edits or optional rendering and run the scoped check.
 Direct intake records the actual fixed source, selected scope and result once in `intake/<initiator>/`; it does not maintain proposal/approval phases or a second adoption register.

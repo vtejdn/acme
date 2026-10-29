@@ -22,30 +22,53 @@ def publish_files(repo, pending, expected, *, locate=None):
         target = locate(repo.root, name)
         r.require((target.read_bytes() if target.exists() else None) == old,
                   'Selected input changed during preparation: ' + name)
-    written = []
+    attempts = []
     try:
         for name, raw in pending.items():
             target = locate(repo.root, name)
             old = expected[name]
             if old == raw:
                 continue
-            r.write_bytes(target, raw, exclusive=old is None, root=storage_root)
-            written.append(name)
+            ownership = {}
+            attempts.append((name, ownership))
+            r.write_bytes(target, raw, exclusive=old is None, root=storage_root, ownership=ownership)
+            ownership['installed'] = True
     except BaseException as error:
-        competing = []
-        for name in reversed(written):
-            target = locate(repo.root, name)
-            # A competing replacement is not owned by this publication.
-            if not target.exists() or target.read_bytes() != pending[name]:
-                competing.append(name)
-                continue
-            if expected[name] is None:
-                r.unlink(target, root=storage_root)
-            else:
-                r.write_bytes(target, expected[name], root=storage_root)
+        competing, failed = [], []
+        for name, ownership in reversed(attempts):
+            try:
+                target = locate(repo.root, name)
+                info = target.stat() if target.exists() else None
+                same_file = info is not None and (info.st_dev, info.st_ino) == ownership.get('file_id')
+                # A non-returning writer may already have installed its temporary
+                # file. Equal bytes from a failed exclusive create are not ours.
+                if not ownership.get('installed') and not same_file:
+                    continue
+                if not same_file or target.read_bytes() != pending[name]:
+                    competing.append(name)
+                    continue
+                if expected[name] is None:
+                    r.unlink(target, root=storage_root)
+                else:
+                    r.write_bytes(target, expected[name], root=storage_root)
+            except BaseException as rollback_error:
+                try:
+                    target = locate(repo.root, name)
+                    current = target.read_bytes() if target.exists() else None
+                    if current == expected[name]:
+                        continue
+                    state = ('missing' if current is None else 'published content remains'
+                             if current == pending[name] else 'other content present')
+                except BaseException as inspection_error:
+                    state = 'state unavailable: ' + type(inspection_error).__name__
+                failed.append(name + ' (' + state + '; ' + str(rollback_error) + ')')
+        problems = []
         if competing:
-            raise r.ResearchError('Publication failed; competing content preserved during rollback: '
-                                  + ', '.join(competing)) from error
+            problems.append('competing content preserved during rollback: ' + ', '.join(competing))
+        if failed:
+            problems.append('rollback failed for: ' + ', '.join(failed))
+        if problems:
+            raise r.ResearchError('Publication failed; ' + '; '.join(problems)) from error
         raise
 
 

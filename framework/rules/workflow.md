@@ -126,7 +126,7 @@ Do not add a last-read-version field, reading register, rule fingerprints, recei
 Current-file reading and judging the continued applicability of earlier actual reading remain agent responsibilities.
 
 Keep each fact in its responsible record and update only necessary consumers.
-Finish the affected edit/publication batch before regenerating its navigation and checking the final prepared bytes.
+Finish the affected edit/publication batch before maintaining its navigation and checking the final prepared bytes.
 Do not check generated output while another command is still changing it.
 Repeat a passed check when relevant bytes change, a failure is repaired, or a new risk justifies the additional scope; do not repeat it merely for another status update.
 Working files, staged contents and committed trees are distinct; inspect the actual bytes needed for the requested operation under the [delivery rules](identity.md#submission-checks).
@@ -184,9 +184,10 @@ Choose any useful scoped material, link or storage checks for the actual questio
 A stale index does not change the authored decision.
 
 Refresh navigation after the affected material/configuration batch has settled, when its view is needed.
-One responsible agent runs `python scripts/render-research-navigation.py`, and others reuse the result until relevant inputs change.
-It derives Claim, Task and strategy indexes without a catalog authority or a full proof/history audit.
-For bounded discovery use `material.py discover`, `indexes` or `routes` with their stated scope.
+The responsible agent may edit affected C/T/S navigation directly from the responsible materials and exact selected decisions, including populated generated rows, or use `python scripts/render-research-navigation.py` when useful.
+Coordinate the affected write scope before editing and preserve unrelated and concurrent changes; reuse adequate navigation until relevant inputs change.
+The optional renderer derives the indexes without a catalog authority or full proof/history audit, retaining its short lock, input rechecks and shared publication protections when selected.
+For bounded discovery, use ordinary scoped search and reading or the optional `material.py discover`, `indexes` or `routes` commands with their stated scope.
 Use operation-local material and reference readers for the actual question; completed authoring or rendering adds no aggregate delivery audit.
 Run observations and execution queries do not trigger mathematical navigation regeneration.
 
@@ -312,7 +313,7 @@ This adds no separate version-locator, commit or hash requirement.
 Link source files, scripts and audits rather than reproducing large outputs; an adequately recorded attempt needs no duplicate account here.
 
 Keep the exploration history understandable.
-A correction explains the mathematical reason, preserves earlier statement/argument/assessment, revises fixed mathematics as needed, and explicitly adopts the affected material decision/evidence before regenerating navigation.
+A correction explains the mathematical reason, preserves earlier statement/argument/assessment, revises fixed mathematics as needed, and explicitly adopts the affected material decision/evidence before maintaining affected navigation.
 Check actual consumers.
 Distinguish a superseded argument from a refuted conclusion; neither erase a useful failure nor leave a known gap labelled established.
 
@@ -434,6 +435,8 @@ The agent chooses any necessary [source-check scope and view](literature.md#sele
 Explicit audit requests retain their specified independent scope.
 
 Indexes are navigation, never a second authority for status, evidence, findings, permissions or progress.
-The existing renderer derives C/T/S indexes from responsible materials and selected decisions; agents do not edit generated rows.
+Maintain affected C/T/S indexes through ordinary bounded edits or optional rendering from responsible materials and exact selected decisions, including populated generated rows.
+Preserve actual values, source facts, exact selections and necessary fixed history when removing a retired column or otherwise maintaining rows.
+Change mathematical status or selection at its responsible material first; an index edit establishes no adoption, review conclusion, Task state or execution authority.
 Other indexes remain concise manual navigation, maintained by the agent changing the referenced collection after the responsible material settles.
 Each owning rule defines its entry content and sources; update only affected navigation.

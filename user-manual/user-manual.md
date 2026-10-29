@@ -32,14 +32,9 @@ Within the authorized scope, autonomous [agents](#notion-agent) are responsible 
 
 ### Collaboration
 
-Mathematicians can collaborate through a shared [Git repository](git-repository.md#notion-git-repository), sharing research materials and reusing one another's results.
+Mathematicians can [collaborate](#joint-task) through a shared [Git repository](git-repository.md#notion-git-repository), sharing research materials and reusing one another's results.
 The repository can be hosted on a platform such as [GitHub](git-repository.md#notion-github), allowing collaborators to work on their own devices and synchronize changes.
 See the [Git repository collaboration diagram](git-repo.png).
-
-Collaborators in the same repository can establish a joint [Task](#material-task) for a common mathematical goal, specifying the shared question, hypotheses and completion criteria;
-each participant clarifies their scope of participation in their own Task and organizes specific research routes through [Strategies](#material-strategy).
-We recommend choosing different research strategies in consultation with your collaborators to reduce repeated mathematical work and make more effective use of AI computational resources.
-For independent verification, replication or cross-checking, collaborators may also deliberately adopt the same research approach.
 
 Different mathematicians or teams can also collaborate across repositories by receiving selected materials through [Intake](#notion-intake); see the [cross-repository collaboration diagram](collaboration.jpg).
 
@@ -56,7 +51,7 @@ See [workflow](workflow.jpg).
 
 ## <a id="setup"></a>Setup
 
-For a new research project, follow Steps I–III below. If you are joining an existing collaboration, set up your workspace and then follow the collaboration setup steps.
+For a new research project, follow Steps I–III below. If you are joining an existing collaboration, [set up your workspace](#setup-workplace) and then follow the [collaboration setup steps](#setup-collaboration).
 
 ### Step I. Choose capable [LLMs](#notion-llm)
 
@@ -64,7 +59,7 @@ Compare LLM performance on research-level mathematical tasks.
 Use [FrontierMath Tier 4](https://epoch.ai/frontiermath/tiers-1-4?tier=Tier+4+%28v2%29&view=graph&tab=leaderboard), [MathArena](https://matharena.ai/models), [Riemann-bench](https://surgehq.ai/benchmarks/riemann-bench) and other relevant evaluations as reference points.
 Choose models for mathematical research and administrative tasks, taking into account whether they are open source, their accessibility and their cost.
 
-### Step II. Set up your workspace
+### <a id="setup-workplace"></a>Step II. Set up your workspace
 
 For individual research on a single device, use a suitable [agent harness](agent-harness.md) with access to a capable [LLM](#notion-llm).
 
@@ -95,7 +90,7 @@ If you are joining an existing research repository that already contains ACME, f
 
 - See also [Setup instructions](user-instructions/user-instructions.md#setup).
 
-### Join an existing [Git repository](git-repository.md#notion-git-repository) as a collaborator
+### <a id="setup-collaboration"></a>Join an existing [Git repository](git-repository.md#notion-git-repository) as a collaborator
 
 1. Sign in to the repository hosting platform and accept your coauthor's invitation.
 2. Ask an [agent](#notion-agent) to help configure access to the shared repository.
@@ -110,11 +105,11 @@ If you are joining an existing research repository that already contains ACME, f
 
 ## Getting started
 
-### Start a Task
+### Start a [Task](#material-task)
 
 1. (Optional) Provide relevant literature or ask an [agent](#notion-agent) to find it.
    Ask the agent to store source files in [the local literature directory](../mathematics/literature/pdf) and audit the specified portions of relevant articles at the requested depth.
-2. Establish a [Task](#material-task) through discussion with agents, specifying the questions, constraints and completion criteria.
+2. Establish a Task through discussion with agents, specifying the questions, constraints and completion criteria.
    You may choose a [research-line letter](#notion-research-line-letter) to organize the Task and its related materials.
 3. For sustained autonomous work, specify or adopt execution limits and stopping conditions.
 4. Approve necessary tool actions when prompted, and respond to questions raised by agents.
@@ -122,9 +117,22 @@ If you are joining an existing research repository that already contains ACME, f
    Discuss the mathematics with agents to deepen and accelerate your understanding.
    Ask for relevant references and question the sources of arguments and ideas Socratically, especially when an argument relies on model knowledge without explicit source support.
 6. (Optional, when using [Git](git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; use undo for local edits or revert commits when appropriate.
-   When collaborating with other mathematicians, ask agents to handle [pushes](#notion-push), [pulls](#notion-pull), [merges](#notion-merge) and help resolve any conflicts.
 
 - See also [research instruction examples](user-instructions/user-instructions.md#research-instructions).
+
+### <a id="joint-task"></a>Start a joint [Task](#material-task)
+
+Collaborators in the same repository can establish a joint Task for a common mathematical goal, specifying the shared question, hypotheses, scope and completion criteria; each participant advances their research through their own Task.
+
+1. Ask an [agent](#notion-agent) to establish a joint Task; if a collaborator has already established a suitable one, proceed directly to the next step.
+2. Ask the agent to establish or reuse your individual Task, link it to the joint Task that you and your collaborators agreed to adopt, and specify your scope of participation and personal completion criteria.
+   An individual Task can cover all or part of the common question; its completion criteria can match those of the joint Task or be determined by your scope of participation.
+   Participants can also divide work on the same question: one person may attempt a proof while another looks for a counterexample.
+   We recommend choosing different research [Strategies](#material-strategy) in consultation with your collaborators to reduce repeated mathematical work and make more effective use of AI computational resources.
+   For independent verification, replication or cross-checking, collaborators may also deliberately adopt the same research approach.
+3. During joint research, the [main research agent](#notion-main-research-agent) synchronizes collaborators' updates before each round through operations such as [pulls](#notion-pull) and [merges](#notion-merge), and [commits](#notion-commit) and [pushes](#notion-push) shareable research progress at appropriate times.
+   The agent handles administrative conflicts within its authority; for substantive mathematical disagreements, it explains the issue and conducts a recheck under existing authorization or after obtaining the necessary authorization.
+   You can also explicitly request synchronization operations such as pushes, pulls and merges.
 
 ### Cautions
 
@@ -161,7 +169,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.5.0.
+The current framework version is 0.6.0.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.

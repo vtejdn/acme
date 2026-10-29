@@ -32,14 +32,9 @@ Innerhalb des freigegebenen Umfangs sind autonome [Agenten](#notion-agent) dafü
 
 ### Zusammenarbeit
 
-Mathematiker können über ein gemeinsames [Git-Repository](git-repository.md#notion-git-repository) zusammenarbeiten, Forschungsmaterialien teilen und die Ergebnisse der anderen wiederverwenden.
+Mathematiker können über ein gemeinsames [Git-Repository](git-repository.md#notion-git-repository) [zusammenarbeiten](#joint-task), Forschungsmaterialien teilen und die Ergebnisse der anderen wiederverwenden.
 Das Repository kann auf einer Plattform wie [GitHub](git-repository.md#notion-github) gehostet werden, sodass die Mitwirkenden auf ihren eigenen Geräten arbeiten und Änderungen synchronisieren können.
 Siehe die [Abbildung zur Zusammenarbeit über ein Git-Repository](git-repo.png).
-
-Mitwirkende im selben Repository können für ein gemeinsames mathematisches Ziel einen gemeinsamen [Task](#material-task) einrichten, der die gemeinsame Fragestellung, Annahmen und Abschlusskriterien festlegt;
-jede teilnehmende Person präzisiert den Umfang ihrer Beteiligung im eigenen Task und organisiert konkrete Forschungsansätze mithilfe von [Strategien (Strategy)](#material-strategy).
-Es empfiehlt sich, in Absprache mit den Mitwirkenden unterschiedliche Forschungsstrategien zu wählen, um doppelte mathematische Arbeit zu verringern und KI-Rechenressourcen effizienter zu nutzen.
-Für unabhängige Überprüfung, Replikation oder gegenseitige Kontrolle kann bewusst derselbe Forschungsansatz gewählt werden.
 
 Verschiedene Mathematiker oder Teams können auch über Repository-Grenzen hinweg zusammenarbeiten, indem sie ausgewählte Materialien durch [Intake](#notion-intake) übernehmen; siehe die [Abbildung zur repositoryübergreifenden Zusammenarbeit](collaboration.jpg).
 
@@ -57,7 +52,7 @@ Siehe die [Abbildung zum Arbeitsablauf](workflow.jpg).
 ## <a id="setup"></a>Einrichtung
 
 Für ein neues Forschungsprojekt führen Sie die folgenden Schritte I–III aus.
-Wenn Sie einer bestehenden Zusammenarbeit beitreten, richten Sie zunächst Ihre Arbeitsumgebung ein und folgen Sie dann den Schritten zum Beitritt.
+Wenn Sie einer bestehenden Zusammenarbeit beitreten, richten Sie zunächst [Ihre Arbeitsumgebung](#setup-workplace) ein und folgen Sie dann den [Schritten zum Beitritt](#setup-collaboration).
 
 ### Schritt I. Geeignete [LLMs](#notion-llm) wählen
 
@@ -65,7 +60,7 @@ Vergleichen Sie die Leistung von LLMs bei mathematischen Aufgaben auf Forschungs
 Nutzen Sie [FrontierMath Tier 4](https://epoch.ai/frontiermath/tiers-1-4?tier=Tier+4+%28v2%29&view=graph&tab=leaderboard), [MathArena](https://matharena.ai/models), [Riemann-bench](https://surgehq.ai/benchmarks/riemann-bench) und weitere einschlägige Bewertungen als Orientierung.
 Wählen Sie Modelle für mathematische Forschung und Verwaltungsaufgaben unter Berücksichtigung ihrer Quelloffenheit, Zugänglichkeit und Kosten.
 
-### Schritt II. Arbeitsumgebung einrichten
+### <a id="setup-workplace"></a>Schritt II. Arbeitsumgebung einrichten
 
 Für individuelle Forschung auf einem einzelnen Gerät verwenden Sie eine geeignete [Agenten-Laufzeitumgebung](agent-harness.md) mit Zugang zu einem leistungsfähigen [LLM](#notion-llm).
 
@@ -96,7 +91,7 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
 
 - Siehe die [Anweisungsbeispiele zur Einrichtung](user-instructions/Anweisungsbeispiele.md#setup).
 
-### Einem bestehenden [Git-Repository](git-repository.md#notion-git-repository) als Mitwirkender beitreten
+### <a id="setup-collaboration"></a>Einem bestehenden [Git-Repository](git-repository.md#notion-git-repository) als Mitwirkender beitreten
 
 1. Melden Sie sich bei der Repository-Hosting-Plattform an und nehmen Sie die Einladung Ihres Mitautors an.
 2. Bitten Sie einen [Agenten](#notion-agent), Ihnen beim Einrichten des Zugriffs auf das gemeinsame Repository zu helfen.
@@ -111,11 +106,11 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
 
 ## Erste Schritte
 
-### Einen Task beginnen
+### Einen [Task](#material-task) beginnen
 
 1. (Optional) Stellen Sie einschlägige Literatur bereit oder bitten Sie einen [Agenten](#notion-agent), sie zu suchen.
    Bitten Sie den Agenten, Quelldateien im [lokalen Literaturordner](../mathematics/literature/pdf) zu speichern und die angegebenen Teile einschlägiger Artikel in der gewünschten Tiefe zu prüfen.
-2. Legen Sie im Gespräch mit Agenten einen [Task](#material-task) fest und bestimmen Sie die Fragen, Einschränkungen und Abschlusskriterien.
+2. Legen Sie im Gespräch mit Agenten einen Task fest und bestimmen Sie die Fragen, Einschränkungen und Abschlusskriterien.
    Sie können einen [Forschungslinien-Buchstaben](#notion-research-line-letter) wählen, um den Task und seine zugehörigen Materialien zu ordnen.
 3. Legen Sie für längerfristige autonome Arbeit Ausführungsgrenzen und Abbruchbedingungen fest oder übernehmen Sie bestehende.
 4. Genehmigen Sie notwendige Werkzeugaktionen, wenn Sie dazu aufgefordert werden, und beantworten Sie Fragen der Agenten.
@@ -123,9 +118,23 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
    Besprechen Sie die Mathematik mit Agenten, um Ihr Verständnis zu vertiefen und schneller voranzukommen.
    Bitten Sie um einschlägige Literaturangaben und hinterfragen Sie die Quellen von Argumenten und Ideen im sokratischen Gespräch, insbesondere wenn ein Argument ohne ausdrückliche Quellenbelege auf Modellwissen beruht.
 6. (Optional, bei Verwendung von [Git](git-repository.md#notion-git)) Halten Sie Änderungen, die Sie bewahren möchten, in einem [Commit](#notion-commit) fest; machen Sie bei Bedarf lokale Bearbeitungen rückgängig oder setzen Sie Commits durch einen Revert zurück.
-   Wenn Sie mit anderen Mathematikern zusammenarbeiten, bitten Sie Agenten, [Pushes](#notion-push), [Pulls](#notion-pull) und [Merges](#notion-merge) durchzuführen und beim Lösen von Konflikten zu helfen.
 
 - Siehe die [Anweisungsbeispiele zur Forschung](user-instructions/Anweisungsbeispiele.md#research-instructions).
+
+### <a id="joint-task"></a>Einen gemeinsamen [Task](#material-task) beginnen
+
+Mitwirkende im selben Repository können für ein gemeinsames mathematisches Ziel einen gemeinsamen Task einrichten und dabei die gemeinsame Fragestellung, Annahmen, den Umfang und die Abschlusskriterien festlegen; jede teilnehmende Person treibt die Forschung mithilfe ihres eigenen Task voran.
+
+1. Bitten Sie einen [Agenten](#notion-agent), einen gemeinsamen Task einzurichten; hat ein Mitwirkender bereits einen geeigneten gemeinsamen Task eingerichtet, können Sie direkt zum nächsten Schritt übergehen.
+2. Bitten Sie den Agenten, Ihren individuellen Task einzurichten oder wiederzuverwenden, ihn mit dem gemeinsamen Task zu verknüpfen, dessen Übernahme Sie mit Ihren Mitwirkenden vereinbart haben, und Ihren Beteiligungsumfang sowie Ihre persönlichen Abschlusskriterien festzulegen.
+   Der individuelle Task kann die gemeinsame Fragestellung ganz oder teilweise abdecken; seine Abschlusskriterien können denen des gemeinsamen Task entsprechen oder sich nach Ihrem Beteiligungsumfang richten.
+   Die Teilnehmenden können sich auch die Arbeit an derselben Frage teilen: Eine Person versucht, einen Beweis zu finden, während eine andere nach einem Gegenbeispiel sucht.
+   Es empfiehlt sich, in Absprache mit den Mitwirkenden unterschiedliche [Forschungsstrategien (Strategy)](#material-strategy) zu wählen, um doppelte mathematische Arbeit zu verringern und KI-Rechenressourcen effizienter zu nutzen.
+   Für unabhängige Überprüfung, Replikation oder gegenseitige Kontrolle kann bewusst derselbe Forschungsansatz gewählt werden.
+3. Bei gemeinsamer Forschung synchronisiert der [leitende Forschungsagent](#notion-main-research-agent) vor jeder Runde die Aktualisierungen der Mitwirkenden durch Vorgänge wie [Pulls](#notion-pull) und [Merges](#notion-merge);
+   Forschungsfortschritte, die geteilt werden können, hält er zu geeigneten Zeitpunkten in [Commits](#notion-commit) fest und überträgt sie per [Push](#notion-push).
+   Administrative Konflikte bearbeitet der Agent im Rahmen seiner Befugnisse; bei wesentlichen mathematischen Meinungsverschiedenheiten erläutert er das Problem und nimmt eine erneute Prüfung vor, soweit dafür bereits eine Genehmigung vorliegt oder nachdem er die erforderliche Genehmigung eingeholt hat.
+   Sie können Pushes, Pulls, Merges und andere Synchronisationsvorgänge auch selbst anfordern.
 
 ### Hinweise
 
@@ -162,7 +171,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.5.0.
+Die aktuelle Version des Rahmenwerks ist 0.6.0.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.
