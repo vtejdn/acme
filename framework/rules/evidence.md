@@ -18,7 +18,7 @@ An incomplete argument remains a proof draft even when experiments support its c
 Reserve "formally verified" for claims actually checked by an identified proof assistant, with the artifact, environment, and successful check recorded.
 
 For project claims, distinguish provenance, the three-state mathematical assessment and individual R finding relationships under the [Claim assessment rules](claims.md#separate-assessment-fields), without an aggregate review-status.
-The optional [Role field](claims.md#claim-role) describes a lemma, theorem or corollary independently of these assessments.
+Human-specified [ordinary labels](claims.md#claim-role) in titles or prose describe use independently of these assessments, without a decision field or proof-adoption action.
 Separate extraction provenance from actual proof dependencies, and preserve the original complete proof when introducing a new lemma-based proof under the [proof-version rules](claims.md#proof-versions).
 These descriptive labels do not replace assessment fields.
 In particular, a source-verified statement need not have an independently reviewed proof; a complete candidate awaiting sufficient review keeps the exact registered Claim open.

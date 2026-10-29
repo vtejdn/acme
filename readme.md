@@ -26,6 +26,6 @@ Distinguish conjecture, finite observation, self-reviewed proof and independentl
 
 The [version metadata](framework/version.json) owns the installed framework version.
 
-Distinct repositories reuse chosen findings under [intake rules](framework/rules/intake.md), with actual provenance, private-literature exclusion and separate [output-attachment responsibilities](framework/rules/intake.md#computation-output-attachments).
+Distinct repositories reuse chosen findings under [intake rules](framework/rules/intake.md), with actual provenance, private-literature exclusion and the [fixed-program and local-output boundary](framework/rules/intake.md#computation-programs-and-inputs).
 
 For material edits, follow the [record and maintenance rules](framework/rules/records.md#substantive-material-retention) and [writing rules](framework/rules/writing.md).

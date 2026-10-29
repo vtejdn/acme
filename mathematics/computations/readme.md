@@ -14,5 +14,5 @@ Preserve necessary mathematics, inputs, finite results, actual checking relation
 The [current index](index.md) provides navigation.
 Follow the program README to actual files, required inputs, command order, results and limitations.
 Generic discovery and common-framework copying exclude generated output; a clone can lack it.
-An actual transfer selects required [output attachments](../../framework/rules/intake.md#computation-output-attachments) explicitly, separately from the tracked program revision.
+[J intake](../../framework/rules/intake.md#computation-programs-and-inputs) receives selected fixed programs and necessary inputs; outputs remain local, with source-only references and separately authorized reproduction when needed.
 A surviving dataset needs no invented program, and an unknown generator remains unknown.

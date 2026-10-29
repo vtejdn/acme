@@ -28,18 +28,16 @@ def external_references(tree, selections):
 
     def provenance(value, label):
         if label == 'transport.repository': return value['transport']['repository'], None
-        match = re.fullmatch(r'items\[(0|[1-9][0-9]*)\]\.(source\.(repository|author)|'
-                             r'output_attachments\[(0|[1-9][0-9]*)\]\.transport\.repository)', label)
+        match = re.fullmatch(r'items\[(0|[1-9][0-9]*)\]\.source\.(repository|author)', label)
         r.require(match is not None, 'Unsupported intake reference field: ' + label)
         item = value['items'][int(match[1])]
-        if match[3] == 'repository': return item['source']['repository'], None
-        if match[3] == 'author':
+        if match[2] == 'repository': return item['source']['repository'], None
+        if match[2] == 'author':
             r.require(item['kind'] in {'C', 'T', 'R', 'L', 'J'}, 'This item kind has no external author field.')
             source = item['source']
             r.require(isinstance(source['author_name'], str) and source['author_name'].strip(),
                       'source.author_name needs the qualified original name.')
             return source['repository'], (source['author'], source['author_name'])
-        return item['output_attachments'][int(match[4])]['transport']['repository'], None
 
     for path, selected in selections.items():
         r.require(isinstance(path, str) and isinstance(selected, (list, tuple, set)) and selected

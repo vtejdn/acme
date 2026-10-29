@@ -12,6 +12,12 @@ def publish_files(repo, pending, expected, *, locate=None):
     # a declared source mount supplies its own checked locator for every I/O.
     storage_root = repo.root if locate is None else None
     locate = locate or r.safe_path
+    targets = {}
+    for name in pending:
+        key = r.paths.resolved_path(locate(repo.root, name)).as_posix().casefold()
+        r.require(key not in targets, 'Conflicting publication destinations: '
+                  + targets.get(key, '') + ' and ' + name)
+        targets[key] = name
     for name, old in expected.items():
         target = locate(repo.root, name)
         r.require((target.read_bytes() if target.exists() else None) == old,

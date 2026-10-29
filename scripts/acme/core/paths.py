@@ -66,6 +66,23 @@ def in_pdf_store(relative):
                for prefix in (PDF_ROOT, LEGACY_PDF_ROOT))
 
 
+def check_local_role(relative):
+    """Reject protected components and noncanonical local source prefixes before I/O."""
+    relative = Path(relative)
+    if protected_path(relative):
+        raise PathError('Protected path: repository metadata.')
+    if os.name != 'nt':
+        return
+    parts = tuple(part.rstrip(' .').casefold() for part in relative.parts)
+    if any(part in PROTECTED for part in parts):
+        raise PathError('Protected path: noncanonical repository metadata component: ' + relative.as_posix())
+    for prefix in (PDF_ROOT, LEGACY_PDF_ROOT):
+        size = len(prefix.parts)
+        if (parts[:size] == tuple(prefix.parts)
+                and any(part.rstrip(' .') != part for part in relative.parts[:size])):
+            raise PathError('Noncanonical local source-storage prefix: ' + relative.as_posix())
+
+
 def in_computation_outputs(relative):
     parts = tuple(part.casefold() for part in Path(relative).parts)
     return parts[:len(COMPUTATION_OUTPUT_ROOT.parts)] == tuple(COMPUTATION_OUTPUT_ROOT.parts)
@@ -89,11 +106,11 @@ def valid_source_name(name):
 
 def ordinary_path(root, relative):
     """Resolve an ordinary repository path without accepting any linked component."""
-    root, relative = resolved_path(root), Path(relative)
+    relative = Path(relative)
     if relative.is_absolute() or '..' in relative.parts or ':' in str(relative):
         raise PathError('Local path must stay inside the repository.')
-    if protected_path(relative):
-        raise PathError('Protected path: repository metadata.')
+    check_local_role(relative)
+    root = resolved_path(root)
     candidate = root
     for part in relative.parts:
         candidate /= part
@@ -109,12 +126,13 @@ def ordinary_path(root, relative):
 
 def material_path(root, relative):
     """Source-store aliases must not become publication material."""
-    root, relative = resolved_path(root), Path(relative)
+    relative = Path(relative)
+    check_local_role(relative)
     if in_pdf_store(relative):
         raise PathError('Local literature PDF storage is source access, not publishable research material.')
+    root = resolved_path(root)
     resolved = ordinary_path(root, relative)
-    targets = [resolved_path(root / entrance) for entrance in (PDF_ROOT, LEGACY_PDF_ROOT)]
-    if in_pdf_store(resolved.relative_to(root)) or any(resolved.is_relative_to(target) for target in targets):
+    if in_pdf_store(resolved.relative_to(root)):
         raise PathError('Local literature PDF storage is source access, not publishable research material.')
     return resolved
 

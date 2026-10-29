@@ -42,8 +42,7 @@ def _path(repo, value):
 
 
 def _read(repo, path):
-    data = (shared.read_from(repo, path) if path.startswith('execution/')
-            else _path(repo, path).read_bytes())
+    data = _path(repo, path).read_bytes()
     return data.decode('utf-8-sig') if path.lower().endswith('.md') else data
 
 
@@ -79,8 +78,6 @@ def _inventory(repo, **scope):
 def _owned_current(repo, path, expected_current):
     _path(repo, path)
     doc = documents.parse(path, _read(repo, path))
-    require(doc.identity.kind not in 'CT' or (doc.current is not None and not getattr(doc, 'archival', False)),
-            'An archival material is not a current authoring entrance.')
     humans.require_author(repo, doc.identity.author, doc.identity.source_repository)
     family = _inventory(repo, family=doc.identity)
     require(all(ident.family == doc.identity.family for ident, _ in family), 'Material family collision ignoring case.')
@@ -121,10 +118,11 @@ def _check_new_decisions(repo, doc, anchors, *, previous=None, new_date_anchors=
     # Do not traverse selected decisions or rejudge historical evidence.
     loaded = {doc.path}
     for anchor in anchors:
-        documents.new_decision(doc, doc.decisions[anchor])
+        decision = doc.decisions[anchor]
+        documents.new_decision(doc, decision)
         if anchor in new_date_anchors:
-            shared.valid_stamp(doc.decisions[anchor].fields['date'])
-        for role, loc, _scope in doc.decisions[anchor].relations:
+            shared.valid_stamp(decision.fields['date'])
+        for role, loc, _scope in decision.relations:
             if role not in {'argument', 'support', 'dependency', 'review'}:
                 continue
             ident = names.parse(loc.path)
@@ -149,9 +147,7 @@ def _check_new_decisions(repo, doc, anchors, *, previous=None, new_date_anchors=
     from . import runtime as runtime
     for anchor in accepted:
         read = lambda target: doc.text if target == doc.path else _read(repo, target)
-        material_review.check_decision(doc, doc.decisions[anchor],
-                                       read, repo=repo,
-                                       previous=previous, previous_read=lambda target: _read(repo, target))
+        material_review.check_decision(doc, doc.decisions[anchor], read, repo=repo)
         runtime.validate_inputs(repo, replace(doc, current=documents.Locator(doc.path, anchor)), read)
 
 
@@ -161,8 +157,6 @@ def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None):
         from ..intake.acquire import material_info
         material_info(repo, doc, read=lambda source: body if source == path else _read(repo, source))
     if new_decisions:
-        require(not getattr(doc, 'archival', False) and not getattr(doc, 'historical_assessments', {}),
-                'New authoring cannot create archival material or historical-only assessments.')
         require(set(new_decisions) <= doc.decisions.keys(), 'Choose actual new decision anchors explicitly.')
         _check_new_decisions(repo, doc, new_decisions, previous=previous)
     if doc.identity.kind == 'T' and previous is not None:
@@ -177,16 +171,6 @@ def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None):
         runtime.validate_inputs(repo, doc,
             lambda source: doc.text if source == doc.path else _read(repo, source))
     target = _path(repo, path)
-    if doc.identity.kind == 'T' and doc.task_type == 'ordinary' and doc.identity.version == 1 and exclusive:
-        from ..execution.records import address
-        from ..core.publication import publish_files
-        execution = address(path)
-        boundary = ('# Current execution boundary\n\n| Field | Value |\n| --- | --- |\n'
-                    '| task | ' + doc.current.path + '#' + doc.current.anchor + ' |\n'
-                    '| state | not-running |\n\nSetup grants no execution authority or allowance.\n')
-        publish_files(repo, {path: body.encode('utf8'), execution: boundary.encode('utf8')},
-                      {path: None, execution: None})
-        return doc
     shared.write_bytes(target, body.encode('utf-8'), exclusive=exclusive, root=repo.root)
     return doc
 
@@ -194,20 +178,6 @@ def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None):
 def _newlines(body):
     require(isinstance(body, str), 'Material body must be explicit Markdown text.')
     return body.replace('\r\n', '\n').replace('\r', '\n').rstrip('\n') + '\n'
-
-
-def _task_entrance(path, body):
-    from ..execution.records import address
-    from ..core import links
-    entrances = [target for _, _, href in links.markdown_link_spans(body)
-                 if (target := links.destination(path, href)) is not None and target[0].startswith('execution/')]
-    doc = documents.parse(path, body)
-    if doc.task_type == 'joint':
-        require(not entrances, 'A joint Task has no E link.')
-        return body
-    expected = address(path)
-    require(not entrances or entrances == [(expected, '')], 'A Task may have one unanchored entrance to its family E.')
-    return body if entrances else body.rstrip() + '\n\n## Execution boundary\n\n[Current execution boundary](../../' + expected + ').\n'
 
 
 def create(repo, *, kind, body, line=None, task=None, author=None, new_decisions=()):
@@ -240,7 +210,6 @@ def create(repo, *, kind, body, line=None, task=None, author=None, new_decisions
     name = ident.name + ('/readme.md' if kind == 'J' else '.md')
     home = HOMES[kind]
     path = 'mathematics/' + home + '/' + name
-    if kind == 'T': body = _task_entrance(path, body)
     try:
         return _publish(repo, path, _newlines(body), exclusive=True, new_decisions=new_decisions)
     except FileExistsError as error:
@@ -267,7 +236,6 @@ def _revise(repo, path, body, expected_current, new_decisions=()):
     ident = replace(old.identity, version=old.identity.version + 1)
     target = str(PurePosixPath(path).with_name(ident.name + '.md'))
     body = _newlines(body)
-    if ident.kind == 'T': body = _task_entrance(target, body)
     doc = _validated(repo, target, body)
     if doc.current:
         require(doc.current.path == target and doc.current.anchor in doc.decisions,
@@ -358,5 +326,5 @@ def select_decision(repo, path, *, target, expected_current):
         body = _select_text(doc, target)
         proposed = documents.parse(path, body)
         owner, chosen = documents.selection(proposed, lambda name: _read(repo, name))
-        documents.new_decision(owner, chosen)
+        documents.current_decision(owner, chosen)
         return _publish(repo, path, body, exclusive=False)

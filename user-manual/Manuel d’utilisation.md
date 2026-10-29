@@ -162,7 +162,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.4.0.
+La version actuelle du cadre est 0.5.0.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.

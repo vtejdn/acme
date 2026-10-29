@@ -19,7 +19,7 @@ def fixed_locator(value):
 
 def result(doc, read, *, source_info=None):
     try:
-        selected = documents.selection(doc, read)[1] if doc.current else None
+        selected = documents.selection(doc, read, source_info=source_info)[1] if doc.current else None
     except FileNotFoundError:
         if not doc.identity.source_repository or not source_refs.external(doc.current.path): raise
         selected = None
@@ -30,7 +30,7 @@ def result(doc, read, *, source_info=None):
         row['source'] = doc.header
         row['acquisition'] = source_info(doc) if source_info else None
     if doc.identity.kind == 'U': row['source_inspection'] = documents.source_unit_scope(doc)
-    for field in ('notices', 'execution', 'source_holding'):
+    for field in ('notices', 'source_holding'):
         if hasattr(doc, field): row[field] = getattr(doc, field)
     return row
 
@@ -86,8 +86,7 @@ def argument_parser():
     command.add_argument('--author'); command.add_argument('--file', type=Path, required=True, help='Authored Markdown, or - for stdin')
     command.add_argument('--new-decision', action='append', default=[], help='Explicit actual new decision anchor to check; file addition implies no new decision')
     for name in ('revise', 'append-decision', 'select'):
-        help_text = 'Append a decision; unchanged Claim role organization retains its selected assessment' if name == 'append-decision' else None
-        command = commands.add_parser(name, parents=[root], help=help_text); command.add_argument('path')
+        command = commands.add_parser(name, parents=[root]); command.add_argument('path')
         command.add_argument('--expect', type=fixed_locator, required=name != 'revise')
         if name == 'select': command.add_argument('--decision', type=fixed_locator, required=True)
         else: command.add_argument('--file', type=Path, required=True)

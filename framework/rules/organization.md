@@ -9,7 +9,8 @@ Directory names use short lowercase English words without spaces; registered cit
 
 The root README is an entry point.
 `framework/` owns portable rules/templates, `repository/` owns repository identity and human registration, `profiles/<human>/` owns applicable personal choices, and `mathematics/` owns research.
-`execution/` holds one stable E per ordinary Task family; joint coordination Tasks have no E.
+`execution/` is persistent local state, ignored by Git and excluded from framework copying and temporary cleanup; prepare a stable E only for an ordinary Task actually selected for local execution.
+Joint coordination Tasks have no E, and destination execution state is preserved when copying framework files.
 `intake/<initiator>/` holds concise operation provenance.
 Classified runtime tools belong in `scripts/acme/`, with thin command entries in `scripts/`.
 
@@ -71,6 +72,8 @@ Neither a passing tool nor a newline-only diff establishes preserved meaning.
 
 Use repository-relative program/data paths and document-relative links in durable public content.
 Obtain the actual checkout root from runtime context; do not hardcode it or add a second root setting in secrets.
+Private settings and local original holdings remain local and do not travel through normal Git collaboration under the [default collaboration scope](identity.md#collaboration-maintenance-and-conflicts).
+Do not assume another human's private settings or private originals exist in the current human's local working copy.
 Needed external personal resources belong only in the responsible human's existing ignored `profiles/<human>/secrets.md`, under a concise resource section.
 Public guidance names that file/section in inline code and any relative suffix; it does not copy the private value or link to the private file.
 A public Markdown link to a private profile file is a public-document error: use inline-code lookup instructions instead.
@@ -84,6 +87,10 @@ Original HTML and explicitly retained related files use contained canonical work
 General traversal, copying, publication and cleanup skip the whole source mount; group access does not make it a C/T/J output home.
 A needed durable external mount target belongs only in private setup.
 Concrete source operations use real paths for resolution, containment and junction checks; generic public links retain logical source navigation without resolving or reading the mount.
+Local navigation rejects Windows source-prefix/ancestor and protected-component aliases before target access under the [source rule](literature.md#local-pdf-storage); normal material operations inspect their actually selected paths without resolving an unselected source root.
+Fixed Git names, source URIs and recorded original paths retain their literal identities, independently of local Windows refusal rules.
+An acquisition record's local paths belong to that record's repository and selected view; reading it from fixed Git does not select the same-named physical checkout objects.
+Necessary fixed inputs use their selected ordinary Git entries and blobs, while actual local source and receiving operations retain containment, reparse, occupation and stale-input checks.
 Do not serialize host values into public reports.
 General public traversal and common-framework copying exclude `profiles/*/secrets.md` before reading; a deliberately tracked/staged secret is a publication error.
 

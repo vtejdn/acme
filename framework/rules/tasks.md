@@ -25,10 +25,11 @@ The selected Task decision owns lifecycle, authority, reason and exact contract/
 | `completed` | The recorded completion criteria are met, with a review covering the current contract. |
 | `retired` | A decision to stop pursuing this Task. Preserve the reason and unfinished obligations; retirement does not assert a mathematical resolution. |
 
-Tasks have no overall review status, Claim role or correction flag.
-The optional `role` field belongs only to Claims and is rejected in Task decisions; neither C nor T has an aggregate current review-status.
+Tasks have no aggregate review status or correction flag.
+The agent maintains Claim labels in titles or ordinary explanations under the [Claim label rule](claims.md#claim-role).
+Both C and T decisions reject role and aggregate review-status fields under the [material field contract](../material-format.md#claim-and-task-decisions).
 Preserve concrete reviews, objections and their scopes in the responsible evidence; a gap alone does not make a Task blocked.
-Claim review status and proof/refutation acceptance remain governed by the Claim rules.
+Claim assessments, individual review findings and proof/refutation acceptance follow the [Claim rules](claims.md#separate-assessment-fields).
 
 A new Task states proposed or active explicitly in its initial decision.
 Use active only for an actual assignment or existing exploration authorization, recorded in `authority` and `reason`.
@@ -75,13 +76,13 @@ A tractable special case must not silently replace the original question.
 
 ## Execution boundary
 
-Every ordinary local Task family has one stable current E in every lifecycle state under the [execution rules](execution.md); a joint coordination T has no E.
-Setup prepares its minimal non-running E together with the initial Task, granting no execution or allowance.
-Each physical Task version may retain one unanchored operational link to that same family E outside mathematical support/review relations.
+An ordinary local Task actually selected for execution uses its stable local E under the [execution rules](execution.md), independently of lifecycle state; a joint coordination T has no E.
+Task creation, import, reading and maintenance do not require or create E; prepare or reuse it only for actual selected local execution with adequate authority and effective conditions.
+Public Task versions use an inline-code E address or the common action guide when needed, without a Markdown link to a local execution file.
 The current exact Task decision, execution state and still-effective conditions are maintained directly there, without events or replay history.
 Task revision leaves E unchanged unless an applicable exact update is prepared; a new Task pointer, active lifecycle or session supplies no resumption authority.
-Completed Tasks retain the same concise ended/non-running E, reused only under actual later authorization.
-Mathematical consumers other than the permitted Task entrance do not refer to E or administrative records.
+Retain an existing E and its effective stops and limits across lifecycle changes; Task active/paused and E running/stopped remain independent.
+Mathematical consumers do not cite E or administrative records as evidence.
 
 ## Record Template
 
@@ -148,3 +149,28 @@ An own-authored parent uses personal import; another human's parent uses intake,
 When that collaboration is not continuing locally, prepare the individual's standalone contract with all adopted common hypotheses, quantifiers, goal, personal scope, criteria and outstanding obligations, preserving attribution and actual review applicability.
 Remove the inapplicable joint-task link and repair references; obtain necessary other-author contract content through intake rather than reauthoring their proof or finding.
 Neither disposition resets execution conditions, creates an allowance or fabricates a new decision from relocation.
+
+### Shared Git research
+
+Participants using an agreed shared Git remote include current collaborator information in each actual exploration round and share useful progress under the [default joint-research Git permissions and integration rule](identity.md#shared-research-git-authority-and-integration).
+Human authorization to establish, advance or continue joint Task collaboration includes routine retrieval, integration, commits and pushes within that work's scope by default, with explicit human limits taking precedence.
+The same default applies when continuing an authorized individual T/E that participates through its exact adopted joint contract; keep its ordinary Task type and do not require renewed joint-participation or push wording on each continuation.
+Apply these permissions directly without a separate collaboration-mode adoption, delivery grant, permission sentence, new T/E decision or authorization record, while judging the actual progress, batch and sharing time.
+Work without Git or a shared remote, including purely local work, carries no additional network duty.
+Updates by another author in the same shared repository use ordinary Git collaboration and create no intake operation; receipt from a distinct repository still fixes the actual source commit under the [intake rules](intake.md).
+Project collaboration updates are separate from the [daily official framework version check](../versioning.md#official-version-check), which neither refreshes the research branch nor authorizes an upgrade.
+
+Before new substantive work in each round, the responsible main agent checks fresh state for the agreed remote and collaboration branch, obtains and normally integrates new commits within its authority, then reads the common contracts, strategies, results, informative failures, reviews and source changes relevant to the next question.
+Use that information for mathematical reuse before undertaking necessary external literature searches; the project update still applies when sufficient existing mathematics makes a new external search unnecessary.
+The main agent coordinates one effective update for the round, and subagents reuse its actual result rather than fetching separately.
+A new exploration round needs fresh remote facts; concrete changes or delivery needs during a round may warrant another refresh.
+This is a round-level responsibility, not a network preflight for each inference, ordinary read or tool call, and needs no round identifier, polling service, synchronization record or empty commit.
+When the remote has no update, continue the applicable work without manufacturing a progress event or permanent log.
+
+The main agent judges sharing by its actual collaborative value, including useful intermediate results, counterexamples, conditional conclusions, decisive proof gaps, important failed routes, source discoveries or corrections affecting others, reusable programs and necessary inputs, or substantive strategy changes.
+Share major progress during a round when useful and assess ordinary progress at closeout, without waiting for Task completion or committing each small edit or repeated experiment.
+First retain the necessary content, truthful mathematical status, hypotheses, checks and limitations in existing responsible materials, repairing necessary references and navigation, then form a coherent batch others can understand and reuse.
+Drafts and unresolved gaps can be shared truthfully; commit or push creates no proof, independent review or adoption and imposes no new independent inspection or complete regression requirement on every batch.
+Keep E, private settings, original literature, temporary files and ignored computation outputs within their existing local boundaries; collaboration supplies no reason to upload them or recover them as missing remote files.
+Incoming commits do not automatically replace an individual's exact adopted joint contract or change its Task/E authority, effective stops or allowance.
+Apply the [Git failure and delivery scope](identity.md#shared-research-git-authority-and-integration) to actual obstacles while preserving those individual conditions.

@@ -45,6 +45,7 @@ def validate_locators(repo, locators, paths=(), material_data=None):
 
 
 def _navigation_path(root, owner, path, planned):
+    public_paths.check_local_role(path)
     # Only this explicitly selected private file's internal navigation retains
     # its owning context. Other private targets stay barred before any access.
     if path != owner or not public_paths.private_file(owner):

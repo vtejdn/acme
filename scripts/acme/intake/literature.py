@@ -145,7 +145,6 @@ def _new_account(repo, request, digest, facts):
     body = '### '+key+': source artifact\n\n'
     body += ('Bibliography: `'+key+'` in [references.bib](references.bib).\n'
              'Recorded by '+repo.actor()+'.\n')
-    body += ('Access date: ' if raw is None else 'Acquisition date: ')+repo.now()+'.\n\n'
     body += 'Artifact: ['+filename+'](pdf/'+quote(filename,safe='/._-')+'). '
     body += 'Selected local artifact is unavailable.' if raw is None else 'Retained unchanged.'
     if digest: body += ' SHA-256 `'+digest+'`.'

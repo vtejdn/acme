@@ -1,5 +1,6 @@
 /.tmp/
 /.generated/
+/execution/
 /.vscode/
 /.codex/
 /.pytest_cache/

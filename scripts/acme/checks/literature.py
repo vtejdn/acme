@@ -304,8 +304,6 @@ def check(root):
                     groups = {name.split('/', 1)[0] for name in expected if '/' in name}
                     if item.name not in groups:
                         report['errors'].append(f'Unsupported PDF subdirectory: {item.name}; only registered HTML work groups are supported.')
-                elif item.is_file() and item.suffix.lower() == '.pdf' and item.name not in expected:
-                    report['warnings'].append(f'Unregistered local PDF: {item.name}; preparatory storage is allowed without registration or source inspection.')
         elif expected:
             report['warnings'].append(f'PDF directory/junction target is unavailable: {paths.PDF_ROOT.as_posix()}')
         for name, identity in sorted(expected.items()):

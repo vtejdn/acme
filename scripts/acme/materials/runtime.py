@@ -89,22 +89,7 @@ class Reader:
                 route_paths = discovery.candidates(self.repo.root)
             else:
                 route_paths = entrances(tree.names, strict=False)
-        def unavailable_output(target):
-            if not paths.in_computation_outputs(target): return False
-            candidate = shared.safe_path(self.repo.root, target)
-            tree = getattr(self.repo, 'selected_tree', None)
-            return (not candidate.is_file() if tree is None or getattr(tree, 'ref', None) == 'WORKTREE'
-                    else target not in tree.names)
-        documents.check(doc, self.read, paths=route_paths, unavailable_output=unavailable_output)
-        if doc.identity.kind == 'T' and doc.task_type == 'ordinary':
-            from ..execution import records
-            doc.execution = records.check(self.repo, doc.path)
-        if doc.identity.kind == 'J':
-            missing = {target for target, _anchor in self.destinations(doc.path, doc.text)
-                       if unavailable_output(target)}
-            if missing:
-                doc.notices = list(dict.fromkeys(getattr(doc, 'notices', []) +
-                    ['Local computation output unavailable in selected view: ' + target for target in sorted(missing)]))
+        documents.check(doc, self.read, paths=route_paths, source_info=self.source_info)
         if doc.identity.kind == 'U':
             from . import discovery
             prefix = str(PurePosixPath(path).parent) + '/'

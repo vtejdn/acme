@@ -11,7 +11,20 @@ Literature intake and source audits exclude associated Lean code unless its audi
 <a id="source-preparation"></a>
 ## Common source preparation
 
-Research, source audit and writing use the same sequence: search existing mathematical/source evidence; register any missing work and exact artifact/edition; inspect the needed passages; process definitions, terminology and symbols through [def registration](definitions.md); then reuse the source within its actual limits.
+Research, source audit and writing reuse sufficient existing mathematical/source evidence, locate any needed originals in the order below, register the selected work and exact artifact/edition when needed, inspect the required passages and process definitions, terminology and symbols through [def registration](definitions.md), then reuse the source within its actual limits.
+
+1. Check registered sources through references.bib, registry.md, edition-specific contents and applicable source records, judging actual edition, coverage and availability.
+   Reuse adequate retained C/U/L and previous findings without repeating acquisition or scanning unrelated files.
+2. When registered sources are insufficient or the required edition is unavailable, look for relevant unregistered local candidates through the logical source entrance and its actual storage arrangement.
+   Use the current question, work, author, title, version and citation leads; necessary candidate metadata, title pages, abstracts, contents or passages may be inspected before assigning a key or completing registration.
+   Missing registry or contents entries do not establish local absence, and a candidate match establishes no work identity, version agreement or mathematical sufficiency.
+3. If relevant local sources remain insufficient, perform the necessary authorized external search or acquisition, retaining the actual search scope and unresolved edition or evidence limits.
+
+Stop once adequate material is available, reusing applicable previous searches without a fixed per-operation sequence or whole-library scan.
+For a selected candidate, establish the real work, edition, source association and known facts, then maintain references.bib and the sole registry under the [existing registration rule](#5-checklist-for-adding-or-updating-literature).
+Reuse actual local bytes without inventing a download, acquisition time or unknown metadata; unselected files and unrelated accounts remain unchanged.
+Candidate discovery requires no automatic index, bulk OCR, all-file hashing, prior full registration, U/L creation or search receipt.
+
 Canonical references.bib owns bibliographic identity and keys; the registry owns artifact/version, availability, acquisition and coverage links; intake owns actual cross-repository operation provenance.
 Prepare searchable contents when the source supplies them, and state unavailable editions or indispensable passages specifically.
 Keep complete definitions in adequate U/C/L content, source findings and presentation observations in adequate source-reading accounts, and writing choices at their applicable profile or manuscript home.
@@ -59,7 +72,10 @@ Local registration, explicit source reading and public U display use the actual 
 An unrelated malformed account is not a prerequisite for a selected operation; an explicitly requested whole-store inventory still checks its complete scope.
 Competing declarations or several possible primary artifacts require the agent to inspect the concrete candidates and supply chosen facts or a local account edit, rather than accepting the first or last link.
 Generic public links into the logical source root, groups or named files check normalization, repository containment and protected paths without resolving the mount or checking source existence, format or native anchors.
-They do not audit holding, edition or source bytes.
+On Windows, reject noncanonical trailing-dot/space source-prefix or ancestor components and protected components after the existing single URL decoding, before querying, resolving or reading the target, including protected components inside a canonical source path.
+The agent corrects actual affected references; this refusal supplies no alias compatibility, automatic rewriting or new source acquisition.
+Ordinary material preparation, import and publication do not resolve unselected current or retired source roots, and a logical target's disappearance or content change creates no source availability or publication condition.
+These logical links do not audit holding, edition or source bytes.
 The sole artifact registration source is mathematics/literature/registry.md; rule examples and other Markdown files do not register artifacts.
 Each primary artifact has an explicit account; selected additional pages/resources carry their own locators and fingerprints where known.
 Its one `Artifact:` declaration names one exact local Markdown target; its single known fingerprint uses `SHA-256` followed by the inline-code hash on that same line.
@@ -287,11 +303,16 @@ Mirror URLs do not create new bibliographic works.
 
 Keep acquisition and version metadata in mathematics/literature/registry.md, either in its table or a per-work subsection.
 Record the source URL or supplied-file provenance, identified version and intended use.
-A retained artifact records acquisition date, actual local file and its storage fingerprint; an exception-registered source instead records access date, exact locator, an explicit no-local-artifact declaration and the acquisition-failure record.
+A retained artifact records its known acquisition date, actual local file and storage fingerprint; an exception-registered source instead records the known actual access date, exact locator, an explicit no-local-artifact declaration and the real acquisition-failure record.
 Fingerprints only suggest possible accidental corruption and do not decide source identity or review validity.
 Link an existing goal, route, or source unit when applicable.
 For material supplied by the user for later use, record `User-supplied for future research; no goal assigned` instead of inventing a goal or audit unit.
 State unknown provenance explicitly for pre-existing material; an audit date or a later discovered publisher URL must not be substituted for the original download date or source.
+The agent maintains actual source addresses, edition facts, known acquisition/access dates and necessary unknown limitations in this existing registry, distinguishing genuine events from later registration, copying or checking.
+Retain known dates at their true precision under the [existing timestamp rule](workflow.md#new-record-timestamps); do not invent minutes, timezone, original dates or a new event from file metadata or the current clock.
+The registration tool does not infer acquisition or access from local bytes, their absence or the registration call, and writes no automatic date, substitute registration time or mandatory unknown-date field.
+Use ordinary authorized registry edits or an already selected registry_update when useful; unknown dates alone require neither another download, per-source human confirmation nor a new date system.
+Actual acquisition, access and failure duties remain at their real scope; missing local bytes alone prove none of those events.
 
 A citation key identifies a bibliographic work; explicit artifact locators identify retained versions, for example `<key>--arxiv-v2.pdf`.
 A same-work revision, including mathematical changes or an established journal version, retains the key without new-key approval.
@@ -387,7 +408,7 @@ Clean installations receive this rule and the generic usage entrance with an oth
 These rules cover monographs, papers, and unpublished manuscripts.
 Adding a source does not assign a full audit.
 During ordinary local source acquisition/registration, register identity, actual file/version, source type, publication status, access classification, known provenance and the fingerprint computed from actual locally obtained bytes.
-An exception-registered source carries access date, exact locator, no-current-local-artifact declaration and failure record; only a previously established local fingerprint survives absence, and a never-obtained artifact has none.
+An exception-registered source carries its known actual access date, exact locator, no-current-local-artifact declaration and real failure record; only a previously established local fingerprint survives absence, and a never-obtained artifact has none.
 Keep source type, publication status, and access as separate fields under the classifications below.
 Inspect the title page and, as useful, the abstract, contents, index, or preface; label subject tags as provisional.
 User-supplied sources may be registered for future research without an active goal, using the acquisition purpose stated above.
@@ -555,7 +576,7 @@ Preserve existing acquisition facts, original provenance and fixed historical co
    Validate the actual locally obtained artifact and compute/record its storage fingerprint for accidental-damage checking.
    A never-obtained artifact has no fingerprint; a previously obtained file that later becomes unavailable retains its established local baseline and actual access limitations.
 4. Complete the known bibliographic fields and appropriate entry type in canonical references.bib, then record acquisition and artifact facts in registry.md: actual source URL or supplied provenance, identified edition/version, purpose and relevant record link.
-   A retained artifact records acquisition date, actual path and storage details; an exception-registered source records access date, exact locator, an explicit no-local-artifact declaration and the failure record.
+   A retained artifact records its known acquisition date, actual path and storage details; an exception-registered source records the known actual access date, exact locator, an explicit no-local-artifact declaration and real failure record, retaining necessary unknown limits.
    Keep source inspection and proof-review scope in U or the responsible audit material, linked from the registry.
    Record access failures accurately.
    Keep unknown metadata explicit and preserve evidence needed for earlier audits.
@@ -581,8 +602,9 @@ Mark unverified details as "To be verified" instead of inferring them from filen
 ### Preparatory local PDFs
 
 An unregistered PDF may remain in the local literature store as preparatory material.
-Its presence produces an informational reminder, not a failure or a prerequisite to further work.
+Its presence and quantity produce no warning, reminder, pending-registration count or obligation to register, audit, organize or clean prepared files.
 Registration, bibliographic verification and actual source inspection remain separate substantive actions when needed.
-Do not invent metadata, allocate a key, delete the file or request acknowledgement just to clear the reminder.
+Do not invent metadata, allocate a key, delete the file or request acknowledgement merely because it is unregistered.
+Discover relevant candidates under the [common source-preparation order](#source-preparation) when actually needed; explicit inventory requests may return selected file facts without creating registration debt.
 Missing required evidence and invalid registered artifacts retain their actual error diagnostics.
 Common-framework copying excludes personal literature; no pending-file inventory or exception list is maintained.

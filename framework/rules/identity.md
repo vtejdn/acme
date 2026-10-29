@@ -25,7 +25,7 @@ Keys use the existing letters, digits and internal-hyphen grammar without spaces
 For an invalid key, explain its concrete restriction and ask the author to choose another; never sanitize, transliterate or infer a replacement.
 The attribution name is nonempty single-line text, may contain spaces and Unicode and is independent of Git/GitHub identities.
 Use the existing id and display_name fields, preserving the exact supplied name and the permanent key.
-Complete the receiving License credit by a bounded edit using that name, preserving the existing license text and attribution notices; no License generator or extra signature field is required.
+Complete a missing project credit through a bounded edit under the [project-notice rule](#project-notices-during-setup); registration itself does not write LICENSE, and needs no License generator or extra signature field.
 An authorless copy or clone of the official blank repository is valid preparation; collect both values at first actual registration, without renaming existing identities or relicensing existing repositories.
 Personal use without Git may keep an absent or null repository name; Git research writing and delivery require the human's chosen or confirmed repository name under the [repository name rule](#repository-names-and-use-environments).
 An existing shared-repository clone preserves its identity, registrations and materials rather than repeating fresh setup.
@@ -37,6 +37,38 @@ Human/repository keys use letters, digits and internal hyphens; underscores sepa
 Registration checks keys and GitHub logins without regard to case, rejects duplicate Git signature assignments, and retains canonical spelling.
 Display-name changes do not rename records.
 Correct mappings through traceable framework maintenance; never reassign a human key to somebody else.
+
+### Project notices during setup
+
+After obtaining the official blank framework to establish a new research project, continue with the [installation and setup action](../agent-actions.md#install-the-framework), reusing actual supplied answers and collecting only missing information.
+An authorless copy remains preparation while required answers are pending; do not invent a name or replace an upstream notice.
+Keep the root LICENSE in place, including its complete license text and applicable ACME and third-party notices, original names and years.
+The upstream Copyright 2026 Sheng Yin is an actual notice, not a replaceable project-author placeholder.
+Append the chosen project's notice after the complete existing text as a separate statement limited to that human's original contributions or actual modifications in this research project, excluding the upstream ACME framework and other authors' contributions.
+Do not clear the upstream name, refresh its year to the installation year or combine the project author's name into its copyright line.
+This addition changes no Apache 2.0 terms, established other license choices or authorship; see the [license's redistribution and additional-statement provisions](https://www.apache.org/licenses/LICENSE-2.0).
+No additional NOTICE file, relocated license, fixed notice syntax or new attribution field is required.
+
+For example, an actually supplied name and project-establishment year may yield this independently scoped addition after the full license:
+
+```text
+Additional project copyright notice
+
+Copyright 2026 Alice Smith
+
+This notice applies to original contributions made by Alice Smith
+in this research project, excluding the upstream ACME framework.
+```
+
+Use the new project's actual current establishment year by default and preserve the independently supplied name exactly, including its supported spaces and Unicode.
+Do not infer the attribution name from the upstream author, path key, Git signature or GitHub login, or produce an empty-name notice.
+Reuse an existing notice for the same actual human and contribution scope; a matching name alone establishes neither identity nor that scope.
+Preserve existing notices and historical years during repeated setup, collaboration, cloning, upgrades and calendar changes rather than duplicating or refreshing them.
+An existing research-repository clone retains its actual project identity, registrations, materials and notices; reuse the actual human's registered identity, supplement only genuinely missing information or an applicable notice and bind that new checkout when Git is used.
+Framework upgrades and copying merge any changed LICENSE text while retaining destination project notices and other applicable content, without repeating initial registration.
+Official-source inspection, backup, review, upgrade preparation and maintenance of the official framework itself do not select a new research project or require an additional project notice.
+The agent judges actual purpose, identity and contribution scope and inspects the final people.json, LICENSE, necessary configuration and binding; tools validate their explicitly supplied fields and mechanical writes without deciding copyright ownership or completing attribution on the agent's behalf.
+Installation, registration, attribution and binding create no Task, E, profile shell or source store and grant no research-start or publication authority.
 
 ## Repository names and use environments
 
@@ -108,9 +140,13 @@ Registration, acquisition and execution record their actual operator; reviews re
 <a id="collaboration-maintenance-and-conflicts"></a>
 ## Direct collaboration, maintenance and conflicts
 
-Registered human collaborators work directly in the shared research repository and its existing checkout.
-Additional parallel research copies are not recommended; this framework defines no coordination or management workflow for them.
-The checkout's actual operator binding remains shared by its chats and does not change another author's mathematical or manuscript choices.
+Registered human collaborators use their own machines and local working copies of the shared research repository, synchronizing through GitHub or another Git hosting platform with push, pull and merge.
+References to the shared repository and its existing checkout mean each human's own local working copy.
+Different humans sharing one machine, operating-system account, physical working copy or private storage are outside the default supported scope.
+Apply this scope without machine identification, isolation certification, private-file inventories or mandatory environment preflight.
+Private settings and originals retain their [local-only boundary](organization.md#machine-local-locators).
+Additional parallel research copies for one human are not recommended; this framework defines no coordination or management workflow for them.
+Within each human's working copy, the actual operator binding remains shared by its chats and does not change another author's mathematical or manuscript choices.
 
 Each collaborator maintains shared registration and derived navigation at their responsible scope.
 Every authored mathematical document retains exactly one human author, including a joint Task.
@@ -219,7 +255,7 @@ Re-read shared state after acquiring the lock; do not hold it across network ret
 <a id="submission-checks"></a>
 ## Git delivery
 
-Research proceeds in parallel; Git delivery in a shared worktree proceeds serially.
+Research proceeds in parallel; Git delivery within one human's local worktree proceeds serially.
 Before research writing or delivery, a Git-managed project has its human-chosen registered name and the actual operator binding; native Git supplies no such authorization by itself.
 One responsible agent coordinates each intended batch, index and commit.
 Preserve another agent's staged work; identify actual paths rather than a research-line glob.
@@ -251,6 +287,33 @@ Let Git perform file merging, then inspect the actual affected result and resolv
 Git's lack of a text conflict establishes neither mathematical agreement, source applicability nor permission to edit another human's body.
 Inspect earlier versions only when the actual question needs them; no ordinary commit or merge requires every parent to contain a material, a BASE selector, preimage mapping or framework pass token.
 
+### Shared research Git authority and integration
+
+When a human actually authorizes establishing, advancing or continuing [joint Task collaboration](tasks.md#shared-git-research), routine fetch, pull/merge, commit and push within that assigned collaboration scope are permitted by default.
+Apply explicit human restrictions such as local-only work, commit without push, postponed synchronization or limited publication content; an absent separate push grant does not block the default.
+Use the current assignment and existing participation facts without asking for separate mode adoption, first-delivery approval or recurring permission, or requiring a permission sentence, new T/E decision or authorization record.
+Determine the actual repository, collaboration branch and publishable scope from the current Task, existing agreements and native Git remote/tracking facts, reusing sufficient information directly rather than creating a URL/branch mirror, authorization table, flag or receipt.
+Clarify only a genuinely missing destination or branch needed for execution, rather than asking again whether routine joint-research delivery is allowed; actual account capabilities and platform restrictions still apply.
+A joint file, active label, clone, registered identity, configured remote or successful connection alone selects no research or delivery.
+Apply the default to the currently assigned human-authorized collaboration, without scanning every joint Task or treating Git permissions as permission to begin or resume research.
+Handle target changes within that scope from actual facts and existing arrangements; publication beyond it, unrelated remote operations, PR creation, history rewriting, force-push and branch-protection changes are outside these default permissions.
+
+Choose native Git retrieval, fast-forward or ordinary merge from the actual branch relationship and explicit integration target, without prescribing one command sequence, helper or whole-library check.
+Integration concerns branches and commits, rather than pulling only one Task's files; select the relevant changed content for inspection afterwards.
+Protect uncommitted work, other sessions' staged contents and each contributor's authorship without requiring the entire worktree to be clean or defaulting to whole-tree add, stash, discard, overwrite or rebase.
+Coordinate integration, index and commits serially in this working copy, choosing any necessary native saving or temporary arrangement for the actual state without another permanent role, lock or parallel-copy management system.
+After Git merges files, inspect affected mathematics, fixed versions, exact inputs, references and review applicability under the existing [conflict rule](#collaboration-maintenance-and-conflicts); a clean text merge certifies neither mathematical agreement nor authority to edit another human's body.
+Resolve administrative conflicts within existing authority, preserve competing mathematical evidence, and reuse any applicable scoped recheck approval rather than requesting it again.
+Read changed applicable rules and contracts under the [current-rule duty](workflow.md#proportionate-execution); synchronization alone establishes no adoption or research resumption.
+
+Before a push, inspect the whole outgoing commit chain and its actual destination under [serial delivery](#submission-checks), rather than treating the currently staged paths as the whole publication scope.
+Resolve an unclear or unauthorized outgoing scope before publishing it, without automatically creating another branch or rewriting history to bypass that issue.
+Obtain the fresh remote facts needed for delivery; if the remote advances or rejects the push, retrieve, normally integrate, inspect affected changes and retry within the existing authority and effective limits, without force-push or unlimited retries.
+Use the project's actual collaboration branches and contribution requirements; protection or a PR requirement does not itself authorize another remote action or a new publication workflow.
+Verify the actual remote result and report a connection, integration or delivery failure with its concrete unconfirmed update, saved commit or unfinished push scope, using existing materials or an ordinary response rather than a queue or retry ledger.
+Continue only authorized local work independent of the missing remote facts, deferring the parts that depend on them; an explicit instruction requiring successful synchronization and effective execution stops or allowance limits take precedence.
+Keep the existing pending-batch ordering within an authorized delivery sequence; unrelated unpublished commits do not block all local research.
+
 ### Explicit material checks
 
 Use useful operation-local material, field, source and reference readers for the explicitly chosen question and actual working files or Git view.
@@ -263,6 +326,8 @@ The agent judges actual receiving versus local revision, chosen originals, contr
 Authored body changes, including layout maintenance, retain the same-human and separately authored correction requirements in the actual editing and receiving work.
 Keep fixed-version, source-preservation and actual-review duties at their responsible interfaces, reusing necessary existing evidence rather than replaying them as a commit audit.
 An unstaged repair cannot cure a defect in another selected view.
+Necessary intake identities and acquired-record facts use that same selected view as their materials, including explicit local-revision inputs and onward provenance under the [intake rule](intake.md#homes-and-independent-reuse).
+Their recorded local paths are relative to the record's repository/view; current checkout aliases, links or availability supply no extra condition on fixed Git evidence.
 
 Registration operations and agent-prepared external-table maintenance preserve affected rows, allocation constraints and necessary table-local counterparts, including both association entrances.
 Before removing a registration or changing adopted source/author correspondence, the agent identifies necessary actual consumers and prepares their coherent repair from the provenance and current use.

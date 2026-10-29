@@ -3,17 +3,27 @@
 ## Responsibility and version boundary
 
 A Task owns its mathematical question, hypotheses, completion criteria and selected lifecycle decision.
-Every ordinary individual local Task family has one stable E at execution/Author_E_F0001.md in every lifecycle state.
+An ordinary individual local Task selected for execution uses one stable local E at execution/Author_E_F0001.md, independently of its lifecycle state.
 A joint T is only a common contract and coordination entrance, with no E, directly associated S, team allowance or direct execution.
 Continue its goal through the actual human's selected individual T, adopted joint contract and stable E under the [Task rule](tasks.md#joint-tasks-and-participation).
+The [shared Git collaboration rule](tasks.md#shared-git-research) keeps that individual scope: incoming commits and progress delivery neither adopt a different exact joint contract nor resume a stopped run or reset effective local limits.
 All physical Task versions, authorized resumptions and later reactivations share that address.
-Task setup prepares its minimal non-running E together with the Task; initialization supplies no research authority, budget or claim about past execution.
-A completed Task retains the same concise ended/non-running E.
+Task creation, reading, maintenance and ordinary import do not require or create E.
+Prepare or reuse it only when the actual human's ordinary Task is selected for local execution under adequate authority and necessary conditions; a new boundary defaults to not-running and supplies no fresh authority or allowance.
+Retain an existing boundary and its effective limits across Task completion, later selection and local cleanup.
+
+The root execution/ directory is persistent local state, ignored by Git and outside temporary or generated storage.
+Do not track, synchronize or copy source E through Git or framework installation; preserve destination E during ordinary copying and upgrades.
+For an already tracked E, stop tracking its exact file with native Git while retaining local bytes and effective conditions, without rewriting history or recovering execution state from old commits.
 
 Before actual advancement, read the current human instruction, exact Task contract/decision, applicable [operator policy](preferences.md#scope-and-adoption) and still-effective E conditions.
 An active lifecycle, new session, changed account/window, expired policy or edited Task pointer does not resume a stopped boundary or grant another allowance.
 Only actual applicable authorization permits resumption or replacement of an effective allowance.
-Do not change Task lifecycle merely to mirror an execution state.
+Task active/paused lifecycle and E running/stopped execution states are independent.
+Changing either one neither changes the other nor establishes execution permission, resets effective limits or manufactures a mathematical decision.
+When a real instruction affects both research arrangements and execution, maintain the necessary T and E separately under that instruction.
+On a new device, clone, account/window change or missing E, retain known stops, shared thresholds, incremental baselines, caps and account/window scope through actual instructions, policies and same-human handoff.
+Resolve only a concrete missing fact that determines whether execution may proceed; absence supplies neither an empty authorization nor a new allowance.
 
 ## Current contents and retained limits
 
@@ -37,11 +47,12 @@ Once a monitoring failure is resolved, discard its retry narrative unless a real
 
 ## Mathematics and operational entrances
 
-Each ordinary Task version may contain one useful unanchored operational link to its stable family E, outside mathematical support/review relations, in any lifecycle state.
-All other mathematical materials must not reference E, E events or administrative records as evidence, dependencies, chronology, handoff sources or side notes.
+Public Tasks do not link to local E files; use an inline-code stable address or the common action guide when useful.
+Maintain existing operational links within the actual selected scope without changing fixed mathematics or scanning all history.
+Mathematical materials must not reference E, E events or administrative records as evidence, dependencies, chronology, handoff sources or side notes.
 Remove the whole administrative clause while preserving any real mathematical, reproduction or review qualification at its responsible home.
 The action guide and deterministic family address locate E without a separate navigation registry.
-A Task/E link grants no execution authority.
+An E address grants no execution authority and requires no remote counterpart.
 
 ## Main-agent responsibility and exact maintenance
 
@@ -56,14 +67,16 @@ No execution owner registry, lease service or multi-writer history protocol is n
 Prepare ordinary exact E edits directly and preserve the current selected bytes against competing writes.
 Task revision leaves the same E unchanged unless an applicable exact update is separately prepared; it never silently resumes a stop.
 The optional scripts/execution.py check --task PATH checks only that selected current E's fields, state, exact Task decision, paths and necessary numeric ranges.
-Its --view option reads the actual WORKTREE, INDEX or fixed Git postimage, without recovering state from another view.
+It reads only the selected current local E and its exact local Task, identity and necessary fields; no Git --view option or cross-view fallback exists.
+General Task structure, display, navigation and Git delivery do not read or validate E and remain available when a clone has none.
 It authenticates no instruction, judges no custom condition, fetches no account reading and controls no platform scheduler.
 Ordinary delivery and prose maintenance do not scan execution histories or require E-change acknowledgments.
-For personal import, the agent reads the actual source and local execution conditions, preserves an existing E and prepares or reuses the ordinary family's one stable boundary.
+Ordinary personal Task import reads no source E, creates no E and preserves an existing local E without treating import as execution handoff.
+If local execution preparation is actually selected, the agent judges relevant source and local conditions and prepares or reuses the ordinary family's stable boundary through direct edits or explicitly selected helper input.
 Write only the necessary effective stop, allowance and continuation conditions chosen by the agent; a new boundary remains non-running and omits unrelated source event/session history.
 Moving a Task does not automatically copy its source E, and any helper writes only the execution content or exact edits the agent explicitly prepared.
 No history classifier, retention marker, migration record or replacement archive is required.
-A source assignment still running must stop before a moved assignment obtains another writer.
+A real transfer of responsible execution stops the former writer before another takes over; copying or maintaining Task material alone is not that transfer and does not require stopping a source run.
 Import, participation and a new local number do not resume research, permit overlapping writers or reset a shared allowance.
 Reject a conflicting family type before changing any E or fixed contract.
 Existing exclusive-create, stale-input, expected-text and short publication-lock protections remain applicable to their concrete writes.

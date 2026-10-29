@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 from ..core import repository as r
 from ..core import identity as humans
+from ..core import links
 from ..materials import identity as names
 from ..materials import documents
 
@@ -48,21 +49,39 @@ def parse(path, text):
     return record
 
 
-def validate(repo, record, path):
+def task_path(record, path):
+    """Classify the exact owning Task before any Task-content read."""
     expected = family(path)
     task, separator, anchor = record['task'].partition('#')
     ident = names.parse(task)
-    r.require(separator and ident.kind == 'T' and ident.source_repository is None and ident.family == expected,
+    r.require(separator and anchor and ident.kind == 'T' and ident.source_repository is None and ident.family == expected,
               'Current E must name an exact decision in its own local Task family.')
+    return task
+
+
+def validate_task(repo, record, path, doc):
+    """Check explicit prepared fields against their designated ordinary Task."""
+    task = task_path(record, path)
+    ident, anchor = names.parse(task), record['task'].partition('#')[2]
     humans.person(repo, ident.author)
-    doc = documents.parse(task, r.read_from(repo, task).decode('utf-8-sig'))
+    r.require(doc.path == task, 'Current E must name the designated exact Task material.')
     r.require(doc.task_type == 'ordinary', 'A joint Task cannot own an E or execute directly.')
     r.require(anchor in doc.decisions, 'Current E Task decision is absent: ' + record['task'])
+    r.require(links.anchor_occurrences(doc.text)[anchor] == 1,
+              'Current E Task decision anchor must identify exactly one target: ' + record['task'])
     r.require(record['state'] in STATES, 'Invalid current execution state.')
     return {'path': path, **record}
 
 
+def validate(repo, record, path):
+    r.require(not hasattr(repo, 'selected_tree'), 'Execution checks read only the current local working copy.')
+    task = task_path(record, path)
+    doc = documents.parse(task, r.read_from(repo, task).decode('utf-8-sig'))
+    return validate_task(repo, record, path, doc)
+
+
 def check(repo, task):
+    r.require(not hasattr(repo, 'selected_tree'), 'Execution checks read only the current local working copy.')
     doc = documents.parse(task, r.read_from(repo, task).decode('utf-8-sig'))
     r.require(doc.task_type == 'ordinary', 'Select the actual human\'s individual Task/E to continue a joint goal.')
     path = address(task)
@@ -75,15 +94,9 @@ def main(argv=None):
     commands = parser.add_subparsers(dest='command', required=True)
     command = commands.add_parser('check')
     command.add_argument('--task', required=True)
-    command.add_argument('--view', default='WORKTREE', help='Actual WORKTREE, INDEX or fixed commit postimage')
     args = parser.parse_args(argv)
     try:
-        if args.view == 'WORKTREE':
-            result = check(r.Repository(args.root), args.task)
-        else:
-            from ..core.git_views import Tree
-            with Tree(args.root, args.view) as tree:
-                result = check(tree.research_view(), args.task)
+        result = check(r.Repository(args.root), args.task)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     except (ValueError, OSError, KeyError, TypeError) as error:

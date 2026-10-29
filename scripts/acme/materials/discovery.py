@@ -114,12 +114,10 @@ def families(paths_to_read, read, *, source_info=None):
         if entry.identity.kind == 'T':
             from . import tasks
             tasks.validate(entry, read, previous=ordered[:-1])
-        require(entry.identity.kind not in 'CT' or entry.current is not None,
-                'The current family entrance needs an explicit selected decision, including after archival versions.')
         selected = None
         if entry.current:
             try:
-                selected = documents.selection(entry, read)[1]
+                selected = documents.selection(entry, read, source_info=source_info)[1]
             except FileNotFoundError:
                 require(bool(entry.identity.source_repository) and source_refs.external(entry.current.path),
                         'Missing selected local decision.')
@@ -127,8 +125,7 @@ def families(paths_to_read, read, *, source_info=None):
                'kind': entry.identity.kind, 'source_repository': entry.identity.source_repository,
                'selected_decision': vars(entry.current) if entry.current else None,
                'status': selected.fields['status'] if selected else None,
-               'versions': [{'path': doc.path, 'version': doc.identity.version, 'decisions': list(doc.decisions),
-                             'historical_assessments': list(doc.historical_assessments), 'archival': doc.archival} for doc in ordered]}
+               'versions': [{'path': doc.path, 'version': doc.identity.version, 'decisions': list(doc.decisions)} for doc in ordered]}
         if entry.identity.source_repository:
             row['acquisition'] = source_info(entry) if source_info else {'origin': entry.header}
         if entry.identity.kind == 'U':

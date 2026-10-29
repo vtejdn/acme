@@ -358,6 +358,7 @@ def check_files(root, names):
                 selected = destination(name, href)
                 if selected is None: continue
                 target, anchor = selected
+                paths.check_local_role(target)
                 paths.check_public_target(target)
                 if paths.in_pdf_store(Path(target)):
                     continue

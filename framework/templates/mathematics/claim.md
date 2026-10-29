@@ -73,6 +73,11 @@ Internal extraction under an existing assignment needs no additional approval.
 Protected main-theorem designation or objective changes retain the actual required authorization under the [result-organization policy](../../rules/claims.md#lemma-extraction-and-approval).
 
 For a complete revised proof, select its new fixed argument and adequate actual agent self-review finding; use proved only with resolved dependencies and no remaining applicable mathematical issue.
-Do not carry an older independent review onto changed inputs or promote a label without a separate inspection.
+Do not apply an older independent review to changed inputs or claim stronger proof acceptance, review independence or coverage without adequate evidence applicable to the exact inputs and scope under the [proof-review rules](../../rules/proof-audits.md#review-scope-and-records).
+Reuse sufficient still-applicable evidence; adoption, existing-decision reselection or wording maintenance alone does not require another inspection.
 Track the key-point and Task full-chain independent review obligation through the owning Task.
 After an independently identified gap is repaired, the corrected proof needs independent review by a separate isolated agent; the repairer's self-check does not fulfill that obligation.
+
+The agent maintains ordinary use or display labels in titles or explanations under the [Claim label rule](../../rules/claims.md#claim-role).
+Label maintenance alone triggers no proof-evidence reading, inspection, review, decision, timestamp, mathematical version or approval, and establishes neither proved status nor independent review.
+The agent judges actual changes to mathematics, inputs, adoption scope and authority and applies the corresponding revision and review obligations.

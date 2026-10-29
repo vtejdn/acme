@@ -98,7 +98,7 @@ Changing mathematical obligations or evidence applicability retains its actual r
 Local fixed C/T/R/L files use `Author_Kind_F0001_v1.md`; rolling S/D use `Author_Kind_F0001.md`.
 A J computation has one numbered directory whose README and native children share its identity.
 Read the kind, line, number and physical version from the path and the title from its main heading.
-The short author header records the registered human and applicable original framework/source provenance.
+The short author header records the registered human and applicable actual original-source binding, without a framework management marker.
 See the [material format](../material-format.md).
 
 Choose a research line letter explicitly or inherit only that letter from an actual Task.
@@ -155,7 +155,11 @@ These ordinary input relationships create no revision registry, copy marker, imp
 In an R revision, acquisition facts remain about its explicitly designated acquired input, while a genuine locally performed finding owns its current fixed locator, checking relationship, exact reviewed targets and limits.
 Consume that local finding under the applicable new-review and acceptance requirements without requiring its anchor in the old intake operation.
 Preserve inherited findings at their actual source scopes; neither the retained external identity nor the common R container transfers an earlier relationship or verdict to the local finding.
-An unchanged retained finding and its fixed input keep their already-supported declaration syntax, including when the revision expresses the same targets as separate current-format rows.
+Every selected R/L declaration uses one explicit Target per row, including retained same-anchor findings, mixed revisions and onward source selection.
+Preserve each real path, target anchor, Scope, checking relationship and common assumptions; ordinary Inputs still identify the actual fixed input and adopted scope, without an automatic finding correspondence.
+When an optional helper must read a nonconforming old declaration, it reports the concrete error; the agent can [read and prepare the needed current content](../agent-actions.md#scope-and-instruction-handling) without restoring a historical reader or modifying fixed source facts.
+This address or format maintenance creates no new review, acquisition or actual review time, and does not rewrite the fixed input or its operation.
+The onward helper's explicit origin.input choice remains a separate [source-selection contract](../material-format.md#acquired-findings), without an implicit correspondence parameter for ordinary revisions or readers.
 Apply current declaration requirements to genuinely new or changed findings at their actual scope, without requiring a rewrite of the fixed input.
 The actual author, mathematical revision, review scope and evidence obligations continue to apply.
 
@@ -165,7 +169,7 @@ New C/T decisions, substantive S decisions or recorded updates, and operator, ap
 A genuinely added C/T decision requires `YYYY-MM-DDTHH:MM`, including when it assesses older mathematics; a year, month or date alone, a value with `Z`, an offset, seconds or fractions is invalid for it.
 A timestamp is neither an identity nor a mathematical version.
 Keep genuinely known year/month/date facts at their calendar precision for older mathematics and reviews, including historical reading or genuine reselection of an existing C/T decision; never invent a creation time, transition date or reviewer to fill a field.
-Existing necessary full timestamps are normalized to UTC minutes under the maintenance handbook rather than retained in old formats.
+Existing necessary full timestamps are normalized to UTC minutes under the [timestamp rule](workflow.md#new-record-timestamps) rather than retained in old formats.
 Routine path, heading, link or layout maintenance creates no event or historical timestamp-backfill obligation.
 Later contributions retain their own attribution.
 Human registration does not register agents or models; review arrangement records what actually occurred.
@@ -181,10 +185,10 @@ Human registration does not register agents or models; review arrangement record
 | Fixed C, R, L, U and J materials in their responsible homes | C statements and substantial arguments; R formal agent reviews of all relationships; L exploration and synthesis; U source inspection; J computations with exact scope and group identity |
 | Rolling S/D materials | Routes and continuing draft mathematics; meaningful earlier findings and received originals retain their preservation boundaries |
 | `intake/<initiator>/*.json` | Actual operation time, recorder, instruction, original/transport provenance, scope and outcome |
-| `execution/Author_E_SERIAL.md` | One current execution boundary per ordinary local Task family in every lifecycle state, with exact Task decision and effective conditions; a joint T has no E |
+| `execution/Author_E_SERIAL.md` | Stable persistent local boundary for an ordinary Task family actually selected for execution, with its exact Task decision and effective stops and limits under the [execution rules](execution.md#responsibility-and-version-boundary); a joint T has no E |
 | Claim, Task and strategy indexes | Rebuildable navigation derived from authored materials and actual acquisition provenance |
 
-C decisions own mathematical status, exact evidence selections and optional role; T decisions own lifecycle, authority, reason and completion evidence.
+C decisions own mathematical status and exact evidence selections; T decisions own lifecycle, authority, reason and completion evidence.
 R findings own their actual agent checking relationship and scope, without a C/T aggregate review-status.
 A C/T decision selects the exact statement/contract, argument, support, dependencies and review that it adopts.
 Neither a generated table nor another file's PASS text selects acceptance.
@@ -227,7 +231,8 @@ The separately declared literature PDF source mount is the only external-storage
 
 The [execution rules](execution.md) define one stable Markdown E per ordinary individual Task; a joint coordination T has no E.
 E contains only its current exact relevant Task decision, execution state and still-effective conditions, without observations or history.
-Task setup creates its minimal non-running E, completed Tasks retain it and every physical Task version may retain one unanchored operational link.
+Task creation and ordinary material operations create no E; actual selected local execution prepares or reuses its persistent boundary independently of Task lifecycle.
+Public Task navigation uses an inline-code stable address rather than a link to the local E.
 Other mathematical references to E or administrative records are disallowed.
 Its exact Task decision links do not constitute proof, review or mathematical acceptance.
 Task revision does not change the E address or resume a stop.
@@ -267,7 +272,7 @@ The selected consumer explicitly decides whether to adopt a successor; old exact
 
 ## Mathematical review and changes
 
-Preserve applicable original framework/source attribution through acquisition and onward transfer.
+Preserve actual authorship, applicable source attribution, fixed inputs and review facts through acquisition and onward transfer; framework management metadata remains at its responsible framework/configuration home.
 An inherited review is inherited evidence, not a newly performed independent review.
 Source Task completion grants no local execution authority.
 Non-ACME literature remains external-source evidence under the source-audit rules.

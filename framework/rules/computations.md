@@ -75,7 +75,7 @@ Use the exact existing J directory identity, including the receiving authorN/rep
 Both homes belong to that one J; output separation creates no new identity or per-run directory.
 The shared output root is local to the checkout and ignored by Git through `/mathematics/computations/outputs/`, for files of every extension.
 Generic discovery, ordinary staging and common-framework copying exclude it.
-Explicit reads, declared verification inputs and selected intake attachments may access actual files there under the usual path-safety rules.
+Explicit local reads and declared verification inputs may access actual files there under the usual path-safety rules; cross-repository intake receives fixed programs and inputs only.
 
 Resolve default paths from the actual repository and J location, independently of the caller's working directory.
 The containing J is the directory directly under `mathematics/computations/programs/`, including any acquired repository component; a nested `programs/` or `checks/` directory is not the J identity.
@@ -96,8 +96,8 @@ The README links actual output files and explains input requirements, command or
 Keep an explicit output option when useful, using the responsible J output home in ordinary examples.
 A small control must not replace evidence for a different claimed range.
 Repeated runs at the same scope may overwrite the same replaceable output.
-Preserve acquired-original attachments when an actual consumer still needs them, and distinguish receiver-generated results from those originals.
-Use the [explicit attachment boundary](intake.md#computation-output-attachments) for transfer and onward provenance.
+Preserve existing necessary local results and their actual provenance, distinguishing receiving-local generation from sending-source facts.
+[J intake](intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs only; outputs remain local and require separate authorized reproduction when needed.
 Ignoring output provides neither a backup nor delivery to another checkout.
 A clone can lack it; report the actual missing scope without a substitute, automatic calculation or claim of completed acquisition.
 

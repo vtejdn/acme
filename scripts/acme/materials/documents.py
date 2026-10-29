@@ -1,5 +1,5 @@
 """Bounded material-owned decisions, independent of C/T JSON storage."""
-from dataclasses import dataclass, field, replace
+from dataclasses import dataclass, replace
 from datetime import date
 from pathlib import PurePosixPath
 import re
@@ -10,15 +10,11 @@ from ..core import source_refs
 from . import validation as material_checks
 
 require = identity.require
-HEADER_FIELDS = {'author', 'framework', 'source_repository', 'source_material'}
-CLAIM_ONLY_FIELDS = {'review-status', 'role'}
-FIELDS = {'date', 'status', 'reason', 'authority'} | CLAIM_ONLY_FIELDS
+HEADER_FIELDS = {'author', 'source_repository', 'source_material'}
+FIELDS = {'date', 'status', 'reason', 'authority'}
 RELATIONS = {'statement', 'contract', 'argument', 'support', 'dependency', 'review'}
 CLAIM_STATES = {'open', 'proved', 'refuted'}
-PAST_CLAIM_STATES = {'proof draft', 'conditional'}
 TASK_STATES = {'proposed', 'active', 'paused', 'blocked', 'completed', 'retired'}
-REVIEW_STATES = {'unreviewed', 'under review', 'self-reviewed', 'independently reviewed', 'changes required'}
-ARCHIVAL_NOTICE = 'No current assessment is selected for this physical material version.'
 
 
 @dataclass(frozen=True)
@@ -43,8 +39,6 @@ class Document:
     text: str
     current: Locator | None
     decisions: dict
-    historical_assessments: dict = field(default_factory=dict)
-    archival: bool = False
     task_type: str = 'ordinary'
     joint_task: Locator | None = None
 
@@ -157,14 +151,12 @@ def valid_date(value):
     shared.valid_stamp(value)
 
 
-def assessment_records(path, ident, history, *, historical=False, legacy=False, original_material=None):
-    """Read retained facts without making an archival assessment adoptable."""
-    heading = 'Historical assessment' if historical else 'Decision'
-    prefix = 'historical-assessment-' if historical else 'decision-'
-    sections = list(re.finditer(r'^ {0,3}### ' + heading + r' ([A-Za-z0-9-]+)[ \t]*$', history.structure, re.M))
+def assessment_records(path, ident, history, *, original_material=None):
+    """Read decisions under the same current contract in every source context."""
+    sections = list(re.finditer(r'^ {0,3}### Decision ([A-Za-z0-9-]+)[ \t]*$', history.structure, re.M))
     decisions = {}
     for index, section in enumerate(sections):
-        anchor = prefix + section[1].lower()
+        anchor = 'decision-' + section[1].lower()
         require(anchor not in decisions, 'Repeated decision anchor: ' + anchor)
         content = history.slice(section.end(), sections[index + 1].start() if index + 1 < len(sections) else len(history.text))
         fields, relations = {}, []
@@ -187,36 +179,30 @@ def assessment_records(path, ident, history, *, historical=False, legacy=False, 
                     relations.append((role, locator(path, target), scope))
         require({'date', 'status'} <= fields.keys(), 'Decision needs date and explicit status.')
         valid_date(fields['date'])
-        require(fields['status'] in (CLAIM_STATES | PAST_CLAIM_STATES if ident.kind == 'C' else TASK_STATES), 'Undefined mathematical disposition.')
-        require(ident.kind == 'C' or not CLAIM_ONLY_FIELDS & fields.keys(),
-                'Task decisions cannot contain Claim-only fields: review-status or role.')
-        require('review-status' not in fields or fields['review-status'] in REVIEW_STATES, 'Undefined review classification.')
-        require(ident.kind != 'C' or 'role' not in fields or fields['role'] in {'lemma', 'theorem', 'corollary'},
-                'Undefined Claim role.')
+        require(fields['status'] in (CLAIM_STATES if ident.kind == 'C' else TASK_STATES), 'Undefined mathematical disposition.')
         primary = 'statement' if ident.kind == 'C' else 'contract'
         targets = [loc for role, loc, _ in relations if role == primary]
         require(len(targets) == 1, 'Decision needs exactly one selected ' + primary + '.')
         original_primary = source_refs.parse(targets[0].path)
         selected = identity.parse(original_primary['path'] if original_primary else targets[0].path)
+        require(not original_primary or original_material is not None,
+                'An original primary target needs its source_material owner.')
         expected = identity.parse(original_material) if original_primary and original_material else ident
         require(selected.family == expected.family, 'Decision selects another material family.')
         if original_primary:
             require(original_primary['repository'] == ident.source_repository,
                     'Decision selects another original repository.')
-        require(selected.version <= ident.version, 'Decision cannot bind a later material revision.')
+        require(selected.version <= expected.version, 'Decision cannot bind a later material revision.')
         roles = {role for role, _, _ in relations}
         if ident.kind == 'T':
             require(fields.get('authority') and fields.get('reason'), 'Task decisions need reason and actual authority.')
             require(fields['status'] != 'completed' or 'review' in roles, 'Completion needs an adopted review.')
-        if not historical:
-            if ident.kind == 'C' and fields['status'] in {'proved', 'refuted'}:
-                require({'argument', 'review'} <= roles, 'Accepted Claim needs selected argument and review.')
-            if ident.kind == 'C' and fields['status'] != 'open':
-                require('argument' in roles, 'Argument-bearing Claim needs an explicit argument.')
+        if ident.kind == 'C' and fields['status'] in {'proved', 'refuted'}:
+            require({'argument', 'review'} <= roles, 'Accepted Claim needs selected argument and review.')
         for role, loc, _ in relations:
             original = source_refs.parse(loc.path)
             target_identity = identity.parse(original['path'] if original else loc.path)
-            if role == 'argument' and ident.kind == 'C' and not legacy:
+            if role == 'argument' and ident.kind == 'C':
                 require(target_identity.kind == 'C', 'A Claim argument must belong to fixed C material.')
             if target_identity.kind == 'U':
                 require(role in {'support', 'dependency'} and loc.anchor == target_identity.anchor,
@@ -230,11 +216,15 @@ def assessment_records(path, ident, history, *, historical=False, legacy=False, 
     return decisions
 
 
-def new_decision(document, decision):
-    """Validate supplied current/new declarations, leaving past/source facts readable."""
+def current_decision(document, decision):
+    """Check current fields without turning retained evidence into a new review."""
     if document.identity.kind == 'C':
         require(decision.fields['status'] in CLAIM_STATES, 'New/current local Claims use open, proved or refuted.')
-        require('review-status' not in decision.fields, 'New/current local Claim decisions cannot contain retired review-status.')
+
+
+def new_decision(document, decision):
+    """Validate genuinely new declarations, leaving past/source facts readable."""
+    current_decision(document, decision)
     for role, loc, _scope in decision.relations:
         if role == 'review':
             require(identity.parse(loc.path).kind == 'R', 'New/current local formal reviews require fixed R findings.')
@@ -278,39 +268,24 @@ def author_header(path, text):
     return ident, header, content
 
 
-def parse(path, text, *, legacy=False):
+def parse(path, text):
     ident, header, content = author_header(path, text)
     body = MarkdownInput(content)
     headings = [body.text[item.start(1):item.end(1)] for item in re.finditer(r'^# ([^\n]+)$', body.structure, re.M)]
     require(len(headings) == 1, 'Material needs one main title.')
-    current, decisions, historical_assessments, archival = None, {}, {}, False
+    current, decisions = None, {}
     if ident.kind in 'CT':
         name = 'Current assessment' if ident.kind == 'C' else 'Current decision'
         sections = body.sections(name)
-        archives = body.sections('Historical material')
-        require(len(archives) <= 1, 'Repeated historical material notice.')
-        if archives:
-            require(ident.kind == 'C' and archives[0][0].structure.strip() == ARCHIVAL_NOTICE,
-                    'Historical material needs the explicit Claim archival notice.')
-            require(not sections, 'Archival material cannot select a current assessment.')
-            archival = True
-        else:
-            require(len(sections) == 1, 'Material needs exactly one ' + name + ' section.')
-            current = locator(path, sections[0][0].structure.strip())
+        require(len(sections) == 1, 'Material needs exactly one ' + name + ' section.')
+        current = locator(path, sections[0][0].structure.strip())
         # Decision anchors and tables are parsed only in the designated history.
         history_name = 'Assessment history' if ident.kind == 'C' else 'Lifecycle and completion'
         histories = body.sections(history_name)
         require(len(histories) <= 1, 'Repeated decision history.')
         history = histories[0][0] if histories else MarkdownInput('')
-        decisions = assessment_records(path, ident, history, legacy=legacy, original_material=header.get('source_material'))
-        require(not archival or not decisions, 'Archival material cannot own adoptable decisions.')
-        histories = body.sections('Historical assessments')
-        require(len(histories) <= 1, 'Repeated historical assessments.')
-        require(not histories or ident.kind == 'C', 'Historical assessments belong only to Claims.')
-        if histories:
-            historical_assessments = assessment_records(path, ident, histories[0][0], historical=True, legacy=legacy, original_material=header.get('source_material'))
-            require(historical_assessments, 'Historical assessments need explicit retained records.')
-    document = Document(path, ident, header, headings[0], text, current, decisions, historical_assessments, archival)
+        decisions = assessment_records(path, ident, history, original_material=header.get('source_material'))
+    document = Document(path, ident, header, headings[0], text, current, decisions)
     if ident.kind == 'T':
         from . import tasks
         document.task_type, document.joint_task = tasks.declarations(path, body)
@@ -377,12 +352,41 @@ def revision_inputs(document, read):
     return result
 
 
-def selection(document, read):
+def selection(document, read, *, source_info=None):
     """Resolve the selected decision together with the material that owns it."""
-    require(not document.archival, 'Archival material has no adoptable current assessment.')
     require(document.current is not None, 'Only C/T material has a current decision.')
     pointer = document.current
-    if source_refs.external(pointer.path):
+    original = source_refs.parse(pointer.path)
+    if original is not None:
+        require(bool(document.identity.source_repository),
+                'A local Current selector cannot select an unacquired source decision.')
+        require(pointer.anchor, 'Current source selector needs a nonempty decision anchor.')
+        chosen = identity.parse(original['path'])
+        require(chosen.kind == document.identity.kind,
+                'Current source decision belongs to another material kind.')
+        if 'source_material' in document.header:
+            owners = {(document.header['source_repository'], document.header['source_material'])}
+        else:
+            require(source_info is not None,
+                    'Current source selector needs its explicit original owner path and version.')
+            try:
+                owners = {(row['source']['repository'], row['source']['path'])
+                          for row in source_info(document)['acquisitions']}
+            except (FileNotFoundError, KeyError) as error:
+                raise ValueError('Current source selector cannot establish its original owner path and version: '
+                                 + str(error)) from error
+        require(owners, 'Current source selector needs its explicit original owner path and version.')
+        require(any(repository == original['repository'] for repository, _path in owners),
+                'Current source decision belongs to another original repository.')
+        matching = {path for repository, path in owners
+                    if repository == original['repository'] and identity.parse(path).family == chosen.family}
+        require(matching, 'Current source decision belongs to another original family.')
+        require(len(matching) == 1,
+                'Current source selector needs one explicit original owner version.')
+        owner = identity.parse(next(iter(matching)))
+        require(owner.version is not None and chosen.version is not None,
+                'Current source selector needs fixed original owner and target versions.')
+        require(chosen.version <= owner.version, 'Current source selection points to a later original revision.')
         raise FileNotFoundError('Selected source decision was not acquired: ' + pointer.path)
     target = document if pointer.path == document.path else parse(pointer.path, read(pointer.path))
     require(target.identity.family == document.identity.family, 'Current decision belongs to another family.')
@@ -400,15 +404,14 @@ def selected(document, read):
     return selection(document, read)[1]
 
 
-def check(document, read, *, paths=(), unavailable_output=None):
+def check(document, read, *, paths=(), source_info=None):
     if document.identity.kind == 'T':
         from . import tasks
         tasks.validate(document, read, paths=paths)
     review_targets = []
     if document.identity.kind in 'RL':
         from . import review
-        review_targets = [vars(target) for _finding, target, _scope in review.bindings(
-            document, legacy=bool(document.identity.source_repository))
+        review_targets = [vars(target) for _finding, target, _scope in review.bindings(document)
                           if not source_refs.external(target.path)]
     if document.identity.kind == 'S':
         from . import navigation as material_navigation
@@ -423,11 +426,14 @@ def check(document, read, *, paths=(), unavailable_output=None):
                 raise ValueError('Required material target is absent: ' + path) from error
         return loaded[path]
 
-    decisions = [(document, decision) for decision in
-                 (*document.decisions.values(), *document.historical_assessments.values())]
+    decisions = [(document, decision) for decision in document.decisions.values()]
     if document.current:
-        if not source_refs.external(document.current.path):
-            owner, decision = selection(document, lambda path: target(path).text)
+        try:
+            owner, decision = selection(document, lambda path: target(path).text, source_info=source_info)
+        except FileNotFoundError:
+            if not source_refs.external(document.current.path):
+                raise
+        else:
             decisions.append((owner, decision))
     for owner, decision in decisions:
         primary = 'statement' if owner.identity.kind == 'C' else 'contract'
@@ -446,12 +452,6 @@ def check(document, read, *, paths=(), unavailable_output=None):
                 require(chosen.identity.version <= owner.identity.version,
                         'Decision cannot bind a later material revision.')
     locators = review_targets + [vars(loc) for _, decision in decisions for _, loc, _ in decision.relations if not source_refs.external(loc.path)]
-    if unavailable_output is not None:
-        missing = {item['path'] for item in locators if unavailable_output(item['path'])}
-        if missing:
-            document.notices = list(dict.fromkeys(getattr(document, 'notices', []) +
-                ['Local computation output unavailable in selected view: ' + path for path in sorted(missing)]))
-        locators = [item for item in locators if item['path'] not in missing]
     material_checks.validate_locator_targets(locators, lambda path: loaded[path].text if path in loaded else read(path))
 
 

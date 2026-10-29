@@ -28,9 +28,17 @@ def contracts(document):
             if role == 'contract' and loc.path == document.path}
 
 
+def validate_links(path, text):
+    require(not any((destination := links.destination(path, href))
+                    and destination[0].split('/')[0].rstrip(' .').casefold() == 'execution'
+                    for _, _, href in links.markdown_link_spans(text)),
+            'Public Tasks use inline-code local E addresses, not execution boundary links.')
+
+
 def validate(document, read, *, paths=(), previous=()):
     if document.identity.kind != 'T':
         return
+    validate_links(document.path, document.text)
     family = [document]
     for path in paths:
         if path != document.path and identity.in_namespace(path, family=document.identity):
@@ -52,16 +60,3 @@ def validate(document, read, *, paths=(), previous=()):
         require(parent.anchor in contracts(target) and links.anchor_occurrences(target.text)[parent.anchor] == 1,
                 'The joint parent must name an exact fixed contract anchor.')
         validate(target, read, paths=paths)
-    if document.task_type == 'joint':
-        require(not any((destination := links.destination(document.path, href))
-                        and destination[0].startswith('execution/')
-                        for _, _, href in links.markdown_link_spans(document.text)),
-                'A joint Task has no execution boundary link.')
-        if document.identity.source_repository is None:
-            from ..execution.records import address
-            try:
-                read(address(document.path))
-            except (FileNotFoundError, KeyError):
-                pass
-            else:
-                raise ValueError('A joint Task family has no E; preserve the ordinary family and choose a new family.')

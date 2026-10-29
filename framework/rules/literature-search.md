@@ -2,7 +2,9 @@
 
 ## Autonomous Literature Search
 
-For local source discovery, use the [edition-specific contents routes](literature.md#searchable-contents): known work through its registry artifact account, unknown topic through ordinary text search of the contents collection.
+Shared Git research follows the [collaboration update duty](tasks.md#shared-git-research) in every actual exploration round, independently of the conditional external-search triggers below and without repeating an already adequate literature search.
+For local source discovery, follow the [common source-preparation order](literature.md#source-preparation), checking registered editions and contents before relevant unregistered candidates and necessary external acquisition.
+The [edition-specific contents routes](literature.md#searchable-contents) locate registered work; a missing account or contents match does not rule out a useful local unregistered edition.
 Follow the actual retained holding, including a complete contribution in a volume or original HTML in its work-key group, with the recorded edition/coverage and resource limitations.
 Do not infer a missing standalone PDF for those sources.
 A match locates a source passage; no match establishes no theorem absence.

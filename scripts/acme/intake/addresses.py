@@ -96,7 +96,7 @@ def _provenance(value):
     original = copy.deepcopy(value)
     for item in original['items']:
         for field in ('path','anchor'): item['local'].pop(field, None)
-        for group in ('files','source_artifacts','output_attachments'):
+        for group in ('files','source_artifacts'):
             for pair in item.get(group, []): pair.pop('local', None)
     return original
 

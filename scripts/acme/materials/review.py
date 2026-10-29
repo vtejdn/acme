@@ -8,7 +8,6 @@ from . import navigation as navigation
 from ..core import links as links
 from ..core import paths as storage_paths
 from pathlib import PurePosixPath
-import re
 
 require = documents.require
 
@@ -75,9 +74,9 @@ def binding_at(review, offset):
     return None
 
 
-def bindings(review, *, with_lines=False, legacy=False, finding=None, validate_anchors=True):
+def bindings(review, *, with_lines=False, finding=None, validate_anchors=True):
     require(review.identity.kind in 'RL', 'Review bindings belong to fixed R/L material.')
-    relationships(review, legacy=legacy, finding=finding, validate_anchors=validate_anchors)
+    relationships(review, finding=finding, validate_anchors=validate_anchors)
     result = []
     for (label, target, scope), number in _rows(review, 'Review bindings', ('Review', 'Target', 'Scope'), finding):
         selected = documents.locator(review.path, label)
@@ -85,18 +84,12 @@ def bindings(review, *, with_lines=False, legacy=False, finding=None, validate_a
         require(selected.path == review.path, 'A review binding must belong to its own fixed R/L material.')
         require(not validate_anchors or not selected.anchor or links.anchor_occurrences(review.text)[selected.anchor] == 1,
                 'Review binding names a missing finding anchor.')
-        targets = [target]
-        if legacy:
-            explicit = re.findall(r'\[[^\]\n]+\]\([^\)\n]+\)', target)
-            if len(explicit) > 1 and re.sub(r'\[[^\]\n]+\]\([^\)\n]+\)', '', target).strip() == 'and':
-                targets = explicit
-        for value in targets:
-            binding = (selected, documents.locator(review.path, value), scope)
-            result.append((binding, number) if with_lines else binding)
+        binding = (selected, documents.locator(review.path, target), scope)
+        result.append((binding, number) if with_lines else binding)
     return result
 
 
-def relationships(review, *, legacy=False, finding=None, validate_anchors=True):
+def relationships(review, *, finding=None, validate_anchors=True):
     """Explicit finding facts; consumer assessments never classify findings."""
     result = {}
     for (label, relationship), _number in _rows(review, 'Review relationships', ('Review', 'Relationship'), finding):
@@ -106,8 +99,6 @@ def relationships(review, *, legacy=False, finding=None, validate_anchors=True):
                 'Review relationship needs an actual local finding anchor.')
         require(relationship in {'self-reviewed', 'independently reviewed', 'unknown'},
                 'Unknown finding review relationship.')
-        require(legacy or relationship != 'independently reviewed' or review.identity.kind == 'R',
-                'An independently reviewed finding must belong to fixed R material.')
         require(loc not in result, 'Duplicate finding review relationship.')
         result[loc] = relationship
     return result
@@ -123,10 +114,10 @@ def check_findings(review, *, previous=None, read=None, finding=None):
     require(review.identity.kind == 'R', 'Formal project findings belong to fixed R material.')
 
     def declared(document, *, selected=None, validate_anchors=True):
-        relations = relationships(document, legacy=True, finding=selected, validate_anchors=validate_anchors)
+        relations = relationships(document, finding=selected, validate_anchors=validate_anchors)
         by_anchor = {loc.anchor: value for loc, value in relations.items()}
         scopes = {}
-        bound = bindings(document, legacy=True, finding=selected, validate_anchors=validate_anchors)
+        bound = bindings(document, finding=selected, validate_anchors=validate_anchors)
         for loc, target, scope in bound:
             scopes.setdefault(loc.anchor, set()).add((target.path, target.anchor, scope))
         if selected is not None and links.anchor_occurrences(document.text)[selected.anchor] == 1:
@@ -158,9 +149,8 @@ def check_findings(review, *, previous=None, read=None, finding=None):
     for anchor, scope in current.items():
         if not any(scope == old.get(anchor) for old in earlier):
             selected = documents.Locator(review.path, anchor)
-            # Supported old syntax is readable for comparison, including a
-            # normalized postimage. Only new/changed declarations need current
-            # syntax; declaration equality does not judge mathematical reuse.
+            # Both retained and changed declarations use one target per row;
+            # declaration equality does not judge mathematical reuse.
             bindings(review, finding=selected)
             require(selected in relationships(review, finding=selected),
                     'New or revised finding needs an explicit review relationship: ' + review.path + '#' + anchor)
@@ -171,7 +161,7 @@ def original_locator(loc, read, origins=(), *, repo=None):
     """Keep physical targets unless actual acquisition supplies correspondence."""
     if storage_paths.in_computation_outputs(loc.path):
         # Output locators never inherit the program README's acquired origin.
-        # Actual attachment provenance is supplied in its intake operation.
+        # Local output facts remain separate from acquired fixed program files.
         return None, loc.path, loc.anchor
     recorded = [row['origin'] for row in origins if row['target'] == loc.path]
     require(not recorded or all(row == recorded[0] for row in recorded), 'Conflicting original input identity.')
@@ -222,23 +212,7 @@ def original_locator(loc, read, origins=(), *, repo=None):
     return origin['source_repository'], origin['source_material'], loc.anchor
 
 
-def role_maintenance(owner, decision, previous, read_previous):
-    """Compare role actions to the actual prior selection, without judging prose."""
-    if (owner.identity.kind != 'C' or previous is None or previous.current is None
-            or owner.path != previous.path):
-        return False
-    _material, selected = documents.selection(previous, read_previous)
-    metadata = {'role', 'date', 'reason', 'authority'}
-    if 'review-status' not in decision.fields: metadata.add('review-status')
-    fields = lambda item: {key: value for key, value in item.fields.items() if key not in metadata}
-    relations = lambda item: {(role, loc.path, loc.anchor, scope) for role, loc, scope in item.relations}
-    # Several role actions can cancel within one selected Git diff. Their net
-    # role need not differ from that view's baseline; no assessment/input changed.
-    return fields(decision) == fields(selected) and relations(decision) == relations(selected)
-
-
-def check_decision(owner, decision, read, *, repo=None,
-                   previous=None, previous_read=None):
+def check_decision(owner, decision, read, *, repo=None):
     """Check selected R bindings name the declared accepted inputs.
 
 Call only for newly authored decisions. Old adopted decisions keep their actual
@@ -247,7 +221,7 @@ historical evidence; this function does not fabricate retrospective bindings.
     kind, status = owner.identity.kind, decision.fields['status']
     accepted = (kind == 'T' and status == 'completed') or (
         kind == 'C' and status.startswith(('proved', 'refuted')))
-    if not accepted or role_maintenance(owner, decision, previous, previous_read or read):
+    if not accepted:
         return
     needed_roles = {'contract', 'support', 'dependency'} if kind == 'T' else {'statement', 'argument'}
     needed = {original_locator(loc, read, repo=repo) for role, loc, _ in decision.relations if role in needed_roles}
@@ -261,7 +235,7 @@ historical evidence; this function does not fabricate retrospective bindings.
         require(review.identity.kind == 'R', 'New local formal review evidence must belong to fixed R material.')
         require(not loc.anchor or links.anchor_occurrences(review.text)[loc.anchor] == 1,
                 'Selected review anchor is missing: ' + loc.path + '#' + loc.anchor)
-        declared = relationships(review, legacy=bool(review.identity.source_repository), finding=loc)
+        declared = relationships(review, finding=loc)
         require(loc in declared, 'Selected finding needs an explicit review relationship: ' + loc.path + '#' + loc.anchor)
         if review.identity.source_repository:
             if repo is None:

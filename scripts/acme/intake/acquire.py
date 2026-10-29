@@ -67,10 +67,37 @@ def check_selection(doc, anchor, *, receiving_kind=None, prepared=False):
     if doc.identity.kind == 'L' and anchor:
         from ..materials import review
         selected = documents.Locator(doc.path, anchor)
-        relationship = review.relationships(doc, legacy=True, finding=selected).get(selected)
+        relationship = review.relationships(doc, finding=selected).get(selected)
         r.require(relationship != 'independently reviewed' or (prepared and receiving_kind == 'R'),
                   'Prepare an actual independent L finding in fixed receiving R with its true scope and limits: '
                   + doc.path + '#' + anchor)
+
+
+def _reviewed_targets(targets, repository, revision):
+    r.require(isinstance(targets, list), 'Supply the actual original reviewed_targets list, including any real undeclared scope.')
+    for target in targets:
+        r.require(isinstance(target, dict) and set(target) == {'path', 'anchor', 'scope'}
+                  and all(isinstance(target[field], str) for field in target) and target['scope'].strip(),
+                  'Retain each actual original review target and inspected scope.')
+        if source_refs.parse(target['path']) is None:
+            source_refs.make(repository, revision, target['path'], target['anchor'])
+        else:
+            r.require('#' not in target['path'],
+                      'Original reviewed target URI path must omit the fragment separator; use the separate anchor field.')
+
+
+def _recorded_material_path(repo, path):
+    """Recorded local keys belong to their selected view, not always this disk."""
+    from ..core.git_views import Tree
+    tree = getattr(repo, 'selected_tree', None)
+    if isinstance(tree, Tree) and tree.ref not in (None, 'WORKTREE'):
+        r.require(isinstance(path, str) and path and '\\' not in path
+                  and not PurePosixPath(path).is_absolute(), 'Use a repository-relative POSIX path.')
+        key = r.relative(repo, path)
+        r.require(not r.paths.in_pdf_store(key), 'Private local literature is outside intake.')
+    else:
+        # Preparation and Batch postimages still describe actual local writes.
+        r.safe_path(repo.root, path)
 
 
 def validate_operation(repo, path, value, *, read=None, new_selection=False):
@@ -89,14 +116,9 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
         if item['kind'] in 'CTRLJ':
             external.person(repo, origin['author'], origin['repository'], origin['author_name'])
         source_refs.parse(source_refs.make(origin['repository'], origin['revision'], origin['path'], origin.get('anchor', '')))
-        for target in origin.get('reviewed_targets', []):
-            r.require(isinstance(target, dict) and set(target) == {'path', 'anchor', 'scope'}
-                      and all(isinstance(target[field], str) for field in target) and target['scope'],
-                      'Retain each actual original review target and inspected scope.')
-            if source_refs.parse(target['path']) is None:
-                source_refs.make(origin['repository'], origin['revision'], target['path'], target['anchor'])
+        _reviewed_targets(origin.get('reviewed_targets', []), origin['repository'], origin['revision'])
         local = item['local']
-        r.safe_path(repo.root, local['path'])
+        _recorded_material_path(repo, local['path'])
         raw = read(local['path'])
         doc = documents.parse(local['path'], raw.decode('utf-8-sig') if isinstance(raw,bytes) else raw)
         r.require(doc.identity.kind == item['kind'], 'Acquisition kind disagrees with its receiving material.')
@@ -118,7 +140,7 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
         if new_selection: check_selection(doc, local.get('anchor', ''))
         for pair in item['files']:
             source_refs.make(value['transport']['repository'],value['transport']['revision'],pair['source'])
-            r.safe_path(repo.root,pair['local'])
+            _recorded_material_path(repo, pair['local'])
             r.require(pair['local']==local['path'] or (item['kind']=='J' and pair['local'].startswith(posixpath.dirname(local['path'])+'/')),
                       'Acquired files must belong to the selected typed material or its J group.')
             if item['kind'] != 'J':
@@ -136,14 +158,6 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
             r.require(isinstance(artifact['local'], str) and artifact['local'].startswith(prefix)
                       and r.paths.valid_source_name(artifact['local'][len(prefix):]),
                       'Selected source artifact local path must identify a retained source file.')
-        for attachment in item.get('output_attachments', []):
-            r.require(item['kind'] == 'J', 'Output attachments belong to an explicitly selected J.')
-            _output_path(repo.root, attachment['local'], doc.identity.name)
-            r.require(attachment['scope'] and isinstance(attachment['provenance'], dict),
-                      'Retain the supplied attachment scope and provenance.')
-            r.require('revision' not in attachment['transport'],
-                      'An unversioned output attachment has no transport Git revision.')
-            r.require(isinstance(attachment['available'], bool), 'Record actual attachment availability.')
     return value
 
 
@@ -164,16 +178,8 @@ def material_info(repo, document, *, read=None, seen=()):
                 r.require((origin['repository'], origin['path']) ==
                           (document.header['source_repository'], document.header['source_material']),
                           'Acquisition original identity disagrees with material header.')
-            tree = getattr(repo, 'selected_tree', None)
-            attachments = []
-            for attachment in item.get('output_attachments', []):
-                location = r.safe_path(repo.root, attachment['local'])
-                present = (location.is_file() if tree is None or getattr(tree, 'ref', None) == 'WORKTREE'
-                           else attachment['local'] in tree.names)
-                attachments.append({**attachment, 'present_in_selected_view': present})
             found.append({'operation': path, 'source': origin, 'scope': item['scope'], 'local': item['local'],
                           'source_artifacts': item.get('source_artifacts', []),
-                          'output_attachments': attachments,
                           'unmapped_references': item.get('unmapped_references', item.get('missing_inputs', []))})
     if not found:
         inputs = documents.revision_inputs(document, read)
@@ -211,7 +217,7 @@ def finding_evidence(repo, locator):
         from ..materials import review
         # The operation describes the input. Compare only the selected current
         # declarations with that explicitly designated fixed finding, preserving
-        # supported retained syntax while checking new/changed findings strictly.
+        # retained declarations while checking new/changed findings strictly.
         relationships, bindings = review.check_findings(doc, finding=locator,
             read=lambda path: r.read_from(repo, path))
     available = {(target.path, target.anchor) for finding, target, scope in bindings
@@ -342,15 +348,15 @@ def _origin(source, doc, anchor='', record=None, choice=None):
     return origin
 
 
-def _require_review_finding(doc, anchor, *, legacy=True):
+def _require_review_finding(doc, anchor):
     from ..materials import review
     selected = documents.Locator(doc.path, anchor)
     r.require(anchor and links.anchor_occurrences(doc.text)[anchor] == 1,
               'Select one actual review finding anchor.')
     # Target kinds and acquisition need are agent judgments. Source-only or
     # historically undeclared targets retain their actual evidence limitation.
-    relationships = review.relationships(doc, legacy=legacy, finding=selected)
-    bindings = review.bindings(doc, legacy=legacy, finding=selected)
+    relationships = review.relationships(doc, finding=selected)
+    bindings = review.bindings(doc, finding=selected)
     return relationships, bindings
 
 
@@ -359,22 +365,30 @@ def manifest(source, selections, *, files=()):
     result = []
     for selection in selections:
         path, anchor = selection['path'], selection.get('anchor', '')
+        r.require(not r.paths.in_computation_outputs(path), 'J intake selects fixed programs and inputs, not local outputs.')
         item = names.parse(path)
         r.require(item.kind in SOURCE_KINDS, 'Select a mathematical unit; personal files use personal import.')
         r.require(path in source.names, 'Selected source file is unavailable: ' + path)
         raw = source.read(path).decode('utf-8-sig')
+        original_header = None
         if raw.startswith(('---\n', '---\r\n')):
             original_header, _ = documents.header_values(raw, known=False)
             r.require(original_header['author'] == item.author, 'Source path and actual single author disagree.')
-        try:
-            doc = documents.parse(path, raw, legacy=True)
-        except ValueError:
+        raw_source = bool(selection.get('prepared')) and selection.get('source_author') is not None
+        if raw_source:
             from types import SimpleNamespace
-            r.require(selection.get('prepared') and not item.source_repository
-                      and selection.get('source_author') == item.author,
-                      'Older source structure needs prepared local text and explicit original source_author.')
+            r.require(not item.source_repository and selection['source_author'] == item.author,
+                      'Raw source preparation needs its explicit original source_author.')
+            r.require(original_header is None or not {'source_repository', 'source_material'} & original_header.keys(),
+                      'Raw source preparation cannot replace declared original-source bindings.')
+            # Explicit preparation selects source text as content, without
+            # interpreting its old declarations as valid current decisions.
+            from ..materials import tasks
+            task_type = tasks.declarations(path, documents.MarkdownInput(raw))[0] if item.kind == 'T' else 'ordinary'
             doc = SimpleNamespace(path=path, identity=item, header={'author': item.author}, text=raw,
-                                  decisions={}, task_type='ordinary')
+                                  decisions={}, task_type=task_type)
+        else:
+            doc = documents.parse(path, raw)
         local_kind = selection.get('local', {}).get('kind', item.kind)
         r.require(local_kind in KINDS and (item.kind == 'U') == (local_kind == 'U'),
                   'Adapt selected S/D content into its actual fixed mathematical home; U keeps its own contract.')
@@ -384,19 +398,33 @@ def manifest(source, selections, *, files=()):
         r.require(not anchor or links.anchor_occurrences(raw)[anchor] == 1, 'Selected source anchor is absent or ambiguous.')
         source_finding = documents.Locator(doc.path, anchor) if anchor else None
         selected_bindings = []
-        if item.kind in {'R', 'L'}:
+        raw_review = raw_source and (item.kind == 'R' or (item.kind == 'L' and (
+            anchor or local_kind == 'R' or 'source_review' in selection)))
+        source_review = selection.get('source_review') if raw_review else None
+        r.require('source_review' not in selection or raw_review,
+                  'Explicit source_review facts belong only to a raw original R/L preparation.')
+        if raw_review:
+            r.require(isinstance(source_review, dict) and 'reviewed_targets' in source_review
+                      and set(source_review) <= {'reviewed_targets', 'relationship'},
+                      'Raw R/L preparation needs explicit original source_review facts and reviewed_targets.')
+            r.require('relationship' not in source_review or (isinstance(source_review['relationship'], str)
+                      and source_review['relationship'] in {'self-reviewed', 'independently reviewed', 'unknown'}),
+                      'Unknown original finding review relationship.')
+            _reviewed_targets(source_review['reviewed_targets'], source.transport, source.revision)
+            r.require(source_review.get('relationship') != 'independently reviewed' or local_kind == 'R',
+                      'Prepare an actual independent L/R finding in fixed receiving R with its true scope and limits.')
+        elif item.kind in {'R', 'L'} and not raw_source:
             from ..materials import review
             # An explicit finding is read before unrelated old row targets.
             # A whole-container selection retains its complete validation scope.
-            review.relationships(doc, legacy=True, finding=source_finding)
-            selected_bindings = review.bindings(doc, legacy=True, finding=source_finding)
+            review.relationships(doc, finding=source_finding)
+            selected_bindings = review.bindings(doc, finding=source_finding)
         r.require(item.kind != 'C' or anchor in doc.decisions or selection.get('prepared'), 'Select the Claim decision or explicitly prepare the selected mathematical unit.')
         r.require(item.kind != 'U' or anchor == item.anchor or selection.get('prepared'),
                   'Select the source unit anchor or explicitly adapt its actual older unit scope.')
-        check_selection(doc, anchor, receiving_kind=local_kind, prepared=bool(selection.get('prepared')))
+        if not raw_source:
+            check_selection(doc, anchor, receiving_kind=local_kind, prepared=bool(selection.get('prepared')))
         r.require(selection.get('scope'), 'Describe the actual selected mathematical scope.')
-        r.require(item.kind == 'J' or not selection.get('output_attachments'),
-                  'Select output attachments with their actual J object.')
         r.require(item.kind != 'J' or PurePosixPath(path).name == 'readme.md', 'Select the J group README and explicit indispensable files.')
         owned = [path]
         if item.kind == 'J':
@@ -411,13 +439,13 @@ def manifest(source, selections, *, files=()):
         r.require(set(records) <= set(owned) and all(isinstance(value, str) for value in records.values()),
                   'Choose an existing acquisition record only for an actually selected file.')
         origin = _origin(source, doc, anchor, records.get(path), selection.get('origin'))
-        if ((item.kind == 'R' or (item.kind == 'L' and local_kind == 'R'))
+        if ((item.kind == 'R' or (item.kind == 'L' and local_kind == 'R') or raw_review)
                 and (origin['repository'], origin['revision'], origin['path']) ==
                     (source.transport, source.revision, doc.path)):
             # These are the inspected input locators declared in the original
             # review's namespace, before receiving text/reference adaptation.
             # Onward transfer retains them with that original review account.
-            origin['reviewed_targets'] = [
+            origin['reviewed_targets'] = [dict(target) for target in source_review['reviewed_targets']] if raw_review else [
                 {'path': target.path, 'anchor': target.anchor, 'scope': scope}
                 for finding, target, scope in selected_bindings]
         file_origins = {}
@@ -435,49 +463,15 @@ def manifest(source, selections, *, files=()):
         elif item.kind == 'J':
             file_origins = {name: (origin['repository'], name, source.revision, '') for name in owned}
         result.append({'doc': doc, 'kind': local_kind, 'source': origin, 'scope': selection['scope'],
-                       'anchor': anchor, 'files': owned, 'file_origins': file_origins, 'selection': selection})
+                       'anchor': anchor, 'files': owned, 'file_origins': file_origins, 'selection': selection,
+                       'source_review': source_review})
     owned = {path for item in result for path in item['files']}
     r.require(set(files) <= owned, 'Explicit files must belong to a selected J group; select C/R/U/L separately.')
     for path in owned:
         r.require(path in source.names, 'Required J input is absent: ' + path)
-        r.safe_path(source.root, path)
+        source_refs.make(source.transport, source.revision, path)
+        r.require(not r.paths.in_pdf_store(path), 'Private local literature is outside intake.')
     return sorted(result, key=lambda item: item['doc'].identity.kind == 'R')
-
-
-def _output_path(root, path, group):
-    """Check one explicitly associated output, without discovering siblings."""
-    target = r.safe_path(root, path)
-    prefix = r.paths.COMPUTATION_OUTPUT_ROOT.as_posix() + '/' + group + '/'
-    r.require(path.startswith(prefix) and len(path) > len(prefix),
-              'Select an actual file under the associated J output home: ' + prefix)
-    r.require(not target.exists() or target.is_file(), 'Output attachment must be a file: ' + path)
-    return target
-
-
-def _prepare_outputs(source, plan):
-    """Read supplied local files; no commit, filename or prior intake authenticates them."""
-    prepared = []
-    for item in plan:
-        item['output_attachments'] = []
-        for selection in item['selection'].get('output_attachments', []):
-            r.require(isinstance(selection, dict) and
-                      set(selection) == {'source', 'local', 'scope', 'provenance'},
-                      'Supply source/local output paths, actual scope and provenance.')
-            r.require(isinstance(selection['scope'], str) and selection['scope'].strip(),
-                      'Describe the selected output scope.')
-            provenance = selection['provenance']
-            r.require(isinstance(provenance, dict) and isinstance(provenance.get('generation'), str)
-                      and provenance['generation'].strip(),
-                      'State the known generation facts or explicitly unknown generation.')
-            candidate = _output_path(source.root, selection['source'], item['doc'].identity.name)
-            raw = candidate.read_bytes() if candidate.is_file() else None
-            attachment = {'transport': {'repository': source.transport, 'path': selection['source']},
-                          'local': selection['local'], 'scope': selection['scope'],
-                          'provenance': provenance, 'available': raw is not None}
-            item['output_attachments'].append(attachment)
-            prepared.append((candidate, raw))
-            attachment['_raw'] = raw
-    return prepared
 
 
 def _available(repo, requested):
@@ -568,8 +562,10 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         r.require(not selection.get('returning_original'), 'This repository does not reacquire its own returning originals.')
         retired = {'source_artifacts', 'source_bibliography', 'holding', 'source_updates'} & selection.keys()
         r.require(not retired, 'Private local literature is outside intake; retired inputs: ' + ', '.join(sorted(retired)))
+        r.require('output_attachments' not in selection, 'Unsupported intake input: output_attachments; select fixed J programs and inputs.')
     for path in files:
         r.require(not r.paths.in_pdf_store(path), 'Private local literature is outside intake.')
+        r.require(not r.paths.in_computation_outputs(path), 'J intake selects fixed programs and inputs, not local outputs.')
     recorder = repo.actor(); initiator = initiator or recorder
     coordinated = batch is not None
     batch = batch or Batch(repo)
@@ -587,7 +583,6 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         identity_before = {path: r.read_from(repo, path) for path in (external.REPOSITORIES, external.PEOPLE)}
         plan = manifest(source, selections, files=files)
         prepared = {path: source.read(path) for item in plan for path in item['files']}
-        output_inputs = _prepare_outputs(source, plan)
         from . import literature
         chosen_works, choices = {}, {}
         for item in plan:
@@ -625,12 +620,12 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             original = source_refs.parse(row['source'])
             r.require(original is not None, 'Mapping source must be an exact acme-source locator.')
             r.require(not r.paths.in_pdf_store(original['path']), 'Private local literature is outside intake.')
+            r.require(not r.paths.in_computation_outputs(original['path']), 'Source outputs have no intake correspondence.')
             local = links.destination('', row['local'])
             r.require(local is not None, 'Mapping destination must be a relative local locator.')
             local_path, local_anchor = local
+            r.require(not r.paths.in_computation_outputs(local_path), 'Intake mappings do not install local outputs.')
             r.paths.check_public_target(local_path)
-            if not r.paths.in_pdf_store(local_path):
-                r.paths.ordinary_path(repo.root, local_path)
             original_id = names.parse(original['path'])
             # The final target is structurally validated below. Its mathematical
             # correspondence is supplied by the agent; local adaptation has its
@@ -787,13 +782,6 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                               and names.parse(destination) == local_ident,
                               'A native-file arrangement stays within its actual receiving J group.')
                 mapping[(path, '')] = (destination, '') if ident.kind == 'J' or not item['anchor'] else mapping.get((path, ''), (None, ''))
-            for attachment in item['output_attachments']:
-                destination = attachment['local']
-                _output_path(repo.root, destination, names.parse(target).name)
-                source_path = attachment['transport']['path']
-                r.require((source_path, '') not in mapping or mapping[(source_path, '')] == (destination, ''),
-                          'Conflicting output destinations for the same selected source file.')
-                mapping[(source_path, '')] = (destination, '')
         planned_paths = {local[0] for local in mapping.values() if local[0]}
         planned_paths.update(item['target'] for item in plan)
         planned_paths.update(batch.pending)
@@ -810,12 +798,31 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     destination = links.destination(owner, href)
                     if destination is None and original_reference is None: continue
                     path, anchor = destination if destination is not None else ('', '')
+                    if local_text and destination is not None:
+                        # Prepared ordinary links already name receiving objects;
+                        # only explicit source locators enter source mapping.
+                        r.paths.check_public_target(path)
+                        navigation_targets.setdefault(new_owner, []).append({'path': path, 'anchor': anchor})
+                        relative = posixpath.relpath(path, posixpath.dirname(new_owner)) if path != new_owner else ''
+                        value = quote(relative, safe='/._-') + ('#' + quote(anchor, safe='._-') if anchor else '')
+                        replacements.append((start, end, value))
+                        continue
+                    output = original_reference if original_reference is not None else (
+                        {'path': path, 'anchor': anchor} if destination is not None else None)
+                    if output is not None and r.paths.in_computation_outputs(output['path']):
+                        locator = output['path'] + ('#' + output['anchor'] if output['anchor'] else '')
+                        context = ('; raw locator `' + href + '`') if original_reference is not None else ''
+                        value = (label + ' (source-only output; not acquired; reference in sending repository named `'
+                                 + source.config['repository'] + '` at material revision `' + source.revision
+                                 + '`; source path `' + locator + '`' + context + ')')
+                        replacements.append((first, last, value))
+                        continue
                     if destination is not None and path == owner:
                         local_anchor = (item['local_anchor'] if owner == doc.path and anchor == item['anchor'] else anchor)
                         navigation_targets.setdefault(new_owner, []).append({'path': new_owner, 'anchor': local_anchor})
                         replacements.append((start, end, '#' + quote(local_anchor, safe='._-') if local_anchor else ''))
                         continue
-                    selected = destination if local_text and destination is not None else None
+                    selected = None
                     explicit = []
                     if original_reference is not None:
                         key = tuple(original_reference[field] for field in ('repository', 'path', 'revision', 'anchor'))
@@ -837,8 +844,12 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                             original_reference = {**original_reference, 'repository': local_repository}
                     reference_origin = original_reference or {'repository': source.transport, 'revision': source.revision, 'path': path, 'anchor': anchor}
                     key = tuple(reference_origin[field] for field in ('repository', 'path', 'revision', 'anchor'))
-                    if (original_reference is None or local_repository is not None) and key in supplied_mapping:
-                        explicit.append(supplied_mapping[key])
+                    if original_reference is None or local_repository is not None:
+                        if key in supplied_mapping:
+                            explicit.append(supplied_mapping[key])
+                        elif original_reference is not None:
+                            whole = supplied_mapping.get((*key[:3], ''))
+                            if whole and not whole[1]: selected = (whole[0], key[3])
                     if destination is not None:
                         for chosen in plan:
                             if path == chosen['doc'].path:
@@ -877,16 +888,6 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                         navigation_targets.setdefault(new_owner, []).append({'path': local_path, 'anchor': local_anchor})
                         relative = posixpath.relpath(local_path, posixpath.dirname(new_owner)) if local_path != new_owner else ''
                         value = quote(relative, safe='/._-') + ('#' + quote(local_anchor, safe='._-') if local_anchor else '')
-                    elif destination is not None and r.paths.in_computation_outputs(path):
-                        # The reference context identifies a locator, not acquired
-                        # bytes or a correspondence with any receiver-local slot.
-                        locator = path + ('#' + anchor if anchor else '')
-                        value = (label + ' (source-only unversioned output; not acquired; '
-                                 'reference in sending repository named `' + source.config['repository']
-                                 + '` at material revision `' + source.revision + '`; source path `' + locator + '`)')
-                        replacements.append((first, last, value))
-                        missing.append('Unselected unversioned output in ' + source.transport + ': ' + locator)
-                        continue
                     elif destination is not None and path not in source.names:
                         # A material's commit supplies reference context, not
                         # versioned bytes for a file absent from that Git tree.
@@ -918,18 +919,22 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     prepared_unit = (path == doc.path and doc.identity.kind == 'U'
                                      and any(field in item['selection']['unit'] for field in ('text', 'edits')))
                     final_text = prepared_main or prepared_unit or native_preparation is not None
-                    text = rewrite(destination if final_text else path, destination,
-                                   item['prepared_text'] if prepared_main else
-                                   item['unit_text'] if path == doc.path and doc.identity.kind == 'U'
-                                   else raw.decode('utf-8-sig'), local_text=final_text)
+                    content = (item['prepared_text'] if prepared_main else
+                               item['unit_text'] if path == doc.path and doc.identity.kind == 'U'
+                               else raw.decode('utf-8-sig'))
+                    if path == doc.path and item['kind'] == 'T':
+                        from ..materials import tasks
+                        tasks.validate_links(destination if final_text else path, content)
+                    text = rewrite(destination if final_text else path, destination, content, local_text=final_text)
                     if path == doc.path:
                         body = text.replace('\r\n', '\n').split('\n---\n', 1)[1]
                         header = {'author': origin['author'] if item['kind'] in 'CTRLJ' else doc.identity.author}
-                        if doc.header.get('framework'): header['framework'] = doc.header['framework']
                         header['source_repository'] = names.parse(target).source_repository
                         if target not in combined:
                             header['source_material'] = origin['path']
                         text = '---\n' + ''.join(key + ': ' + value + '\n' for key, value in header.items()) + '---\n' + body
+                        if item['kind'] == 'T':
+                            tasks.validate_links(destination, text)
                     raw = text.encode('utf-8')
                 r.require(destination not in pending or pending[destination] == raw, 'Conflicting selected inputs install to one path.')
                 pending[destination] = raw
@@ -944,35 +949,39 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     _file_key({'source': origin, 'local': {'path': target},
                                'files': [{'source': doc.path, 'local': target}]}, pair)
                 pairs.append(pair)
-            for attachment in item['output_attachments']:
-                destination, raw = attachment['local'], attachment.pop('_raw')
-                existing = snapshot.watch(destination)
-                r.require(existing is None or (raw is not None and existing == raw),
-                          'Output attachment destination is occupied by different or unavailable source bytes: ' + destination)
-                r.require(destination not in pending or pending[destination] == raw,
-                          'Conflicting output attachments install to one destination.')
-                if raw is not None: pending[destination] = raw
             metadata.append({'kind': item['kind'], 'source': origin, 'local': {'path': target, 'anchor': item['local_anchor']},
                              'scope': item['scope'], 'files': pairs,
-                             'output_attachments': item['output_attachments'],
                              'unmapped_references': sorted(set(missing))})
+        # Explicit mappings keep their physical-path checks after Task's
+        # prohibition, including when rewriting introduced the forbidden link.
+        for local_path, _anchor in (*supplied_mapping.values(), *qualified_mapping.values()):
+            if not r.paths.in_pdf_store(local_path):
+                r.paths.ordinary_path(repo.root, local_path)
         # Every staged branch is validated against the complete final selected
         # postimage. Batch.commit runs these checks before taking the lock, then
         # rechecks all captured inputs under that lock before any publication.
         def validate(read, view):
             from ..materials.validation import validate_navigation_targets
-            for owner, locators in navigation_targets.items():
-                batch.guards.append(validate_navigation_targets(repo.root, owner, locators, read, planned=batch.pending))
-            for item in metadata:
+            for item, planned in zip(metadata, plan):
                 document = documents.parse(item['local']['path'], read(item['local']['path']))
                 relatives = snapshot.family(document.identity) if document.identity.kind == 'T' else ()
-                documents.check(document, read, paths=set(relatives) | set(batch.pending))
+                documents.check(document, read, paths=set(relatives) | set(batch.pending),
+                                source_info=lambda doc: material_info(view, doc, read=read))
                 check_selection(document, item['local'].get('anchor', ''))
                 if item['kind'] == 'J':
                     r.require(not item['local']['anchor'] or links.anchor_occurrences(document.text)[item['local']['anchor']] == 1,
                               'Selected current J scope has no actual local anchor: ' + document.path)
                 if item['kind'] == 'R':
                     _require_review_finding(document, item['local']['anchor'])
+                if planned['source_review'] is not None:
+                    relationships, bindings = _require_review_finding(document, item['local']['anchor'])
+                    chosen = documents.Locator(document.path, item['local']['anchor'])
+                    r.require(relationships.get(chosen) == planned['source_review'].get('relationship'),
+                              'Prepared finding must retain its actual original review relationship, including an undeclared relationship.')
+                    r.require(not planned['source_review']['reviewed_targets'] or bindings,
+                              'Prepare the actual receiving target bindings for the selected original review scope.')
+            for owner, locators in navigation_targets.items():
+                batch.guards.append(validate_navigation_targets(repo.root, owner, locators, read, planned=batch.pending))
             validate_operation(view, operation_path, operation, read=read, new_selection=True)
         for path, raw in pending.items():
             if path in bibliography_pending: continue
@@ -989,27 +998,17 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         operation = {'initiator': initiator, 'recorded_by': recorder,
                      'at': repo.now(), 'instruction': instruction,
                      'transport': {'repository':source.transport, 'revision': revision},
-                     'items': metadata, 'outcome': ('obtained available scope; selected output unavailable'
-                         if any(not output['available'] for item in metadata for output in item['output_attachments'])
-                         else 'obtained selected scope')}
+                     'items': metadata, 'outcome': 'obtained selected scope'}
         operation_path = 'intake/' + initiator + '/' + repo.now().replace(':', '').replace('+', 'p') + '-' + uuid.uuid4().hex[:12] + '.json'
-        def guard():
-            for candidate, raw in output_inputs:
-                # Recheck only the actual explicit source file and its containment.
-                r.safe_path(source.root, candidate.relative_to(source.root).as_posix())
-                r.require((candidate.read_bytes() if candidate.is_file() else None) == raw,
-                          'Selected output attachment changed during preparation; retry with current facts.')
         pending[operation_path] = r.encoded(operation)
         for path in pending:
             snapshot.watch(path)
         batch.add(pending, snapshot,
                   reservations=[(names.parse(item['target']), item['established']) for item in plan],
-                  validate=validate, guard=guard)
+                  validate=validate)
         if not coordinated:
             batch.commit(timeout=timeout)
         return {'operation': operation_path, 'materials': [row['local'] for row in metadata],
-                'notices': ['Unmapped original reference: ' + value for row in metadata for value in row['unmapped_references']] +
-                           ['Selected output unavailable: ' + output['transport']['path']
-                            for row in metadata for output in row['output_attachments'] if not output['available']]}
+                'notices': ['Unmapped original reference: ' + value for row in metadata for value in row['unmapped_references']]}
     finally:
         source.close()

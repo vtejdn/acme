@@ -40,19 +40,20 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
         lines = ['# ' + title + ' Navigation', '',
                  'Derived from supplied material revisions and their explicit selections.',
                  'Status belongs to the exact selected decision; original lineage and acquisition remain separate facts.', '',
-                 '| Family and entrance | Title | Author | Original repository | Selected decision | Status | Role | Statement or contract | Current argument | Review evidence |',
-                 '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
+                 '| Family and entrance | Title | Author | Original repository | Selected decision | Status | Statement or contract | Current argument | Review evidence |',
+                 '| --- | --- | --- | --- | --- | --- | --- | --- | --- |']
         chosen = [row for row in rows if row['kind'] == kind]
         outside = []
         findings = []
         for row in chosen:
             doc = document(row['path'])
             imported = bool(doc.identity.source_repository)
-            if source_refs.external(doc.current.path):
-                require(imported, 'Local decisions must select locally available evidence.')
+            try:
+                owner, selected = documents.selection(doc, source, source_info=source_info)
+            except FileNotFoundError:
+                if not source_refs.external(doc.current.path):
+                    raise
                 owner, selected = None, None
-            else:
-                owner, selected = documents.selection(doc, source)
             refs = {role: [] for role in ('statement', 'contract', 'argument', 'review')}
             if selected:
                 for role, loc, scope in selected.relations:
@@ -77,8 +78,8 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
                             findings.append([claim, decision_link, finding_link, 'Unavailable source finding', 'Unavailable', 'Unavailable'])
                             continue
                         account = document(loc.path)
-                        relationship = review.relationships(account, legacy=True, finding=loc).get(loc, 'Not declared')
-                        bound = review.bindings(account, legacy=True, finding=loc)
+                        relationship = review.relationships(account, finding=loc).get(loc, 'Not declared')
+                        bound = review.bindings(account, finding=loc)
                         if not bound:
                             findings.append([claim, decision_link, finding_link, cell(relationship), 'Not declared', 'Not declared'])
                         for _finding, target, checked_scope in bound:
@@ -90,7 +91,6 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
             status = selected.fields['status'] if selected else 'Source decision outside acquired scope'
             values = [link(index, row['family'], {'path': row['path']}), cell(row['title']), cell(row['author']), cell(origin),
                       link(index, doc.current.anchor or 'Original decision', vars(doc.current)), cell(status),
-                      cell(selected.fields.get('role', 'Not stated') if selected else 'Unavailable'),
                       '; '.join(refs['statement' if kind == 'C' else 'contract']) or 'Unavailable',
                       '; '.join(refs['argument']) or 'Not selected', '; '.join(refs['review']) or 'Not selected']
             lines.append('| ' + ' | '.join(values) + ' |')
@@ -126,13 +126,13 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
                           '| --- | --- | --- | --- | --- | --- |'])
             lines.extend('| ' + ' | '.join(finding) + ' |' for finding in findings)
             if not findings: lines.extend(['', 'No review evidence is selected in the supplied Claim decisions.'])
-        lines.extend(['', '## Fixed History', '', 'Retained decisions and historical-only assessments keep their exact scope; history is navigation, not a new selection.', '',
-                      '| Family | Material version | Decisions | Historical-only assessments |', '| --- | --- | --- | --- |'])
+        lines.extend(['', '## Fixed History', '', 'Retained fixed decisions keep their exact scope; history is navigation, not a new selection.', '',
+                      '| Family | Material version | Decisions |', '| --- | --- | --- |'])
         for row in chosen:
             for old in row['versions']:
-                refs = lambda field: '; '.join(link(index, anchor, {'path': old['path'], 'anchor': anchor}) for anchor in old[field]) or 'None'
-                label = 'v' + str(old['version']) + (' (archival material)' if old['archival'] else '')
-                lines.append('| ' + ' | '.join([cell(row['family']), link(index, label, {'path': old['path']}), refs('decisions'), refs('historical_assessments')]) + ' |')
+                refs = '; '.join(link(index, anchor, {'path': old['path'], 'anchor': anchor}) for anchor in old['decisions']) or 'None'
+                label = 'v' + str(old['version'])
+                lines.append('| ' + ' | '.join([cell(row['family']), link(index, label, {'path': old['path']}), refs]) + ' |')
         if outside:
             lines.extend(['', '## Unacquired Source Inputs', '', '| Family | Role | Original input | Scope |', '| --- | --- | --- | --- |'])
             for family, role, loc, scope in outside:

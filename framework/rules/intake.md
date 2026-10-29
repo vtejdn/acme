@@ -9,6 +9,8 @@ Classify actual material, not its host or container.
 Different research repositories use intake; collaboration by another registered human in this shared repository follows the [direct-collaboration rule](identity.md#collaboration-maintenance-and-conflicts) without an intake operation merely for differing authors.
 Preserve original source authorship, path, physical version, scope and provenance through explicit receiving external identities; an onward sender remains distinct transport.
 Matching display names do not establish human correspondence.
+Fixed Git source keys retain their literal names through selection, byte retrieval and provenance; the same-named sending worktree object supplies no path, existence or reparse condition.
+Use the selected entry and blob for each actually required input, retaining prohibited-source and ordinary-file restrictions without worktree fallback.
 
 Use the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities) for input scope, original-author correspondence, local reuse and source associations.
 The agent reads the selected sources and necessary receiving candidates, judges preservation, adaptation and reuse, writes the receiving material and required provenance, and inspects the actual result and affected references.
@@ -92,9 +94,9 @@ If unmapped, retain its raw text as source context qualified by the sending repo
 Select a needed upstream object or supply its exact correspondence explicitly; missing or conflicting provenance still refuses an actual selected object.
 Sender-local literature and unversioned computation output are exceptions to the fixed-revision locator form.
 A literature reference retains its label as source-only local literature, explicitly not acquired, with its sending-repository context and logical path; ignored bytes have no fixed Git-file claim.
-For an unversioned computation output, without an explicitly selected attachment, retain its label as ordinary source-only text stating that it was not acquired, with its sending-repository context, source path and anchor.
+For a sending computation output, retain its label as ordinary source-only text stating that it was not acquired, with its sending-repository context, source path and anchor.
 Do not turn that reference into a local link through a matching J name, basename, occupied output slot or prior program acquisition.
-The optional intake helper uses `output_attachments` for actual output correspondence; `--mapping` continues to describe fixed-revision material.
+J receiving follows the [fixed program and input boundary](#computation-programs-and-inputs); no source-output correspondence is created.
 Onward acquisition keeps existing source-only text and its original reference context without assigning the ignored output to a Git revision.
 Ordinary reading, editing and copying can complete the required adaptation without a prepared payload or mandatory helper; supplied helper inputs must support the actual chosen transformation.
 Report an unmapped original reference as unmapped; it does not by itself assert a missing necessary mathematical dependency.
@@ -113,7 +115,9 @@ No duplicate Claim, new Task, standalone adoption form or whole-source re-review
 
 At new acquisition preparation, validate incoming C argument relations against the fixed-C contract, including original-source locators.
 A historical source C still selecting L as its argument cannot supply a conforming current proof assertion merely by retaining that old declaration.
-For an explicitly selected L finding locator, use the shared relationship reader to inspect its actual home, declaration, targets and evidence limits.
+For an explicitly selected current L finding locator, use the shared relationship reader to inspect its actual home, declaration, targets and evidence limits.
+When source_author plus prepared explicitly selects ordinary raw R/L content, the agent instead supplies its actual original review facts through the [prepared receiving input](../material-format.md#prepared-receiving-units); old declarations are not current-format parser inputs.
+Keep original targets in the existing acquisition source.reviewed_targets account and receiving targets in their actual bindings, preserving known gaps without inventing targets or turning an undeclared relationship into explicit unknown.
 An actual independent historical finding may be prepared in receiving fixed R while preserving those facts; keeping a current independent finding in L is invalid and refused before publication.
 Prepare available source content in the receiving format while retaining its real attribution and limitations, without requiring a source-repository upgrade.
 Do not invent a source C/R identity, claim a missing argument or review, or reclassify independence to manufacture acceptance.
@@ -123,41 +127,28 @@ The agent identifies the intended mathematical use; tools inspect only the desig
 A receiver may organize its own attributed contribution from obtained evidence under ordinary authoring rules, without certifying the incompatible original.
 Local and received R use the same need-based finding/target boundary without a mandatory C.
 
-## Computation output attachments
+## Computation programs and inputs
 
-A fixed source Git revision identifies only the tracked material actually read from that revision.
-It does not identify ignored local output or prove which program generated it.
-An output directory, basename or matching J name is a locator, not provenance evidence.
-The agent selects each actual needed output file, its associated J, destination, mathematical scope and known generation/reproduction facts or limitations.
-Retain known original source separately from the current sender's transport role.
-Unknown generation remains unknown; do not invent a revision for unversioned bytes.
+J intake receives only the selected README, programs, verification programs, necessary inputs, parameters and explanations actually present in the chosen full fixed Git commit.
+Preserve actual author, original path, revision, scope and per-file correspondence under the ordinary receiving contract.
+Do not read, copy, query or inventory sending outputs, establish output mappings or alter destination outputs, even when output files happen to be tracked or share a familiar name.
+The optional helper rejects output_attachments, including an empty array, and cannot select outputs through include, mapping or file_map.
 
-Programs and required original inputs use `mathematics/computations/programs/<J>/`.
-Explicit output attachments use `mathematics/computations/outputs/<J>/` with the same J identity.
-The optional intake tool accepts `output_attachments` in that J's selection.
-Each row supplies full repository-relative `source` and `local` file paths, `scope` and a `provenance` object.
-Its `generation` text states actual generation facts or that they are unknown; retain known original source and limitations there as applicable.
-The tool reads only the explicitly selected local source files and copies their actual bytes under the existing path/collision guards.
-It records transport without a Git revision and preserves the supplied provenance in the same intake operation.
-The `files` list continues to describe tracked files acquired from the fixed revision.
-No output fingerprint, attachment registry, execution receipt or approval field is required.
+Sending output references retain their necessary label, sender, source path, fragment and reference context as ordinary source-only text stating that the output is not acquired.
+The program revision identifies the reference context, without certifying output bytes, generation or availability.
+Onward transfer retains this original context and the actual fixed-file provenance, without forwarding outputs or interpreting old attachment status.
+Explicit prepared receiving-local links retain their actual receiving navigation contract and do not establish a correspondence to source outputs.
+Once the selected fixed files are obtained, that intake scope is complete; normal nonreceipt of output creates no unavailable attachment, incomplete outcome or reminder.
+Actual missing necessary programs/inputs, invalid targets, conflicts and stale preparation retain their concrete diagnostics.
 
-Read the actual selected output and its responsible accounts before onward transfer.
-Forwarding an acquired original preserves its known original source and scope, separately from the current transport repository.
-A receiver-generated result records that local generation and its real limits; it does not inherit an earlier attachment's provenance or rewrite that acquisition.
-Same-method reruns may use the acquired J; substantive mathematical contributions follow the ordinary material rules.
-Intake executes no program; an explicit native-file adaptation preserves actual mathematical behavior and provenance under the common author boundary, with relevant behavior verification performed separately.
-Run the actual acquired program path, with self-group inputs and outputs derived from its containing J and genuine cross-J dependencies supplied explicitly.
-An absent dependency or unsupported binding remains an execution limit; do not search for a same-named substitute or infer a qualified dependency name.
-Keep an earlier attachment when an actual consumer still needs it, without archiving every run.
+Program acquisition neither runs the program nor establishes reproduction, adequate evidence or a review verdict.
+When reproduction is needed and authorized, use the actual receiving program, inputs, parameters, dependencies and applicable Task/E limits, generating results in the receiving J's local output home under the [computation rules](computations.md#computation-output-location).
+Retain real local generation, inspected scope, useful failures and necessary limits at an adequate responsible home, without attributing local results to the sending source or rewriting an old operation.
+Necessary witnesses, non-reconstructible data and still-consumed results retain their [substantive preservation duties](records.md#substantive-material-retention).
+If a result has actually become an indispensable fixed input, the agent selects the necessary data, real provenance and appropriate input home; do not move or rename whole outputs merely to recreate the retired attachment channel.
+An unavailable indispensable input remains a real gap rather than an assumption that it can be regenerated.
+Existing local outputs, fixed programs and true old acquisition facts remain intact; ordinary local computation, explicitly selected verification reads and authorized personal-file maintenance retain their own scope.
 
-A Git-only source or clone can lack ignored output.
-Record the selected attachment as unavailable and the obtained scope as incomplete at that boundary.
-Never substitute another file, claim a necessary missing input was obtained, or implicitly rerun the computation.
-An occupied destination cannot be satisfied by missing source bytes.
-Acquisition-time availability and current selected-view presence are separate facts.
-The mathematical consumer retains any indispensable-input or reproduction limitation.
-Generic discovery and common-framework copying exclude live output; explicit contained reads and transfers remain available.
 
 ## One Operation Record
 
@@ -177,7 +168,7 @@ It has no proposal/approval phases, select/withdraw commands, immutable receipts
 The agent preserves and truthfully corrects necessary provenance at this existing home.
 Resolve a needed original/file correspondence from matching exact facts or an explicitly chosen existing acquisition record; differing unresolved candidates are an ambiguity.
 Event times at any precision, file ordering, Git history and matching bytes do not select the current correspondence of a mutable file.
-For local address maintenance, prepare the selected item's exact `local.path`, actual `local.anchor` and necessary `files`/`output_attachments` local correspondences alongside the chosen material and bibliography edits.
+For local address maintenance, prepare the selected item's exact `local.path`, actual `local.anchor` and necessary fixed `files` local correspondences alongside the chosen material and bibliography edits.
 The same expected-text update concept accepts the selected operation JSON; it introduces no second record format.
 Validate the selected prepared paths and anchors against the existing operation/material contracts before publication, including a U's actual typed unit anchor.
 Preserve original source and transport identities, revisions, paths and anchors, acquired scope, availability and unselected items; key mapping performs no automatic operation substitution.
@@ -192,9 +183,14 @@ Before allocation or writes, its existing publication guard also rechecks the pa
 The same selected postimage includes only parents necessarily supplied by those pending files; the initial check and guard both refuse a file occupying the required directory or any necessary ancestor directory position inside the receiving repository before allocation or material/operation writes.
 This refusal issues no number; a later failure after issuance retains the advanced bound under the existing [allocation rule](identity.md#allocation-and-concurrency).
 Logical source-store navigation retains its read-free lexical boundary; this recheck creates neither a source-file guard nor a promise of availability after publication.
+Initial navigation checks and the publication guard reject noncanonical Windows source prefixes and protected components before target access under the [source-storage rule](literature.md#local-pdf-storage); they do not normalize aliases into accepted paths.
+Receiving and personal-import preparation inspect actual selected ordinary paths without resolving unselected current or retired source roots, while concrete source operations retain their own physical checks.
 A later invalid/stale input or publication failure preserves prior selected content and unrelated competing writes without a durable transaction journal.
 Never silently overwrite a collision or roll back another operation's files.
 No permanent transaction archive is needed.
+When reading an existing operation from fixed Git, its local paths belong to that record's repository and selected view, including necessary identity facts, selected material and explicit revision inputs.
+Validate the actual selected item and its necessary correspondence without querying same-named current worktree objects or requiring every historical J file to remain available.
+Actually selected fixed inputs retain their entry/blob checks; local import sources, receiving targets and Preparation/Batch postimages retain physical path, occupation, expected-content and stale-input protections.
 
 ## Homes and Independent Reuse
 
@@ -215,7 +211,7 @@ The agent explicitly chooses a free receiving family serial and preserves that c
 All L is in mathematics/ledger/.
 U belongs under the recipient's canonical source key; preserve original source_material, registered source correspondence, author and actual unit/version provenance when local source-key/unit placement differs.
 J keeps its own group conventions.
-Source headers retain receiving author, receiving source_repository and, for a single-origin document, exact original source_material, plus known framework provenance.
+Source headers retain receiving author, receiving source_repository and, for a single-origin document, exact original source_material, without a framework management marker.
 Same-author combinations retain each distinct original scope and receiving unit in the existing operation rather than a false sole-source header.
 U keeps its dedicated original-author/source-key/unit contract without requiring external-author registration.
 Acquisitions do not authorize rewriting source mathematical decisions.
@@ -252,7 +248,7 @@ Stale selected inputs, occupied prepared destinations and failed publication ret
 The agent preserves earlier inputs and scopes that remain necessary; omitted native inputs keep their actual acquired revisions through partial refresh and onward transfer.
 Each selected file uses its actual acquired original repository, path and revision, with per-file overrides only where the item defaults differ.
 Select necessary correspondence candidates before strict path/availability checks; unrelated historical J files or other U keys do not gate this operation.
-New operation times use the shared UTC minute format `YYYY-MM-DDTHH:MM`, while genuinely date-only facts retain their calendar precision and existing necessary full timestamps are normalized under the maintenance handbook.
+New operation times use the shared UTC minute format `YYYY-MM-DDTHH:MM`, while genuinely date-only facts retain their calendar precision and existing necessary full timestamps are normalized under the [timestamp rule](workflow.md#new-record-timestamps).
 Competing same-minute correspondences with different origins require an explicitly selected existing record or mapping, rather than filename/UUID order or invented precision.
 Path-only relocation retains incoming fragments; exact fragment changes require an explicit locator correspondence, and necessary selected anchors must each identify one actual target in the prepared or requested view.
 Reuse the same direct interface for onward U/L/J transfer, preserving original identity and actually available scope.
@@ -275,7 +271,8 @@ Reuse adequate local content; dispatch a missing necessary other-author dependen
 Unavailable necessary inputs remain precise limitations at their consumers without stubs or false completeness.
 
 Retain actual own Task contracts, meaningful lifecycle, applicable evidence and known decision precision.
-For an ordinary imported T, the agent reads the source and local conditions, preserves an existing stable E and prepares a new family's non-running boundary under the [execution rule](execution.md#current-contents-and-retained-limits).
+Ordinary T import reads no source E, creates no local E and preserves existing local execution state.
+When execution preparation or handoff is actually selected, judge relevant source and local conditions under the [execution rule](execution.md#current-contents-and-retained-limits), retaining known stops and shared limits independently of Task lifecycle.
 Retain only necessary effective moved-assignment conditions through agent-chosen content or exact edits, without automatic source-E transport or event/session history.
 Import alone selects no autonomous Task, activates no run, creates no fresh allowance and permits no overlapping execution writer.
 A joint T has no E and follows the shared-parent or standalone-contract dispositions in the Task rule.

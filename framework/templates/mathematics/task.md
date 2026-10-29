@@ -58,10 +58,12 @@ The route owns its Task associations and current route disposition; generated na
 A Task with no route is valid.
 Keep full arguments and counterexamples at their responsible mathematical homes, including meaningful earlier failures and reopening conditions.
 
-Every ordinary local Task family has one stable current [E boundary](../../rules/execution.md) in every lifecycle state; a joint coordination T has no E.
-Setup prepares a minimal non-running E without execution authority or allowance.
-The actual Task may include one unanchored operational link to execution/Author_E_F0001.md, outside mathematical support/review relations.
-All physical versions share that address; completed Tasks retain their ended/non-running boundary.
+Actual selected ordinary local execution uses a stable persistent [E boundary](../../rules/execution.md), ignored by Git and independent of Task lifecycle; a joint coordination T has no E.
+Task setup creates no E; prepare or reuse a local not-running boundary only for actual selected execution with adequate authority and conditions.
+Use an inline-code address such as `execution/Author_E_F0001.md` when a locator is useful; public Tasks do not link to local E files.
+All physical versions share the same stable E address.
+Retain an existing E and its effective stops and limits across Task lifecycle changes.
+Task completion or another lifecycle change does not itself require creating E or changing its execution state.
 Use ordinary prepared exact E edits for currently applicable conditions, without observations, events or history.
 Task revision leaves E unchanged unless a separate applicable exact update is prepared, and never resumes a stop implicitly.
 Apply actual human continuation authority and the responsible operator's [personal policy](../../rules/preferences.md#scope-and-adoption) before research advancement.

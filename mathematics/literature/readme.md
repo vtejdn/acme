@@ -12,6 +12,7 @@ PDFs use flat filenames in the ignored `pdf/` source store.
 Original HTML and explicitly retained related files use canonical work-key groups such as `pdf/<SourceKey>/source.html`; native source bytes, encoding and anchors remain unchanged.
 The sole registry identifies selected editions, complete contributions inside volumes and actual partial/resource limitations.
 Source presence is not mathematical verification.
+When registered evidence or the required edition is insufficient, check relevant unregistered local candidates under the [common source-preparation order](../../framework/rules/literature.md#source-preparation) before necessary external acquisition; normal preparatory storage creates no registration debt.
 [Source preparation](../../framework/rules/literature.md#source-preparation) is shared by research, source audit and writing.
 Source records retain inspected findings; the [definition index](../definitions/index.md) registers complete U/C/L definitions, terminology and symbols.
 Actual choices follow the [four-layer hierarchy](../../framework/rules/preferences.md) at their responsible profile or manuscript home.

@@ -70,9 +70,9 @@ Publish complete output only after the claimed calculation succeeds.
 
 Required witnesses, non-reconstructible data and earlier results used as inputs remain preserved locally.
 The ignore rule is neither backup nor delivery; a clone can lack output.
-Use [explicit output attachments](../../rules/intake.md#computation-output-attachments) when an actual transfer needs them.
+Cross-repository [J intake](../../rules/intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs, retaining source-only context for sending output references.
 A tracked program revision does not attribute an ignored file to its Git tree or establish its generator.
-Distinguish acquired-original attachments from receiver-generated results, without changing prior acquisition facts.
+Reproduce only under actual authorization, recording the receiving-local result and its true limits without changing prior acquisition facts.
 No ordinary read, link repair or Git delivery implicitly runs the computation.
 
 Apply the [common maintenance boundary](../../rules/records.md#substantive-material-retention) to output cleanup and concise account maintenance.

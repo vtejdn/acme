@@ -15,7 +15,7 @@ Optional writers/checks handle supplied fields and locators; they do not decide 
 | Research operation | Mathematical reason, actual authorization when needed, extraction ancestry, before/after scope and outcome | A dated section at the responsible mathematical home; no separate operation-ID namespace |
 | Exploration or checkpoint | Continuing attempts, provisional obligations and useful failed findings | Rolling D while continuing; preserve consequential findings at a fixed mathematical home |
 
-Record kind describes function, separately from a Claim's optional `role` of lemma, theorem or corollary.
+Record kind describes function, separately from a Claim's ordinary human-specified use or display label.
 A material may contain clearly named sections with related functions.
 Its path/header identifies authorship and its main heading names the mathematics.
 Preserve actual dates, goal/Claim links and the location owning the selected assessment; do not create a side registry merely to classify text.
@@ -32,7 +32,7 @@ Do not duplicate full proofs or reviews in an operation log or let historical pr
 For each Claim, its explicit Current assessment selects an exact decision and the proof/review relations that decision adopts.
 Later choices preserve older decisions and maps at their actual dates.
 A filename, edit date or completed operation does not select the proof.
-Role, mathematical status, finding relationships and operation outcome remain distinct.
+Ordinary labels, mathematical status, finding relationships and operation outcome remain distinct.
 
 <a id="claim-registration"></a>
 ## Claim Registration and Cross-References
@@ -63,31 +63,23 @@ Once registered, the ordinary material, dependency and version rules apply; expl
   Apply [reuse before proof](knowledge-reuse.md#reuse-before-proof); an established external result need not have its original proof reconstructed.
 
 <a id="claim-role"></a>
-## Optional Claim Role
+## Ordinary Claim labels
 
-An authoritative claim record may include `role` of `lemma`, `theorem`, or `corollary` in its decision field table to describe its mathematical or expository use.
-Omission leaves it an ordinary claim; it does not indicate an open or less reliable result.
-Role is independent of provenance, mathematical status, review relationships, priority and Claim ID.
-A role change alone does not allocate a new ID or promote a result to `proved`.
+A human author may specify a use or display label such as lemma, theorem, corollary or another suitable name in the responsible Claim's title or ordinary explanation.
+The agent maintains it under the actual request and existing organization authority; no fixed enum, header field, dedicated section or label syntax is required.
+A label establishes no mathematical status, proof selection, review relationship or execution authority.
+Main-theorem arrangements and objective changes retain their real authorization boundary under the [organization policy](#lemma-extraction-and-approval), without separate approval for every ordinary designation.
 
-Adding, changing or removing only this role inherits the actual previously selected assessment; it does not re-adopt its proof.
-Keep mathematical status, all statement/argument/review relations, support/dependencies and their exact resolved paths, physical versions, anchors and declared scopes unchanged.
-Relation row order is immaterial.
-A new decision date and necessary role reason/authority may record this organization.
-The agent judges that the actual edit is only organizational; tools compare these declarations, retain ordinary reference/enum/stale-selection checks and require no retrospective Review bindings or new mathematical version.
-Preserve historical unknown or omitted review facts without upgrading them.
-Changed assessments or substantive inputs retain their normal acceptance obligations.
+Add, change or remove a label through ordinary bounded edits, preserving the author, mathematics, actual assessment, exact relations, source facts and evidence limits.
+Keep Current assessment and its decision history unchanged; label maintenance creates no new decision, date, mathematical version, review or acquisition.
+Do not read or obtain proof/review evidence solely for a label edit, compare assessments to certify maintenance or require a Claim-wide check.
+Repair only actual affected direct references and inspect the changed text; genuine mathematical, input or assessment changes retain their existing revision and review obligations.
+No role writer, exemption predicate, label provenance record or mirrored navigation column is used.
 
-The user may specify a role, or an agent may select or propose one under the [result-organization policy](#lemma-extraction-and-approval).
-That policy permits internal organization and retains the main-theorem/objective authorization boundary; an optional role field does not create an approval requirement for every Claim or intermediate deduction.
-Apply the same action boundary to designations in titles and manuscripts.
-Existing historical labels and faithful references to already designated results do not require retroactive approval.
-Existing records need not be relabeled in bulk.
-
-Keep the authoritative role in the selected Claim decision, with its justification and any required authorization linked from the mathematical record.
-For a protected designation, record whether it was agent-proposed or user-specified and the applicable authorization; approving an agent proposal does not change its origin.
-The Claim index may display or link the Role field when useful.
-Lemmas use the existing C namespace; source units retain their separate citation-key namespace.
+When a selected maintainable material still uses a decision role field, express its needed label as ordinary text under actual authority and remove that unsupported field without inventing an assessment or rewriting fixed sources.
+Preserve genuine status, date precision, decision anchors, exact relations and scope.
+Existing-decision reselection is a separate action under the [decision rule](records.md#existing-and-newly-made-mathematical-decisions), retaining its genuine evidence without a new adoption or retrospective bindings.
+This cleanup requires no bulk conversion or old-label reader.
 
 <a id="separate-assessment-fields"></a>
 ## Mathematical Assessment and Review Findings
@@ -136,7 +128,7 @@ The descriptive label `Checked proof` corresponds to `proved` with recorded revi
 `Computational observation` remains evidence, not an automatic promotion to `proved`; an exact finite statement may be established only within the scope of its checked certificate and mathematical reduction.
 `Source-verified result` records source inspection and is managed at the source-unit level, without implying an independently checked source proof.
 
-Retain actual past `proof draft`, `conditional` and aggregate-review fields as historical/source facts; new local decisions and explicit reselection use the three states without the retired field.
+Retain necessary past assessment wording and gaps as ordinary historical/source facts; all machine decisions use the same three current states and supported fields, with no historical-reading exception.
 Removing only that field from a current local decision is routine maintenance when the mathematical assessment and all selected relations/scopes stay unchanged; preserve any necessary factual objection or limitation at its actual home first.
 No new mathematical version, administrative decision or retrospective binding is needed solely for that removal.
 When an open conjecture is refuted, retain its original fixed statement and refuted result instead of replacing it with a negation or weaker conjecture.
@@ -184,14 +176,14 @@ Retain earlier assessments and the reason for each change in their responsible m
 
 Use the ledger's [substantive mathematical-operation rules](ledger.md#substantive-mathematical-operations) to record the mathematical reason, before/after scope and consequences of a claim or proof change.
 Link a shared operation/version record when several claims are affected; keep actual proof dependencies in their identified proof artifacts.
-Registration, role assignment or proof selection is not complete merely because a summary row was edited.
+Registration, label maintenance or proof selection is not complete merely because a summary row was edited.
 Routine index maintenance that changes no mathematics needs no separate operation record.
 
 <a id="lemma-extraction-and-approval"></a>
 ## Internal Claim Organization and Theorem Designation
 
 Within an assigned Task, extraction, decomposition, Claim registration and proof/dependency reorganization are ordinary autonomous research work.
-No separate extraction approval or explicit lemma Role is required.
+No separate extraction approval or explicit lemma label is required.
 Use ordinary mathematical titles and Claim identities: retain the ID for an unchanged statement, allocate appropriate IDs for genuinely different statements, and preserve the original obligation and relationships when splitting it.
 Do not weaken the Task target or erase useful original arguments.
 

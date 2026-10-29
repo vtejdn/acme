@@ -39,8 +39,8 @@ Tables inside code, comments or HTML literal regions are explanatory examples; t
 Genuine cells retain inline code, mathematical content and their exact visible scope.
 No historical review needs retrospective table cleanup or backfilled evidence.
 
-A [pure Claim role action](claims.md#claim-role) inherits its previously selected assessment without a fresh proof adoption.
-Appending that organizational decision does not require historical bindings to be supplied or unknown relationships to be relabelled; an actual status or input change still needs its applicable review evidence.
+[Ordinary Claim labels](claims.md#claim-role) use bounded title or prose edits while leaving the assessment and its evidence unchanged.
+They create no decision, review or evidence-reading obligation; actual status or input changes retain their applicable review requirements.
 Task completion retains its own requirements.
 
 Current C decisions have no aggregate review-status or inferred review grade.
@@ -234,7 +234,7 @@ Explain the actual review arrangement and inspected scope in the finding's exist
 Do not derive a finding's relationship from a consumer label or physical version.
 
 New accepted inputs require the selected findings' explicit relationships and exact applicable R bindings; tools neither select an independent-coverage mode from C nor infer one from the mixture of findings.
-Historical reading and genuine old-decision reselection retain honest missing-declaration display without backfill, and unchanged-assessment field-only or pure role-only maintenance retains its existing boundary.
+Genuine old-decision reselection retains honest missing-declaration display without backfill; ordinary labels remain outside assessment and evidence interfaces under the [label rule](claims.md#claim-role).
 Do not rewrite acquired originals to manufacture declarations; retain the limitation and obtain conforming evidence for an actual new adoption.
 An actual independent whole-proof conclusion requires adequate independent coverage of its precise required inputs; complementary findings can supply that coverage when their scopes genuinely apply.
 Mixed self/independent findings keep their individual relationships and limitations without an aggregate independent verdict.
@@ -266,7 +266,7 @@ See [intake rules](intake.md).
 
 ## Inherited-review applicability
 
-Preserve recorded source/review framework context, original source identity, acquired scope, findings and limits.
+Preserve actual source identity, acquired scope, review arrangement, relevant checking conditions, findings and limits, without a per-material framework marker.
 The receiving installation or a generated index supplies no earlier review stamp or new verdict.
 Compare unknown review-relevant differences before reliance: record harmless differences as reusable, or require the relevant supplementary review for actual additional obligations.
 A concrete objection follows ordinary correction at the affected material and consumer.

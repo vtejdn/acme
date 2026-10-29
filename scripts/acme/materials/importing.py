@@ -100,44 +100,21 @@ def _source_task_type(path, raw):
     return tasks.declarations(path, documents.MarkdownInput(body))[0]
 
 
-def _boundary(path, doc, source_path, source, existing, prepared=None):
+def _boundary(path, source_path, source, existing, prepared):
+    """Prepare only explicitly selected local execution text, preserving an existing E."""
     from ..execution import records
-    original = None
-    if names.candidate(source_path) and names.parse(source_path).kind == 'T':
-        source_ident = names.parse(source_path)
-        if source_ident.source_repository is None:
-            source_e = records.address(source_path)
-            raw = source.watch(source_e)
-            if raw is not None:
-                original = raw.decode('utf-8-sig')
-                # Read only the actual source assignment/state facts. Unknown
-                # old fields and unrelated prose are not receiving E content.
-                tables = [rows for header, rows in documents.MarkdownInput(original).tables()
-                          if tuple(header) == ('Field', 'Value')
-                          and {'task', 'state'} <= {cells[0] for cells, _ in rows}]
-                r.require(len(tables) == 1, 'Identify one actual source Task execution boundary.')
-                rows = [cells for cells, _ in tables[0]]
-                r.require(all(len(row) == 2 and all(row) for row in rows)
-                          and len(dict(rows)) == len(rows), 'Source E has ambiguous execution fields.')
-                fields = dict(rows)
-                r.require(fields['state'] != 'running',
-                          'Stop the former Task writer before moving its assignment; import grants no parallel allowance.')
-                old_task = fields['task']
-                r.require(names.parse(old_task.partition('#')[0]).family == source_ident.family,
-                          'The source E must belong to the selected source Task family.')
     if existing is not None:
-        # Existing effective state and limits remain byte-for-byte owned here.
         return None
-    if prepared is not None:
-        text = links.edit_text(original or '', prepared, context='execution boundary')
-        fields = records.parse(path, text)
-        r.require(fields['state'] != 'running', 'Import prepares only a non-running execution boundary.')
-        return text.encode('utf8')
-    r.require(original is None,
-              'Supply explicitly chosen execution text or exact edits for the moved Task; source E is not copied automatically.')
-    return ('# Current execution boundary\n\n| Field | Value |\n| --- | --- |\n'
-            '| task | ' + doc.current.path + '#' + doc.current.anchor + ' |\n'
-            '| state | not-running |\n\nImport grants no execution authority or allowance.\n').encode('utf8')
+    r.require(isinstance(prepared, dict), 'Supply explicitly prepared execution text or exact edits.')
+    original = ''
+    if 'text' not in prepared:
+        # Exact edits explicitly select these source bytes; ordinary Task import
+        # and complete prepared text have no source-E read or handoff semantics.
+        original = source.bytes(records.address(source_path)).decode('utf-8-sig')
+    text = links.edit_text(original, prepared, context='execution boundary')
+    fields = records.parse(path, text)
+    r.require(fields['state'] != 'running', 'Import prepares only a non-running execution boundary.')
+    return text.encode('utf8')
 
 
 def import_content(repo, source_root, plan, *, author=None, timeout=30):
@@ -175,7 +152,9 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             own.append(path)
             continue
         target = _destination(repo, path, author)
-        source_parts = PurePosixPath(entry['source']).parts
+        # Ownership follows the same resolved object that the source reader uses.
+        source_path = r.safe_path(source.root, entry['source'])
+        source_parts = source_path.relative_to(r.paths.resolved_path(source.root)).parts
         if len(source_parts) >= 2 and source_parts[0].casefold() == 'profiles':
             r.require(source_parts[1] == author or correspondence.get(source_parts[1]) == author,
                       'Select only the actual importing human\'s own profile settings.')
@@ -214,10 +193,11 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
                         r.require(doc.task_type == original_type,
                                   'Task family type is invariant across prepared import; preserve its explicit joint declaration.')
                     from ..execution import records
-                    if doc.task_type == 'ordinary':
+                    if 'execution' in entry:
+                        r.require(doc.task_type == 'ordinary', 'A joint Task has no E.')
                         execution = records.address(path)
-                        boundary = _boundary(execution, doc, entry['source'], source,
-                                             batch.snapshot.watch(execution), entry.get('execution'))
+                        boundary = _boundary(execution, entry['source'], source,
+                                             batch.snapshot.watch(execution), entry['execution'])
                         if boundary is not None:
                             batch.add({execution: boundary})
                 if ident.kind == 'U':
@@ -247,9 +227,6 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             if ident and (ident.kind != 'J' or PurePosixPath(path).name == 'readme.md'):
                 doc = documents.parse(path, raw)
                 documents.check(doc, read, paths=entrances)
-                if ident.kind == 'T' and doc.task_type == 'ordinary':
-                    boundary = records.address(path)
-                    records.validate(view, records.parse(boundary, read(boundary)), boundary)
                 if ident.kind == 'U':
                     units.extend(candidate for candidate in entrances if (item := names.candidate(candidate))
                                  and item['kind'] == 'U' and item['source_key'] == ident.source_key)
@@ -266,7 +243,9 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
         if units:
             discovery.unit_positions(sorted(set(units)), read)
         for boundary in (path for path in batch.pending if path.startswith('execution/')):
-            records.validate(view, records.parse(boundary, read(boundary)), boundary)
+            record = records.parse(boundary, read(boundary))
+            task = records.task_path(record, boundary)
+            records.validate_task(repo, record, boundary, documents.parse(task, read(task)))
 
     batch.add({}, reservations=reservations, validate=validate)
     # Import does not use intake for any own-content branch. Only explicitly

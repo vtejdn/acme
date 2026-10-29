@@ -10,6 +10,10 @@ The agent reads the actual materials and decides content, work/edition identity,
 Reuse still-applicable judgments.
 Tools optionally execute explicitly chosen objects, field updates, files and mappings, and report bytes, paths, differences, request/response facts and structural constraints.
 At an actual public-reference operation, normalize and classify the final selected target before watching, reading its contents or checking an anchor, using the existing access rules and designated view.
+For local navigation, use the existing single URL decoding and lexical components to reject protected targets and Windows trailing-dot/space aliases of source prefixes, including their necessary ancestors, before target resolution, reparse or existence checks.
+Canonical logical source navigation supplies no source-file guard or availability condition, and ordinary preparation/publication does not resolve an unselected current or retired source root to classify another target.
+Fixed Git intake and necessary acquired-record validation use the actual selected view throughout their consumers under the [intake rule](intake.md#scope-and-routing), without inspecting same-named sending worktree objects.
+The agent chooses necessary inputs and canonical receiving arrangements; recorded local keys retain their owning repository/view, while actual local sources, Preparation and Batch publication keep their physical protections.
 Apply the actual navigation, declared mathematical-input, concrete source-file or selected private-owner contract; a body link or native fragment alone supplies no stronger file-access or evidence obligation.
 Keep a prohibited-target diagnostic, a missing necessary input and a stale selected fact distinct; do not expose private contents or automatically substitute another source, ancestor, input or decision to obtain success.
 Tool success supplies no semantic equivalence, source adequacy, review sufficiency or permission.
@@ -164,7 +168,8 @@ Task setup alone does not require a Claim, strategy, audit file, mathematical-op
 Add related records only when the substantive work calls for them.
 
 Update necessary links and generated navigation when the new objective affects them, then check the final affected changes.
-Setup prepares an ordinary Task family's minimal non-running E and grants no execution, usage baseline or allowance; a joint coordination T has no E and is used through the actual human's individual Task.
+Task setup creates no E and grants no execution, usage baseline or allowance; prepare or reuse the local boundary only for actually selected execution under the [execution rule](execution.md).
+A joint coordination T has no E and is used through the actual human's individual Task.
 Keep live run state out of the contract and the mathematical Task decision; use a stable link to the [execution rules](execution.md).
 If the instruction also authorizes immediate research, continue under those rules without another setup approval.
 An active Task does not resume a stopped run or bypass an applicable execution limit.
@@ -195,6 +200,8 @@ The following sequence applies to mathematical research advancement; discussion,
    Keep only the current exact Task reference, state and still-effective conditions in the stable E, with an incremental baseline/window only when actually applicable.
    Stop on the first stopping observation or monitoring failure and directly retain the effective stopped condition.
    An active Task does not itself resume a stopped run.
+   For actual shared Git research, the responsible main agent completes the [round's collaboration update](tasks.md#shared-git-research) before new substantive work and reads its relevant changes before relying on the local entries below.
+   Subagents reuse that actual same-round result; the responsibility applies even when adequate existing mathematics makes a new external literature search unnecessary.
 2. Follow the relevant [Claim entries](../../mathematics/claims/index.md) and [strategy index](../../mathematics/strategies/index.md) within the authorized task.
    Read the linked arguments and audit units needed for the next step; do not treat historical checkpoints as active instructions or reread unrelated history by default.
 3. Identify the current question, known and provisional assumptions, and smallest useful next step under the [work-obligation rules](#work-obligations).
@@ -349,6 +356,9 @@ Fixing material does not itself establish a result: record its actual mathematic
 This responsibility does not require a new material for every experiment, a separate closeout report or an additional approval gate.
 Applicable execution stops take precedence; preserve available evidence and the necessary handoff under those rules rather than extending research or review to finish organization.
 
+For human-authorized joint Task participation, the main agent assesses the retained progress for [timely collaborative delivery](tasks.md#shared-git-research) and completes a useful coherent commit/push under the [default joint-research permissions](identity.md#shared-research-git-authority-and-integration), honoring explicit human limits without seeking a separate delivery grant.
+Major progress may warrant earlier sharing during the round; closeout is not a fixed-frequency commit obligation, a proof verdict or permission to bypass an effective stop.
+
 Before ending a task, ensure the responsible records support continuation and give the user a concise update with:
 
 - What changed and where the supporting records are located.
@@ -387,7 +397,8 @@ Newly made C/T decisions, actual substantive S decisions or recorded updates, an
 All maintained framework timestamps use the exact UTC format `YYYY-MM-DDTHH:MM`, with no `Z`, numeric offset, seconds or fractional seconds.
 A new decision about older mathematics records the current decision time separately from the mathematics' known original date.
 Source publication dates, edition dates and genuinely known year/month/date facts preserve their actual calendar precision; never invent minutes, timezone offsets or unknown historical facts.
-Existing necessary full timestamps are normalized to UTC minutes under the maintenance handbook, while obsolete administrative chronology is removed rather than converted.
+Existing necessary full timestamps are normalized to UTC minutes using established time facts, while obsolete administrative chronology is removed rather than converted.
+The agent selects the actual records needing maintenance; this creates no whole-repository timestamp conversion or historical backfill requirement.
 Routine path, heading, link or layout maintenance creates no new event or timestamp requirement.
 Apply the common [existing-decision boundary](records.md#existing-and-newly-made-mathematical-decisions) to receiving and all later selected-view checks; file or anchor addition alone dates no mathematical decision.
 This does not require a Strategy log entry for every edit, a timestamp for every paragraph or reconstruction of an acquired original's creation time.

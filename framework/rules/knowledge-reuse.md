@@ -8,6 +8,7 @@ Apply the [work-obligation triggers](workflow.md#work-obligations) to the next a
 Substantial proof investment means committing to develop a nontrivial argument or resolve a substantive proof gap, including an intermediate step; it is not measured by a fixed number of lines or minutes.
 A brief direct calculation to learn what to conjecture need not await a search, while a sustained proof attempt remains subject to this check even within an exploratory route.
 Recognition of a known result has its own [source-check trigger](#recognized-known-results).
+For shared Git research, apply the [round's collaboration update](tasks.md#shared-git-research) before substantive work and use the relevant collaborator changes in local mathematical reuse, independently of whether an external literature search is needed.
 
 Prefer using established definitions, results and proof mechanisms to reconstructing them as project contributions.
 Use the [common source-preparation workflow](literature.md#source-preparation) during research, audit and writing; register needed complete definitions through def without duplicating adequate U/C/L content.
@@ -16,8 +17,9 @@ Before investing substantial work in a nontrivial intermediate claim, definition
 
 1. Check existing Claims, arguments, relevant source audits, related strategies, constructions, useful failures and prior search findings by the needed conclusion and problem features.
    Verify their actual conditions, scope and review limits.
-2. If those inputs are insufficient, search relevant unaudited local `mathematics/literature/` material using the [searchable contents route](literature.md#searchable-contents), indexes, terminology, equivalent formulations and citation leads.
-   Select the actual edition/holding in the sole registry, including complete contributions inside volumes and original HTML pages; a same-key PDF is not a universal prerequisite.
+2. If those inputs are insufficient, follow the [common source-preparation order](literature.md#source-preparation): registered editions and contents first, then relevant unregistered local candidates before necessary external acquisition.
+   Missing registry or contents entries do not establish local absence; inspect only the candidate scope needed for this question.
+   Use registered edition/holding facts when present, including complete contributions inside volumes and original HTML pages, and confirm selected candidates before necessary registration; a same-key PDF is not a universal prerequisite.
    Check the stated coverage/resource limits and follow the [progressive reading rules](literature.md#progressive-reading); an incomplete audit is a reason to inspect useful passages, not to ignore the source.
 3. If local material still does not supply enough evidence or a workable method, search external literature and primary sources for results, alternative formulations, proof techniques and counterexamples under the [search policy](literature-search.md#autonomous-literature-search).
 
