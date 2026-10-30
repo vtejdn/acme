@@ -169,7 +169,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.6.0.
+The current framework version is 0.7.0.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.
@@ -234,7 +234,7 @@ Depending on your tools and setup, you may also see the following directories.
 - Literature audit units are grouped by citation key under `mathematics/audits/literature/`.
 - The [definition index](../mathematics/definitions/index.md) organizes definitions, terminology and symbols by concept, with links to their complete formulations in the responsible C, L or U materials.
 - The canonical [bibliography](../mathematics/literature/references.bib) records publication identity and citation keys.
-  Source acquisition, artifact versions and availability are recorded separately in the [literature registry](../mathematics/literature/registry.md).
+  Source acquisition, artifact versions and availability are recorded separately in the literature registry (`mathematics/literature/registry.md`).
 
 ### Basic notions
 

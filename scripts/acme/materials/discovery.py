@@ -57,22 +57,35 @@ def candidates(root, *, include_empty_j=False):
         return result
     def failed(error):
         raise ValueError('Cannot enumerate material entrances: ' + str(error)) from error
-    for directory, children, files in os.walk(base, followlinks=False, onerror=failed):
+    pending = [base]
+    while pending:
+        directory = pending.pop()
         relative = PurePosixPath(os.path.relpath(directory, root).replace(os.sep, '/'))
-        children[:] = [name for name in children if name.casefold() not in paths.EXCLUDED
-                       and not paths.in_pdf_store(relative / name)
-                       and not paths.in_computation_outputs(relative / name)]
-        for name in files + (children if include_empty_j else []):
-            path = (relative / name).as_posix()
-            item = identity.candidate(path)
-            if item is None: continue
-            if name in children:
-                if item['kind'] != 'J': continue
-                path += '/readme.md'
-            elif not name.lower().endswith('.md'):
-                continue
-            if item['kind'] == 'J' and PurePosixPath(path).name != 'readme.md': continue
-            result.add(path)
+        try:
+            with os.scandir(directory) as entries:
+                for entry in entries:
+                    name, target = entry.name, relative / entry.name
+                    # Classify before even asking whether the private account
+                    # is a file or a directory. os.walk classifies too early.
+                    if (name.casefold() in paths.EXCLUDED or paths.private_file(target)
+                            or paths.in_pdf_store(target) or paths.in_computation_outputs(target)):
+                        continue
+                    directory_entry = entry.is_dir()
+                    if directory_entry:
+                        if not os.path.islink(entry.path): pending.append(entry.path)
+                        if not include_empty_j: continue
+                    path = target.as_posix()
+                    item = identity.candidate(path)
+                    if item is None: continue
+                    if directory_entry:
+                        if item['kind'] != 'J': continue
+                        path += '/readme.md'
+                    elif not name.lower().endswith('.md'):
+                        continue
+                    if item['kind'] == 'J' and PurePosixPath(path).name != 'readme.md': continue
+                    result.add(path)
+        except OSError as error:
+            failed(error)
     return sorted(result)
 
 

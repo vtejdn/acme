@@ -25,7 +25,7 @@ for exploration, state the attempted question, provisional assumptions and discr
 ## Evidence and Outcome
 <Actual calculations, arguments or checks and their limitations; link artifacts and reviews when present.
 Retain attached programs and data themselves, embedded or linked from retained files, for successful and failed substantive explorations.
-Include command/environment, parameters, outcome/failure, limits and next action; a narrative alone is insufficient.
+Include the actual command, parameters, outcome/failure, limits and next action, retaining environment and dependency conditions when they affect the method, result or reproduction; a narrative alone is insufficient.
 No separate commit, locator or hash is required.
 Identify observations, conditional deductions and gaps.>
 

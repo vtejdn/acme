@@ -171,7 +171,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.6.0.
+Die aktuelle Version des Rahmenwerks ist 0.7.0.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.
@@ -236,7 +236,7 @@ Abhängig von Ihren Werkzeugen und Einstellungen können außerdem die folgenden
 - Literaturprüfungseinheiten sind unter `mathematics/audits/literature/` nach Zitierschlüsseln gruppiert.
 - Der [Definitionsindex](../mathematics/definitions/index.md) ordnet Definitionen, Terminologie und Symbole nach Begriffen und verlinkt auf die vollständigen Formulierungen in den zuständigen C-, L- oder U-Materialien.
 - Die maßgebliche [Bibliografie](../mathematics/literature/references.bib) dokumentiert die Identität von Veröffentlichungen und deren Zitierschlüssel.
-  Quellenbeschaffung, Dateiversionen und Verfügbarkeit werden getrennt im [Literaturregister](../mathematics/literature/registry.md) dokumentiert.
+  Quellenbeschaffung, Dateiversionen und Verfügbarkeit werden getrennt im Literaturregister (`mathematics/literature/registry.md`) dokumentiert.
 
 ### Grundbegriffe
 

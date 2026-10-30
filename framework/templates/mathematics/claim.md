@@ -76,7 +76,7 @@ For a complete revised proof, select its new fixed argument and adequate actual 
 Do not apply an older independent review to changed inputs or claim stronger proof acceptance, review independence or coverage without adequate evidence applicable to the exact inputs and scope under the [proof-review rules](../../rules/proof-audits.md#review-scope-and-records).
 Reuse sufficient still-applicable evidence; adoption, existing-decision reselection or wording maintenance alone does not require another inspection.
 Track the key-point and Task full-chain independent review obligation through the owning Task.
-After an independently identified gap is repaired, the corrected proof needs independent review by a separate isolated agent; the repairer's self-check does not fulfill that obligation.
+After an independently identified gap is repaired, the corrected proof needs a reviewer meeting the actual [independent-context conditions](../../rules/proof-audits.md#review-arrangements); an already qualified current reviewer may act directly, and the repairer's self-check does not fulfill that obligation.
 
 The agent maintains ordinary use or display labels in titles or explanations under the [Claim label rule](../../rules/claims.md#claim-role).
 Label maintenance alone triggers no proof-evidence reading, inspection, review, decision, timestamp, mathematical version or approval, and establishes neither proved status nor independent review.

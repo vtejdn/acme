@@ -13,7 +13,10 @@ Prepare or reuse it only when the actual human's ordinary Task is selected for l
 Retain an existing boundary and its effective limits across Task completion, later selection and local cleanup.
 
 The root execution/ directory is persistent local state, ignored by Git and outside temporary or generated storage.
-Do not track, synchronize or copy source E through Git or framework installation; preserve destination E during ordinary copying and upgrades.
+Its E files retain their flat Task-family addresses, while `execution/runtime/readme.md` separately holds on-demand nonsensitive [machine-local runtime notes](organization.md#machine-local-runtime).
+Runtime notes are not E and require neither a Task nor execution authority to maintain; they grant no research start, resumption or allowance.
+Do not track, synchronize or copy source execution/ or .venv/ through Git, framework installation, upgrades or default material transfer; preserve destination E, runtime notes and environment.
+Missing local notes or an environment in a new clone are normal; an explicitly authorized personal backup or move uses ordinary selected files without automatic machine-setting recovery.
 For an already tracked E, stop tracking its exact file with native Git while retaining local bytes and effective conditions, without rewriting history or recovering execution state from old commits.
 
 Before actual advancement, read the current human instruction, exact Task contract/decision, applicable [operator policy](preferences.md#scope-and-adoption) and still-effective E conditions.
@@ -68,6 +71,7 @@ Prepare ordinary exact E edits directly and preserve the current selected bytes 
 Task revision leaves the same E unchanged unless an applicable exact update is separately prepared; it never silently resumes a stop.
 The optional scripts/execution.py check --task PATH checks only that selected current E's fields, state, exact Task decision, paths and necessary numeric ranges.
 It reads only the selected current local E and its exact local Task, identity and necessary fields; no Git --view option or cross-view fallback exists.
+It does not recurse through runtime notes or .venv/, and missing or invalid notes or an environment change neither fail an unrelated selected E check nor change its effective conditions.
 General Task structure, display, navigation and Git delivery do not read or validate E and remain available when a clone has none.
 It authenticates no instruction, judges no custom condition, fetches no account reading and controls no platform scheduler.
 Ordinary delivery and prose maintenance do not scan execution histories or require E-change acknowledgments.
@@ -80,3 +84,4 @@ A real transfer of responsible execution stops the former writer before another 
 Import, participation and a new local number do not resume research, permit overlapping writers or reset a shared allowance.
 Reject a conflicting family type before changing any E or fixed contract.
 Existing exclusive-create, stale-input, expected-text and short publication-lock protections remain applicable to their concrete writes.
+Runtime or environment cleanup stays within the actual selected object and preserves neighboring E files and their effective restrictions; it does not clear the execution root.

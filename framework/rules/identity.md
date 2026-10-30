@@ -210,7 +210,8 @@ D is a working address, stable during its current use and reusable after retirem
 A materially different statement/question gets its appropriate new family; a substantive new proof within an unchanged Claim gets a material revision.
 Source-unit numbers retain the existing sequence within their citation key, separate from research-line allocation.
 
-repository/config.json stores this repository's actual key, separate project display name and abbreviation, necessary runtime settings and the compact `material_next` map of next unissued material-family numbers.
+repository/config.json stores this repository's actual key, separate project display name and abbreviation, necessary shared settings and the compact `material_next` map of next unissued material-family numbers.
+Machine-local interpreters, OS versions, virtual-environment state and their mirrors do not belong in shared configuration; necessary nonsensitive choices use the [runtime home](organization.md#machine-local-runtime), with Git configuration and private resources at their existing responsible homes.
 Determine project remote addresses from native Git configuration and the actual selected target under the current instruction and authority, without a project URL mirror in config.json.
 It contains no global identity or local self-repository number.
 repository/people.json registers local humans by unique readable names such as Yin, Alice and Alice2, with actual Git/GitHub mappings and no shared active-user setting.

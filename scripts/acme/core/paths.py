@@ -7,6 +7,7 @@ from urllib.parse import unquote
 
 PDF_ROOT = Path('mathematics/literature/pdf')
 LEGACY_PDF_ROOT = Path('literature/pdf')
+LOCAL_REGISTRY = Path('mathematics/literature/registry.md')
 COMPUTATION_OUTPUT_ROOT = Path('mathematics/computations/outputs')
 PROTECTED = {'.git', '.codex', '.agents'}
 # Shared environments and generated test caches contain no authored materials.
@@ -51,12 +52,24 @@ def protected_path(relative):
 def private_file(relative):
     parts = tuple((part.rstrip(' .') if os.name == 'nt' else part).casefold()
                   for part in Path(relative).parts)
-    return len(parts) == 3 and parts[0] == 'profiles' and parts[2] == 'secrets.md'
+    return (len(parts) == 3 and parts[0] == 'profiles' and parts[2] == 'secrets.md'
+            or parts == tuple(LOCAL_REGISTRY.parts))
+
+
+def local_runtime(relative):
+    parts = tuple((part.rstrip(' .') if os.name == 'nt' else part).casefold()
+                  for part in Path(relative).parts)
+    return (parts[:2] == ('execution', 'runtime')
+            or parts == ('.venv', 'readme.md'))
 
 
 def check_public_target(relative):
-    """Reject a private link by its normalized role, without opening the file."""
+    """Reject local-only targets by normalized role before filesystem access."""
+    if local_runtime(relative):
+        raise PathError('Public links must not target machine-local runtime notes; use inline-code lookup instructions instead.')
     if private_file(relative):
+        if Path(relative).parts[0].rstrip(' .').casefold() != 'profiles':
+            raise PathError('Public links must not target the local literature registry; use inline-code lookup instructions instead.')
         raise PathError('Public links must not target private profile secrets; use inline-code lookup instructions instead.')
 
 
@@ -151,7 +164,7 @@ def repository_files(root, suffix='.md'):
         for child in children:
             relative = child.relative_to(root)
             if (child.name.casefold() in EXCLUDED or in_pdf_store(relative)
-                    or in_computation_outputs(relative) or private_file(relative)):
+                    or in_computation_outputs(relative) or private_file(relative) or local_runtime(relative)):
                 continue
             if is_reparse(child):
                 errors.append(f'Repository traversal refuses an undeclared directory/file link: {relative}')
@@ -254,7 +267,7 @@ def internal_path(root, path):
 
 
 def execution_path(root, path='execution'):
-    """Execution storage is an ordinary, flat directory at execution/."""
+    """Resolve local execution storage; E family addresses remain flat."""
     root = resolved_path(root)
     path = Path(path)
     if path.is_absolute():

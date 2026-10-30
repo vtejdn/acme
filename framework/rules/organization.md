@@ -10,6 +10,7 @@ Directory names use short lowercase English words without spaces; registered cit
 The root README is an entry point.
 `framework/` owns portable rules/templates, `repository/` owns repository identity and human registration, `profiles/<human>/` owns applicable personal choices, and `mathematics/` owns research.
 `execution/` is persistent local state, ignored by Git and excluded from framework copying and temporary cleanup; prepare a stable E only for an ordinary Task actually selected for local execution.
+Its on-demand runtime notes have a separate [machine-local purpose](#machine-local-runtime) and create no Task or E.
 Joint coordination Tasks have no E, and destination execution state is preserved when copying framework files.
 `intake/<initiator>/` holds concise operation provenance.
 Classified runtime tools belong in `scripts/acme/`, with thin command entries in `scripts/`.
@@ -26,7 +27,7 @@ No directory classifier, exhaustive directory register or mandatory index in eve
 A directory's existence alone requires no README; create one only for a distinct necessary purpose, keeping operative rules at their governing framework homes.
 Live readings and execution disposition belong in E, with actual defaults selected by the [personal-policy rules](preferences.md).
 
-Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; bibliographic fields in mathematics/literature/references.bib and acquisition/artifact facts in its registry.md.
+Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; shared bibliographic fields in mathematics/literature/references.bib and machine-local acquisition/artifact facts in its local registry.md.
 Machine-local paths and secrets are not framework defaults.
 Link the responsible record when summarizing it.
 
@@ -73,11 +74,16 @@ Neither a passing tool nor a newline-only diff establishes preserved meaning.
 Use repository-relative program/data paths and document-relative links in durable public content.
 Obtain the actual checkout root from runtime context; do not hardcode it or add a second root setting in secrets.
 Private settings and local original holdings remain local and do not travel through normal Git collaboration under the [default collaboration scope](identity.md#collaboration-maintenance-and-conflicts).
+The same boundary covers `mathematics/literature/registry.md`: keep actual local bytes, omit it from source framework copying and preserve a destination's actual local account.
+Do not create or restore an empty registry during installation, cloning or bibliography-only work; ordinary framework copying changes no Git metadata.
+When authorized maintenance ends tracking of an existing account, retain its local bytes and any necessary unique shared evidence at its adequate existing home before repairing consumers and using native Git for that exact path.
+This does not rewrite history, adopt another author's holdings or create a migration register.
 Do not assume another human's private settings or private originals exist in the current human's local working copy.
-Needed external personal resources belong only in the responsible human's existing ignored `profiles/<human>/secrets.md`, under a concise resource section.
+Credentials, sensitive access parameters and private resource locators belong only in the responsible human's existing ignored `profiles/<human>/secrets.md`, under a concise resource section; nonsensitive runtime choices use the [runtime home](#machine-local-runtime).
 Public guidance names that file/section in inline code and any relative suffix; it does not copy the private value or link to the private file.
 A public Markdown link to a private profile file is a public-document error: use inline-code lookup instructions instead.
 Classify the normalized, decoded target before opening its contents or checking an anchor, with the same diagnostic whether the private file exists, is absent or cannot be decoded.
+Public references to the local literature registry follow that same access-before-reading refusal; name its lookup path in inline code and use shared bibliography, contents or U for shared source facts.
 Read only the needed private section when an actually authorized resource-dependent operation uses it.
 Missing setup limits that resource-dependent work, without blocking unrelated work or creating a new permission gate.
 
@@ -101,6 +107,43 @@ identify normalized commands as such, without claiming a new run or literal orig
 Discard obsolete host locations without creating a secrets inventory.
 Public URLs/DOIs, original source identities, actual locally computed literature-file fingerprints, quoted source text, fictional controls, mathematical notation and agent names retain their actual roles.
 Locator cleanup does not rewrite Git history or weaken fixed-mathematics preservation.
+
+<a id="machine-local-runtime"></a>
+## Machine-local runtime notes
+
+Installation, initialization, environment probing or a successful local command does not authorize adding this machine's interpreter, virtual environment, OS or system-software versions, installation status or tool locations to the root README, AGENTS, common framework rules, shared configuration or other public entrances.
+Relative paths and nonsensitive values remain machine choices rather than portable requirements.
+Maintain actual framework runtime requirements in the responsible public tool documentation from implementation and verification; one machine's version or failed interpreter supplies no minimum-version rule.
+Preserve project prose and genuinely portable reproduction requirements when adapting an actual machine-specific paragraph, rather than replacing a whole README or scanning the library for keywords.
+
+Use `execution/runtime/readme.md` only when this working copy has a continuing need to retain nonsensitive runtime choices, tool entrances, necessary commands and actual limits.
+Reuse the ignored, persistent execution directory without synchronization, placeholders, a machine identifier, fixed fields or an environment inventory.
+Organize concise notes by actual purpose and state necessary command working directories, obtaining the repository root from runtime context without a second root setting.
+Native Git configuration, checkout binding, environment metadata and dependency files keep their existing homes; runtime notes do not mirror them or private resource values.
+Literature acquisition accounts, E conditions and personal research or writing choices likewise retain their own responsibilities.
+
+The actual virtual environment belongs to `.venv/` and its native environment tools.
+An optional `.venv/readme.md` is only an environment-specific explanation when one is needed, not a required file or the sole durable home for necessary choices.
+Avoid duplicate facts in it and runtime notes; before an authorized environment removal or rebuild, retain any still-needed information at runtime or another adequate home.
+No environment or note is created merely to fill a directory.
+Keep portable dependencies, build inputs and tool conditions that affect mathematics, results or reproduction at J, the manuscript or another responsible public material, rather than hiding them in local notes.
+
+At actual tool use, reuse sufficient available capabilities and read only the relevant runtime notes and needed private resource section.
+Direct invocation of a selected interpreter is sufficient when suitable; activation, a new environment, a complete inventory and a fixed preflight sequence are not prerequisites.
+Missing notes are normal, and a resource failure limits the affected work without authorizing a system installation or blocking independent authorized work.
+Maintain a continuing choice or repair a stale entrance only when needed, without probe history, routine timestamps, fingerprints or duplicate accounts.
+Temporary diagnostics and installation output use the normal reply or existing temporary storage and creator cleanup, rather than becoming runtime history.
+Move a duplicated nonsensitive choice from private setup only when actually maintaining that item, without a bulk private-file migration.
+
+Creating or maintaining runtime notes is local setup or maintenance, creates no Task/E and grants no research start, resumption or allowance.
+E keeps its flat Task-family address and selected check; runtime is not E and is not recursively validated with it.
+Local cleanup handles the selected notes or environment, preserving neighboring E files and their effective stops and limits rather than clearing execution/.
+Installation, upgrades, framework copying and default material transfer exclude the source's entire execution/ and .venv/ while preserving the destination's E, runtime and environment.
+A new clone normally lacks these local files; prepare actual resources rather than restoring another machine's settings from Git or a sending worktree.
+An explicitly authorized personal backup or move uses ordinary selected file operations, without an environment synchronization or relocation mechanism.
+
+Public lookup guidance uses inline-code paths; public links into execution/runtime/ or to .venv/readme.md are refused by normalized role before target resolution, existence, contents or anchors.
+This public-reference boundary leaves explicitly authorized local reading available and does not turn every ignored path into a prohibited byte target.
 
 ## Material Responsibilities
 

@@ -6,7 +6,7 @@ from urllib.request import Request, urlopen
 from ..core import repository as r, paths, links, source_files
 from . import bibliography as bib
 
-REGISTRY = 'mathematics/literature/registry.md'
+REGISTRY = paths.LOCAL_REGISTRY.as_posix()
 FACT_FIELDS = ('urls', 'obtained_urls', 'versions', 'limitations', 'access_limitations')
 
 
@@ -160,7 +160,7 @@ def _new_account(repo, request, digest, facts):
 
 
 def prepare_sources(repo, entries, requests, text, *, registry_update=None):
-    """Prepare one selected batch without publishing any shared file."""
+    """Prepare selected local source accounts and bibliographic changes."""
     from ..checks import literature as storage
     from .addresses import prepared_text
     # A prepared resolution is evaluated before strict reading of old ambiguity.
@@ -225,7 +225,10 @@ def publish_files(repo, pending, expected):
 
 
 def _publish(repo, entries, key, filename, raw, source_facts, registry_update=None):
-    expected = {name:(repo.root/name).read_bytes() if (repo.root/name).exists() else None for name in (bib.BIB,REGISTRY)}
+    expected = {}
+    for name in (bib.BIB, REGISTRY):
+        target = target_path(repo.root, name)
+        expected[name] = target.read_bytes() if target.exists() else None
     text = expected[REGISTRY].decode('utf-8-sig') if expected[REGISTRY] is not None else '# Source acquisition registry\n'
     request = {'key':key,'filename':filename,'raw':raw,'source_facts':source_facts}
     updated,pending,source_expected,results = prepare_sources(repo,entries,[request],text,registry_update=registry_update)

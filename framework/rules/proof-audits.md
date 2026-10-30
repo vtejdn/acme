@@ -7,6 +7,8 @@ Optional tools check declared input/target sets, relationship values and require
 
 Before recording review evidence, apply the [common content decision](records.md#substantive-material-retention) and use an adequate existing finding when applicable.
 An actually performed new review of fixed mathematics can add necessary evidence even when its theorem is already in C; assignments, completion announcements and structural checks are not mathematical reviews.
+The [subagent comparison used in same-author transfer](records.md#same-author-transfer-and-duplicate-comparison) identifies concrete duplicate content and its remaining limits; it is not automatically a formal R or an independent proof review.
+Keep an actual R finding's exact inputs, relationship, scope, useful negative findings and adoption facts distinct from a C proof or repeated L narration; changed inputs or arguments acquire no old review through a merge.
 Apply the [work-obligation rules](workflow.md#work-obligations): the review requirements here govern evidence registered for a Claim assessment, acceptance of a result, selection of reviewed support or Task completion.
 Local checks can occur at any point during exploration and may be recorded with the attempt under its Task, route or question.
 They need not wait for Claim registration or completion of a whole proof review.
@@ -47,7 +49,7 @@ Current C decisions have no aggregate review-status or inferred review grade.
 R findings record each actual review relationship, input and scope separately from C's mathematical state and provenance.
 A complete candidate awaiting sufficient review and a target relying on an unresolved necessary premise stay open; precise proved implications and special cases keep their own stated scopes.
 Promotion to `proved` requires a complete argument, resolved dependencies, and recorded internal review.
-Independent review is preferred when available, but self-review is permitted and must be disclosed.
+Self-review is permitted and must be disclosed; choose independent inspection for an actual [independent-review obligation](#independent-review-obligations) or a useful review purpose, rather than merely because another agent is available.
 
 Evaluate external dependencies under the [accepted-input rules](literature-audits.md#accepted-external-inputs).
 An established theorem with its statement, hypotheses, and applicability checked may be a resolved input even if its original proof was not re-audited; record that boundary.
@@ -58,6 +60,8 @@ Review the project's own reasoning and the interfaces it uses without turning ev
 ### Review Arrangements and Disclosure
 
 Describe this review activity briefly in its audit or indexed review section.
+First determine the actual object, depth and required relationship; an ordinary manuscript review, a complete proof check or a formal R does not itself require isolated context or another agent.
+Ordinary argument checks and manuscript reviews retain their existing responsible homes, including manuscript-local ownership for an explicitly independent manuscript review.
 Keep human attribution under the [identity rules](identity.md), and state the actual agent review arrangement in prose.
 The framework does not require individual agent IDs, session IDs, model registration or an additional reviewer registry.
 All framework review relationships concern agent reviews; human authorship, advice and authorization are outside that review classification and supply no substitute finding.
@@ -70,13 +74,17 @@ All framework review relationships concern agent reviews; human authorship, advi
   Point to the corresponding findings rather than duplicating the argument.
 
 Different sessions or models alone do not establish independence.
-An independent inspection requires a distinct agent or subagent outside substantive proof development, without inherited or shared substantive mathematical context about the proof.
+An independent inspection requires a reviewer outside substantive proof development, without inherited or shared substantive development context about the proof.
+The current reviewing agent may perform it directly when already meeting those conditions; independence is relative to proof development, not to the main-agent or subagent title.
 Inherited proof-development discussion, mathematical summaries, author explanations or prior conclusions prevent that independent classification even when the agent contributed no proof step.
 Provide the fixed statement, proof, necessary mathematical dependencies, exact scope and applicable rules directly, without forwarding the proposing agents' mathematical conversation or summary.
+Keep actual human requirements and authorization available; context isolation neither removes necessary evidence nor narrows the requested whole-chain or repair scope.
 The same model may serve in a separate isolated review arrangement; another name, session, model or role label alone establishes neither separation nor isolation.
+Delegation with the same substantive development context cannot establish independence, and ordinary useful delegation need not claim it.
 An `independently reviewed` relationship records that actual arrangement and reasoning examined, without an agent registry, isolation certificate, transcript archive or automatic context classifier.
 Self-review remains permitted.
 These descriptions introduce no new review states, independence grades, or mandatory multiple-agent or multiple-model review.
+If an actually required independent arrangement cannot be supplied, report the affected scope, retain the necessary unfinished obligation at its existing responsible home and continue unaffected authorized work without relabeling an ordinary check.
 
 Preserve historical reviews at their recorded scope without inventing missing input conditions.
 This clarification alone requires neither rewriting their evidence nor a new mathematical review.
@@ -218,8 +226,14 @@ A template is neither authorization nor a completed record.
 ## Independent review obligations
 
 At key proof points and after Task completion, separately organize an independent inspection of the relevant point and the complete logical chain, respectively.
+Judge key points from the mathematical interfaces and actual Task scope, rather than titles, labels or material counts.
+Independent inspection is also required after repair of a gap identified by an independent finding and when explicitly required by the human or an applicable human review procedure.
 Assign the reviewer or review arrangement through the existing Task/work workflow, retain exact input and finding links, and disclose any pending inspection.
+The completion decision's contract, support and review coverage remain distinct from the subsequent independent full-chain obligation; recording completion does not discharge that follow-up.
+A writing, review, build or chat round ending, or a Git delivery, does not itself complete a Task or trigger that full-chain inspection.
 A revised complete proof can first be `proved` with an actual `self-reviewed` finding; a changed label cannot manufacture independent evidence, and older independent findings do not cover revised inputs automatically.
+An ordinary self-reviewed correction does not itself invoke the independent-gap-repair rule; actual mathematical changes still meet their applicable version and review duties.
+Retain pending actual obligations at the existing Task or review home without a new state, reminder register or uniform acceptance gate.
 No agent identity registry or independent approval for every intermediate Claim is required.
 
 

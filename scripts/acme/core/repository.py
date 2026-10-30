@@ -294,12 +294,15 @@ def main(argv=None):
     p.add_argument('--offline', action='store_true', help='Prevent the metadata request for this work round.')
     p = commands.add_parser('framework-update-notified', help='Record a reminder actually presented to the human.')
     p.add_argument('version', help='The newer official version actually presented.')
+    p.add_argument('--expected-notified-version', required=True,
+                   help='Observed notification version, or literal null for an explicitly observed empty field.')
     args = parser.parse_args(argv)
     try:
         if args.command == 'framework-update-check':
             result = version.check_update(args.root, force=args.force, offline=args.offline)
         elif args.command == 'framework-update-notified':
-            result = version.record_update_notification(args.root, args.version)
+            result = version.record_update_notification(args.root, args.version,
+                expected_notified_version=None if args.expected_notified_version == 'null' else args.expected_notified_version)
         elif args.command == 'init':
             repo = Repository.initialize(args.root, args.username, args.repository,
                 git_name=args.git_name, git_email=args.git_email, github_account=args.github_account,

@@ -16,6 +16,8 @@ This default adds no mandatory Lean checklist or report to ordinary source audit
 Before creating or retaining U content, apply the [common content decision](records.md#substantive-material-retention) to the actual source finding and existing units.
 Preserve definitions/results/mechanisms, the inspected edition/passages, applicability and uninspected-proof limits.
 Acquisition-only facts stay in the source registry/intake; neither a download nor existing theorem text substitutes for source-inspection evidence.
+The registry is a machine-local account, while shared U/L and source contents retain actual work/edition, passages, mathematical findings and inspection limits without requiring another author's current holding or account.
+Missing local registration neither invalidates shared evidence nor establishes missing originals; actual U reception still completes its own source-preparation outcome and failure reporting under the [literature rule](literature.md#acquisition-before-u-reception).
 
 Keep source-level navigation in `<citation-key>/readme.md`.
 New fixed reusable units use `<citation-key>/<Author>_U001_v1.md`, with `<Author>_<OriginalRepository>_U001_v1.md` for imported originals.
@@ -157,7 +159,7 @@ Do not retroactively relabel existing records without inspecting their evidence.
 For lightweight discovery or reading, use this compact record in the source-specific audit; promote it to the full unit template when it becomes a reusable input:
 
 ```text
-Source/version: <registry link and exact artifact identity>
+Source/version: <actual work, edition or artifact identity; suitable shared bibliography, same-edition contents or existing U/L evidence locator>
 Scope/locator: <topic; chapter/result; printed and PDF pages where available, or actual HTML headings/labels/native anchors>
 Trigger/intended use: <research question, dependency, discrepancy, or explicit request>
 Date/reviewer and state: <actual work performed; self-review or independent review>
@@ -166,6 +168,9 @@ Dependencies/unchecked scope: <links and verification boundaries>
 Search evidence: <queries/sections inspected; extraction limits; reason for stopping>
 Open issues/next action: <specific gap or none; affected claims and required rechecks>
 ```
+
+Keep the actual edition, chapters, original page labels and inspection limits at this shared home without requiring a local registry account or anchor.
+An actual account lookup may be named as inline code; its legitimate one-way contents/source links do not require a shared backlink or a new U merely to supply a link.
 
 On version changes, compare the passages and dependencies actually used before carrying their assessments forward.
 On a discovered gap, record a dated correction and identify downstream claims requiring reassessment.

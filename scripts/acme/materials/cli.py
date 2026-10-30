@@ -30,8 +30,7 @@ def result(doc, read, *, source_info=None):
         row['source'] = doc.header
         row['acquisition'] = source_info(doc) if source_info else None
     if doc.identity.kind == 'U': row['source_inspection'] = documents.source_unit_scope(doc)
-    for field in ('notices', 'source_holding'):
-        if hasattr(doc, field): row[field] = getattr(doc, field)
+    if hasattr(doc, 'notices'): row['notices'] = doc.notices
     return row
 
 

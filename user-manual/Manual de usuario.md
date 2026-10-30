@@ -171,7 +171,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.6.0.
+La versión actual del marco es 0.7.0.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.
@@ -236,7 +236,7 @@ Según sus herramientas y su configuración, también pueden aparecer los direct
 - Las unidades de revisión de literatura se agrupan por clave de cita en `mathematics/audits/literature/`.
 - El [índice de definiciones](../mathematics/definitions/index.md) organiza las definiciones, la terminología y los símbolos por concepto, con enlaces a sus formulaciones completas en los materiales C, L o U responsables.
 - La [bibliografía](../mathematics/literature/references.bib) canónica registra la identidad de las publicaciones y sus claves de cita.
-  La adquisición de fuentes, las versiones de los archivos y su disponibilidad se registran por separado en el [registro de literatura](../mathematics/literature/registry.md).
+  La adquisición de fuentes, las versiones de los archivos y su disponibilidad se registran por separado en el registro de literatura (`mathematics/literature/registry.md`).
 
 ### Conceptos básicos
 

@@ -171,7 +171,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.6.0.
+La version actuelle du cadre est 0.7.0.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
@@ -236,7 +236,7 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 - Les unités de vérification de la littérature sont regroupées par clé de citation sous `mathematics/audits/literature/`.
 - L’[index des définitions](../mathematics/definitions/index.md) organise les définitions, la terminologie et les symboles par concept, avec des liens vers leurs formulations complètes dans les documents C, L ou U qui en sont responsables.
 - La [bibliographie](../mathematics/literature/references.bib) de référence consigne l’identité des publications et leurs clés de citation.
-  L’acquisition des sources, les versions des fichiers et leur disponibilité sont consignées séparément dans le [registre de littérature](../mathematics/literature/registry.md).
+  L’acquisition des sources, les versions des fichiers et leur disponibilité sont consignées séparément dans le registre de littérature (`mathematics/literature/registry.md`).
 
 ### Notions de base
 

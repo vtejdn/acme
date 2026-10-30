@@ -224,16 +224,21 @@ def _request_owner(root):
         return None
 
 
-def record_update_notification(root, value):
-    """Record the caller's actually presented reminder, not query completion."""
+def record_update_notification(root, value, *, expected_notified_version):
+    """Record an actual reminder only while its observed notification fact holds."""
     root = Path(root).resolve()
     release_tuple(value)
+    if expected_notified_version is not None:
+        release_tuple(expected_notified_version)
     local = installed(root)
     r.require(local is not None and release_tuple(value) > release_tuple(local['framework_version']),
               'An upgrade reminder must name a newer version than the installed framework.')
     with r.locked(root, timeout=UPDATE_LOCK_TIMEOUT):
         current = update_cache(root)
         r.require(current is not None, 'No current framework update cache can retain the notification fact.')
+        if current['notified_version'] != expected_notified_version:
+            return {'notified_version': current['notified_version'], 'cache_saved': False,
+                    'status': 'superseded'}
         current['notified_version'] = value
         r.write_json(root / UPDATE_CACHE, current, root=root)
     return {'notified_version': value, 'cache_saved': True}

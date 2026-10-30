@@ -88,6 +88,7 @@ def _reviewed_targets(targets, repository, revision):
 
 def _recorded_material_path(repo, path):
     """Recorded local keys belong to their selected view, not always this disk."""
+    r.paths.check_public_target(path)
     from ..core.git_views import Tree
     tree = getattr(repo, 'selected_tree', None)
     if isinstance(tree, Tree) and tree.ref not in (None, 'WORKTREE'):
@@ -872,9 +873,11 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                             if whole and whole[0]: selected = (whole[0], anchor)
                     if selected and selected[0]:
                         r.paths.check_public_target(selected[0])
-                    private = (original_reference if original_reference is not None and r.paths.in_pdf_store(original_reference['path'])
+                    private = (original_reference if original_reference is not None and (r.paths.in_pdf_store(original_reference['path'])
+                               or original_reference['path'].casefold() == r.paths.LOCAL_REGISTRY.as_posix())
                                else {'repository': source.transport, 'path': path, 'anchor': anchor}
-                               if not local_text and destination is not None and r.paths.in_pdf_store(path) else None)
+                               if not local_text and destination is not None and (r.paths.in_pdf_store(path)
+                               or path.casefold() == r.paths.LOCAL_REGISTRY.as_posix()) else None)
                     if private:
                         locator = private['path'] + ('#' + private.get('anchor', '') if private.get('anchor') else '')
                         value = (label + ' (source-only local literature; not acquired; reference in sending repository named `'

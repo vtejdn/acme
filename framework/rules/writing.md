@@ -12,7 +12,7 @@ Follow the [project and document requirements](#projects-and-documents) and the 
 An author without a profile uses these general standards and any explicit manuscript choices; no other author's defaults are inherited.
 
 The [definition index](../../mathematics/definitions/index.md) locates responsible mathematical definitions.
-Canonical [references.bib](../../mathematics/literature/references.bib) owns bibliographic fields; the [registry](../../mathematics/literature/registry.md) owns acquisition and artifact facts; U and source audits own inspection scope.
+Canonical [references.bib](../../mathematics/literature/references.bib) owns shared bibliographic fields; local `mathematics/literature/registry.md` owns machine-local acquisition and artifact facts; U and source audits own inspected edition, passages and actual inspection scope.
 Source observations in responsible source records are evidence, not an additional policy layer.
 Keep a manuscript's choices at its existing [writing-choice home](#document-choices-and-final-review).
 
@@ -26,8 +26,16 @@ Create a project when manuscript work is needed within the user's authorized sco
 
 A user may explicitly designate another home or directory name for a talk or presentation.
 Preserve that choice and apply the same author, source, writing, build and review responsibilities there; a presentation does not require a new Task merely to obtain a Task-named directory.
-Own manuscript import includes the selected active source chain, required figures, bibliography and mathematical support in an appropriate existing or designated receiving home, without sibling documents or an unrequested Task.
+For a [same-author Task transfer](intake.md#task-and-manuscript-collection), include its actual corresponding manuscript project by default, identifying that relationship from the project ownership, description and delivery purpose rather than a matching directory number.
+After the Task pass, independently trace the manuscript's actual statements, proofs, definitions, computations and reviews to necessary support families, U and bibliography, adding inputs the Task pass missed.
+Include the project's actual papers, supplements and research notes, project/document READMEs, main files, sections, bibliography, necessary figures, styles, other build inputs, writing choices and real review records.
+Documents genuinely belonging to that project are within scope; unrelated projects remain outside it, and an explicit narrower human selection takes precedence.
+Merge both passes without duplicate support or another copy of a shared manuscript.
+If no corresponding project exists, create no empty directory or placeholder.
+Own manuscript import uses an appropriate existing or designated receiving home without creating an unrequested Task.
 Preserve document choices and actual review scope, adapt entrances and build paths, and run proportionate affected local build checks without treating a source build as a successful receiving build.
+Update project Task associations, mathematical source maps and build entrances to final local objects after reuse and numbering, retaining exact input versions and actual review limits.
+Generated deliverables follow the explicit delivery scope; caches and ordinary compilation products are not default transfer contents.
 Writing context and document navigation may link related authored documents, but authoritative C/L/U/R/J evidence remains independent of mutable presentation frames, draft theorem numbers and document-local review details.
 
 Inside each project, give each independently compiled TeX document its own purpose-named directory, such as `paper/`, `supplement/` or `research-note/`.
@@ -275,7 +283,7 @@ No stylistic choice changes source facts, theorem hypotheses or the actual check
 ### Source Identity and Storage
 
 The canonical [bibliography](../../mathematics/literature/references.bib) owns full bibliographic fields and persisted keys.
-The [registry](../../mathematics/literature/registry.md) owns acquisition, artifact/version, provenance and access facts.
+The local `mathematics/literature/registry.md` owns this machine's acquisition, artifact/version and access facts, independently of shared manuscript evidence and review.
 Role adoption and source observations link to those responsible materials.
 Stylistic consultation and bibliography-only work follow the same source-registration and factual-processing duties, with inspection proportional to the actual use.
 
@@ -448,7 +456,9 @@ Read the actual TeX and direct mathematical/source inputs before deciding what t
 
 The existing project or document `review.md` records mathematical scrutiny of the current manuscript exposition.
 Each retained review entry identifies the mathematical object and TeX location, the exact scope checked in the current working-tree TeX, the reviewer or review method and relationship, the evidence consulted, actual findings or corrections, and unresolved points and limits.
-These framework reviews describe actual agent inspection under the [agent and isolated-context boundary](proof-audits.md#review-arrangements); human authorship, suggestions and authorization are separate facts.
+These framework reviews describe actual agent inspection under the [review relationship and arrangement rules](proof-audits.md#review-arrangements); human authorship, suggestions and authorization are separate facts.
+The current agent may directly undertake an ordinary or complete manuscript review without isolated context, another agent, a new Task or a fixed R solely for that review.
+An explicitly required independent manuscript inspection meets the actual independent-context conditions, using the current reviewer directly when already qualified, while its findings retain their manuscript-local home.
 An entry may review the complete written proof of an internal result whether or not an independent R exists.
 A manuscript-local review does not replace fixed R evidence required by a separate Claim or Task acceptance workflow.
 An audit of a fixed Claim does not automatically review its manuscript presentation.

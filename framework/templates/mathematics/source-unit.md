@@ -21,6 +21,7 @@ Under the [agent/tool responsibility](../../rules/workflow.md#agent-and-tool-res
 Ordinary local source preparation retains actual source addresses, edition facts, locally computed file fingerprints and current limitations in the existing [registry account](../../rules/literature.md#artifact-source-association).
 New U reception first completes [original acquisition](../../rules/literature.md#acquisition-before-u-reception), including direct failure reporting; adequate fixed evidence can then use the [first-citation route](../../rules/literature.md#3-citations-elsewhere-in-the-repository) without implying original possession or repeating a download solely for formatting.
 The `source-version` describes performed inspection; ordinary comparisons and dependencies keep their mathematical roles and select no download.
+Keep shared work/edition, passage and inspection facts in this unit; a local registry account, fingerprint or current possession is neither a required shared link nor part of U display.
 Tools report requested/final addresses and bytes without deciding work/edition identity.
 
 Local registration computes a fingerprint from the actual obtained file for accidental-damage checking, without establishing identity, edition, inspection or completeness.

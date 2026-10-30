@@ -13,7 +13,7 @@ Literature intake and source audits exclude associated Lean code unless its audi
 
 Research, source audit and writing reuse sufficient existing mathematical/source evidence, locate any needed originals in the order below, register the selected work and exact artifact/edition when needed, inspect the required passages and process definitions, terminology and symbols through [def registration](definitions.md), then reuse the source within its actual limits.
 
-1. Check registered sources through references.bib, registry.md, edition-specific contents and applicable source records, judging actual edition, coverage and availability.
+1. Reuse shared references.bib, edition-specific contents and adequate C/U/L source evidence, and check suitable originals actually recorded in this machine's local registry.md.
    Reuse adequate retained C/U/L and previous findings without repeating acquisition or scanning unrelated files.
 2. When registered sources are insufficient or the required edition is unavailable, look for relevant unregistered local candidates through the logical source entrance and its actual storage arrangement.
    Use the current question, work, author, title, version and citation leads; necessary candidate metadata, title pages, abstracts, contents or passages may be inspected before assigning a key or completing registration.
@@ -25,7 +25,8 @@ For a selected candidate, establish the real work, edition, source association a
 Reuse actual local bytes without inventing a download, acquisition time or unknown metadata; unselected files and unrelated accounts remain unchanged.
 Candidate discovery requires no automatic index, bulk OCR, all-file hashing, prior full registration, U/L creation or search receipt.
 
-Canonical references.bib owns bibliographic identity and keys; the registry owns artifact/version, availability, acquisition and coverage links; intake owns actual cross-repository operation provenance.
+Canonical references.bib owns shared bibliographic identity and keys; local registry.md owns this machine's acquisition, artifact and holding facts; intake owns actual cross-repository operation provenance.
+Shared U/L evidence and contents retain their inspected edition, passages, coverage and actual conclusions independently of local possession.
 Prepare searchable contents when the source supplies them, and state unavailable editions or indispensable passages specifically.
 Keep complete definitions in adequate U/C/L content, source findings and presentation observations in adequate source-reading accounts, and writing choices at their applicable profile or manuscript home.
 Reuse adequate inspected evidence without inventing equivalence, expanding coverage or requiring a full-paper proof audit for stylistic or bibliographic use.
@@ -48,6 +49,13 @@ No new download or proof audit is implied.
 <a id="local-pdf-storage"></a>
 ## Local Source Storage
 
+The persistent `mathematics/literature/registry.md` is machine-local, Git-ignored and excluded from framework distribution and ordinary collaboration.
+Create it only when an actual local registration needs it; clean installation, cloning and bibliography-only work may leave it absent, without a warning, empty account, download or registration debt.
+Absence proves neither absence of local originals nor absence of shared mathematical evidence.
+Public check/show/discovery, navigation and intake use their selected shared facts without reading this account, enriching U with local holdings or replaying registry from INDEX, a commit or another author's checkout.
+Explicit local source operations may read their selected current account and physical originals; copying an account or finding the same key/fingerprint proves no local acquisition, edition agreement or review.
+Keep actual known dates and limitations, without inferring a person's access from another machine's record.
+
 Source PDFs and original HTML use the Git-ignored logical path mathematics/literature/pdf/.
 PDFs keep their flat filenames; HTML pages and explicitly retained related files use a directory named by the established work key.
 The entrance is an ordinary directory or one top-level directory junction; symbolic links and nested linked paths are unsupported.
@@ -68,7 +76,7 @@ Current storage checks are read-only and do not reconnect a broken junction, dow
 
 An explicit `python scripts/check-literature-storage.py` invocation requests whole-store registered-artifact inventory: actual target, format/decoding facts, recorded limitations, known SHA-256 fingerprints and Git exclusion.
 The agent selects any needed [source-check scope](#selected-source-checks), preserving unrelated accounts outside that selection.
-Local registration, explicit source reading and public U display use the actual selected declarations and necessary direct relationships.
+Local registration and explicit local source reading use the actual selected declarations and necessary direct relationships; public U display supplies no holding enrichment.
 An unrelated malformed account is not a prerequisite for a selected operation; an explicitly requested whole-store inventory still checks its complete scope.
 Competing declarations or several possible primary artifacts require the agent to inspect the concrete candidates and supply chosen facts or a local account edit, rather than accepting the first or last link.
 Generic public links into the logical source root, groups or named files check normalization, repository containment and protected paths without resolving the mount or checking source existence, format or native anchors.
@@ -105,12 +113,12 @@ Availability says nothing about mathematical verification.
 The agent reads the actual change and responsible materials, chooses any needed source keys or artifacts and reuses adequate still-applicable judgments.
 An edit, commit or push does not by itself require a new source check; no scope file, acknowledgment or mandatory command sequence is added.
 Choose explicit public-reference, path-containment and private-source exclusion checks for the actual scope; these do not reconstruct holdings, validate source accounts or inspect private source bytes, fingerprints, formats or native HTML anchors.
-For an explicitly chosen relationship check, reuse the shared reader with the selected holding keys or artifact names from the complete registry and bibliography of the actual requested WORKTREE, INDEX or commit postimage.
+For an explicitly chosen local relationship check, reuse the account reader with selected holding keys or artifact names from the actual current local registry and necessary bibliography.
 A holding selection includes that key's unchanged genuine holdings and their directly referenced Artifact accounts, retaining real competition while excluding unrelated malformed accounts.
-Text diff fragments and an unstaged repair cannot replace the selected view's necessary declarations.
+Text diff fragments cannot replace the necessary local declarations; shared bibliography, materials and acquisition records retain their separately selected views without registry replay or fallback.
 The reader checks explicit fields, contiguous tables, registered references and numerical page/range constraints; the agent judges identity, edition, completeness and mathematical suitability.
-Public U display enriches the structural material with its local holding facts through the same reader; an ordinary material check performs no such enrichment.
-Use the existing [selected-view interfaces](../../scripts/readme.md#explicit-selected-source-reading) when mechanical help is useful.
+Public U check/show, discovery and navigation use their shared material contracts without local holding enrichment or registry reads.
+Use the existing [explicit local-source interfaces](../../scripts/readme.md#explicit-selected-source-reading) when mechanical help is useful; absence of the account alone is normal and proves no missing originals or evidence.
 Acquisition, registration and explicitly requested byte or whole-store checks retain their actual physical-file scope; ignored source bytes are not contents of an INDEX or Git commit.
 
 <a id="artifact-source-association"></a>
@@ -149,6 +157,7 @@ Inspect the selected work/edition and actual source bytes and account, preserve 
 
 Compute a new registered fingerprint only from actual locally obtained document/resource bytes, after the agent establishes the source association.
 The sole registry's local baseline serves accidental-damage checking; comparison with different supplied bytes must preserve existing source bytes and baseline on failure.
+A mismatch establishes changed bytes; the agent judges damage, legitimate change or another cause from the actual file and source facts, without an automatic edition, mathematical or review verdict.
 Supplied or foreign hashes establish no local baseline, and authored-material intake obtains no literature fingerprint or sender-local integrity baseline.
 If an old hash's local provenance is unknown, retain that uncertainty rather than inferring historical local possession.
 Hashing an error page or unestablished response is at most a transient byte fact about that response, not the intended publication's registered fingerprint.
@@ -356,12 +365,12 @@ For PDF, keep the exact registered filename stem: `pdf/SourceKey--edition.pdf` c
 For original HTML, mirror the complete registered artifact path below `pdf/` into `contents/` and append `.md` to its native filename, retaining the HTML extension.
 Thus `pdf/WorkA/source.html` uses `contents/WorkA/source.html.md`, `pdf/WorkB/source.html` uses `contents/WorkB/source.html.md`, and `pdf/WorkA/edition-2/toc.htm` uses `contents/WorkA/edition-2/toc.htm.md`.
 Do not flatten nested paths, drop native extensions or infer source identity from a generic basename; the registered original-artifact names and facts already distinguish editions, volumes and snapshots.
-Confirm title/author and actual language, edition, volume or revision against the source and registry.
-Each file states that identity and coverage and links the exact native source or verified primary contents excerpt and the corresponding registry artifact account.
+Confirm title/author and actual language, edition, volume or revision against the actual source and shared bibliographic facts; a local holding account is not a shared transcription prerequisite.
+Each shared transcription states the work/edition identity, actual source locations and coverage and links its exact logical native source or verified primary contents excerpt without requiring a local registry account.
 For PDF, identify the one-based PDF pages containing the contents separately from the source's printed destination labels.
 For HTML, use actual part/chapter/section labels, native anchors and exact registered page paths, retaining any real printed page labels and omitting inapplicable PDF page fields.
-Reuse an unambiguous registry anchor or add one at the existing account.
-Do not duplicate bibliographic or acquisition logs.
+An optional local account may link the shared transcription; the transcription's existence and shared links do not depend on that account, its anchor or current holding.
+Do not duplicate acquisition logs, fingerprints or local holding inventories in contents or U.
 
 The preparing agent chooses the registered page carrying the list as an HTML transcription's naming reference.
 If one supplied list spans several pages, retain one adequate transcription with exact links to every actually used page and native location and state its actual coverage.
@@ -376,15 +385,17 @@ Inspect images for scans or damaged text layers.
 Do not reconstruct a missing contents list from body headings, guess page offsets or make unverified body-page links.
 Temporary extraction and images follow the [temporary-storage rule](organization.md#temporary-storage).
 
-The preparing agent publishes the transcription and its direct consumers together: the exact work/artifact account in `registry.md` links `Contents: [Table of contents — actual edition](contents/SourceKey--edition.md)`; the transcription links back to that account and its exact source.
-The literature entrance links the generic `contents/readme.md` usage guide alongside bibliography/registry.
+The preparing agent maintains the shared transcription and actual direct consumers together, retaining its work/edition, exact source and transcription limits.
+Its local registry account may link `Contents: [Table of contents — actual edition](contents/SourceKey--edition.md)`, without a mandatory shared backlink to that private account.
+The literature entrance links the generic `contents/readme.md` usage guide and shared bibliography; local registry lookup is an inline-code instruction.
 That guide is not another book list.
 Key/path changes and retirement update the affected filename, PDF association and actual links together.
 Different editions/volumes keep separate associations; same-edition encodings may share an adequate transcription only after comparing their actual lists and page associations.
 Never redirect one edition's contents link to another to clear a broken link.
 No contents navigation belongs in BibTeX notes, and no reverse link from every mathematical material is required.
 
-Known work: use its registry artifact account, follow the edition's contents link, then inspect the source passage.
+Known work: first use shared bibliography, same-edition contents and adequate U/L evidence; when an original is actually needed, consult this machine's local account and appropriate original before inspecting the passage.
+Missing local registration does not block shared contents or establish absent evidence; a local account may point to shared contents without a reciprocal account link.
 Unknown work/topic: search retained titles under `mathematics/literature/contents/`, for example `rg -n -i --glob '*.md' -- "Hankel|Toeplitz|Hardy" mathematics/literature/contents`, confirm the matching file's edition/coverage, and inspect its source.
 Search the original language and useful equivalent terms.
 Follow the existing order of reviewed mathematical inputs, relevant local sources, then external search when insufficient; a complete contents scan is not a Task-startup requirement.
@@ -442,7 +453,7 @@ Stop advancing when enough evidence is available; do not wait until a proof atte
 6. Stop when evidence is sufficient for the current decision, or record the exact unresolved gap and next useful action when access or repeated unproductive searches prevent progress.
    Reopen for new evidence, changed assumptions, or a new version; do not repeat unchanged searches by default.
 
-The [registry](../../mathematics/literature/registry.md) owns source-acquisition and artifact facts and links to coverage records.
+The local `mathematics/literature/registry.md` owns machine-local source-acquisition, artifact and holding facts; shared source records own actual inspected edition, passages and review limits.
 Concrete cross-repository acquisition operations and their obtained or unavailable provenance belong in `intake/<initiator>/` under the [intake rule](intake.md#scope-and-routing).
 Source-specific reading/search notes and theorem-level audit coverage belong in `mathematics/audits/literature/`; use a compact section of an existing source record until a reusable unit warrants its own record.
 Do not create one file or unit for every search hit.

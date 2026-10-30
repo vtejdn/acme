@@ -95,6 +95,7 @@ An attempt record should answer:
 
 Move Claim arguments into their responsible fixed C materials and link them from the chronological record.
 Do not keep independent, diverging copies of a proof in a session log and a module.
+During [same-author transfer](intake.md#personal-import), suspected L overlap with C, R, J or another kind follows [subagent comparison and responsible-home selection](records.md#same-author-transfer-and-duplicate-comparison), preserving unique exploration, useful failures, analysis and actual limits before trimming duplication.
 Preserved original complete proofs and explicitly distinguished new versions follow the [proof-version rules](claims.md#proof-versions); their different historical or current roles must be visible.
 
 When a literature search materially affects an attempt, route, or novelty assessment, include a compact account using the [search evidence fields](literature-search.md#search-evidence): the question and trigger, date and search scope, decisive sources and findings, remaining uncertainty, and reason for stopping or expanding.
@@ -130,6 +131,7 @@ A template is neither authorization nor a completed record.
 
 For draft retirement, apply the [common content decision](records.md#substantive-material-retention) first: already fixed mathematics needs no new L or other successor for leftover setup, and genuinely continuing work remains.
 Update actual consumers before removing redundant content, with the kind-specific duties intact.
+In a personal transfer, complete family collection precedes duplicate reduction; a subagent compares concrete D/fixed-material overlap, and continuing or unresolved work remains even when completed portions are already adequately fixed.
 
 Keep unbound continuing mathematics in `mathematics/drafts/` using canonical rolling `Author_D_F0001.md` identities with the chosen line, through ordinary authorized authoring or the optional `material.py create --kind D --line F --file draft.md` writer.
 Both paths use exclusive creation at an available reusable D address, without a fixed-family counter, per-edit versions or a registry.

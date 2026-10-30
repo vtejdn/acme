@@ -112,7 +112,8 @@ Current local C decisions have no aggregate `review-status` field or inferred re
 Each selected R finding owns its actual `self-reviewed`, `independently reviewed` or genuinely unestablished historical/source `unknown` relationship, exact reviewed inputs, scope, findings and limits.
 An absent declaration differs from an explicit unknown relationship; no selected review means only that this decision selects no review evidence.
 An unfinished check or negative finding remains at its responsible account, independently of the reviewer's relationship.
-Describe the actual agent arrangement and isolated mathematical context under the [review rules](proof-audits.md#review-arrangements); human authorship or advice is not a framework review.
+Describe the actual agent arrangement, inputs and checked scope under the [review rules](proof-audits.md#review-arrangements); isolated development context is required for an actual independent relationship, while truthful self-review requires no isolation or new agent.
+Human authorship or advice is not a framework review, and R placement alone establishes no independence.
 
 Use `proved` only with a completed self-review or independent review and no unresolved mathematical dependency.
 A review can correctly find an unresolved premise, incomplete argument or refutation; its relationship label supplies no mathematical promotion.
@@ -216,6 +217,8 @@ For a substantive mathematical rewrite, preserve the original fixed material and
 A different proof within the unchanged Claim stays in the same family.
 Keep meaningful failed and alternative versions available even without a current consumer.
 Meaning-preserving maintenance follows the separate in-place rule; byte changes alone do not create a new review obligation.
+For [same-author transfer](intake.md#task-and-manuscript-collection), first collect all extant selected-family versions and their actual inputs, then apply the [concrete duplicate-comparison rule](records.md#same-author-transfer-and-duplicate-comparison) before reducing any repeated content.
+An adequate C retains its complete necessary statement and argument; overlap with L or another kind does not erase meaningful alternative proofs, failed versions, exact decisions or their actual evidence roles.
 
 The new version states which lemmas replace which original steps and verifies every hypothesis interface.
 Scope changes or strengthened extracted statements require their own justification; an older full-proof review does not automatically cover them.
@@ -259,5 +262,5 @@ Preserve exact selections, source facts, other row values and necessary history;
 Fixing a result requires its complete argument or counterexample, actual source/compute inputs and truthful review relationship at the selected scope.
 Reuse applicable checked evidence; a new commit does not itself create new review obligations.
 A changed proof or uncovered use requires the relevant additional review.
-After an independent review identifies a gap and the proof is repaired, a separate context-isolated agent must independently review the correction and affected logical chain again.
+After an independent review identifies a gap and the proof is repaired, a reviewer meeting the [independent-context conditions](proof-audits.md#review-arrangements) must independently review the correction and affected logical chain again; an already qualified current reviewer may act directly.
 The repairer's self-check does not discharge that obligation, and a reviewer who contributes the repair cannot independently review that contribution.

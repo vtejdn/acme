@@ -113,11 +113,14 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
 ## Files and Reproducibility
 
 - Use `mathematics/computations/programs/Author_J_W0001/` for a local program home, with the author's chosen research line and an independent J counter.
-  Imported groups use the receiving external identities and explicitly chosen receiving serial in both program and output homes, for example `author3_repo2_J_W0007/`.
+  Externally acquired groups use the receiving external identities and explicitly chosen receiving serial in both program and output homes, for example `author3_repo2_J_W0007/`.
   Preserve the exact original author, repository, research line, family/serial, physical version where applicable, path and revision in existing provenance/correspondence, separately from the chosen receiving identity.
   Repeated acquisition and later versions reuse the established receiving family; original and immediate transport identities remain distinct.
   Every group has one entrance `readme.md`, with the minimal author/source header and the [template](../templates/mathematics/computation.md) sections: Question and scope, Files, Reproduction, Results and limits.
   These examples are inert.
+- [Same-author transfer](intake.md#personal-import) instead uses ordinary receiving local identities after responsible-home selection, without transfer-only source numbers or external registration.
+  Carry the necessary program explanations, native files, inputs, parameters and actual computation/reproduction limits, without per-run versions or default J output transfer.
+  Concrete L/J or other cross-kind overlap follows the [subagent comparison rule](records.md#same-author-transfer-and-duplicate-comparison); retain unique deductions and indispensable input facts without treating a finite run as a general proof or renaming a whole output store as input.
 - Group one coherent calculation with its actual programs, inputs, outputs and checks across the two declared homes.
   Use names reflecting actual roles, such as `main.py`, `verify.py`, `helpers.py`, `inputs/` and an authored `record.md` on the program side, with generated `data.json`, `verification.json` or certificate children on the output side.
   Parameter-labelled child data may distinguish mathematical scopes.

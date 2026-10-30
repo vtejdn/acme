@@ -35,6 +35,9 @@ If the setting is invalid, the request fails or the cache cannot be saved, repor
 When a verified newer version has not been presented, tell the human the installed and available versions, link the official repository and ask whether to arrange the upgrade.
 Continue the current assignment while the choice is pending.
 After actually presenting the reminder, record only that notification fact in the existing four-field cache through the optional helper or adequate ordinary maintenance under the [cache rule](versioning.md#official-version-check).
+The agent judges the real presentation and its relation to current known facts; notification call arrival, numeric version order and reminder_due do not establish that order.
+When choosing the helper, supply the explicitly observed notified_version premise through its [required input](../scripts/readme.md#official-framework-version-check), with null only for an actually observed empty field in a valid cache.
+If the premise has changed, preserve the reported current fact and judge any necessary follow-up from actual knowledge, without automatic retry, repeated presentation, a network recheck or a new approval step.
 Preserve concurrent cache changes and the actual attempt/result/version fields; do not blindly overwrite the cache or create another notification register.
 On an explicit recheck, force a fresh bounded attempt while retaining the actual notification state.
 On an explicit disable request, set framework_update_check to false in this repository's configuration, preserving other fields; on enable, set it to true.
@@ -64,6 +67,8 @@ A new research project does not inherit the official source's display choices or
 Without Git, retain a supplied repository key or null when unnamed; either permits local registration, research and receiving selected public material without uploading local research content.
 Before research writing or Git delivery in a Git-managed project, obtain the human-chosen or explicitly confirmed repository name and complete the actual checkout binding, reusing an existing real project registration.
 Apply the [repository name rule](rules/identity.md#repository-names-and-use-environments) through ordinary scoped configuration edits; maintain the README heading from the separate display name and abbreviation when both are known, preserving human keys, material identities and historical source facts.
+Preserve the remaining project prose and framework explanation unless an actual explicit content request covers it; installing or selecting an interpreter does not authorize a public machine-environment appendix.
+Retain a necessary continuing nonsensitive tool choice only at `execution/runtime/readme.md` under the [runtime rule](rules/organization.md#machine-local-runtime), without creating notes or a virtual environment by default.
 Keep reading and necessary setup repair available while the name is missing, without reinitializing the project or inventing a name from the folder or author.
 An existing shared-repository clone keeps its real identity, project display settings, README heading, registrations and materials.
 Reuse the actual human's existing registration and bind the new Git checkout; supplement only genuinely missing human information and project notices, retaining existing authors and historical years under the [identity rules](rules/identity.md#stable-keys-and-local-attribution).
@@ -74,9 +79,10 @@ The ordinary guides and their diagrams remain alongside the common framework fil
 Cloning does not authorize pushing to an inherited remote or automatically changing that remote.
 
 Publishing common files from a development repository to the official starting repository requires its actual maintenance and remote-operation authority.
-Exclude source execution/ state from framework copying and preserve destination E; it is local persistent state, not disposable output or a synchronized framework component.
+Exclude the source's entire execution/ and .venv/ from framework copying and upgrades, including E, runtime notes and optional environment explanations; preserve the destination's actual local contents.
 Preserve the complete root LICENSE and applicable upstream notices; retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
 Inspect the selected content and keep development blueprints/tests, local profiles, temporary work, private holdings and actual research out of that starting tree.
+Exclude the source's local `mathematics/literature/registry.md` and preserve the destination's actual local account under the [local-source rule](rules/literature.md#local-pdf-storage); clean setup needs no empty registry.
 Use ordinary copying and native Git without a permanent shipped-file inventory or installation receipt.
 
 ## Upgrade installed framework
@@ -112,6 +118,7 @@ When a commit is actually needed, verify the effective Git signature against the
 When both project display choices are known, use ordinary bounded editing to maintain the root readme.md heading as `# <repository_abbr>: <repository_display_name>`, with faithful Markdown escaping and all remaining contents preserved.
 When choices are missing, report the missing project-title setup explicitly rather than presenting a retained template heading as a human choice.
 Changing only the repository key leaves those independent choices and heading unchanged; no new init arguments, generator, Git setup or remote operation is required.
+Requested README text means genuinely explicit content, not an environment section inferred from setup; keep machine choices out of public entrances and shared configuration under the [runtime rule](rules/organization.md#machine-local-runtime).
 Inspect the resulting configuration, people.json, full root LICENSE and scoped project notice, README and necessary binding, then report the installed version, actual completed setup and specific missing information.
 A successful init or registration result alone does not establish a completed project title, License notice, effective Git signature or remote setup; add no completion receipt or state field.
 This setup selects no research Task or execution authority.
@@ -188,19 +195,26 @@ An instruction to finish the current work and then pause permits that closeout, 
 ## Review specified work
 
 Identify the actual source, manuscript, Claim, argument, computation or Task and the requested review depth.
+Determine whether the actual work requires independent inspection under the [review obligations](rules/proof-audits.md#independent-review-obligations) or an applicable explicit human requirement before choosing the arrangement.
+An ordinary review request, a complete manuscript proof check, R placement or an available subagent does not itself require independence, isolation or delegation.
 Read exact versions, hypotheses, arguments, dependencies and existing findings under the applicable [proof-review](rules/proof-audits.md), [source-audit](rules/literature-audits.md) or [manuscript-review](rules/writing.md#manuscript-review-and-citation-records) rules.
 Inspect the requested whole scope; do not substitute structural checking for mathematical scrutiny or silently expand a narrow source inspection into a full proof audit.
 Reproduce decisive computations or behavior where needed rather than mechanically repeating all prior tests.
 Source audits exclude associated Lean code unless expressly included; retain any reliance on unchecked code as a review limitation.
 Keep formal project findings in R for every actual agent relationship, source inspection in U and manuscript-specific findings in their document review home.
+Ordinary manuscript review may be performed directly by the current agent and retained in the existing document README or review.md, without automatically creating R or a Task; an actual independent manuscript review keeps that same manuscript-local responsibility.
 New or substantively revised findings declare their actual relationships explicitly; a genuinely new C/T acceptance selects findings with both matching relationship rows and exact required bindings, without backfilling unchanged historical findings.
-For independent review use a separate agent outside substantive proof development with isolated mathematical context; supply fixed inputs directly without the development discussion or its mathematical summary.
+For required independent review use a reviewer outside substantive proof development and its inherited mathematical context; the current reviewer may act directly when already qualified under the [arrangement rule](rules/proof-audits.md#review-arrangements).
+Supply fixed inputs, necessary dependencies, exact scope, applicable rules and actual human requirements directly without forwarding development discussion or its mathematical summary; another agent layer or the same context under a new label supplies no independence.
 After an independently identified gap is repaired, arrange independent re-review of the correction and affected chain; a substantive repair contributor cannot independently review that repair.
+If the required independent arrangement is unavailable, report the specific limit and retain the unfinished obligation at its existing Task or review home while continuing unaffected authorized work.
 Return actionable findings, inspected scope and limitations, distinguishing source inspection, proof review, build success and formal verification.
 A review request does not itself authorize substantive editing of another author's material; actual conflicts use the maintenance boundary below.
 
 ## Prepare or reuse literature
 
+Keep shared bibliography, contents and source-inspection evidence separate from this machine's local acquisition/holding account under the [source-storage rule](rules/literature.md#local-pdf-storage).
+Ordinary U check/show/discovery and navigation do not consult that account or enrich shared facts with holdings; explicit source preparation uses actual current local facts, without registry Git-view replay or adoption of another author's access.
 Read existing responsible mathematical/source evidence, bibliography, registry, edition facts and any [searchable contents](../mathematics/literature/contents/readme.md) before obtaining missing material.
 Apply the common [source-preparation workflow](rules/literature.md#source-preparation), [knowledge reuse](rules/knowledge-reuse.md) and [complete definition registration](rules/definitions.md).
 Judge the actual work/edition, needed passages, source association and inspection depth; bibliography registration, a contents hit or a matching hash does not establish theorem applicability.
@@ -258,6 +272,7 @@ Return the manuscript result and remaining mathematical, citation, build or layo
 
 Read the actual J question, native programs/inputs, parameters, arithmetic mode, earlier useful results and consuming mathematical reduction under the [computation rules](rules/computations.md).
 Choose suitable methods, runtimes, libraries and other tools under the [computation-tool responsibility](rules/computations.md#computation-tool-selection), respecting the actual assignment, project requirements and environment constraints.
+Reuse sufficient actual capabilities, reading only relevant local runtime notes and necessary private resource sections under the [runtime rule](rules/organization.md#machine-local-runtime); notes, activation and a new environment are not prerequisites.
 Keep continued programs in `mathematics/computations/programs/<J>/` and generated results in the ignored `mathematics/computations/outputs/<J>/`.
 When reproduction is needed, rerun the chosen output set in that same J after preserving necessary inputs, non-reconstructible witnesses and earlier results still consumed by the check.
 Safe overwriting and removal of reproducible output are allowed with coherent consumers; ordinary reading or maintenance does not require rerunning it.
@@ -329,26 +344,33 @@ New reasoning, different-author synthesis or substantive correction belongs to i
 For local maintenance, prepare the selected operation item's exact path, actual anchor and file/artifact correspondences together with its material; validate the selected postimage before publication and preserve original/transport facts, scope, availability and unselected items.
 Return the chosen installed scope and limitations, preserving the source's actual inspection and review depth.
 
-## Import one's own selected content
+<a id="import-ones-own-selected-content"></a>
 
-Establish the actual registered local human and explicitly selected own content under the [personal-import rule](rules/intake.md#personal-import).
-Read selected units, actual constituents, necessary forward mathematical dependencies and adequate receiving candidates under the common adaptation and existing-decision rules.
-Prepare ordinary local text, file arrangements and temporary locators; follow Task to needed S/C/L/R/D/J and other support to relevant U without reverse consumers or a whole-library expansion.
-Correct actual own document spelling, extension case and necessary direct references within maintenance authority, preserving original source and fixed material identities.
+## Export or import one's own selected content
+
+Establish the actual same human, selected object, source view, receiver and any explicit narrowing under the [personal-transfer rule](rules/intake.md#personal-import), without a Git-source or preliminary-commit requirement.
+For Task transfer, complete its [family collection and independent manuscript pass](rules/intake.md#task-and-manuscript-collection), including every extant selected fixed-family version and each version's necessary inputs before reducing content.
+Include the actual corresponding project's documents and complete required source chains, then merge support missed by the Task pass without unrelated projects, reverse consumers or Git-history recovery.
+Compare concrete duplicates within the collection and against adequate receiving candidates through the [subagent comparison rule](rules/records.md#same-author-transfer-and-duplicate-comparison), including cross-kind overlap; retain uncertainty and continue independent work when needed.
+Decide reuse, retained homes and combinations before allocating local numbers, using current local identities for an export with no actual receiver.
+Preserve prose by default and limit adaptation to current-rule compliance, final local paths/numbers, confirmed duplicate handling and affected consumers, keeping exact versions, anchors, Task/S associations and manuscript entrances coherent.
+Keep actual authorship, meaningful versions, decisions, source/review and reproduction facts, without transfer-only source fields, original-number accounts or permanent mappings.
 When selecting the optional helper's Markdown body checks, prepare the canonical receiving `.md` path and correct public contents; a constituent's byte copy alone supplies no Markdown-body check.
 Complete the action through ordinary reading, adaptation, editing, file copying and existing registration/allocation mechanisms, inspecting the actual resulting content and affected references.
 No dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is required.
 Reuse adequate local or already-intaken own material without identity conversion, duplicate local copies or acquired-history cleanup.
 Dispatch an actually needed other-author dependency separately through intake, including S/D mathematics, T-only/J-only R and a permitted joint parent.
 Resolve a participant's exact joint parent or prepare its complete standalone contract under the Task rule; preserve real obligations, attribution, review scope and effective execution conditions.
-Install only chosen applicable settings, manuscript sources and required native files in their appropriate homes, with proportionate affected build checks and no unrequested Task.
+Carry the chosen manuscript source chains and required native inputs with proportionate affected build checks; generated deliverables follow the actual request, and a source build does not establish a receiving build.
+Keep default exclusions and explicit settings/execution choices at their actual [personal-transfer scope](rules/intake.md#personal-import), without an unrequested Task or source-repository cleanup.
+Default material transfer excludes the whole source execution/ and .venv/, preserving destination E, runtime notes and environment; an explicitly authorized local backup or move remains ordinary selected file work, separate from research handoff.
 For callers choosing the optional `material.py import` helper, its [input plan](material-format.md#personal-import-input) and publication protocol apply only to that interface.
 Coordinate affected own and foreign writes only as needed for coherent final references.
 Own content receives no external identity, intake operation, import-source record, permanent mapping or fabricated new decision.
 Ordinary Task import creates no E, reads no source E and preserves local execution state.
 If execution preparation or responsible handoff is actually selected, judge necessary effective conditions and prepare or reuse the stable local E under the [execution rule](rules/execution.md#current-contents-and-retained-limits), preserving known stops and shared limits without automatic source-E transport.
 Preserve actual stops/allowances; import alone starts no research, grants no parallel allowance and selects no autonomous Task.
-Return actual retained content, foreign acquisition scope, unavailable dependencies and remaining mathematical/build obligations.
+Return actual retained content, necessary adaptations, foreign acquisition scope, unavailable dependencies and real mathematical/build limits in the ordinary reply, without a separate export report or transfer receipt.
 
 ## Commit or push requested work
 

@@ -7,7 +7,7 @@ from ..core import paths as paths
 from ..core import links, source_files
 from ..materials.documents import MarkdownInput
 
-REGISTRY = Path('mathematics/literature/registry.md')
+REGISTRY = paths.LOCAL_REGISTRY
 
 HASH = r'(?<![A-Fa-f0-9])[A-Fa-f0-9]{64}(?![A-Fa-f0-9])'
 
@@ -271,7 +271,7 @@ def check(root):
         registry = paths.ordinary_path(root, REGISTRY)
         from ..intake import bibliography as bib
         entries = bib.parse((root/bib.BIB).read_text(encoding='utf-8-sig')) if (root/bib.BIB).exists() else None
-        registry_text = registry.read_text(encoding='utf-8-sig')
+        registry_text = registry.read_text(encoding='utf-8-sig') if registry.exists() else ''
         expected, errors = registered_sources(registry_text, entries)
         holdings, holding_errors = source_holdings(registry_text, entries)
         errors.extend(holding_errors)

@@ -43,7 +43,7 @@ The author chooses the line letter.
 Serial numbers have at least four digits and grow numerically: F9999, F10000, F10001.
 Each author/origin/kind/line owns its own counter.
 A Task-derived address inherits the selected Task's letter, not its digits.
-Imported C/T/R/L/J use explicitly chosen receiving classification, research line, family serial and physical version; original classification, line, family and version remain in provenance.
+Externally acquired C/T/R/L/J use explicitly chosen receiving classification, research line, family serial and physical version; original classification, line, family and version remain in provenance.
 
 Rolling S and mutable D omit the version suffix.
 D is a working address stable during current use and reusable after retirement, once useful content is fixed and actual consumers repaired.
@@ -59,10 +59,10 @@ author: Alice
 ---
 ```
 
-An imported original additionally carries receiving `source_repository` and, for one original document, exact original `source_material`, separately from immediate transport.
+An externally acquired original additionally carries receiving `source_repository` and, for one original document, exact original `source_material`, separately from immediate transport.
 Its filename uses receiving authorN_repoN for C/T/R/L/J; U keeps its dedicated original-author/unit placement.
 The local kind, line, serial and physical version describe prepared receiving content and need not equal the source identity.
-A same-author combination omits a false sole source_material and retains all distinct source/local unit accounts in the existing intake operation.
+When external intake combines one author's units, omit a false sole source_material and retain all distinct source/local unit accounts in the existing intake operation.
 The scalar author field occurs exactly once; lists and joint-author identities are invalid.
 Framework management fields, including framework, are not material-header inputs; the [content and adaptation rule](rules/records.md#receiving-and-adapting-selected-content) preserves actual authors, sources and necessary evidence instead.
 The human registry remains the authority for registered author spelling.
@@ -167,7 +167,7 @@ The agent chooses the existing/new bibliography target and receiving unit positi
 Prepared-text and mapping payloads are optional helper inputs rather than prerequisites for receiving that content.
 Choosing that helper retains the same prior acquisition and failure-reporting duty, without adding a per-U receipt or importing private source accounts.
 Intake reads no sender-private PDF, HTML, resources or registry and creates no receiving Artifact account, fingerprint, availability assertion or holding.
-Canonical and typesetting bibliography fields follow the [bibliographic content boundary](rules/literature.md#bibliography-content); U/registry owns inspected-artifact identity and limits.
+Canonical and typesetting bibliography fields follow the [bibliographic content boundary](rules/literature.md#bibliography-content); shared U owns inspected work/edition, passages and limits, while the local registry owns machine-local acquisition, artifact and holding facts.
 Work metadata does not authorize retrieving a different edition or rewriting the U merely to obtain a PDF.
 
 ## Claim and Task decisions
@@ -378,7 +378,8 @@ Explicit whole-material discovery and full-navigation regeneration retain their 
 Source-assessed status remains attributed to its original author and exact acquired scope.
 A missing unacquired original is an explicit source locator; a missing previously acquired local input is an error.
 Explicit field, reference and source readers use the actual chosen files or Git view, without local holding enrichment or private-source byte checks outside their stated scope.
-Public U display retains local holding facts separately; optional [source checks](rules/literature.md#selected-source-checks) use their actual selected declarations and view.
+Public U display includes its declared source inspection and necessary acquisition provenance, without source_holding or notices derived from local holdings.
+Optional [local source checks](rules/literature.md#selected-source-checks) use the explicitly chosen current local accounts and physical files, without registry INDEX/commit replay or shared-material enrichment.
 See [commands](../scripts/readme.md) and [operation-level checks](rules/identity.md#explicit-material-checks).
 
 ## Route and feedback tables
@@ -403,6 +404,7 @@ No parent or child disposition, Task lifecycle or execution authorization is com
 
 An ordinary individual local Task actually selected for execution uses its stable local `execution/Author_E_F0001.md`; a joint coordination T has no E.
 Execution state is persistent, ignored by Git and excluded from framework copying; Task lifecycle and E state are independent.
+The flat E address is distinct from on-demand local runtime notes under `execution/runtime/`; those notes have no E fields, Task identity or selected-E validation role under the [execution rule](rules/execution.md#responsibility-and-version-boundary).
 Its sole `Field`/`Value` table requires `task` with an exact Task decision and `state` in `not-running`, `running`, `stopped` or `ended`.
 Optional `threshold_percent` records an actual absolute threshold.
 An effective incremental arrangement may instead retain `baseline_percent`, `limit_percent` and `window`, with `account`/`bucket` only where needed to identify that allowance.
@@ -647,10 +649,14 @@ See the [Task rule](rules/tasks.md#joint-tasks-and-participation) for shared-par
 ## Personal import input
 
 Personal import is an [agent-completed action](agent-actions.md#import-ones-own-selected-content) using ordinary reading, adaptation and file operations under the [personal-import rule](rules/intake.md#personal-import).
+For a selected Task, the agent completes its family and independent manuscript collections, obtains comparison of concrete duplicates under the [content rule](rules/records.md#same-author-transfer-and-duplicate-comparison), and decides retained homes before receiving local numbers and exact references.
+Source prose is preserved except for required rule adaptation, final local addressing, confirmed duplicate handling and actual consumer repair; ordinary own content receives no transfer-only original-number or source metadata.
 The plan and publication protocol below apply only to callers choosing the optional helper; a plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is not a prerequisite for that action.
 The optional material.py import --source SOURCE_ROOT --plan PLAN.json installs explicitly prepared own content independently of intake.
 The plan contains roots (selected entry ids) and entries (unique id rows); dependencies explicitly name only agent-judged necessary forward inputs.
 Repeated nodes and cycles are processed once, and unselected entries are not read or installed.
+The helper processes those prepared choices; it neither performs the two-pass scope judgment nor discovers all family versions, manuscripts or mathematical duplicates.
+Its source reader uses the explicitly supplied local files; a human-selected fixed Git view needs an adequate ordinary selected-view path rather than silent substitution with the current source worktree.
 An own entry supplies source and local repository-relative file paths and optional prepared final text or exact edits.
 The helper's Markdown body pass uses the receiving path's canonical lowercase `.md` text-input convention; copying another constituent as bytes does not claim its body was checked as Markdown.
 For an own maintained guide requiring that contract, the agent prepares the actual `.md` destination, corrects its contents and necessary direct links, and preserves the real source path and fixed evidence without an automatic renamer or case-compatibility reader.
@@ -671,6 +677,8 @@ Explicit complete E text reads no source E; exact edits select only their actual
 An existing receiving E remains byte-for-byte intact; supplying `execution` does not overwrite it.
 A newly prepared E remains non-running; actual transfer of responsible execution separately preserves effective limits and stops the former writer before a new one takes over.
 The helper validates the prepared fields and pointer without classifying history or judging which conditions remain effective; these execution fields belong only to this optional interface.
+
+The small plan below illustrates an explicitly narrowed selection after agent preparation, not the default complete Task-family export scope.
 
 ```json
 {

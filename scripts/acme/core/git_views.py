@@ -1,10 +1,11 @@
 """Read-only bytes and fields from an explicitly selected Git view."""
 import json
 from pathlib import Path
+import stat
 import subprocess
 from types import SimpleNamespace
 from . import repository as r
-from . import identity
+from . import identity, paths
 
 
 def git(root, *args):
@@ -21,7 +22,19 @@ class Tree:
         self.batch = None
         if ref == 'WORKTREE':
             names = git(root, 'ls-files', '--cached', '--others', '--exclude-standard', '-z')
-            self.names = {n for n in names.decode().split('\0') if n and (self.root / n).is_file()}
+            # Exclude local notes, the account and source stores before shape
+            # queries, even while indexed. Explicit profile selection stays.
+            self.names = set()
+            for name in names.decode().split('\0'):
+                if (not name or paths.local_runtime(name) or paths.in_pdf_store(name)
+                        or paths.private_file(name) and Path(name).parts[0].rstrip(' .').casefold() != 'profiles'):
+                    continue
+                try:
+                    mode = (self.root / name).stat().st_mode
+                except FileNotFoundError:
+                    continue
+                if stat.S_ISREG(mode):
+                    self.names.add(name)
         elif ref == 'INDEX':
             r.require(not git(root, 'ls-files', '--unmerged'), 'Resolve Git index conflicts before reading this selected view.')
             entries = [n.split('\t', 1) for n in git(root, 'ls-files', '--stage', '-z').decode().split('\0') if n]

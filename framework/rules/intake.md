@@ -265,19 +265,54 @@ Reuse the same direct interface for onward U/L/J transfer, preserving original i
 
 A registered local human may import explicitly selected own C/T/S/D/R/L/U/J, settings, manuscripts, native programs, data and attachments into that human's ordinary local homes.
 Establish the actual human from the instruction and adopted identity facts; choosing an author name or matching a source name alone grants no right over another human's content.
+This same-author transfer rule also governs preparing an export copy; it requires neither a public Git source, Git initialization nor a preliminary commit.
+For an export without an actual receiver, retain the current local identities rather than allocating hypothetical receiving numbers.
 Apply the common [adaptation rule](records.md#receiving-and-adapting-selected-content) and [existing-decision boundary](records.md#existing-and-newly-made-mathematical-decisions).
 The agent completes selected personal import through reading, judgment, adaptation, writing and inspection of the actual local content and affected references.
 Ordinary file operations and existing registration/allocation mechanisms suffice; no dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is required.
 Own import creates no external identity, intake operation, source header, import-source section, receipt, archive or persistent mapping.
+Do not retain source_material, source_repository, an original-number field or a parallel source identity merely to describe this move; old addresses serve only temporary selection, comparison and reference repair.
 Already-intaken own material retains its actual acquired identity and provenance; reuse it without converting it or installing a local shadow copy.
 
-Start with the human's selected roots and agent-judged necessary directed dependencies: Task to needed S/C/L/R/D/J and other support, then relevant U.
-Any selected unit may itself be a root; follow necessary middle-layer support, process repeated objects once and stop cyclic expansion.
-Do not acquire reverse consumers, sibling manuscripts, all similarly numbered materials or a whole U library.
-Manuscripts include their actual source chain, figures, bibliography and required constituents; settings-only import adds no Task/E.
-Reuse adequate local content; dispatch a missing necessary other-author dependency explicitly to intake with its own author and provenance.
+### Task and manuscript collection
+
+When a Task is selected for export or personal import, collect its family by default even if the entrance names one physical version; an explicit single-version, fragment or other narrower instruction takes precedence.
+Use the chosen current working copy unless the human selects another source view; keep all necessary facts in that actual view without worktree or history fallback.
+First collect every extant physical version of the selected T family and follow actual Task associations, S routes and relevant subroutes, declared inputs, arguments, reviews and computation dependencies to necessary C/L/R/J/D and U support.
+Apply family collection to fixed support encountered along the way and inspect the actual inputs of each collected version, including an explicitly selected older input.
+
+| Selected material | Default collected scope |
+| --- | --- |
+| C/T/R/L | All extant physical versions of the actual family in the selected view and their necessary constituents. |
+| U | All extant versions of the selected unit family, without other units merely sharing a work key. |
+| S | Current rolling content, actual relevant subroutes and necessary retained history, failures and references. |
+| D | Current continuing mathematics and required constituents, without per-edit snapshots. |
+| J | The responsible program directory's explanations, programs, required inputs and actual computation scope, without per-run versions or default output transfer. |
+
+Use responsible declarations and actual relations rather than equal numbers, directory names, titles or ordinary background links to establish membership.
+Related paused, failed or superseded extant routes are not omitted merely because they are not currently advancing.
+This is a dependency direction, not a type whitelist or mandatory layer order; process repeated objects once and stop cyclic expansion.
+Do not collect reverse consumers, unrelated Tasks or projects, or an entire U library, and do not restore Git history or manufacture rolling-material snapshots.
+A personal T includes only its necessary joint contract, without acquiring other participants' work or Task/E authority by association.
+
+After the Task pass, identify its actual corresponding manuscript project from project ownership, description and delivery purpose, and trace the manuscript's mathematical inputs independently under the [writing rule](writing.md#projects-and-documents).
+Include the project's actual papers, supplements and research notes and their required source chains, choices and real review records; unrelated projects remain outside the selection.
+Follow the statements, proofs, definitions, computations and reviews actually used there to necessary support families, U and bibliography, adding what the first pass missed.
+Merge the two collections without duplicate support or a second manuscript copy; using another research result does not select that research's entire Task or manuscript project.
+An absent corresponding project needs no empty directory or placeholder, and generated deliverables follow the actual requested delivery scope rather than the source-directory contents.
+
+Complete both passes before reducing content, then compare adequate receiving candidates and apply the [same-author duplicate and numbering rule](records.md#same-author-transfer-and-duplicate-comparison).
+Default exclusions are Git metadata, the entire execution/ and .venv/ directories, private settings, original literature and machine-local acquisition/holding accounts, J outputs, temporary files and caches; an actually selected settings or execution action retains its separate scope below.
+Preserve the receiver's E, runtime notes and actual environment without adopting another machine's settings; an explicitly authorized personal backup or move uses ordinary selected file work rather than an inferred material-transfer scope.
+Carry necessary shared bibliography, U inspection/edition facts, retained indispensable inputs and manuscript build inputs in their responsible homes, without renaming a whole output store to evade its boundary.
+Dispatch a missing necessary other-author dependency separately under its actual author and provenance; do not relabel external material as the importing human's original.
 Unavailable necessary inputs remain precise limitations at their consumers without stubs or false completeness.
 
+### Preparation, execution and delivery
+
+Prepare the final local paths and references only after reuse and retained homes are settled, preserving exact input versions and anchors and updating affected Task/S associations, manuscript entrances and other actual consumers together.
+After a reduction or numbering change, recheck its affected dependencies and consumers without starting an unbounded third collection pass.
+Preserve source prose by default under the [minimal-adaptation boundary](records.md#same-author-transfer-and-duplicate-comparison), and leave unrelated source and receiving material alone.
 Retain actual own Task contracts, meaningful lifecycle, applicable evidence and known decision precision.
 Ordinary T import reads no source E, creates no local E and preserves existing local execution state.
 When execution preparation or handoff is actually selected, judge relevant source and local conditions under the [execution rule](execution.md#current-contents-and-retained-limits), retaining known stops and shared limits independently of Task lifecycle.
@@ -288,3 +323,5 @@ Settings retain only selected applicable scope and precedence; manuscript reloca
 An explicitly selected own private settings file may retain internal section navigation and authorized expected-content reads; its links do not select other private files, and public owning documents still reject private targets before accessing their contents.
 For callers choosing the independent optional `material.py import`, its roots, dependency edges, prepared text, file arrangements and publication protocol follow the [input format](../material-format.md#personal-import-input).
 Those helpers protect their explicitly captured inputs, collisions, allocation and selected publication; they are not a required import pipeline, and only actual foreign branches create intake records.
+Report the actual transferred scope, necessary changes, missing inputs and real build/check limits in the ordinary delivery reply, without a separate export report or transfer register.
+This action supplies no commit, push, public-release or research-resumption authority and initiates no whole-library migration or deduplication.

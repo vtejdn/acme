@@ -71,7 +71,7 @@ Record only actions actually performed.
 Put source-specific findings in the relevant `mathematics/audits/literature/` record; put substantive research-search outcomes in the relevant `mathematics/ledger/` entry or module.
 Route records link the evidence and explain its effect on the next decision.
 Follow the [acquisition norm and failed-acquisition exceptions](literature.md#literature-acquisition); reuse adequate local copies and record access failures accurately.
-Source files and acquisition metadata remain in the sole [literature registry](../../mathematics/literature/registry.md).
+Original bytes and acquisition/holding facts remain machine-local under the [source-storage rule](literature.md#local-pdf-storage), using `mathematics/literature/registry.md` only when actually registered; shared findings retain their inspected editions and limits independently.
 A compact section in an existing record is sufficient; no separate search-log directory is required.
 
 Discovery, successful download, statement checking, and proof review are distinct activities.
@@ -79,7 +79,7 @@ Apply verification labels only to the work actually done, and update affected cl
 
 ## Sources and Computation
 
-- Follow [the literature conventions](../../mathematics/literature/registry.md) for all source naming, registration, and citations.
+- Follow [the literature conventions](literature.md) for source naming, local registration and shared citations.
   Use the same unambiguous key throughout the repository, and cite the relevant theorem, section, or page when relying on a specific statement.
 - Organize reusable source inputs under the [literature-audit format](literature-audits.md), separating the original statement, notation conversion, checked hypotheses, proof-inspection depth, and local deductions.
   A file's presence in `mathematics/literature/` does not verify all of its claims.

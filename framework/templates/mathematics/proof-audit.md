@@ -21,7 +21,7 @@ author: Author
 # <Claim or goal> — <review scope>
 
 - Date and human attribution: <actual UTC minute timestamp of the review act; responsible human record author; preserve genuinely known calendar precision for retained older findings>.
-- Review arrangement: <actual agent relationship to proof development and substantive mathematical context; self-review or separate isolated independent inspection; initial review or targeted recheck>.
+- Review arrangement: <actual agent relationship to proof development and substantive mathematical context; self-review or independent inspection with the required context separation; initial review or targeted recheck>.
 - Inputs and sequence: <additional exploration notes, proof-generation dialogue, author explanations or earlier conclusions supplied or consulted before initial findings; when earlier findings were consulted; unknown conditions stated explicitly>.
 - Verification and limits: <obligations and derivations actually rechecked; any prior review relied on and its scope; unchecked parts; details in the findings below>.
 - Target and records: <exact Task/Claim material paths, physical versions, decision/statement/contract anchors and applicable route links>.
@@ -76,5 +76,6 @@ Each newly authored or substantively revised finding needs its own explicit matc
 Omission is not an `unknown` declaration; unchanged older findings in the same file remain readable at their actual scope without a backfill requirement.
 Classify each finding, not its consumer; complementary applicable findings preserve their actual separate relationships and scopes.
 An independent reviewing agent must be outside substantive proof development and receive no inherited mathematical discussion, summary or prior verdict; direct fixed statements, proofs and necessary dependencies are legitimate inputs.
+An already qualified current reviewer may undertake independent inspection directly; self-review or R placement alone requires neither isolation nor another agent layer.
 If an independently identified gap is repaired, arrange independent review again; a substantive repair contributor cannot independently review that repair.
 Human authorship or suggestions do not constitute a framework review, and no agent/model/session registry or isolation certificate is required.

@@ -104,23 +104,8 @@ class Reader:
         return doc
 
     def show(self, path):
-        """Enrich an explicitly displayed U with its local holding facts."""
-        doc = self.check(path)
-        if doc.identity.kind == 'U':
-            from ..checks import literature
-            try:
-                registry = self.read(literature.REGISTRY.as_posix())
-            except FileNotFoundError:
-                registry = None
-            doc.source_holding = None
-            if registry is not None:
-                # Only this receiver's independently recorded local holding is relevant.
-                catalog = literature.source_catalog(registry, holding_keys=(doc.identity.source_key,))
-                doc.source_holding = literature.holding_status(self.repo.root, registry, doc.identity.source_key,
-                                                               catalog=catalog)
-                if doc.source_holding:
-                    doc.notices = list(dict.fromkeys(getattr(doc, 'notices', []) + doc.source_holding['notices']))
-        return doc
+        """Display selected shared material without consulting local holdings."""
+        return self.check(path)
 
     def destination(self, document, href):
         original = source_refs.parse(href)

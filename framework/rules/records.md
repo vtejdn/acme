@@ -68,12 +68,13 @@ Retain useful alternate proofs, counterexamples, failures, native inputs and act
 Check mathematical correctness and claimed status at the intended use: conjectures, conditional conclusions, partial evidence, useful failures and review gaps retain their actual limits rather than becoming established results through format adaptation.
 For a substantive error or insufficient support, perform necessary checks within current authority or retain the concrete limitation; a failed argument may be received as useful failure evidence, not as a correct proof.
 Using a result as established support or making a new adoption retains its applicable evidence and review duties, without a universal reproof or new independent review of all source results merely for receipt.
-Adapt prose, classification, layout, numbering and references to current receiving rules without byte equality or a whole-source-container requirement.
+For external intake, adapt prose, classification, layout, numbering and references to current receiving rules without byte equality or a whole-source-container requirement.
+Same-author transfer instead follows the [minimal-adaptation and duplicate-comparison boundary](#same-author-transfer-and-duplicate-comparison).
 Confirmed sufficient local content is reused by exact reference; partial duplication retains its unique part, and unresolved equivalence remains unresolved.
-One author's units may be split or combined with complete necessary per-unit source correspondence; a synthesis of different authors belongs to its actual single synthesizing human with citations.
+External intake may split or combine one author's units with complete necessary per-unit source correspondence; a synthesis of different authors belongs to its actual single synthesizing human with citations.
 An available older source can be adapted without changing its repository or fabricating an assessment, review, argument or missing evidence.
 The sender's framework version, current-format support or missing installation metadata supplies no independent receiving gate; the actual selected content, necessary facts and conforming local result determine whether adequate adaptation is possible.
-Confirm the original human and source correspondence from actual facts, preserving original and transport repository, fixed revision, path, selected scope and necessary physical-version and review facts independently of local numbering or classification.
+For external intake, confirm the original human and source correspondence from actual facts, preserving original and transport repository, fixed revision, path, selected scope and necessary physical-version and review facts independently of local numbering or classification.
 Neither the receiver, transporter nor Git commit signature becomes the mathematical author through copying or adaptation, and a supplied author value cannot replace an existing original-source binding.
 When a helper reads older material, keep the necessary source identity and Task-family facts separate from validation of the adapted receiving result.
 Obsolete source layout or administrative fields alone do not require a source upgrade or refusal of an otherwise adequate preparation.
@@ -92,6 +93,42 @@ Calling a body edit administrative does not permit changing another human's auth
 Only the established same human may directly revise it under actual authority, fixed-version and review rules.
 For different local/external identity representations, use explicit adopted correspondence at the existing identity/intake home; matching names or a caller-selected author supply no permission.
 Shared registration and derived navigation retain their own maintenance duties.
+
+### Same-author transfer and duplicate comparison
+
+For [personal export or import](intake.md#personal-import), complete the Task-family and independent manuscript collections before reducing suspected duplicates.
+Compare concrete candidates within that collection and against adequate receiving materials, including across material kinds.
+The main agent obtains a subagent's direct mathematical comparison for each actual suspected overlap, supplying the candidate texts, necessary inputs, intended uses and relevant consumers rather than only summaries, titles or similarity results.
+The comparison examines the question, definitions, hypotheses, quantifiers, conclusions, methods, argument interfaces and scope, together with unique derivations, useful failures, continuing work and necessary reproduction, review and adoption facts.
+Different methods, assumptions, ranges or evidence responsibilities remain distinct even when conclusions agree.
+The subagent identifies confirmed overlap, unique content and the actual limits of substitution; retain uncertain content, including when the needed comparison is unavailable, while continuing independent work.
+
+| Confirmed overlap | Responsible treatment |
+| --- | --- |
+| L and C statement or proof | Retain the complete needed statement, hypotheses and argument in adequate C; trim duplicated L content while preserving unique exploration, comparison, failures and limits. |
+| L and a formal R finding | Retain the actual R targets, relationship, inspected scope and limits; trim duplicated narration while preserving L's distinct analysis. |
+| L and J computation content | Retain necessary native programs, inputs, parameters, actual finite result scope and reproduction facts in J; keep L's unique interpretation or deductions. |
+| D and adequately fixed C/L/R/J/U | Remove only finished duplication, retaining continuing mathematics, unique derivations and unresolved questions. |
+| Same-kind or other cross-kind candidates | Reuse an adequate responsible home, merge necessary unique content and repair actual consumers; neither kind, length nor equal conclusions decides redundancy. |
+
+A C proof and its R inspection, or a J finite computation and a C general argument, retain their different evidence roles.
+After confirmation, the main agent completes authorized trimming, merging and consumer repair without per-item human approval.
+Remove a wholly redundant container only after all necessary content, required mathematical versions and real current/historical adoption facts are preserved and its actual consumers are coherent; leave no redirect stub, move receipt or permanent mapping.
+Retiring an issued receiving identity preserves its existing allocation bound rather than recycling that number or reserving the source's old number as a second identity.
+Duplicate comparison alone creates no formal R, proof certification, independent-review label or inherited review of changed inputs.
+Actual mathematical, dependency or adoption changes retain their existing author, version and review obligations, reusing evidence only at its applicable scope.
+This requirement is triggered by concrete duplicate candidates, not all-material comparison, a similarity scan, a review registry or a required comparison-report file.
+
+Choose reuse, retained homes, justified combinations and genuinely new materials before assigning receiving local numbers.
+Reuse adequate existing local identities; otherwise use the receiver's normal allocation rules, keeping one family identity and its actual physical-version relations without preserving source numbering or compressing gaps.
+An export without an actual receiver uses current local identities.
+Ordinary own content gains no transfer-only source_material, source_repository, original-number field, external identity or provenance account; temporary old/new addresses serve this operation's reference repair only.
+Actual third-party sources, literature editions/passages, necessary acquired evidence and real authorship remain truthful under their own rules.
+
+Preserve text by default, limiting changes to current-rule adaptation, necessary local identity/path/reference repair, subagent-confirmed duplicate handling and its affected consumers.
+Do not rewrite for style, length, preferred headings or organizational convenience, invent decisions or dates, or silently replace an explicitly adopted input with a newer version.
+Preserve meaningful mathematics and fixed versions, actual review/reproduction facts and limits; retain and report substantive errors, unsupported claims and missing necessary inputs instead of hiding them through formatting or status changes.
+Occupation, expected-content, stale-input and publication protections remain in force, and preparation of a receiving copy does not authorize source-repository cleanup or unrelated edits.
 
 ## Existing and newly made mathematical decisions
 
@@ -137,7 +174,7 @@ An acquired original retains exact original authorship, source family/version, p
 C/T/R/L/J filenames use receiving authorN/repoN and an explicitly chosen local family, line, kind and physical version appropriate to the prepared content.
 Those local identities need not equal the source's classification, line or version.
 Headers bind the receiving author and origin namespace; a single-origin document also binds its exact source_material.
-For a same-author combination with several original documents, retain their distinct per-unit source/local locators in the existing intake accounts rather than asserting one inaccurate source_material.
+When external intake combines several original documents by the same author, retain their distinct per-unit source/local locators in the existing intake accounts rather than asserting one inaccurate source_material.
 For U, that original path retains the original source key and unit number even when recipient bibliography-key/unit placement differs; the local anchor follows the recipient position.
 Retain the unchanged original human, actual input version and exact correspondence in the existing intake operation, separately from the receiving content's version.
 The immediate transport repository and a matching display name do not substitute for that identity.
@@ -219,6 +256,7 @@ Remove persistent mathematical digests, including historical values and their wr
 Preserve the actual reviewed inputs, verdict, relationship, scope, limits and useful failures through canonical paths, physical versions, anchors and available source revisions.
 Literature-file fingerprints computed from actual local bytes remain at the sole source registry for accidental-damage checking; authored-material intake carries no literature baseline.
 Transient input-change comparisons may be used without a saved mathematical digest.
+Reproduction needs do not create a shared file-fingerprint exception; retain actual work/edition, original source locators, physical versions, anchors and applicable Git revision/view facts, with unavailable facts left explicitly unknown.
 No hash-history log, replacement manifest or mathematical byte gate is introduced.
 The retired C/T JSON records, snapshots and discovery products are not a second reader or authoring API.
 

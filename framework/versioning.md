@@ -122,6 +122,15 @@ No background process or scheduler is installed.
 
 When a verified public version is newer and has not already been presented, give the human the installed and available versions and the official repository link, and ask whether to arrange an upgrade while continuing the current assignment.
 Only after actually presenting that reminder record its notified_version; a query's reminder_due result does not itself establish notification.
+The agent establishes the actual presentation and its order relative to known facts, rather than inferring order from command arrival, numeric version magnitude or query completion.
+The optional notification helper requires an explicit expected_notified_version taken from a valid observed cache or its captured query result; an actually observed null differs from omitted input or an invalid cache.
+Under the existing short lock, reread the valid cache and compare only notified_version with that premise, preserving independent changes to the attempt date, result and latest verified version.
+If the premise is stale, return superseded with cache_saved false and the current notified_version without writing; missing valid cache or malformed input is refused.
+Do not automatically retry a stale write, take a numeric maximum or repeat a reminder merely to obtain a saved marker.
+Field equality alone establishes no presentation order; the agent preserves the known current fact and reports any unsaved or uncertain fact while continuing authorized work.
+A genuinely later presentation of a lower version may be recorded with the explicit current premise, subject to the existing requirement that the presented version be newer than installed.
+Adequate ordinary bounded cache maintenance remains available under the same actual-fact and concurrency responsibilities, without a compulsory helper sequence or another approval.
+Retain the four fields without notification timestamps, counters, ownership claims, history, receipts or services; the query's existing ownership and UTC-day protections remain separate and unchanged.
 Refreshes and failures preserve the actual notification fact.
 An unanswered reminder, deferral or successful query grants no upgrade permission.
 
