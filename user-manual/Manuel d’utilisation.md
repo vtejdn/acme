@@ -1,6 +1,6 @@
 # Manuel d’utilisation
 
-[Exemples de consignes](<user-instructions/Exemples de consignes.md>) · [Exemple de déclaration d’utilisation de l’IA](ai-disclosure-example.md)
+[Exemples de consignes](<user-instructions/Exemples de consignes.md>) · [Exemple de déclaration d’utilisation de l’IA](ai-disclosure-example.md) · [Exemple de page de publication](publication-example.md) · [Exemples de dépôts](https://github.com/vtejdn/acme/discussions/1)
 
 ## ACME : Autonomous and Collaborative Mathematical Exploration
 
@@ -171,7 +171,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.7.0.
+La version actuelle du cadre est 0.7.1.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.

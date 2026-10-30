@@ -30,14 +30,7 @@ def _path(repo, value):
             'Unsafe or noncanonical material path.')
     require(relative.parts[0] == 'mathematics', 'Authored materials belong under mathematics/.')
     candidate = paths.ordinary_path(repo.root, relative)
-    # Windows cannot distinguish these names, and a Linux-authored checkout must
-    # not introduce a different identity when subsequently opened on Windows.
-    parent = repo.root
-    for part in relative.parts:
-        if parent.is_dir():
-            matches = [child.name for child in parent.iterdir() if child.name.casefold() == part.casefold()]
-            require(not matches or matches == [part], 'Material path collision ignoring case: ' + value)
-        parent /= part
+    paths.check_case_spelling(repo.root, relative, context='Material path')
     return candidate
 
 

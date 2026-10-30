@@ -7,17 +7,26 @@ import copy
 from . import repository as r
 
 
-def publish_files(repo, pending, expected, *, locate=None):
+def publish_files(repo, pending, expected, *, locate=None, ordinary_root=None):
     # The default locator enforces ordinary repository storage. A caller with
     # a declared source mount supplies its own checked locator for every I/O.
-    storage_root = repo.root if locate is None else None
+    # A bounded ordinary locator can retain atomic-write guards with ordinary_root.
+    storage_root = ordinary_root if ordinary_root is not None else repo.root if locate is None else None
     locate = locate or r.safe_path
-    targets = {}
+    targets, locations = {}, {}
     for name in pending:
-        key = r.paths.resolved_path(locate(repo.root, name)).as_posix().casefold()
+        target = r.paths.resolved_path(locate(repo.root, name))
+        key = target.as_posix().casefold()
         r.require(key not in targets, 'Conflicting publication destinations: '
                   + targets.get(key, '') + ' and ' + name)
         targets[key] = name
+        locations[name] = target
+    if storage_root is not None:
+        root = r.paths.resolved_path(storage_root)
+        selected = [target.relative_to(root) for target in locations.values()]
+        for relative in selected:
+            r.paths.check_required_directories(root, relative, planned=selected,
+                                               context='Required output directory')
     for name, old in expected.items():
         target = locate(repo.root, name)
         r.require((target.read_bytes() if target.exists() else None) == old,
@@ -184,6 +193,10 @@ class Batch:
                       'Selected inputs changed during preparation; read and prepare again.')
             for guard in self.guards:
                 guard()
+            for path in self.pending:
+                target = r.safe_path(self.repo.root, path)
+                r.paths.check_required_directories(self.repo.root, target.relative_to(self.repo.root),
+                                                   planned=self.pending, context='Required output directory')
             config = r.read_json(self.repo.home / 'config.json', root=self.repo.root)
             reserved, issued = config, set()
             for ident, established in sorted(self.reservations,

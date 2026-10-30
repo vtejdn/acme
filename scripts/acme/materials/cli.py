@@ -42,6 +42,13 @@ def argument_parser():
     commands = parser.add_subparsers(dest='command', required=True)
     for name in ('show', 'check', 'routes', 'indexes'):
         command = commands.add_parser(name, parents=[root]); command.add_argument('paths', nargs='+')
+    command = commands.add_parser('check-files', parents=[root], help='Check explicitly selected public files or prepared postimages')
+    command.add_argument('paths', nargs='*'); command.add_argument('--files', type=Path)
+    command.add_argument('--prepared', type=Path); command.add_argument('--installed', action='store_true')
+    command.add_argument('--context', type=Path, help='JSON array of necessary receiving-view context paths')
+    command = commands.add_parser('prepare-references', parents=[root], help='Prepare explicit Markdown reference changes in fresh files')
+    command.add_argument('paths', nargs='*'); command.add_argument('--files', type=Path)
+    command.add_argument('--source', type=Path); command.add_argument('--map', type=Path); command.add_argument('--output', type=Path)
     command = commands.add_parser('discover', parents=[root]); command.add_argument('--kind', choices=list('CTSRDJLU'))
     command = commands.add_parser('intake', parents=[root], help='Receive prepared mathematical units at a fixed source revision')
     command.add_argument('--source', type=Path, required=True); command.add_argument('--revision', required=True)
@@ -98,6 +105,22 @@ def main(argv=None):
     parser = argument_parser(); args = parser.parse_args(argv)
     def supplied(path): return sys.stdin.read() if str(path) == '-' else path.read_text(encoding='utf-8-sig')
     try:
+        if args.command in {'check-files', 'prepare-references'}:
+            from . import preparation
+            inputs = [args.files, args.context if args.command == 'check-files' else args.map]
+            shared.require(sum(value is not None and str(value) == '-' for value in inputs) <= 1,
+                           'Only one JSON input may read stdin in an invocation.')
+            files = preparation.parse_file_list(supplied(args.files)) if args.files is not None else None
+            if args.command == 'check-files':
+                context = preparation.parse_file_list(supplied(args.context)) if args.context is not None else None
+                output = preparation.check_files(args.root, args.paths, files=files, prepared=args.prepared,
+                                                 installed=args.installed, context=context)
+            else:
+                shared.require(args.map is not None, 'Supply --map with paths, locators and optional edits.')
+                output = preparation.prepare_references(args.root, args.source, args.output,
+                    preparation.parse_json(supplied(args.map)), args.paths, files=files)
+            print(json.dumps(output, ensure_ascii=False, indent=2))
+            return 1 if output['errors'] else 0
         repo = shared.Repository(args.root); reader = runtime.Reader(repo)
         if args.command in {'show', 'check'}:
             read_material = reader.show if args.command == 'show' else reader.check
@@ -159,4 +182,7 @@ def main(argv=None):
             output = result(doc, lambda path: shared.read_from(repo, path).decode('utf-8-sig'))
         print(json.dumps(output, ensure_ascii=False, indent=2)); return 0
     except (ValueError, OSError, KeyError, TypeError) as error:
+        if args.command in {'check-files', 'prepare-references'}:
+            print(json.dumps({'operation': args.command, 'errors': [{'error': str(error)}]}, ensure_ascii=False))
+            return 2
         parser.exit(2, 'material: ' + str(error) + '\n')

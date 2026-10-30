@@ -55,20 +55,14 @@ def _navigation_path(root, owner, path, planned):
         return None
     root = public_paths.resolved_path(root)
     located = public_paths.ordinary_path(root, path)
-    # Only necessary in-repository ancestors must already be directories or
-    # remain absent for the selected files to create during publication.
-    parent = root
-    for part in located.relative_to(root).parts[:-1]:
-        parent /= part
-        relative = parent.relative_to(root).as_posix()
-        r.require(relative not in planned and (not parent.exists() or parent.is_dir()),
-                  'Required navigation directory is occupied by a file: ' + relative)
+    public_paths.check_required_directories(root, located.relative_to(root), planned=planned,
+                                           context='Required navigation directory')
     # Only actual selected file paths supply these structural parent facts.
     # A component boundary keeps an unrelated similarly named sibling out.
     pending_parent = any(name.startswith(path + '/') for name in planned)
     if pending_parent:
-        r.require(path not in planned and (not located.exists() or located.is_dir()),
-                  'Required navigation directory is occupied by a file: ' + path)
+        public_paths.check_required_directories(root, located.relative_to(root), planned=planned,
+                                               include_target=True, context='Required navigation directory')
         return located, True
     if path in planned:
         return located, False

@@ -183,6 +183,14 @@ Their writing choices do not change those assessments.
 Writing choices follow the [four-layer hierarchy](preferences.md).
 Source observations remain in adequate U or compact source-reading accounts; complete U/C/L definitions are registered through the concept index, and manuscript-specific choices stay with the manuscript.
 
+## Material maintenance worklist
+
+The sole rolling coordination document for the [three local material maintenance actions](records.md#local-material-maintenance) is `mathematics/maintenance.md`.
+Create it only when actually needed, with no mathematical material number, template, empty initialization placeholder or extra Task/E.
+In a Git repository it is normally tracked and synchronized with the related authorized material work; personal use without Git remains local and requires no Git initialization or remote setup.
+Installation, upgrades and framework copying preserve the destination's existing worklist and contents, exclude the source's live worklist and never overwrite issues with an empty template.
+Once established, the file remains at zero bytes when all issues and necessary continuation scope have been resolved; its contents and cleanup follow the responsible record rule rather than a second assessment or evidence account.
+
 <a id="temporary-storage"></a>
 ## Temporary Operational Storage
 

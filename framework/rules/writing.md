@@ -323,8 +323,10 @@ Neither registration nor a successful tool check establishes source identity, ma
 Use persisted canonical citation keys and complete bibliographic fields in the repository's [references.bib](../../mathematics/literature/references.bib).
 A document's `references.bib` is a synchronized typesetting subset under the [bibliographic content boundary](literature.md#bibliography-content).
 Retain an explicitly cited alternate edition and its actual scope, without copying acquisition/review logs or host paths.
-The literature registry owns acquisition, artifact and inspected-version facts.
-Register new sources through the existing intake rules before relying on them.
+The local literature registry owns this machine's acquisition and artifact/version facts; inspected editions, passages, findings and limits stay at their shared U/L or other adequate responsible home.
+Prepare ordinary new literature, including papers hosted on GitHub, through the existing [source-preparation entrance](#source-preparation-for-research-audit-and-writing) and its literature rules, reusing adequate bibliography and source evidence.
+Actually selected authored mathematical units from another research repository follow [mathematical intake](intake.md#scope-and-routing), including its real source, authorship, receiving preparation and provenance duties.
+Judge the actual material and use rather than its host or a code package name; ordinary literature preparation creates no mathematical external identities or intake operation and requires no fixed Git commit merely to support a citation.
 
 When choosing or checking citation labels, author-name display, sorting or reference-list structure, consult the [AMS, EMS and LMS bibliography guidance](../../mathematics/manuscripts/bibliography-guidelines.md) and apply the actual choices under the [four writing layers](preferences.md#scope-and-adoption).
 

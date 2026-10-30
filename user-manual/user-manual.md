@@ -1,6 +1,6 @@
 # User Manual
 
-[Instruction examples](user-instructions/user-instructions.md) · [Example disclosure of AI assistance](ai-disclosure-example.md)
+[Instruction examples](user-instructions/user-instructions.md) · [Example disclosure of AI assistance](ai-disclosure-example.md) · [Example page of publication](publication-example.md) · [Repository Examples](https://github.com/vtejdn/acme/discussions/1)
 
 ## ACME: Autonomous and Collaborative Mathematical Exploration
 
@@ -169,7 +169,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.7.0.
+The current framework version is 0.7.1.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.

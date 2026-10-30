@@ -269,6 +269,27 @@ Main-theorem designation and objective changes require their applicable authoriz
   Mark uncertainty explicitly.
   Failure to find a result in a bounded literature search does not establish that it is new.
 
+<a id="material-maintenance-contexts"></a>
+## Contexts for local material maintenance
+
+The [inspection, repair and acceptance actions](records.md#local-material-maintenance) for the same maintenance scope require different agents without inherited substantive discussion from the other stages.
+If the current conversation has inspected that scope, a later repair must use a subagent that does not inherit the conversation history; later acceptance likewise cannot return to the original inspector or repairer.
+An agent that performed another stage or inherited its substantive discussion cannot qualify by changing its name, restating the context or calling its own recheck independent.
+A fresh qualified agent may perform its assigned stage directly; a still-qualified agent may continue its own stage or process a batch without three new agents for every item.
+The main agent coordinates scope, actual authority, resources and writes without substituting its own inspection for the required stage separation.
+
+Provide only actual human requirements, scope, current rule entrances, actual materials and necessary evidence locators, the original issue, necessary repair locations and known limits.
+Do not forward full conversations, another stage's internal reasoning, proposed repair discussions, author defenses or conclusions that the result is already correct.
+Necessary materials, original problems, human instructions and authority remain available; isolation must not discard the evidence needed for the assigned check.
+The repairer independently verifies the report, and the acceptance agent checks actual changes against the original requirements rather than repeating a repairer's passing opinion.
+An acceptance agent contributing a substantive repair no longer independently accepts that contribution.
+
+Prefer a native harness entry that actually omits inherited history; a full-history fork alone does not satisfy this contract.
+An already available and enabled API fallback may be reused at its actual scope, without building a new API platform, requiring runtime installation or enabling paid calls by default.
+If isolation is unavailable, report the affected stage as unfinished, preserve its items and continue unaffected authorized work without weakening the requirement or presenting a self-check as acceptance.
+No agent registry, context certificate, isolation receipt, chat archive or automatic independence classifier is needed.
+This separation belongs to the maintenance action contract and does not itself establish an `independently reviewed` proof; actual mathematical development, fixed inputs, scope and R evidence follow the [proof-review rules](proof-audits.md#review-arrangements).
+
 ## Records, Review, and Handoff
 
 Apply the [common content decision](records.md#substantive-material-retention) before material organization or draft retirement.

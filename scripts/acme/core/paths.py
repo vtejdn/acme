@@ -150,6 +150,49 @@ def material_path(root, relative):
     return resolved
 
 
+def check_case_spelling(root, relative, *, context='Path'):
+    """Keep selected local names unambiguous when opened on Windows."""
+    parent = Path(root)
+    for part in Path(relative).parts:
+        if parent.is_dir():
+            matches = [child.name for child in parent.iterdir() if child.name.casefold() == part.casefold()]
+            if matches and matches != [part]:
+                raise PathError(context + ' collision ignoring case: ' + Path(relative).as_posix())
+        parent /= part
+
+
+def check_required_directories(root, relative, *, planned=(), include_target=False,
+                               context='Required directory'):
+    """Check only an already classified target's necessary directory positions."""
+    root, relative = Path(root), Path(relative)
+    if relative.is_absolute() or '..' in relative.parts:
+        raise PathError('Required directory must stay inside its selected root.')
+    files = {Path(name).as_posix().casefold() for name in planned}
+    directory = root
+    parts = relative.parts if include_target else relative.parts[:-1]
+    for part in (None, *parts):
+        if part is not None:
+            directory /= part
+        name = directory.relative_to(root).as_posix()
+        if is_reparse(directory):
+            raise PathError('Local path follows an undeclared directory/file link.')
+        if name.casefold() in files or directory.exists() and not directory.is_dir():
+            raise PathError(context + ' is occupied by a file: ' + name)
+
+
+def ordinary_directory(value):
+    """Check a chosen filesystem root without assigning repository-local roles."""
+    value = Path(value)
+    if '..' in value.parts or any(part.rstrip(' .') != part for part in value.parts):
+        raise PathError('Use a canonical ordinary directory without parent or trailing-dot/space aliases.')
+    absolute = value.absolute()
+    anchor = Path(absolute.anchor)
+    relative = absolute.relative_to(anchor)
+    check_required_directories(anchor, relative, include_target=True)
+    check_case_spelling(anchor, relative)
+    return resolved_path(absolute)
+
+
 def repository_files(root, suffix='.md'):
     root = resolved_path(root)
     files, errors = [], []

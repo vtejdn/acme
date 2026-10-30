@@ -83,6 +83,7 @@ Exclude the source's entire execution/ and .venv/ from framework copying and upg
 Preserve the complete root LICENSE and applicable upstream notices; retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
 Inspect the selected content and keep development blueprints/tests, local profiles, temporary work, private holdings and actual research out of that starting tree.
 Exclude the source's local `mathematics/literature/registry.md` and preserve the destination's actual local account under the [local-source rule](rules/literature.md#local-pdf-storage); clean setup needs no empty registry.
+Exclude a source's live `mathematics/maintenance.md` and preserve the destination's worklist under its [location and copying rule](rules/organization.md#material-maintenance-worklist), without creating or copying an empty placeholder.
 Use ordinary copying and native Git without a permanent shipped-file inventory or installation receipt.
 
 ## Upgrade installed framework
@@ -242,7 +243,9 @@ Acquisition-only failure records known bibliography/access facts without a new U
 Inspect actual HTML content and required resources without treating an error page or dynamic shell as an acquired source.
 Preserve native sources and actual availability/readability limitations.
 
-Prepare or reuse the actual edition's searchable contents when a real contents list is supplied, including future-use sources without a Task, and maintain exact registry/source links under the [contents rule](rules/literature.md#searchable-contents).
+Prepare or reuse the actual edition's searchable contents when a real contents list is supplied, including future-use sources without a Task, under the [contents rule](rules/literature.md#searchable-contents).
+Maintain the shared transcription's actual work/edition, source locations, coverage and exact links to its logical native source or verified primary contents excerpt.
+An optional local registry account may link to the transcription, which must not link back to the private account or depend on local possession; public lookup instructions use inline code.
 Inspect the actual edition and contribution extent when choosing a [complete or partial holding](rules/literature.md#actual-source-holdings); a complete contribution needs no redundant standalone PDF.
 For bibliography maintenance, identify actual work correspondence and consumers, then prepare the chosen keys, file moves and necessary local reference edits under the [renaming rule](rules/literature.md#coordinated-key-renaming).
 Confirm and correct a discovered naming misuse under the abbreviation rule, even for an established key, while preserving legitimate original year bases, allocations and collision suffixes.
@@ -279,6 +282,33 @@ Safe overwriting and removal of reproducible output are allowed with coherent co
 Use an acquired program's actual qualified J for self inputs/outputs and explicit paths for genuine cross-J dependencies.
 Keep necessary reproduction context, meaningful failures and actual limits without persistent mathematical digest gates or an archive for every run.
 Return the real command, inputs, result and checked scope; finite or floating-point observations do not prove an unrestricted theorem.
+
+## Inspect local mathematical materials under current rules
+
+Use the [local material maintenance rule](rules/records.md#local-material-maintenance) to inspect conformity to the currently installed applicable rules, at the human's actual scope and depth.
+Without a narrower instruction, inspect local mathematical materials in batches, reading necessary inputs and consumers without turning this into a private-store or environment inventory.
+Judge actual content, versions, reference purposes and evidence; a tool result or repeated URL alone establishes no violation or redundancy.
+Read materials without repairing them, and record concrete unresolved findings and any necessary unchecked continuation scope in `mathematics/maintenance.md`, merging duplicate reports of the same issue.
+Apply the [stage-context rule](rules/workflow.md#material-maintenance-contexts); inspection, repair and acceptance of the same scope use different agents without inherited substantive discussion from the other stages.
+Return actual inspected scope, findings and limits; ordinary tool checks and installing or using the framework do not automatically invoke this action.
+
+## Repair local mathematical materials
+
+Use the [repair rule](rules/records.md#repair-local-materials) for explicitly selected materials or issues, or otherwise for worklist items awaiting repair.
+Independently verify the issue and applicable rules under the [stage-context rule](rules/workflow.md#material-maintenance-contexts), then repair only the authorized scope while preserving actual authorship, fixed mathematics, source facts, decisions and review limits.
+An explicit repair assignment may start directly without a preceding complete inspection; necessary diagnosis and self-checks do not supply independent acceptance.
+Inspect actual changed content and necessary consumers, keeping genuine mathematical or assessment changes within their existing version, decision and review duties.
+Preserve the original worklist problem, rule grounds and requirements; add only necessary repair locations or obstacles and change the next action to acceptance without deleting or clearing the item.
+Return actual repairs, checks and remaining limits, preserving unrelated work and effective T/E conditions.
+
+## Accept repairs to local mathematical materials
+
+Use the [acceptance rule](rules/records.md#accept-local-material-repairs) for the specified repairs or otherwise for submitted worklist items awaiting acceptance.
+Meet the [stage-context rule](rules/workflow.md#material-maintenance-contexts), independently checking the original issue, applicable requirements, actual repair and necessary affected scope without repairing the materials yourself.
+The acceptance instruction authorizes removing the corresponding accepted items, or an independently confirmed false alarm, unless the human explicitly limits cleanup; no repeated confirmation is needed.
+Reread the current worklist before editing, remove only the actually accepted scope and retain failed, unrepaired, unaccepted, unrelated and concurrently added items and necessary continuation scope.
+If everything recorded is resolved, keep the established file at zero bytes without an archive or completion receipt; an empty worklist establishes no whole-repository conformity verdict.
+Return the actual accepted or rejected scope, cleanup and remaining limits; stage separation supplies no mathematical proof-review relationship by itself.
 
 ## Maintain shared materials or resolve a conflict
 
@@ -356,6 +386,7 @@ Decide reuse, retained homes and combinations before allocating local numbers, u
 Preserve prose by default and limit adaptation to current-rule compliance, final local paths/numbers, confirmed duplicate handling and affected consumers, keeping exact versions, anchors, Task/S associations and manuscript entrances coherent.
 Keep actual authorship, meaningful versions, decisions, source/review and reproduction facts, without transfer-only source fields, original-number accounts or permanent mappings.
 When selecting the optional helper's Markdown body checks, prepare the canonical receiving `.md` path and correct public contents; a constituent's byte copy alone supplies no Markdown-body check.
+For explicit file checks or fresh reference preparation, the optional [check-files and prepare-references interfaces](../scripts/readme.md#personal-import-preparation) reuse existing validators and publication without installing materials, choosing retained homes or replacing this action's scope and judgment.
 Complete the action through ordinary reading, adaptation, editing, file copying and existing registration/allocation mechanisms, inspecting the actual resulting content and affected references.
 No dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is required.
 Reuse adequate local or already-intaken own material without identity conversion, duplicate local copies or acquired-history cleanup.

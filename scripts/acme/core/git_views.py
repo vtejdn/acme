@@ -14,6 +14,17 @@ def git(root, *args):
     return result.stdout
 
 
+def research_view(tree, *, require_name=True):
+    """Use the metadata and bytes of one explicitly supplied reading view."""
+    config = tree.json('repository/config.json')
+    r.require(isinstance(config, dict), 'Repository configuration must be an object.')
+    view = SimpleNamespace(root=tree.root, home=tree.root/'repository', config=config,
+                           identity_registry=tree.json('repository/people.json'), selected_tree=tree)
+    identity.repository_name(config.get('repository'), required=require_name)
+    identity.registry(view)
+    return view
+
+
 class Tree:
     def __init__(self, root, ref):
         self.root, self.ref = Path(root).resolve(), ref
@@ -93,10 +104,4 @@ class Tree:
         self.close()
 
     def research_view(self):
-        config = self.json('repository/config.json')
-        r.require(isinstance(config, dict), 'Repository configuration must be an object.')
-        view = SimpleNamespace(root=self.root, home=self.root/'repository', config=config,
-                               identity_registry=self.json('repository/people.json'), selected_tree=self)
-        identity.repository_name(config.get('repository'), required=True)
-        identity.registry(view)
-        return view
+        return research_view(self)

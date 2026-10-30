@@ -104,11 +104,10 @@ Use these examples for Git operations, environment settings and routine maintena
 
 | Example instruction | Expected agent actions |
 | --- | --- |
-| Defer the framework upgrade and continue the current work. | Keep the installed version and continue the authorized assignment; the reminder grants no upgrade permission. |
 | Disable automatic framework version checks for this repository. | Disable this repository's daily metadata check while preserving the current framework and research work. |
 | Enable automatic framework version checks for this repository. | Enable the repository's daily check; any later upgrade still requires your explicit request. |
-| Recheck the official framework version now. | Make one fresh bounded version check, report the installed and verified available versions or an unavailable result, and preserve any previous reminder. |
-| Upgrade this repository to the official framework version you just identified. | Identify the selected version, affected local framework files and actual material migration, preserve existing research and effective Task conditions, and perform the explicitly authorized upgrade. |
+| Upgrade the framework to the latest version. | Check the installed version and the latest official version, identify the target version and its fixed source, and use the upgrade notes to handle affected files and necessary material migration while preserving local changes, research materials, personal settings and effective Task execution conditions. Update the installed version after completing the necessary checks, and report the versions before and after the upgrade, the target commit and remaining issues. |
+| Resolve merge conflicts according to the framework rules. | Inspect the conflicting content, authorship and affected materials, and resolve administrative conflicts directly within existing authority. For substantive mathematical disagreements, preserve both sides' evidence, explain the differences, and perform a scoped recheck under existing authorization or after obtaining any necessary authorization; keep corrections to another author's body text in the correcting author's own materials. Check the merged result and affected references, and report the outcome and any issues that still require your decision. |
 | Inspect the files in `.tmp` and delete those that can be safely removed. | Check what the files are for and whether they are in use. First preserve any necessary content not yet saved in the research materials, then delete files confirmed to be disposable and unused by other active sessions. |
 
 ## Writing manuscripts

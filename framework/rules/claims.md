@@ -165,12 +165,16 @@ Resolve or retain the attribution follow-up explicitly; do not invent a dependen
 
 Before promotion, check the transitive dependency chain for open obligations, incompatible assumptions, and circular reasoning.
 The recorded boundaries of accepted external theorems need not be expanded into recursive audits of their original proofs unless a relevant objection or the task requires it.
-When an input changes or fails, find its direct and indirect consumers, flag their review status, and inspect the affected implications.
+When an input changes or fails, identify necessary direct and indirect consumers of the actual selected fixed version and use, and inspect the affected implications.
+Describe the exact failed or changed input, affected scope, applicable evidence and unresolved obligations in the existing consumer, argument or review finding, without a persistent invalidation graph or duplicate account.
+A newer available input version does not replace a consumer's selected older fixed input; reuse unaffected evidence only within its actual applicable scope.
+Pending reinspection is ordinary explanation of specific unfinished work, not an aggregate C/T `review-status`, correction flag or new assessment state; each R finding retains its actual relationship, findings, inputs and review limits.
 Retain `proved` only if a recorded unaffected or adequately reviewed repaired argument still supports it; otherwise select open or refuted according to the actual exact statement and evidence.
 Do not mechanically equate failure of one proof with falsity of its conclusion.
 
 Update the responsible argument/review evidence first, then the affected material decisions, selections and dependencies, with actual Task/route consequences.
 Substantive fixed mathematics gets a new physical version; unchanged-mathematics choices append a decision.
+Substantive changes to a completed Task's contract, selected support or dependencies follow its [existing reopening or new-completion rules](tasks.md#task-records); an unresolved check alone selects no blocked state and changes no [effective E conditions](tasks.md#execution-boundary).
 Check affected material/relationships and derive needed [Claim](../../mathematics/claims/index.md), Task or strategy navigation, optionally using `scripts/render-research-navigation.py` after the relevant batch settles.
 Never change status by editing a generated row.
 Retain earlier assessments and the reason for each change in their responsible materials; the stable mathematics entrance needs no progress refresh.

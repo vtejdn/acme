@@ -14,6 +14,8 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 | `research.py framework-update-check [--force] [--offline]` | Query or reuse daily official public version metadata; safely replace the ignored current cache |
 | `research.py framework-update-notified VERSION --expected-notified-version OBSERVED` | Record a presented reminder only while its observed notification premise holds |
 | `research.py identity-bind HUMAN` | Bind the operator in this checkout's Git worktree configuration |
+| `material.py check-files [PATH ...] [--files FILES.json] [--prepared DIRECTORY] [--installed]` | Check explicitly selected public files or final prepared postimages |
+| `material.py prepare-references [PATH ...] --source DIRECTORY --map MAP.json --output DIRECTORY` | Prepare fresh Markdown files using explicit reference mappings and edits |
 | `research.py identity-add HUMAN --display-name "Actual name"` | Register a known human and supplied mappings; the empty unbound registry permits explicit first self-registration without automatic binding |
 | `research.py profile --topic execution` | Locate the actual local operator's policy files; the agent applies them |
 | `research.py profile --topic writing --author HUMAN --subfield free_probability` | Locate the actual author's writing layers |
@@ -325,6 +327,73 @@ New execution preparation remains non-running; a real execution handoff, rather 
 The helper checks the chosen E structure and exact local Task pointer without classifying history or deciding which conditions are effective.
 The agent chooses the shared-parent, exact-local-parent or complete standalone-contract disposition from the actual collaboration scope under the [Task rule](../framework/rules/tasks.md#joint-tasks-and-participation).
 The tool authenticates no human identity, certifies no preservation/deduplication or review applicability, resumes no research and claims no manuscript build.
+
+<a id="personal-import-preparation"></a>
+## Optional file checks and reference preparation
+
+These two material.py interfaces are optional preparation aids for explicitly selected public files, independently of the existing import installer.
+They do not collect Task families or manuscripts, judge mathematical duplication, choose retained homes or numbers, allocate identities, install material, create source headers or change T/E.
+Ordinary reading, editing and copying remain sufficient under the [personal-import action](../framework/agent-actions.md#import-ones-own-selected-content).
+
+Both commands use the existing --root convention and accept positional repository-relative POSIX file paths, an optional --files JSON array, or both, with no implicit whole-library selection.
+Selections must be nonempty and distinct without case conflicts.
+JSON inputs reject duplicate object keys; a JSON file argument may be `-` for stdin, with at most one stdin input per invocation.
+Selected names are actual decoded file paths, not URL-encoded aliases, parent traversals or trailing-dot/space spellings.
+The public-file interfaces exclude concrete private account, secrets, original-source-store, execution/ and .venv/ reads, including when a prepared or source base would expose those roles inside the receiving repository.
+Each explicitly selected receiving, source, prepared or output root keeps its ordinary filesystem constraints: required existing ancestors are directories, with reparse components, parent/trailing aliases and case conflicts refused.
+Repository-relative roles are classified within the actual selected root and receiving scope; an ordinary outside ancestor named .codex does not make the selected root repository metadata.
+Ordinary logical source navigation keeps its existing read-free contract.
+
+`check-files` without --prepared checks the selected actual receiving files.
+With `--prepared DIRECTORY`, every selected file must exist there under its final receiving path; a missing prepared file never falls back to an existing receiving file.
+Unselected necessary references use the receiving filesystem view named by --root, not unselected files found in the prepared tree.
+`--installed` requires --prepared, checks the actual receiving files and compares each selected file with its final prepared bytes.
+If selected bytes are missing or differ, those byte errors are reported before body checks.
+
+Canonical lowercase `.md` paths receive their applicable public navigation checks, and actual typed material entrances additionally use the existing Reader, declaration, source-unit and required-input checks.
+J native children and other non-Markdown files retain only the selected existence/byte facts; a copied `.MD` or other constituent does not acquire a Markdown-body check or automatic renaming.
+For S/T/U checks, the existing public entrance enumeration supplies necessary route or U-position context without validating unrelated bodies or consulting local holdings.
+`--context CONTEXT.json` optionally adds necessary public view names, such as the actual external registration and selected intake-operation metadata required by an acquired material.
+It does not select those bodies for independent checking or discover missing context automatically.
+When configuration or people metadata is itself explicitly selected in the prepared set, the typed reading view uses that postimage.
+
+```powershell
+python -B scripts/material.py check-files mathematics/ledger/Alice_L_A0001_v1.md --prepared .tmp/receiving
+python -B scripts/material.py check-files --files .tmp/files.json --prepared .tmp/receiving --installed
+```
+
+`prepare-references` requires --source, --map and --output and accepts only canonical lowercase `.md` owners and final owner paths.
+The map is an object containing only optional `paths`, `locators` and `edits` objects.
+`paths` maps decoded repository-relative paths once; A to B and B to C do not turn A into C.
+`locators` maps an exact `PATH` or `PATH#ANCHOR` to its final decoded path and nonempty anchor when a fragment is present, without another paths pass.
+Optional `edits` names only selected source owners and uses the existing [complete-text or expected-text edit input](../framework/material-format.md#direct-acquisition); edits apply before reference rewriting and stale expectations fail before writes.
+Moving an owner also rebases unchanged targets relative to its final location, preserving actual paths, fragments and URL encoding.
+
+```json
+{"paths": {"mathematics/ledger/Alice_L_A0003_v1.md": "mathematics/ledger/Alice_L_A0001_v1.md"}, "locators": {"mathematics/claims/Alice_C_A0008_v1.md#argument": "mathematics/claims/Alice_C_A0002_v1.md#argument"}}
+```
+
+```powershell
+python -B scripts/material.py prepare-references mathematics/ledger/Alice_L_A0003_v1.md --source SOURCE_ROOT --map .tmp/map.json --output .tmp/prepared
+```
+
+The shared span parser rewrites supported inline Markdown links and images while preserving code, comments, mathematical literal regions and unrelated prose.
+Reference-style links, HTML attributes, TeX references, bare material numbers, headings and link labels require actual separate agent edits and consumer checks; the rewritten-link count supplies no completeness or mathematical-equivalence claim.
+Check every final output location before writing, including destinations reached through an ancestor output root.
+No destination may enter a distinct external source tree; inside the receiving repository it must remain in root .tmp/ preparation storage, including the allowed same-checkout source case.
+An explicitly selected independent output directory remains available, with existing files, selected source files, case collisions, file/directory conflicts and reparse aliases refused before prepared content writes.
+Before the first content write, check the output root and every selected target's necessary directory positions, including files occupying those positions and conflicts among the selected files; genuinely absent ordinary parents remain creatable.
+The shared ordinary publisher and Batch path apply the same directory check to selected installation outputs, including own manuscript attachments without navigation links; allocation, expected-content and locator responsibilities remain with the existing callers.
+Fresh output uses the existing exclusive publisher, with ordinary storage guards, ownership-aware rollback and preservation of competing contents after a failure; it neither installs the output nor retains a map or receipt.
+These checks refuse known directory conflicts without predicting every later permission change or race; subsequent failures retain the existing recovery behavior and truthful recovery limits.
+
+The helpers read their explicit filesystem views.
+For a fixed Git source or receiving view, use the existing selected Git reader or ordinary export preparation to supply that actual view and its necessary metadata, without borrowing current worktree files, initializing Git or requiring a preliminary commit.
+Successful structural or byte checks establish neither mathematical preservation, source applicability, review sufficiency nor a manuscript build.
+The JSON result reports the operation, number of selected files, errors and applicable notices or rewritten-link/output facts, without creating a persistent report.
+Exit code 0 means the requested mechanical checks or preparation succeeded; 1 reports selected-file check errors; 2 reports invalid input, configuration or preparation failure.
+CLI syntax errors retain argparse diagnostics and exit code 2.
+No separate framework compare command is added; ordinary native diff, explicit byte comparison or Python parsing can check actually selected unchanged inputs.
 
 ## Local source retrieval and registration
 

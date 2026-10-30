@@ -1,6 +1,6 @@
 # Benutzerhandbuch
 
-[Anweisungsbeispiele](user-instructions/Anweisungsbeispiele.md) · [Beispiel einer Erklärung zur KI-Unterstützung](ai-disclosure-example.md)
+[Anweisungsbeispiele](user-instructions/Anweisungsbeispiele.md) · [Beispiel einer Erklärung zur KI-Unterstützung](ai-disclosure-example.md) · [Beispiel einer Veröffentlichungsseite](publication-example.md) · [Repository-Beispiele](https://github.com/vtejdn/acme/discussions/1)
 
 ## ACME: Autonomous and Collaborative Mathematical Exploration
 
@@ -171,7 +171,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.7.0.
+Die aktuelle Version des Rahmenwerks ist 0.7.1.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.

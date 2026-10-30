@@ -597,7 +597,9 @@ Preserve existing acquisition facts, original provenance and fixed historical co
    Verify the version and locator when citing a specific result; compare relevant statements and hypotheses before transferring an audit or changing its locators.
    Do not label an acquisition as a statement check or proof review.
 6. Prepare or reuse [searchable contents](#searchable-contents) when the selected source supplies a contents list, including user-supplied future material.
-   Link its exact artifact account and source; state any unfinished transcription separately from acquisition.
+   Link the transcription's exact logical native source or verified primary contents excerpt, retaining its actual work/edition, source locations and coverage.
+   An optional local artifact account may link to the shared transcription, which must not link back to the private account or depend on local possession; public lookup instructions use inline code.
+   State any unfinished transcription separately from acquisition.
 7. Check that relative links resolve to the intended files.
    When changing keys or replacing versions, maintain affected contents filenames/edition links alongside stale citations, broken links, and theorem numbers or page references that no longer match.
 

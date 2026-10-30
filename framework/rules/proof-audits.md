@@ -211,8 +211,10 @@ Check the actual changed interfaces and derive navigation when needed, optionall
 Never correct status only in a generated row; record the responsible material decision first.
 
 Update the affected Task contracts and strategy records as needed.
-Mark affected assessments as requiring recheck until the relevant dependencies and interfaces have been resolved.
-A changed contract of a previously completed Task requires an explicit reopening decision or a new completion decision with an applicable review of that exact changed contract and selected support/dependencies.
+Describe unresolved dependency and interface checks as precise outstanding obligations in the affected material or review finding, retaining the actual failed input, use and scope.
+This ordinary explanation creates no aggregate `review-status`, correction flag or new assessment state; maintain the real C assessment under the [dependency correction rule](claims.md#dependencies-and-corrections) and the Task's actual decision and evidence duties.
+A substantive change to the contract, selected support or dependencies of a previously completed Task requires an explicit reopening decision or a new completion decision with an applicable review of that exact contract and selected support/dependencies.
+An outstanding check alone neither selects a blocked Task nor resumes execution or resets effective E limits.
 Adopt the actual fixed R finding through the decision's `review` relation under the [Task lifecycle rule](tasks.md#task-records) and [review-binding contract](../material-format.md#review-bindings-for-new-accepted-decisions).
 A newly written review alone does not select completion, and T has no overall `review-status` field.
 Preserve the earlier completion decision and its true checked scope.
