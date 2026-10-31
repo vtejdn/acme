@@ -14,12 +14,13 @@ require = documents.require
 
 def _selected_label(review, label, finding):
     """Locate only an explicit selected link before validating its whole cell."""
-    for _start, _end, href in links.markdown_link_spans(label):
+    parsed = documents.SIMPLE_LINK.match(label.strip())
+    if parsed is not None:
         try:
-            target = links.destination(review.path, href)
+            target = links.destination(review.path, parsed[2])
         except ValueError:
             # An invalid unrelated path supplies no selected finding locator.
-            continue
+            return False
         if target == (finding.path, finding.anchor):
             return True
     return False

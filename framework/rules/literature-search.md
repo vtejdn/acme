@@ -2,16 +2,16 @@
 
 ## Autonomous Literature Search
 
-Shared Git research follows the [collaboration update duty](tasks.md#shared-git-research) in every actual exploration round, independently of the conditional external-search triggers below and without repeating an already adequate literature search.
-For local source discovery, follow the [common source-preparation order](literature.md#source-preparation), checking registered editions and contents before relevant unregistered candidates and necessary external acquisition.
-The [edition-specific contents routes](literature.md#searchable-contents) locate registered work; a missing account or contents match does not rule out a useful local unregistered edition.
-Follow the actual retained holding, including a complete contribution in a volume or original HTML in its work-key group, with the recorded edition/coverage and resource limitations.
+Shared Git research follows the [common work-start update](workflow.md#shared-repository-work-starts) in every actual exploration round, independently of the conditional external-search triggers below and without repeating an already adequate literature search.
+For local source discovery, follow the [common source-preparation order](literature.md#source-preparation), reusing adequate bibliography, edition-specific contents, author source notes and U/C/L, then inspecting relevant local candidates when further reading is needed before necessary external acquisition.
+The [edition-specific contents routes](literature.md#searchable-contents) locate actual works and passages; missing source notes or a contents match do not rule out a useful local edition.
+Use the actual applicable source, including a complete contribution in a volume or original HTML in its work-key group, retaining its edition, inspected extent and resource limitations.
 Do not infer a missing standalone PDF for those sources.
 A match locates a source passage; no match establishes no theorem absence.
 Existing reviewed inputs remain first and progressive reading remains available.
 
 Local literature discovery and review follow the [progressive reading policy](literature.md#progressive-reading).
-At task startup, inspect the registry and relevant audit coverage, not every source in full.
+At Task startup, reuse relevant source notes and adequate inspections at the actual question's scope, without a local-original availability check or whole-source reading by default.
 Search unaudited local material when existing reviewed inputs do not answer the current question.
 Before relying on a result, verify its exact statement, version, hypotheses, and applicability.
 Distinguish [accepted external theorems from unresolved dependencies](literature-audits.md#accepted-external-inputs), and apply the detailed proof-review triggers where needed.
@@ -71,7 +71,7 @@ Record only actions actually performed.
 Put source-specific findings in the relevant `mathematics/audits/literature/` record; put substantive research-search outcomes in the relevant `mathematics/ledger/` entry or module.
 Route records link the evidence and explain its effect on the next decision.
 Follow the [acquisition norm and failed-acquisition exceptions](literature.md#literature-acquisition); reuse adequate local copies and record access failures accurately.
-Original bytes and acquisition/holding facts remain machine-local under the [source-storage rule](literature.md#local-pdf-storage), using `mathematics/literature/registry.md` only when actually registered; shared findings retain their inspected editions and limits independently.
+Original bytes remain machine-local under the [source-storage rule](literature.md#local-pdf-storage); useful author edition/source explanations and shared findings retain their actual scope without a registry, holding ledger or fingerprint.
 A compact section in an existing record is sufficient; no separate search-log directory is required.
 
 Discovery, successful download, statement checking, and proof review are distinct activities.

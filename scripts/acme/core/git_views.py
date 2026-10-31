@@ -33,12 +33,11 @@ class Tree:
         self.batch = None
         if ref == 'WORKTREE':
             names = git(root, 'ls-files', '--cached', '--others', '--exclude-standard', '-z')
-            # Exclude local notes, the account and source stores before shape
+            # Exclude local notes and source stores before shape
             # queries, even while indexed. Explicit profile selection stays.
             self.names = set()
             for name in names.decode().split('\0'):
-                if (not name or paths.local_runtime(name) or paths.in_pdf_store(name)
-                        or paths.private_file(name) and Path(name).parts[0].rstrip(' .').casefold() != 'profiles'):
+                if not name or paths.local_runtime(name) or paths.in_pdf_store(name):
                     continue
                 try:
                     mode = (self.root / name).stat().st_mode
@@ -83,6 +82,24 @@ class Tree:
         if path not in self.json_cache:
             self.json_cache[path] = json.loads(self.bytes(path))
         return self.json_cache[path]
+
+    def header(self, path):
+        """Read a selected sibling's header without requesting its whole body."""
+        from ..materials import documents, discovery
+        r.require(path in self.names, 'Required file is absent from the selected Git view: ' + path)
+        r.require(self.modes.get(path) not in {'120000', '160000'}, 'Selected evidence must be an ordinary file: ' + path)
+        if self.ref == 'WORKTREE':
+            return discovery.unit_header(self.root, path)
+        process = subprocess.Popen(['git', 'cat-file', 'blob', self.object_ids[path]], cwd=self.root,
+                                   stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+        try:
+            return documents.header_stream(process.stdout)
+        finally:
+            process.stdout.close()
+            try:
+                process.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                process.kill(); process.wait()
 
     def close(self):
         if self.batch is not None:

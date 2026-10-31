@@ -8,7 +8,7 @@
 | [reviews/](proof-audits.md) | Review project claims, supporting computations, and completion of the original goal; record findings and corrective actions. |
 
 Original source artifacts remain in [mathematics/literature/](../../mathematics/literature/readme.md).
-Canonical bibliographic fields belong to references.bib and acquisition/artifact facts to registry.md.
+Canonical bibliographic fields belong to references.bib, useful author edition/source explanations to the source README, and inspected mathematics and limits to U or adequate C/L.
 C owns its statement, selected assessment and actual argument, which may be in another applicable C; T owns its contract and lifecycle.
 All formal project-review findings belong to fixed R for every actual agent relationship, while ordinary checks may remain with the C argument or L discussion.
 U owns source inspection, not an adopted project-proof review.

@@ -291,7 +291,7 @@ def _append_decision(repo, path, decision, expected_current, select):
             'Decision input cannot replace material sections.')
     sentinel = '## Material write boundary\n'
     require(documents.links.declaration_markdown(decision + '\n\n' + sentinel).endswith(sentinel),
-            'Close decision literal regions and comments before appending; preserve following material prose.')
+            'Close decision block examples before appending; preserve following material prose.')
     name = 'Assessment history' if doc.identity.kind == 'C' else 'Lifecycle and completion'
     section = _section(doc.text, name)
     if section is None:

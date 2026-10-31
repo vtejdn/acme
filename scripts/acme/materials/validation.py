@@ -12,7 +12,7 @@ def read_material(repo, path, material_data=None):
 
 
 def visible_markdown(text):
-    """Compatibility entry point for the shared Markdown block parser."""
+    """Visible content from the shared bounded declaration regions."""
     from ..core import links as research_links
     return research_links.visible_markdown(text)
 
@@ -72,7 +72,7 @@ def _navigation_path(root, owner, path, planned):
 
 
 def validate_navigation_targets(root, owner, locators, read, *, planned=()):
-    """Validate body links and return their read-free publication guard."""
+    """Check explicitly supplied navigation locators and return their guard."""
     from ..core import links
     locators, directory_anchors = tuple(locators), set()
     for item in locators:
@@ -98,4 +98,3 @@ def validate_navigation_targets(root, owner, locators, read, *, planned=()):
             if path in directory_anchors and path not in planned:
                 r.require(target is not None and target[1], 'Selected navigation target changed from a directory: ' + path)
     return recheck
-

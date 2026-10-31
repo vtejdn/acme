@@ -8,6 +8,11 @@ Commands are optional writers and scoped factual checks of supplied inputs, not 
 
 ## Machine-readable declarations
 
+Current selectors, decision relationships, Inputs references and review target fields use simple single-line `[Plain label](canonical/path.md#anchor)` links.
+Use ordinary text labels and necessary URL encoding in exact targets, with applicable explicit acme-source locators supported.
+Keep images, optional titles, multiline labels and richer explanations in suitable free prose; they supply no additional machine-read input or finding.
+The agent adapts actually needed old fields proportionately, preserving their meaning, actual scope and fixed evidence without normalizing the whole library.
+
 Designated input headings and table headers, separators and rows must be actual Markdown structures outside examples.
 Table headers and delimiter rows must occupy adjacent eligible physical lines; data rows belong to that same uninterrupted pipe-table block.
 A blank line, prose, heading or other non-row structure ends the block, so a later orphan row supplies no field, relationship or binding to it.
@@ -15,7 +20,10 @@ Recognize complete table structure before decoding cells, and apply an explicit 
 An isolated pipe-starting orphan or explanatory fragment supplies no declaration, regardless of whether it has a closing pipe.
 Complete C/T field and relation tables can be separate blocks with ordinary spacing or explanation between them.
 Sites requiring one table reject competing complete tables rather than merging them; missing required declarations retain their ordinary errors.
-Fenced or indented code, backtick spans (including wrapped spans), HTML comments and the bounded HTML literal regions `pre`, `code`, `script`, `style` and `textarea` supply no declarations.
+Fenced or indented examples and line-start backtick, comment and bounded HTML literal containers supply no declarations at their block positions.
+Use those existing block containers for examples of declaration headings or tables.
+Unselected prose, including quoted link titles, supplies no inline state to a later declaration.
+Inline code and comments in an actual contiguous table block or explicitly selected Current field are interpreted only within that responsible content.
 A real section heading does not make an enclosed example table authoritative.
 Examples may remain as explanation without a cleanup or file-level rejection requirement.
 
@@ -25,11 +33,13 @@ Conversely, an HTML opener inside genuine code or a comment remains literal.
 The bounded reader follows these [HTML block boundaries](https://spec.commonmark.org/0.31.2/#html-blocks) without adding a general HTML renderer.
 Structural masks and semantic cell decoding derive from the same original source spans, before comments are removed.
 
-This shared boundary applies to C/T decision histories, Review bindings and Review relationships, route and feedback associations, imported judgment tables, source inspection facts and bibliography tables used for source-key maintenance.
-Registry holding/edition fields use the same literal masks and contiguous Field/Value tables at the selected account scope.
+This shared boundary applies to C/T decision histories, Review bindings and Review relationships, route and feedback associations, imported judgment tables and bibliography tables used for source-key maintenance.
 Once real table delimiters are identified, cells retain their visible inline code and mathematical content, escaped pipes and meaningful whitespace; invisible HTML comments do not become scope text.
 Offset-based binding lookup uses the same semantic row under LF or CRLF.
-Heading anchors retain their existing rules.
+Responsible section reading accepts LF and CRLF in the actual source, retaining the original text, line counts and offsets for the selected operation.
+Exact anchors use eligible heading lines or complete standalone `<a id="anchor"></a>` declarations outside block examples.
+An unfinished opening or closing tag, or a fragment sharing its line with other prose, supplies no explicit anchor.
+Inline heading contents are interpreted only on that heading line, preserving code text in its slug without importing preceding prose state.
 
 Example-only bindings cannot cover a new accepting decision, and an example-only independent-review label cannot establish independence.
 Missing required coverage identifies the selected finding.
@@ -47,7 +57,7 @@ Externally acquired C/T/R/L/J use explicitly chosen receiving classification, re
 
 Rolling S and mutable D omit the version suffix.
 D is a working address stable during current use and reusable after retirement, once useful content is fixed and actual consumers repaired.
-A reused D inherits no earlier statement, scope, review or authority; fixed C/T/R/L/U/J and continuing S identities are not recyclable.
+A reused D inherits no earlier statement, scope, review or authority; fixed C/T/R/L/J and continuing S identities, and stable rolling U positions are not recyclable.
 Every J computation has a numbered directory whose `readme.md` and native children share its identity.
 Do not allocate a new identity to a computation's output file.
 
@@ -75,7 +85,11 @@ Fixed source units use the source-key identity below; definitions retain their s
 
 A lawful same-human local C/T/R/L revision retains its external identity and source header while identifying the actual acquired receiving input under the [record rule](rules/records.md#acquired-inputs-and-local-revisions).
 For C/T/R/L alike, use the physical revision's own ordinary `## Inputs` section containing an explicit Markdown link to the actual earlier fixed receiving input in the same family, any necessary anchor and prose explaining its adopted scope.
-Other ordinary support links may share that section; the mechanical revision-input reader selects only explicitly linked earlier receiving versions in the same family.
+Begin an input line, optionally a list item, with its simple target link.
+The agent explains the actual retained input, additions and use limits after that reference in ordinary sentences, continuing into further lines or paragraphs as needed.
+The bounded reader returns only path and anchor for explicitly selected earlier receiving versions in the same family; other prose, examples and decorations supply no revision input.
+A link caption is navigation text, and the tool neither reports it as scope nor extracts or certifies the adopted-scope explanation.
+Repeated references to the same exact locator may share one returned input row; the agent retains their distinct actual uses and limitations in the material.
 The current C/T selector chooses a decision independently of those physical input facts; changing it neither replaces nor removes the revision's Inputs.
 Support/dependency relations keep the selected decision's actual mathematical adoption and review obligations; an Inputs reference alone adds no selected support, review coverage or source verdict.
 The designated input's source_repository and source_material must match the retained revision header exactly; matching family membership does not choose an input or permit a different original source version.
@@ -97,10 +111,11 @@ No Inputs declaration is required merely for an unrelated local original or an a
 `repository/config.json` contains one compact `material_next` object of positive next unissued integers under the [allocation rule](rules/identity.md#allocation-and-concurrency).
 A local C/T/R/L/J or continuing S key is `Author_Kind_Line`, such as `Alice_C_F`; a received C/T/R/L/J key is `authorN_repoN_Kind_Line`, such as `author3_repo2_R_G`.
 These components identify the actual registered receiving author, original-repository correspondence, material kind and research line, not the immediate transport repository or source serial.
-A U key is `U/SourceKey`, such as `U/Src26`, and owns that canonical citation key's unit positions across authors and origin prefixes.
+A U key is `U/SourceKey/Author`, such as `U/Src26/Yin`, with a necessary origin prefix included in the author namespace, for example `U/Src26/Bob_repo1`.
+Each source/author namespace starts at 001 independently; Yin_U001.md and Ma_U001.md may coexist without consuming each other's numbers or sharing an allocation bound.
 D has no permanent entry because its retired working address can be reused after retention and consumer repair.
 
-For example, `{"material_next": {"Alice_C_F": 8, "author3_repo2_R_G": 12, "U/Src26": 4}}` records only the next unissued positions in those illustrative namespaces.
+For example, `{"material_next": {"Alice_C_F": 8, "author3_repo2_R_G": 12, "U/Src26/Yin": 4}}` records only the next unissued positions in those illustrative namespaces.
 The official blank starting repository uses `"material_next": {}`; copying an existing research repository preserves its actual issued-number bounds.
 Initialize an existing affected namespace from an agent-confirmed used-number upper bound before its first relevant allocation or retirement; surviving filenames alone cannot establish that no higher number was previously issued.
 Under the existing short mutation lock, issue or explicitly install the new position and advance its bound without decreasing it after deletion or failure.
@@ -108,67 +123,42 @@ A fresh receiving number below that bound is unavailable even when its path is e
 An already established original family retains its receiving number across later physical versions, and an ordinary next vN revision allocates no new family.
 Direct authoring maintains the same state; no per-retirement row, issue date, stub, history reconstruction or migration registry is introduced.
 
-## Fixed source-unit inputs
+<a id="fixed-source-unit-inputs"></a>
+## Rolling source-unit inputs
 
-A reusable source-unit file uses `mathematics/audits/literature/<SourceKey>/<Author>_U001_v1.md`; an imported original uses `<Author>_repoN_U001_v1.md` in the same source-key directory.
-`SourceKey-U001` and its lowercase `sourcekey-u001` anchor retain the existing source-unit identity.
-The number has at least three digits and grows numerically within that source's existing unit sequence.
-It is not a research line, a Task number or a new per-author allocation sequence.
-General material creation does not allocate U numbers.
-Coordinate actual source-unit identities through the existing source audit, then author the explicit fixed file.
+A local U uses mathematics/audits/literature/SourceKey/Author_U001.md, and an acquired original uses Author_repoN_U001.md with its necessary source distinction.
+U has no physical _vN, current pointer or version inventory; other kinds retain their applicable fixed-version contracts.
+Numbers have at least three digits and grow independently within each source/author namespace under the allocation state above.
+The full path identifies the source key, human author, necessary original-source distinction and number; SourceKey-U001 alone is not unique across authors.
+Each file owns its lowercase sourcekey-u001 anchor, so different authors' files may use equal file-local anchors.
+General material creation does not allocate U; ordinary authoring, import and intake maintain the actual selected author namespace and nonregressing bound.
 
-The same short author/provenance header applies.
-An imported `source_material` retains the exact original source key, unit number, author and physical material version, with explicitly translated original-repository correspondence through later transfers.
-The recipient's canonical bibliography key and free local unit position may differ from that original path; its unit anchor follows the actual local position.
-One position is the receiving source key and numeric unit, independent of author or origin prefix.
-Different original families cannot share that position; physical versions of the same registered original repoN/family retain their established local number.
-The original human still agrees with `source_material`; its actual input version remains provenance separately from the local prepared version.
-The existing intake operation records the exact original/local correspondence, without replacing the original identity or adding a separate mapping registry.
-Each file owns one actual unit anchor and one concise section:
+Keep one scalar author and applicable original-source header as above.
+An acquired source_material is the exact original path, including a genuine old source suffix when present; it is provenance, not a second local naming contract or a legacy U reader.
+The actual original author and necessary source correspondence remain true; the receiving source key and number can differ without changing the original facts.
+Keep source repository, fixed source revision, path, author, obtained scope and receiving correspondence once in the existing intake operation.
+A later selected update may replace the same current U under explicit original correspondence and exact expected receiving text, preserving earlier operations as facts about their actual acquired scope.
+No U snapshot history is created.
 
-```markdown
-## Source and inspection
-| Field | Value |
-| --- | --- |
-| source-version | Exact paper/book edition or artifact version actually used. |
-| source-locator | Exact theorem, section and printed/PDF page scope. |
-| inspection | Actual statement/hypothesis/proof checks and unexamined limits. |
-```
+The body owns precise source mathematics, hypotheses, definitions, conventions, adaptations, actual inspected edition/passages and true checking limits.
+Link an explicit still-applicable edition explanation in the source README, preserving a previously used edition when another author or current link changes.
+Use ordinary meaningful prose without a mandatory Source and inspection table, enumerated coverage state or tool-derived inspection summary.
+Show/check/discovery expose the actual current unit and full author/path identity, without certifying mathematical sufficiency, inspection truth or original possession.
+A C/T support or dependency may select the exact U file and unit anchor, with its precise external statement, hypotheses, edition and adopted range established by the consuming argument.
+U is neither a C/T argument nor an adopted R review, and its current whole body does not freeze historical review inputs.
+Maintain affected downstream references together; a pure locator repair creates no new version, decision, date or review and may be shared maintenance under actual authority.
 
-These three nonempty facts describe performed inspection; parsing does not verify their mathematical truth or turn a checked statement into a proof audit.
-The unit body owns the statement, hypotheses, definitions, adaptations and limits.
-Material `vN` and the inspected external source version are distinct.
-Changed substantive content gets a new fixed material version; source key or layout maintenance retains the ordinary coordinated-reference obligations.
+references.bib owns canonical bibliographic facts; source README may contain concise author-specific original links, editions, page correspondences and useful limitations, without an account, required field set or empty author section.
+The author is responsible for cross-machine validity of their links, with authorized agent assistance and private setup at its existing home.
+Simple source retention creates no U, per-file registration or source-note obligation.
+There is no literature registry, holding/Artifact/Resource account, fingerprint or daily availability check.
+Logical original navigation checks its lexical/path boundary without mount resolution, existence, byte or native-anchor access.
 
-For ordinary local source preparation, the artifact's [registry source association](rules/literature.md#artifact-source-association) owns selected/obtained addresses, edition facts, fingerprints computed from actual locally obtained bytes and necessary current limitations.
-The agent establishes the association under the [common responsibility](rules/workflow.md#agent-and-tool-responsibilities).
-Tools report actual fetch and byte facts; U prose, bibliography and URL spelling do not select a source or produce a work/edition verdict.
-Inspect an unestablished response before local-file registration, reusing applicable prior judgments.
-
-Explicit onward reception preserves complete necessary selected U content, original provenance, inspected edition/passages and inspection limits, with the chosen bibliography correspondence and receiving unit position/text.
-Before finalizing this reception, complete the [original-acquisition procedure](rules/literature.md#acquisition-before-u-reception) for the actual work and inspected edition, reusing an adequate local original or obtaining, validating and registering the receiver's own source.
-On an actual failure, retain the truthful source account and directly report the work/edition, address when known, failure, availability and receiving limits to the human author before completing the authorized U receipt.
-Authored U intake carries no original publications, private source accounts or literature fingerprints and establishes no receiver-local possession.
-When original text is needed, use adequate receiver-local evidence or ordinary authorized local source preparation.
-
-The [source-input rule](rules/literature.md#artifact-source-association) requires an explicitly supplied file for byte reuse; a bibliography key or missing source cannot select the receiver's file or replace its account.
-Local registration of PDF, HTML and resources reports separate truthful obtained/unavailable results; these private sources are outside authored-material intake and its required material/J inputs.
-Current literal fields alone declare addresses/edition: old source prose stays undeclared, without implying unavailable bytes or being rewritten during reading.
-
-C/T `support` or `dependency` rows may select the exact U file and its unit anchor with their actual applicability scope.
-A U file is not a C/T argument, an adopted R review or an independently selectable lifecycle decision.
-`show`, `check` and `discover --kind U` expose its title and inspection scope without assigning a theorem status.
-The mechanical position check reads sibling identity headers within the same source key; it does not review their mathematical bodies.
-Ordinary prose links, adjacent units and cited PDFs do not expand mathematical checking or acquisition beyond the selected unit.
-
-U is independently selectable by direct intake.
-Retain original source, exact revision/unit, complete necessary selected content and actual inspection facts under the [common adaptation rule](rules/records.md#receiving-and-adapting-selected-content).
-The agent chooses the existing/new bibliography target and receiving unit position, writes complete necessary U content and provenance, and inspects its actual declarations and references; reception does not endorse mathematical statements.
-Prepared-text and mapping payloads are optional helper inputs rather than prerequisites for receiving that content.
-Choosing that helper retains the same prior acquisition and failure-reporting duty, without adding a per-U receipt or importing private source accounts.
-Intake reads no sender-private PDF, HTML, resources or registry and creates no receiving Artifact account, fingerprint, availability assertion or holding.
-Canonical and typesetting bibliography fields follow the [bibliographic content boundary](rules/literature.md#bibliography-content); shared U owns inspected work/edition, passages and limits, while the local registry owns machine-local acquisition, artifact and holding facts.
-Work metadata does not authorize retrieving a different edition or rewriting the U merely to obtain a PDF.
+Actual personal import and external intake complete necessary selected original preparation to reuse, acquisition or a truthful failed result before delivery and report failure directly to the human under the [literature rule](rules/literature.md#acquisition-before-u-reception).
+The agent determines the scope and sufficient outcome; the optional helpers neither fetch originals nor require a confirmation field or receipt.
+Same-repository reuse and pure upgrade organization prepare an original only when further source reading is actually necessary.
+Useful incoming U may be retained with real limitations after failed acquisition, without transferred authorship, invented inspection or an availability assertion.
+Authored-material intake carries no sender-private originals or local source accounts.
 
 ## Claim and Task decisions
 
@@ -378,8 +368,8 @@ Explicit whole-material discovery and full-navigation regeneration retain their 
 Source-assessed status remains attributed to its original author and exact acquired scope.
 A missing unacquired original is an explicit source locator; a missing previously acquired local input is an error.
 Explicit field, reference and source readers use the actual chosen files or Git view, without local holding enrichment or private-source byte checks outside their stated scope.
-Public U display includes its declared source inspection and necessary acquisition provenance, without source_holding or notices derived from local holdings.
-Optional [local source checks](rules/literature.md#selected-source-checks) use the explicitly chosen current local accounts and physical files, without registry INDEX/commit replay or shared-material enrichment.
+Public U display exposes its actual current text and necessary acquisition provenance, without a machine-derived inspection summary or original-availability notices.
+Optional [local source checks](rules/literature.md#selected-source-checks) inspect only explicitly chosen physical originals, without a registry, routine availability query or shared-material enrichment.
 See [commands](../scripts/readme.md) and [operation-level checks](rules/identity.md#explicit-material-checks).
 
 ## Route and feedback tables
@@ -460,8 +450,8 @@ Those facts must identify the same original J; an earlier file is not relabelled
 The original path stays safely within that original J group and may differ from both transport and receiving filenames.
 Imported C/T/R/L/J headers contain receiving `author`, `source_repository` and a truthful single-origin `source_material` when applicable; combined units retain their distinct sources in the same operation.
 No UID field or new identity registry is part of the contract.
-An unselected sender-local `acme-source://repoN/...` address needs the supplied repository mapping to become a receiving locator.
-Without that mapping, preserve its exact raw address as unacquired source-context text qualified by the known sender and fixed sending revision.
+The agent qualifies an actually used sender-local `acme-source://repoN/...` address through the true source/receiving repository correspondence before preparing its final use.
+When correspondence remains unknown, retain necessary raw source context qualified by the known sender and fixed sending revision, without claiming a receiving locator.
 
 ### Selected objects
 
@@ -480,21 +470,19 @@ Only that concrete ambiguity needs a record choice; timestamps at any precision,
 A U supplies `bibliography: {"existing_key": "KEY"}` or `{"new_work": true}` with optional `chosen_key`.
 The local literature store is excluded from intake; bibliography and source inspection are copied without opening the sender's PDF, HTML, resources or registry.
 The retired `source_artifacts`, `source_bibliography`, `holding`, per-U `source_updates` and operation-level `--source-updates`/API `source_updates` inputs fail before private-store access or receiving publication.
-Sender-local document links become explicit unacquired original-local references, with no receiver document, fixed-Git source-file claim or holding adoption.
+The agent preserves useful sender-local reference context without claiming receiver documents, fixed-Git file bytes or local holdings.
 Within the optional helper, prepare bibliography, selected authored materials and the operation before the short lock, then recheck captured inputs and U positions and publish together.
-Every U selection also supplies unit with its chosen positive integer number and optional positive local version; its prepared text/edits may be supplied through unit or the common prepared input.
-The number is the chosen receiving position within the canonical bibliography key across all authors/origin prefixes; retain an established original repoN/family's number for later physical versions.
+Every U selection supplies unit with its chosen positive integer number and optional prepared text/edits, through unit or the common prepared input.
+A replacement also supplies unit.expected as the exact occupied receiving text and retains the established original correspondence; no U version parameter exists.
+The number belongs to the receiving source-key/author namespace with necessary original-source distinction; retain the established original unit's position through later selected updates.
 `edits` is an ordered list of disjoint `{ "start": 0, "end": 1, "expected": "old", "replacement": "new" }` spans in the selected original's UTF-8 decoded text, using zero-based character offsets and retaining its original newlines.
-The agent identifies the actual local anchor declaration and any other declarations or references needing localization; empty `edits` explicitly leaves the supplied text unchanged before exact locator rewriting.
-Each span must match `expected`; stale edits fail without broad replacement.
-Alternatively, `text` supplies the complete agent-prepared local Markdown, including its header, for a mixed document.
-The tool then installs the original provenance header and applies exact selected/acquired or supplied locator mappings; it does not substitute source keys or anchors throughout the body.
-Those mappings apply to sending-source references or explicit source locators, without replacing ordinary prepared links' final receiving objects or anchors.
-An exact path/fragment mapping uses its supplied destination fragment; a whole-file correspondence changes the path while retaining the incoming fragment.
-Supplied exact mappings precede generated same-operation exact and whole-file destinations; contradictory explicit mappings fail before publication.
-After applicable source-number translation, an explicit source locator also uses its supplied whole-file correspondence when no exact fragment mapping applies, preserving its incoming fragment.
-Required resulting locators, including same-operation targets, are checked against the actual prepared postimage for existence and anchor uniqueness before publication.
-External fixed locators, incidental tokens and literal examples remain intact unless precisely selected for an edit or exact mapping.
+The agent identifies actual local anchor declarations and references requiring maintenance; empty edits leave the selected text unchanged.
+Each span must match expected text; stale edits fail before publication.
+Alternatively, text supplies complete final local Markdown with its actual header and receiving declarations.
+The tool installs the necessary original provenance header and retains the supplied body, including its newlines, without discovering, mapping or rewriting prose references.
+If the supplied header already matches the actual receiving identity and original, the complete text is retained.
+Explicit address translation is separate from publication, and its result is used only in agent-designated edits.
+Declared required inputs are checked against the actual selected postimage; ordinary prose does not add existence, anchor or publication guards.
 An occupied prepared position fails for fresh preparation; intake never silently renumbers the prepared text.
 The [intake interface](../scripts/readme.md#cross-repository-intake) selects indispensable tracked J files and any explicit group refresh.
 An occupied J refresh keeps the same registered original repository and J path/family, independently of the immediate transport repository.
@@ -503,24 +491,11 @@ J intake selects only actual fixed-commit programs, necessary inputs and explana
 Local outputs are not intake files or mapping targets; output_attachments, including an empty array, is unsupported input.
 
 Acquired mathematics uses its actual receiving typed home and complete necessary selected content under the common adaptation rule.
-Only supplied explicit mappings and same-operation selected input correspondences resolve locally.
-Unselected background references never trigger receiving acquisition-history lookup or an unselected C body/decision read.
-An unselected relative background reference to an actual tracked file in the selected sending Git tree uses `acme-source://repoN/FULL_COMMIT/sender/path#anchor` using the receiving registered sender without opening the linked material or tracing its upstream original.
-An absent relative target keeps source-only context, its actual source path/anchor and the containing material's reference revision, without an active fixed-commit file locator or invented bytes, generation or availability.
-The agent prepares necessary adaptation or input correspondence from actual content; a concrete unsupported transformation is reported rather than published as a false source claim.
-Ordinary file operations suffice, without a mandatory prepared payload, historical-layout dispatch or another current output root.
-Translate an already explicit foreign-number locator through prepared correspondence only; an unmapped locator becomes qualified raw source context, without an active receiving-number link.
-Unresolved references are reported as unmapped, rather than assumed necessary missing mathematics.
-For a sending output reference, retain ordinary visible text instead of a receiving local link, using its actual label and reference context:
-
-```text
-Required result (source-only output; not acquired; reference in sending repository named `Source` at material revision `FULL_COMMIT`; source path `mathematics/computations/outputs/Source_J_F0001/result.json#anchor`)
-```
-
-Its known reference context and anchor survive onward acquisition; no local same-named output or tracked-program revision supplies a binding.
-The program's commit supplies reference context, not output bytes, generation or availability; normal nonreceipt of output creates no unavailable attachment or incomplete outcome.
-The agent preserves actual missing-input limits at the consumer.
-Original provenance never permits binding a similarly named file.
+The agent prepares needed references, source-only explanations and actual missing-input limits from the selected content and true original context.
+A source URI can retain an actual registered repository, fixed commit, original path and anchor; an ignored or absent source file gains no fixed-byte or availability claim from the containing material's revision.
+Private originals and sending outputs are not received through background references or bound to a similarly named local file.
+The helper does not scan or rewrite these references and creates no unmapped-reference list or completeness notice.
+Ordinary authorized file operations remain sufficient, without a mandatory prepared payload or per-link account.
 Onward transfer of a selected object preserves its original repository, source path/revision and inspection, even when the recipient has another bibliography key or U001 allocation.
 
 One `intake/<initiator>/*.json` operation records the actual recorder, timestamp, instruction, original/transport provenance, selected scope, local locators and outcome.
@@ -587,15 +562,11 @@ Acquisition alone supplies no recipient review verdict; corrections and limitati
 This section specifies the optional intake helper's prepared-text interface; the agent may instead complete receiving through ordinary file operations under the [common adaptation rule](rules/records.md#receiving-and-adapting-selected-content).
 An unsupported old filename, layout or actual input is that helper's interface limit, not a universal receiving prohibition; an adequate ordinary path remains available when necessary source facts and a conforming local result can be established, without weakening this interface or adding historical parser branches.
 For any eligible textual selection passed to that helper, prepared supplies either complete final local text as {"text": "..."} or precise expected-text edits under the existing links.edit_text contract.
-Prepared text uses final receiving local links and anchors; exact acme-source locators may still use the explicit mapping input.
-Ordinary prepared local links resolve relative to the final receiving document and retain its selected objects and anchors, without sending-source mapping lookup or same-operation source-path substitution.
-This includes receiver-local navigation to the logical literature root, work groups and named files, with lexical path checks without resolving the source mount or checking existence, private bytes or native fragments.
-Keeping such a reference asserts no local holding, availability or source inspection; actual sending-private links retain their source-only context and are not acquired.
-Ordinary body directory links retain their generic path and existence checks without reading directories as bytes.
-The initial check and publication guard also recognize parents necessarily created by the actual selected pending files, without requiring directory entries, placeholders or preparatory mkdir.
-Both checks refuse a file occupying any necessary ancestor directory position inside the receiving repository before allocation or material/operation writes, while absent ancestors remain available for the selected files to create.
-An actual directory keeps that role before Markdown file-anchor checks, including when its name ends in `.md`; a directory fragment is navigation rather than certified section evidence.
-Only Markdown targets use Markdown-anchor validation; preserving another file's native fragment certifies neither that fragment nor its content.
+Prepared text is final receiving text, with actual local links, anchors and source limitations chosen by the agent.
+Translate a necessary explicit source address through real correspondence before including its result in the given text or edit.
+Publication preserves that body without another full-text scan, relative-address rebasing or source-only conversion.
+Logical-original links make no availability or inspection assertion; an actual explicitly chosen navigation target retains its lexical boundary and relevant access checks.
+The publisher checks the actual selected file and directory positions, case collisions, expected contents, locks and recovery conditions.
 Declared mathematical inputs and review targets retain their separate strict material, file, physical-version and coverage requirements.
 Without prepared, the existing whole-text path remains an explicit choice, without creating a whole-copy obligation.
 The local object supplies positive number and may choose kind, line, physical version and local anchor appropriate to the content; source identity and selected input anchor remain unchanged provenance.
@@ -658,8 +629,9 @@ Repeated nodes and cycles are processed once, and unselected entries are not rea
 The helper processes those prepared choices; it neither performs the two-pass scope judgment nor discovers all family versions, manuscripts or mathematical duplicates.
 Its source reader uses the explicitly supplied local files; a human-selected fixed Git view needs an adequate ordinary selected-view path rather than silent substitution with the current source worktree.
 An own entry supplies source and local repository-relative file paths and optional prepared final text or exact edits.
-The helper's Markdown body pass uses the receiving path's canonical lowercase `.md` text-input convention; copying another constituent as bytes does not claim its body was checked as Markdown.
-For an own maintained guide requiring that contract, the agent prepares the actual `.md` destination, corrects its contents and necessary direct links, and preserves the real source path and fixed evidence without an automatic renamer or case-compatibility reader.
+Receiving paths ending in canonical lowercase `.md` require UTF-8 text decoding, with applicable typed materials checked against their explicit declarations.
+Ordinary attached documents receive no general Markdown structure, reference-completeness or mathematical certification from those checks.
+The agent prepares the actual `.md` destination, final prose and necessary references, preserving the real source path and fixed evidence without an automatic renamer or case-compatibility reader.
 For adapted older content, the helper reads necessary scalar author, origin, path and Task coordination/family-type facts separately from current receiving-schema validation.
 Obsolete source headers or an older Task layout alone do not require a source upgrade; the prepared receiving result still satisfies its actual current format and author/type boundaries.
 A differing existing rolling/profile/document file additionally supplies its exact expected receiving text; occupied fixed versions require adequate reuse or the appropriate new physical version.
@@ -693,8 +665,9 @@ The small plan below illustrates an explicitly narrowed selection after agent pr
 Explicitly selected profile parts, manuscript sources, figures, bibliography, J programs, data and other constituent files each name their own source/local arrangement in the actual human's responsible home.
 An explicitly selected own private settings file retains its owning context for internal section navigation and exact expected updates, without making public-to-private links or reads of unselected private files permissible.
 No directory or textual link implicitly expands the selection.
-A reached foreign entry supplies intake with source_root, full revision, actual instruction, source_repository, correspondence, selections and any explicitly needed mapping/files under the existing intake contract.
-Only those foreign branches create intake operations; within this optional interface, neutral publication validates all own and foreign final references together, then rechecks its captured inputs and publishes the selected set under the short lock.
+A reached foreign entry supplies intake with source_root, full revision, actual instruction, source_repository, correspondence, selections, final prepared text when needed and explicitly selected files under the existing intake contract.
+Only those foreign branches create intake operations; within this optional interface, neutral publication checks the selected own and foreign files and applicable declarations, rechecks its captured inputs and publishes the selected set under the short lock.
+The agent identifies actual prose references, applies the public-to-private reference rule and checks the final content and affected consumers; a body address alone selects no target operation or additional dependency.
 Own import creates no external registration, source fields, source section, import-source record, persistent map, receipt or source archive.
 Temporary plan/source bytes serve only preparation and freshness protection and are cleaned by their creator.
 Only actually selected execution preparation or handoff judges relevant source and local execution conditions under the [execution rule](rules/execution.md#current-contents-and-retained-limits); ordinary T import has no E side effects.

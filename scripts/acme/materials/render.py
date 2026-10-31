@@ -20,8 +20,7 @@ def views(repo):
     outputs = indexes.views(fixed, reader.read, source_info=reader.source_info,
                             strategy_paths=[path for path in selected if reader.document(path).identity.kind == 'S'])
     routes = [reader.document(p) for p in selected if reader.document(p).identity.kind in 'SL']
-    outputs.update(navigation.views(routes, reader.read, source_info=reader.source_info,
-                                    unavailable=reader.unavailable, paths=selected))
+    outputs.update(navigation.views(routes, reader.read, source_info=reader.source_info, paths=selected))
     return {path: text.encode('utf-8') for path, text in outputs.items()}
 
 

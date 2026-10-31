@@ -79,6 +79,8 @@ A tractable special case must not silently replace the original question.
 An ordinary local Task actually selected for execution uses its stable local E under the [execution rules](execution.md), independently of lifecycle state; a joint coordination T has no E.
 Task creation, import, reading and maintenance do not require or create E; prepare or reuse it only for actual selected local execution with adequate authority and effective conditions.
 Public Task versions use an inline-code E address or the common action guide when needed, without a Markdown link to a local execution file.
+The agent checks this public expression; ordinary material operations do not scan the body for E links or use that syntax as a publication gate.
+Actual selected Task/E decisions, effective limits and protected file operations retain their existing checks.
 The current exact Task decision, execution state and still-effective conditions are maintained directly there, without events or replay history.
 Task revision leaves E unchanged unless an applicable exact update is prepared; a new Task pointer, active lifecycle or session supplies no resumption authority.
 Retain an existing E and its effective stops and limits across lifecycle changes; Task active/paused and E running/stopped remain independent.
@@ -152,7 +154,7 @@ Neither disposition resets execution conditions, creates an allowance or fabrica
 
 ### Shared Git research
 
-Participants using an agreed shared Git remote include current collaborator information in each actual exploration round and share useful progress under the [default joint-research Git permissions and integration rule](identity.md#shared-research-git-authority-and-integration).
+Participants using an agreed shared Git remote obtain current collaborator information through the [common work-start update](workflow.md#shared-repository-work-starts) and share useful progress under the [default joint-research Git permissions and integration rule](identity.md#shared-research-git-authority-and-integration).
 Human authorization to establish, advance or continue joint Task collaboration includes routine retrieval, integration, commits and pushes within that work's scope by default, with explicit human limits taking precedence.
 The same default applies when continuing an authorized individual T/E that participates through its exact adopted joint contract; keep its ordinary Task type and do not require renewed joint-participation or push wording on each continuation.
 Apply these permissions directly without a separate collaboration-mode adoption, delivery grant, permission sentence, new T/E decision or authorization record, while judging the actual progress, batch and sharing time.
@@ -160,12 +162,9 @@ Work without Git or a shared remote, including purely local work, carries no add
 Updates by another author in the same shared repository use ordinary Git collaboration and create no intake operation; receipt from a distinct repository still fixes the actual source commit under the [intake rules](intake.md).
 Project collaboration updates are separate from the [daily official framework version check](../versioning.md#official-version-check), which neither refreshes the research branch nor authorizes an upgrade.
 
-Before new substantive work in each round, the responsible main agent checks fresh state for the agreed remote and collaboration branch, obtains and normally integrates new commits within its authority, then reads the common contracts, strategies, results, informative failures, reviews and source changes relevant to the next question.
+After the common update, read the common contracts, strategies, results, informative failures, reviews and source changes relevant to the next question before new substantive work.
 Use that information for mathematical reuse before undertaking necessary external literature searches; the project update still applies when sufficient existing mathematics makes a new external search unnecessary.
-The main agent coordinates one effective update for the round, and subagents reuse its actual result rather than fetching separately.
-A new exploration round needs fresh remote facts; concrete changes or delivery needs during a round may warrant another refresh.
-This is a round-level responsibility, not a network preflight for each inference, ordinary read or tool call, and needs no round identifier, polling service, synchronization record or empty commit.
-When the remote has no update, continue the applicable work without manufacturing a progress event or permanent log.
+Use the common rule's timing, same-round reuse and integration capability without a separate joint-Task synchronization procedure.
 
 The main agent judges sharing by its actual collaborative value, including useful intermediate results, counterexamples, conditional conclusions, decisive proof gaps, important failed routes, source discoveries or corrections affecting others, reusable programs and necessary inputs, or substantive strategy changes.
 Share major progress during a round when useful and assess ordinary progress at closeout, without waiting for Task completion or committing each small edit or repeated experiment.

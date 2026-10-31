@@ -2,7 +2,6 @@
 from pathlib import Path
 import re
 from ..core import repository as r
-from ..core import links
 from ..materials import identity as names, documents
 
 
@@ -47,8 +46,8 @@ def external_references(tree, selections):
         r.require(not r.paths.protected_path(Path(path)) and not r.paths.in_pdf_store(path),
                   'Selected reference is not a public material path: ' + path)
         if path.endswith('.md'):
-            r.require(set(selected) <= {'identity', 'source_links'}, path + ': choose identity or source_links.')
-            raw = tree.bytes(path).decode('utf-8-sig')
+            r.require(set(selected) == {'identity'}, path + ': choose the explicit identity field.')
+            raw = tree.header(path)
             if 'identity' in selected:
                 ident, values, _ = field(path, 'identity', documents.author_header, path, raw)
                 if ident.source_repository:
@@ -58,12 +57,6 @@ def external_references(tree, selections):
                         field(path, 'author/source_material', external.person,
                               view, ident.author, ident.source_repository, original.author if original else None)
                 checked.append({'path': path, 'field': 'identity'})
-            if 'source_links' in selected:
-                for start, _end, href in links.markdown_link_spans(raw):
-                    original = field(path, 'source_links@' + str(start), source_refs.parse, href.strip().strip('<>'))
-                    if original is not None:
-                        field(path, href, external.repository, view, original['repository'])
-                        checked.append({'path': path, 'field': 'source_links@' + str(start)})
         elif re.fullmatch(r'intake/[^/]+/[^/]+\.json', path):
             value = field(path, 'JSON', tree.json, path)
             for label in sorted(selected):

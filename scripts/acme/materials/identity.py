@@ -43,16 +43,16 @@ class SourceUnitIdentity:
     source_repository: str | None
     source_key: str
     number: int
-    version: int
+    version: None = field(default=None, init=False)
     kind: str = field(default='U', init=False)
 
     @property
     def unit(self):
-        return f'{self.source_key}-U{self.number:03d}'
+        return self.family
 
     @property
     def anchor(self):
-        return self.unit.lower()
+        return f'{self.source_key}-u{self.number:03d}'.lower()
 
     @property
     def family(self):
@@ -61,7 +61,7 @@ class SourceUnitIdentity:
 
     @property
     def name(self):
-        return self.family.split('/')[-1] + f'_v{self.version}'
+        return self.family.split('/')[-1]
 
 
 def validate_source_key(value):
@@ -84,7 +84,7 @@ def candidate(path):
     if match:
         author, origin, kind, line, number = match.groups()
         return {'author':author, 'origin':origin, 'kind':kind.upper(), 'line':line.upper(), 'number':int(number)}
-    unit = re.fullmatch(r'([A-Za-z0-9-]+)(?:_([A-Za-z0-9-]+))?_U([0-9]+)(?:_v[0-9]+)?', name, re.I)
+    unit = re.fullmatch(r'([A-Za-z0-9-]+)(?:_([A-Za-z0-9-]+))?_U([0-9]+)', name, re.I)
     if unit:
         author, origin, number = unit.groups()
         return {'author':author, 'origin':origin, 'kind':'U', 'source_key':path.parent.name, 'number':int(number)}
@@ -110,16 +110,16 @@ def in_namespace(path, *, kind=None, author=None, line=None, local=False, family
 def parse(path):
     path = PurePosixPath(path)
     require(not path.is_absolute() and '..' not in path.parts and '\\' not in str(path) and ':' not in str(path), 'Unsafe material path.')
-    unit = re.fullmatch(r'([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)(?:_([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*))?_U([0-9]{3,})_v([1-9][0-9]*)\.md', path.name)
+    unit = re.fullmatch(r'([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)(?:_([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*))?_U([0-9]{3,})\.md', path.name)
     if unit:
         require(len(path.parts) == 5 and path.parts[:3] == ('mathematics', 'audits', 'literature'),
                 'A source unit belongs in its source-specific literature audit.')
         source_key = path.parts[3]
         validate_source_key(source_key)
-        author, origin, number, revision = unit.groups()
+        author, origin, number = unit.groups()
         require(origin is None or re.fullmatch(r'repo[1-9][0-9]*', origin), 'A received U uses its registered local repository token.')
         require(int(number) > 0 and number == f'{int(number):03d}', 'Noncanonical source unit number.')
-        return SourceUnitIdentity(author, origin, source_key, int(number), int(revision))
+        return SourceUnitIdentity(author, origin, source_key, int(number))
     # A J group owns its standard children, including its readme, rather than
     # allocating a mathematical identity to each output file.
     group = next((p for p in path.parts if re.search(r'_J_[A-Z][0-9]+(?:_v[0-9]+)?$', p)), None)
@@ -146,7 +146,8 @@ def namespace(ident):
     if ident.kind == 'D':
         return None
     if ident.kind == 'U':
-        return 'U/' + validate_source_key(ident.source_key)
+        origin = '_' + ident.source_repository if ident.source_repository else ''
+        return 'U/' + validate_source_key(ident.source_key) + '/' + ident.author + origin
     require(ident.kind in {'C', 'T', 'R', 'L', 'J', 'S'}, 'Unknown permanent material family.')
     origin = '_' + ident.source_repository if ident.source_repository else ''
     return f'{ident.author}{origin}_{ident.kind}_{ident.line}'
@@ -155,7 +156,11 @@ def namespace(ident):
 def _counter_key(value):
     require(isinstance(value, str), 'Material counter namespace must be text.')
     if value.startswith('U/'):
-        validate_source_key(value[2:])
+        parts = value.split('/')
+        require(len(parts) == 3, 'A U counter belongs to a source key and author namespace.')
+        validate_source_key(parts[1])
+        ident = parse('mathematics/audits/literature/' + parts[1] + '/' + parts[2] + '_U001.md')
+        require(namespace(ident) == value, 'Noncanonical U counter namespace: ' + value)
         return
     match = re.fullmatch(r'(.+)_([CTRLJS])_([A-Z])', value)
     require(match is not None, 'Invalid permanent material counter namespace: ' + value)

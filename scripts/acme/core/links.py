@@ -1,4 +1,4 @@
-"""Local Markdown destinations and checks of explicitly supplied public files."""
+"""Exact text edits, bounded declaration structure and explicit locator decoding."""
 import posixpath
 import re
 from bisect import bisect_right
@@ -57,11 +57,13 @@ def _escaped(text, position):
     return (position - start) % 2
 
 
-def _literal_regions(text):
+def _literal_regions(text, *, block_positions=False):
     """Read bounded blocks before their inlines; yield disjoint source spans.
 
     An active fence, indented block, comment, HTML literal or code span owns its
     contents. Its apparent inner openers cannot alter the outer parser state.
+    At block positions, only a line's first nonspace token can start a region;
+    unrelated prose cannot carry inline state into a later declaration.
     Inline backticks look ahead only to the next actual block boundary, never
     through a raw HTML block. This is not a general Markdown/HTML renderer.
     """
@@ -142,7 +144,11 @@ def _literal_regions(text):
         # bounds subsequent backticks to this physical line.
         inline_limit = end if cursor == start and _HEADING.match(content) else limits[index]
         while cursor < end:
-            token = _INLINE.search(text, cursor, end)
+            if block_positions:
+                first = start + len(content) - len(content.lstrip(' \t'))
+                token = _INLINE.match(text, first, end) if cursor <= first else None
+            else:
+                token = _INLINE.search(text, cursor, end)
             if token is None:
                 parts.append(text[cursor:end])
                 break
@@ -184,10 +190,10 @@ def code_spans(text):
             yield match
 
 
-def markdown_views(text, *, preserve_offsets=False):
+def markdown_views(text, *, preserve_offsets=False, block_positions=False):
     """Decode semantic content and mask structures from the same source spans."""
     visible, structure, position = [], [], 0
-    for kind, start, end, _match in _literal_regions(text):
+    for kind, start, end, _match in _literal_regions(text, block_positions=block_positions):
         preceding, value = text[position:start], text[start:end]
         visible.append(preceding)
         structure.append(preceding)
@@ -209,16 +215,41 @@ def visible_markdown(text, *, preserve_offsets=False):
     return markdown_views(text, preserve_offsets=preserve_offsets)[0]
 
 
+def declaration_views(text, *, preserve_offsets=False):
+    """Block positions and bounded table contents, independent of free prose."""
+    visible, structure = markdown_views(text, preserve_offsets=preserve_offsets, block_positions=True)
+    runs, opened, offset = [], None, 0
+    for line in structure.splitlines(keepends=True):
+        if re.match(r'^[ \t]*\|', line):
+            if opened is None:
+                opened = offset
+        elif opened is not None:
+            runs.append((opened, offset))
+            opened = None
+        offset += len(line)
+    if opened is not None:
+        runs.append((opened, offset))
+    # Inline code and comments belong to this actual contiguous table only.
+    # Process both views together, and never interpret preceding prose first.
+    for start, end in reversed(runs):
+        cells, mask = markdown_views(visible[start:end], preserve_offsets=preserve_offsets)
+        visible = visible[:start] + cells + visible[end:]
+        structure = structure[:start] + mask + structure[end:]
+    return visible, structure
+
+
 def anchor_occurrences(text):
     from collections import Counter
     # Markdown treats CRLF and CR as line endings, not heading content.
-    visible, structure = markdown_views(text.replace('\r\n', '\n').replace('\r', '\n'), preserve_offsets=True)
-    values = Counter(re.findall(r'(?<!\\)<a\s+id=[\"\']?([^\"\'>\s]+)', structure))
+    visible, structure = declaration_views(text.replace('\r\n', '\n').replace('\r', '\n'), preserve_offsets=True)
+    explicit = re.compile(r'''^ {0,3}<a[ \t]+id=(?P<quote>["']?)(?P<anchor>[^\s"'<>=`]+)(?P=quote)[ \t]*>[ \t]*</a>[ \t]*$''', re.M)
+    values = Counter(item['anchor'] for item in explicit.finditer(structure))
     # A heading must start outside literals, while inline code contributes its
     # visible text to the established heading slug.
     for heading in re.finditer(r'^ {0,3}#{1,6}(?=[ \t])', structure, re.M):
         end = visible.find('\n', heading.end())
-        title = visible[heading.end():end if end >= 0 else len(visible)].strip()
+        line = visible[heading.end():end if end >= 0 else len(visible)]
+        title = visible_markdown(line).strip()
         if not title: continue
         title = re.sub(r'[ \t]+#+[ \t]*$', '', title)
         values[re.sub(r'[^\w\- ]', '', title.lower()).replace(' ', '-')] += 1
@@ -229,84 +260,9 @@ def anchors_text(text):
     return set(anchor_occurrences(text))
 
 
-def _inline_link_spans(text):
-    """Scan inline links without rescanning long unmatched bracket sequences."""
-    offset = 0
-    for line in text.splitlines(keepends=True):
-        opened, consumed = None, 0
-        for bracket in re.finditer(r'[\[\]]', line):
-            position = bracket.start()
-            if position < consumed:
-                continue
-            if bracket[0] == '[':
-                if opened is None and (not position or line[position-1] != '^'):
-                    opened = position
-            else:
-                if opened is not None and position > opened+1 and line[position+1:position+2] == '(':
-                    end = line.find(')', position+2)
-                    if end == -1:
-                        break
-                    if end > position+2:
-                        yield offset+opened, offset+position+2, offset+end
-                        consumed = end+1
-                opened = None
-        offset += len(line)
-
-
-def markdown_link_details(raw):
-    """Return whole-link and destination spans, label and href in source order.
-
-    This uses the shared block semantics but keeps every source character's
-    position. Literal code, comments, escaped math and TeX math remain intact
-    even when they contain the same address as a real link elsewhere. Like the
-    existing destination reader, this covers inline links, not reference-style
-    definitions or arbitrary HTML attributes.
-    """
-    text = declaration_markdown(raw, preserve_offsets=True)
-
-    def mask(matches):
-        nonlocal text
-        pieces, cursor = [], 0
-        for start, end in matches:
-            pieces.extend((text[cursor:start], re.sub(r'[^\r\n]', ' ', text[start:end])))
-            cursor = end
-        text = ''.join(pieces) + text[cursor:]
-
-    mask((item.start(), item.end()) for item in re.finditer(
-        r'\\\[.*?\\\]|\\\(.*?\\\)|(?<!\\)\$\$.*?(?<!\\)\$\$|(?<!\\)\$[^$\n]*?(?<!\\)\$', text, re.S))
-    result = []
-    for position, start, end in _inline_link_spans(text):
-        cursor = position
-        while cursor and raw[cursor-1] == '\\':
-            cursor -= 1
-        escapes = position - cursor
-        if escapes % 2:
-            continue
-        # Visible masking can cross a literal segment within a would-be link;
-        # only a wholly visible destination is eligible for rewriting.
-        if raw[start:end] == text[start:end]:
-            link_start = position
-            if position and raw[position-1] == '!' and not _escaped(raw, position-1):
-                link_start -= 1
-            result.append((link_start, end+1, raw[position+1:start-2], start, end, raw[start:end]))
-    return result
-
-
-def markdown_link_spans(raw):
-    """Return actual inline-link destination spans in the original Markdown."""
-    return [(start, end, href) for _first, _last, _label, start, end, href
-            in markdown_link_details(raw)]
-
-
 def declaration_markdown(raw, *, preserve_offsets=False):
-    """Structure-only view: examples cannot supply headings or table pipes.
-
-    Cell text must still come from visible_markdown, not this mask. With the
-    default comment decoding both views have identical positions; callers that
-    address original link offsets use preserve_offsets on both views instead.
-    Heading/anchor interpretation intentionally remains independent of this view.
-    """
-    return markdown_views(raw, preserve_offsets=preserve_offsets)[1]
+    """Responsible block/table structure, retaining selected source offsets."""
+    return declaration_views(raw, preserve_offsets=preserve_offsets)[1]
 
 
 def table_pipes(line):
@@ -314,66 +270,26 @@ def table_pipes(line):
     return [item.start() for item in re.finditer(r'(?<!\\)\|', line)]
 
 
+def destination_text(link):
+    """Remove Markdown address delimiters/escapes, leaving URL decoding separate."""
+    link = link.strip()
+    if link.startswith('<') and link.endswith('>'):
+        link = link[1:-1]
+    return re.sub(r'\\([!"#$%&\'()*+,\-./:;<=>?@\[\\\]^_`{|}~])', r'\1', link)
+
+
 def destination(document, link):
-    link = link.strip().strip('<>')
+    link = destination_text(link)
     if re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', link):
         return None
     path, _, anchor = link.partition('#')
     path, anchor = unquote(path), unquote(anchor)
-    path = path.replace('\\', '/')
+    # Filesystem separators constrain the path, not the resource's fragment.
+    if '\\' in path:
+        raise ValueError('Local links must use relative POSIX paths, not backslashes.')
     if path.startswith('/'):
         raise ValueError('Absolute local link: ' + link)
     target = posixpath.normpath(posixpath.join(posixpath.dirname(document), path)) if path else document
     if target == '..' or target.startswith('../') or any(p.casefold() in {'.git', '.codex', '.agents'} for p in target.split('/')):
         raise ValueError('Unsafe local link: ' + link)
     return target, anchor
-
-
-def destinations(document, text):
-    return {d for _, _, href in markdown_link_spans(text) if (d := destination(document, href)) is not None}
-
-
-def check_files(root, names):
-    """Check local links in these files; do not inventory materials or source bytes.
-
-    Source-store targets receive path-containment checks only. Selected source
-    presence, hashes and native anchors belong to an explicitly scoped source read.
-    """
-    from pathlib import Path
-    from . import paths
-    root = Path(root).resolve()
-    texts, targets, anchors, errors = {}, {}, {}, []
-
-    def text(path):
-        if path not in texts: texts[path] = path.read_bytes().decode('utf-8-sig')
-        return texts[path]
-
-    for value in dict.fromkeys(names):
-        name = Path(value).as_posix()
-        try:
-            if Path(value).is_absolute(): raise ValueError('Choose repository-relative public files.')
-            paths.check_public_target(name)
-            raw = text(paths.ordinary_path(root, name))
-            for _offset, _label, href in markdown_link_spans(raw):
-                selected = destination(name, href)
-                if selected is None: continue
-                target, anchor = selected
-                paths.check_local_role(target)
-                paths.check_public_target(target)
-                if paths.in_pdf_store(Path(target)):
-                    continue
-                if target not in targets:
-                    located = paths.ordinary_path(root, target)
-                    targets[target] = located, located.exists()
-                located, exists = targets[target]
-                if not exists:
-                    errors.append(name + ': missing local target ' + href)
-                elif located.is_dir():
-                    continue
-                elif anchor and located.suffix.lower() == '.md':
-                    if target not in anchors: anchors[target] = anchor_occurrences(text(located))
-                    count = anchors[target][anchor]
-                    if count != 1: errors.append(name + (': missing anchor ' if not count else ': ambiguous anchor ') + href)
-        except (OSError, ValueError, UnicodeError) as error:
-            errors.append(name + ': ' + str(error))
-    return errors

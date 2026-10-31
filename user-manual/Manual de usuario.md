@@ -171,7 +171,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.7.1.
+La versión actual del marco es 0.8.0.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.

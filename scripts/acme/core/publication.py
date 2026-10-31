@@ -83,23 +83,30 @@ def publish_files(repo, pending, expected, *, locate=None, ordinary_root=None):
 
 class Preparation:
     """Watch actual inputs and explicitly selected allocation namespaces."""
-    def __init__(self, root, unit_keys=(), *, metadata=False):
+    def __init__(self, root, units=(), *, metadata=False):
         self.root, self.data, self.headers = root, {}, {}
         self.metadata = metadata
-        self.unit_keys = tuple(unit_keys)
+        self.units = tuple(units)
         self.names = self.inventory()
         self.shared_names = set(self.names)
         self.families = {}
 
     def inventory(self):
         selected = set()
-        for relative in (['intake'] if self.metadata else []) + ['mathematics/audits/literature/' + key for key in self.unit_keys]:
+        if self.metadata:
+            folder = r.safe_path(self.root, 'intake')
+            if folder.is_dir():
+                files, errors = r.paths.repository_files(folder, suffix=None)
+                r.require(not errors, '; '.join(errors))
+                selected.update(path.relative_to(self.root).as_posix() for path in files)
+        from ..materials import discovery
+        for ident in self.units:
+            relative = 'mathematics/audits/literature/' + ident.source_key
             folder = r.safe_path(self.root, relative)
             if not folder.is_dir():
                 continue
-            files, errors = r.paths.repository_files(folder, suffix=None)
-            r.require(not errors, '; '.join(errors))
-            selected.update(path.relative_to(self.root).as_posix() for path in files)
+            selected.update(path.relative_to(self.root).as_posix() for path in folder.glob('*.md')
+                            if discovery.unit_namespace(path.relative_to(self.root).as_posix(), ident))
         return selected
 
     def watch(self, path):
@@ -178,6 +185,12 @@ class Batch:
             def bytes(self, path):
                 raw = batch.read(path)
                 return raw.encode('utf8') if isinstance(raw, str) else raw
+            def header(self, path):
+                if path not in batch.pending:
+                    return batch.snapshot.header(path)
+                from io import BytesIO
+                from ..materials import documents
+                return documents.header_stream(BytesIO(batch.pending[path]))
         view = copy.copy(self.repo)
         view.selected_tree = Postimage()
         return view
@@ -206,8 +219,7 @@ class Batch:
                     continue
                 candidates = discovery.candidates(self.repo.root, include_empty_j=True)
                 if ident.kind == 'U':
-                    selected = [path for path in candidates if (item := names.candidate(path))
-                                and item['kind'] == 'U' and item['source_key'] == ident.source_key]
+                    selected = [path for path in candidates if discovery.unit_namespace(path, ident)]
                 else:
                     selected = [path for path in discovery.selected(candidates, kind=ident.kind,
                                 author=ident.author, line=ident.line)

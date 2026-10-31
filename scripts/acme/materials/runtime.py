@@ -1,6 +1,5 @@
 """Selected-view readers; acquisition records carry no mathematical adoption."""
 from pathlib import PurePosixPath
-import re
 from . import documents
 from . import identity
 from ..core import repository as shared
@@ -73,9 +72,6 @@ class Reader:
     def check(self, path):
         doc = self.document(path)
         shared.require(doc.identity.kind != 'L' or PurePosixPath(path).parts[:2] == ('mathematics', 'ledger'), 'All L material belongs in mathematics/ledger/.')
-        for _start, _end, href in links.markdown_link_spans(doc.text):
-            original = source_refs.parse(href.strip().strip('<>'))
-            if original is not None: external.repository(self.repo, original['repository'])
         acquired = None
         if doc.identity.source_repository:
             acquired = self.source_info(doc)
@@ -96,28 +92,41 @@ class Reader:
             tree = getattr(self.repo, 'selected_tree', None)
             candidates = (tree.names if tree is not None else
                           (p.relative_to(self.repo.root).as_posix()
-                           for p in (self.repo.root / prefix).glob('*_U*_v*.md')))
-            discovery.unit_positions([p for p in candidates if p.startswith(prefix)
-                                      and PurePosixPath(p).parent == PurePosixPath(path).parent
-                                      and re.fullmatch(r'.+_U[0-9]+_v[0-9]+\.md', PurePosixPath(p).name)], self.read)
-            documents.source_unit_scope(doc)
+                           for p in (self.repo.root / prefix).glob('*.md')))
+            def header(name):
+                if name == path: return doc.text
+                if tree is None:
+                    return discovery.unit_header(self.repo.root, name)
+                return tree.header(name)
+            discovery.unit_positions([p for p in candidates if discovery.unit_namespace(p, doc.identity)], header)
         return doc
 
     def show(self, path):
-        """Display selected shared material without consulting local holdings."""
+        """Display selected shared material without querying local originals."""
         return self.check(path)
 
-    def destination(self, document, href):
-        original = source_refs.parse(href)
-        if original is not None: external.repository(self.repo, original['repository'])
-        return links.destination(document, href)
-
-    def destinations(self, document, body):
-        for _, _, href in links.markdown_link_spans(body):
-            target = self.destination(document, href)
-            if target is not None:
-                yield target
-
-    def unavailable(self, document, target, anchor, *, offset=None):
-        # Unacquired originals are explicit source URLs; broken local links fail.
-        return False
+    def destination(self, document, href, *, mapping=()):
+        """Decode one supplied address, optionally applying its exact correspondence."""
+        original = source_refs.parse(links.destination_text(href))
+        chosen = []
+        if original is not None:
+            external.repository(self.repo, original['repository'])
+            for row in mapping:
+                shared.require(isinstance(row, dict) and set(row) == {'source', 'local'},
+                               'Use explicit source/local address correspondence.')
+                shared.require(all(isinstance(row[key], str) and row[key] for key in row),
+                               'Address correspondence needs nonempty source and local strings.')
+                candidate = source_refs.parse(row['source'])
+                shared.require(candidate is not None, 'Correspondence source needs an exact acme-source address.')
+                if candidate == original:
+                    chosen.append(row['local'])
+            shared.require(not chosen or all(value == chosen[0] for value in chosen),
+                           'Conflicting explicit address correspondence.')
+            if chosen:
+                href = chosen[0]
+        target = links.destination(document, href)
+        shared.require(not chosen or target is not None, 'Correspondence destination needs a relative local locator.')
+        if target is not None:
+            paths.check_local_role(target[0])
+            paths.check_public_target(target[0])
+        return target

@@ -13,14 +13,14 @@ On failure, report the relevant concrete error without exposing credentials and 
 A sandbox's lack of credential access does not establish expired credentials.
 Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
 Connection success grants no push, force-push, branch deletion, PR creation or other remote mutation.
-Local reading, edits, checks, commits and file copying require no network preflight.
+Local reading, edits, checks, commits and file copying require no per-operation network preflight; actual shared work separately applies the [work-start update](workflow.md#shared-repository-work-starts).
 The [daily metadata read](../versioning.md#official-version-check) retains its bounded public HTTPS endpoint, cache and separately authorized upgrade boundary.
 
 ## Stable keys and local attribution
 
 Before first human setup, ask together for the author-selected local path key and the independently selected License attribution name, explaining both purposes.
 Reuse values that the author explicitly supplied for this setup; ask for whichever value remains missing before registering, binding or adding that human's License credit.
-For example, Alice-Smith is an ASCII path key used in local authored-material paths such as SourceKey/Alice-Smith_U001_v1.md, while Alice Smith is the selected License name stored in display_name.
+For example, Alice-Smith is an ASCII path key used in local authored-material paths such as SourceKey/Alice-Smith_U001.md, while Alice Smith is the selected License name stored in display_name.
 Keys use the existing letters, digits and internal-hyphen grammar without spaces or underscores, and retain collision and reserved-name checks.
 For an invalid key, explain its concrete restriction and ask the author to choose another; never sanitize, transliterate or infer a replacement.
 The attribution name is nonempty single-line text, may contain spaces and Unicode and is independent of Git/GitHub identities.
@@ -172,8 +172,10 @@ Within each human's working copy, the actual operator binding remains shared by 
 Each collaborator maintains shared registration and derived navigation at their responsible scope.
 Every authored mathematical document retains exactly one human author, including a joint Task.
 Initial intake preparation follows the [common adaptation rule](records.md#receiving-and-adapting-selected-content); later corrections to another human's document belong in the correcting human's own suitable material with exact references.
-This applies to administrative wording, paths and layout within an authored body as well as substantive mathematics.
-Only the same established human may directly revise the body under actual authority, fixed-version and evidence requirements.
+Substantive mathematics and general body/layout changes retain that author boundary.
+A locator-only repair that preserves the actual object, mathematical meaning and adoption/review scope is shared maintenance under actual authorization, including corresponding references in another author's material.
+Repair necessary downstream references together without inventing a mathematical version, decision, date or review; this exception grants no substantive author takeover or development-role permission.
+Outside that bounded locator-only repair, only the same established human may directly revise the body under actual authority and applicable version/evidence requirements.
 For an external representation, an explicitly adopted local_human correspondence in the existing external-person record can establish that relationship; names, a write argument or changing the checkout binding alone cannot.
 Do not take over another human's Task/E.
 Shared administration needs no per-author approval, additional review or maintenance receipt.
@@ -200,7 +202,7 @@ Local fixed material paths use `Author_Kind_F0001_v1.md`; rolling S/D omit `_vN`
 Imported C/T/R/L/J use receiving external identities such as `author3_repo2_C_F0001_v1.md`, with chosen local classification, line, serial and version and exact original per-unit source facts.
 External T is restricted to a necessary joint contract, with no E; own personal import uses ordinary local identities.
 J native files share their numbered group identity.
-U uses its separate `SourceKey/Author[_repoN]_U001_v1.md` source-key/unit placement contract without requiring an external-author number.
+U uses its separate `SourceKey/Author[_repoN]_U001.md` source-key/unit placement contract without requiring an external-author number.
 The human key identifies authorship, not a paper byline, ownership permission or an automatic right to alter an acquired original.
 
 Each author/origin/kind/line has an independent numeric sequence: F0001 through F9999, F10000 and onward.
@@ -208,7 +210,7 @@ The chosen research line letter remains unchanged; a Task-derived address inheri
 C/T/R/L/U/J identities and continuing S identities are not recycled.
 D is a working address, stable during its current use and reusable after retirement; a reused D inherits none of the earlier draft's content, scope, review or authority.
 A materially different statement/question gets its appropriate new family; a substantive new proof within an unchanged Claim gets a material revision.
-Source-unit numbers retain the existing sequence within their citation key, separate from research-line allocation.
+Source-unit numbers have independent sequences for each citation key and human author, with necessary external origins distinguished, separate from research-line allocation.
 
 repository/config.json stores this repository's actual key, separate project display name and abbreviation, necessary shared settings and the compact `material_next` map of next unissued material-family numbers.
 Machine-local interpreters, OS versions, virtual-environment state and their mirrors do not belong in shared configuration; necessary nonsensitive choices use the [runtime home](organization.md#machine-local-runtime), with Git configuration and private resources at their existing responsible homes.
@@ -231,10 +233,10 @@ The immediate sender remains transport, separately from the original source.
 Do not reacquire this repository's own returning originals or create a self entry to do so.
 A distinct external contribution can use an existing local input through prepared exact correspondence without importing that input again.
 
-U retains its original source path, author and input physical version in provenance; the receiving canonical work key, unit position and prepared physical version identify its local content separately.
-The receiving key/number defines one position across authors and external prefixes.
+U retains its exact original source path, author, fixed source revision and obtained scope in provenance, including a genuine old source version suffix.
+Its current receiving content uses a rolling file and an independent source-key/author/origin namespace; different authors may each use U001 without sharing an upper bound.
 Prepare precise declaration/reference edits, and validate affected final positions with unmoved siblings and all same-batch destinations.
-Preserve an established original repoN/family's receiving number across versions; a newly occupied position fails without automatic renumbering.
+Preserve an established original repoN/unit's receiving number through selected rolling updates; a newly occupied position fails without automatic renumbering.
 Keep exact original/local paths, anchors, acquired scope, source/transport distinctions and availability at their existing provenance home.
 An exact fixed source locator uses receiving repoN, revision, path and anchor under the [intake rules](intake.md).
 Displayed names are informative facts, not automatic identity keys.
@@ -250,7 +252,7 @@ Historical acquired J scopes remain recorded facts; selected current scope and a
 Each actual human author allocates within the relevant kind/line sequence.
 For C/T/R/L/J and continuing S, `repository/config.json` keeps one `material_next` entry per actual author/origin/kind/research-line namespace, with positive integer next unissued numbers only.
 Local registered authors and receiving external authorN/repoN namespaces stay distinct; an original source serial or immediate sender does not replace the actual receiving namespace.
-U uses the same compact map with its separate citation-key/unit namespace across authors and origin prefixes, under the [allocation format](../material-format.md#material-family-allocation-state).
+U uses the same compact map with its separate source-key/author namespace, including necessary external origin distinctions, under the [allocation format](../material-format.md#material-family-allocation-state).
 D is outside this permanent counter because its retired working address can be reused.
 Retiring a material, replacing it through another author or line, or leaving its namespace empty does not decrease the bound or make an issued fixed identity available again.
 No per-deletion entry, issue date, retirement log, reserved-file stub, hash or migration registry is required.
@@ -311,31 +313,49 @@ Let Git perform file merging, then inspect the actual affected result and resolv
 Git's lack of a text conflict establishes neither mathematical agreement, source applicability nor permission to edit another human's body.
 Inspect earlier versions only when the actual question needs them; no ordinary commit or merge requires every parent to contain a material, a BASE selector, preimage mapping or framework pass token.
 
-### Shared research Git authority and integration
+### Shared-repository updates and integration
 
-When a human actually authorizes establishing, advancing or continuing [joint Task collaboration](tasks.md#shared-git-research), routine fetch, pull/merge, commit and push within that assigned collaboration scope are permitted by default.
-Apply explicit human restrictions such as local-only work, commit without push, postponed synchronization or limited publication content; an absent separate push grant does not block the default.
-Use the current assignment and existing participation facts without asking for separate mode adoption, first-delivery approval or recurring permission, or requiring a permission sentence, new T/E decision or authorization record.
-Determine the actual repository, collaboration branch and publishable scope from the current Task, existing agreements and native Git remote/tracking facts, reusing sufficient information directly rather than creating a URL/branch mirror, authorization table, flag or receipt.
-Clarify only a genuinely missing destination or branch needed for execution, rather than asking again whether routine joint-research delivery is allowed; actual account capabilities and platform restrictions still apply.
-A joint file, active label, clone, registered identity, configured remote or successful connection alone selects no research or delivery.
-Apply the default to the currently assigned human-authorized collaboration, without scanning every joint Task or treating Git permissions as permission to begin or resume research.
-Handle target changes within that scope from actual facts and existing arrangements; publication beyond it, unrelated remote operations, PR creation, history rewriting, force-push and branch-protection changes are outside these default permissions.
+An actual shared-repository task's start or resumption includes routine fetching and local integration within its assigned scope, subject to explicit human limits, without a separate first-sync permission or repeated confirmation.
+Apply the [common work-start timing and capability duties](workflow.md#shared-repository-work-starts) to all covered activities, rather than restricting updates to joint Tasks.
+Determine the actual repository, collaboration remote, branch and work scope from the instruction, existing collaboration agreements and native Git facts, reusing sufficient information and clarifying only a decisive missing target.
+Distinguish the project collaboration branch from the current local branch, the official framework source and a reference upstream; remote configuration, registered authors or an external-source entry alone establishes no collaboration assignment.
+An actual native Git fetch may establish fresh branch facts and obtain the needed objects together, without a fixed connection or account-probe sequence.
+This authority includes a local merge commit needed for the authorized integration; it does not by itself authorize committing the task's other work or publishing remotely.
+Actual delivery uses its existing authorization, including the joint-research default below.
 
 Choose native Git retrieval, fast-forward or ordinary merge from the actual branch relationship and explicit integration target, without prescribing one command sequence, helper or whole-library check.
 Integration concerns branches and commits, rather than pulling only one Task's files; select the relevant changed content for inspection afterwards.
 Protect uncommitted work, other sessions' staged contents and each contributor's authorship without requiring the entire worktree to be clean or defaulting to whole-tree add, stash, discard, overwrite or rebase.
 Coordinate integration, index and commits serially in this working copy, choosing any necessary native saving or temporary arrangement for the actual state without another permanent role, lock or parallel-copy management system.
+Use an appropriately capable model and reasoning configuration for the necessary content judgments under the [delegation duty](workflow.md#integration-capability-and-delegation), preserving author and review authority.
 After Git merges files, inspect affected mathematics, fixed versions, exact inputs, references and review applicability under the existing [conflict rule](#collaboration-maintenance-and-conflicts); a clean text merge certifies neither mathematical agreement nor authority to edit another human's body.
 Resolve administrative conflicts within existing authority, preserve competing mathematical evidence, and reuse any applicable scoped recheck approval rather than requesting it again.
-Read changed applicable rules and contracts under the [current-rule duty](workflow.md#proportionate-execution); synchronization alone establishes no adoption or research resumption.
+Read relevant incoming content and changed applicable rules under the work-start and [current-rule duties](workflow.md#proportionate-execution) before dependent use.
+Ordinary same-repository integration creates no intake, exact-contract adoption, E activation or resumption, stop reset or fresh allowance.
+Private settings, original literature, execution/, .venv/ and ignored outputs retain their local boundaries.
+
+Honor explicit offline instructions and postponed synchronization within their actual scope.
+For strictly read-only or fixed-commit work, make only permitted remote queries, preserve the selected input and do not integrate into the inspected object merely to make it current.
+On a connection, permission or integration failure, report the concrete unconfirmed or unintegrated scope and its impact, defer dependent work and continue independently supported authorized work.
+An explicit successful-synchronization requirement or effective execution stop takes precedence.
+Do not manufacture success through repeated queries, force-push, history rewriting or overwriting local work, or create a failure queue or retry ledger.
+
+### Shared research Git authority and integration
+
+When a human actually authorizes establishing, advancing or continuing [joint Task collaboration](tasks.md#shared-git-research), routine fetch, pull/merge, commit and push within that assigned collaboration scope are permitted by default.
+Apply explicit human restrictions such as local-only work, commit without push, postponed synchronization or limited publication content; an absent separate push grant does not block the default.
+Use the current assignment and existing participation facts without asking for separate mode adoption, first-delivery approval or recurring permission, or requiring a permission sentence, new T/E decision or authorization record.
+Determine the actual repository, collaboration branch and publishable scope from the current Task, existing agreements and native Git facts under the [common integration rule](#shared-repository-updates-and-integration), without a URL/branch mirror, authorization table, flag or receipt.
+Clarify only a genuinely missing destination or branch needed for execution, rather than asking again whether routine joint-research delivery is allowed; actual account capabilities and platform restrictions still apply.
+A joint file, active label, clone, registered identity, configured remote or successful connection alone selects no research or delivery.
+Apply the default to the currently assigned human-authorized collaboration, without scanning every joint Task or treating Git permissions as permission to begin or resume research.
+Handle target changes within that scope from actual facts and existing arrangements; publication beyond it, unrelated remote operations, PR creation, history rewriting, force-push and branch-protection changes are outside these default permissions.
 
 Before a push, inspect the whole outgoing commit chain and its actual destination under [serial delivery](#submission-checks), rather than treating the currently staged paths as the whole publication scope.
 Resolve an unclear or unauthorized outgoing scope before publishing it, without automatically creating another branch or rewriting history to bypass that issue.
 Obtain the fresh remote facts needed for delivery; if the remote advances or rejects the push, retrieve, normally integrate, inspect affected changes and retry within the existing authority and effective limits, without force-push or unlimited retries.
 Use the project's actual collaboration branches and contribution requirements; protection or a PR requirement does not itself authorize another remote action or a new publication workflow.
-Verify the actual remote result and report a connection, integration or delivery failure with its concrete unconfirmed update, saved commit or unfinished push scope, using existing materials or an ordinary response rather than a queue or retry ledger.
-Continue only authorized local work independent of the missing remote facts, deferring the parts that depend on them; an explicit instruction requiring successful synchronization and effective execution stops or allowance limits take precedence.
+Verify the actual remote result and apply the common failure handling, identifying any saved commit or unfinished push scope in the ordinary response or existing material.
 Keep the existing pending-batch ordering within an authorized delivery sequence; unrelated unpublished commits do not block all local research.
 
 ### Explicit material checks
@@ -347,7 +367,7 @@ Selected Strategy checks include actual ancestors, and an explicitly requested c
 Candidate enumeration does not validate unrelated namespaces or silently drop malformed candidates that could occupy the selected namespace.
 Explicit full discovery or navigation regeneration retains its declared complete scope.
 The agent judges actual receiving versus local revision, chosen originals, contributors and author permissions from the real materials and instruction under the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities).
-Authored body changes, including layout maintenance, retain the same-human and separately authored correction requirements in the actual editing and receiving work.
+Authored body changes retain the same-human and separately authored correction requirements, with the bounded shared locator-only maintenance exception above.
 Keep fixed-version, source-preservation and actual-review duties at their responsible interfaces, reusing necessary existing evidence rather than replaying them as a commit audit.
 An unstaged repair cannot cure a defect in another selected view.
 Necessary intake identities and acquired-record facts use that same selected view as their materials, including explicit local-revision inputs and onward provenance under the [intake rule](intake.md#homes-and-independent-reuse).
@@ -362,7 +382,7 @@ These selected checks report the owning path, field and inconsistent number with
 
 Apply the [common maintenance boundary](records.md#substantive-material-retention): valid J/E/intake maintenance, coherent moves and authorized reproducible-output cleanup add no generic changed-file reminder.
 Concrete identity, reference, native-format, explicit-decision and review-binding errors remain observable; structural success supplies no mathematical review.
-Choose ordinary public-reference and path checks for needed registry prose or source links, without treating them as a holding, edition, availability or private-byte verdict.
+Choose ordinary public-reference and path checks for source notes and links, without treating them as an edition, availability or private-byte verdict.
 An outgoing-link check does not discover unchanged incoming consumers or certify their coverage.
 The agent identifies necessary incoming consumers through scoped searches and reading, then selects their actual files and target locators for checking in the chosen view.
 Use the shared link and locator readers on that explicit scope, requiring exactly one occurrence for each selected Markdown anchor, including Strategy parents and navigation targets.

@@ -65,7 +65,7 @@ Source inspection depth and current claim assessments remain in their responsibl
 
 An entry may include citation candidates when this helps manuscript preparation; this field is optional.
 Use existing citation keys and bibliographic identity from the canonical [references.bib](../../mathematics/literature/references.bib), with precise locators and purpose labels such as `origin`, `current formulation`, `notation`, `standard` or `exposition`.
-Select inspected edition, passage and scope facts from the actual U/L or source evidence; an explicitly needed local holding check uses `mathematics/literature/registry.md` under the [source-preparation rule](literature.md#source-preparation).
+Select inspected edition, passage and scope from actual U/L or adequate source evidence and its explicit source-edition explanation; prepare an original only when the actual use needs further source reading under the [source rule](literature.md#source-preparation).
 The manuscript record should identify the chosen citation's purpose when the distinction matters, following the [citation and notation rules](writing.md#citations-notation-and-versions).
 Different uses may appropriately cite different sources for the same definition.
 

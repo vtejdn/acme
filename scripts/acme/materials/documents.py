@@ -61,18 +61,18 @@ def table_cells(line, *, structure=None):
 class MarkdownInput:
     """Parallel structure and semantic views for small material-owned tables.
 
-    Slice both views together so a literal opened outside a section cannot
-    become authoritative when that section or row is read in isolation.
+    Keep block examples excluded and inline cell syntax within its actual
+    table. Unselected rich prose supplies no state to later declarations.
     """
     def __init__(self, raw, *, structure=None):
-        self.text, self.structure = (links.markdown_views(raw)
+        self.text, self.structure = (links.declaration_views(raw)
                                      if structure is None else (raw, structure))
 
     def slice(self, start, end):
         return MarkdownInput(self.text[start:end], structure=self.structure[start:end])
 
     def sections(self, heading):
-        pattern = r'^ {0,3}## ' + re.escape(heading) + r'[ \t]*\n(.*?)(?=^ {0,3}#{1,2}(?:[ \t]|$)|\Z)'
+        pattern = r'^ {0,3}## ' + re.escape(heading) + r'[ \t]*\r?\n(.*?)(?=^ {0,3}#{1,2}(?:[ \t]|$)|\Z)'
         return [(self.slice(*item.span(1)), self.text[:item.start(1)].count('\n'))
                 for item in re.finditer(pattern, self.structure, re.M | re.S)]
 
@@ -124,16 +124,23 @@ class MarkdownInput:
         return result
 
 
+SIMPLE_LINK = re.compile(r'\[([^\[\]\r\n`]+)\]\(([^()<>\s]+)\)')
+
+
 def locator(path, value):
-    match = re.fullmatch(r'\[[^\]\n]+\]\(([^)\n]+)\)', value.strip())
-    require(match is not None, 'Expected one explicit Markdown material link: ' + value)
-    original = source_refs.parse(match[1])
+    value = value.strip()
+    parsed = SIMPLE_LINK.fullmatch(value)
+    require(parsed is not None and parsed[1].strip(),
+            'Expected one explicit Markdown material link in simple single-line form: ' + value)
+    href = parsed[2]
+    original = source_refs.parse(href)
     if original is not None:
-        return Locator(match[1].partition('#')[0], original['anchor'])
-    result = links.destination(path, match[1])
+        return Locator(href.partition('#')[0], original['anchor'])
+    result = links.destination(path, href)
     require(result is not None, 'Decision locators must name available repository material.')
     target, anchor = result
     from ..core import paths
+    paths.check_local_role(target)
     paths.check_public_target(target)
     require(not any(p in {'.git', '.agents', '.codex'} for p in PurePosixPath(target).parts), 'Protected material locator.')
     return Locator(target, anchor)
@@ -230,6 +237,18 @@ def new_decision(document, decision):
             require(identity.parse(loc.path).kind == 'R', 'New/current local formal reviews require fixed R findings.')
 
 
+def header_stream(stream):
+    """Read only the actual scalar header from a binary file/object stream."""
+    first = stream.readline()
+    require(first.removeprefix(b'\xef\xbb\xbf').strip() == b'---', 'Material needs a leading author header.')
+    lines = [first]
+    for line in stream:
+        lines.append(line)
+        if line.strip() == b'---':
+            return b''.join(lines).decode('utf-8-sig')
+    raise ValueError('Unterminated material author header.')
+
+
 def header_values(text, *, known=True):
     """Read a single scalar-author header without assigning a path identity."""
     require(text.startswith('---\n') or text.startswith('---\r\n'), 'Material needs a leading author header.')
@@ -258,11 +277,13 @@ def author_header(path, text):
     if ident.source_repository:
         require(ident.kind != 'U' or source_fields <= header.keys(), 'A source unit needs its original material binding.')
         if 'source_material' in header:
-            original = identity.parse(header['source_material'])
-            require((ident.kind == 'U') == (original.kind == 'U'),
-                    'A source unit retains its dedicated original-unit contract.')
-            require(ident.kind != 'U' or original.author == ident.author,
-                    'An acquired source unit retains its original author.')
+            if ident.kind == 'U':
+                # A genuine original locator is a source fact, not a second
+                # local naming contract or a parser for retired U versions.
+                source_refs.check_path(header['source_material'])
+            else:
+                original = identity.parse(header['source_material'])
+                require(original.kind != 'U', 'A source unit retains its dedicated original-unit contract.')
     else:
         require(not source_fields & header.keys(), 'Local material cannot acquire an imported source binding.')
     return ident, header, content
@@ -278,7 +299,10 @@ def parse(path, text):
         name = 'Current assessment' if ident.kind == 'C' else 'Current decision'
         sections = body.sections(name)
         require(len(sections) == 1, 'Material needs exactly one ' + name + ' section.')
-        current = locator(path, sections[0][0].structure.strip())
+        # Inline syntax is interpreted only in this explicitly selected field,
+        # after block examples and unrelated sections have been excluded.
+        field = links.markdown_views(sections[0][0].structure)[1].strip()
+        current = locator(path, field)
         # Decision anchors and tables are parsed only in the designated history.
         history_name = 'Assessment history' if ident.kind == 'C' else 'Lifecycle and completion'
         histories = body.sections(history_name)
@@ -292,48 +316,41 @@ def parse(path, text):
         require(not ident.source_repository or document.task_type == 'joint',
                 'An external T is a necessary joint contract, never another human\'s ordinary Task.')
     if ident.kind == 'U':
-        source_unit_scope(document)
+        check_source_unit(document)
     return document
 
 
-def source_unit_scope(document):
-    """Read stated edition, passage and inspection limits; infer no verdict."""
-    require(document.identity.kind == 'U', 'Expected a fixed source-unit document.')
+def check_source_unit(document):
+    """Check the file-local unit anchor, without interpreting inspection prose."""
+    require(document.identity.kind == 'U', 'Expected a rolling source-unit document.')
     require(links.anchor_occurrences(document.text)[document.identity.anchor] == 1,
             'Source unit needs its actual source-key/unit anchor.')
-    sections = MarkdownInput(document.text.replace('\r\n', '\n')).sections('Source and inspection')
-    require(len(sections) == 1, 'Source unit needs one Source and inspection section.')
-    rows = sections[0][0].table(('Field', 'Value'), minimum_dashes=3)
-    require(len(rows) == 3, 'Source inspection uses one Field/Value table with three facts.')
-    scope = {}
-    for cells, _number in rows:
-        require(len(cells) == 2 and cells[0] in {'source-version', 'source-locator', 'inspection'} and
-                cells[0] not in scope and cells[1], 'Missing, repeated or unknown source inspection fact.')
-        scope[cells[0]] = cells[1]
-    return scope
 
 
 def original_family(document):
     """Original family under its receiving repository, independent of local serial."""
     if document.identity.source_repository:
         return (document.header['source_repository'],
-                identity.parse(document.header['source_material']).family if 'source_material' in document.header
+                (document.header['source_material'] if document.identity.kind == 'U'
+                 else identity.parse(document.header['source_material']).family) if 'source_material' in document.header
                 else document.identity.family)
     return None, document.identity.family
 
 
 def revision_inputs(document, read):
-    """Read this physical revision's explicit inputs, independently of decisions."""
+    """Read explicit input locators, independently of decisions and scope prose."""
     chosen = []
     sections = MarkdownInput(document.text).sections('Inputs')
     require(len(sections) <= 1, 'A material has at most one explicit Inputs section.')
     if sections:
-        for _first, _last, label, _start, _end, href in links.markdown_link_details(sections[0][0].text):
-            destination = links.destination(document.path, href)
-            if destination is not None:
-                chosen.append((Locator(*destination), label))
+        content = sections[0][0]
+        for line, mask in zip(content.text.splitlines(), content.structure.splitlines()):
+            prefix = re.match(r'[ \t]*(?:[-*] )?', line).end()
+            parsed = SIMPLE_LINK.match(line, prefix)
+            if parsed is not None and mask[prefix:prefix + 1] == '[':
+                chosen.append(locator(document.path, parsed[0]))
     result = []
-    for loc, scope in chosen:
+    for loc in chosen:
         if source_refs.external(loc.path):
             continue
         candidate = identity.candidate(loc.path)
@@ -345,8 +362,7 @@ def revision_inputs(document, read):
         require(ident.version is not None and document.identity.version is not None
                 and ident.version < document.identity.version,
                 'An explicit revision input must be an earlier fixed receiving version.')
-        require(scope.strip(), 'State the actual input scope at its responsible reference.')
-        item = {'path': loc.path, 'anchor': loc.anchor, 'scope': scope}
+        item = {'path': loc.path, 'anchor': loc.anchor}
         if item not in result:
             result.append(item)
     return result
@@ -442,7 +458,7 @@ def check(document, read, *, paths=(), source_info=None):
                 require(bool(document.identity.source_repository), 'An unacquired source locator cannot supply a local fixed decision input.')
                 continue
             if identity.parse(loc.path).kind == 'U':
-                source_unit_scope(target(loc.path))
+                check_source_unit(target(loc.path))
             if role == primary:
                 chosen = target(loc.path)
                 require(chosen.identity.family == owner.identity.family,

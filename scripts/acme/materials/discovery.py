@@ -1,5 +1,5 @@
 """Derived material-family discovery; no independent record or pointer store."""
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
 import os
 
 from . import documents as documents
@@ -11,42 +11,47 @@ require = identity.require
 
 
 def unit_origin(ident, header):
-    """Actual original family, independent of its recipient spelling/version."""
+    """Actual original unit, independent of its receiving spelling."""
     if ident.source_repository:
-        return header['source_repository'], identity.parse(header['source_material']).family
+        return header['source_repository'], header['source_material']
     return None, ident.family
 
 
 def unit_positions(paths_to_read, read):
-    """Check source-key positions and original-family continuity in this scope."""
-    positions, correspondence, versions = {}, {}, {}
+    """Check explicitly selected author namespaces and original correspondence."""
+    positions, correspondence, spellings = {}, {}, {}
     for path in paths_to_read:
         ident = identity.parse(path)
         if ident.kind != 'U': continue
         ident, header, _ = documents.author_header(path, read(path))
-        position, origin = (ident.source_key, ident.number), unit_origin(ident, header)
+        namespace = identity.namespace(ident)
+        require(spellings.get(namespace.casefold(), namespace) == namespace,
+                'Conflicting local U namespace spelling: ' + namespace)
+        spellings[namespace.casefold()] = namespace
+        position, origin = (identity.namespace(ident), ident.number), unit_origin(ident, header)
         require(position not in positions or positions[position] == origin,
                 'Conflicting local U position: '+ident.unit+'; choose a free position for the different original family.')
-        family = ident.source_key, origin
+        family = identity.namespace(ident), origin
         require(family not in correspondence or correspondence[family] == ident.number,
                 'Original U family has conflicting local positions: '+ident.source_key)
-        version = position, ident.version
-        require(version not in versions or versions[version] == path,
-                'Multiple entrances own the same local U version: '+ident.unit)
         positions[position] = origin
         correspondence[family] = ident.number
-        versions[version] = path
     return positions, correspondence
 
 
 def unit_header(root, path):
     """Read only the physical identity header of a namespace sibling."""
-    with paths.ordinary_path(root,path).open(encoding='utf-8-sig',newline='') as stream:
-        lines = [stream.readline()]
-        for line in stream:
-            lines.append(line)
-            if line.strip() == '---': break
-    return ''.join(lines)
+    with paths.ordinary_path(root,path).open('rb') as stream:
+        return documents.header_stream(stream)
+
+
+def unit_namespace(path, ident):
+    """Select the actual source/author/origin before any sibling body read."""
+    item = identity.candidate(path)
+    return (item is not None and item['kind'] == 'U'
+            and item['source_key'].casefold() == ident.source_key.casefold()
+            and item['author'].casefold() == ident.author.casefold()
+            and (item['origin'] or '').casefold() == (ident.source_repository or '').casefold())
 
 
 def candidates(root, *, include_empty_j=False):
@@ -65,14 +70,16 @@ def candidates(root, *, include_empty_j=False):
             with os.scandir(directory) as entries:
                 for entry in entries:
                     name, target = entry.name, relative / entry.name
-                    # Classify before even asking whether the private account
+                    # Classify before even asking whether a private path
                     # is a file or a directory. os.walk classifies too early.
                     if (name.casefold() in paths.EXCLUDED or paths.private_file(target)
                             or paths.in_pdf_store(target) or paths.in_computation_outputs(target)):
                         continue
+                    if paths.is_reparse(Path(entry.path)):
+                        continue
                     directory_entry = entry.is_dir()
                     if directory_entry:
-                        if not os.path.islink(entry.path): pending.append(entry.path)
+                        pending.append(entry.path)
                         if not include_empty_j: continue
                     path = target.as_posix()
                     item = identity.candidate(path)
@@ -142,7 +149,8 @@ def families(paths_to_read, read, *, source_info=None):
         if entry.identity.source_repository:
             row['acquisition'] = source_info(entry) if source_info else {'origin': entry.header}
         if entry.identity.kind == 'U':
-            row.update(unit=entry.identity.unit, source_inspection=documents.source_unit_scope(entry))
+            row.pop('versions')
+            row.update(unit=entry.identity.unit)
         if entry.identity.kind == 'T':
             row.update(task_type=entry.task_type,
                        joint_task=vars(entry.joint_task) if entry.joint_task else None)

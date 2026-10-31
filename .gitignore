@@ -14,7 +14,6 @@ __pycache__/
 /mathematics/computations/outputs/
 
 # Literature PDF directory/junction and external source bytes are machine-local, not Git or LFS objects.
-/mathematics/literature/registry.md
 /mathematics/literature/pdf
 /mathematics/literature/**/*.pdf
 

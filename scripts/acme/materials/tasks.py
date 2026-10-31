@@ -28,17 +28,9 @@ def contracts(document):
             if role == 'contract' and loc.path == document.path}
 
 
-def validate_links(path, text):
-    require(not any((destination := links.destination(path, href))
-                    and destination[0].split('/')[0].rstrip(' .').casefold() == 'execution'
-                    for _, _, href in links.markdown_link_spans(text)),
-            'Public Tasks use inline-code local E addresses, not execution boundary links.')
-
-
 def validate(document, read, *, paths=(), previous=()):
     if document.identity.kind != 'T':
         return
-    validate_links(document.path, document.text)
     family = [document]
     for path in paths:
         if path != document.path and identity.in_namespace(path, family=document.identity):

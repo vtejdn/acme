@@ -171,7 +171,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.7.1.
+Die aktuelle Version des Rahmenwerks ist 0.8.0.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.

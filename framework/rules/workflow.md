@@ -9,6 +9,10 @@ Selectable research defaults follow [preference precedence](preferences.md#scope
 The agent reads the actual materials and decides content, work/edition identity, necessary homes and inputs, review applicability and authorization.
 Reuse still-applicable judgments.
 Tools optionally execute explicitly chosen objects, field updates, files and mappings, and report bytes, paths, differences, request/response facts and structural constraints.
+The agent reads free prose, identifies actual references and purposes, prepares final text and checks affected consumers.
+Ordinary creation, reading, import, intake and publication do not discover targets or infer source limitations from whole-body Markdown, mathematical, code or comment syntax.
+Use bounded responsible declarations for mechanical identity, input, decision and review checks, and explicit addresses for actual target operations.
+Selected-file or publication success covers only its actual byte, declaration, view and write checks, without certifying reference completeness.
 For an actual [same-author transfer](intake.md#personal-import), the main agent determines the two-pass selection and retained homes, obtaining a subagent's direct mathematical comparison for concrete duplicate candidates under the [content rule](records.md#same-author-transfer-and-duplicate-comparison).
 Tools do not infer family closure, cross-kind equivalence or review coverage, and this comparison duty creates no routine all-material review or new proof-certification claim.
 At an actual public-reference operation, normalize and classify the final selected target before watching, reading its contents or checking an anchor, using the existing access rules and designated view.
@@ -30,8 +34,9 @@ Apply the existing [progressive-reading](literature.md#progressive-reading), [lo
 Check the result and necessary direct consumers; record required facts in their existing homes without a confirmation flag, receipt or compulsory command.
 For an explicit J source refresh, the agent identifies the same original and selected current scope and maintains necessary retained inputs and actual consumers under the [intake rule](intake.md#homes-and-independent-reuse).
 Copying selected files supplies no consumer or mathematical review, and earlier acquisition scopes do not select themselves as current dependencies.
-Explicit source declarations and same-line fingerprints separate primary artifact facts from Resource/holding relationships; the agent prepares actual account changes and the tools check every supplied input before selected batch publication.
-Those acquisition and holding accounts are local under the [source-storage rule](literature.md#local-pdf-storage); ordinary shared material reading and navigation neither consult them nor infer local possession from shared evidence.
+Useful source-edition explanations belong in concise author source notes, and actual inspected mathematics and checking limits belong in rolling U or adequate C/L.
+No literature registry, holding ledger or fingerprint mechanism is maintained; ordinary shared reading and logical source navigation neither query local originals nor infer possession.
+Actual personal import and external intake complete the agent-selected necessary original preparation and report true failures under the [literature rule](literature.md#acquisition-before-u-reception); same-repository reuse prepares originals only for necessary further reading.
 Typed namespace occupancy, fixed identity entrances, numerical/field constraints, OS locking, exclusive creation, stale-input refusal and rollback remain mechanical responsibilities.
 Direct collaboration, same-human body maintenance, shared navigation/registration and the two kinds of actual conflict follow the [identity rule](identity.md#collaboration-maintenance-and-conflicts).
 Apply its scoped mathematical-recheck approval only when that conflict actually arises; ordinary authorized research and maintenance keep their existing authority.
@@ -45,7 +50,7 @@ Complete definitions, terminology and symbols retain their adequate U/C/L homes 
 Status belongs to its responsible material.
 A Claim's selected decision owns its current mathematical/review assessment; a Task's contract and selected decision own its authorized question and lifecycle.
 Each S owns route priority/disposition and exact Task associations.
-Fixed arguments, source units and computation groups own their actual mathematics, while formal R findings own their actual agent review scope and relationship.
+Fixed arguments, rolling source units and computation groups own their actual mathematics, while formal R findings own their actual agent review scope and relationship.
 Indexes derive navigation rather than creating another status authority.
 Link the actual responsible material and preserve necessary mathematical and evidentiary change history there.
 
@@ -144,6 +149,40 @@ These are execution defaults, not a new reporting system.
 Do not create per-read logs, permanent timing ledgers, validation receipts or another status registry to demonstrate compliance.
 Keep substantive mathematical findings and actual review evidence in their existing homes.
 
+## Shared-repository work starts
+
+For actual same-repository collaboration with a collaboration remote, the responsible main agent obtains fresh remote state when starting a newly assigned repository task, resuming paused or interrupted work, or beginning a new autonomous exploration round.
+Apply this after reading the necessary local entrances to establish the actual assignment, target and authority, before work that depends on that repository state.
+It covers ordinary T, joint T participation, writing, literature work, transfer preparation, review, maintenance and framework-upgrade preparation.
+Registered collaborators, a configured remote or an external-source entry alone do not establish such work; local work without Git or a collaboration remote and merely inspecting or acquiring from another repository retain their actual scope.
+
+Continuous reading, tool calls, substeps and progress questions within the same assignment may reuse the round's actual result while it remains applicable.
+The main agent coordinates integration and writes in that working copy; subagents reuse its result while reading their own applicable current rules.
+A new task or resumption needs fresh project facts even if a query ran earlier that day; old remote-tracking references and the daily official framework-version cache do not supply them.
+Refresh again when known relevant remote changes, a phase needing fresh facts or actual delivery requires it, without polling or a mandatory query for every call.
+
+Use native Git under the [target, authority and integration rule](identity.md#shared-repository-updates-and-integration), prioritizing authorized fast-forward or ordinary merge before dependent work.
+With no incoming update, continue without an empty commit or synchronization event.
+After integration, read the changed rules, contracts, strategies, results, useful failures, reviews and source facts relevant to the current work before adopting or editing affected content.
+Reread changed applicable rules under the [current-rule duty](#proportionate-execution).
+A Git update creates no intake, adoption of a new exact joint contract, execution activation or resumption; it does not reset effective stops or renew an allowance.
+Honor the [execution boundary](execution.md#responsibility-and-version-boundary), actual author scope and fixed inputs; explicit offline, read-only and fixed-commit instructions and failures use the integration rule's bounded handling.
+No round number, last-sync field, synchronization log, model register, scheduled service or receipt is required.
+
+### Integration capability and delegation
+
+Before making integration judgments, the main agent assesses whether its actual model and reasoning configuration are adequate for the affected content.
+If its model has lower reasoning capability or its current reasoning effort is low, it must bring in an actually available, stronger model suited to the integration, with appropriate reasoning effort, to perform the necessary judgments and result checking.
+Apply this especially to mathematical statements, hypotheses, proofs, input dependencies, source editions and review applicability; a clean Git merge or a mechanical check cannot establish those conclusions.
+Judge suitability from the actual task and platform capabilities, without a model-name classifier, file-extension rule, fixed ranking or automatic router.
+
+Provide the delegate with the necessary current rules, explicit local and remote commits and differences, actual materials, authority, pending questions and affected consumers.
+The main agent retains overall understanding and responsibility for scope, attribution, coordinated writes and checking the necessary result.
+Delegation supplies neither additional author rights nor substantive-conflict review approval, and independence still follows the actual participation and [review boundary](proof-audits.md#review-arrangements).
+An adequately capable main agent may act directly; merely obtaining or reading branch facts does not require another agent.
+If adequate model, reasoning or delegation capability is unavailable, state the affected judgments and unfinished scope, defer dependent processing and continue independently supported authorized work.
+Do not claim an unavailable model participated or create a capability certificate, compulsory call sequence or new approval procedure.
+
 <a id="new-task-setup"></a>
 ## Registering and Activating a Task
 
@@ -205,8 +244,7 @@ The following sequence applies to mathematical research advancement; discussion,
    Keep only the current exact Task reference, state and still-effective conditions in the stable E, with an incremental baseline/window only when actually applicable.
    Stop on the first stopping observation or monitoring failure and directly retain the effective stopped condition.
    An active Task does not itself resume a stopped run.
-   For actual shared Git research, the responsible main agent completes the [round's collaboration update](tasks.md#shared-git-research) before new substantive work and reads its relevant changes before relying on the local entries below.
-   Subagents reuse that actual same-round result; the responsibility applies even when adequate existing mathematics makes a new external literature search unnecessary.
+   For actual shared Git research, complete or reuse the [common work-start update](#shared-repository-work-starts) and read its relevant changes before relying on the local entries below, including when existing mathematics makes a new external search unnecessary.
 2. Follow the relevant [Claim entries](../../mathematics/claims/index.md) and [strategy index](../../mathematics/strategies/index.md) within the authorized task.
    Read the linked arguments and audit units needed for the next step; do not treat historical checkpoints as active instructions or reread unrelated history by default.
 3. Identify the current question, known and provisional assumptions, and smallest useful next step under the [work-obligation rules](#work-obligations).
@@ -224,7 +262,7 @@ Explain consequential applicability, limitations and adaptations in the consumin
 Cite fixed evidence for mathematical reliance; a rolling route or source analogy is not proof.
 Useful lessons remain with the actual route or a substantive fixed synthesis, without a mandatory adoption form or reciprocal feedback obligation.
 Receive prepared local content under the common [adaptation rule](records.md#receiving-and-adapting-selected-content), retaining exact necessary source scope and the original human.
-Later corrections to another human's authored body belong in the correcting human's own material.
+Apply the [shared locator-only exception](identity.md#collaboration-maintenance-and-conflicts) to corresponding reference repairs; later substantive corrections and other body or layout changes to another human's material belong in the correcting human's own material.
 
 If no active research objective is recorded, make that absence explicit and continue only work covered by the current instruction, such as framework maintenance or an authorized source study.
 A proposed question is not automatically an active task.

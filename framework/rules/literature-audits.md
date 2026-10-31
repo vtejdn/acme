@@ -13,52 +13,68 @@ This default adds no mandatory Lean checklist or report to ordinary source audit
 
 ## Organization and Stable Units
 
-Before creating or retaining U content, apply the [common content decision](records.md#substantive-material-retention) to the actual source finding and existing units.
-Preserve definitions/results/mechanisms, the inspected edition/passages, applicability and uninspected-proof limits.
-Acquisition-only facts stay in the source registry/intake; neither a download nor existing theorem text substitutes for source-inspection evidence.
-The registry is a machine-local account, while shared U/L and source contents retain actual work/edition, passages, mathematical findings and inspection limits without requiring another author's current holding or account.
-Missing local registration neither invalidates shared evidence nor establishes missing originals; actual U reception still completes its own source-preparation outcome and failure reporting under the [literature rule](literature.md#acquisition-before-u-reception).
+Before creating or retaining U, apply the [common content decision](records.md#substantive-material-retention), reusing adequate mathematical/source evidence.
+Preserve actual definitions/results/mechanisms, inspected editions and passages, applicability and uninspected-proof limits.
+Bibliographic identity stays in references.bib; useful source/edition explanations stay in the source README, without an acquisition account.
 
-Keep source-level navigation in `<citation-key>/readme.md`.
-New fixed reusable units use `<citation-key>/<Author>_U001_v1.md`, with `<Author>_<OriginalRepository>_U001_v1.md` for imported originals.
-Use the existing `<citation-key>-U001` identity and lowercase unit anchor; do not allocate a research-line or Task number.
-The source key's numeric positions are shared across authors/origin prefixes, with physical versions retaining their actual original-family correspondence.
-For intake relocation, choose the receiving position and exact local edits explicitly while preserving original source identity, external fixed locators and unrelated literal examples.
-The material version is separate from the inspected source edition.
-Each fixed unit owns one unit anchor and the concise source-version, source-locator and inspection facts specified by the [material input format](../material-format.md#fixed-source-unit-inputs).
-Organize units around definitions, results, proof mechanisms or tightly dependent result groups; file length and page count do not determine mathematical boundaries.
-Existing multi-unit and historical files require a coordinated, information-preserving conversion; this naming rule does not authorize guessing an author or silently splitting their evidence.
+A local rolling U uses mathematics/audits/literature/SourceKey/Author_U001.md, with one real human author and necessary stable anchors.
+An acquired U retains its necessary registered original-repository prefix, for example Bob_repo1_U001.md, and exact original provenance.
+It has no physical _vN, current pointer, fixed copy or snapshot account; arXiv v2 or a publication edition remains a distinct source fact.
+Each source-key and human-author namespace starts at 001 independently, with necessary original-source distinctions retained.
+Yin_U001.md and Ma_U001.md in the same source directory are separate units; Yin's next number is 002 and Ma consumes none of Yin's sequence.
+Use the existing author-specific [allocation state](../material-format.md#material-family-allocation-state), not a shared directory-wide upper bound or a new unit register.
+Full author/origin/path identity distinguishes units; SourceKey-U001 alone is not a cross-author identity.
+The lowercase sourcekey-u001 anchor is file-local, so equal anchors in different authors' files are legal.
+Check real same-namespace occupancy and explicit original correspondence without reading unrelated authors' bodies; necessary sibling identity-header reads stop at their header byte/decoding boundary.
 
-Within the actual inspected scope, process explicit definitions and the terminology and symbol conventions needed to reuse the source.
-Keep complete definitions at adequate U/C/L homes and register their precise stable entries through the [concept-group definition index](../../mathematics/definitions/index.md), following the [definition rule](definitions.md).
-Retain objects, hypotheses, domains, normalization, source terminology and meaningful formulation differences; an empty locator or incomplete row does not supply a complete definition.
-A whole-source audit handles definitions within its real coverage; a selected-passage audit does not claim unrelated chapters.
-Reuse adequate inspected content without creating a unit for each definition or re-auditing an established theorem merely to register its interface.
-An adequate complete fixed C/L account can retain integrated source inspection and adaptation evidence in place; a manuscript citation does not require copying it into an extra U.
-Independent reusable source-audit units retain the ordinary U home, and an actual evidence gap follows the common content decision at its necessary scope.
-A reusable definition may have its own anchor within an existing source unit; indexing does not require moving it, creating a unit for every definition, or registering each theorem's parameter substitution.
-Source versions and locators stay with the source record.
-Optional manuscript citation candidates follow the definition rules and the sole bibliography; historical attribution needs evidence separate from checking the definition's mathematical content.
+The author and that author's agents maintain U under actual authority, correcting or extending its current useful content without an edit-history log.
+A collaborator may write their own supplement/correction in the same source directory, cite the affected U and reuse sufficient existing work.
+Substantive corrections to another author's U remain that author's responsibility; agent roles and equal names transfer no authorship.
+Source README may contain concise author sections for useful preprint/publication editions, public addresses, logical originals, page correspondences, edition differences, use limitations and U navigation.
+Do not require an empty author section, field table, complete bibliography duplicate or holding assertion.
+Each human maintains cross-machine validity of their links with agent assistance in actual scope; private setup stays private without path synchronization or availability certification.
 
-For an unchanged-source key correction, rename unit IDs, anchors and consumers together under [coordinated renaming](literature.md#coordinated-key-renaming), preserving inspection content and scope.
-Same-work revisions retain the citation key and explicit artifact/version locators.
-Review coverage belongs to the inspected version and passages; before a consumer adopts a revised result, compare its affected statements, hypotheses and proof interfaces.
-Acquisition alone does not transfer review or require new unit IDs.
+U points precisely enough to the edition explanation actually inspected and identifies the passages, conditions and actual checks/limits in ordinary prose.
+A changed current source link does not alter the edition inspected earlier; preserve still-used edition explanations.
+No Source and inspection table or enumerated coverage state is required or interpreted as a mathematical verdict.
+Define units by mathematical purpose, reusing adequate complete U/C/L rather than creating a file per definition, search hit or downloaded source.
+Process complete definitions, terminology and symbols under the [definition rules](definitions.md), retaining objects, hypotheses, domains, normalization and formulation differences.
+New substantive project deductions keep their adequate fixed C or other responsible home.
 
-Assign each unit an ID `<citation-key>-U001`, increasing the numeric part within that source without reusing an issued ID.
-Preserve the registered citation key's case in the ID.
-Give each unit an explicit lowercase HTML anchor, for example `<a id="miy22-u001"></a>` for `Miy22-U001`; links use `#miy22-u001`.
-These are naming examples, not completed audits or allocated IDs.
+### Unit granularity and maintenance
 
-The existing mathematics/audits/literature/index.md links unit IDs to their authoritative source records; it is navigation, not a second assessment or acquisition authority.
-Check it and coordinate allocations before concurrent edits.
-A source-specific `readme.md` supplies local navigation; keep verification facts in the unit record and summarize them by reference in indexes rather than maintaining competing assessments.
+One source inspection may create no new U, one U or several U, according to its actual content and useful responsible homes.
+When existing U/C/L is sufficient, reuse it; retain any necessary new findings, actual checking scope and limitations without a record merely stating that another inspection occurred.
+An inspection round, session, agent, chapter, theorem count or source page count does not determine the number of units.
 
-Retain unit IDs when moving or splitting files, and update all incoming links together.
-Never reuse an ID for an unrelated statement.
-Record dated corrections and the exact source version reviewed.
-A new source version does not inherit an earlier verification automatically: compare its statement, hypotheses, locator, and relevant proof before carrying the assessment forward.
-If a statement materially changes, preserve the old record and explicitly relate the replacement unit to it.
+The default order is to reuse sufficient material, maintain a suitable existing U, and create a new unit when independent organization, reference or human-author attribution actually requires one.
+For the same author and topic, corrections, details, hypotheses, notation, application limits and deeper inspection normally update the existing U.
+Moving from statement reading to proof inspection does not itself issue a new number, adopt later content for old consumers or expand an earlier R's actual review scope.
+Keep still-useful mathematical reasons for errors, failures and limitations without retaining every edit's process history.
+
+Closely connected definitions, results and proof mechanisms may share sections and stable anchors within one U.
+Separate independently understandable and reusable topics when doing so improves their organization or citation, without requiring one U per paper or one U per theorem.
+Split a mixed unit or merge redundant or excessively fragmented units only for an actual understanding, reference or maintenance benefit, preserving necessary content and repairing affected consumers.
+For another author's substantive supplement, correction or useful checking evidence, prefer that author's suitable existing U and create their own unit when needed, citing the original rather than taking over its substantive body.
+
+A changed source-edition label does not automatically create U.
+Compare the adopted statements, hypotheses, proof interfaces and inspection objects; pure page, numbering or layout changes maintain source notes and locators.
+When substantively different editions remain useful, keep their actual source and application ranges explicit and judge any need for separate U from that content.
+New project arguments retain their adequate C or other responsible home and can be cited from U.
+Apply the author, provenance and downstream-maintenance boundaries below; a stable link does not freeze the current rolling body as historical evidence.
+No count, length or similarity threshold, granularity field, required decision table, new approval, automatic classifier or compulsory tool is introduced, and this rule triggers no whole-library reorganization or renumbering.
+
+When editing, combining, splitting, moving or adapting U, identify and repair actual downstream references, including source notes, other U, definition indexes, mathematical materials, reviews and manuscripts.
+Locator-only repair preserving actual objects, meaning and adoption/review scope is shared maintenance under actual authorization, including references in another author's material.
+This grants no substantive author takeover or development-role exception.
+True changes to an adopted input require corresponding reasoning and assessment work; later U checks are not retroactively part of old R.
+Formal arguments identify sufficiently precise external statements, hypotheses, edition, locators and adopted scope; a stable U link does not freeze its entire current body.
+Retain necessary earlier mathematical and review facts at their responsible home without recreating U snapshot history.
+
+The source index and source README provide concise navigation by author and full path, not another assessment, availability or acquisition authority.
+For an unchanged-source key correction, maintain paths, anchors, author-specific allocation and actual consumers together under [coordinated maintenance](literature.md#coordinated-key-renaming).
+Preserve real source/transport facts and actually inspected scope, comparing affected uses before carrying checks to a revised external edition.
+Same-repository reuse prepares originals only when further reading is necessary; actual personal import and external intake complete selected necessary original preparation and report true failures under the [literature rule](literature.md#acquisition-before-u-reception).
 
 ## Content and Verification
 
@@ -99,7 +115,7 @@ Record the citation and locator, why the input applies, the decision to accept i
 An ordinary established theorem need not have its original proof re-audited solely because it is used.
 
 Such an accepted input can count as a resolved mathematical dependency in the responsible [Claim material and decision](claims.md#dependencies-and-corrections).
-Acceptance for use does not imply that the source proof was independently checked and does not upgrade a reading-coverage state to `Audited within scope`.
+Acceptance for use does not imply that the source proof was independently checked or expand the recorded inspection scope.
 Explicitly state when the original proof was not reviewed.
 A retained foundational theorem is not an unresolved mathematical premise merely because its proof lies outside the current review.
 
@@ -127,7 +143,7 @@ Optional related results need not become required audit tasks merely because the
 
 Record consequential searches in the source-specific audit, following the [search evidence fields](literature-search.md#search-evidence).
 Link the inspected source and exact version, distinguish located statements from checked proofs, and retain the scope of unsuccessful searches.
-Download and version metadata belong in the [literature registry](literature.md#literature-acquisition); do not create a second bibliography or infer a completed unit audit from acquiring a file.
+Useful source/edition explanations belong in concise author source notes under the [literature rule](literature.md#literature-acquisition); do not create a second bibliography or infer an inspection from acquisition.
 
 When a search resolves or challenges a dependency, update the authoritative unit and assess its actual downstream consumers.
 If the search is paused with the dependency unresolved, preserve that limitation.
@@ -135,46 +151,18 @@ A locally verified repair does not require indefinite searching for author confi
 
 <a id=coverage-states></a>
 
-## Reading Coverage and Review State
+## Actual inspection scope
 
-Maintain states for a specified passage, chapter, result, or unit and exact artifact version.
-A source-level index summarizes coverage by links; it must not label a whole monograph audited because selected results were checked.
-Missing coverage defaults to unreviewed, not verified.
+Describe the work/edition, passage, statement, hypotheses, proof steps and dependency interfaces actually inspected, with truthful limitations.
+Distinguish located leads, statement reading, selected proof checks and a genuinely complete scoped inspection in ordinary prose, without an enumerated state or required three-field table.
+A source-level index links actual units and cannot label a whole monograph checked from a few results.
+A source author's assertion, acquisition, U presence, complete field list or successful tool check establishes no independent proof inspection.
+Formal verification requires its own actual successful proof-assistant evidence.
 
-| State | Evidence required |
-| --- | --- |
-| Unsearched | No search for the specified topic and version has been performed. |
-| Located | A potentially relevant passage has been identified; its mathematical content is not yet checked. |
-| Read | The statement and surrounding conventions have been read; proof review is absent or partial. |
-| Audited within scope | The specified statement, hypotheses, proof steps, and necessary dependency interfaces have been reviewed, with retained external inputs explicitly listed. |
-| Questioned | A gap, conflict, suspected error, or inaccessible critical dependency remains; preserve the previous state and identify affected consumers. |
-
-These workflow states supplement, rather than replace, the existing statement-check and proof-inspection fields.
-An audited unit with retained external inputs does not imply independent verification of their proofs.
-A statement-checked established theorem may be [accepted for use](#accepted-external-inputs) with its proof-inspection limit disclosed; an unaudited lead or unresolved applicability can support only a conditional route.
-Keep the coverage state tied to work actually performed rather than the decision to use the input.
-Formal verification requires a separately recorded successful proof-assistant check.
-Do not retroactively relabel existing records without inspecting their evidence.
-
-For lightweight discovery or reading, use this compact record in the source-specific audit; promote it to the full unit template when it becomes a reusable input:
-
-```text
-Source/version: <actual work, edition or artifact identity; suitable shared bibliography, same-edition contents or existing U/L evidence locator>
-Scope/locator: <topic; chapter/result; printed and PDF pages where available, or actual HTML headings/labels/native anchors>
-Trigger/intended use: <research question, dependency, discrepancy, or explicit request>
-Date/reviewer and state: <actual work performed; self-review or independent review>
-Finding and hypotheses: <candidate or checked statement, with conventions>
-Dependencies/unchecked scope: <links and verification boundaries>
-Search evidence: <queries/sections inspected; extraction limits; reason for stopping>
-Open issues/next action: <specific gap or none; affected claims and required rechecks>
-```
-
-Keep the actual edition, chapters, original page labels and inspection limits at this shared home without requiring a local registry account or anchor.
-An actual account lookup may be named as inline code; its legitimate one-way contents/source links do not require a shared backlink or a new U merely to supply a link.
-
-On version changes, compare the passages and dependencies actually used before carrying their assessments forward.
-On a discovered gap, record a dated correction and identify downstream claims requiring reassessment.
-Neither an unsuccessful search nor a review pause establishes nonexistence or novelty.
+Keep useful findings, actual dates and reviewer relationships at the responsible inspection, without inventing unknown dates or retaining every edit/search process.
+On an edition change, compare passages, hypotheses and dependency interfaces actually used before carrying the assessment forward.
+On a discovered gap, correct its actual author's material and reassess affected consumers under the maintenance and author boundaries above.
+An unsuccessful search or a pause establishes neither nonexistence nor novelty.
 
 ## Record Template
 

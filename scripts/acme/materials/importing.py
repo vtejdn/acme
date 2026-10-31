@@ -63,7 +63,13 @@ def _destination(repo, path, author):
                       or path.startswith(r.paths.COMPUTATION_OUTPUT_ROOT.as_posix() + '/' + ident.name + '/'),
                       'Native J files use their actual program or output home.')
     else:
+        parts = PurePosixPath(path).parts
+        source_note = (len(parts) == 5 and parts[:3] == ('mathematics', 'audits', 'literature')
+                       and parts[4] == 'readme.md')
+        if source_note:
+            names.validate_source_key(parts[3])
         allowed = (path.startswith('profiles/' + author + '/')
+                   or source_note
                    or any(path.startswith('mathematics/' + home + '/')
                           for home in ('manuscripts', 'presentations', 'talks')))
         r.require(allowed, 'Select the actual author\'s profile, document or typed mathematical home.')
@@ -78,6 +84,15 @@ def _destination(repo, path, author):
 
 def _source_author(path, raw, author, correspondence):
     ident = material_identity(path)
+    if ident is None and raw.startswith((b'---\n', b'---\r\n', b'\xef\xbb\xbf---\n', b'\xef\xbb\xbf---\r\n')):
+        # An explicitly prepared older source may have an obsolete filename.
+        # Its actual author header is sufficient here; local parsing uses only
+        # the current receiving contract and supplies no legacy U reader.
+        header, _body = documents.header_values(raw.decode('utf-8-sig'), known=False)
+        r.require(not {'source_repository', 'source_material'} & header.keys(),
+                  'Already-intaken content keeps its existing acquired identity.')
+        r.require(header['author'] == author or correspondence.get(header['author']) == author,
+                  'Establish the selected source author as the actual importing human; another author uses intake.')
     if ident:
         r.require(ident.source_repository is None,
                   'Already-intaken content keeps its existing acquired identity; reuse its actual local counterpart.')
@@ -171,7 +186,7 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
         before = batch.snapshot.watch(path)
         candidate = material_identity(path)
         if before is not None and before != raw:
-            fixed = candidate and candidate.kind in 'CTRLU'
+            fixed = candidate and candidate.kind in 'CTRL'
             r.require(not fixed, 'Preserve the occupied fixed version; reuse it or prepare the appropriate next physical version.')
             r.require(entry.get('expected') == before.decode('utf-8-sig'),
                       'A rolling/profile/document replacement needs its exact expected receiving text.')
@@ -201,16 +216,14 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
                         if boundary is not None:
                             batch.add({execution: boundary})
                 if ident.kind == 'U':
-                    units = Preparation(repo.root, [ident.source_key])
+                    units = Preparation(repo.root, [ident])
                     batch.snapshots.append(units)
             reservations.append((ident, established))
         batch.add({path: raw})
         own.append(path)
 
     def validate(read, view):
-        from .validation import validate_navigation_targets
         from ..execution import records
-        from ..core import source_refs, external
         entrances = set(discovery.candidates(repo.root)) | set(batch.pending)
         units = []
         for path in own:
@@ -228,20 +241,10 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
                 doc = documents.parse(path, raw)
                 documents.check(doc, read, paths=entrances)
                 if ident.kind == 'U':
-                    units.extend(candidate for candidate in entrances if (item := names.candidate(candidate))
-                                 and item['kind'] == 'U' and item['source_key'] == ident.source_key)
-            if isinstance(raw, str):
-                locators = []
-                for _, _, href in links.markdown_link_spans(raw):
-                    original = source_refs.parse(href.strip().strip('<>'))
-                    if original is not None:
-                        external.repository(view, original['repository'])
-                    destination = links.destination(path, href)
-                    if destination is not None:
-                        locators.append({'path': destination[0], 'anchor': destination[1]})
-                batch.guards.append(validate_navigation_targets(repo.root, path, locators, read, planned=batch.pending))
+                    units.extend(candidate for candidate in entrances if discovery.unit_namespace(candidate, ident))
         if units:
-            discovery.unit_positions(sorted(set(units)), read)
+            discovery.unit_positions(sorted(set(units)), lambda name: read(name) if name in batch.pending
+                                     else batch.snapshot.header(name))
         for boundary in (path for path in batch.pending if path.startswith('execution/')):
             record = records.parse(boundary, read(boundary))
             task = records.task_path(record, boundary)
@@ -259,6 +262,5 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             selections = options.pop('selections')
             result = acquire(repo, foreign_root, selections, batch=batch, **options)
             operations.append(result['operation'])
-            notices.extend(result['notices'])
     installed = batch.commit(timeout=timeout)
     return {'materials': own, 'installed': installed, 'foreign_operations': operations, 'notices': notices}

@@ -36,7 +36,7 @@ C may register an actual conjecture or obligation with unresolved status; it is 
 J preserves needed native work with honest run status, including useful failure or not-yet-run continuing work, without an immutable account for every trial.
 R records an actually performed review of fixed inputs, including partial or negative findings; reviewing an existing theorem can add necessary evidence.
 An assignment, announcement or link check is not such a review.
-U owns inspected source definitions/results/mechanisms, edition/passages, applicability and inspection limits; acquisition-only facts stay in bibliography/registry/intake.
+U owns inspected source definitions/results/mechanisms, edition/passages, applicability and inspection limits; bibliographic facts, useful edition/source notes and cross-repository provenance stay at their separate responsible homes.
 L owns substantive exploration, comparison, synthesis, useful failure and limitations; formal project reviews of every actual agent relationship belong to R.
 An ordinary local verification may stay with its argument or discussion without becoming a separate formal review.
 Required registration and evidence duties remain even when the theorem appears elsewhere.
@@ -59,6 +59,10 @@ Run checks relevant to changed behavior after inspecting content.
 No per-paragraph classification sheet, preservation hash, new registry, closeout report or additional approval is required.
 
 ## Receiving and adapting selected content
+
+The agent reads selected prose, identifies references and necessary consumers, and prepares final text or exact expected-text edits.
+Ordinary material tools do not discover or rewrite whole-body references, infer source limitations or establish their completeness.
+Responsible simple declarations and actual chosen addresses retain their separate identity, source, view and access contracts under the [workflow responsibility](workflow.md#agent-and-tool-responsibilities).
 
 Apply the common content decision to both external intake and a human's own [personal import](intake.md#personal-import).
 Read each actually selected file or mathematical unit, its necessary context and inputs and adequate receiving candidates before choosing what to retain, reuse, copy or adapt under current receiving rules.
@@ -89,8 +93,8 @@ Every authored mathematical document has exactly one human author.
 Initial authorized intake permits the preparation above while retaining the original human and source assessments truthfully.
 Different-author synthesis, new reasoning or substantive correction belongs to the actual contributor's own responsible material with exact original-source references, rather than being attributed to the original author as format adaptation.
 After receipt, another human explains a gap, correction, replacement argument, computation or synthesis in that human's own suitable document with exact references.
-Calling a body edit administrative does not permit changing another human's authored document.
-Only the established same human may directly revise it under actual authority, fixed-version and review rules.
+General administrative wording or layout does not authorize changing another human's body.
+The bounded shared locator-only repair below may maintain corresponding references while preserving actual mathematics and adoption/review scope; substantive changes remain with the established author under actual authority and applicable version/review rules.
 For different local/external identity representations, use explicit adopted correspondence at the existing identity/intake home; matching names or a caller-selected author supply no permission.
 Shared registration and derived navigation retain their own maintenance duties.
 
@@ -166,7 +170,12 @@ Purely administrative or authorization history may be reduced under the [common 
 The latest numeric main material supplies the family entrance, whose explicit Current selector may choose an older decision.
 File timestamps, an index row and an alternative proof do not make that choice.
 
-Fixed U materials use `mathematics/audits/literature/SourceKey/Author_U001_v1.md`, retaining the existing source's unit sequence, source edition, exact passage and actual inspection limits.
+Rolling U uses `mathematics/audits/literature/SourceKey/Author_U001.md`, retaining independent source/author numbering, the inspected edition, precise passage and actual checking limits.
+An explicit still-applicable source README explanation identifies the inspected edition; a changed current source link does not change old inspection scope.
+The author's agents maintain its useful current content without physical versions, a mandatory inspection table or enumerated coverage state.
+When editing, combining, splitting, moving or adapting U, repair actual downstream references together; pure locator repair preserving the object, mathematics and adoption/review scope is shared maintenance, including corresponding references in another author's material.
+It creates no new mathematical version, decision, time or review and grants no substantive author takeover.
+A formal argument identifies precise external statements, hypotheses, edition, locators and adopted scope rather than treating the whole rolling U as a frozen historical proof input.
 This is separate from line allocation and from an external work's edition.
 Definitions retain their own naming conventions.
 
@@ -191,12 +200,14 @@ Approved intake uses its explicit fixed source/file scope, not arbitrary recursi
 
 An established same human may revise acquired C/T/R/L under ordinary authority, fixed-version, decision and review requirements while retaining the actual external identity and source header.
 The agent names the actual fixed receiving input and adopted scope in the physical C/T/R/L revision's own ordinary Inputs section under the [material format](../material-format.md#acquired-receiving-inputs-in-local-revisions).
+Explain the actual retained input, additions and limits in normal prose after the corresponding reference, without turning that explanation into a required scope field or single-line entry.
 Those provenance inputs are independent of current decision selection; a decision's support/dependency relations retain their separate mathematical adoption and review meaning.
 Its actual source_repository and source_material agree exactly with the retained revision header; an arbitrary earlier member of the family or another original source version cannot substitute for that input.
 Keep the current local revision distinct from that acquired input and its original source facts; local additions do not become content or reviewed evidence of the earlier source.
 The existing intake operation continues to describe the version actually acquired, without a new acquisition event, another local.path entry or an edit to the old outcome for the local revision.
 Preserve the fixed input and its original operation unchanged.
-Readers use the explicitly designated input and scope, rather than arbitrary body links, family membership, adjacent numbering, earliest/latest surviving versions or text similarity.
+Tools use only the explicitly designated input locator, rather than arbitrary body links, family membership, adjacent numbering, earliest/latest surviving versions or text similarity.
+The agent reads and checks the adopted-scope prose; a link caption supplies no scope or evidence that this explanation is complete.
 A missing or contradictory actual input remains a concrete issue to resolve in the responsible material, without automatic ancestry discovery.
 For onward selection that includes local additions, distinguish the earlier acquired input from the actual revising repository, fixed local revision and scope supplying those additions in the existing source/local accounts.
 These ordinary input relationships create no revision registry, copy marker, import payload or requirement to use a particular helper.
@@ -204,7 +215,7 @@ In an R revision, acquisition facts remain about its explicitly designated acqui
 Consume that local finding under the applicable new-review and acceptance requirements without requiring its anchor in the old intake operation.
 Preserve inherited findings at their actual source scopes; neither the retained external identity nor the common R container transfers an earlier relationship or verdict to the local finding.
 Every selected R/L declaration uses one explicit Target per row, including retained same-anchor findings, mixed revisions and onward source selection.
-Preserve each real path, target anchor, Scope, checking relationship and common assumptions; ordinary Inputs still identify the actual fixed input and adopted scope, without an automatic finding correspondence.
+Preserve each real path, target anchor, Scope, checking relationship and common assumptions; ordinary Inputs identify the actual fixed input, with adopted-scope prose maintained by the agent and no automatic finding correspondence.
 When an optional helper must read a nonconforming old declaration, it reports the concrete error; the agent can [read and prepare the needed current content](../agent-actions.md#scope-and-instruction-handling) without restoring a historical reader or modifying fixed source facts.
 This address or format maintenance creates no new review, acquisition or actual review time, and does not rewrite the fixed input or its operation.
 The onward helper's explicit origin.input choice remains a separate [source-selection contract](../material-format.md#acquired-findings), without an implicit correspondence parameter for ordinary revisions or readers.
@@ -255,7 +266,8 @@ Remove obsolete purely administrative references; necessary mathematical or revi
 
 Remove persistent mathematical digests, including historical values and their writers/readers, for authored mathematics, review content, J inputs/programs/outputs and manuscript sources/builds/PDFs.
 Preserve the actual reviewed inputs, verdict, relationship, scope, limits and useful failures through canonical paths, physical versions, anchors and available source revisions.
-Literature-file fingerprints computed from actual local bytes remain at the sole source registry for accidental-damage checking; authored-material intake carries no literature baseline.
+Literature fingerprints are also retired completely, including historical values, accidental-damage baselines and their acquisition, reading, comparison, display and reminder mechanisms.
+Do not relocate them into source notes, U, private files or another list; use adequate inspection, reacquisition or direct comparison for a concrete source problem.
 Transient input-change comparisons may be used without a saved mathematical digest.
 Reproduction needs do not create a shared file-fingerprint exception; retain actual work/edition, original source locators, physical versions, anchors and applicable Git revision/view facts, with unavailable facts left explicitly unknown.
 No hash-history log, replacement manifest or mathematical byte gate is introduced.

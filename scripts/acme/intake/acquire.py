@@ -3,7 +3,6 @@ import json
 from pathlib import Path, PurePosixPath
 import posixpath
 import re
-from urllib.parse import quote
 import uuid
 
 from ..core import repository as r
@@ -40,6 +39,8 @@ class GitSource:
         return self._entries
 
     def read(self, path):
+        source_refs.check_path(path)
+        r.require(not r.paths.in_pdf_store(path), 'Private local literature is outside intake.')
         return self.tree.bytes(path)
 
     def close(self):
@@ -56,6 +57,8 @@ def operations(repo):
     else:
         paths = sorted(path for path in tree.names if re.fullmatch(r'intake/[^/]+/[^/]+\.json', path))
     for path in paths:
+        try: source_refs.check_path(path)
+        except ValueError: continue
         try: value = json.loads(r.read_from(repo, path))
         except json.JSONDecodeError: continue
         if not isinstance(value, dict) or not isinstance(value.get('items'), list): continue
@@ -132,6 +135,10 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
             external.person(repo, doc.identity.author, doc.identity.source_repository)
         if item['kind'] in 'CTRLJ':
             r.require(doc.identity.author == origin['author'], 'Acquired author differs from its adopted local source record.')
+        if item['kind'] == 'U':
+            r.require(doc.identity.author == origin['author_name']
+                      and origin.get('author', doc.identity.author) == doc.identity.author,
+                      'An acquired U retains its actual original human author.')
         r.require(item.get('scope') and (item['kind'] == 'J' or not local.get('anchor')
                   or links.anchor_occurrences(doc.text)[local['anchor']] == 1),
                   'Acquired scope needs one actual local anchor and its description.')
@@ -149,16 +156,6 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
             else:
                 original = _file_key(item, pair)
                 external.repository(repo, original[0])
-        for artifact in item.get('source_artifacts', []):
-            r.require(item['kind'] == 'U' and isinstance(artifact, dict)
-                      and set(artifact) == {'source','local','available'}
-                      and isinstance(artifact['available'], bool)
-                      and r.paths.valid_source_name(artifact['source']),
-                      'Selected source artifacts need their explicit original/local paths and availability.')
-            prefix = r.paths.PDF_ROOT.as_posix()+'/'
-            r.require(isinstance(artifact['local'], str) and artifact['local'].startswith(prefix)
-                      and r.paths.valid_source_name(artifact['local'][len(prefix):]),
-                      'Selected source artifact local path must identify a retained source file.')
     return value
 
 
@@ -179,12 +176,10 @@ def material_info(repo, document, *, read=None, seen=()):
                 r.require((origin['repository'], origin['path']) ==
                           (document.header['source_repository'], document.header['source_material']),
                           'Acquisition original identity disagrees with material header.')
-            found.append({'operation': path, 'source': origin, 'scope': item['scope'], 'local': item['local'],
-                          'source_artifacts': item.get('source_artifacts', []),
-                          'unmapped_references': item.get('unmapped_references', item.get('missing_inputs', []))})
+            found.append({'operation': path, 'source': origin, 'scope': item['scope'], 'local': item['local']})
     if not found:
         inputs = documents.revision_inputs(document, read)
-        r.require(inputs, 'A local revision needs its explicit acquired receiving input and scope: ' + document.path)
+        r.require(inputs, 'A local revision needs its explicit acquired receiving input: ' + document.path)
         from ..materials.validation import validate_locator_targets
         validate_locator_targets(inputs, read)
         resolved = []
@@ -230,9 +225,13 @@ def finding_evidence(repo, locator):
 
 
 def _source_items(source, doc, record=None):
+    if record is not None:
+        source_refs.check_path(record)
     for path in sorted(source.names):
         if record is not None and path != record: continue
         if re.fullmatch(r'intake/[^/]+/[^/]+\.json', path):
+            try: source_refs.check_path(path)
+            except ValueError: continue
             try: operation = json.loads(source.read(path))
             except json.JSONDecodeError: continue
             if not isinstance(operation, dict) or not isinstance(operation.get('items'), list): continue
@@ -366,6 +365,7 @@ def manifest(source, selections, *, files=()):
     result = []
     for selection in selections:
         path, anchor = selection['path'], selection.get('anchor', '')
+        source_refs.check_path(path)
         r.require(not r.paths.in_computation_outputs(path), 'J intake selects fixed programs and inputs, not local outputs.')
         item = names.parse(path)
         r.require(item.kind in SOURCE_KINDS, 'Select a mathematical unit; personal files use personal import.')
@@ -475,44 +475,23 @@ def manifest(source, selections, *, files=()):
     return sorted(result, key=lambda item: item['doc'].identity.kind == 'R')
 
 
-def _available(repo, requested):
+def _available_units(repo, requested):
+    """Existing exact original U scopes and their actual receiving positions."""
     result = {}
-    files = {}
-    for operation_path, operation in operations(repo):
+    for _path, operation in operations(repo):
         for item in operation['items']:
-            if (not isinstance(item, dict) or item.get('kind') not in KINDS or
-                    not isinstance(item.get('source'), dict) or not isinstance(item.get('local'), dict) or
-                    not isinstance(item.get('files'), list)): continue
-            source, local = item['source'], item['local']
-            if not all(isinstance(source.get(field), str) for field in ('repository','path','revision')) or not isinstance(local.get('path'), str): continue
-            if not any(repository == source['repository'] for repository, path in requested): continue
-            if item.get('kind') == 'J':
-                entrances = [row['source'] for row in item['files'] if isinstance(row, dict)
-                             and row.get('local') == local['path'] and isinstance(row.get('source'), str)]
-                for pair in item['files']:
-                    if not isinstance(pair, dict) or not isinstance(pair.get('source'), str): continue
-                    recorded = pair.get('original')
-                    if isinstance(recorded, dict): original_path = recorded.get('path')
-                    elif len(entrances) == 1:
-                        original_path = posixpath.join(posixpath.dirname(source['path']),
-                            posixpath.relpath(pair['source'], posixpath.dirname(entrances[0])))
-                    else: continue
-                    if (source['repository'], original_path) not in requested: continue
-                    key = _file_key(item, pair)
-                    destination = pair['local']
-                    r.safe_path(repo.root, destination)
-                    files.setdefault(destination, []).append((operation_path, key))
+            if (not isinstance(item, dict) or item.get('kind') != 'U'
+                    or not isinstance(item.get('source'), dict) or not isinstance(item.get('local'), dict)):
                 continue
-            if (source['repository'], source['path']) not in requested: continue
+            source, local = item['source'], item['local']
+            if (source.get('repository'), source.get('path')) not in requested:
+                continue
             key = source['repository'], source['path'], source['revision'], source.get('anchor', '')
             r.safe_path(repo.root, local['path'])
-            destination = (local['path'], local.get('anchor', ''))
+            destination = local['path'], local.get('anchor', '')
             r.require(key not in result or result[key] == destination,
-                      'Ambiguous original scope correspondence; supply an exact selected mapping.')
+                      'Ambiguous original U correspondence; inspect its selected acquisition facts.')
             result[key] = destination
-    for path, candidates in files.items():
-        key = _correspondence(candidates, path)
-        if r.safe_path(repo.root, path).is_file(): result[key] = (path, '')
     return result
 
 
@@ -542,15 +521,16 @@ def _check_j_refresh(repo, item, path, original):
 
 def _unit_text(raw, choice):
     """Apply only agent-designated original offsets, or supplied final local text."""
-    r.require(isinstance(choice, dict) and not set(choice)-{'number','version','edits','text'},
+    r.require(isinstance(choice, dict) and not set(choice)-{'number','expected','edits','text'},
               'Supply the explicit receiving unit number and designated edits or final text.')
     r.require(type(choice.get('number')) is int and choice['number'] > 0,
               'Supply a positive explicit receiving unit number.')
-    return links.edit_text(raw, {key:value for key,value in choice.items() if key not in {'number', 'version'}}, context='unit')
+    prepared = {key:value for key,value in choice.items() if key in {'edits', 'text'}}
+    return links.edit_text(raw, prepared, context='unit') if prepared else raw
 
 
 def acquire(repo, source_root, selections, *, revision, instruction, source_repository, correspondence,
-            initiator=None, files=(), timeout=30, refresh_j=False, mapping=(), batch=None):
+            initiator=None, files=(), timeout=30, refresh_j=False, batch=None):
     """Receive prepared authored content after the caller's U acquisition duties.
 
     Original-source acquisition and its actual failure report are agent actions
@@ -614,42 +594,14 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         bibliography_pending = {}
         if choices and (bibliography_before is None or bib.parse(bibliography_before.decode('utf-8-sig')) != entries):
             bibliography_pending[bib.BIB] = bib.render(entries).encode('utf8')
-        supplied_mapping, qualified_mapping = {}, {}
-        for row in mapping:
-            r.require(isinstance(row, dict) and set(row) in ({'source','local'}, {'source','local','sender'}),
-                      'Supply source/local mapping, with its sender for a foreign-number source context.')
-            original = source_refs.parse(row['source'])
-            r.require(original is not None, 'Mapping source must be an exact acme-source locator.')
-            r.require(not r.paths.in_pdf_store(original['path']), 'Private local literature is outside intake.')
-            r.require(not r.paths.in_computation_outputs(original['path']), 'Source outputs have no intake correspondence.')
-            local = links.destination('', row['local'])
-            r.require(local is not None, 'Mapping destination must be a relative local locator.')
-            local_path, local_anchor = local
-            r.require(not r.paths.in_computation_outputs(local_path), 'Intake mappings do not install local outputs.')
-            r.paths.check_public_target(local_path)
-            original_id = names.parse(original['path'])
-            # The final target is structurally validated below. Its mathematical
-            # correspondence is supplied by the agent; local adaptation has its
-            # own kind and physical version, separate from this exact source.
-            key = original['repository'], original['path'], original['revision'], original.get('anchor','')
-            selected_mapping = qualified_mapping if 'sender' in row else supplied_mapping
-            if 'sender' in row: r.require(row['sender'] == source.transport, 'Foreign mapping belongs to this selected sender.')
-            else: external.repository(repo, original['repository'])
-            destination = local_path, local_anchor
-            r.require(key not in selected_mapping or selected_mapping[key] == destination,
-                      'Conflicting explicit original mappings.')
-            selected_mapping[key] = destination
-        for key, local in qualified_mapping.items():
-            repository = source.repository_mapping.get(key[0])
-            if repository is not None:
-                r.require(supplied_mapping.get((repository, *key[1:]), local) == local,
-                          'Conflicting explicit original mappings.')
         # Prepare the explicit selections before taking the shared lock;
         # only rechecking and atomic installation hold it.
         import copy
         repo = copy.copy(repo)
         snapshot = _Preparation(repo.root,
-                                [chosen_works[item['doc'].identity.source_key] for item in plan if item['doc'].identity.kind == 'U'],
+                                [names.SourceUnitIdentity(item['doc'].identity.author, item['source']['repository'],
+                                     chosen_works[item['doc'].identity.source_key], item['selection']['unit']['number'])
+                                 for item in plan if item['doc'].identity.kind == 'U'],
                                 metadata=True)
         repo.selected_tree = snapshot
         snapshot.watch('repository/config.json'); snapshot.watch('repository/people.json')
@@ -659,16 +611,16 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             snapshot.data[bib.BIB] = bibliography_before
             if bibliography_before is not None: snapshot.names.add(bib.BIB)
         r.require(snapshot.unchanged(),'Shared intake inputs changed during preparation; retry with current inputs.')
-        available = dict(supplied_mapping)
+        available = {}
         from ..materials import discovery
         unit_paths = sorted(p for p in snapshot.names if re.fullmatch(
-            r'mathematics/audits/literature/[^/]+/[^/]+_U[0-9]+_v[0-9]+\.md', p))
+            r'mathematics/audits/literature/[^/]+/[^/]+_U[0-9]+\.md', p))
         positions, correspondence = discovery.unit_positions(unit_paths,snapshot.header)
-        mapping, pending, metadata = {}, dict(bibliography_pending), []
+        pending, metadata = dict(bibliography_pending), []
         planned_families, planned_positions = {}, {}
         for item in plan:
             doc, origin = item['doc'], item['source']
-            ident = names.parse(origin['path'])
+            ident = doc.identity if doc.identity.kind == 'U' else names.parse(origin['path'])
             established = False
             if ident.kind == 'U':
                 source_key = doc.identity.source_key
@@ -677,38 +629,37 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                 choice = item['selection'].get('unit')
                 number = choice['number']
                 prefix = 'mathematics/audits/literature/' + key + '/'
-                family = origin['repository'], ident.family
-                established = (key, family) in correspondence
+                receiving = names.SourceUnitIdentity(ident.author, origin['repository'], key, number)
+                namespace = names.namespace(receiving)
+                family = origin['repository'], origin['path']
+                established = (namespace, family) in correspondence
                 for _, prior in operations(repo):
                     for acquired in prior['items']:
                         if (isinstance(acquired, dict) and acquired.get('kind') == 'U'
                                 and isinstance(acquired.get('source'), dict)
                                 and acquired['source'].get('repository') == origin['repository']
                                 and isinstance(acquired['source'].get('path'), str)
-                                and names.parse(acquired['source']['path']).family == ident.family
+                                and acquired['source']['path'] == origin['path']
                                 and names.parse(acquired['local']['path']).source_key == key):
                             r.require(names.parse(acquired['local']['path']).number == number,
                                       'Reuse the established receiving position of this original U family.')
                             established = True
-                r.require((key, family) not in correspondence or correspondence[(key, family)] == number,
+                r.require((namespace, family) not in correspondence or correspondence[(namespace, family)] == number,
                           'Keep the existing local position of this original U family.')
-                r.require((key, number) not in positions or positions[(key, number)] == family,
+                r.require((namespace, number) not in positions or positions[(namespace, number)] == family,
                           'Conflicting local U position: '+key+f'-U{number:03d}; choose a free explicit position.')
-                positions[(key, number)] = family
-                correspondence[(key, family)] = number
+                positions[(namespace, number)] = family
+                correspondence[(namespace, family)] = number
                 exact = (origin['repository'], origin['path'], origin['revision'], origin.get('anchor',''))
                 if exact not in available:
-                    for acquired, local in _available(repo, {exact[:2]}).items(): available.setdefault(acquired, local)
+                    for acquired, local in _available_units(repo, {exact[:2]}).items(): available.setdefault(acquired, local)
                 known = [(k, v) for k, v in available.items() if k == (origin['repository'], origin['path'], origin['revision'], origin.get('anchor',''))]
                 if known:
                     target = known[-1][1][0]
                     r.require(names.parse(target).source_key == key and names.parse(target).number == number,
                               'Explicit U placement conflicts with its exact existing acquisition.')
                 else:
-                    basename = ident.author + '_' + origin['repository'] + '_U'
-                    version = choice.get('version', ident.version)
-                    r.require(type(version) is int and version > 0, 'Use a positive receiving U version.')
-                    target = prefix + basename + f'{number:03d}_v{version}.md'
+                    target = prefix + receiving.name + '.md'
                 local_anchor = names.parse(target).anchor
             else:
                 choice = item['selection'].get('local', {})
@@ -755,14 +706,6 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             planned_families[family_key] = local_ident.number
             planned_positions[position_key] = family_key
             item['target'], item['local_anchor'] = target, local_anchor
-            mapping[(doc.path, item['anchor'])] = (target, local_anchor)
-            if ident.kind == 'C' and item['anchor'] in doc.decisions:
-                for role, loc, scope in doc.decisions[item['anchor']].relations:
-                    if role == 'statement' and loc.path == doc.path:
-                        mapping[(doc.path, loc.anchor)] = (target, loc.anchor)
-            # Prepared receiving units retain their actual local anchors;
-            # unchanged whole text remains an explicit available choice.
-            item['self_anchors'] = links.anchors_text(doc.text)
             if item['selection'].get('prepared'):
                 item['prepared_text'] = links.edit_text(doc.text, item['selection']['prepared'], context='intake')
                 prepared_header, _ = documents.header_values(item['prepared_text'])
@@ -774,6 +717,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                           'Prepared intake source association conflicts with the selected original.')
                 r.require(prepared_header.get('source_material', origin['path']) == origin['path'],
                           'Prepared intake original path conflicts with the actual selected input.')
+            item['file_targets'] = {}
             for path in item['files']:
                 destination = (target if path == doc.path else item['selection'].get('file_map', {}).get(path,
                                posixpath.dirname(target) + '/' + posixpath.relpath(path, posixpath.dirname(doc.path))))
@@ -782,136 +726,14 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     r.require(item['kind'] == 'J' and destination.startswith(posixpath.dirname(target) + '/')
                               and names.parse(destination) == local_ident,
                               'A native-file arrangement stays within its actual receiving J group.')
-                mapping[(path, '')] = (destination, '') if ident.kind == 'J' or not item['anchor'] else mapping.get((path, ''), (None, ''))
-        planned_paths = {local[0] for local in mapping.values() if local[0]}
-        planned_paths.update(item['target'] for item in plan)
-        planned_paths.update(batch.pending)
-        combined = {target for target in planned_paths if len({(item['source']['repository'], item['source']['path'])
+                item['file_targets'][path] = destination
+        combined = {target for target in (item['target'] for item in plan) if len({(item['source']['repository'], item['source']['path'])
                     for item in plan if item['target'] == target}) > 1}
-        navigation_targets = {}
         for item in plan:
             doc, origin, target = item['doc'], item['source'], item['target']
-            missing = []
-            def rewrite(owner, new_owner, raw, *, local_text=False):
-                replacements = []
-                for first, last, label, start, end, href in links.markdown_link_details(raw):
-                    original_reference = source_refs.parse(href.strip().strip('<>'))
-                    destination = links.destination(owner, href)
-                    if destination is None and original_reference is None: continue
-                    path, anchor = destination if destination is not None else ('', '')
-                    if local_text and destination is not None:
-                        # Prepared ordinary links already name receiving objects;
-                        # only explicit source locators enter source mapping.
-                        r.paths.check_public_target(path)
-                        navigation_targets.setdefault(new_owner, []).append({'path': path, 'anchor': anchor})
-                        relative = posixpath.relpath(path, posixpath.dirname(new_owner)) if path != new_owner else ''
-                        value = quote(relative, safe='/._-') + ('#' + quote(anchor, safe='._-') if anchor else '')
-                        replacements.append((start, end, value))
-                        continue
-                    output = original_reference if original_reference is not None else (
-                        {'path': path, 'anchor': anchor} if destination is not None else None)
-                    if output is not None and r.paths.in_computation_outputs(output['path']):
-                        locator = output['path'] + ('#' + output['anchor'] if output['anchor'] else '')
-                        context = ('; raw locator `' + href + '`') if original_reference is not None else ''
-                        value = (label + ' (source-only output; not acquired; reference in sending repository named `'
-                                 + source.config['repository'] + '` at material revision `' + source.revision
-                                 + '`; source path `' + locator + '`' + context + ')')
-                        replacements.append((first, last, value))
-                        continue
-                    if destination is not None and path == owner:
-                        local_anchor = (item['local_anchor'] if owner == doc.path and anchor == item['anchor'] else anchor)
-                        navigation_targets.setdefault(new_owner, []).append({'path': new_owner, 'anchor': local_anchor})
-                        replacements.append((start, end, '#' + quote(local_anchor, safe='._-') if local_anchor else ''))
-                        continue
-                    selected = None
-                    explicit = []
-                    if original_reference is not None:
-                        key = tuple(original_reference[field] for field in ('repository', 'path', 'revision', 'anchor'))
-                        if key in qualified_mapping: explicit.append(qualified_mapping[key])
-                        if not explicit:
-                            whole = qualified_mapping.get((*key[:3], ''))
-                            if whole and not whole[1]: selected = (whole[0], key[3])
-                        local_repository = source.repository_mapping.get(original_reference['repository'])
-                        if local_repository is None:
-                            if not explicit and selected is None:
-                                value = (label + ' (unacquired foreign source context; raw locator `' + href
-                                         + '`; numbering context is the sending repository named `'
-                                         + source.config['repository'] + '` at fixed sending revision `'
-                                         + source.revision + '`)')
-                                replacements.append((first, last, value))
-                                missing.append(value)
-                                continue
-                        else:
-                            original_reference = {**original_reference, 'repository': local_repository}
-                    reference_origin = original_reference or {'repository': source.transport, 'revision': source.revision, 'path': path, 'anchor': anchor}
-                    key = tuple(reference_origin[field] for field in ('repository', 'path', 'revision', 'anchor'))
-                    if original_reference is None or local_repository is not None:
-                        if key in supplied_mapping:
-                            explicit.append(supplied_mapping[key])
-                        elif original_reference is not None:
-                            whole = supplied_mapping.get((*key[:3], ''))
-                            if whole and not whole[1]: selected = (whole[0], key[3])
-                    if destination is not None:
-                        for chosen in plan:
-                            if path == chosen['doc'].path:
-                                original = chosen['source']
-                                chosen_key = original['repository'], original['path'], original['revision'], anchor
-                            elif path in chosen['file_origins']:
-                                chosen_key = (*chosen['file_origins'][path][:3], anchor)
-                            else: continue
-                            if chosen_key in supplied_mapping: explicit.append(supplied_mapping[chosen_key])
-                    r.require(not explicit or all(value == explicit[0] for value in explicit),
-                              'Conflicting explicit original mappings: ' + href)
-                    if explicit: selected = explicit[0]
-                    elif destination is not None and selected is None:
-                        selected = mapping.get((path, anchor))
-                        if selected is None:
-                            whole = supplied_mapping.get((*key[:3], ''))
-                            if whole and not whole[1]: selected = (whole[0], anchor)
-                        if selected is None:
-                            whole = mapping.get((path, ''))
-                            if whole and whole[0]: selected = (whole[0], anchor)
-                    if selected and selected[0]:
-                        r.paths.check_public_target(selected[0])
-                    private = (original_reference if original_reference is not None and (r.paths.in_pdf_store(original_reference['path'])
-                               or original_reference['path'].casefold() == r.paths.LOCAL_REGISTRY.as_posix())
-                               else {'repository': source.transport, 'path': path, 'anchor': anchor}
-                               if not local_text and destination is not None and (r.paths.in_pdf_store(path)
-                               or path.casefold() == r.paths.LOCAL_REGISTRY.as_posix()) else None)
-                    if private:
-                        locator = private['path'] + ('#' + private.get('anchor', '') if private.get('anchor') else '')
-                        value = (label + ' (source-only local literature; not acquired; reference in sending repository named `'
-                                 + source.config['repository'] + '` at material revision `' + source.revision
-                                 + '`; source path `' + locator + '`)')
-                        replacements.append((first, last, value))
-                        missing.append('Unacquired local literature in ' + private['repository'] + ': ' + locator)
-                        continue
-                    if selected and selected[0]:
-                        local_path, local_anchor = selected
-                        navigation_targets.setdefault(new_owner, []).append({'path': local_path, 'anchor': local_anchor})
-                        relative = posixpath.relpath(local_path, posixpath.dirname(new_owner)) if local_path != new_owner else ''
-                        value = quote(relative, safe='/._-') + ('#' + quote(local_anchor, safe='._-') if local_anchor else '')
-                    elif destination is not None and path not in source.names:
-                        # A material's commit supplies reference context, not
-                        # versioned bytes for a file absent from that Git tree.
-                        # Do not infer an output role or another source layout.
-                        locator = path + ('#' + anchor if anchor else '')
-                        value = (label + ' (source-only reference; not acquired; absent from the selected sending Git tree; '
-                                 'reference in sending repository named `' + source.config['repository']
-                                 + '` at material revision `' + source.revision + '`; source path `' + locator + '`)')
-                        replacements.append((first, last, value))
-                        missing.append('Source reference absent from selected Git tree; prepare any necessary input or correspondence: '
-                                       + source.transport + ': ' + locator)
-                        continue
-                    else:
-                        value = source_refs.make(reference_origin['repository'], reference_origin['revision'], reference_origin['path'], reference_origin.get('anchor', ''))
-                        missing.append(value)
-                    replacements.append((start, end, value))
-                for start, end, value in reversed(replacements): raw = raw[:start] + value + raw[end:]
-                return raw
             pairs = []
             for path in item['files']:
-                destination = target if path == doc.path else mapping[(path, '')][0]
+                destination = item['file_targets'][path]
                 raw = prepared[path]
                 native_preparation = item['selection'].get('file_preparations', {}).get(path)
                 if native_preparation is not None:
@@ -919,26 +741,19 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                                           context='selected native input').encode('utf8')
                 if path.endswith('.md'):
                     prepared_main = path == doc.path and 'prepared_text' in item
-                    prepared_unit = (path == doc.path and doc.identity.kind == 'U'
-                                     and any(field in item['selection']['unit'] for field in ('text', 'edits')))
-                    final_text = prepared_main or prepared_unit or native_preparation is not None
                     content = (item['prepared_text'] if prepared_main else
                                item['unit_text'] if path == doc.path and doc.identity.kind == 'U'
                                else raw.decode('utf-8-sig'))
-                    if path == doc.path and item['kind'] == 'T':
-                        from ..materials import tasks
-                        tasks.validate_links(destination if final_text else path, content)
-                    text = rewrite(destination if final_text else path, destination, content, local_text=final_text)
                     if path == doc.path:
-                        body = text.replace('\r\n', '\n').split('\n---\n', 1)[1]
+                        actual_header, _ = documents.header_values(content)
+                        body = content[re.search(r'\r?\n---\r?\n', content).end():]
                         header = {'author': origin['author'] if item['kind'] in 'CTRLJ' else doc.identity.author}
                         header['source_repository'] = names.parse(target).source_repository
                         if target not in combined:
                             header['source_material'] = origin['path']
-                        text = '---\n' + ''.join(key + ': ' + value + '\n' for key, value in header.items()) + '---\n' + body
-                        if item['kind'] == 'T':
-                            tasks.validate_links(destination, text)
-                    raw = text.encode('utf-8')
+                        text = (content if actual_header == header else
+                                '---\n' + ''.join(key + ': ' + value + '\n' for key, value in header.items()) + '---\n' + body)
+                    raw = (text if path == doc.path else content).encode('utf-8')
                 r.require(destination not in pending or pending[destination] == raw, 'Conflicting selected inputs install to one path.')
                 pending[destination] = raw
                 pair = {'source': path, 'local': destination}
@@ -953,18 +768,11 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                                'files': [{'source': doc.path, 'local': target}]}, pair)
                 pairs.append(pair)
             metadata.append({'kind': item['kind'], 'source': origin, 'local': {'path': target, 'anchor': item['local_anchor']},
-                             'scope': item['scope'], 'files': pairs,
-                             'unmapped_references': sorted(set(missing))})
-        # Explicit mappings keep their physical-path checks after Task's
-        # prohibition, including when rewriting introduced the forbidden link.
-        for local_path, _anchor in (*supplied_mapping.values(), *qualified_mapping.values()):
-            if not r.paths.in_pdf_store(local_path):
-                r.paths.ordinary_path(repo.root, local_path)
+                             'scope': item['scope'], 'files': pairs})
         # Every staged branch is validated against the complete final selected
         # postimage. Batch.commit runs these checks before taking the lock, then
         # rechecks all captured inputs under that lock before any publication.
         def validate(read, view):
-            from ..materials.validation import validate_navigation_targets
             for item, planned in zip(metadata, plan):
                 document = documents.parse(item['local']['path'], read(item['local']['path']))
                 relatives = snapshot.family(document.identity) if document.identity.kind == 'T' else ()
@@ -983,8 +791,6 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                               'Prepared finding must retain its actual original review relationship, including an undeclared relationship.')
                     r.require(not planned['source_review']['reviewed_targets'] or bindings,
                               'Prepare the actual receiving target bindings for the selected original review scope.')
-            for owner, locators in navigation_targets.items():
-                batch.guards.append(validate_navigation_targets(repo.root, owner, locators, read, planned=batch.pending))
             validate_operation(view, operation_path, operation, read=read, new_selection=True)
         for path, raw in pending.items():
             if path in bibliography_pending: continue
@@ -992,8 +798,13 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             original = snapshot.watch(path)
             if original is not None and original != raw:
                 owner = next((item for item in plan if path in {pair['local'] for row in metadata if row['local']['path']==item['target'] for pair in row['files']}),None)
-                r.require(refresh_j and owner is not None and owner['doc'].identity.kind=='J',
-                          'Acquired original collision; fixed U/C/R/L versions cannot be overwritten, and J refresh must be explicit: ' + path)
+                r.require(owner is not None, 'Acquired original collision: ' + path)
+                if owner['kind'] == 'U':
+                    r.require(owner['established'] and owner['selection']['unit'].get('expected') == original.decode('utf-8-sig'),
+                              'Rolling U replacement needs its same original and exact expected receiving text: ' + path)
+                    continue
+                r.require(refresh_j and owner['doc'].identity.kind=='J',
+                          'Acquired original collision; fixed C/T/R/L cannot be overwritten, and J refresh must be explicit: ' + path)
                 humans.require_author(repo, owner['source']['author'], owner['source']['repository'])
                 entry, pair = next((row, pair) for row in metadata if row['local']['path'] == owner['target']
                                    for pair in row['files'] if pair['local'] == path)
@@ -1011,7 +822,6 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                   validate=validate)
         if not coordinated:
             batch.commit(timeout=timeout)
-        return {'operation': operation_path, 'materials': [row['local'] for row in metadata],
-                'notices': ['Unmapped original reference: ' + value for row in metadata for value in row['unmapped_references']]}
+        return {'operation': operation_path, 'materials': [row['local'] for row in metadata]}
     finally:
         source.close()

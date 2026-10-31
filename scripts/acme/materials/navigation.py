@@ -197,7 +197,7 @@ def link(label, loc):
     return '[' + cell(label) + '](' + destination + ')'
 
 
-def views(documents, read, *, source_info=None, unavailable=None, paths=()):
+def views(documents, read, *, source_info=None, paths=()):
     """Return derived index text, retaining exact source and Task formulations.
 
     This view never resolves a Claim/Task assessment, promotes imported source

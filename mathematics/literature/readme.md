@@ -1,18 +1,16 @@
 # Literature
 
-[references.bib](references.bib) is the canonical bibliography and persisted alpha-key collection.
-Local `mathematics/literature/registry.md` records this machine's acquisition, access, artifacts and holdings only when needed under the [literature rules](../../framework/rules/literature.md#local-pdf-storage); it is not shared or required in a clean clone.
+[references.bib](references.bib) owns canonical bibliographic identity and stable keys.
+[Searchable contents](contents/readme.md) provide actual edition-specific chapter/section navigation.
+[Source audits](../audits/literature/readme.md) contain author-owned rolling U and useful concise source-edition explanations.
+Reuse sufficient U/C/L before further original reading under the [source-preparation rule](../../framework/rules/literature.md#source-preparation).
 
-[Searchable tables of contents](contents/readme.md) retain chapter/section titles for the actual source editions.
-For a known work, use shared bibliography, edition-specific contents and adequate U/L evidence, checking this machine's local account only when an original is actually needed.
-For a topic, search the contents collection, confirm the matching edition/coverage and read the actual source passage.
-A contents hit is a locator; no hit establishes no result absence.
+Original PDFs use flat filenames in the ignored logical pdf/ store; HTML and selected resources use work-key groups, preserving native bytes, encoding and anchors.
+Public logical links do not query local existence, mounted paths or native anchors, and supply no evidence of possession or inspection.
+Each human maintains their useful source links and cross-machine relative paths, with authorized agent assistance and private setup at its existing private home.
+There is no literature registry, holding ledger, fingerprint, routine availability check or per-file registration duty.
+Actual personal import and external intake prepare selected necessary originals to reuse, acquisition or a truthful failed result, reporting failure directly; same-repository reuse prepares originals only when further reading is needed.
 
-PDFs use flat filenames in the ignored `pdf/` source store.
-Original HTML and explicitly retained related files use canonical work-key groups such as `pdf/<SourceKey>/source.html`; native source bytes, encoding and anchors remain unchanged.
-Shared U/L and contents identify their actual inspected editions, passages and limits; the local account separately records actual holdings, complete contributions and partial/resource limitations.
-Source presence is not mathematical verification.
-When registered evidence or the required edition is insufficient, check relevant unregistered local candidates under the [common source-preparation order](../../framework/rules/literature.md#source-preparation) before necessary external acquisition; normal preparatory storage creates no registration debt.
-[Source preparation](../../framework/rules/literature.md#source-preparation) is shared by research, source audit and writing.
-Source records retain inspected findings; the [definition index](../definitions/index.md) registers complete U/C/L definitions, terminology and symbols.
-Actual choices follow the [four-layer hierarchy](../../framework/rules/preferences.md) at their responsible profile or manuscript home.
+A contents hit is a locator, not mathematical evidence; no hit or missing original proves no result absence.
+Actual source checks retain inspected editions, passages and limits at U or adequate C/L.
+Complete definitions and conventions follow the [definition index](../definitions/index.md), and writing choices retain their [responsible layers](../../framework/rules/preferences.md).

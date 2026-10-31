@@ -96,8 +96,7 @@ def _provenance(value):
     original = copy.deepcopy(value)
     for item in original['items']:
         for field in ('path','anchor'): item['local'].pop(field, None)
-        for group in ('files','source_artifacts'):
-            for pair in item.get(group, []): pair.pop('local', None)
+        for pair in item.get('files', []): pair.pop('local', None)
     return original
 
 
@@ -138,15 +137,17 @@ def check_unit_layout(root, changes, moves, read):
         if not path.is_relative_to(root): continue
         name = path.relative_to(root).as_posix()
         candidate = identity.candidate(name)
-        if candidate and candidate['kind'] == 'U': affected.add(PurePosixPath(name).parent)
+        if candidate and candidate['kind'] == 'U': affected.add(identity.parse(name))
     final = set()
-    for folder in affected:
+    for ident in affected:
+        folder = PurePosixPath('mathematics/audits/literature') / ident.source_key
         directory = _location(root,folder.as_posix())
         if directory.exists():
-            final.update(path for path in directory.iterdir() if path.is_file() and identity.candidate(path.relative_to(root).as_posix()))
+            final.update(path for path in directory.glob('*.md')
+                         if discovery.unit_namespace(path.relative_to(root).as_posix(), ident))
     final.difference_update(moves)
     final.update(destination for destination in moves.values() if destination.is_relative_to(root)
-                 and PurePosixPath(destination.relative_to(root).as_posix()).parent in affected)
+                 and any(discovery.unit_namespace(destination.relative_to(root).as_posix(), ident) for ident in affected))
     def header(name):
         file = _location(root,name)
         if file in changes or file in moves.values():
@@ -214,13 +215,12 @@ def _reserve_unit_moves(root, changes, moves, key_mapping):
         if position in positions: continue
         folder = root/'mathematics/audits/literature'/ident.source_key
         existing_paths = [path.relative_to(root).as_posix() for path in folder.glob('*.md')
-                    if identity.candidate(path.relative_to(root).as_posix())
-                    and identity.candidate(path.relative_to(root).as_posix())['kind'] == 'U']
+                    if discovery.unit_namespace(path.relative_to(root).as_posix(), ident)]
         existing = [identity.parse(path) for path in existing_paths]
         occupied, _ = discovery.unit_positions(existing_paths,lambda name:discovery.unit_header(root,name))
         raw = changes.get(source,source.read_bytes()).decode('utf-8-sig')
         _, header, _ = documents.author_header(moves[source].relative_to(root).as_posix(),raw)
-        established = occupied.get((ident.source_key,ident.number)) == discovery.unit_origin(ident,header)
+        established = occupied.get((identity.namespace(ident),ident.number)) == discovery.unit_origin(ident,header)
         if old is not None:
             _, prior_header, _ = documents.author_header(source.relative_to(root).as_posix(), source.read_text(encoding='utf-8-sig'))
             r.require((header.get('source_repository'), header.get('source_material')) ==

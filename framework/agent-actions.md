@@ -25,6 +25,11 @@ Do this independently of same-day query reuse, an unavailable result, disabled c
 Subagents reuse the main agent's metadata result and read the current rules needed for their own assignment.
 A newer official version that remains uninstalled leaves the current local rules in force.
 
+For actual shared-repository work with a collaboration remote, apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) and its [target, authority and integration rule](rules/identity.md#shared-repository-updates-and-integration) after establishing the current assignment from the necessary local entrances.
+The main agent obtains fresh project state for a newly assigned task, a resumption or a new autonomous exploration round, prioritizes authorized local integration, then reads relevant changes before dependent work.
+This covers ordinary and joint research, writing, literature work, transfer preparation, review, maintenance and framework-upgrade preparation; continuous steps and subagents in that working copy reuse the actual result.
+The daily framework query below and an earlier same-day project query do not replace that responsibility.
+
 Apply the [official version-check rule](versioning.md#official-version-check) before the selected work.
 Read repository/config.json and the ignored repository/framework-update-check.json; honor an explicit offline instruction and the repository Boolean setting.
 Reuse the main agent's actual result in subagents and reuse a current UTC-day success or unavailable result without another request.
@@ -82,7 +87,7 @@ Publishing common files from a development repository to the official starting r
 Exclude the source's entire execution/ and .venv/ from framework copying and upgrades, including E, runtime notes and optional environment explanations; preserve the destination's actual local contents.
 Preserve the complete root LICENSE and applicable upstream notices; retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
 Inspect the selected content and keep development blueprints/tests, local profiles, temporary work, private holdings and actual research out of that starting tree.
-Exclude the source's local `mathematics/literature/registry.md` and preserve the destination's actual local account under the [local-source rule](rules/literature.md#local-pdf-storage); clean setup needs no empty registry.
+Original literature remains local under the [source-storage rule](rules/literature.md#local-pdf-storage); clean setup creates no original-store placeholder or literature account.
 Exclude a source's live `mathematics/maintenance.md` and preserve the destination's worklist under its [location and copying rule](rules/organization.md#material-maintenance-worklist), without creating or copying an empty placeholder.
 Use ordinary copying and native Git without a permanent shipped-file inventory or installation receipt.
 
@@ -138,10 +143,9 @@ A joint coordination T has no E, and setup creates no execution or fabricated re
 For continuation, read the selected T contract/decision, any existing stable E's effective conditions, applicable operator policy, current S and directly needed C/D/J/source evidence.
 When that selected execution has no local E, follow the [on-demand preparation rule](rules/execution.md#responsibility-and-version-boundary) using adequate real instructions and conditions; absence neither resets limits nor grants resumption.
 For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
-For actual human-authorized joint Task participation using a shared Git remote, apply the [default synchronization and delivery permissions](rules/identity.md#shared-research-git-authority-and-integration) and the [shared research rule](rules/tasks.md#shared-git-research) before new substantive work in each round, honoring explicit human restrictions.
-Reuse the known repository, collaboration branch and work scope without asking for separate mode adoption or push authorization; this also covers continuation through an already participating individual T/E.
-The responsible main agent obtains and normally integrates new collaboration commits within that scope, then reads relevant changes before mathematical reuse and any necessary external search; subagents reuse its actual same-round result.
-This round-level project update applies even when no new external search is needed and remains separate from the official framework version check.
+Apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) to ordinary and joint research in an actual shared Git repository, using relevant incoming work for mathematical reuse before any necessary external search.
+Human-authorized joint Task participation also uses its [default delivery permissions](rules/identity.md#shared-research-git-authority-and-integration) and [progress-sharing rule](rules/tasks.md#shared-git-research), including continuation through an already participating individual T/E.
+Reuse the known repository, collaboration branch and work scope, honoring explicit human limits without another mode adoption or push grant.
 Follow [execution rules](rules/execution.md#current-contents-and-retained-limits) before autonomous advancement.
 Use one responsible main agent and one stable E for the Task family; a new chat, revision or policy expiry does not reset allowance or resume a stopped run.
 An actually authorized continuation prepares the relevant exact Task reference and current conditions directly; a pointer update preserves stops unless actual resumption is authorized.
@@ -214,44 +218,28 @@ A review request does not itself authorize substantive editing of another author
 
 ## Prepare or reuse literature
 
-Keep shared bibliography, contents and source-inspection evidence separate from this machine's local acquisition/holding account under the [source-storage rule](rules/literature.md#local-pdf-storage).
-Ordinary U check/show/discovery and navigation do not consult that account or enrich shared facts with holdings; explicit source preparation uses actual current local facts, without registry Git-view replay or adoption of another author's access.
-Read existing responsible mathematical/source evidence, bibliography, registry, edition facts and any [searchable contents](../mathematics/literature/contents/readme.md) before obtaining missing material.
-Apply the common [source-preparation workflow](rules/literature.md#source-preparation), [knowledge reuse](rules/knowledge-reuse.md) and [complete definition registration](rules/definitions.md).
-Judge the actual work/edition, needed passages, source association and inspection depth; bibliography registration, a contents hit or a matching hash does not establish theorem applicability.
-Choose available reading, extraction, rendering or OCR capabilities under the [host-capability responsibility](rules/workflow.md#agent-and-tool-responsibilities), checking an alternative source format's version and applicability when needed.
-Report a capability-limited required inspection to the human author with its concrete scope, effect and remaining action, and continue unaffected work under the existing [progressive-reading](rules/literature.md#progressive-reading) and [temporary-storage](rules/organization.md#temporary-storage) duties.
-Reuse an adequate complete U/C/L account in place and retain any unresolved edition, passage, hypothesis or inspection gap.
+Apply the [source-preparation rule](rules/literature.md#source-preparation), [source-audit rules](rules/literature-audits.md) and actual disclosure limits.
+Reuse sufficient bibliography, source notes, contents and U/C/L evidence; when further original reading is needed, reuse applicable local files before necessary external acquisition.
+Determine the actual work, edition, passages and use from source facts, without inferring identity from a filename, URL or successful fetch.
+Canonical bibliography keeps publication identity; source README may keep concise useful author sections for editions, logical originals, page correspondences and use limits.
+Each human maintains cross-machine validity of those links, with agent assistance within authority; private locations and access parameters stay in private setup.
+No source ledger, per-file entry, literature fingerprint, mandatory date or empty U is created by retention.
 
-When acquisition is authorized, fetch supplied addresses and inspect an unestablished response before registering the explicitly supplied local bytes and chosen bibliography fields.
-For first actual retention, inspect the logical source entrance and applicable private storage arrangement; if mathematics/literature/pdf/ is absent and unconfigured, create an ordinary ignored directory there and continue without another storage-choice question.
-Preserve existing ordinary storage and valid top-level junctions; report a broken, conflicting or inaccessible entrance instead of replacing it or creating another store.
-Search-only and bibliography-only work need no storage setup.
-For ordinary public source links, apply the [logical navigation boundary](rules/literature.md#local-pdf-storage) without checking the source mount, file availability or native fragment; correct actual noncanonical Windows prefix/ancestor or protected-component spellings rather than accepting an alias.
-Ordinary material preparation and publication inspect their selected targets without resolving unselected current or retired source roots; explicit original reading, registration and file maintenance retain their necessary physical checks.
-Keep requested/obtained literal URLs, fingerprints computed from actual locally obtained bytes, actual edition facts and limitations at the sole registry; bibliography owns publication identity.
-Never-obtained artifacts have no fingerprint; preserve an established local baseline through later absence without adopting supplied or sender-local hashes.
-Follow the [source-input boundary](rules/literature.md#artifact-source-association): missing input cannot borrow receiver bytes, and an occupied destination preserves its existing bytes/account while reporting the conflict.
-Select actual accounts and necessary direct relationships before strict checks; ambiguous competing declarations require judgment from the concrete candidates.
-For an account change, inspect the actual declarations and evidence, choose and explicitly prepare the needed edits, and preserve comparison, contents, holding context and qualifications.
-Maintain genuine source and known date facts or necessary unknown limits under the [source-registration rule](rules/literature.md#literature-acquisition); registration tools supply no acquisition/access date from their clock or file presence.
-When existing registered evidence or its required edition is insufficient, follow the [local candidate order](rules/literature.md#source-preparation) before external acquisition; unregistered preparation needs no inventory or acknowledgement.
-Use the [Artifact/Resource contract](rules/literature.md#local-pdf-storage) and [holding declarations](rules/literature.md#actual-source-holdings), with optional [local-registration interfaces](../scripts/readme.md#local-source-retrieval-and-registration).
-Inspect the persisted account and selected readers against the supplied current facts; resolve actual competing declarations before publication.
-PDF, original HTML and resource availability are independent outcomes; required authored bodies and indispensable program inputs must exist.
-Acquisition-only failure records known bibliography/access facts without a new U or invented inspection; preserve adequate existing source evidence at its actual scope.
-Inspect actual HTML content and required resources without treating an error page or dynamic shell as an acquired source.
-Preserve native sources and actual availability/readability limitations.
+For reusable source mathematics, read and maintain the actual author's rolling SourceKey/Author_U001.md, with independent source/author numbering and necessary stable file-local anchors.
+Choose [U boundaries and maintenance](rules/literature-audits.md#unit-granularity-and-maintenance) by reusing sufficient material first, maintaining a suitable existing U next, and creating a new unit for an actual independent organization, reference or human-author attribution need.
+Retain precise statements, hypotheses, conventions, inspected edition/passages and actual checking limits in ordinary prose, without U physical versions, compulsory tables or enumerated coverage states.
+Reuse adequate U rather than duplicating an audit; collaborators may write their own supplement or correction, while substantive maintenance remains with the original author's agents.
+Complete definitions and terminology follow [def registration](rules/definitions.md); new project deductions keep their adequate responsible home.
+When changing U or source organization, repair actual downstream references and distinguish authorized shared locator repair from another author's substantive mathematical change.
+A current rolling U is not a frozen historical proof input or retroactive expansion of an old R.
 
-Prepare or reuse the actual edition's searchable contents when a real contents list is supplied, including future-use sources without a Task, under the [contents rule](rules/literature.md#searchable-contents).
-Maintain the shared transcription's actual work/edition, source locations, coverage and exact links to its logical native source or verified primary contents excerpt.
-An optional local registry account may link to the transcription, which must not link back to the private account or depend on local possession; public lookup instructions use inline code.
-Inspect the actual edition and contribution extent when choosing a [complete or partial holding](rules/literature.md#actual-source-holdings); a complete contribution needs no redundant standalone PDF.
-For bibliography maintenance, identify actual work correspondence and consumers, then prepare the chosen keys, file moves and necessary local reference edits under the [renaming rule](rules/literature.md#coordinated-key-renaming).
-Confirm and correct a discovered naming misuse under the abbreviation rule, even for an established key, while preserving legitimate original year bases, allocations and collision suffixes.
-Choose exact affected artifacts, U bounds and active citations; literal examples and original-source locators remain outside that selection unless actually adopted for change.
-Preserve unselected examples and original-source locators, check active citations and update necessary writing records; structural checking does not decide citation completeness.
-Return actual acquisition, inspection and contents results separately, including unavailable items and unchecked source-proof scope.
+Same-repository reuse, including clone/pull/merge, obtains originals only when further source reading is needed.
+Actual personal import and external intake complete necessary selected original preparation to reuse, acquisition or a truthful failed outcome before delivery; report failure directly with work/edition, known address, reason and use limitation.
+Retain continuing useful restrictions in source notes or the actual consumer, without a failure queue or acquisition receipt.
+An optional [fetch or bibliography helper](../scripts/readme.md#local-source-retrieval-and-registration) reports its explicit address, byte/format or field facts and does not certify identity, inspection or completion of these agent duties.
+Public original navigation remains read-free; startup, U display/discovery, ordinary maintenance and Git delivery do not check missing sources or trigger downloads.
+Actual selected reading and file operations retain physical containment, necessary format and target-conflict checks.
+Prepare or reuse [searchable contents](rules/literature.md#searchable-contents) when the selected source supplies them, and report unfinished transcription accurately.
 
 ## Write or revise a manuscript
 
@@ -315,7 +303,8 @@ Return the actual accepted or rejected scope, cleanup and remaining limits; stag
 Read the actual change, responsible material, consumers and [common content decision](rules/records.md#substantive-material-retention).
 Apply the operative [collaboration and conflict rule](rules/identity.md#collaboration-maintenance-and-conflicts), including its preserved author, mathematical, source and review boundaries.
 For an old review container, apply only the bounded [retirement exception](rules/proof-audits.md#review-retirement), preserving necessary evidence and historical adoption facts and preparing its non-reuse allocation bound before deletion.
-Repair responsible shared registration and derived navigation directly; authored bodies use the same-human and separately attributed correction boundary without a per-author approval process.
+Repair responsible shared registration and derived navigation directly, and apply that rule's locator-only exception to corresponding references in another author's material.
+Other body or layout corrections keep the same-human and separately attributed correction boundary, without a per-author approval process.
 Resolve an administrative conflict using the core principles and applicable topic rules; act directly when they determine the choice, and report only a remaining decisive gap requiring human intent, authority or facts.
 For a substantive mathematical conflict, identify competing statements/evidence and affected materials and obtain approval for the scoped recheck before undertaking it, reusing existing explicit approval for that same scope.
 That approval alone neither transfers authorship nor authorizes substantive editing of another author's material.
@@ -341,14 +330,15 @@ Resolve or report a real mathematics, author/source or access gap at the affecte
 Ordinary reading, editing, copying and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a condition of valid intake.
 R has no mandatory C target; choose actual necessary targets, reuse and limitations from the inspected finding, without acquiring every binding or citation.
 Receive needed S/D mathematics in a suitable fixed home and a necessary joint T contract under the [Task rule](rules/tasks.md#joint-tasks-and-participation), without another human's ordinary Task/E authority.
-Select bibliography targets and U positions across all authors/origin prefixes, then write the selected receiving content and necessary provenance under the [material format](material-format.md#direct-acquisition).
+Select bibliography targets and U positions within each actual source-key/author namespace, retaining necessary origin distinctions, then write the selected receiving content and provenance under the [material format](material-format.md#direct-acquisition).
 Before finalizing U receipt or invoking the optional helper for it, first complete the ordinary [original-acquisition procedure](rules/literature.md#acquisition-before-u-reception) for the actual work and inspected edition.
-Reuse an adequate receiver-local original or obtain, validate and register it independently; reuse an adequate same-work/edition outcome for several units.
+Reuse an adequate receiver-local original or independently obtain and validate the needed work/edition; reuse an adequate same-work/edition outcome for several units.
+Maintain necessary canonical bibliographic fields and useful edition/source notes without original-file registration or an acquisition account.
 On failure, record the actual source/access outcome and directly report the work/edition, known address, failure, local availability and resulting limits to the human author.
 Retain useful authorized U evidence and its inspection limits without transporting sender-private originals or accounts, inventing fingerprints or treating the failure as a mathematical verdict.
 Check actual resulting files, references and affected U positions, and retain the operation once at its responsible intake home.
 Coordinate affected writes only as needed for coherent results; optional helpers apply their input and publication protocols only when chosen.
-Private literature documents and their local registry/holding accounts are outside intake; reject the retired source/holding/update inputs before opening a private file.
+Private original literature is outside intake; reject the retired source/holding/update inputs before opening a private file.
 Preserve an established original registered repoN/family's local number across physical versions and reject an occupied prepared position without silently renumbering the body.
 Fresh receiving positions respect and advance their actual next unissued namespace bound, rather than reusing a retired number or allocating another family for an existing correspondence.
 An explicitly selected actual independent finding still in historical L needs complete prepared receiving R with its true targets, scope and limitations; available source content requires no source-repository upgrade.
@@ -359,14 +349,14 @@ Before an explicit J source refresh, confirm the same original, inspect the sele
 
 Apply the common [adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving complete necessary selected mathematics and the single original human through adapted text, local numbering, justified splits/combinations and onward transfer.
 Keep the actual source version and selected scope separate from the receiving kind, line and version; use the existing operation for per-unit provenance.
-Localize only designated references or exact chosen mappings; unselected relative background links to actual tracked files retain exact sender-fixed locators without automatic upstream tracing.
+Read actual references and prepare necessary final receiving text using true source/local correspondence; background prose does not cause tool discovery, mapping or provenance tracing.
 For targets absent from the selected sending Git tree, preserve useful source-only reference context and actual limits, without assigning unversioned bytes to the material's commit.
 Obtain or reproduce necessary input within the actual authorization, or retain its unresolved need at the consumer; omit obsolete mentions with no remaining mathematical, evidence or reproduction purpose.
 Complete adaptation through ordinary reading, editing and copying or an optional helper supported by the chosen actual inputs, without historical-layout recognition or another current output home.
-Keep each actual Markdown file's own internal locators at its receiving location, and designate necessary existing inputs explicitly rather than invoking receiving-history discovery for background links.
-Translate explicit foreign-number locators only through prepared correspondence; unmapped ones remain raw context qualified by sender and fixed sending revision.
+Maintain each selected file's actual internal references at its receiving location and designate necessary existing inputs in their responsible declarations.
+Translate an explicitly chosen source locator only through actual correspondence and include its result in the designated edit; preserve unresolved necessary source context truthfully.
 Prepare external repoN/authorN records and explicit receiving C/T/R/L/J serials under the [external identity contract](material-format.md#local-external-identities-and-prepared-correspondence); another similarly named file is no substitute.
-Retain authored inspection limits, genuine unmapped references and actual missing necessary evidence at the consumer.
+Retain authored inspection limits and actual missing necessary evidence at the consumer; report unfinished work directly without an automatic unmapped-reference account.
 Sender-local document references remain explicitly unacquired original-local context; acquire needed original text independently through ordinary authorized source preparation.
 Record the actual operation once in intake, preserving historical J scopes without asserting their current availability, automatic adoption, mathematical equivalence or imported execution authority.
 Per-file handling retains necessary per-unit original and transport correspondence in that operation without per-file approvals, checklists, receipts, permanent mapping graphs or duplicate receiving accounts.
@@ -385,8 +375,9 @@ Compare concrete duplicates within the collection and against adequate receiving
 Decide reuse, retained homes and combinations before allocating local numbers, using current local identities for an export with no actual receiver.
 Preserve prose by default and limit adaptation to current-rule compliance, final local paths/numbers, confirmed duplicate handling and affected consumers, keeping exact versions, anchors, Task/S associations and manuscript entrances coherent.
 Keep actual authorship, meaningful versions, decisions, source/review and reproduction facts, without transfer-only source fields, original-number accounts or permanent mappings.
-When selecting the optional helper's Markdown body checks, prepare the canonical receiving `.md` path and correct public contents; a constituent's byte copy alone supplies no Markdown-body check.
-For explicit file checks or fresh reference preparation, the optional [check-files and prepare-references interfaces](../scripts/readme.md#personal-import-preparation) reuse existing validators and publication without installing materials, choosing retained homes or replacing this action's scope and judgment.
+Prepare canonical receiving `.md` paths and final public contents; the optional helper decodes that text and checks applicable typed declarations, while the agent checks ordinary prose, actual references and affected consumers.
+For explicit file checks, the optional [check-files interface](../scripts/readme.md#personal-import-preparation) checks selected bytes, views and responsible declarations without discovering prose references or installing materials.
+Prepare actual final text or exact expected-text edits through ordinary maintenance and existing file publication, checking content and affected consumers directly.
 Complete the action through ordinary reading, adaptation, editing, file copying and existing registration/allocation mechanisms, inspecting the actual resulting content and affected references.
 No dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction is required.
 Reuse adequate local or already-intaken own material without identity conversion, duplicate local copies or acquired-history cleanup.

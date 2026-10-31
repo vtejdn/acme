@@ -12,7 +12,7 @@ Follow the [project and document requirements](#projects-and-documents) and the 
 An author without a profile uses these general standards and any explicit manuscript choices; no other author's defaults are inherited.
 
 The [definition index](../../mathematics/definitions/index.md) locates responsible mathematical definitions.
-Canonical [references.bib](../../mathematics/literature/references.bib) owns shared bibliographic fields; local `mathematics/literature/registry.md` owns machine-local acquisition and artifact facts; U and source audits own inspected edition, passages and actual inspection scope.
+Canonical [references.bib](../../mathematics/literature/references.bib) owns shared bibliographic fields; useful author edition/source explanations belong to the source README; U and source audits own inspected edition, passages and actual inspection scope.
 Source observations in responsible source records are evidence, not an additional policy layer.
 Keep a manuscript's choices at its existing [writing-choice home](#document-choices-and-final-review).
 
@@ -89,7 +89,7 @@ Neither record replaces the current TeX, fixed mathematical/source evidence, can
 
 Task and Claim materials own mathematical decisions.
 The canonical bibliography owns bibliographic fields.
-The literature registry owns acquisition and artifact facts.
+Useful author source notes identify actual editions, original locators and continuing use limitations, without an acquisition account.
 These records may be short.
 
 Describe ignored output paths as inline code rather than permanent Markdown links because those files will not exist in a fresh clone.
@@ -283,9 +283,9 @@ No stylistic choice changes source facts, theorem hypotheses or the actual check
 ### Source Identity and Storage
 
 The canonical [bibliography](../../mathematics/literature/references.bib) owns full bibliographic fields and persisted keys.
-The local `mathematics/literature/registry.md` owns this machine's acquisition, artifact/version and access facts, independently of shared manuscript evidence and review.
+Concise author source notes identify useful editions, original links and use limitations, independently of actual manuscript inspection and review; no acquisition account or fingerprint is maintained.
 Role adoption and source observations link to those responsible materials.
-Stylistic consultation and bibliography-only work follow the same source-registration and factual-processing duties, with inspection proportional to the actual use.
+Stylistic consultation and bibliography-only work maintain necessary canonical bibliographic facts and useful edition/source explanations, with source validation and inspection proportional to the actual use and no original-file registration.
 
 Use the existing case-sensitive citation key and exact retained artifact.
 A new role does not require duplicating an adequate artifact.
@@ -309,7 +309,7 @@ The official starting repository contains unified source/definition guidance and
 <a id="source-preparation-for-writing"></a>
 ### Source preparation for research, audit and writing
 
-Before relying on needed literature, search existing definitions and source evidence, register any missing work in the canonical bibliography and its actual artifact/version in the registry, then inspect the needed passages.
+Before relying on literature, reuse existing definitions and adequate source evidence, maintain necessary canonical bibliography and useful edition/source explanations, and inspect the needed passages when the actual use requires further source reading.
 Follow [literature preparation](literature.md#source-preparation), including available-source, unavailable-source and searchable-contents duties at the actual scope.
 Reuse adequate U evidence; fill only a real gap and state the edition, passages, applicability and inspection limits.
 Register needed complete definitions, terminology and symbols through def without moving adequate U/C/L content.
@@ -323,7 +323,7 @@ Neither registration nor a successful tool check establishes source identity, ma
 Use persisted canonical citation keys and complete bibliographic fields in the repository's [references.bib](../../mathematics/literature/references.bib).
 A document's `references.bib` is a synchronized typesetting subset under the [bibliographic content boundary](literature.md#bibliography-content).
 Retain an explicitly cited alternate edition and its actual scope, without copying acquisition/review logs or host paths.
-The local literature registry owns this machine's acquisition and artifact/version facts; inspected editions, passages, findings and limits stay at their shared U/L or other adequate responsible home.
+Concise author source notes retain useful original links, edition differences and use limits; inspected passages, findings and checking limits stay at U/L or another adequate responsible home.
 Prepare ordinary new literature, including papers hosted on GitHub, through the existing [source-preparation entrance](#source-preparation-for-research-audit-and-writing) and its literature rules, reusing adequate bibliography and source evidence.
 Actually selected authored mathematical units from another research repository follow [mathematical intake](intake.md#scope-and-routing), including its real source, authorship, receiving preparation and provenance duties.
 Judge the actual material and use rather than its host or a code package name; ordinary literature preparation creates no mathematical external identities or intake operation and requires no fixed Git commit merely to support a citation.
@@ -472,24 +472,24 @@ Before removing an entry, move any unique substantive mathematical result, argum
 Do not transfer administrative review chronology or add a deletion receipt.
 Current build and layout facts belong in the document `readme.md`; do not retain historical build or visual summaries in `review.md`.
 
-When mapping a current citation in `citation.md`, check whether fixed source evidence covers the exact source edition and passages needed, and state any unresolved check honestly.
-An adequate fixed U or complete relevant C/L source account supplies this evidence at its existing responsible home, without copying, relocation or an extra U solely for citation.
-Use the [first-work citation route](literature.md#3-citations-elsewhere-in-the-repository) for the actual original or exact fixed inspection account, preserving the required prior acquisition outcome and failure report for newly received U.
+When mapping a current citation in `citation.md`, check whether actual source-inspection evidence covers the exact source edition and passages needed, and state any unresolved check honestly.
+An adequate rolling U or complete relevant fixed C/L source account supplies this evidence at its existing responsible home, without copying, relocation or an extra U solely for citation.
+Use the [first-work citation route](literature.md#3-citations-elsewhere-in-the-repository) for the actual original or adequate precise inspection evidence, retaining necessary selected original preparation and failure reporting for actual personal import or external intake.
 Check its actual source edition, precise inspected passages, source statement or definition, hypotheses and normalization, inspection depth and unresolved limitations against the manuscript use.
 A local result's proof status, a bare citation or a bibliography entry alone supplies no source-inspection evidence.
-When an actual edition, passage or inspection gap remains, follow the existing [literature-acquisition](literature.md#literature-acquisition), [progressive-reading](literature.md#progressive-reading), and [source-audit](literature-audits.md#organization-and-stable-units) procedures for that gap and retain the necessary finding at its appropriate existing or new fixed U/C/L home under the [common content decision](records.md#substantive-material-retention).
+When an actual edition, passage or inspection gap remains, follow the existing [literature-acquisition](literature.md#literature-acquisition), [progressive-reading](literature.md#progressive-reading), and [source-audit](literature-audits.md#organization-and-stable-units) procedures for that gap and retain the necessary finding at its appropriate existing or new U or fixed C/L home under the [common content decision](records.md#substantive-material-retention).
 U is the ordinary home for an independent reusable source-audit unit; an integrated project deduction or synthesis keeps its adequate C/L account and actual source/adaptation facts.
-Acquisition-only work retains its bibliography/registry responsibility without creating a source unit.
-Record every application actually cited in current TeX, linking adequate fixed evidence and applicable definition entries where available and keeping manuscript-specific applicability, claims, notation, terminology and gaps in the same citation map.
-Adequate fixed source evidence is required before describing the application as verified or using it as established support at its claimed scope; adequate retained U/C/L evidence can suffice without a new local PDF.
+Acquisition-only work maintains necessary bibliography and useful edition/source notes without creating a source unit or acquisition account.
+Record every application actually cited in current TeX, linking adequate source evidence and applicable definition entries where available and keeping manuscript-specific applicability, claims, notation, terminology and gaps in the same citation map.
+Adequate source-inspection evidence is required before describing the application as verified or using it as established support at its claimed scope; adequate retained U/C/L evidence can suffice without a new local PDF.
 If a source audit finds or checks a source not cited in the current TeX, retain any necessary finding at its responsible source-level home and do not add a `citation.md` entry.
 Stylistic consultation and bibliography-only work follow the same source-preparation duties at their actual scope; only citations present in the current TeX receive citation-map entries.
 It adds no approval step and does not broaden the source-audit scope required by existing literature rules.
 
 The project `citation.md` maps every external citation use actually present in the current TeX, grouped by canonical citation key.
-For a use supported by adequate fixed evidence, identify its manuscript claim or passage, TeX section and environment label or distinctive passage, source edition and precise inspected locator, relevant source hypotheses/normalization/setting and why they match, notation or terminology conversion, citation role and what it does not support, and the linked U unit or other exact source evidence with any unresolved point.
+For a use supported by adequate source-inspection evidence, identify its manuscript claim or passage, TeX section and environment label or distinctive passage, source edition and precise inspected locator, relevant source hypotheses/normalization/setting and why they match, notation or terminology conversion, citation role and what it does not support, and the linked U unit or other exact source evidence with any unresolved point.
 For unchecked or partially checked uses, plainly identify the actual TeX use, intended role, known edition/locator, evidence actually available, precise unresolved checks and resulting limitation.
-Unknown edition, passage or evidence remains explicitly unknown; do not invent an inspected locator, fixed U link, inspected hypotheses/normalization or completed applicability check.
+Unknown edition, passage or evidence remains explicitly unknown; do not invent an inspected locator, U link, inspected hypotheses/normalization or completed applicability check.
 Use ordinary authored descriptions without a new status enum or lifecycle, then update the same entry when the actual gaps are resolved.
 Pending verification alone does not require deleting a draft citation and supplies no proof acceptance.
 The map is not an inventory of consulted works or uncited bibliography entries.
@@ -554,7 +554,7 @@ They acquire standing in a manuscript only when its writing layers adopt them, a
 Claim materials own project statements and actual arguments.
 Formal project-mathematics review findings of every agent relationship belong to fixed R under [proof-audit rules](proof-audits.md); L retains discussion and ordinary local checks, and manuscript-local reviews retain their document responsibility.
 Manuscript-specific reviews belong in the reviewed document README or an established project/document `review.md`, including independent manuscript reviews.
-Actual manuscript citation applications belong in `citation.md`; source-inspection evidence remains at its adequate responsible fixed U/C/L home.
+Actual manuscript citation applications belong in `citation.md`; source-inspection evidence remains at its adequate responsible U or fixed C/L home.
 When drafting discovers a new substantive argument, changed hypothesis or mathematical error, update the responsible research record and assessment, then synchronize the manuscript.
 Preserve the affected mathematical history and review scope.
 

@@ -99,7 +99,7 @@ During [same-author transfer](intake.md#personal-import), suspected L overlap wi
 Preserved original complete proofs and explicitly distinguished new versions follow the [proof-version rules](claims.md#proof-versions); their different historical or current roles must be visible.
 
 When a literature search materially affects an attempt, route, or novelty assessment, include a compact account using the [search evidence fields](literature-search.md#search-evidence): the question and trigger, date and search scope, decisive sources and findings, remaining uncertainty, and reason for stopping or expanding.
-Link source-specific checks in [literature audits](literature-audits.md) and acquisition metadata in the [literature registry](literature.md#literature-acquisition).
+Link actual source-specific checks in [literature audits](literature-audits.md) and useful edition/source explanations at their responsible [source notes](literature.md#artifact-source-association).
 Do not duplicate their authoritative records or create a separate search-log directory.
 An unsuccessful search is evidence about the inspected scope, not proof that a result or method does not exist.
 

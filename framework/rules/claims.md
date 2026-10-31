@@ -56,7 +56,7 @@ Once registered, the ordinary material, dependency and version rules apply; expl
 - Keep the family for a proof repair of the same statement; a materially different statement gets its appropriate new identity and relation to the original.
   Preserve correction history and incoming links.
 - Task and route paths use their separate T and S counters.
-  Source units retain citation-key identities such as Miy22-U001 and canonical fixed U files.
+  Source units use author-owned rolling files such as Miy22/Yin_U001.md, with precise source edition, locators and applicability at the actual consumer.
   Definitions retain their own rules and do not automatically become Claims.
 - Direct source reuse, notation conversion and parameter substitution need no automatic project Claim.
   Register a substantive reusable local deduction when appropriate, with exact source/application scope.

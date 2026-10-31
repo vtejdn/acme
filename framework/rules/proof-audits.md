@@ -129,19 +129,24 @@ Check actual applicability and assess the actual inherited review applicability 
 ## Navigation and Artifact Maintenance
 
 The same established human may update links, nearby ownership labels, layout, spelling and wording in that human's reviewed documents in place when the mathematical content, dependency use and review conclusions are unchanged; this maintenance needs no new material or C/T version, mathematical review, or formal correspondence artifact solely for the edit.
-Check actual meaning: a sign, quantifier or hypothesis correction, or a link invoking a different theorem or supporting argument, follows the substantive-change rules.
-A different human's later correction belongs in the correcting human's own suitable material with exact references, including administrative wording, paths and layout inside an authored body, under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts).
+Check actual meaning: a sign, quantifier or hypothesis correction, or a link invoking a different statement, edition, supporting argument, adoption scope or later check, follows the substantive-change rules.
+Under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts), locator-only repair preserving the actual object, mathematical meaning and adoption/review scope is shared maintenance within actual authority, including corresponding exact input references in another human's reviewed material.
+Such a repair requires no separate correction material, new R, mathematical version, decision, timestamp, approval or maintenance receipt solely for the locator change.
+A different human's other substantive corrections and general body or layout changes belong in the correcting human's own suitable material with exact references.
+The locator-only exception grants no takeover of authorship or review conclusions.
 Shared registration and derived navigation remain directly maintainable at their shared scope; initial intake preparation retains its separately authorized adaptation scope.
 Framework-development documents retain their assigned role permissions.
 The mathematical-conflict procedure requires approval for the actual scoped recheck without creating a blanket review gate or transferring authorship.
 Routine maintenance leaves the coherent edits and Git history; no operation entry, standalone report or per-file correspondence record is required.
 Keep the affected material decisions, locators and derived navigation coherent in place.
-Check the actual diff and repair incoming references within those same authorship and shared-navigation scopes instead of retaining an obsolete directory solely for compatibility.
+Check the actual diff and repair affected incoming references under that same collaboration boundary, including its shared locator-only scope.
+An obsolete directory need not remain solely for compatibility.
 
 Remove historical mathematical digest values and present byte-binding requirements while preserving the actual checked statement/argument, verdict, scope, limits and checking relationship.
 An unchanged relocation may repair exact input locators without implying a review of later mathematics; a mathematical change still requires the ordinary version/review process.
+Repairing a current locator preserves the actual original source path, `reviewed_targets`, acquired scope and other necessary provenance and review facts; later content or checks are not retroactively part of the earlier review.
 A truthful historical account of a comparison may remain where useful, without a retained digest or retention promise.
-Literature-file fingerprints computed from actual local bytes remain only at the sole source registry for accidental-damage checking; intake carries no literature baseline.
+Literature fingerprints and accidental-damage baselines are also retired completely; a concrete source problem uses adequate inspection, reacquisition or direct comparison, without a persistent digest.
 A maintained path alone does not promise a historical byte image, and a byte comparison does not certify mathematical harmlessness.
 
 ## Reviewing an Argument

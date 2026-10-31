@@ -8,19 +8,20 @@ Apply the [work-obligation triggers](workflow.md#work-obligations) to the next a
 Substantial proof investment means committing to develop a nontrivial argument or resolve a substantive proof gap, including an intermediate step; it is not measured by a fixed number of lines or minutes.
 A brief direct calculation to learn what to conjecture need not await a search, while a sustained proof attempt remains subject to this check even within an exploratory route.
 Recognition of a known result has its own [source-check trigger](#recognized-known-results).
-For shared Git research, apply the [round's collaboration update](tasks.md#shared-git-research) before substantive work and use the relevant collaborator changes in local mathematical reuse, independently of whether an external literature search is needed.
+For shared Git research, apply the [common work-start update](workflow.md#shared-repository-work-starts) before substantive work and use the relevant collaborator changes in local mathematical reuse, independently of whether an external literature search is needed.
 
 Prefer using established definitions, results and proof mechanisms to reconstructing them as project contributions.
 Use the [common source-preparation workflow](literature.md#source-preparation) during research, audit and writing; register needed complete definitions through def without duplicating adequate U/C/L content.
-Reusing already retained adequate fixed evidence does not itself reacquire the original; newly receiving U still completes the [required original-acquisition procedure](literature.md#acquisition-before-u-reception), including direct failure reporting.
+Reusing adequate existing U or fixed C/L does not itself reacquire the original; same-repository collaboration prepares originals only when further source reading is needed.
+Actual personal import and external intake complete necessary selected original preparation and direct failure reporting under the [literature rule](literature.md#acquisition-before-u-reception), without a source account or receipt.
 Before investing substantial work in a nontrivial intermediate claim, definition-related assertion, or main argument, state the exact needed conclusion and hypotheses, then search in this order:
 
 1. Check existing Claims, arguments, relevant source audits, related strategies, constructions, useful failures and prior search findings by the needed conclusion and problem features.
    Verify their actual conditions, scope and review limits.
-2. If those inputs are insufficient, follow the [common source-preparation order](literature.md#source-preparation): registered editions and contents first, then relevant unregistered local candidates before necessary external acquisition.
-   Missing registry or contents entries do not establish local absence; inspect only the candidate scope needed for this question.
-   Use registered edition/holding facts when present, including complete contributions inside volumes and original HTML pages, and confirm selected candidates before necessary registration; a same-key PDF is not a universal prerequisite.
-   Check the stated coverage/resource limits and follow the [progressive reading rules](literature.md#progressive-reading); an incomplete audit is a reason to inspect useful passages, not to ignore the source.
+2. If those inputs are insufficient, follow the [common source-preparation order](literature.md#source-preparation): reuse adequate bibliography, edition-specific contents, useful author source notes and U/C/L, then inspect relevant local originals when further reading is needed, before necessary external acquisition.
+   Missing contents or source notes do not establish local absence; inspect only the candidate scope needed for this question.
+   Establish the actual work, edition and applicable extent from source facts, including complete contributions inside volumes and original HTML pages; a same-key standalone PDF or source registration is not required.
+   Retain actual partial-source and resource limitations and follow the [progressive reading rules](literature.md#progressive-reading); an incomplete audit is a reason to inspect useful passages, not to ignore the source.
 3. If local material still does not supply enough evidence or a workable method, search external literature and primary sources for results, alternative formulations, proof techniques and counterexamples under the [search policy](literature-search.md#autonomous-literature-search).
 
 Stop advancing through these layers once there is sufficient usable evidence.
@@ -63,7 +64,7 @@ Check a precise source statement and locator, match the hypotheses and conclusio
 Follow the [dependency distinctions](claims.md#dependencies-and-corrections).
 Source attribution remains necessary when retaining a self-contained proof, including when such a proof is explicitly requested.
 A suitable checked reference is sufficient; identifying the earliest publication is required only for a priority claim.
-Reuse the existing literature registry and audit records without a new Claim, index or mandatory standalone file.
+Reuse existing bibliography, useful source-edition notes and adequate audit records without a new Claim, index or mandatory standalone file.
 
 If the source cannot yet be verified, record the search scope, unresolved identification and a concrete follow-up in the same record under the existing stopping rules.
 Do not assert a verified attribution or treat the source as an accepted input.

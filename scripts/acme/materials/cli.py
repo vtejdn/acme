@@ -29,7 +29,8 @@ def result(doc, read, *, source_info=None):
     if doc.identity.source_repository:
         row['source'] = doc.header
         row['acquisition'] = source_info(doc) if source_info else None
-    if doc.identity.kind == 'U': row['source_inspection'] = documents.source_unit_scope(doc)
+    if doc.identity.kind == 'U':
+        row['text'] = doc.text
     if hasattr(doc, 'notices'): row['notices'] = doc.notices
     return row
 
@@ -46,9 +47,6 @@ def argument_parser():
     command.add_argument('paths', nargs='*'); command.add_argument('--files', type=Path)
     command.add_argument('--prepared', type=Path); command.add_argument('--installed', action='store_true')
     command.add_argument('--context', type=Path, help='JSON array of necessary receiving-view context paths')
-    command = commands.add_parser('prepare-references', parents=[root], help='Prepare explicit Markdown reference changes in fresh files')
-    command.add_argument('paths', nargs='*'); command.add_argument('--files', type=Path)
-    command.add_argument('--source', type=Path); command.add_argument('--map', type=Path); command.add_argument('--output', type=Path)
     command = commands.add_parser('discover', parents=[root]); command.add_argument('--kind', choices=list('CTSRDJLU'))
     command = commands.add_parser('intake', parents=[root], help='Receive prepared mathematical units at a fixed source revision')
     command.add_argument('--source', type=Path, required=True); command.add_argument('--revision', required=True)
@@ -56,7 +54,6 @@ def argument_parser():
     command.add_argument('--correspondence', type=Path, required=True, help='Prepared repository and qualified author mappings')
     command.add_argument('--selections', type=Path, required=True, help='JSON list of path, anchor and scope; - reads stdin')
     command.add_argument('--include', action='append', default=[], help='Explicit indispensable file of a selected J group')
-    command.add_argument('--mapping', type=Path, help='JSON source/local locator rows; correspondence is supplied by the agent')
     command.add_argument('--instruction', required=True); command.add_argument('--initiator')
     command.add_argument('--maintenance-wait', type=float, default=30)
     command.add_argument('--refresh-j', action='store_true', help='Permit selected file replacement for the same original J; the agent maintains current consumers and needed inputs')
@@ -69,21 +66,12 @@ def argument_parser():
     command.add_argument('--url', action='append', required=True)
     command.add_argument('--output', type=Path, required=True)
     command.add_argument('--format', choices=['pdf', 'html'], required=True)
-    command = commands.add_parser('register-source', parents=[root], help='Apply chosen bibliographic fields and retain explicitly associated local bytes')
+    command = commands.add_parser('bibliography', parents=[root], help='Apply explicitly chosen bibliographic fields')
     command.add_argument('--file', type=Path, required=True, help='One new entry or exact chosen field updates; - reads stdin')
     choice = command.add_mutually_exclusive_group(required=True)
     choice.add_argument('--new-work', action='store_true')
     choice.add_argument('--existing-key')
     command.add_argument('--chosen-key', help='Unoccupied key for the explicitly new work; otherwise allocate its alpha key')
-    command.add_argument('--local-pdf', type=Path, help='Explicit PDF input; a missing file records unavailability at a free destination')
-    command.add_argument('--local-html', type=Path, help='Explicit original HTML input; a missing file records unavailability at a free destination')
-    command.add_argument('--html-name', default='source.html')
-    command.add_argument('--artifact-suffix', default='')
-    command.add_argument('--selected-url', action='append', default=None)
-    command.add_argument('--obtained-url', action='append', default=None)
-    command.add_argument('--source-version', action='append', default=None)
-    command.add_argument('--limitation', action='append', default=None)
-    command.add_argument('--registry-update', type=Path, help='Prepared registry JSON: expected-text edits or expected original text and final text')
     command.add_argument('--maintenance-wait', type=float, default=30)
     command = commands.add_parser('create', parents=[root])
     command.add_argument('--kind', required=True, choices=list('CTSRDJL'))
@@ -105,20 +93,15 @@ def main(argv=None):
     parser = argument_parser(); args = parser.parse_args(argv)
     def supplied(path): return sys.stdin.read() if str(path) == '-' else path.read_text(encoding='utf-8-sig')
     try:
-        if args.command in {'check-files', 'prepare-references'}:
+        if args.command == 'check-files':
             from . import preparation
-            inputs = [args.files, args.context if args.command == 'check-files' else args.map]
+            inputs = [args.files, args.context]
             shared.require(sum(value is not None and str(value) == '-' for value in inputs) <= 1,
                            'Only one JSON input may read stdin in an invocation.')
             files = preparation.parse_file_list(supplied(args.files)) if args.files is not None else None
-            if args.command == 'check-files':
-                context = preparation.parse_file_list(supplied(args.context)) if args.context is not None else None
-                output = preparation.check_files(args.root, args.paths, files=files, prepared=args.prepared,
-                                                 installed=args.installed, context=context)
-            else:
-                shared.require(args.map is not None, 'Supply --map with paths, locators and optional edits.')
-                output = preparation.prepare_references(args.root, args.source, args.output,
-                    preparation.parse_json(supplied(args.map)), args.paths, files=files)
+            context = preparation.parse_file_list(supplied(args.context)) if args.context is not None else None
+            output = preparation.check_files(args.root, args.paths, files=files, prepared=args.prepared,
+                                             installed=args.installed, context=context)
             print(json.dumps(output, ensure_ascii=False, indent=2))
             return 1 if output['errors'] else 0
         repo = shared.Repository(args.root); reader = runtime.Reader(repo)
@@ -142,8 +125,7 @@ def main(argv=None):
             from ..intake import acquire
             output = acquire.acquire(repo, args.source, json.loads(supplied(args.selections)), revision=args.revision,
                                      source_repository=args.source_repository, correspondence=json.loads(supplied(args.correspondence)),
-                                     instruction=args.instruction, initiator=args.initiator, files=args.include, timeout=args.maintenance_wait, refresh_j=args.refresh_j,
-                                     mapping=json.loads(supplied(args.mapping)) if args.mapping else ())
+                                     instruction=args.instruction, initiator=args.initiator, files=args.include, timeout=args.maintenance_wait, refresh_j=args.refresh_j)
         elif args.command == 'import':
             from . import importing
             output = importing.import_content(repo, args.source, json.loads(supplied(args.plan)),
@@ -151,23 +133,13 @@ def main(argv=None):
         elif args.command == 'fetch-source':
             from ..intake import literature
             output = literature.fetch_source(args.url, args.output, root=repo.root, source_format=args.format)
-        elif args.command == 'register-source':
+        elif args.command == 'bibliography':
             from ..intake import bibliography, literature
             entries = bibliography.parse(supplied(args.file))
             shared.require(len(entries) == 1, 'Register one identified work per operation.')
             options = {'existing_key': args.existing_key, 'new_work': args.new_work, 'chosen_key': args.chosen_key, 'timeout': args.maintenance_wait}
             entry = next(iter(entries.values()))
-            if args.local_pdf is None and args.local_html is None:
-                shared.require(not any((args.artifact_suffix, args.selected_url, args.obtained_url, args.source_version, args.limitation, args.registry_update)),
-                               'Artifact facts require the explicitly associated local artifact.')
-                output = {'key': literature.register_work(repo, entry, **options)}
-            else:
-                facts = {name: value for name, value in (('urls', args.selected_url), ('obtained_urls', args.obtained_url),
-                         ('versions', args.source_version), ('limitations', args.limitation)) if value is not None}
-                output = literature.register(repo, entry, local_pdf=args.local_pdf, local_html=args.local_html,
-                    html_name=args.html_name, suffix=args.artifact_suffix,
-                    source_facts=facts or None,
-                    registry_update=json.loads(supplied(args.registry_update)) if args.registry_update else None, **options)
+            output = {'key': literature.register_work(repo, entry, **options)}
         else:
             if args.command == 'create':
                 doc = writer.create(repo, kind=args.kind, body=supplied(args.file), line=args.line, task=args.task,
@@ -182,7 +154,7 @@ def main(argv=None):
             output = result(doc, lambda path: shared.read_from(repo, path).decode('utf-8-sig'))
         print(json.dumps(output, ensure_ascii=False, indent=2)); return 0
     except (ValueError, OSError, KeyError, TypeError) as error:
-        if args.command in {'check-files', 'prepare-references'}:
+        if args.command == 'check-files':
             print(json.dumps({'operation': args.command, 'errors': [{'error': str(error)}]}, ensure_ascii=False))
             return 2
         parser.exit(2, 'material: ' + str(error) + '\n')

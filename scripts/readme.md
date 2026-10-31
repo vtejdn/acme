@@ -15,7 +15,6 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 | `research.py framework-update-notified VERSION --expected-notified-version OBSERVED` | Record a presented reminder only while its observed notification premise holds |
 | `research.py identity-bind HUMAN` | Bind the operator in this checkout's Git worktree configuration |
 | `material.py check-files [PATH ...] [--files FILES.json] [--prepared DIRECTORY] [--installed]` | Check explicitly selected public files or final prepared postimages |
-| `material.py prepare-references [PATH ...] --source DIRECTORY --map MAP.json --output DIRECTORY` | Prepare fresh Markdown files using explicit reference mappings and edits |
 | `research.py identity-add HUMAN --display-name "Actual name"` | Register a known human and supplied mappings; the empty unbound registry permits explicit first self-registration without automatic binding |
 | `research.py profile --topic execution` | Locate the actual local operator's policy files; the agent applies them |
 | `research.py profile --topic writing --author HUMAN --subfield free_probability` | Locate the actual author's writing layers |
@@ -27,8 +26,7 @@ A simple authorized edit can be made directly; no aggregate command or tool PASS
 | `render-research-navigation.py` | Regenerate the three local derived indexes |
 | `execution.py check` | Check per-Task E documents and their recorded states |
 | `material.py fetch-source --url ADDRESS --output LOCAL --format pdf` | Fetch supplied addresses and report actual response/byte facts without registration |
-| `material.py register-source --file entry.bib --existing-key KEY --local-pdf LOCAL` | Apply exact supplied fields and register an agent-chosen local source association |
-| `check-literature-storage.py` | Explicit whole-store registered-artifact inventory of presence, byte/format facts and recorded limitations |
+| `material.py bibliography --file entry.bib --existing-key KEY` | Apply exact agent-chosen bibliographic fields |
 
 Before repository or first-human setup, the agent collects the independent local path key and chosen License name under the [setup action](../framework/agent-actions.md#set-up-repository-or-human-identity).
 `init --username KEY --display-name NAME --repository REPOSITORY` and `identity-add KEY --display-name NAME` preserve those separate supplied values in id and display_name.
@@ -39,17 +37,18 @@ Initialization supplies null repository_display_name and repository_abbr default
 The Python Repository.initialize and identity.initialize interfaces take display_name and optional Git identity arguments by keyword after repository.
 The former init --url and Python URL arguments are retired and refused before initialization writes; project remote addresses remain in native Git configuration, while source-add --url and fetch-source --url retain their source-address roles.
 For no-Git personal use, repository/config.json may omit repository or set it to null; a newly prepared unnamed configuration uses null without inventing a repository name.
-Ordinary material reading, author registration, local creation/revision, source registration and current-E checks retain their actual duties without a target Git prerequisite.
+Ordinary material reading, author registration, local creation/revision, explicit original-source operations, necessary bibliography maintenance and current-E checks retain their actual duties without a target Git prerequisite.
 Git research writing and delivery require the human-registered repository name and explicit checkout binding; read-only material inspection and necessary setup repair remain usable while a name is missing.
 Repository names are validated separately from human path keys under the [name rule](../framework/rules/identity.md#repository-names-and-use-environments).
 Git-backed source access and selected Git views require a Git executable and their actual named Git source/view; unavailable Git in a managed checkout does not select personal mode.
 
 ## Shared research with native Git
 
-Shared Git research follows the [round-level collaboration rule](../framework/rules/tasks.md#shared-git-research) and [default joint-research permissions and integration responsibilities](../framework/rules/identity.md#shared-research-git-authority-and-integration) through ordinary native Git.
+Actual shared-repository work follows the [common work-start update](../framework/rules/workflow.md#shared-repository-work-starts) and [target, authority and integration rule](../framework/rules/identity.md#shared-repository-updates-and-integration) through ordinary native Git, covering research, writing, literature, transfer preparation, review and maintenance.
 Actual human authorization to establish, advance or continue joint Task collaboration includes routine synchronization, commits and pushes within that scope by default, including through a participating individual T/E, without another delivery-mode adoption or push grant; explicit human limits take precedence.
-The responsible main agent refreshes the agreed collaboration branch before each actual exploration round and judges useful progress for coherent authorized delivery, separately from the official framework version request.
-Material helpers do not synchronize project branches, classify key progress or grant remote authority; ordinary local operations retain their actual scope without a new network preflight.
+The responsible main agent refreshes the actual collaboration branch for a new assignment, resumption or autonomous exploration round, reuses that result within continuous work and applies the [integration capability duty](../framework/rules/workflow.md#integration-capability-and-delegation).
+Joint research also retains its [progress-sharing and delivery scope](../framework/rules/tasks.md#shared-git-research); the official framework-version request supplies no project-branch update.
+Material helpers do not synchronize project branches, select models, classify key progress or grant remote authority; ordinary local operations retain their actual scope without a per-operation network preflight.
 
 ## Official framework version check
 
@@ -123,24 +122,29 @@ All L use `mathematics/ledger/`.
 General creation does not allocate U.
 The actual author is registered and must be the same human as the operator; an external representation needs explicit adopted local_human correspondence at its existing person record.
 Choosing --author does not grant another human's authorship or correction rights.
-Fixed C/T/R/L/J and continuing S families use the compact [`material_next` state](../framework/material-format.md#material-family-allocation-state) in `repository/config.json`; U uses its separate citation-key entry, and D remains reusable after its actual retirement duties.
+Fixed C/T/R/L/J and continuing S families use the compact [`material_next` state](../framework/material-format.md#material-family-allocation-state) in `repository/config.json`; U uses an independent source-key/author namespace with necessary origin distinctions, and D remains reusable after its actual retirement duties.
 For an already used namespace, initialize the state from an agent-confirmed issued-number upper bound before relevant allocation or retirement; surviving filenames alone do not justify resetting it.
 Direct authoring maintains the same state, with no new migration command or automatic Git-history reconstruction.
 
-`material.py check` checks material structure and direct required interfaces; public `show` additionally reads a U's explicit local holding and availability through the shared source reader.
-Neither operation inspects private source bytes or native HTML anchors.
+`material.py check` checks material structure and direct required interfaces; public `show` uses those same shared-material checks and exposes a U's current text and necessary acquisition provenance.
+Neither operation consults a local literature account or queries original availability, private source bytes or native HTML anchors.
 For J, `check` and `show` retain current structure, necessary inputs and original-identity checks without requiring every historical acquired anchor in current text.
 The displayed acquisition scopes remain facts about their recorded revisions, rather than assertions of current availability.
 Structured show and discovery results use status for the exact selected decision of either a local or externally identified C/T family, with selected_decision retaining its declaring physical path and anchor.
 This replaces the former source_status field for externally identified materials; source and acquisition facts remain separate, and an unacquired selected source decision has null status rather than an inferred assessment.
 A lawful same-human acquired C/T/R/L revision retains its external identity and source header and explicitly identifies its actual acquired receiving input under the [ordinary input format](../framework/material-format.md#acquired-receiving-inputs-in-local-revisions).
-C/T/R/L use the physical revision's own ordinary Inputs section with exact Markdown links and adopted scopes, independently of current C/T decision selection.
+C/T/R/L use the physical revision's own ordinary Inputs section with exact Markdown links and agent-maintained adopted-scope prose after each reference, independently of current C/T decision selection.
+The scope explanation uses normal sentences and may continue over further lines or paragraphs; the tool neither extracts it nor certifies its completeness.
 The mechanical reader selects only explicitly linked earlier same-family receiving inputs whose source_repository and source_material exactly match the revision header; other ordinary support links remain ordinary support.
 Selected-decision support/dependency relations retain their mathematical meaning and review coverage requirements; Inputs alone adds no such relation or coverage.
 Arbitrary body links and earliest/latest family members do not select that input, and no new intake event or alteration of the old operation is required.
-The existing source-information reader's material_info result keeps the current header in origin and reports inputs as rows containing path, anchor, scope and acquisitions.
+The existing source-information reader's material_info result keeps the current header in origin and reports inputs as rows containing only path, anchor and acquisitions.
+The underlying revision_inputs returns only path and anchor, with repeated identical locators deduplicated; captions supply no response scope or replacement label field.
 Its top-level acquisitions aggregate the actual inputs' existing operation rows, whose local paths remain the acquired versions rather than being relabelled as the new local revision.
+Their actual acquisition scopes remain recorded source facts, separate from the current revision's adopted-scope prose and from the Scope fields of decision relations or review bindings.
 For onward intake from a fixed Git source, required configuration, identity, correspondence, materials and acquisition records all come from that selected tree, without WORKTREE or INDEX repairs.
+Intake applies its existing lexical original-path restrictions and private-original-store exclusion before reading selected fixed-source blobs, without resolving corresponding sending worktree objects.
+Necessary acquisition-record enumeration excludes prohibited candidates before reading them; an explicitly selected prohibited record is refused before access.
 These are derived response facts, without another persistent registry, copy marker or import-payload requirement.
 For a supported R revision, finding_evidence and actual new-acceptance consumers keep acquired-input facts separate from a genuine current local finding's own relationship and exact bindings.
 Use the local finding's current fixed R version and anchor under the [applicable review requirements](../framework/material-format.md#review-bindings-for-new-accepted-decisions), without requiring that anchor in the input's old acquisition operation or inheriting the source finding's verdict.
@@ -193,7 +197,8 @@ Historical decisions retain real calendar precision and evidence through generic
 `execution.py check --task TASK_PATH` reads only the selected current local E and its exact local ordinary Task, identity and necessary fields.
 Its required Task decision must be a declared decision with one unique target under the [existing anchor contract](../framework/material-format.md#claim-and-task-decisions); a unique older decision may remain selected independently of the Task's current selector.
 There is no Git --view option or historical-state fallback; normal Task check/show/navigation and Git operations require no E and do not read execution state.
-The common Task validator rejects links into the execution/ directory regardless of case or Windows trailing dots/spaces after URL decoding, before querying or reading E; inline-code addresses and similarly named ordinary directories retain their actual scope.
+The agent maintains public Task E addresses as inline code under the [execution rule](../framework/rules/execution.md#mathematics-and-operational-entrances); ordinary Task operations do not scan body references.
+Explicit Task/E decisions, selected-target classification and concrete file access retain their existing protections.
 Prepare direct exact edits under the [execution rules](../framework/rules/execution.md), with the [current-E template](../framework/templates/execution/execution-run.md).
 The interface has no event writer, history replay, authority inference or platform scheduler control.
 Runtime notes under execution/runtime/ are not E; this selected check neither reads nor validates those notes or .venv/, and their absence or changes grant no authority or allowance.
@@ -207,7 +212,7 @@ Sender framework versions, current-format support or missing installation metada
 If the helper cannot handle a selected old filename, layout or input, report that interface limit and use an adequate ordinary path when necessary facts and a conforming local result can be established; its actual input and publication checks remain unchanged.
 Keep per-unit original and transport correspondence in the existing one-operation provenance home without per-file approvals, checklists, receipts or duplicate accounts; format or tool success establishes no mathematical adoption, and later different-author corrections retain their own authorship boundary.
 Ordinary file operations and existing registration/allocation mechanisms suffice without a dedicated command, prepared-text payload, mapping plan or uniform batch protocol.
-The following payload, mapping and publication protocol applies only to callers choosing the optional helper.
+The following payload and publication protocol applies only to callers choosing the optional helper.
 Before receiving U through either ordinary file operations or this helper, the agent completes [acquisition for its inspected original](../framework/rules/literature.md#acquisition-before-u-reception) to its actual reused, obtained or failed outcome.
 An actual failure is recorded at the responsible source home and directly reported to the human author with the work/edition, address when known, failure, availability and receiving limits.
 The helper handles authored content and chosen bibliography; it neither fetches the original, imports sender-private source accounts nor certifies that the agent fulfilled those prior duties.
@@ -221,21 +226,19 @@ The command copies selected authored materials and bibliography, without citatio
 An explicitly selected actual independent finding in old L can be prepared in receiving fixed R with its true reviewer, targets, scope, relationship and limitations; retaining it as a current independent L finding is refused.
 Whole historical L accounts and their unselected old rows remain readable, and historical operation validation does not retrospectively acquire that new-selection restriction.
 R has no mandatory C target; the agent chooses actual necessary targets or limitations, including T-only and J-only findings, without selecting every binding or citation.
-Within this helper, the agent explicitly designates necessary existing local inputs through --mapping; same-operation selections and neutral mixed publication supply the final receiving set, including an own imported T with another human's R.
-An unmapped background link never triggers receiving-history lookup or an unselected C body/decision read.
-Each actual Markdown file retains its own internal references at its receiving path, including included J documents, before cross-document exact mappings apply.
-Unselected relative background links to actual tracked files in the selected sending tree become exact receiving registered sender-repoN/commit/path/anchor locators without reading linked bodies or tracing upstream provenance.
-For an absent relative target, the helper preserves plain source-only reference context and reports the necessary input/correspondence adaptation, without manufacturing a fixed-commit file locator.
-That mechanical tree-entry fact neither classifies the file as output nor establishes outside-tree availability or generation; the agent supplies actual content judgment and necessary adaptation.
-Ordinary agent-led receiving remains valid without this helper or a prepared-text payload, using the sole current layout and retaining actual missing-input limits.
-Already explicit foreign-number locators use prepared namespace correspondence or a sender-qualified local mapping.
-Unmapped foreign locators become raw source context qualified by sender and fixed sending revision, without an active receiving-number link; selected originals still require their own provenance.
-The private literature store and its registry/holding accounts are excluded; retired source/holding/update inputs fail before private access or receiving publication.
+The agent prepares final receiving declarations, prose references and source limitations from actual source/local correspondence.
+Supplied text and exact expected-text edits retain their final body without a full-document scan, automatic rebasing or source-context conversion.
+A chosen explicit source address can be translated separately before the agent puts its result into an edit; intake has no --mapping body-rewrite input.
+Background references neither discover receiving history nor query unrelated files or infer necessary mathematics.
+Read the selected source and preserve useful facts about ignored originals, outputs and absent inputs at their responsible consumers; report actual unfinished work directly.
+The helper records no unmapped-reference list and emits no completeness inference from missing automatic notices.
+The private original store is excluded; retired source/holding/update inputs fail before private access or receiving publication.
 Sender-local document links retain unacquired original-local context.
 Prepare the selected materials, bibliography and operation before the short lock, then recheck captured inputs and final U positions and publish them together.
 
 Repeat `--include PATH` for indispensable chosen tracked J files; `--refresh-j` requests that explicit group's refresh.
-`--refresh-j` permits replacement of selected files with the same registered original repository and J path/family, preserving fixed U/C/R/L versions.
+`--refresh-j` permits replacement of selected files with the same registered original repository and J path/family, preserving fixed C/T/R/L.
+A rolling U instead uses the same original correspondence and unit.expected containing the exact occupied receiving text; a later acquisition does not rewrite earlier operation scopes or create U snapshots.
 Differing-byte replacement after receipt also requires adopted same-human authorship; a flag or chosen author alone does not authorize another human's correction.
 The occupied group header, necessary acquisition evidence and native-file correspondence establish that identity; equal display names or the flag alone do not.
 Same-original later revisions and onward transports remain eligible, with original and immediate transport identity recorded separately.
@@ -249,36 +252,31 @@ The agent first reads the proposed changes and maintains necessary inputs and ac
 Intake performs no implicit public-Markdown consumer scan, automatic anchor veto or consumer notice, and an unrelated unselected edit does not invalidate its publication snapshot.
 J intake receives only selected fixed-commit programs, necessary inputs and explanations under the [J receiving rule](../framework/rules/intake.md#computation-programs-and-inputs).
 It neither reads nor queries source outputs, copies or maps them, nor modifies destination outputs; output_attachments, including an empty array, is unsupported input.
-Sending-output references retain visible source-only context without local links, output-byte claims or unavailable/incomplete attachment state; program receipt alone establishes no run, reproduction or review.
-A prepared receiving-local link keeps its actual navigation contract, independently of the sending output.
+The agent prepares useful sending-output references as source-only context, without output-byte claims or an unavailable attachment state; program receipt alone establishes no run, reproduction or review.
+Prepared local references remain final text; actual explicitly chosen targets keep their applicable navigation checks.
 Native code is copied unchanged unless its explicitly selected file_preparations supplies agent-judged permissible adaptation; file_map can arrange selected native children within the actual receiving J group.
 The full manifest and input reads use literal selected Git keys and ordinary blobs, independently of missing, directory or junction objects at same-named sending worktree paths.
 Fixed-view Reader/source_info and acquired-record validation use that view's identities, selected material and necessary file facts, including explicit local-revision inputs and onward provenance; a record's local paths belong to its owning repository/view.
 Unselected operation items and historical J file lists establish no additional availability or byte-reading requirement, while a genuinely missing selected fixed input still refuses without worktree fallback.
 Actual local import sources, receiving targets and Preparation/Batch publication retain Windows path, containment, reparse, occupation, expected-content and stale-input protections.
 Preserve per-file originals and actual behavior/evidence limits; execute the actual acquired path and supply genuine cross-J dependencies through a separate reproduction action.
-`--mapping mapping.json` supplies `{ "source": "acme-source://repoN/REV/path#anchor", "local": "PATH#anchor" }` rows for agent-decided fixed-material correspondence.
-A foreign-number mapping also supplies sender: repoN for the selected sending-repository context.
-Within source-reference context, supplied exact source/path/fragment mappings precede generated same-operation destinations, and contradictory explicit mappings fail before publication.
-An explicit acme-source locator uses the ordinary supplied whole-file mapping after applicable repository-number translation when no exact mapping applies, retaining the incoming fragment even though it has no relative local destination.
+For an explicitly chosen address, the agent may use Reader.destination with exact source/local correspondence in the receiving source namespace, then put the result into a designated edit.
+Intake performs no generated same-operation reference mapping or whole-file fragment fallback over body text.
 Prepare C/T/R/L/J local.number and qualified author/repository correspondence under the [external format](../framework/material-format.md#local-external-identities-and-prepared-correspondence).
 Any eligible text selection may supply prepared final local text or expected-text edits, with local kind, line, version and anchor appropriate to the content under [prepared receiving units](../framework/material-format.md#prepared-receiving-units).
 Explicit source_author plus prepared selects ordinary raw R/L content without current-format parsing of its old review declarations.
 For an actual selected finding, supply source_review with original reviewed_targets and any actually declared relationship under that input contract; its existing source account preserves original coordinates separately from the strictly checked receiving bindings, including on onward transfer.
 Original reviewed_targets keep a source URI without any # separator in path and its fragment only in the separate anchor field; even equal duplicate fragments refuse at new input and selected-operation validation, while an empty anchor can still name an actual whole-file target.
 Absent relationship facts remain undeclared rather than explicit unknown, and independently reviewed findings retain their actual relationship in fixed R without a new review or timestamp.
-Prepared main materials, U text and native Markdown use receiving coordinates for local literature links through the declared source entrance.
-Their ordinary local links retain final receiving objects and anchors without sending-source mapping lookup or generated source-path substitution; explicit acme-source locators and unprepared sending text retain their existing source-mapping contracts.
-Source-root, group and named-file navigation receives lexical path checks without resolving the mount, testing source existence, reading private bytes, checking native fragments or certifying a holding; actual sending-private references remain source-only and no sender originals or holding accounts are copied.
-Ordinary body directories retain path and existence checks without byte reads, and native fragments on non-Markdown files are preserved without binary decoding or Markdown-anchor matching.
-Parents necessarily created by actual selected pending files count as directories in both initial navigation validation and its publication guard, without directory plan entries or preparatory creation.
-Unselected entries and similar sibling names supply no such fact, and both checks refuse a file occupying the target directory or any necessary ancestor directory position inside the receiving repository before allocation or material/operation writes.
-Declared mathematical inputs and review targets continue to use their strict required-file and material checks; generic navigation supplies no mathematical support or review coverage.
-Prepared links and explicit mapping destinations are normalized and checked as public targets before any destination watch, content read or anchor check, including when the destination is planned in the same operation.
-Prohibited private-profile targets receive the same existing diagnostic whether present, absent or invalid UTF-8; this boundary does not prohibit an authorized private-resource read through the general I/O interfaces.
+Prepared main materials, U and native text contain the agent's final receiving references and actual source limitations.
+Intake preserves that body and only installs necessary true source identity fields in the main header; a matching supplied header and native prepared text retain their exact bytes.
+Actual selected output paths retain directory, collision, expected-content, locking and recovery checks; body references add no queries or publication guards.
+Declared mathematical inputs and review targets keep strict identity, file, physical-version and binding checks in the actual postimage.
+An explicitly chosen address is classified before its applicable access, and logical original navigation remains read-free.
 Needed S/D mathematics is adapted into its actual fixed home; a received T must be an actual necessary joint contract with no E.
 A new receiving family or U position respects and advances its actual `material_next` namespace bound, including an explicitly chosen number; a fresh number below the bound is not free merely because its path is absent.
-An already established same-original receiving correspondence keeps its number across later physical versions, and an ordinary revision does not issue another family.
+An established receiving correspondence keeps its number across later fixed versions or a selected rolling U update; only other fixed kinds use physical versions.
+U numbering is independent for each source key and author, including necessary external source distinctions; different authors may each use U001.
 Complete necessary mathematics, original single human and actual source/evidence facts are retained without whole-source-container or byte-equality requirements.
 Splits and same-author combinations retain complete per-unit provenance in the one concise intake operation, without an inaccurate sole-source header, archive or second mapping registry.
 For onward selection containing a local revision's additions, use the actual revising repository and fixed local-revision path/anchor as that selected unit's source, while keeping its earlier acquired input reference and original acquisition facts distinct.
@@ -295,7 +293,8 @@ New acquisition times use `YYYY-MM-DDTHH:MM` UTC, without `Z`, numeric offsets, 
 
 Personal import is an [agent-completed action](../framework/agent-actions.md#import-ones-own-selected-content): read, judge, adapt and write the selected own content and necessary dependencies, then inspect the result and affected references.
 The same entrance covers export preparation; neither a public Git source nor a preliminary commit is required.
-Before choosing this helper for Task transfer, the agent completes the [Task-family and independent manuscript passes](../framework/rules/intake.md#task-and-manuscript-collection), including all extant selected-family versions and actual project documents unless the human narrows the scope.
+Before choosing this helper for Task transfer, the agent completes the [Task-family and independent manuscript passes](../framework/rules/intake.md#task-and-manuscript-collection), including the selected fixed families' extant versions and actual project documents unless the human narrows the scope.
+U contributes its necessary selected current rolling content and source-edition explanation, without other authors' units or a U-version inventory.
 Concrete same-kind and cross-kind duplicates receive the [subagent comparison](../framework/rules/records.md#same-author-transfer-and-duplicate-comparison) before reduction and local-number allocation; unchanged text remains unchanged apart from necessary rule/address adaptation, confirmed reduction and affected consumers.
 Ordinary file operations and existing registration/allocation mechanisms suffice without a dedicated command, plan JSON, complete dependency graph, full input snapshot or uniform batch transaction.
 The following plan and publication protocol apply only when choosing this optional helper.
@@ -306,12 +305,14 @@ Prepare every actual selected version and required project constituent explicitl
 Its source is the supplied local-file preparation, so a selected fixed Git view must retain that view through adequate ordinary operations rather than current-worktree fallback.
 Existing source/local entries, reuse, prepared edits and publication checks suffice without new fields, permanent source-number maps or an automatic transfer command.
 Use source/local file entries for actual typed materials, chosen profile parts, manuscripts, native programs, data and constituents, and prepared final text or precise edits for adaptation.
-The helper decodes receiving paths ending in lowercase `.md` for Markdown body checks; other constituent files retain their byte-copy scope without a Markdown-validation claim.
+The helper requires UTF-8 text decoding for receiving paths ending in lowercase `.md` and checks applicable typed declarations; other constituents retain their byte-copy scope.
+The agent checks ordinary attached documents' prose, actual references and mathematical content; decoding and declaration checks certify neither general Markdown structure nor reference completeness.
 For an actual own maintained document with an incorrect extension spelling, prepare its canonical `.md` local path, correct contents and necessary direct references through ordinary editing or the existing explicit source/local and prepared-text interface.
 Correct a prohibited public-to-private link as content maintenance as well; preserve actual source paths and fixed evidence, with no automatic case conversion or additional compatibility dispatch.
 The helper reads necessary source author/origin/path and Task coordination/family-type facts separately from validating the adapted receiving result; obsolete source fields or an older Task layout alone require no source upgrade.
 Existing fixed content is reused or given its appropriate physical revision; a differing rolling/profile/document target needs exact expected receiving text.
-An explicitly selected own private settings file can retain internal section navigation, including a new file or exact expected update; public owners still reject private targets and no internal link selects another private file.
+An explicitly selected own private settings file can retain internal section navigation, including a new file or exact expected update.
+The agent keeps public prose free of private lookup links; explicitly selected address operations apply their actual private-target rules before access, and internal text selects no additional file.
 Before reading a selected source profile, including for prepared text or edits, the helper derives its human name from the actual safely resolved source path and checks the importing human or an already established author_correspondence.
 This check supplies no path-alias compatibility; the agent confirms the intended object and corrects noncanonical input spellings when needed.
 A reuse entry keeps an adequate actual local counterpart, including already-intaken own content, without conversion or duplication.
@@ -329,118 +330,73 @@ The agent chooses the shared-parent, exact-local-parent or complete standalone-c
 The tool authenticates no human identity, certifies no preservation/deduplication or review applicability, resumes no research and claims no manuscript build.
 
 <a id="personal-import-preparation"></a>
-## Optional file checks and reference preparation
+<a id="optional-file-checks-and-reference-preparation"></a>
+## Optional selected-file checks
 
-These two material.py interfaces are optional preparation aids for explicitly selected public files, independently of the existing import installer.
-They do not collect Task families or manuscripts, judge mathematical duplication, choose retained homes or numbers, allocate identities, install material, create source headers or change T/E.
-Ordinary reading, editing and copying remain sufficient under the [personal-import action](../framework/agent-actions.md#import-ones-own-selected-content).
+`material.py check-files` checks explicitly selected public files without installing them or discovering prose references.
+The agent reads actual prose, prepares final text and verifies meaningful references and affected consumers through ordinary reading, search and editing.
+Automatic reference preparation and its prepare-references command are retired, without a compatibility command or replacement preparation protocol.
 
-Both commands use the existing --root convention and accept positional repository-relative POSIX file paths, an optional --files JSON array, or both, with no implicit whole-library selection.
-Selections must be nonempty and distinct without case conflicts.
-JSON inputs reject duplicate object keys; a JSON file argument may be `-` for stdin, with at most one stdin input per invocation.
-Selected names are actual decoded file paths, not URL-encoded aliases, parent traversals or trailing-dot/space spellings.
-The public-file interfaces exclude concrete private account, secrets, original-source-store, execution/ and .venv/ reads, including when a prepared or source base would expose those roles inside the receiving repository.
-Each explicitly selected receiving, source, prepared or output root keeps its ordinary filesystem constraints: required existing ancestors are directories, with reparse components, parent/trailing aliases and case conflicts refused.
-Repository-relative roles are classified within the actual selected root and receiving scope; an ordinary outside ancestor named .codex does not make the selected root repository metadata.
-Ordinary logical source navigation keeps its existing read-free contract.
+Use positional canonical repository-relative paths, --files with a JSON array, or both; select a nonempty set without case conflicts.
+Selected names are decoded file paths rather than URL aliases; protected metadata, secrets, concrete originals, execution and local environments retain their access boundaries.
+Receiving and prepared roots keep ordinary directory, containment, spelling and reparse checks within their actual selected scope.
+An ordinary outside ancestor named .codex does not make the selected root repository metadata.
+JSON input rejects duplicate object keys; at most one of --files and --context may read stdin with -.
 
-`check-files` without --prepared checks the selected actual receiving files.
-With `--prepared DIRECTORY`, every selected file must exist there under its final receiving path; a missing prepared file never falls back to an existing receiving file.
-Unselected necessary references use the receiving filesystem view named by --root, not unselected files found in the prepared tree.
-`--installed` requires --prepared, checks the actual receiving files and compares each selected file with its final prepared bytes.
-If selected bytes are missing or differ, those byte errors are reported before body checks.
+Without --prepared, check the actual selected receiving bytes.
+With --prepared DIRECTORY, each selected file comes from that directory at its final receiving path, with no receiving-file fallback.
+With --prepared --installed, read actual receiving files and compare them against those selected prepared bytes.
+Missing or mismatched bytes are reported before applicable typed checks.
+Ordinary files and native J constituents retain selected byte facts, while recognized material entrances additionally check responsible identities, declarations and required inputs.
+A success does not certify body references, mathematics, source applicability, review sufficiency or a build.
 
-Canonical lowercase `.md` paths receive their applicable public navigation checks, and actual typed material entrances additionally use the existing Reader, declaration, source-unit and required-input checks.
-J native children and other non-Markdown files retain only the selected existence/byte facts; a copied `.MD` or other constituent does not acquire a Markdown-body check or automatic renaming.
-For S/T/U checks, the existing public entrance enumeration supplies necessary route or U-position context without validating unrelated bodies or consulting local holdings.
-`--context CONTEXT.json` optionally adds necessary public view names, such as the actual external registration and selected intake-operation metadata required by an acquired material.
-It does not select those bodies for independent checking or discover missing context automatically.
-When configuration or people metadata is itself explicitly selected in the prepared set, the typed reading view uses that postimage.
+S/T/U checks use necessary route or identity context without validating unrelated bodies or consulting local originals.
+For U, simultaneously selected prepared siblings supply their selected headers, while necessary unselected receiving siblings supply binary-read identity headers only.
+An unselected prepared sibling supplies no alternate context; real conflicts, invalid necessary headers and installed-byte differences retain diagnostics.
+--context CONTEXT.json adds explicitly chosen necessary public view names, such as external registrations and selected intake metadata, without selecting their bodies for independent validation.
+Explicitly selected config or people metadata supplies its actual prepared postimage.
 
 ```powershell
 python -B scripts/material.py check-files mathematics/ledger/Alice_L_A0001_v1.md --prepared .tmp/receiving
 python -B scripts/material.py check-files --files .tmp/files.json --prepared .tmp/receiving --installed
 ```
 
-`prepare-references` requires --source, --map and --output and accepts only canonical lowercase `.md` owners and final owner paths.
-The map is an object containing only optional `paths`, `locators` and `edits` objects.
-`paths` maps decoded repository-relative paths once; A to B and B to C do not turn A into C.
-`locators` maps an exact `PATH` or `PATH#ANCHOR` to its final decoded path and nonempty anchor when a fragment is present, without another paths pass.
-Optional `edits` names only selected source owners and uses the existing [complete-text or expected-text edit input](../framework/material-format.md#direct-acquisition); edits apply before reference rewriting and stale expectations fail before writes.
-Moving an owner also rebases unchanged targets relative to its final location, preserving actual paths, fragments and URL encoding.
+Use links.edit_text, addresses.plan/publish or ordinary file operations for complete final text or designated nonoverlapping expected-text edits.
+No file movement or selected-file check automatically discovers or rewrites incoming or outgoing references.
+The publisher retains actual selected-path, directory, occupation, case-collision, captured-input, exclusive-write and recovery protections.
+For a fixed Git view, use that selected reader or an ordinary export and its necessary metadata, without a worktree fallback, Git initialization or preliminary commit.
 
-```json
-{"paths": {"mathematics/ledger/Alice_L_A0003_v1.md": "mathematics/ledger/Alice_L_A0001_v1.md"}, "locators": {"mathematics/claims/Alice_C_A0008_v1.md#argument": "mathematics/claims/Alice_C_A0002_v1.md#argument"}}
-```
+The JSON result reports operation, selected-file count, errors and applicable notices without a persistent report.
+Exit code 0 means its mechanical checks succeeded, 1 reports selected-file errors, and 2 reports invalid input or configuration; syntax errors retain argparse diagnostics.
 
-```powershell
-python -B scripts/material.py prepare-references mathematics/ledger/Alice_L_A0003_v1.md --source SOURCE_ROOT --map .tmp/map.json --output .tmp/prepared
-```
+<a id="local-source-retrieval-and-registration"></a>
+## Explicit source retrieval and bibliography
 
-The shared span parser rewrites supported inline Markdown links and images while preserving code, comments, mathematical literal regions and unrelated prose.
-Reference-style links, HTML attributes, TeX references, bare material numbers, headings and link labels require actual separate agent edits and consumer checks; the rewritten-link count supplies no completeness or mathematical-equivalence claim.
-Check every final output location before writing, including destinations reached through an ancestor output root.
-No destination may enter a distinct external source tree; inside the receiving repository it must remain in root .tmp/ preparation storage, including the allowed same-checkout source case.
-An explicitly selected independent output directory remains available, with existing files, selected source files, case collisions, file/directory conflicts and reparse aliases refused before prepared content writes.
-Before the first content write, check the output root and every selected target's necessary directory positions, including files occupying those positions and conflicts among the selected files; genuinely absent ordinary parents remain creatable.
-The shared ordinary publisher and Batch path apply the same directory check to selected installation outputs, including own manuscript attachments without navigation links; allocation, expected-content and locator responsibilities remain with the existing callers.
-Fresh output uses the existing exclusive publisher, with ordinary storage guards, ownership-aware rollback and preservation of competing contents after a failure; it neither installs the output nor retains a map or receipt.
-These checks refuse known directory conflicts without predicting every later permission change or race; subsequent failures retain the existing recovery behavior and truthful recovery limits.
+The [literature rule](../framework/rules/literature.md#literature-acquisition) assigns work/edition identity, necessary source preparation, inspection and failure reporting to the agent.
+Ordinary authorized reading, copying and selected retrieval remain available without a compulsory helper or JSON plan.
+There is no local Artifact/Resource registration, registry_update, fingerprint, holding catalog or whole-store missing-source checker.
 
-The helpers read their explicit filesystem views.
-For a fixed Git source or receiving view, use the existing selected Git reader or ordinary export preparation to supply that actual view and its necessary metadata, without borrowing current worktree files, initializing Git or requiring a preliminary commit.
-Successful structural or byte checks establish neither mathematical preservation, source applicability, review sufficiency nor a manuscript build.
-The JSON result reports the operation, number of selected files, errors and applicable notices or rewritten-link/output facts, without creating a persistent report.
-Exit code 0 means the requested mechanical checks or preparation succeeded; 1 reports selected-file check errors; 2 reports invalid input, configuration or preparation failure.
-CLI syntax errors retain argparse diagnostics and exit code 2.
-No separate framework compare command is added; ordinary native diff, explicit byte comparison or Python parsing can check actually selected unchanged inputs.
+material.py fetch-source --url URL --format pdf --output .tmp/chosen/response.pdf fetches one or two supplied exact addresses with finite attempts and a timeout.
+HTML uses --format html.
+The helper returns requested/final URLs, byte length, format/decoding facts and real retrieval errors, without a digest, work/edition verdict or inspection assessment.
+Inspect an unestablished response before using it as the selected original; HTTP success and a supported suffix do not identify the work.
+Fresh output may use the actual ignored logical source store, such as mathematics/literature/pdf/SourceKey.pdf or mathematics/literature/pdf/SourceKey/source.html, under its explicit physical containment and file-shape contract.
+An occupied destination is preserved and refused before retrieval; reuse an adequate existing original directly rather than fetching merely to reconfirm it.
+Nested links, source-group escapes, broken mounts and protected paths retain their errors.
+Disposable response files stay under root .tmp/ and follow creator cleanup.
 
-## Local source retrieval and registration
+material.py bibliography --file entry.bib requires --existing-key KEY or --new-work, with optional --chosen-key KEY for an explicitly chosen new work.
+It applies exact supplied fields through register_work and the existing short-lock/stale-entry protections, without source-file registration, source access or a new availability account.
+The agent chooses same-work correspondence and actual publication fields under the [bibliographic boundary](../framework/rules/literature.md#bibliography-content); the helper performs no fuzzy field fusion.
+The former register-source command, local-PDF/HTML registration, Artifact/Resource facts, source-version/URL/fingerprint parameters and account readers/writers are removed.
+Necessary actual source locators, editions, page correspondences and continuing use restrictions belong in concise author sections of the source README; inspected mathematics and true checking limits belong in U or adequate C/L.
+Simple retention requires no source-note entry, U, acquisition date or per-file receipt.
 
-The following parameters, expected-text inputs and publication protocol apply to callers choosing these helpers.
-Ordinary authorized retrieval, inspection, copying and registration edits remain available without a helper invocation or prepared JSON, retaining the same work/edition association, actual local-byte fingerprints, source facts, private storage and Git exclusions and affected-write coordination.
-
-`material.py fetch-source --url ADDRESS --output LOCAL --format pdf|html` fetches at most two supplied addresses and returns actual requested/final URLs, byte length, format/decoding facts and digest.
-Its digest is a transient response-byte fact, not a registered local baseline or source-identity verdict.
-Fetching does not register a work/edition association.
-Inspect a first or otherwise unestablished response before assigning it; tools do not classify identity or reject HTML by error/login keywords.
-Use ordinary download tools when adequate, and keep disposable fetch output under the [temporary-storage rule](../framework/rules/organization.md#temporary-storage).
-
-`material.py register-source --file entry.bib` requires `--existing-key KEY` or `--new-work`, with optional `--chosen-key KEY` for a chosen new identity.
-Supplied fields are exact updates under the [bibliographic content boundary](../framework/rules/literature.md#bibliography-content); no automatic same-work decision or field fusion occurs.
-Register an inspected local PDF with `--local-pdf FILE` and optional `--artifact-suffix=--arxiv-v2`, or original HTML with `--local-html FILE --html-name source.html`.
-Explicitly name the actual file for local reuse.
-A named path observed missing can record an unavailable artifact at a free destination, retaining supplied URLs and limitations without a fresh fingerprint.
-For an existing absent artifact, retain its already recorded local baseline without a caller-supplied hash; an occupied file reports a conflict and keeps its existing bytes/account.
-Neither an existing work key nor a receiver fingerprint supplies the missing bytes.
-HTML filenames may have contained subdirectories; original bytes/native anchors remain intact.
-`--selected-url`, `--obtained-url`, `--source-version` and `--limitation` supply facts.
-Registration computes new PDF/HTML/resource fingerprints only from supplied actual local bytes and compares the selected existing registry baseline, preserving bytes/account on mismatch.
-Fetch, registration and resource APIs accept no supplied expected hash; a prepared registry update cannot establish a fresh hash for absent bytes.
-Registration does not fetch.
-It generates no acquisition/access date from bytes, missing files or the current clock, and adds no substitute date or mandatory unknown-date field.
-The agent maintains true known dates at their actual precision and necessary unknown source/date limits in the existing registry under the [literature rule](../framework/rules/literature.md#literature-acquisition), through ordinary edits or a selected registry_update.
-Omitting both local options is bibliography-only and creates no artifact account.
-Related resources use the same availability rule and explicit accounts, without a crawl or conversion.
-For an existing account change, `--registry-update prepared.json` supplies `{"edits": [...]}` or `{"expected": "complete original text", "text": "complete prepared final text"}` for the actual registry.
-Edit spans use the [expected-text input contract](../framework/material-format.md#direct-acquisition).
-Choose the real account from its Artifact declaration and context, including comparison/contents/holding links; preparation must retain unrelated content and make its current facts agree with the supplied source facts.
-An unchanged byte/fact registration preserves the current account without requiring this input; an explicitly chosen free account may append minimal supplied facts.
-Competing accounts need explicit preparation, and a stale edit or inconsistent result fails before publication.
-Expected old text is checked before evaluating a prepared resolution of an old primary ambiguity; strict reading applies to the selected prepared result and explicit necessary old byte constraints.
-Registration returns facts read from the prepared persisted local account, which explicit local catalog/holding checks also observe; public U display does not consult it.
-
-Use the [Artifact/Resource declarations](../framework/rules/literature.md#local-pdf-storage) and [holding contract](../framework/rules/literature.md#actual-source-holdings) for actual local source accounts.
-Holding declarations use agent-prepared registry text and ordinary editing, with optional [exact maintenance](#scoped-checks-and-bibliography-maintenance) for batches or shared publication.
-No dedicated holding writer is provided; an unchanged holding needs no invocation, and reading preserves its whole account.
-Local registration and selected readers use the affected accounts and necessary relationships, preserving literal source facts, independent availability outcomes and limitations.
-Unrelated malformed accounts do not block selected work; selected bad fields, byte conflicts and ambiguous primary candidates remain errors.
-An explicitly requested whole-store inventory keeps its complete scope.
-Unregistered preparatory PDFs produce no warning, substitute notice or pending-registration count; actual registered-source limits and path, link, format or byte conflicts retain their diagnostics.
-For needed original-source discovery, follow the [registered-then-local-candidate order](../framework/rules/literature.md#source-preparation) before necessary external acquisition, without a whole-library prerequisite.
-Reading, checking and Git delivery do not fetch sources or establish source identity, and mathematical intake copies no local source account.
-Known-byte comparison and truthful unavailable outcomes follow the [source-association rule](../framework/rules/literature.md#artifact-source-association); neither extends U inspection.
-An authorized retry uses explicit fetch/inspect/register.
+Before actual personal-import or external-intake delivery, the agent completes selected necessary original preparation to reuse, acquisition or a truthful failed outcome, reporting failures directly with work/edition, known address, reason and use limitation.
+The optional helper does not certify completion and requires no confirmation field.
+Same-repository reuse, including clone/pull/merge, prepares originals only for necessary further reading.
+Startup, ordinary U checks/display/discovery, navigation, link maintenance and Git delivery neither query local source availability nor trigger downloads.
+Logical source navigation remains read-free even when a source is absent; actual selected reading still reports real access/format failures.
 
 ## Shared publication
 
@@ -460,10 +416,10 @@ This is an in-memory recovery aid for selected publication, without a persistent
 
 After source preparation, the agent completes or reuses the selected edition's [searchable contents](../framework/rules/literature.md#searchable-contents) when a real contents list is supplied.
 Use the common rule's PDF stem or complete native HTML path, retaining nested directories and the HTML extension before `.md`, and maintain its exact source links and necessary shared consumers together.
-A local account may link to a transcription, without a shared backlink or prerequisite holding account.
+A useful source-edition explanation may link to a transcription, without an acquisition account or availability condition.
 For example, `pdf/WorkA/source.html` uses `contents/WorkA/source.html.md`; use actual native anchors rather than inapplicable PDF page fields.
 Source acquisition success does not certify transcription completion.
-Contents are navigation, not U findings; state edition and missing/unreadable transcription coverage in their existing shared account, while acquisition and local holding limits stay in the local registry.
+Contents are navigation, not U findings; state edition and missing/unreadable transcription coverage in their existing shared account, and retain useful edition/use limitations in concise author source notes.
 
 ## Scoped checks and bibliography maintenance
 
@@ -483,7 +439,7 @@ Each `updates` key names a selected Markdown, TeX, BibTeX or operation JSON file
 Edit spans use the [expected-text input contract](../framework/material-format.md#direct-acquisition); choose the actual local anchor separately from the bibliography key's spelling.
 Prepare the selected operation item's local path, actual anchor and file/artifact correspondences together; the existing operation/material contracts validate the selected postimage before writing.
 Affected U source-key namespaces include unmoved siblings and all same-batch targets after selected old positions are removed; cross-author/origin numeric occupancy and original-family continuity are checked before publication.
-An explicitly mapped bibliography-key correction that keeps a U's human, original binding, unit number and physical version carries its old next-unissued bound, including retired positions, into the destination namespace while preserving monotone existing counters.
+An explicitly mapped bibliography-key correction that keeps a U's human, original binding and unit number carries its old next-unissued bound, including retired positions, into the destination namespace while preserving monotone existing counters.
 The agent selects actual citations, contents, writing records and local intake locators; literal examples and original-source/transport facts retain their exact scope and spelling.
 Original/transport identities, revisions, paths, anchors, scope, availability and unselected items remain unchanged.
 Only designated mixed-text citations, anchors and references change; selecting a file and key mapping performs no whole-body substitution.
@@ -491,29 +447,32 @@ Mixed bibliography notes and literal examples retain their original text unless 
 The agent repairs actual active consumers and writing records; token lookup supplies no automatic active-citation refusal, completeness judgment or generic notice.
 It does not infer unchanged mathematics, relocation equivalence or review transfer.
 Valid J/E/intake maintenance emits no generic changed-file reminder.
-Ordinary public-reference checks apply to chosen shared owners and reject a target in the local registry before accessing it; explicit local-account reads use their actual selected declarations without a public-body check or an implicit original-byte inventory.
+Ordinary public-reference checks apply to chosen shared owners, enforcing actual private/protected targets before access while canonical logical original navigation remains read-free.
 The same public-target entrance rejects execution/runtime/ and .venv/readme.md as machine-local runtime notes before resolution, existence, contents or anchor access, with a runtime-specific diagnostic rather than literature or E attribution.
-This role check is reused by selected-file inputs, receiving and import body links and their publication guards; it does not impose a global byte-reader prohibition on explicitly authorized local notes.
+Explicit selected-file, address and declaration operations reuse these role checks; ordinary body text does not create file access or publication guards.
 Outgoing-link checks do not discover unchanged incoming consumers or report reverse-reference coverage.
 The agent selects necessary incoming files and exact target locators through scoped searches and reading, then checks them in the requested view with the shared readers.
 
-The shared `acme.core.links.markdown_link_spans(text)` returns actual link destination spans in the original text, excluding the supported literal regions and comments.
-`links.destinations(document, text)` and `acme.materials.runtime.Reader.destinations(document, text)` project those same links to local targets, with the material reader retaining source-reference validation.
-For explicit working-file link checks, `links.check_files(root, selected_paths)` returns errors for the supplied public files; it does not discover consumers or assess mathematical dependencies.
-An ordinary directory retains its actual role before Markdown file-anchor inspection even with a `.md` suffix and fragment; real Markdown files keep their missing and ambiguous anchor checks.
-For a selected Git view, read the chosen consumers with `acme.core.git_views.Tree` and their destinations with the shared reader, then pass the designated local locators and `tree.bytes` to `acme.materials.validation.validate_locator_targets`.
-WORKTREE preparation excludes the local literature registry by its existing private role before any account shape, existence or content query, including when an existing project's index still names it before authorized retirement from tracking.
-It likewise excludes machine-local runtime notes and current or retired source-store roles before shape queries, while general traversal skips local runtime notes without entering them.
-This shared-view boundary leaves INDEX and fixed-commit facts in their selected view, retains genuine public-input errors and adds no account-health precheck, automatic Git edit or restriction on explicit current local account and ordinary byte operations.
-That required-file reader checks explicitly selected file inputs; the receiving and personal-import body-link pass instead uses validate_navigation_targets with the actual owner and prepared postimage.
-The body-link reader returns a read-free guard for the existing publication lock to recheck ordinary target containment, existence and only the directory role needed by its actual prior check before allocation or writes.
-Pending prepared files retain their existing expected-content protection; logical source navigation remains lexical, and unrelated changes or ordinary target content without an adopted Markdown anchor are not frozen.
-Selected Markdown anchors must occur exactly once; a repair in another view does not cure that selected view.
-Generic links into the logical literature root, group or source file receive containment and public-path checks without concrete source resolution, existence or native-anchor inspection.
-Local navigation rejects Windows trailing-dot/space source-prefix and ancestor aliases and protected components after its existing single URL decoding, before resolve/reparse/existence queries or bytes, including inside otherwise canonical source paths.
-The initial reader and publication guard preserve canonical source navigation without watching availability or contents; a source file's removal or change does not invalidate that navigation.
-Ordinary material_path, preparation, import and publication checks no longer resolve unselected current or retired source roots, while actual selected paths keep containment, reparse, occupation, expected-content and stale-input protection.
-Explicit source operations retain their concrete file/mount checks, and fixed Git keys, source URIs and original provenance paths retain their literal spelling without local alias rewriting.
+`acme.core.links.edit_text(raw, choice)` applies complete final text or designated original character spans with exact expected text and disjoint ordering.
+`links.destination(document, href)` decodes one explicitly supplied address, keeping Markdown address escapes separate from a single URL decode and preserving native fragments.
+It does not find that address in prose or read the target.
+`acme.materials.runtime.Reader.destination(document, href, mapping=())` optionally translates that one explicit acme-source address through exact source/local rows, then checks the chosen local path role.
+Correspondence rows use the receiving registered source namespace; the result supplies a local path and anchor for the agent's designated edit, without chaining mappings or rewriting files.
+`documents.locator(path, value)` reads a simple single-line material field with a plain label, canonical URL-encoded target and no optional title or nested image.
+Inputs reads those targets at the start of input lines, optionally list items, in its responsible section; prose, code examples and decorations add no input.
+Bounded block and table structure, selected decision and finding checks keep their declaration contracts.
+The shared declaration view reads block example boundaries at their physical positions, then handles inline code and comments within actual table blocks and explicitly chosen selector fields.
+Unselected prose and link-title characters cannot hide a later Current section, decision, review table or exact anchor.
+Heading lines and complete standalone HTML anchor declarations supply exact targets outside block examples; a heading's inline text is interpreted within that line.
+An opening fragment, missing closing tag or non-standalone fragment supplies no declared target.
+The shared responsible-section reader accepts LF and CRLF without rewriting the supplied source, including explicit revision Inputs and the limited Task coordination read used by raw-source preparation.
+Writer section updates, review binding offsets and local E tables reuse these responsible positions without restoring whole-body link discovery.
+`validation.validate_locator_targets(locators, read)` checks explicit required files and unique Markdown anchors in the supplied view.
+`validation.validate_navigation_targets(root, owner, locators, read, planned=())` checks only explicitly supplied navigation targets and can return their operation-local guard.
+It preserves an actual directory's role, including a .md suffix, and logical original navigation performs no mount, existence, byte or native-anchor query.
+Actual selected target paths retain protected/private roles, single-decoded Windows source-prefix alias refusal and ordinary containment before access.
+Creating, reading, importing, receiving and publishing material do not discover targets, build guards or infer source limitations from whole-body links.
+The agent chooses necessary consumers and addresses in the actual view; neither tool success nor byte equality certifies reference completeness.
 The agent applies fixed-version and actual-review obligations under the [common maintenance boundary](../framework/rules/records.md#substantive-material-retention).
 These explicit checks are not Git prerequisites and perform no delivery operation.
 
@@ -529,42 +488,27 @@ from acme.checks.scoped import external_references
 with Tree(root, 'INDEX') as tree:
     report = external_references(tree, {
         'mathematics/claims/author1_repo1_C_F0007_v1.md': ['identity'],
-        'note.md': ['source_links'],
         'intake/Bob/Bob_I0001.json': ['transport.repository', 'items[0].source.author'],
     })
 ~~~
 
 Use only actual selected paths; `WORKTREE` or an exact commit selects that postimage without an index/worktree fallback.
-For Markdown, `identity` checks the shared header/prefix and necessary original-author correspondence; `source_links` checks all actual fixed source links through the shared Markdown/URL reader.
+For Markdown, select only `identity`, which reads the necessary header/prefix and original-author correspondence; whole-document source_links discovery is retired.
 For intake JSON, choose `transport.repository`, `items[N].source.repository` or `items[N].source.author`, with actual zero-based item indices; attachment-status fields are not a supported selection interface.
 Selecting `source.author` includes its necessary repository association and qualified original name; other operation fields remain outside that selection.
-The shared JSON reader decodes the chosen object before field selection, so ordinary and Unicode-escaped spellings agree; the shared URL reader supplies its accepted scheme handling without a parallel prefix filter.
-The result's `files` counts the selected objects read, `fields` counts checked identity/locator/provenance entries and `checked` lists their actual path/field, using source-text destination offsets for links.
-No matching source links produces zero checked fields for that selected file; neither these counts nor a PASS covers unselected consumers.
+The shared JSON reader decodes the chosen object before field selection, so ordinary and Unicode-escaped spellings agree.
+The result's `files` counts selected objects, `fields` counts checked identity/provenance entries and `checked` lists their actual path and field.
+Neither these counts nor a PASS covers free prose or unselected consumers.
 This optional callable does not run full material/proof or intake-object validation, reconstruct old J objects/anchors, inspect private source bytes or create a durable selection record.
 
 ### Explicit selected source reading
 
-The agent chooses any needed source check under the [source rule](../framework/rules/literature.md#selected-source-checks); a generic structural pass supplies no holding, edition, availability or byte verdict.
-Registry and holding checks use explicitly selected current local facts; public U display exposes no source_holding or holding-derived notices.
-With `root` bound to the actual checkout and the actual key substituted, an optional local account read uses existing APIs:
-
-~~~python
-from acme.core import paths
-from acme.checks import literature
-from acme.intake import bibliography
-
-registry = paths.ordinary_path(root, literature.REGISTRY)
-text = registry.read_text(encoding='utf-8-sig') if registry.exists() else ''
-entries = bibliography.parse((root / bibliography.BIB).read_text(encoding='utf-8-sig'))
-catalog = literature.source_catalog(text, entries, holding_keys=['ChosenKey'])
-~~~
-
-There is no registry INDEX/commit replay or worktree fallback contract; shared bibliography, materials and intake records retain their own explicitly selected Git views.
-The local account reader also accepts explicit `artifact_names` for a chosen artifact scope; keep unchanged necessary declarations in the selected input.
-An absent registry creates no file, account, warning or assertion that originals or shared evidence are absent.
-Actual local-file availability and explicitly requested byte checks concern the selected physical originals, retaining recorded-baseline, path and publication protections.
-No new command, scope file or automatic per-edit source-check requirement is introduced.
+The agent chooses a concrete work/edition, file and necessary check under the [source rule](../framework/rules/literature.md#selected-source-checks).
+Use the actual ignored logical original path through core.paths.source_path when physical access is selected; it resolves only that chosen store/file under its containment and shape contract.
+Source bytes may be inspected with suitable available tools under actual authority; native HTML fragments, completeness and mathematical applicability remain agent judgments.
+A concrete access, format or content problem is reported at its actual selected scope without a routine whole-store inventory, registry or fingerprint comparison.
+Ordinary U display and logical source navigation perform no source-file query, availability warning or holding enrichment.
+Actual shared bibliography, materials and intake records retain their explicitly selected Git views; source originals are machine-local files outside those views.
 
 ## Declaration and privacy checks
 
@@ -572,7 +516,7 @@ The [bounded declaration parser](../framework/material-format.md#machine-readabl
 Visible mathematical cells, escaped pipes and scope whitespace retain their meaning.
 Structural checks do not establish mathematical sufficiency.
 
-Public link and material-input checks classify normalized, decoded [private profile and local-registry targets](../framework/rules/organization.md#machine-local-locators) before body reads or anchor lookup.
+Public link and material-input checks classify normalized, decoded [private profile targets](../framework/rules/organization.md#machine-local-locators) before body reads or anchor lookup.
 They report a public-document error and request inline-code lookup instructions, independently of private-file existence or encoding.
 Ordinary public anchors and tracked/staged-secret publication errors retain their checks.
 Explicit resource use may still read its needed private section.

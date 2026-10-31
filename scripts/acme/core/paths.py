@@ -7,7 +7,6 @@ from urllib.parse import unquote
 
 PDF_ROOT = Path('mathematics/literature/pdf')
 LEGACY_PDF_ROOT = Path('literature/pdf')
-LOCAL_REGISTRY = Path('mathematics/literature/registry.md')
 COMPUTATION_OUTPUT_ROOT = Path('mathematics/computations/outputs')
 PROTECTED = {'.git', '.codex', '.agents'}
 # Shared environments and generated test caches contain no authored materials.
@@ -52,8 +51,7 @@ def protected_path(relative):
 def private_file(relative):
     parts = tuple((part.rstrip(' .') if os.name == 'nt' else part).casefold()
                   for part in Path(relative).parts)
-    return (len(parts) == 3 and parts[0] == 'profiles' and parts[2] == 'secrets.md'
-            or parts == tuple(LOCAL_REGISTRY.parts))
+    return len(parts) == 3 and parts[0] == 'profiles' and parts[2] == 'secrets.md'
 
 
 def local_runtime(relative):
@@ -68,8 +66,6 @@ def check_public_target(relative):
     if local_runtime(relative):
         raise PathError('Public links must not target machine-local runtime notes; use inline-code lookup instructions instead.')
     if private_file(relative):
-        if Path(relative).parts[0].rstrip(' .').casefold() != 'profiles':
-            raise PathError('Public links must not target the local literature registry; use inline-code lookup instructions instead.')
         raise PathError('Public links must not target private profile secrets; use inline-code lookup instructions instead.')
 
 
@@ -258,7 +254,7 @@ def pdf_path(root, relative):
 
 
 def source_path(root, relative, *, work_key=None):
-    """Resolve one explicitly named local file without registry interpretation or traversal."""
+    """Resolve one explicitly named local source file without traversal."""
     relative = Path(relative)
     if not in_pdf_store(relative) or tuple(part.casefold() for part in relative.parts[:len(PDF_ROOT.parts)]) != tuple(PDF_ROOT.parts):
         raise PathError('Only the declared literature source mount is supported.')

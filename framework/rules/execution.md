@@ -6,7 +6,8 @@ A Task owns its mathematical question, hypotheses, completion criteria and selec
 An ordinary individual local Task selected for execution uses one stable local E at execution/Author_E_F0001.md, independently of its lifecycle state.
 A joint T is only a common contract and coordination entrance, with no E, directly associated S, team allowance or direct execution.
 Continue its goal through the actual human's selected individual T, adopted joint contract and stable E under the [Task rule](tasks.md#joint-tasks-and-participation).
-The [shared Git collaboration rule](tasks.md#shared-git-research) keeps that individual scope: incoming commits and progress delivery neither adopt a different exact joint contract nor resume a stopped run or reset effective local limits.
+Actual shared-repository work applies the [common work-start update](workflow.md#shared-repository-work-starts), including ordinary and participating individual Tasks.
+Incoming commits and [joint progress delivery](tasks.md#shared-git-research) neither adopt a different exact joint contract nor activate or resume E, reset a stop or renew effective local limits.
 All physical Task versions, authorized resumptions and later reactivations share that address.
 Task creation, reading, maintenance and ordinary import do not require or create E.
 Prepare or reuse it only when the actual human's ordinary Task is selected for local execution under adequate authority and necessary conditions; a new boundary defaults to not-running and supplies no fresh authority or allowance.
@@ -51,6 +52,8 @@ Once a monitoring failure is resolved, discard its retry narrative unless a real
 ## Mathematics and operational entrances
 
 Public Tasks do not link to local E files; use an inline-code stable address or the common action guide when useful.
+The agent checks this public expression; ordinary material operations do not scan the body for E links or use that syntax as a publication gate.
+Actual selected Task/E decisions, effective limits and protected file operations retain their existing checks.
 Maintain existing operational links within the actual selected scope without changing fixed mathematics or scanning all history.
 Mathematical materials must not reference E, E events or administrative records as evidence, dependencies, chronology, handoff sources or side notes.
 Remove the whole administrative clause while preserving any real mathematical, reproduction or review qualification at its responsible home.

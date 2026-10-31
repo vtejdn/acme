@@ -69,7 +69,7 @@ Do not record instruction dates, adoption or supersession history, or administra
 Update the affected entry directly when a rule changes.
 Questions, examples, silence and an agent preference do not create a policy.
 Keep manuscript-specific choices with their manuscript; source observations stay in responsible source-reading accounts.
-Bibliographic facts belong to the canonical references.bib, and artifact facts belong to the literature registry.
+Bibliographic facts belong to canonical references.bib; useful edition/source notes belong to the source README, and inspected mathematics and limits belong to U or adequate C/L.
 
 The official starting repository contains common guidance and empty mathematical structures, without live personal policies, named source selections, budgets or execution authorization.
 Explicit personal transfer retains the person and applicable scope; copying a policy grants no Task execution authority.

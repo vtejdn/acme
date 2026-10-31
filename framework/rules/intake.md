@@ -59,8 +59,9 @@ Before U installation or registration, complete the receiver's ordinary [origina
 Read the incoming work/edition facts needed for that procedure, reuse an adequate result for the same work and edition, and preserve the actual outcome and receiving limitations.
 This responsibility applies before calling an optional intake helper as well as before ordinary agent-led receipt; adequate incoming evidence does not bypass it.
 The agent also chooses its receiving source-key/unit position and precise local declaration/reference edits before publication.
-Occupancy is shared across authors and displayed origin prefixes within the canonical receiving source key.
-Existing original repoN/family correspondence preserves physical-version continuity; an occupied prepared position reports a conflict without silently choosing another number.
+Occupancy and allocation belong to each receiving source-key/author namespace, including necessary original-source distinctions; different authors may each use U001.
+An established original correspondence retains its receiving position through selected rolling updates; an actual same-namespace conflict refuses without silent renumbering.
+U has no physical versions or required inspection table, and its current full body is not frozen historical proof evidence.
 New receiving C/T/R/L/J families and U positions obey the [allocation state](identity.md#allocation-and-concurrency); an explicit receiving number cannot reissue a retired identity or fall below its initialized next unissued bound.
 The short publication lock checks the actual receiving namespace and advances that bound for a new installation; later physical versions and established same-original correspondence keep their receiving family.
 When choosing the optional intake helper, use its [explicit unit input](../material-format.md#direct-acquisition), with expected original text at each designated edit or complete agent-prepared local text.
@@ -86,30 +87,16 @@ Exact receiving repoN/original-revision/path/anchor reuse needs no repeated judg
 
 Preserve complete necessary selected content and actual evidence under the common adaptation rule; whole-container retention and byte equality are not requirements.
 The agent may prepare all eligible textual materials, split distinct scopes or combine same-author units while retaining exact per-unit provenance.
-Rewrite designated references using the actual source/local correspondence judged by the agent.
-Within the optional helper, supplied exact source/path/fragment mappings precede generated same-operation destinations; contradictory explicit mappings fail before publication.
-Its whole-file fallback changes the path and preserves the incoming fragment, while authentic same-document references retain their actual anchors.
-Determine internal references from each actual Markdown file's original and receiving paths, including included native documents, before applying cross-document mappings.
-An unmapped background reference does not invoke receiving history lookup or read an unselected C body/decision to infer reuse; the agent explicitly designates any actual needed local input.
-An otherwise unselected relative background reference to an actual tracked file in the selected sending Git tree retains its path and anchor at the receiving registered sender repoN and fixed sending commit.
-This locator identifies evidence present in the sender without opening the linked material or inferring upstream authorship, identity or revision from its header.
-If the relative target is absent from that Git tree, retain truthful source-only reference context and report the necessary input or correspondence adaptation instead of manufacturing an active fixed-commit file locator.
-The containing material's revision identifies its reference context, without establishing the referenced file's bytes, generation or availability outside the tree.
-The agent judges what is needed, obtains or reproduces authorized necessary input or retains its unresolved need at the actual consumer; obsolete mentions with no remaining purpose may be omitted or simplified under the common retention rule.
-An optional helper may use actual tree-entry facts for this mechanical distinction, without recognizing historical layouts, inferring an output role or adding another supported output home.
-An already explicit foreign-number locator is translated only through prepared namespace correspondence or an exact sender-qualified local mapping.
-If unmapped, retain its raw text as source context qualified by the sending repository and fixed sending revision, without an active receiving repoN link.
-Select a needed upstream object or supply its exact correspondence explicitly; missing or conflicting provenance still refuses an actual selected object.
-Sender-local literature and unversioned computation output are exceptions to the fixed-revision locator form.
-A literature reference retains its label as source-only local literature, explicitly not acquired, with its sending-repository context and logical path; ignored bytes have no fixed Git-file claim.
-For a sending computation output, retain its label as ordinary source-only text stating that it was not acquired, with its sending-repository context, source path and anchor.
-Do not turn that reference into a local link through a matching J name, basename, occupied output slot or prior program acquisition.
-J receiving follows the [fixed program and input boundary](#computation-programs-and-inputs); no source-output correspondence is created.
-Onward acquisition keeps existing source-only text and its original reference context without assigning the ignored output to a Git revision.
-Ordinary reading, editing and copying can complete the required adaptation without a prepared payload or mandatory helper; supplied helper inputs must support the actual chosen transformation.
-Report an unmapped original reference as unmapped; it does not by itself assert a missing necessary mathematical dependency.
-The agent records any actual missing necessary input at its consumer.
-Never bind an unrelated same-named file, create a stub, discard necessary selected mathematics or excuse an actually broken acquired local input.
+The agent maintains designated references using the actual source/local correspondence, final receiving paths and adopted scope.
+Prepared text or exact expected-text edits supply the final body; the helper publishes it without a second reference scan, rebasing or source-context conversion.
+An explicitly chosen acme-source address can be translated once through supplied correspondence before the agent includes its result in an edit.
+Unchanged adequate selected files may be copied directly; no per-file prepared payload or background-reference ledger is required.
+The agent reads sending-relative references, actual fixed-tree facts and missing background objects, preserving necessary source limitations at the actual consumer.
+A containing material revision supplies reference context, not proof of an ignored or absent file's bytes, generation or availability.
+Sending-private originals and computation outputs are not acquired through their body references or bound to same-named receiving files.
+Prepare useful source-only explanations from actual facts and report actual unfinished work directly to the human.
+Retire automatic unmapped-reference lists, aggregate notices and any inference of completeness from an empty list, without replacing them with a manually filled account.
+Ordinary reading, editing and copying suffice; actual missing or conflicting provenance still refuses an explicitly selected object.
 
 Necessary unacquired mathematics remains a specific limitation at the real consumer.
 Source-assessed Claims and review findings remain visibly attributed to their source; installation is neither proof nor the recipient's judgment.
@@ -140,12 +127,12 @@ Local and received R use the same need-based finding/target boundary without a m
 J intake receives only the selected README, programs, verification programs, necessary inputs, parameters and explanations actually present in the chosen full fixed Git commit.
 Preserve actual author, original path, revision, scope and per-file correspondence under the ordinary receiving contract.
 Do not read, copy, query or inventory sending outputs, establish output mappings or alter destination outputs, even when output files happen to be tracked or share a familiar name.
-The optional helper rejects output_attachments, including an empty array, and cannot select outputs through include, mapping or file_map.
+The optional helper rejects output_attachments, including an empty array, and cannot select output files through include or file_map.
 
 Sending output references retain their necessary label, sender, source path, fragment and reference context as ordinary source-only text stating that the output is not acquired.
 The program revision identifies the reference context, without certifying output bytes, generation or availability.
 Onward transfer retains this original context and the actual fixed-file provenance, without forwarding outputs or interpreting old attachment status.
-Explicit prepared receiving-local links retain their actual receiving navigation contract and do not establish a correspondence to source outputs.
+The agent maintains final receiving references and actual source limitations; a body link does not establish output correspondence or cause a target query.
 Once the selected fixed files are obtained, that intake scope is complete; normal nonreceipt of output creates no unavailable attachment, incomplete outcome or reminder.
 Actual missing necessary programs/inputs, invalid targets, conflicts and stale preparation retain their concrete diagnostics.
 
@@ -162,7 +149,7 @@ Existing local outputs, fixed programs and true old acquisition facts remain int
 
 Within actual human authorization, prepare the selected source and destinations.
 Record each actual intake once in a concise JSON metadata record under intake/<initiating-human>/, whether the agent writes directly or chooses mechanical assistance.
-The optional `scripts/material.py intake` executes supplied source, revision, selections (path, anchor and scope), bibliography choices, J files and any local locator mapping, and creates that record for its operation.
+The optional `scripts/material.py intake` executes supplied source, revision, selections (path, anchor and scope), bibliography choices, J files and final prepared text, and creates that record for its operation.
 A different recorder is named truthfully without moving it to the recorder's directory.
 Create the author directory only for an actual operation.
 
@@ -187,11 +174,11 @@ Keep source reading and mathematical judgment outside short write locks.
 Protect actual fixed versions, necessary provenance, allocation and unrelated or competing writes with existing short-lock, expected-text, captured-input and rollback mechanisms where the selected operation needs them.
 Inspect resulting files, bibliography and affected U positions, without requiring every receiving action to construct a complete transaction plan or use one publication framework.
 Callers choosing the optional intake helper recheck its captured inputs after waiting and publish its selected batch and operation together under its short maintenance section.
-Before allocation or writes, its existing publication guard also rechecks the path containment, existence and only necessary target role of ordinary navigation selected for that operation, respecting pending prepared files without reading directories or native contents.
-The same selected postimage includes only parents necessarily supplied by those pending files; the initial check and guard both refuse a file occupying the required directory or any necessary ancestor directory position inside the receiving repository before allocation or material/operation writes.
+Before allocation or writes, the publisher checks the actual selected output paths, necessary directory positions, occupation and captured inputs; body references supply no implicit target queries or guards.
+Only actual selected pending files supply creatable parent directories; initial output checks and the lock-time recheck refuse a file occupying a necessary output directory or ancestor before allocation or writes.
 This refusal issues no number; a later failure after issuance retains the advanced bound under the existing [allocation rule](identity.md#allocation-and-concurrency).
-Logical source-store navigation retains its read-free lexical boundary; this recheck creates neither a source-file guard nor a promise of availability after publication.
-Initial navigation checks and the publication guard reject noncanonical Windows source prefixes and protected components before target access under the [source-storage rule](literature.md#local-pdf-storage); they do not normalize aliases into accepted paths.
+An explicitly chosen logical source-store target retains its read-free lexical boundary, without a source-file guard or an availability claim.
+Explicit address and file operations reject noncanonical Windows source prefixes and protected components before applicable access under the [source-storage rule](literature.md#local-pdf-storage), without normalizing aliases into accepted paths.
 Receiving and personal-import preparation inspect actual selected ordinary paths without resolving unselected current or retired source roots, while concrete source operations retain their own physical checks.
 A later invalid/stale input or publication failure preserves prior selected content and unrelated competing writes without a durable transaction journal.
 Never silently overwrite a collision or roll back another operation's files.
@@ -208,9 +195,9 @@ Register needed definitions, terminology and symbols against the actually obtain
 Do not infer mathematical equivalence, acquire a whole definition library automatically or add an intake material kind.
 
 Before publication, apply the [bibliographic content boundary](literature.md#bibliography-content) to canonical work fields.
-Acquisition details belong in the existing registry/intake and inspection findings/limits in their responsible source materials, rather than BibTeX workflow notes.
+Useful edition/source explanations belong in concise author source notes, cross-repository provenance in existing intake and inspected mathematics/limits in U or adequate C/L, rather than BibTeX workflow notes.
 Retain actual publication/edition uncertainty and identity exceptions; no English keyword classifier or new approval is required.
-Local source registration and holding checks remain local literature operations under the literature rules.
+Actual selected original acquisition and access remain local literature operations under the literature rules, without a registry, holding ledger or fingerprint.
 Do not inspect or borrow another repository's private inventory to satisfy them.
 Preserve historical acquisition provenance truthfully without reopening its private files or rewriting earlier obtained/unavailable outcomes.
 
@@ -245,7 +232,8 @@ An optional search for explicit target paths locates candidates; the agent reads
 Keep necessary references valid through prepared consumer edits or retained targets and anchors, and preserve needed inputs without archiving every regenerable output.
 Mathematical changes follow their existing material and authority rules; an administrative refresh creates no new mathematical review, execution authority or compulsory record.
 
-The intake tool replaces only explicitly selected files of the same original J under `refresh_j` permission, preserving fixed U/C/R/L versions and original/transport provenance.
+The intake tool replaces explicitly selected files of the same original J under refresh_j permission, preserving fixed C/T/R/L and original/transport provenance.
+A rolling U update instead retains its established original correspondence and supplies the exact expected receiving text; earlier operations retain their actual source commits, obtained scope and limits without U snapshots.
 After receipt, differing-byte J refresh also requires established same-human authorship; another human's correction uses that human's own J.
 Before differing-byte replacement, compare the incoming original registered repository and J path/family with the occupied group's header and necessary acquisition evidence, including actual native-file correspondence.
 Equal displayed names or refresh permission do not establish original identity or native-file ownership; conflicting or insufficient evidence refuses publication.
@@ -284,7 +272,7 @@ Apply family collection to fixed support encountered along the way and inspect t
 | Selected material | Default collected scope |
 | --- | --- |
 | C/T/R/L | All extant physical versions of the actual family in the selected view and their necessary constituents. |
-| U | All extant versions of the selected unit family, without other units merely sharing a work key. |
+| U | The necessary selected current rolling unit and source-edition explanation, without other authors or units merely sharing a work key. |
 | S | Current rolling content, actual relevant subroutes and necessary retained history, failures and references. |
 | D | Current continuing mathematics and required constituents, without per-edit snapshots. |
 | J | The responsible program directory's explanations, programs, required inputs and actual computation scope, without per-run versions or default output transfer. |
@@ -301,8 +289,10 @@ Follow the statements, proofs, definitions, computations and reviews actually us
 Merge the two collections without duplicate support or a second manuscript copy; using another research result does not select that research's entire Task or manuscript project.
 An absent corresponding project needs no empty directory or placeholder, and generated deliverables follow the actual requested delivery scope rather than the source-directory contents.
 
+For actual personal import, complete necessary selected original preparation to reuse, acquisition or a truthful failed outcome before delivery under the [literature rule](literature.md#acquisition-before-u-reception), reporting failure directly to the human.
+Same-repository clone/pull/merge instead reuses adequate U and prepares originals only when further reading is needed.
 Complete both passes before reducing content, then compare adequate receiving candidates and apply the [same-author duplicate and numbering rule](records.md#same-author-transfer-and-duplicate-comparison).
-Default exclusions are Git metadata, the entire execution/ and .venv/ directories, private settings, original literature and machine-local acquisition/holding accounts, J outputs, temporary files and caches; an actually selected settings or execution action retains its separate scope below.
+Default exclusions are Git metadata, the entire execution/ and .venv/ directories, private settings, original literature, J outputs, temporary files and caches; an actually selected settings or execution action retains its separate scope below.
 Preserve the receiver's E, runtime notes and actual environment without adopting another machine's settings; an explicitly authorized personal backup or move uses ordinary selected file work rather than an inferred material-transfer scope.
 Carry necessary shared bibliography, U inspection/edition facts, retained indispensable inputs and manuscript build inputs in their responsible homes, without renaming a whole output store to evade its boundary.
 Dispatch a missing necessary other-author dependency separately under its actual author and provenance; do not relabel external material as the importing human's original.
@@ -320,7 +310,8 @@ Retain only necessary effective moved-assignment conditions through agent-chosen
 Import alone selects no autonomous Task, activates no run, creates no fresh allowance and permits no overlapping execution writer.
 A joint T has no E and follows the shared-parent or standalone-contract dispositions in the Task rule.
 Settings retain only selected applicable scope and precedence; manuscript relocation retains author choices, actual review limits and proportionate build obligations without creating an unrequested Task.
-An explicitly selected own private settings file may retain internal section navigation and authorized expected-content reads; its links do not select other private files, and public owning documents still reject private targets before accessing their contents.
+An explicitly selected own private settings file retains authorized expected-content reads and agent-maintained internal references; body text does not select another private file.
+The agent keeps public prose free of private lookup links, and actual explicit target operations reject private targets before access.
 For callers choosing the independent optional `material.py import`, its roots, dependency edges, prepared text, file arrangements and publication protocol follow the [input format](../material-format.md#personal-import-input).
 Those helpers protect their explicitly captured inputs, collisions, allocation and selected publication; they are not a required import pipeline, and only actual foreign branches create intake records.
 Report the actual transferred scope, necessary changes, missing inputs and real build/check limits in the ordinary delivery reply, without a separate export report or transfer register.

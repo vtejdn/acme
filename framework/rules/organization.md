@@ -27,7 +27,7 @@ No directory classifier, exhaustive directory register or mandatory index in eve
 A directory's existence alone requires no README; create one only for a distinct necessary purpose, keeping operative rules at their governing framework homes.
 Live readings and execution disposition belong in E, with actual defaults selected by the [personal-policy rules](preferences.md).
 
-Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; shared bibliographic fields in mathematics/literature/references.bib and machine-local acquisition/artifact facts in its local registry.md.
+Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; shared bibliographic fields in mathematics/literature/references.bib, useful author edition/source notes in source README and inspected mathematics/limits in rolling U or adequate C/L.
 Machine-local paths and secrets are not framework defaults.
 Link the responsible record when summarizing it.
 
@@ -74,16 +74,11 @@ Neither a passing tool nor a newline-only diff establishes preserved meaning.
 Use repository-relative program/data paths and document-relative links in durable public content.
 Obtain the actual checkout root from runtime context; do not hardcode it or add a second root setting in secrets.
 Private settings and local original holdings remain local and do not travel through normal Git collaboration under the [default collaboration scope](identity.md#collaboration-maintenance-and-conflicts).
-The same boundary covers `mathematics/literature/registry.md`: keep actual local bytes, omit it from source framework copying and preserve a destination's actual local account.
-Do not create or restore an empty registry during installation, cloning or bibliography-only work; ordinary framework copying changes no Git metadata.
-When authorized maintenance ends tracking of an existing account, retain its local bytes and any necessary unique shared evidence at its adequate existing home before repairing consumers and using native Git for that exact path.
-This does not rewrite history, adopt another author's holdings or create a migration register.
 Do not assume another human's private settings or private originals exist in the current human's local working copy.
 Credentials, sensitive access parameters and private resource locators belong only in the responsible human's existing ignored `profiles/<human>/secrets.md`, under a concise resource section; nonsensitive runtime choices use the [runtime home](#machine-local-runtime).
 Public guidance names that file/section in inline code and any relative suffix; it does not copy the private value or link to the private file.
 A public Markdown link to a private profile file is a public-document error: use inline-code lookup instructions instead.
 Classify the normalized, decoded target before opening its contents or checking an anchor, with the same diagnostic whether the private file exists, is absent or cannot be decoded.
-Public references to the local literature registry follow that same access-before-reading refusal; name its lookup path in inline code and use shared bibliography, contents or U for shared source facts.
 Read only the needed private section when an actually authorized resource-dependent operation uses it.
 Missing setup limits that resource-dependent work, without blocking unrelated work or creating a new permission gate.
 
@@ -105,7 +100,7 @@ The [computation rule](computations.md) gives no generic execution-environment a
 Normalize historical installation/root portions while preserving necessary relative suffixes, program/argument identity, dates, outcomes, parameters, payloads and limitations;
 identify normalized commands as such, without claiming a new run or literal original argv.
 Discard obsolete host locations without creating a secrets inventory.
-Public URLs/DOIs, original source identities, actual locally computed literature-file fingerprints, quoted source text, fictional controls, mathematical notation and agent names retain their actual roles.
+Public URLs/DOIs, original source identities, quoted source text, fictional controls, mathematical notation and agent names retain their actual roles.
 Locator cleanup does not rewrite Git history or weaken fixed-mathematics preservation.
 
 <a id="machine-local-runtime"></a>
@@ -120,7 +115,7 @@ Use `execution/runtime/readme.md` only when this working copy has a continuing n
 Reuse the ignored, persistent execution directory without synchronization, placeholders, a machine identifier, fixed fields or an environment inventory.
 Organize concise notes by actual purpose and state necessary command working directories, obtaining the repository root from runtime context without a second root setting.
 Native Git configuration, checkout binding, environment metadata and dependency files keep their existing homes; runtime notes do not mirror them or private resource values.
-Literature acquisition accounts, E conditions and personal research or writing choices likewise retain their own responsibilities.
+Useful author source notes, E conditions and personal research or writing choices retain their own responsibilities.
 
 The actual virtual environment belongs to `.venv/` and its native environment tools.
 An optional `.venv/readme.md` is only an environment-specific explanation when one is needed, not a required file or the sole durable home for necessary choices.

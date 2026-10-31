@@ -151,7 +151,8 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
 - Verification scripts compare the mathematical payload, including scope-relevant inputs, range, tolerance and normalization.
   Remove persistent input/program/output fingerprints, saved digest baselines, digest warnings and digest acceptance gates, including historical values and their writers/readers.
   Preserve exact mathematical checks; incidental time/path metadata or raw bytes are not the mathematical target.
-  Literature-file fingerprints computed from actual local bytes retain their separate accidental-damage checking role in the source registry; intake carries no literature baseline.
+  For a concrete literature-source problem, use adequate reading, reacquisition or direct comparison under the [source-check rule](literature.md#selected-source-checks), without a literature fingerprint or source registry.
+  Necessary temporary byte comparisons, expected-content checks, locks and rollback retain their operation-local purpose.
 
 ## Evidence and Limits
 
