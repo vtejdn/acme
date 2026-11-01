@@ -13,6 +13,7 @@ Preserve the exact original author, repository, research line, family/serial, ph
 Repeated acquisition and later versions reuse the established receiving family, distinguishing original identity from immediate transport.
 New J families maintain their actual [`material_next` namespace](../../material-format.md#material-family-allocation-state); an established receiving correspondence or an output file does not allocate another family.
 See the [computation rules](../../rules/computations.md#computation-output-location).
+Within one core computation topic, optional versions/vN/ keeps only necessary distinct algorithms, inputs or certificate evidence; no vN main directory, mandatory v1 or per-run version is introduced, and pure logical/implementation repair may remain in place with actual checking.
 The inert example below uses `Author_J_W0001`; replace it and its file rows with the actual retained group and files.
 Do not invent programs, data or a run to fill the template.
 Use the minimal author/source header from the [material format](../../material-format.md).
@@ -68,11 +69,11 @@ Ordinary commands do not rely on root `.tmp/` or undeclared previous output.
 Keep live limits, error handling, atomic publication and useful continuation interfaces.
 Publish complete output only after the claimed calculation succeeds.
 
-Required witnesses, non-reconstructible data and earlier results used as inputs remain preserved locally.
+Necessary fixed witnesses, non-reconstructible data and generated results adopted as indispensable input use tracked input storage in the responsible J under the [fixed-input recovery rule](../../rules/computations.md#recovery-of-necessary-fixed-inputs), while ordinary reproducible output remains local.
 The ignore rule is neither backup nor delivery; a clone can lack output.
 Cross-repository [J intake](../../rules/intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs, retaining source-only context for sending output references.
 A tracked program revision does not attribute an ignored file to its Git tree or establish its generator.
-Reproduce only under actual authorization, recording the receiving-local result and its true limits without changing prior acquisition facts.
+Within an actual authorized research, repair or recovery task, reproduce necessary missing input with its existing generator/verifier, save the required input and coherent consumers, and state true result/limits without rewriting acquisition facts or requiring a recovery history.
 No ordinary read, link repair or Git delivery implicitly runs the computation.
 
 Apply the [common maintenance boundary](../../rules/records.md#substantive-material-retention) to output cleanup and concise account maintenance.

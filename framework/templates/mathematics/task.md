@@ -7,6 +7,7 @@ Use a numbered T family in `mathematics/tasks/` and the [material format](../../
 Source-only audits and operational setup retain their own homes instead of becoming artificial mathematical Tasks.
 Use series A for an unspecified new Task; keep a continuing Task's series or the human's explicit choice.
 New family allocation maintains its actual [`material_next` namespace](../../material-format.md#material-family-allocation-state); a new physical contract version stays in that family.
+Follow the [core-topic family boundary](../../rules/records.md#mathematical-topic-families-and-necessary-versions) for actual contract evolution, retaining exact scope, authority, ordinary/joint type and effective E conditions rather than treating every changed hypothesis as a new goal family.
 
 Replace the author, date, question and authority with actual information.
 For a new decision, replace the illustrative date with its actual UTC minute timestamp under the [new-record timestamp rule](../../rules/workflow.md#new-record-timestamps).

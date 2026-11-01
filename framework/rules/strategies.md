@@ -178,7 +178,7 @@ Routine actions need no retrospective, and failure of a sufficient construction 
 | `refuted` | Evidence rules out the recorded mechanism or auxiliary assertion under its stated hypotheses. Reconsider only with a concrete change in evidence, assumptions, mechanism or diagnosis. Preserve the failed assertion; it remains refuted unless its refutation is overturned. A materially different replacement gets a successor ID. |
 | `superseded` | Work has been reorganized into identified successors or absorbed elsewhere. Keep the historical record and successor links. Restore the same ID only when deliberately reversing that reorganization while reinstating the same route identity; reconcile successor dispositions to avoid duplicate active ownership. |
 
-Record the scope and evidence of a failure in the ledger.
+Link sufficient failure scope and evidence at its responsible L/J/C/R home; the S retains its disposition, reason and next action without duplicating that evidence.
 Failure of a sufficient strategy does not refute its goal.
 A **goal counterexample** requires a verified example contradicting the original goal under its actual hypotheses, with the relevant claim and proof review linked before the goal's assessment changes.
 Do not confuse an allocation decision to pause with evidence that a strategy is blocked or refuted, or treat restarting work as proof that an earlier mathematical objection is resolved.
@@ -188,7 +188,7 @@ Do not confuse an allocation decision to pause with evidence that a strategy is 
 Use the inert [record template](../templates/mathematics/strategy.md), replacing placeholders with actual evidence.
 A template is neither authorization nor a completed record.
 
-When a useful failed attempt changes a route or prevents repetition, fix its scope, evidence and limitations in ledger without waiting for Task completion.
+When a useful failed attempt changes a route or prevents repetition, preserve its scope, evidence and limitations without waiting for Task completion, reusing adequate responsible material and adding L only for necessary exploration or synthesis.
 Link that finding from the route evidence/change section and explain its consequence for continuation or reopening.
 Keep ongoing unbound arguments in mathematics/drafts/; strategy decisions remain in this rolling record.
 

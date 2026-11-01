@@ -270,10 +270,18 @@ def _locator(value):
 def _select_text(doc, target):
     target = _locator(target)
     name = 'Current assessment' if doc.identity.kind == 'C' else 'Current decision'
-    start, end = _section(doc.text, name)
+    section = _section(doc.text, name)
     relative = '' if target.path == doc.path else posixpath.relpath(target.path, posixpath.dirname(doc.path))
     require(not any(char in relative + target.anchor for char in '\r\n()'), 'Unsafe decision locator.')
-    return doc.text[:start] + '[Selected decision](' + relative + '#' + target.anchor + ')\n\n' + doc.text[end:]
+    selected = '[Selected decision](' + relative + '#' + target.anchor + ')\n\n'
+    if section is None:
+        require(doc.identity.kind == 'C', 'A Task needs its Current decision section.')
+        return doc.text + '\n## ' + name + '\n\n' + selected
+    start, end = section
+    prefix = doc.text[:start]
+    if not prefix.endswith(('\n', '\r')):
+        prefix += '\n\n'
+    return prefix + selected + doc.text[end:]
 
 
 def append_decision(repo, path, *, decision, expected_current, select=True):

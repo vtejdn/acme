@@ -25,9 +25,8 @@ Use the following cases to determine the responsible record, not as a requiremen
 | Extract shared lemmas or substantially reorganize a proof into reusable parts | Extracted statements, original proof sections, actual dependency changes, consumer interfaces and preserved originals; actual review links; internal organization within an assigned Task needs no separate extraction approval |
 | Create an alternative proof, assemble a proof, select a new current version, revert or abandon that selection | Actual proof/version artifact or exact failed step; old/new version map, reason, review scope and outcome, preserving an unaffected earlier proof |
 | Change substantive proof inputs or their required interfaces | The input and version used, the exact conclusion needed, hypothesis matching, replaced or unresolved obligations, and downstream effects; source review stays in its source audit |
-| Assign or change a mathematical Role or select a main theorem | The affected statement, mathematical/expository reason, previous and resulting role, and the authorization required by the existing rule; a role label does not establish a proof |
 | Establish a useful reduction, proof mechanism, boundary case, obstruction or failed implication | Precise scope, decisive reasoning/evidence, consequence for the claim or route, and remaining obligation; an exploratory finding need not immediately receive a Claim ID |
-| Discover a mathematical defect, counterexample or substantive change in validity/review assessment | The challenged implication, affected scope and proof versions, correction or unresolved gap, review evidence and downstream reassessment; an unverified objection is recorded as such |
+| Preserve a consequential defect, counterexample or substantive new validity finding | The challenged implication, affected scope, decisive evidence and remaining obligation at an adequate responsible home; an unverified objection stays a doubt, and pure repair alone requires no ledger entry |
 
 Ordinary use of an existing lemma in a new proof is recorded in that proof's dependency list; it needs no additional operation log unless the mathematical structure or an existing dependency interface is substantively changed.
 A review finding or an attempt already recorded adequately in its responsible claim, audit or exploration section does not need a duplicate narrative.
@@ -53,7 +52,7 @@ For an approval-requiring action, prepare the concrete proposal first and record
 A record of an operation is not approval to perform it, and ordinary record keeping introduces no additional approval gate.
 
 Within a research-operation record, keep a concise dated history of substantive decisions/outcomes separate from any mutable current version map.
-Later corrections, reversals or scope changes should have a new dated entry explaining their effect; do not rewrite an earlier decision to suggest that it always had the new outcome.
+Actual new decisions, reversals or research-scope changes keep their genuine dates and effects; pure logical repair follows the [in-place boundary](records.md#in-place-maintenance-and-logical-repair) without a compulsory dated correction stream or misrepresenting earlier conclusions.
 Group routine implementation edits with the operation they implement.
 Preserve unsuccessful reorganizations when they reveal a mathematical obstruction or explain why the old proof remains selected.
 
@@ -70,7 +69,7 @@ This may be a compact section in the existing responsible record.
 Use the questions below as a content guide, not a mandatory standalone form for each calculation; omit inapplicable fields and retain the uncertainty where the target is still developing.
 
 Use fixed `Author_L_F0001_v1.md` materials in mathematics/ledger/ for substantive attempts and preserved assessments, with the actual research line and dates in the body.
-Create one through ordinary authorized authoring or the optional `material.py create --kind L --line F --file note.md` writer; later substantive revisions retain the previous physical version.
+Create one through ordinary authorized authoring or the optional `material.py create --kind L --line F --file note.md` writer; necessary research variants follow the [topic-family/version boundary](records.md#mathematical-topic-families-and-necessary-versions), while pure repair may remain in place.
 Either path maintains the existing material_next bound and necessary short-lock and exclusive-publication protections for fixed-family allocation under the [allocation rule](identity.md#allocation-and-concurrency).
 All L materials, including source-specific reading supplements and cross-source syntheses, use this location and the same author/line L sequence.
 Link the relevant source-audit home when applicable; source-local U records retain their own identities and inspection scope.
@@ -117,9 +116,9 @@ Keep all formal project-review findings in fixed R under `mathematics/audits/rev
 L does not carry a Claim argument; link the actual fixed C reasoning.
 An independent finding cannot be relabeled merely to keep it in L.
 
-When correcting a claim, retain the failed statement and its mathematical scope in the correction history.
-Repairing its proof does not require a new ID; changing the statement materially does.
-Update affected dependencies and assessments in canonical records, publish new versions and maintain affected navigation through ordinary bounded edits or optional rendering.
+When correcting a Claim, repair what can be repaired and check the actual changed reasoning, dependencies and consumers under the [repair rule](records.md#in-place-maintenance-and-logical-repair), without a new version or ledger entry merely because it was wrong.
+If repair is unavailable, retain truthful unresolved use or sufficient alternative support; preserve failed reasoning only when it has real mathematical or evidentiary value, reusing adequate C/R/J/L instead of a failure archive.
+Statement variants within one core topic use appropriate necessary versions rather than automatically receiving a new family; actual assessment changes keep their real decision and review obligations.
 Strategy changes should cite the evidence that caused them.
 
 ## Record Template

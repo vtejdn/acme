@@ -26,7 +26,6 @@ The selected Task decision owns lifecycle, authority, reason and exact contract/
 | `retired` | A decision to stop pursuing this Task. Preserve the reason and unfinished obligations; retirement does not assert a mathematical resolution. |
 
 Tasks have no aggregate review status or correction flag.
-The agent maintains Claim labels in titles or ordinary explanations under the [Claim label rule](claims.md#claim-role).
 Both C and T decisions reject role and aggregate review-status fields under the [material field contract](../material-format.md#claim-and-task-decisions).
 Preserve concrete reviews, objections and their scopes in the responsible evidence; a gap alone does not make a Task blocked.
 Claim assessments, individual review findings and proof/refutation acceptance follow the [Claim rules](claims.md#separate-assessment-fields).
@@ -44,7 +43,7 @@ Change lifecycle with an explicit `### Decision key` block, optionally written t
 Every new Task decision records date, actual authority, meaningful reason and exact contract relation.
 A paused or blocked decision explains its outstanding condition and resumption basis in its reason/responsible text.
 Returning to active requires the actual applicable decision; elapsed time or a new agent session is insufficient.
-Retirement preserves unfinished obligations; materially different targets receive an appropriate new Task.
+Retirement preserves unfinished obligations; contract variants within the same core research objective use appropriate versions, while a different core objective needs a suitable new Task under the [topic-family boundary](records.md#mathematical-topic-families-and-necessary-versions).
 
 An unchanged contract can retain its selected decision while substantive findings or necessary current conditions are updated.
 A completed Task with a substantive contract, supporting-selection or dependency change requires explicit reopening or a new applicable completion decision and review.
@@ -109,6 +108,7 @@ The responsible publishing agent refreshes after relevant changes; agents never 
 
 Round closeout checks the changed work and direct interfaces; fixing a result retains its exact mathematical/evidence scope.
 Task completion instead checks the original contract and every completion criterion against the full support chain, reusing applicable accepted inputs and reviews.
+The genuinely adopted C nodes in that chain, including intermediate premises, need explicit applicable assessments under the [Claim adoption rule](claims.md#mathematical-assessment-and-review-findings); structural permission to retain unselected C does not complete an unsupported chain or require reassessment of every older physical body.
 Execution stop and Git delivery do not complete a Task.
 
 ## Joint Tasks and participation

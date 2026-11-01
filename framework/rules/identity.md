@@ -179,6 +179,8 @@ Outside that bounded locator-only repair, only the same established human may di
 For an external representation, an explicitly adopted local_human correspondence in the existing external-person record can establish that relationship; names, a write argument or changing the checkout binding alone cannot.
 Do not take over another human's Task/E.
 Shared administration needs no per-author approval, additional review or maintenance receipt.
+Shared maintenance, erratum and messages entries retain separately attributed human contributions under the [coordination rule](records.md#shared-mathematical-coordination); their affected-author cleanup and sender archive boundaries grant no additional body-editing authority.
+For sufficiently resolved local maintenance/erratum concerning an external original whose human author does not participate here, the actual responsible receiving human uses the [local disposition boundary](records.md#receiving-side-local-disposition), without inventing authorship or same-human correspondence; participating authors and message originals retain their own boundaries.
 Existing activity-specific roles and publication boundaries retain their scope.
 
 Classify an actual maintenance or integration conflict by its content into two kinds:
@@ -209,7 +211,7 @@ Each author/origin/kind/line has an independent numeric sequence: F0001 through 
 The chosen research line letter remains unchanged; a Task-derived address inherits only its letter.
 C/T/R/L/U/J identities and continuing S identities are not recycled.
 D is a working address, stable during its current use and reusable after retirement; a reused D inherits none of the earlier draft's content, scope, review or authority.
-A materially different statement/question gets its appropriate new family; a substantive new proof within an unchanged Claim gets a material revision.
+Choose families by the [core mathematical topic](records.md#mathematical-topic-families-and-necessary-versions), using necessary versions for variants within it and a new family for a distinct core question; pure logical repair does not issue either merely because an error was fixed.
 Source-unit numbers have independent sequences for each citation key and human author, with necessary external origins distinguished, separate from research-line allocation.
 
 repository/config.json stores this repository's actual key, separate project display name and abbreviation, necessary shared settings and the compact `material_next` map of next unissued material-family numbers.

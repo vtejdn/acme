@@ -152,6 +152,7 @@ Search and cite these by the actual conclusion and applicability; no separate me
 
 Retained computation programs, verification programs, required original inputs and concise accounts use `mathematics/computations/programs/<J>/` under the [computation rules](computations.md).
 Generated results, certificates and verification data use the Git-ignored `mathematics/computations/outputs/<J>/`.
+Data indispensable as fixed proof/check/computation input instead uses tracked native input storage in its responsible J under the [fixed-input and recovery rule](computations.md#recovery-of-necessary-fixed-inputs); it does not remain solely in ignored cache because it was generated.
 Both homes preserve the same registered J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 The collection entrance/index remains at `mathematics/computations/`.
 The program README supplies navigation, actual input/output locators and reproduction context, without a second assessment or review.
@@ -180,11 +181,19 @@ Source observations remain in adequate U or compact source-reading accounts; com
 
 ## Material maintenance worklist
 
-The sole rolling coordination document for the [three local material maintenance actions](records.md#local-material-maintenance) is `mathematics/maintenance.md`.
-Create it only when actually needed, with no mathematical material number, template, empty initialization placeholder or extra Task/E.
-In a Git repository it is normally tracked and synchronized with the related authorized material work; personal use without Git remains local and requires no Git initialization or remote setup.
-Installation, upgrades and framework copying preserve the destination's existing worklist and contents, exclude the source's live worklist and never overwrite issues with an empty template.
-Once established, the file remains at zero bytes when all issues and necessary continuation scope have been resolved; its contents and cleanup follow the responsible record rule rather than a second assessment or evidence account.
+Use `mathematics/maintenance.md` as the sole worklist for the [three conformity-maintenance actions](records.md#local-material-maintenance), `mathematics/erratum.md` for substantive mathematical issues and `mathematics/messages.md` for mathematical correspondence under the [coordination rule](records.md#shared-mathematical-coordination).
+They are distinct shared rolling Markdown files, without mathematical material numbers, a whole-file mathematical author, empty initialization templates or extra Task/E.
+Create each only when actual content needs it; keep mathematics/readme.md navigation to those files that actually exist, with code-form lookup paths in the action guide before creation.
+In Git they are normally tracked and synchronized with authorized related work; local personal use without Git requires no Git initialization or remote setup.
+Installation, upgrades and framework copying exclude all three source coordination files and preserve destination files and contents, without empty-template replacement.
+Established maintenance/erratum files remain at zero bytes only when all recorded portions and necessary continuation scope have been resolved under their affected-author rules.
+Established messages may become zero bytes only after authorized removal of all originals and completion of necessary unresolved entrances and follow-up; reading or replying alone does not remove an original.
+No empty file certifies whole-library correctness or is required for Task completion.
+
+The sender's `profiles/<human>/message-archive.md` is created only on a first actually authorized archive, without precreating authors' directories or placeholders.
+It retains the original shared visibility and normal authorized Git synchronization; profiles is not wholly private, while secrets.md keeps its existing private boundary.
+Historical mail is neither personal policy nor automatic startup or independent-review context, and its original retention and necessary locator repairs follow the [archive rule](records.md#author-message-archives).
+Installation, upgrades, framework copying and default material migration exclude source authors' archives and preserve destination archives; a separate actual personal-archive transfer instruction retains its own selected scope.
 
 <a id="temporary-storage"></a>
 ## Temporary Operational Storage

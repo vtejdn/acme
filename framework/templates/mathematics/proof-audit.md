@@ -62,8 +62,8 @@ Manuscript reviews use their document-local record under the manuscript rules, n
 <Supported conclusion and remaining conditions; actual finding relationship and scope;
 failed implications; affected downstream IDs; required correction or next action.>
 
-## Revisions
-<Dated corrections and superseded findings, with the revision rechecked.>
+## Current recheck and limits
+<When applicable, the repaired input actually rechecked, real checking arrangement/time, scope and remaining limits; no compulsory correction history or superseded-finding log.>
 ```
 
 Replace the illustrative Claim rows with every actual required input.
@@ -78,4 +78,5 @@ Classify each finding, not its consumer; complementary applicable findings prese
 An independent reviewing agent must be outside substantive proof development and receive no inherited mathematical discussion, summary or prior verdict; direct fixed statements, proofs and necessary dependencies are legitimate inputs.
 An already qualified current reviewer may undertake independent inspection directly; self-review or R placement alone requires neither isolation nor another agent layer.
 If an independently identified gap is repaired, arrange independent review again; a substantive repair contributor cannot independently review that repair.
+Maintain a successfully rechecked logical repair under the [rolling R rule](../../rules/proof-audits.md#rolling-review-repair); use a new topic-family version only for distinct evidence genuinely needing separate retention.
 Human authorship or suggestions do not constitute a framework review, and no agent/model/session registry or isolation certificate is required.

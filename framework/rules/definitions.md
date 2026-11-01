@@ -100,7 +100,7 @@ Different parameter choices or hypotheses in different applications do not by th
 Formatting, navigation, link repair and faithful indexing do not require separate mathematical-operation records.
 
 These rules create no additional approval process.
-If an operation also entails lemma extraction or theorem designation, the existing [approval rule](claims.md#lemma-extraction-and-approval) still applies to that operation.
+Internal lemma extraction within existing authority needs no additional approval; actual main-theorem designation or objective changes retain their separate [organization and authority boundaries](claims.md#lemma-extraction-and-approval).
 
 ## Record Template
 

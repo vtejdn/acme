@@ -39,6 +39,6 @@ Describe the proof mechanism and actual reading/checking depth.
 Identify dependencies, uninspected steps, genuine reviewer relationship and useful failures or limits.
 Keep known inspection dates at their actual precision without inventing unknown history.
 
-Explain the intended application and its exact adopted range.
-Link necessary project arguments at their responsible homes.
+Explain the source result's applicability conditions and actual limitations.
+Link necessary project deductions at their responsible homes; concrete adoption and local matching belong to their consumers, without a consumer list here.
 ```

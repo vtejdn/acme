@@ -188,7 +188,8 @@ For manuscript reviews, apply the responsible author's actual writing and review
 Report the checked revision, sections or whole-manuscript coverage, applicable exemptions, findings and unresolved scope.
 Check mathematical meaning and source compliance separately; a formula may be clear while its standard name or citation is missing.
 A targeted correction does not imply a whole-manuscript pass.
-Preserve earlier evidence and add a dated correction if a later omission shows that its coverage claim was too broad.
+If a later omission shows that a manuscript coverage claim was too broad, correct the affected current manuscript-local entry under the [rolling review rule](writing.md#whole-manuscript-definition-review), without a history of superseded manuscript reviews.
+Preserve unique necessary mathematics and source findings at their responsible homes; fixed R findings retain their own evidence and correction obligations.
 
 A substantial result assembled from several claims needs an end-to-end completion audit before it is treated as proved or used to close its goal.
 Check the goal's actual acceptance criteria.
@@ -211,7 +212,7 @@ This framework does not require formalization or prescribe a policy of accepting
 
 A review outcome remains open to concrete objections.
 Identify the failed implication, quantifiers, affected material and downstream uses.
-Preserve the earlier finding and add the actual dated correction; correct substantive fixed mathematics through an appropriate new version and explicitly reconcile affected C/T decisions and support.
+Apply the [in-place repair boundary](records.md#in-place-maintenance-and-logical-repair), updating the actual finding, repaired mathematics and necessary consumers truthfully rather than requiring a new version or dated correction stream for every logical repair.
 Check the actual changed interfaces and derive navigation when needed, optionally using `python scripts/render-research-navigation.py` after the relevant batch settles.
 Never correct status only in a generated row; record the responsible material decision first.
 
@@ -263,8 +264,7 @@ A later independent argument finding can reuse an unchanged applicable independe
 A new C/T physical version cannot turn a retained self-review into independent evidence.
 Unknown historical relationships remain unknown and old assessments remain historical;
 supplement only evidence necessary for an actual new adoption or required review.
-Preserve known finding relationships and fixed scopes.
-Corrections to a known finding use new review evidence, not a rewritten relationship.
+Preserve actual finding relationships and checked scopes; rolling repair records the truly rechecked repaired input without rewriting an earlier relationship or claiming retroactive coverage.
 This structural check does not certify mathematical correctness or require a new review registry.
 
 <a id="review-retirement"></a>
@@ -285,19 +285,34 @@ Unknown legacy scope remains unknown through onward transfer.
 Existing separate-review scope evidence remains usable.
 See [intake rules](intake.md).
 
+<a id="rolling-review-repair"></a>
+## Rolling logical repair of reviews
+
+After successful repair and the actual necessary recheck, the responsible author may maintain the same R finding, reasoning, inputs, bindings, conclusion and limits in place, including review of repaired C/J/L or repair of R's own checking argument.
+Keep its existing vN path and finding declarations without requiring a new family, version, anchor, superseded conclusion or correction log merely for that repair.
+The maintained finding states the actually checked repaired input, real arrangement, scope, result and unresolved limits; a genuinely performed formal recheck keeps its actual time, while wording/locator maintenance creates no review time.
+Do not turn old self-review into an earlier independent review or claim that the original finding already checked a later repair.
+An independently found gap still needs a genuinely independent recheck of repaired reasoning and affected interfaces/chain; a substantive repair participant cannot independently accept that repair.
+Pending recheck, failed repair or a relevant unresolved objection remains a real gap, not a new PASS or unsupported proved assessment.
+Preserve still-necessary mathematics, negative findings, source facts and historical adoption objects and scope, reusing sufficient homes and precise material or Git locators without per-repair snapshots, hashes or permanent maps.
+Old C/T decisions must not appear to have adopted a review performed later; reconcile actual consumers before replacing evidence on which a necessary historical account still depends.
+Genuinely new independent inspection evidence that needs distinct retention follows the same-topic R family/version boundary; a necessary repair recheck is not automatically such a new version.
+Another author's substantive correction retains its own authored home and actual erratum process; this rule grants no takeover of their R.
+
 ## Inherited-review applicability
 
 Preserve actual source identity, acquired scope, review arrangement, relevant checking conditions, findings and limits, without a per-material framework marker.
 The receiving installation or a generated index supplies no earlier review stamp or new verdict.
 Compare unknown review-relevant differences before reliance: record harmless differences as reusable, or require the relevant supplementary review for actual additional obligations.
-A concrete objection follows ordinary correction at the affected material and consumer.
+A concrete substantive objection follows [erratum discovery and affected-author confirmation](records.md#mathematical-issues-and-reliance), with actual correction, assessment and applicable review at the affected material and consumer.
+An issue entry supplies no independent review, author takeover or automatic Task/E change; the review's actual inputs, scope and relationship remain responsible evidence.
 A version alone neither certifies compatibility nor triggers a full re-audit; no obsolete parser, fingerprint registry or automated compatibility cascade is required.
 Structural provenance checks neither authenticate a declaration nor prove mathematics.
 
 Manuscript exposition, definition/citation use and document-wide consistency belong in the reviewed manuscript's current manuscript-local review record; build and layout facts belong in the document README.
 R reviews project mathematics: an actual C argument, T completion, computation or mathematical input separately assigned and checked.
 Appearance in a manuscript does not change that distinction.
-A manuscript finding about a possible proof defect stays local until the underlying mathematical object is separately reviewed; do not broaden the original review or redirect C/T acceptance to manuscript records.
+The manuscript review retains its local scope; a concrete suspected defect may be reported as a doubt about the underlying mathematical object through erratum, without broadening that review or redirecting C/T acceptance to manuscript records.
 
 ## Project review index
 

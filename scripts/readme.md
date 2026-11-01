@@ -116,6 +116,8 @@ Agent-led upgrades may use fixed official public files and ordinary recovery cop
 ## Material authoring
 
 Material creation supports C/T/S/R/D/J/L.
+For C, absent or actually empty Current assessment means unselected, not open or an unknown fourth state; malformed nonempty selectors and malformed existing decisions remain errors, and no initial decision/date is invented.
+T keeps its required Current decision; actual key C and Task-completion premises retain their separate [assessment/adoption duties](../framework/rules/claims.md#mathematical-assessment-and-review-findings).
 `--task PATH` inherits only the Task's line instead of `--line`; omitting both uses A for new local material, after any Task inheritance.
 C/T/R/L start at physical v1, S/D use stable paths, and J allocates a group README.
 All L use `mathematics/ledger/`.
@@ -132,6 +134,7 @@ For J, `check` and `show` retain current structure, necessary inputs and origina
 The displayed acquisition scopes remain facts about their recorded revisions, rather than assertions of current availability.
 Structured show and discovery results use status for the exact selected decision of either a local or externally identified C/T family, with selected_decision retaining its declaring physical path and anchor.
 This replaces the former source_status field for externally identified materials; source and acquisition facts remain separate, and an unacquired selected source decision has null status rather than an inferred assessment.
+A genuinely unselected C instead has both selected_decision and status null; an unacquired nonempty external selector retains its locator, so the two null-status cases are not conflated.
 A lawful same-human acquired C/T/R/L revision retains its external identity and source header and explicitly identifies its actual acquired receiving input under the [ordinary input format](../framework/material-format.md#acquired-receiving-inputs-in-local-revisions).
 C/T/R/L use the physical revision's own ordinary Inputs section with exact Markdown links and agent-maintained adopted-scope prose after each reference, independently of current C/T decision selection.
 The scope explanation uses normal sentences and may continue over further lines or paragraphs; the tool neither extracts it nor certifies its completeness.
@@ -155,11 +158,15 @@ Supported retained syntax remains readable in that input and the revision, inclu
 This comparison does not infer mathematical equivalence, date a review, select an ancestor or establish review applicability from unchanged declarations.
 
 `material.py revise PATH --file revised.md` creates a new fixed version.
-C/T require exact `--expect PATH#decision`; `append-decision` adds a real decision, and `select` selects an exact existing decision.
+C/T require explicit `--expect PATH#decision` for a selected decision, or `--expect PATH` only to assert that the actual operated C is unselected; T remains selected and a mismatched path or omitted expectation cannot bypass stale-input checks.
+The Python interface uses explicit expected_current=None for an unselected C, distinct from omission; first append/select may establish a missing Current section, while candidate append remains unselected.
+`append-decision` adds a real decision and `select --decision PATH#decision` selects an exact real decision, without a clearing bypass.
 Stale predecessors and exclusive-create collisions require a fresh retry.
 Family issuance checks the stored bound and current occupation under the existing short mutation lock, advances the next unissued value and exclusively publishes the destination.
 Deletion or failure does not lower the bound; unused gaps are acceptable.
 A revision preserves its existing family and advances only its physical version.
+The writer creates a genuine research version; ordinary maintenance and pure logical repair, including retained older material, use ordinary authorized edits under the [common repair/version boundary](../framework/rules/records.md#in-place-maintenance-and-logical-repair), without a new family, version or dated correction stream solely for repair.
+Successfully rechecked R logical repair may update the same finding, bindings, relationship and limits truthfully under the [rolling rule](../framework/rules/proof-audits.md#rolling-review-repair); genuinely new independent evidence needing distinct retention uses its appropriate same-topic version.
 Task setup creates no E or operational link; actual selected ordinary execution prepares or reuses its local boundary, and a joint T has no E or direct S.
 The optional Task coordination table declares task-type joint in every joint physical version, or one exact joint-task parent on an ordinary individual T under the [format](../framework/material-format.md#task-coordination).
 Family type is invariant; omitted/changed joint declarations and either direction of same-family conversion fail before publication, preserving existing E and fixed contracts.
@@ -179,6 +186,9 @@ Selected review readers then decode only the explicitly selected finding's data 
 Real selected-row errors and malformed declarations within a requested whole table retain their ordinary errors.
 Missing declarations do not fall back to `unknown`; explicit permitted historical/source unknown remains distinct, without requiring every finding to be independent or certifying mathematical sufficiency.
 Claim navigation shows those findings separately, including missing declarations and source-only inputs, without an aggregate review grade or inferred mathematical verdict.
+Navigation checks and captures its actual selector, decision, finding, binding, identity and necessary entrance/source metadata, without opening or querying native J payloads merely to display their exact declared paths/fragments/scopes.
+Native output and fixed-input locators remain code text with optional links to real J entrances; missing payload is not bad navigation metadata, while broken nonempty selectors, missing decisions/findings, malformed bindings, protected targets and necessary metadata anchors still fail.
+No row is silently dropped or blanket missing-file exception applied, and strict actual required-input reads, write/adoption checks and metadata-based stale-publication protection remain separate.
 [Ordinary Claim labels](../framework/rules/claims.md#claim-role) use bounded title or prose edits without append-decision, select, proof-evidence reads or an assessment-comparison exemption.
 Decision role fields, historical Claim modes and framework header fields are unsupported; their words may remain ordinary prose or examples.
 Basic current C/T validity is independent of the optional new-decision list, which selects only actual new-date and acceptance checks.
@@ -232,6 +242,8 @@ A chosen explicit source address can be translated separately before the agent p
 Background references neither discover receiving history nor query unrelated files or infer necessary mathematics.
 Read the selected source and preserve useful facts about ignored originals, outputs and absent inputs at their responsible consumers; report actual unfinished work directly.
 The helper records no unmapped-reference list and emits no completeness inference from missing automatic notices.
+For U combinations, explicit qualified same-human correspondence may unite real different original names under one confirmed readable receiving author, retaining each source.author_name; declared distinct humans sharing one name remain incompatible.
+Same-anchor explicit scopes retain their selected ranges and targets, and an occupied rolling combination may extend its selected original set with exact expected text and established correspondences rather than freezing the earlier set.
 The private original store is excluded; retired source/holding/update inputs fail before private access or receiving publication.
 Sender-local document links retain unacquired original-local context.
 Prepare the selected materials, bibliography and operation before the short lock, then recheck captured inputs and final U positions and publish them together.
@@ -239,9 +251,12 @@ Prepare the selected materials, bibliography and operation before the short lock
 Repeat `--include PATH` for indispensable chosen tracked J files; `--refresh-j` requests that explicit group's refresh.
 `--refresh-j` permits replacement of selected files with the same registered original repository and J path/family, preserving fixed C/T/R/L.
 A rolling U instead uses the same original correspondence and unit.expected containing the exact occupied receiving text; a later acquisition does not rewrite earlier operation scopes or create U snapshots.
+For genuinely needed fixed computation input missing locally, an authorized research, repair or recovery task may use the existing generator and verifier, check the actual finite mathematical requirements and save selected tracked native input under the [recovery rule](../framework/rules/computations.md#recovery-of-necessary-fixed-inputs), without a new recovery CLI, history report or implicit execution during ordinary reads/navigation/intake.
 Differing-byte replacement after receipt also requires adopted same-human authorship; a flag or chosen author alone does not authorize another human's correction.
 The occupied group header, necessary acquisition evidence and native-file correspondence establish that identity; equal display names or the flag alone do not.
 Same-original later revisions and onward transports remain eligible, with original and immediate transport identity recorded separately.
+An explicit origin: current on rolling U or maintained R selects actual current-repository additions/repairs at that fixed commit and scope even when old acquisition matches its path/anchor; U needs no new version or fixed-kind Inputs for this route.
+Retained old scopes use their actual source facts and necessary acquisition disambiguation; neither body differences nor an anchor match automatically decide inherited/current scope, and old operations remain unchanged.
 Each selected file keeps its actual original revision; an omitted earlier input is not relabelled with a newer entrance's revision.
 The operation uses the shared item origin as its default and adds `files[].original: {repository, revision, path}` only for different per-file facts.
 If competing existing acquisition records leave an onward file ambiguous, its selection may supply `acquisition: {"selected/sender/file": "intake/Human/existing-record.json"}` for the actual record that acquired it.
@@ -419,7 +434,8 @@ Use the common rule's PDF stem or complete native HTML path, retaining nested di
 A useful source-edition explanation may link to a transcription, without an acquisition account or availability condition.
 For example, `pdf/WorkA/source.html` uses `contents/WorkA/source.html.md`; use actual native anchors rather than inapplicable PDF page fields.
 Source acquisition success does not certify transcription completion.
-Contents are navigation, not U findings; state edition and missing/unreadable transcription coverage in their existing shared account, and retain useful edition/use limitations in concise author source notes.
+Contents are navigation, not U findings; keep the transcription's own edition identity and actual missing/unreadable coverage, with necessary comparison limits, without a shared account of U inspections or adoption.
+Useful source-edition explanations and body-page correspondences belong in concise author source notes, while actual checking scope stays with U and mathematical adoption with its consumer.
 
 ## Scoped checks and bibliography maintenance
 

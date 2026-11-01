@@ -29,7 +29,7 @@ The operation section explains what changed and why; C supplies the substantial 
 Keep shared version maps at their responsible mathematical home and link them from affected decisions.
 Do not duplicate full proofs or reviews in an operation log or let historical prose compete with the explicit Current assessment.
 
-For each Claim, its explicit Current assessment selects an exact decision and the proof/review relations that decision adopts.
+When a Claim has a selected Current assessment, it names an exact decision and the proof/review relations that decision adopts; an unselected Claim adopts no assessment.
 Later choices preserve older decisions and maps at their actual dates.
 A filename, edit date or completed operation does not select the proof.
 Ordinary labels, mathematical status, finding relationships and operation outcome remain distinct.
@@ -42,10 +42,10 @@ Required candidate registration is not waived because related mathematics is alr
 Then apply the [exploration, registration and acceptance distinctions](workflow.md#work-obligations).
 An exploratory question, temporary hypothesis or trial calculation does not require a Claim ID merely to proceed.
 Register a precise conjecture or obligation when it needs a responsible material, and a substantive project statement when it is organized for reuse.
-A completed proof or review is not a registration prerequisite: an important unresolved statement uses `open`, retaining its candidate argument, partial results and exact gaps.
+A completed proof, review or initial decision is not a registration prerequisite: preserve a real statement and author, with a truthful open decision when one is actually made, or no selected assessment.
 Once registered, the ordinary material, dependency and version rules apply; exploratory use does not permit silent changes to fixed mathematical decisions or support.
 
-- Complete the exact statement, initial decision and actual author header before registering the Claim; an open Claim needs no invented proof.
+- Complete the exact statement and actual author header before registering the Claim; no initial open decision, date or proof is fabricated for registration.
   The optional `python scripts/material.py create --kind C --line F --file claim.md` writer, or `--task PATH` inheriting only a selected Task's line, allocates the next author/origin/C/line number and returns its canonical path.
 - Keep the statement, decision history and Current assessment in that C family.
   C/T JSON records and snapshots are not created.
@@ -53,8 +53,8 @@ Once registered, the ordinary material, dependency and version rules apply; expl
   Identity is independent of theorem numbering, priority and route.
 - Coordinate concurrent allocation and preserve all allocated identities, including refuted/historical Claims.
   The optional writer provides exclusive allocation; examples reserve no numbers.
-- Keep the family for a proof repair of the same statement; a materially different statement gets its appropriate new identity and relation to the original.
-  Preserve correction history and incoming links.
+- Follow the [core-topic family and necessary-version boundary](records.md#mathematical-topic-families-and-necessary-versions) for statement variants, retaining a suitable family within the same mathematical question.
+  Pure logical repair may remain in place under the [repair boundary](records.md#in-place-maintenance-and-logical-repair); preserve necessary mathematical/evidence facts and actual consumers without a compulsory correction history.
 - Task and route paths use their separate T and S counters.
   Source units use author-owned rolling files such as Miy22/Yin_U001.md, with precise source edition, locators and applicability at the actual consumer.
   Definitions retain their own rules and do not automatically become Claims.
@@ -83,6 +83,18 @@ This cleanup requires no bulk conversion or old-label reader.
 
 <a id="separate-assessment-fields"></a>
 ## Mathematical Assessment and Review Findings
+
+A C may have no Current assessment section or one actually empty section, both meaning no selected assessment; this is distinct from a selected open decision and is not a fourth mathematical status.
+A nonempty section must select exactly one lawful same-family decision; duplicate sections, malformed selectors, cross-family selections and forward-version selections remain errors.
+Existing decisions still obey their full field and evidence contracts even when none is selected, and no latest historical decision is adopted implicitly.
+Use adequate actual older assessment facts only at their real date precision, assessed version and evidence scope; proof text, PASS wording or a later proved assessment alone establishes no earlier decision.
+Current human-designated key Claims and actual key mathematical nodes identified for the task must select a real assessment; key unresolved questions may select open without being promoted to proved.
+At Task completion, check explicit applicable assessments for the truly adopted complete logical chain, including conclusions and actual intermediate Claim dependencies.
+Established premises require applicable proved support and resolved dependencies; refutation-based completion requires the actual refuted conclusion, and conditional conclusions retain their unresolved hypotheses under the real Task contract.
+Historical comparisons, provenance, old R targets or a retained older body supplying a selected argument do not independently become additional Claims requiring assessments.
+A current family entrance may select a real decision and argument applicable to older mathematics without reassessing every physical file, but a genuine premise cannot be hidden as history to evade adoption requirements.
+Receiving unselected C creates no sending-upgrade requirement or invented author decision; actual key adoption belongs to an authorized author with sufficient evidence at its responsible home.
+Clearing an existing selection preserves real decisions/evidence and handles affected key use; it cannot conceal an unsupported completed chain.
 
 Provenance describes origin, not validity: use `project deduction`, `source specialization`, or `mixed`, with explicit source and project-input links.
 Do not infer novelty from this field.
@@ -164,6 +176,8 @@ Record pending attribution separately from mathematical obligations: a missing r
 Resolve or retain the attribution follow-up explicitly; do not invent a dependency edge merely to track a citation.
 
 Before promotion, check the transitive dependency chain for open obligations, incompatible assumptions, and circular reasoning.
+Before actually adopting an argument or established input, consult relevant `mathematics/erratum.md` for its selected version and scope under the [issue rule](records.md#mathematical-issues-and-reliance), including when opening a C directly.
+Concrete cross-author doubts remain discoverable there without changing the original author's decisions or adding unselected R relationships to Claim navigation.
 The recorded boundaries of accepted external theorems need not be expanded into recursive audits of their original proofs unless a relevant objection or the task requires it.
 When an input changes or fails, identify necessary direct and indirect consumers of the actual selected fixed version and use, and inspect the affected implications.
 Describe the exact failed or changed input, affected scope, applicable evidence and unresolved obligations in the existing consumer, argument or review finding, without a persistent invalidation graph or duplicate account.
@@ -173,7 +187,7 @@ Retain `proved` only if a recorded unaffected or adequately reviewed repaired ar
 Do not mechanically equate failure of one proof with falsity of its conclusion.
 
 Update the responsible argument/review evidence first, then the affected material decisions, selections and dependencies, with actual Task/route consequences.
-Substantive fixed mathematics gets a new physical version; unchanged-mathematics choices append a decision.
+Research variants needing distinct retention follow the common version boundary; pure logical repair may stay in place with necessary actual review, while genuine unchanged-mathematics choices append a decision.
 Substantive changes to a completed Task's contract, selected support or dependencies follow its [existing reopening or new-completion rules](tasks.md#task-records); an unresolved check alone selects no blocked state and changes no [effective E conditions](tasks.md#execution-boundary).
 Check affected material/relationships and derive needed [Claim](../../mathematics/claims/index.md), Task or strategy navigation, optionally using `scripts/render-research-navigation.py` after the relevant batch settles.
 Never change status by editing a generated row.
@@ -217,8 +231,8 @@ Give each version a stable label or anchor, date and exact artifact reference, i
 Link both versions from the authoritative claim record.
 These proof labels are local to the claim and are not new Claim IDs or mathematical-status values.
 
-For a substantive mathematical rewrite, preserve the original fixed material and its argument, dependencies and review scope, and create the next appropriate physical version.
-A different proof within the unchanged Claim stays in the same family.
+For a genuinely distinct research variant or proof approach needing separate retention, use an appropriate physical version within the [core mathematical topic](records.md#mathematical-topic-families-and-necessary-versions), preserving necessary arguments, dependencies and evidence scope.
+Pure logical repair may maintain current or older C in place under the [repair rule](records.md#in-place-maintenance-and-logical-repair), without weakening the intended statement or claiming old review covers changed reasoning.
 Keep meaningful failed and alternative versions available even without a current consumer.
 Meaning-preserving maintenance follows the separate in-place rule; byte changes alone do not create a new review obligation.
 For [same-author transfer](intake.md#task-and-manuscript-collection), first collect all extant selected-family versions and their actual inputs, then apply the [concrete duplicate-comparison rule](records.md#same-author-transfer-and-duplicate-comparison) before reducing any repeated content.
@@ -250,7 +264,7 @@ Explain adequate verified background or independent support in the consumer's ex
 ## Revised proofs and review continuity
 
 A complete revised proof with resolved dependencies and an adequate actual agent self-review may support `proved`, with that finding's relationship recorded in R.
-Publish the new fixed mathematical argument and exact finding bindings; an old independent review does not transfer to changed inputs.
+Maintain the actual repaired argument or necessary research version and exact finding bindings under the common repair/version boundary; an old independent review does not transfer to changed inputs.
 Changing a review label alone supplies no independent inspection.
 Later independent adoption selects the actual separately organized finding without requiring another mathematical version merely for that review.
 Key proof points and the full logical chain after Task completion require separately organized independent review through the existing Task workflow; this is not a per-Claim approval gate.

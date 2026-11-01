@@ -6,6 +6,7 @@ A template does not justify a process-only record.
 ### Compact Research-Operation Template
 
 Use this for a [substantive operation or useful attempt](../../rules/ledger.md#substantive-mathematical-operations), not every scratch calculation.
+Pure logical repair alone needs no operation record or correction chronology under the [repair boundary](../../rules/records.md#in-place-maintenance-and-logical-repair); retain only useful mathematics, real decisions and necessary evidence.
 An exploratory entry may remain in its existing responsible section.
 Fill version transitions, consumers, reviews and authorization only when they apply; a missing Claim or completed review does not prevent recording a useful attempt.
 Internal extraction needs no separate approval; for main-theorem designation or objective changes, apply the [result-organization policy](../../rules/claims.md#lemma-extraction-and-approval); this field does not create an approval requirement for every operation.

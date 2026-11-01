@@ -24,7 +24,9 @@ These descriptive labels do not replace assessment fields.
 In particular, a source-verified statement need not have an independently reviewed proof; a complete candidate awaiting sufficient review keeps the exact registered Claim open.
 
 Before treating a new result as established in the research status, perform a separate review of its assumptions, dependencies, and proof.
-Prefer an independent reviewer when available; otherwise disclose that the review was a self-review.
+Choose independent inspection for an actual [independent-review obligation](proof-audits.md#independent-review-obligations) or a useful review purpose under the [review-arrangement rule](proof-audits.md#review-arrangements).
+Reviewer availability alone creates no preference for independence, isolation or delegation.
+Disclose the actual review relationship and scope, including self-review, and retain any unmet independent-review obligation.
 Every formal project review belongs to fixed R, whether self-review, independent review or a genuinely unknown older/source relationship; ordinary checks may stay with their argument or discussion.
 Unchecked dependencies remain explicit conditions on downstream conclusions.
 

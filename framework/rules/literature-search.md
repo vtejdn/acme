@@ -93,5 +93,5 @@ Apply verification labels only to the work actually done, and update affected cl
 - Validate the property actually being claimed using suitable checks, such as small exact cases, known identities, or an independent calculation.
   Report failures and discrepancies.
   A successful script execution alone is not mathematical validation.
-- Register supporting scripts in the [computation index](../../mathematics/computations/index.md) with their claim or source-unit links, actual finite scope, analytic assumptions, and execution evidence.
-  Mark planned checks as unexecuted and keep exploratory output distinct from exact certificates.
+- Register supporting J/program entrances in the [computation index](../../mathematics/computations/index.md) with concise scope and necessary existing mathematical links under the [computation navigation rule](computations.md).
+  Keep full assumptions, commands, actual results and execution evidence at their responsible J or mathematical home, distinguishing unexecuted plans and exploratory output from exact certificates there.

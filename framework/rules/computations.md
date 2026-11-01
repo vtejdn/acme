@@ -66,11 +66,16 @@ No per-run directory, archive or cleanup approval is required.
 Develop a program that will be continued or reused directly in its responsible writable J group.
 Exploration, unsuccessful trials and independent checks can share that group with their actual scope; a J directory does not certify a result.
 Reuse the same group for one coherent calculation rather than allocating an identity per run.
+The [topic-family/version boundary](records.md#mathematical-topic-families-and-necessary-versions) retains necessary distinct algorithms, mathematical interfaces, inputs or certificate mechanisms in optional versions/vN/ under that J, without a vN main directory, compulsory v1 or per-run versions.
+Pure implementation/logical repair of the same intended mathematical objective may remain in place after checking affected inputs, finite scope, results and verification; changed objectives or separately retained research variants keep their actual version and adoption obligations.
 Short disposable arithmetic may remain interactive or in an existing working draft; it needs no file, Claim or new J merely to avoid temporary storage.
 Continuing mathematical arguments belong in D, with useful findings and failures retained in their responsible mathematical materials.
 
 Programs, verification programs, required original inputs and the concise README use `mathematics/computations/programs/<J>/`.
 Generated results, certificates and verification data use `mathematics/computations/outputs/<J>/`, beside programs/ in the same computation collection.
+When generated data becomes indispensable fixed input to a proof, formal check or later computation, retain only the necessary selected data in the responsible J's tracked inputs/ or another appropriate native input home under the same J identity.
+Reuse sufficient existing input and keep shared data at one responsible home with explicit cross-J references; a temporary pipeline step does not require fixing every intermediate result or moving an entire output store to inputs.
+Ordinary reproducible results and caches stay ignored outputs, while necessary fixed input and truthful consumer locators must be available at long-term adoption or delivery rather than existing solely in a checkout-local cache.
 Use the exact existing J directory identity, including the receiving authorN/repoN and established receiving serial of an acquired group.
 Both homes belong to that one J; output separation creates no new identity or per-run directory.
 The shared output root is local to the checkout and ignored by Git through `/mathematics/computations/outputs/`, for files of every extension.
@@ -97,9 +102,22 @@ Keep an explicit output option when useful, using the responsible J output home 
 A small control must not replace evidence for a different claimed range.
 Repeated runs at the same scope may overwrite the same replaceable output.
 Preserve existing necessary local results and their actual provenance, distinguishing receiving-local generation from sending-source facts.
-[J intake](intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs only; outputs remain local and require separate authorized reproduction when needed.
+[J intake](intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs only; ordinary sending outputs remain excluded, while necessary local recovery uses the actual authorized scope below.
 Ignoring output provides neither a backup nor delivery to another checkout.
-A clone can lack it; report the actual missing scope without a substitute, automatic calculation or claim of completed acquisition.
+A clone can lack ignored output; report actual missing scope without a substitute or claim of completed acquisition, and recover necessary input only under an actual research, repair or recovery assignment.
+
+### Recovery of necessary fixed inputs
+
+Within actual research, material-repair or input-recovery authority and resources, run the existing corresponding generator and necessary verifier to restore indispensable missing input without requesting the same authorized reproduction again.
+Research retains applicable Task/E limits; necessary reproduction for repair creates no Task/E or research resumption automatically.
+Check the actual object, parameters, primes, finite scope, arithmetic and certificate relation; zero exit status, an old PASS, a smaller control or different result cannot establish the required input.
+After success, retain the needed fixed input and repair real consumers, command arguments and necessary current J explanation, reusing adequate existing commands and checking.
+Do not require recovery of lost historical bytes, hashes, timestamps, serialization, unknown old scripts or machine environments when the current format and environment satisfy the actual computation and consumer contract.
+Keep current necessary programs, inputs, commands, mathematical scope, actual result and limits; do not label a new generation as rediscovery of an old execution original.
+No loss history, recovery report, execution-date table, per-recovery version, compatibility copy, permanent address map or archive receipt is required.
+Reuse adequate review when the object, necessary parameters and supporting role are unchanged; changed methods, mathematics or adopted scope retain their real review/version obligations.
+Failed generation or verification, irreconstructible base data, scope mismatch or insufficient resources leaves a concrete unfinished dependency, without replacing a prime, shrinking a range or weakening tolerances to manufacture success.
+Ordinary reads, indexes, cloning, program intake and unrelated maintenance do not implicitly run a computation chain; assigned conformity repair keeps its existing isolated stages, acceptance and authorized cleanup rather than treating reproduction self-check as acceptance.
 
 Retained diagnostic logs, useful checkpoints and atomic-write intermediates use the same J output home and remain distinguishable from complete results.
 A file called progress or checkpoint may contain necessary mathematical evidence or input; read its actual role and consumers before cleanup.

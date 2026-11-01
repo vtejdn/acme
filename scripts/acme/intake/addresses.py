@@ -220,7 +220,8 @@ def _reserve_unit_moves(root, changes, moves, key_mapping):
         occupied, _ = discovery.unit_positions(existing_paths,lambda name:discovery.unit_header(root,name))
         raw = changes.get(source,source.read_bytes()).decode('utf-8-sig')
         _, header, _ = documents.author_header(moves[source].relative_to(root).as_posix(),raw)
-        established = occupied.get((identity.namespace(ident),ident.number)) == discovery.unit_origin(ident,header)
+        origin = discovery.unit_origin(ident,header)
+        established = origin is not None and occupied.get(position) == origin
         if old is not None:
             _, prior_header, _ = documents.author_header(source.relative_to(root).as_posix(), source.read_text(encoding='utf-8-sig'))
             r.require((header.get('source_repository'), header.get('source_material')) ==

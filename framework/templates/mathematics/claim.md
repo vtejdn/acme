@@ -9,9 +9,11 @@ Use one numbered main-material family in `mathematics/claims/` for each formal C
 The local author and independent C counter identify the family.
 Allocate a new family under the current [`material_next` state](../../material-format.md#material-family-allocation-state), without reusing an issued number after retirement.
 Inherit only the letter from an actual selected Task.
-A mathematical revision creates the next physical vN; an assessment or review adoption with unchanged mathematics adds an explicit decision to the existing material.
+A necessary research variant uses an appropriate vN within the [core mathematical topic](../../rules/records.md#mathematical-topic-families-and-necessary-versions); ordinary maintenance and pure logical repair may stay in place, while actual unchanged-mathematics assessment or review adoption uses a real decision.
 
 This is an inert open-Claim example.
+Use its decision only when actually made; otherwise omit the Current assessment and Assessment history sections or leave one Current section empty, without fabricating an initial open decision or date.
+Key Claims and the actually adopted Task-completion chain retain the [explicit assessment and adoption requirements](../../rules/claims.md#mathematical-assessment-and-review-findings).
 Replace the author, date and mathematical content with actual information.
 For a new decision, replace the illustrative date with its actual UTC minute timestamp under the [new-record timestamp rule](../../rules/workflow.md#new-record-timestamps).
 Do not use year/month/date-only values, add `Z`, a numeric offset, seconds or fractions for a genuinely new decision.

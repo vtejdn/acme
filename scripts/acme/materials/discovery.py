@@ -11,14 +11,16 @@ require = identity.require
 
 
 def unit_origin(ident, header):
-    """Actual original unit, independent of its receiving spelling."""
+    """Return a declared sole original; a combined header supplies none."""
     if ident.source_repository:
-        return header['source_repository'], header['source_material']
+        if 'source_material' in header:
+            return header['source_repository'], header['source_material']
+        return None
     return None, ident.family
 
 
 def unit_positions(paths_to_read, read):
-    """Check explicitly selected author namespaces and original correspondence."""
+    """Check header occupation and report declared single-origin positions."""
     positions, correspondence, spellings = {}, {}, {}
     for path in paths_to_read:
         ident = identity.parse(path)
@@ -29,13 +31,13 @@ def unit_positions(paths_to_read, read):
                 'Conflicting local U namespace spelling: ' + namespace)
         spellings[namespace.casefold()] = namespace
         position, origin = (identity.namespace(ident), ident.number), unit_origin(ident, header)
-        require(position not in positions or positions[position] == origin,
+        require(position not in positions or origin is not None and positions[position] == origin,
                 'Conflicting local U position: '+ident.unit+'; choose a free position for the different original family.')
-        family = identity.namespace(ident), origin
-        require(family not in correspondence or correspondence[family] == ident.number,
-                'Original U family has conflicting local positions: '+ident.source_key)
         positions[position] = origin
-        correspondence[family] = ident.number
+        # Headers establish occupation, not the scopes of an explicit split.
+        # Missing sole bindings must never compare as one original family.
+        if origin is not None:
+            correspondence.setdefault((namespace, origin), set()).add(ident.number)
     return positions, correspondence
 
 

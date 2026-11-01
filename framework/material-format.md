@@ -162,7 +162,8 @@ Authored-material intake carries no sender-private originals or local source acc
 
 ## Claim and Task decisions
 
-A C file has exactly one `## Current assessment` section containing exactly one Markdown link to a decision in its own family.
+A C file may omit `## Current assessment` or have one actually empty section, meaning no selected assessment; a nonempty section contains exactly one Markdown link to a lawful decision in its own family.
+Duplicate sections or malformed nonempty selectors are errors, not empty assessment values, and existing decisions remain fully checked even when none is selected.
 A T file instead uses `## Current decision`.
 A decision may be in an older fixed material version.
 An unacquired acme-source Current selector on received C/T first checks its original repository, exact author/kind/line/number family and original version order against source_material or existing explicit acquisition facts.
@@ -206,7 +207,7 @@ Task statuses retain proposed, active, paused, blocked, completed and retired.
 
 Relations are `statement`, `contract`, `argument`, `support`, `dependency` and `review`, each with one exact Markdown locator and a nonempty applicability scope.
 Repeat relation rows for multiple actual inputs.
-A Claim has one selected statement; a Task has one contract, both in that same material family and no later than the owning version.
+A Claim decision has one selected statement; a Task decision has one contract, both in that same material family and no later than the owning version.
 An original statement/contract locator compares versions against the actual source_material owner in original coordinates; a receiving locator compares against its receiving owner, without substituting the local version when original owner facts are missing.
 Imported selections also match the decision owner's registered original repoN and exact source family; a matching display name alone establishes no identity.
 An accepted Claim selects an argument and applicable review evidence; genuinely new local formal review adoption uses fixed R findings.
@@ -243,7 +244,7 @@ Current C parsing, creation, revision, source reading and navigation use the sin
 Historical material, Historical assessments and historical-assessment-key have no special machine meaning; the same words may remain ordinary prose, quotations or examples.
 An actual selected locator must still identify a real decision, rather than an ordinary historical heading.
 When selected old content does not meet the current contract, the agent [reads and adapts it within existing authority](agent-actions.md#scope-and-instruction-handling), retaining necessary mathematics, genuine historical precision, source facts and gaps without rewriting fixed sources or upgrading the source repository.
-Any genuinely new assessment records the actual present decision and its evidence; an important unresolved Claim uses a truthful open decision rather than a historical-reading mode.
+Any genuinely new assessment records the actual present decision and its evidence; an important unresolved key Claim uses a truthful open decision, while a C without a recoverable or actually chosen assessment remains unselected without a historical-reading mode.
 
 ### Explicit material writes
 
@@ -264,7 +265,7 @@ python scripts/material.py select mathematics/claims/Alice_C_F0001_v2.md --expec
 ```
 
 `revise` creates the next actual fixed C/T/R/L material version and preserves the old file.
-A new C/T version contains an explicit local decision bound to its actual statement/contract; a carried-over old acceptance cannot silently approve changed mathematics.
+A new T version contains an explicit local decision bound to its actual contract; C follows the same nullable assessment contract on creation, revision, reading and receipt, and no carried-over acceptance silently approves changed mathematics.
 `append-decision` takes one new `### Decision key` block.
 It selects that decision unless `--candidate` is given.
 `select` changes only the designated current selector and may adopt an exact older decision in the same family, preserving that decision's original evidence and scope.
@@ -272,11 +273,14 @@ Apply the common [existing-decision boundary](rules/records.md#existing-and-newl
 Create/revise optionally accept repeated --new-decision ANCHOR to check explicitly selected actual new dates and acceptance bindings; append-decision explicitly makes its supplied new decision.
 Preserve existing decision precision and review scope in actual material work and delivery, without retrospective bindings, an import marker or a history mechanism.
 
-C/T revision, append and select require the exact current `--expect PATH#anchor`.
+C/T revision, append and select require an explicit current expectation: `--expect PATH#anchor` for an actual selected decision, or `--expect PATH` only to assert that the actual selected C is unselected.
+The expectation path must match the operated material; a selected C or any T cannot use the anchorless form, and omitted expectation is not an instruction to ignore concurrency.
+The Python interface uses explicit expected_current=None for unselected C, distinct from omitting the argument.
+An initial append/select can establish a missing Current section; a candidate append does not select itself, and --decision still names a real decision rather than clearing a selector.
 The command protects its actual material read, expectation/current-main check, modification and publication under the short write lock and rejects a stale expectation before writing.
 Candidate appends read the fresh history even when the selector is unchanged, retaining all earlier decisions.
 The command does not retry a supplied mathematical decision against a different predecessor.
-Only the latest main material may be changed by the established same human under actual authority and fixed-version rules.
+The writer's latest-main restriction applies to creating new research versions and actual current-adoption operations; ordinary maintenance or pure logical repair of current or retained older materials uses ordinary authorized editing under the [repair/version boundary](rules/records.md#in-place-maintenance-and-logical-repair).
 Local authors must match the actual operator; an external author representation requires explicit adopted local_human correspondence at its existing person record.
 Another human's correction belongs in that human's own material with exact references, including when a proposed body edit is described as administrative.
 Initial intake adaptation retains necessary mathematics and truthful author/source facts rather than source-byte equality.
@@ -327,7 +331,7 @@ They require no decision append, timestamp, evidence read or comparison exemptio
 Removing only the retired field from a current decision similarly preserves its assessment and exact relations/scopes without a new decision, mathematical version or backfilled bindings; first preserve necessary objections and limitations at their actual homes.
 
 The agent reads actual changes to fixed R/L and retains the performed finding, inspected target version/anchor, declared scope and limits.
-A substantive new or changed inspection uses the appropriate next physical version, with its actual date and limits, followed by the consuming decision when adopted.
+A genuinely distinct inspection needing separate retention uses the appropriate same-topic physical version, with its real date and limits; a successful necessary logical recheck may maintain the same R under the [rolling repair rule](rules/proof-audits.md#rolling-review-repair), with consuming decisions handled only when actual adoption changes.
 Newly authored or actually revised formal findings declare their own explicit relationships at the actual new or revised finding scope, without requiring unchanged older findings in that file to be backfilled.
 Same-object path maintenance may repair locators; adopting different mathematics requires judgment of its actual review applicability.
 Tools check explicit input/target sets, fields and required references and expose differences; they do not infer scope preservation, equivalent relocations or review transfer.
@@ -366,7 +370,12 @@ Kind-specific discovery strictly checks only that kind; authoring checks the cho
 Malformed address candidates in that namespace remain errors, while unrelated namespaces do not become prerequisites.
 Explicit whole-material discovery and full-navigation regeneration retain their complete requested scope.
 Source-assessed status remains attributed to its original author and exact acquired scope.
-A missing unacquired original is an explicit source locator; a missing previously acquired local input is an error.
+A missing unacquired original is an explicit source locator; an actually selected required local input remains an error when absent, while navigation-only declaration reading does not check native payload availability.
+Navigation reads its necessary C/T selectors, decisions, material identities, selected R finding anchors, relationships, bindings and source/entrance metadata, retaining every exact path, physical version, fragment and Scope.
+It does not open, query availability or capture native J payloads merely to display declared targets, whether ordinary output or retained fixed input; identify native children by their existing J/group entrance rather than an extension whitelist.
+Preserve such native locators as code text, optionally linking a real responsible J entrance, without inventing an entrance or a broken local-data link.
+Actual input reading, reproduction, adoption and material writing retain strict required-input defaults; protected targets, malformed bindings, nonempty broken selectors, missing selected decisions/findings and necessary metadata anchors still fail.
+Navigation does not catch and ignore all missing files, drop rows, remove bindings, infer a new availability state or observe payloads that supply no navigation fact; actual declaration/identity/entrance changes still invalidate stale publication.
 Explicit field, reference and source readers use the actual chosen files or Git view, without local holding enrichment or private-source byte checks outside their stated scope.
 Public U display exposes its actual current text and necessary acquisition provenance, without a machine-derived inspection summary or original-availability notices.
 Optional [local source checks](rules/literature.md#selected-source-checks) inspect only explicitly chosen physical originals, without a registry, routine availability query or shared-material enrichment.
@@ -437,6 +446,11 @@ A fresh installation respects and advances the actual receiving namespace's `mat
 Repeated acquisitions and later physical versions reuse the established same-original receiving family rather than allocating another family number.
 A known original returning to its own repository is declined using the explicit selected `returning_original: true` fact, without a self number or semantic detector.
 U retains its dedicated author/key/unit filename and `unit` contract, without an external-author-number requirement.
+For U, one receiving readable author name may represent an explicitly established single human whose original qualified repository/name spellings differ, using the existing correspondence.authors and person associations when needed.
+Choose a confirmed readable name of that same person consistently in the receiving path/header/namespace and prepared target; preserve each original source.author_name unchanged rather than rewriting Robert to Bob.
+The prepared author scalar from unit.text/unit.edits or common prepared text supplies that readable name, while existing local.source_repository may select its receiving namespace; these introduce no new input fields.
+Known different persons sharing a name or conflicting declared correspondence must be refused, while sufficient same-human correspondence supports different names; name similarity, email, filename or equality alone proves no identity.
+Ordinary U not needing alias correspondence gains no universal external-person registration or new alias table.
 
 An operation's `transport.repository` and `source.repository` refer to receiving external repository records.
 For C/T/R/L/J, `source.author` refers to the receiving external author; `source.author_name` retains the qualified original source-local name.
@@ -460,7 +474,7 @@ Select explicit C/U/L/J units, useful R findings, needed S/D mathematics for ada
 No C-to-R or source-artifact expansion occurs.
 R uses its actual finding anchor and retains actual targets and review limitations, with necessary references explicitly prepared or mapped.
 An external T must be an actual necessary joint contract and has no E; another human's ordinary Task/E authority is excluded.
-For callers choosing the [intake command](../scripts/readme.md#cross-repository-intake), save its JSON selection list containing `path`, `anchor` and `scope`; C uses an exact decision anchor, U its exact unit anchor.
+For callers choosing the [intake command](../scripts/readme.md#cross-repository-intake), save its JSON selection list containing `path`, `anchor` and `scope`; an assessed C keeps its exact decision anchor, an unselected C selects actual statement/argument scope without inventing a decision, and U uses its exact unit anchor.
 The following selection fields, prepared-text inputs and publication protocol describe that optional interface rather than a compulsory receiving pipeline.
 For a newly selected L finding, read its designated locator and declared relationship through the shared reader.
 An actual independent historical finding needs complete prepared receiving R with its true targets, scope and limitations; leaving it in receiving L is refused before publication, without requiring a source-repository upgrade.
@@ -545,6 +559,8 @@ A lawful same-human R revision may also contain a genuine locally performed find
 That local finding need not appear in its acquired input's historical operation; the input account remains limited to the actual acquired source scope rather than marking every finding in the revision as acquired.
 For onward selection from that revision, the agent explicitly chooses the current source or the exact fixed Input finding whose acquired scope is retained, including an existing acquisition selector when necessary.
 The optional helper uses `origin: "current"` or `origin: {"input": {"path": "EXACT_EARLIER_R.md", "anchor": "finding"}, "acquisition": "intake/Human/existing.json"}` with acquisition optional.
+For rolling U or maintained R, an explicit current-origin selection records actual current-repository contributions at the selected fixed commit/path/anchor and scope even when an old acquisition matches the same path and anchor.
+U requires neither a physical version nor a fixed-kind Inputs section for this choice; unchanged retained old scopes continue using their actual acquisition facts, without attributing current additions to a source blob that lacks them or rewriting old operations.
 The inherited locator must occur in the actual declared Inputs, retain the same original family/header binding and name a finding covered by the chosen earlier operation.
 An exact input anchor can differ from the selected current anchor when the agent has established that retained scope; spelling and ancestry alone establish no inheritance.
 That explicit onward origin choice is not a finding correspondence parameter for ordinary local revisions or readers.

@@ -17,6 +17,14 @@ def fixed_locator(value):
     return {'path': path, 'anchor': anchor}
 
 
+def expected_locator(value):
+    if '#' in value:
+        return fixed_locator(value)
+    if identity.parse(value).kind != 'C':
+        raise argparse.ArgumentTypeError('Only an unselected C may use PATH without a decision anchor.')
+    return {'path': value, 'anchor': ''}
+
+
 def result(doc, read, *, source_info=None):
     try:
         selected = documents.selection(doc, read, source_info=source_info)[1] if doc.current else None
@@ -81,7 +89,7 @@ def argument_parser():
     command.add_argument('--new-decision', action='append', default=[], help='Explicit actual new decision anchor to check; file addition implies no new decision')
     for name in ('revise', 'append-decision', 'select'):
         command = commands.add_parser(name, parents=[root]); command.add_argument('path')
-        command.add_argument('--expect', type=fixed_locator, required=name != 'revise')
+        command.add_argument('--expect', type=expected_locator, required=name != 'revise')
         if name == 'select': command.add_argument('--decision', type=fixed_locator, required=True)
         else: command.add_argument('--file', type=Path, required=True)
         if name == 'revise': command.add_argument('--new-decision', action='append', default=[])
@@ -141,16 +149,25 @@ def main(argv=None):
             entry = next(iter(entries.values()))
             output = {'key': literature.register_work(repo, entry, **options)}
         else:
+            if args.command != 'create':
+                expected = args.expect
+                if expected is None:
+                    shared.require(identity.parse(args.path).kind not in 'CT',
+                                   'Supply --expect with the actual C/T selection, or PATH for an unselected C.')
+                elif not expected['anchor']:
+                    shared.require(expected['path'] == args.path,
+                                   'An unselected-C expectation must name the actual material being changed.')
+                    expected = None
             if args.command == 'create':
                 doc = writer.create(repo, kind=args.kind, body=supplied(args.file), line=args.line, task=args.task,
                                     author=args.author, new_decisions=args.new_decision)
             elif args.command == 'revise':
-                doc = writer.revise(repo, args.path, body=supplied(args.file), expected_current=args.expect,
+                doc = writer.revise(repo, args.path, body=supplied(args.file), expected_current=expected,
                                     new_decisions=args.new_decision)
             elif args.command == 'append-decision':
-                doc = writer.append_decision(repo, args.path, decision=supplied(args.file), expected_current=args.expect, select=not args.candidate)
+                doc = writer.append_decision(repo, args.path, decision=supplied(args.file), expected_current=expected, select=not args.candidate)
             else:
-                doc = writer.select_decision(repo, args.path, target=args.decision, expected_current=args.expect)
+                doc = writer.select_decision(repo, args.path, target=args.decision, expected_current=expected)
             output = result(doc, lambda path: shared.read_from(repo, path).decode('utf-8-sig'))
         print(json.dumps(output, ensure_ascii=False, indent=2)); return 0
     except (ValueError, OSError, KeyError, TypeError) as error:

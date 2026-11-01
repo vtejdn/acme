@@ -569,5 +569,8 @@ Before describing a manuscript as reviewed, compare its exact statements, assump
 Record the checked source revision and any remaining issues.
 A successful TeX build is a separate fact from mathematical review.
 Manuscript preparation does not reopen a completed research goal merely because writing or formatting remains.
-The original goal contract determines whether manuscript delivery is a completion requirement.
+A mathematical Task's contract and completion criteria cover its mathematical objective and necessary review under the [Task rules](tasks.md#task-records).
+Manuscript preparation, whole-manuscript review, builds and delivery follow the actual writing instruction and are not mathematical Task completion criteria.
+When the human requests both a mathematical result and a manuscript, complete and report each assignment at its actual scope.
+Mathematical Task completion does not finish that whole instruction while writing remains; unfinished writing does not prevent completion of a Task whose mathematical contract and necessary review are satisfied.
 Creating `mathematics/manuscripts/` assigns no new goal, manuscript or publication task.

@@ -2,6 +2,7 @@
 
 This collection holds searchable chapter/section lists transcribed from actual source editions under the [literature rule](../../../framework/rules/literature.md#searchable-contents).
 It supplies source navigation, not theorem evidence or a whole-source review.
+Keep the original list and only its necessary identification, source, coverage and comparison limits; U inspection/adoption summaries, body-page mappings and acquisition/editing logs stay outside contents under the responsible rule.
 
 Use shared bibliography, useful author source notes and edition-specific transcriptions to locate a known work; prepare an original only when actual source reading needs it.
 Each transcription names its work/edition, coverage, actual contents locators and exact source pages, with logical original-source or verified excerpt links without a source account or availability condition.

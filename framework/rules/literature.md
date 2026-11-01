@@ -196,6 +196,13 @@ Use source indexes/full text and [progressive reading](#progressive-reading) as 
 Report unreadable entries, missing pages or unfinished transcription specifically in the normal handoff and useful responsible source notes.
 Do not publish an empty placeholder, redirect another edition's list or create U/L/R merely for contents, extraction or a reading receipt.
 Contents establish no mathematical review.
+Keep only the supplied contents and information needed to identify, locate, compare or use that transcription: minimal work/language/volume/edition identity, exact source and contents location, hierarchy, destination labels, actual coverage and damage limits.
+Actual contents-comparison limits are useful, such as agreement of two lists without establishing agreement of their bodies, editions or earlier inspections.
+Do not summarize U edition choices, body-page correspondences, authors' reading/review scope or status, research adoption, acquisition history or editing logs in contents.
+Those source/edition explanations belong in adequate author source notes, actual inspection facts in U and mathematical adoption at the consumer; a global claim that all U use one page offset is not contents information.
+Judge actual purpose rather than keywords: genuine contents pages and necessary edition/date labels are not deleted merely for containing numbers.
+Remove useless process prose directly, preserving unique necessary source/checking facts at their existing homes and repairing actual references before removing them, without an archive, new U/R or historical backfill.
+Correcting a contents summary transfers no old inspection to a new copy and triggers no whole-book review, original reacquisition, mathematical version or assessment merely for that cleanup.
 Clean installations include only the generic guide, with no named transcriptions or original files.
 
 <a id=progressive-reading></a>

@@ -14,6 +14,7 @@ Source observations in responsible source-reading records are evidence for choic
 The current author's new instruction updates the layer and scope it actually names; a paper-specific request never becomes author-wide automatically.
 
 Personal defaults live under profiles/<human>/, with writing/readme.md and actual named subfield files where useful.
+The author's message-archive.md is historical correspondence, not personal policy; its location or existence does not select it for startup or independent-review context.
 Read the manuscript's responsible author and actual topic/readership, not merely the bound operator or Task line.
 Changing a local actor does not alter another author's adopted manuscript choices.
 An author without a profile uses general mathematical standards plus any explicit manuscript choices.

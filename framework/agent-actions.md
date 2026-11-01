@@ -88,7 +88,7 @@ Exclude the source's entire execution/ and .venv/ from framework copying and upg
 Preserve the complete root LICENSE and applicable upstream notices; retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
 Inspect the selected content and keep development blueprints/tests, local profiles, temporary work, private holdings and actual research out of that starting tree.
 Original literature remains local under the [source-storage rule](rules/literature.md#local-pdf-storage); clean setup creates no original-store placeholder or literature account.
-Exclude a source's live `mathematics/maintenance.md` and preserve the destination's worklist under its [location and copying rule](rules/organization.md#material-maintenance-worklist), without creating or copying an empty placeholder.
+Exclude the source's live `mathematics/maintenance.md`, `mathematics/erratum.md`, `mathematics/messages.md` and personal message archives, preserving destination contents under their [location and copying rule](rules/organization.md#material-maintenance-worklist), without empty placeholders.
 Use ordinary copying and native Git without a permanent shipped-file inventory or installation receipt.
 
 ## Upgrade installed framework
@@ -141,6 +141,7 @@ Task setup creates no E; prepare or reuse the ordinary family's local boundary o
 A joint coordination T has no E, and setup creates no execution or fabricated review.
 
 For continuation, read the selected T contract/decision, any existing stable E's effective conditions, applicable operator policy, current S and directly needed C/D/J/source evidence.
+Read relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` for the actual author, Task and material scope under the [coordination rule](rules/records.md#shared-mathematical-coordination), completing applicable erratum lookup before mathematical reliance without a whole-library scan.
 When that selected execution has no local E, follow the [on-demand preparation rule](rules/execution.md#responsibility-and-version-boundary) using adequate real instructions and conditions; absence neither resets limits nor grants resumption.
 For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
 Apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) to ordinary and joint research in an actual shared Git repository, using relevant incoming work for mathematical reuse before any necessary external search.
@@ -168,6 +169,8 @@ Retain complete necessary arguments, hypotheses, meaningful failed approaches, n
 Before substantial proof investment, apply [knowledge reuse](rules/knowledge-reuse.md#reuse-before-proof); a recognized established result triggers its source-check duty even during exploration.
 An open conjecture or conditional investigation need not already have a proof or completed review, but acceptance requires its real evidence and resolved applicable obligations.
 Distinguish an actual new statement/contract, a substantive revision, an unchanged-mathematics decision and routine maintenance under the [record rules](rules/records.md#identity-and-versions).
+Choose a family by its actual core mathematical topic and retain versions only for distinct research/evidence that needs separate preservation; pure logical repair may maintain current or older material in place under the [repair rule](rules/records.md#in-place-maintenance-and-logical-repair).
+Register C with its real statement and author without fabricating an initial assessment; actual key C and the adopted completion chain require explicit applicable assessments under the [Claim rule](rules/claims.md#mathematical-assessment-and-review-findings).
 For a new fixed or continuing S family, maintain its actual next unissued [allocation state](rules/identity.md#allocation-and-concurrency); revisions retain their family and D keeps its separate reusable-address boundary.
 Actually added C/T decisions use their real UTC minute time, while reading or reselecting an existing decision preserves genuinely known calendar precision.
 Keep fixed predecessors and exact decision anchors; navigation derives the responsible current selection.
@@ -179,6 +182,7 @@ Return the resulting material and its actual status, with any missing evidence e
 Read the round's changed mathematics, computations, sources and directly affected consumers under the [workflow](rules/workflow.md) and common content decision.
 Check the claims being delivered and relevant inputs, reusing adequate existing evidence; retain useful partial results and failures at responsible homes.
 Repair actual references and maintain affected navigation after source edits settle, through ordinary bounded edits or optional rendering.
+Navigation derives actual declarations and selected evidence metadata without checking or restoring native J payloads merely to display them; actual input recovery and mathematical adoption keep their own [computation](rules/computations.md#recovery-of-necessary-fixed-inputs) and [assessment](rules/claims.md#mathematical-assessment-and-review-findings) obligations.
 Retire a redundant D only after checking its actual historical uses and preserving any necessary content under the [draft rule](rules/ledger.md#working-drafts-and-fixed-findings).
 A setup-only residue whose mathematics is already fixed needs no replacement account or move receipt.
 For human-authorized joint Task work, judge the retained progress under the [collaboration rule](rules/tasks.md#shared-git-research), completing a useful coherent batch through the [delivery action](#commit-or-push-requested-work) under the default permissions and actual human limits, without a separate first or recurring delivery approval.
@@ -191,7 +195,10 @@ Round closeout neither resolves the whole Task nor resumes research after an ins
 For completion, compare the actual deliverable with the original T hypotheses, quantifiers and every completion criterion under the [Task rules](rules/tasks.md#task-records).
 Check the full support chain and applicable [completion review](rules/proof-audits.md#completion-and-verification-boundaries), reusing adequate fixed inputs and compatible reviews.
 Arrange the required independent review at key proof points and for the full chain after completion; retain actual unfinished review obligations.
+Check the explicit assessments and applicable support of C nodes actually adopted in that full chain, distinguishing unselected from open and actual premises from provenance, old review targets or merely retained argument bodies.
 Record completion only when the actual contract is satisfied; otherwise state the precise unresolved criterion without enlarging the result.
+If actual related own messages are proposed for archiving, apply the [archive action](#exchange-mathematical-messages-or-archive-own-correspondence): reuse applicable explicit instructions, or prepare the concrete selected scope for the human author's confirmation after actual completion.
+Task completion itself supplies no archive authorization, and no archive question is needed when none is proposed.
 
 For pause or stop, preserve available results and a usable handoff and record the actual instruction at its responsible E/T scope under the [execution rules](rules/execution.md).
 Distinguish an execution stop, human lifecycle pause, blocked mathematical obligation and completion.
@@ -212,6 +219,7 @@ New or substantively revised findings declare their actual relationships explici
 For required independent review use a reviewer outside substantive proof development and its inherited mathematical context; the current reviewer may act directly when already qualified under the [arrangement rule](rules/proof-audits.md#review-arrangements).
 Supply fixed inputs, necessary dependencies, exact scope, applicable rules and actual human requirements directly without forwarding development discussion or its mathematical summary; another agent layer or the same context under a new label supplies no independence.
 After an independently identified gap is repaired, arrange independent re-review of the correction and affected chain; a substantive repair contributor cannot independently review that repair.
+Maintain successful necessary logical rechecks truthfully under the [rolling R rule](rules/proof-audits.md#rolling-review-repair), retaining real inputs, bindings, relationship, time and limits without automatically creating a new version or correction log.
 If the required independent arrangement is unavailable, report the specific limit and retain the unfinished obligation at its existing Task or review home while continuing unaffected authorized work.
 Return actionable findings, inspected scope and limitations, distinguishing source inspection, proof review, build success and formal verification.
 A review request does not itself authorize substantive editing of another author's material; actual conflicts use the maintenance boundary below.
@@ -265,6 +273,7 @@ Read the actual J question, native programs/inputs, parameters, arithmetic mode,
 Choose suitable methods, runtimes, libraries and other tools under the [computation-tool responsibility](rules/computations.md#computation-tool-selection), respecting the actual assignment, project requirements and environment constraints.
 Reuse sufficient actual capabilities, reading only relevant local runtime notes and necessary private resource sections under the [runtime rule](rules/organization.md#machine-local-runtime); notes, activation and a new environment are not prerequisites.
 Keep continued programs in `mathematics/computations/programs/<J>/` and generated results in the ignored `mathematics/computations/outputs/<J>/`.
+Retain generated data indispensable as fixed proof/check/computation input in the responsible J's tracked native inputs; an authorized recovery task may run its existing generator/verifier, check the actual object and finite scope, then repair input locators and consumers under the [recovery rule](rules/computations.md#recovery-of-necessary-fixed-inputs), without repeat approval or historical reconstruction.
 When reproduction is needed, rerun the chosen output set in that same J after preserving necessary inputs, non-reconstructible witnesses and earlier results still consumed by the check.
 Safe overwriting and removal of reproducible output are allowed with coherent consumers; ordinary reading or maintenance does not require rerunning it.
 Use an acquired program's actual qualified J for self inputs/outputs and explicit paths for genuine cross-J dependencies.
@@ -293,8 +302,9 @@ Return actual repairs, checks and remaining limits, preserving unrelated work an
 
 Use the [acceptance rule](rules/records.md#accept-local-material-repairs) for the specified repairs or otherwise for submitted worklist items awaiting acceptance.
 Meet the [stage-context rule](rules/workflow.md#material-maintenance-contexts), independently checking the original issue, applicable requirements, actual repair and necessary affected scope without repairing the materials yourself.
-The acceptance instruction authorizes removing the corresponding accepted items, or an independently confirmed false alarm, unless the human explicitly limits cleanup; no repeated confirmation is needed.
-Reread the current worklist before editing, remove only the actually accepted scope and retain failed, unrepaired, unaccepted, unrelated and concurrently added items and necessary continuation scope.
+The acceptance instruction authorizes clearing actually accepted or independently confirmed false-alarm portions belonging to the human represented by this agent, unless the human explicitly limits cleanup; retain other-author portions for their author's confirmation without repeating sufficient acceptance.
+For a received original whose human author actually does not participate locally, the responsible receiving human may clear sufficiently resolved local portions under the [receiving-side exception](rules/records.md#receiving-side-local-disposition), retaining isolation, actual source authorship and other unresolved consumers without invented correspondence.
+Reread the current worklist before editing, clear only the accepted and author-confirmed scope and retain failed, unrepaired, unaccepted, unknown-author, unrelated and concurrently added portions and necessary continuation scope.
 If everything recorded is resolved, keep the established file at zero bytes without an archive or completion receipt; an empty worklist establishes no whole-repository conformity verdict.
 Return the actual accepted or rejected scope, cleanup and remaining limits; stage separation supplies no mathematical proof-review relationship by itself.
 
@@ -312,6 +322,21 @@ Preserve both sides' actual evidence, and keep substantive contributions in thei
 Ordinary authorized research and reviews retain their existing authority; the conflict procedure is not a universal approval step.
 Return the repaired administrative result or concrete remaining conflict and needed decision, preserving activity-specific roles and another human's Task/E.
 
+## Exchange mathematical messages or archive own correspondence
+
+Use the [coordination and mail rules](rules/records.md#shared-mathematical-coordination) within the actual represented human's research or explicit communication authority.
+Look for relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` by the current author, Task, strategy and material scope; these lookup paths require no empty files or whole-library scan.
+Register conformity work, substantive mathematical issues and ordinary suggestions at their separate homes, preserving actual author attribution and necessary evidence.
+Before mathematical adoption, inspect relevant erratum for the chosen input/version, including other-author inputs; substantive findings do not authorize changing another author's decisions or body.
+Send concise mail-style messages and independent replies newest first with actual UTC-minute sending times, clear human sender/addressee and exact necessary reply/evidence locators, using applicable mathematical expression and author choices without a manuscript workflow.
+Recipients judge, optionally reply or adopt, and maintain only their own follow-up; they cannot delete or rewrite the sender's original or infer that all recipients have finished.
+Archive only selected own-sender messages under the [two human-authority entrances](rules/records.md#author-message-archives), creating `profiles/<human>/message-archive.md` only when an actual archive needs it.
+After a genuinely completed own Task, prepare the related messages and destination for human confirmation if no applicable instruction already covers them; a direct explicit archive selection needs neither Task completion nor repeated approval.
+Preserve complete original mail and actual sending order, changing only necessary same-object relative locators and checking affected replies/material links.
+Keep a precise shared short entrance and concrete remaining request for actual unhandled recipients or follow-up; preserve other-sender replies, other Tasks and all unselected content.
+Verify saved archive contents and necessary links before removing shared originals, rereading current input and existing archive on change, failure or retry to avoid loss, stale removal or duplicate copying.
+Report actual moved messages, retained unresolved entrances and remaining limits without a new message service, approval register, historical cleanup account or changes to Task/E.
+
 ## Acquire material from another research repository
 
 Use [intake](rules/intake.md#scope-and-routing) for distinct research repositories; another registered human in the same repository is direct collaboration.
@@ -322,7 +347,8 @@ Keep the actual fixed Git names and required entry/blob facts through manifest, 
 Prepare canonical receiving paths through actual correspondence, including an explicit native-child mapping when needed; fixed source names need no local alias resolution or renaming.
 Actual local sources and receiving publication retain their physical protections under the [intake rule](rules/intake.md#scope-and-routing).
 Use actual authorized public source reads and ordinary file operations when Git is unavailable; the optional Git-based source helper retains its own source-access prerequisite.
-Prepare each selected result's local prose, classification, layout, numbering and references under current receiving rules, then inspect its actual text, author correspondence, exact references and necessary direct consumers.
+First reuse adequate material and preserve conforming source prose under the [common preservation rule](rules/records.md#receiving-and-adapting-selected-content), adapting only actual receiving-rule differences in identity, classification, layout, numbering or references.
+Inspect the resulting text, author correspondence, exact references and necessary direct consumers.
 Sender framework versions, current-format support or missing installation metadata do not independently bar adequate receiving preparation or require a sender upgrade.
 If the optional helper cannot handle the actual old layout or input, report its interface limit and use an adequate ordinary path when the necessary mathematics, original identity, fixed-source facts and conforming local result can be established; do not weaken selected-helper checks or add historical parsers merely for compatibility.
 Keep conjectures, partial support, known failures and source assessments at their real state; established use or a new adoption retains its evidence and review duties without a whole-source reproof for ordinary receipt.
@@ -349,6 +375,7 @@ Before an explicit J source refresh, confirm the same original, inspect the sele
 
 Apply the common [adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving complete necessary selected mathematics and the single original human through adapted text, local numbering, justified splits/combinations and onward transfer.
 Keep the actual source version and selected scope separate from the receiving kind, line and version; use the existing operation for per-unit provenance.
+For rolling U or maintained R transfer containing actual current-repository contributions, choose the actual current origin rather than letting an old same-path/anchor acquisition absorb those contributions; unchanged selected old scopes retain their original source accounts.
 Read actual references and prepare necessary final receiving text using true source/local correspondence; background prose does not cause tool discovery, mapping or provenance tracing.
 For targets absent from the selected sending Git tree, preserve useful source-only reference context and actual limits, without assigning unversioned bytes to the material's commit.
 Obtain or reproduce necessary input within the actual authorization, or retain its unresolved need at the consumer; omit obsolete mentions with no remaining mathematical, evidence or reproduction purpose.

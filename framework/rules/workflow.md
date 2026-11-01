@@ -48,7 +48,7 @@ Research, source audit and writing use the same [source-preparation sequence](li
 Complete definitions, terminology and symbols retain their adequate U/C/L homes and precise def registration; source facts and writing choices keep their separate responsible homes.
 
 Status belongs to its responsible material.
-A Claim's selected decision owns its current mathematical/review assessment; a Task's contract and selected decision own its authorized question and lifecycle.
+A Claim's selected decision owns its current mathematical assessment and selected evidence; a Task's contract and selected decision own its authorized question and lifecycle.
 Each S owns route priority/disposition and exact Task associations.
 Fixed arguments, rolling source units and computation groups own their actual mathematics, while formal R findings own their actual agent review scope and relationship.
 Indexes derive navigation rather than creating another status authority.
@@ -85,7 +85,7 @@ Exploration, candidate registration and acceptance can occur together within one
 | Action | Required scope and evidence |
 | --- | --- |
 | Explore a question or test a mechanism | Identify the current question, attempted range, provisional assumptions and what the next test could distinguish. The final statement, hypotheses or quantifiers may still be developing. An authorized experiment or conditional derivation does not require a Claim ID or a completed mathematical review before it can begin or continue. |
-| Register a candidate or organize a substantive reusable project statement | State the important proposition precisely, identify actual inputs and gaps, and register its material/version under the [Claim rules](claims.md#claim-registration). An unresolved candidate uses open; registration does not certify the result. |
+| Register a candidate or organize a substantive reusable project statement | State the proposition precisely, identify inputs/gaps and register under the [Claim rules](claims.md#claim-registration). A real unresolved assessment may select open; an unselected C creates no initial decision or date and registration certifies no result. |
 | Accept a result as established, adopt a checked refutation or report Task completion | For proved/refuted assessments, check the complete supporting argument or refutation, applicability, resolved mathematical dependencies and applicable [review evidence](proof-audits.md) under the [assessment rules](claims.md#separate-assessment-fields). For a Task, apply its stated completion criteria to its actual deliverable. Existing accepted inputs and compatible inherited reviews retain their recorded scope. |
 
 The following events determine when additional obligations apply:
@@ -95,7 +95,7 @@ The following events determine when additional obligations apply:
 | Substantial proof investment, including a nontrivial intermediate step | Perform [knowledge reuse](knowledge-reuse.md#reuse-before-proof) before that investment. Routine direct calculations do not require a search for every line. Calling sustained proof work exploratory does not remove this trigger. |
 | Recognition of a named or established result | Apply the independent [source-check trigger](knowledge-reuse.md#recognized-known-results) during exploration, completing or explicitly retaining the outstanding check before handoff. |
 | A finding becomes useful, affects the research direction or must support continuation | Preserve a sufficient [exploration record](ledger.md#exploration-and-history). Routine scratch work without a substantive finding needs no separate operation log. Retained or cited computation evidence follows the [computation rules](computations.md). |
-| A substantive project statement is organized for reuse, or an identified conjecture/obligation needs a canonical record | Apply Claim registration and record the actual status and dependencies. Routine specialization of an accepted source is governed by [knowledge reuse](knowledge-reuse.md#reuse-before-proof). |
+| A substantive project statement is organized for reuse, or an identified conjecture/obligation needs a canonical record | Apply Claim registration, preserving actual dependencies and an assessment only when truly made; key Claims and the adopted completion chain require explicit applicable assessment under the [Claim rule](claims.md#mathematical-assessment-and-review-findings). Routine source specialization follows knowledge reuse. |
 | A result is treated as established, selected as reviewed support or used to close a Task | Satisfy the applicable acceptance, proof-selection and completion requirements before updating the responsible assessment or reporting that outcome. |
 
 Always distinguish verified inputs, provisional assumptions, computational observations and checked arguments.
@@ -222,6 +222,9 @@ An active Task does not resume a stopped run or bypass an applicable execution l
 Begin or resume with read-only inspection.
 Discussion, reading and maintenance analysis do not require generated-file writes.
 Before research advancement inspect the relevant selected material decisions, contracts and execution state.
+Within the current human, Task, route and material scope, read relevant `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` when present under the [coordination rule](records.md#shared-mathematical-coordination).
+Before actual mathematical reliance, inspect applicable erratum for the chosen input/version, including other-author dependencies; reuse adequate still-applicable reading without a whole-library scan on each action.
+Recipient handling and human-authorized sender archives follow the [message rule](records.md#mathematical-messages), without changing Task/E or automatically loading personal message archives.
 Routine startup does not trigger a full audit.
 Choose any useful scoped material, link or storage checks for the actual question, and resolve relevant findings before relying on them.
 A stale index does not change the authored decision.
@@ -318,6 +321,7 @@ The main agent coordinates scope, actual authority, resources and writes without
 
 Provide only actual human requirements, scope, current rule entrances, actual materials and necessary evidence locators, the original issue, necessary repair locations and known limits.
 Do not forward full conversations, another stage's internal reasoning, proposed repair discussions, author defenses or conclusions that the result is already correct.
+Do not inherit messages, personal mail archives or issue discussions as stage or independent-proof-review startup context; provide only permitted actual requirements, objects and necessary evidence.
 Necessary materials, original problems, human instructions and authority remain available; isolation must not discard the evidence needed for the assigned check.
 The repairer independently verifies the report, and the acceptance agent checks actual changes against the original requirements rather than repeating a repairer's passing opinion.
 An acceptance agent contributing a substantive repair no longer independently accepts that contribution.
@@ -348,7 +352,7 @@ All formal project-review findings belong to fixed R; L retains exploration, use
 All L materials belong in `mathematics/ledger/`.
 Retain actual mathematical chronology under the [ledger conventions](ledger.md#exploration-and-history); inert templates and examples do not represent completed work.
 
-Record [substantive mathematical operations](ledger.md#substantive-mathematical-operations): changes or significant findings concerning statements, hypotheses, proofs, dependencies, mathematical roles or validity.
+Record [substantive mathematical operations](ledger.md#substantive-mathematical-operations): changes or significant findings concerning statements, hypotheses, proofs, dependencies or validity.
 C carries actual Claim arguments; ledger operation records explain their extraction, reorganization and version transitions.
 Use an existing responsible section when sufficient; routine editing, tool activity and file maintenance do not each require a ledger entry.
 Follow the [record-kind and indexing rules](claims.md#record-kinds) without duplicating proofs, audits or current assessments.
@@ -362,7 +366,7 @@ Preserve useful failures and their necessary J programs/data.
 Disposable operational helpers belong in `.tmp/` and are cleaned by their creator.
 
 Fixed mathematical originals under mathematics/ are versioned by their canonical material filenames.
-A substantive mathematical change creates the next material version; meaning-preserving maintenance stays in place under [the reference rule](proof-audits.md#navigation-maintenance), with no new version, operation entry or correspondence report.
+Necessary research variants follow the [topic-family/version boundary](records.md#mathematical-topic-families-and-necessary-versions); meaning-preserving maintenance and pure logical repair may stay in place under the [repair boundary](records.md#in-place-maintenance-and-logical-repair), without a compulsory version or correction stream.
 Rolling strategies follow their own editing rules.
 Classify typos and link edits by mathematical effect, not byte count; changing the invoked theorem or hypothesis interface is a substantive dependency change.
 Preserve earlier mathematical versions and inspect actual affected consumers when selected support changes.
@@ -458,7 +462,7 @@ Preserve unrelated staged work and recheck affected bytes if the batch changes.
 
 ## New Record Timestamps
 
-Newly made C/T decisions, actual substantive S decisions or recorded updates, and new operator, approval, intake and correction acts use the actual UTC minute timestamp of that act, for example `2026-10-18T01:30`.
+Newly made C/T decisions, actual substantive S decisions or recorded updates, and real operator, approval, intake and formally performed review acts use the actual UTC minute of that act, for example `2026-10-18T01:30`; pure logical repair has no compulsory correction event or dated log.
 All maintained framework timestamps use the exact UTC format `YYYY-MM-DDTHH:MM`, with no `Z`, numeric offset, seconds or fractional seconds.
 A new decision about older mathematics records the current decision time separately from the mathematics' known original date.
 Source publication dates, edition dates and genuinely known year/month/date facts preserve their actual calendar precision; never invent minutes, timezone offsets or unknown historical facts.

@@ -14,7 +14,8 @@ Use the selected entry and blob for each actually required input, retaining proh
 
 Use the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities) for input scope, original-author correspondence, local reuse and source associations.
 The agent reads each actually selected file or unit and its necessary context and receiving candidates, checks its mathematical content, claimed status and true original author/source facts, and judges what to copy, retain, reuse and adapt under current local rules.
-Prepare the actual local content, classification, layout, numbering and references, then inspect the receiving text, author correspondence, exact references and necessary direct consumers; syntax, links or byte checks do not establish mathematical correctness, equivalence or review applicability.
+Under the [common preservation rule](records.md#receiving-and-adapting-selected-content), first reuse adequate material and preserve conforming source prose, adapting only actual receiving-rule differences in content, classification, layout, numbering or references.
+Then inspect the receiving text, author correspondence, exact references and necessary direct consumers; syntax, links or byte checks do not establish mathematical correctness, equivalence or review applicability.
 Preserve conjectures, conditional or partial evidence, useful failures and actual review gaps at their true scope; a new local format supplies no acceptance or invented source decision, relationship or date.
 Established use or a genuinely new adoption keeps its existing evidence and review duties without re-proving or independently reviewing all old results merely to receive them.
 Keep actual original human, repository, fixed revision, path, selected scope and necessary version/review facts, with onward transport separate; local authorN/repoN, kind or position changes do not transfer authorship or override an established original binding.
@@ -90,7 +91,7 @@ The agent may prepare all eligible textual materials, split distinct scopes or c
 The agent maintains designated references using the actual source/local correspondence, final receiving paths and adopted scope.
 Prepared text or exact expected-text edits supply the final body; the helper publishes it without a second reference scan, rebasing or source-context conversion.
 An explicitly chosen acme-source address can be translated once through supplied correspondence before the agent includes its result in an edit.
-Unchanged adequate selected files may be copied directly; no per-file prepared payload or background-reference ledger is required.
+Copy adequate conforming selected files directly by default under the common preservation rule; no per-file prepared payload or background-reference ledger is required.
 The agent reads sending-relative references, actual fixed-tree facts and missing background objects, preserving necessary source limitations at the actual consumer.
 A containing material revision supplies reference context, not proof of an ignored or absent file's bytes, generation or availability.
 Sending-private originals and computation outputs are not acquired through their body references or bound to same-named receiving files.
@@ -138,10 +139,11 @@ Actual missing necessary programs/inputs, invalid targets, conflicts and stale p
 
 Program acquisition neither runs the program nor establishes reproduction, adequate evidence or a review verdict.
 When reproduction is needed and authorized, use the actual receiving program, inputs, parameters, dependencies and applicable Task/E limits, generating results in the receiving J's local output home under the [computation rules](computations.md#computation-output-location).
+For an actual authorized research, repair or input-recovery task, recover missing indispensable input using its existing generator/verifier and retain the selected result as tracked native input under the [recovery rule](computations.md#recovery-of-necessary-fixed-inputs), without routine repeat approval or historical reconstruction.
 Retain real local generation, inspected scope, useful failures and necessary limits at an adequate responsible home, without attributing local results to the sending source or rewriting an old operation.
 Necessary witnesses, non-reconstructible data and still-consumed results retain their [substantive preservation duties](records.md#substantive-material-retention).
 If a result has actually become an indispensable fixed input, the agent selects the necessary data, real provenance and appropriate input home; do not move or rename whole outputs merely to recreate the retired attachment channel.
-An unavailable indispensable input remains a real gap rather than an assumption that it can be regenerated.
+An indispensable input not successfully regenerated and checked remains a real gap rather than an assumed result; ordinary intake, reading or navigation does not run generators implicitly.
 Existing local outputs, fixed programs and true old acquisition facts remain intact; ordinary local computation, explicitly selected verification reads and authorized personal-file maintenance retain their own scope.
 
 
@@ -219,9 +221,16 @@ The optional helper's [selected-origin input](../material-format.md#acquired-fin
 This transient choice creates no persistent inherited/new marker and changes neither the fixed input nor its earlier operation.
 
 The agent chooses each U's existing recipient work key or explicitly new work.
+For onward selection from rolling U or maintained R, the agent distinguishes unchanged acquired scope from actual current-repository additions or repairs and uses explicit origin: current for the latter, even under an unchanged path/anchor.
+Record the current source repository, selected fixed commit/path/anchor and real scope without rewriting earlier source_material or operation facts, adding U versions/Inputs, or attributing new checking to an old source blob that lacks it.
+Retained old scopes keep their necessary acquisition disambiguation; tool matching or prose/anchor similarity does not infer contributions or inheritance.
 Tools execute exact field updates and allocate only the chosen new identity, without DOI/eprint precedence or implicit field fusion.
 If shared state invalidates the choice, report the observed change for fresh judgment.
 Distinct original U001 units remain distinguishable through registered original source, author, source path/unit/version, including onward transfer.
+U same-author combination follows actual qualified human correspondence, not literal source-author strings: use sufficient existing repository/name and person associations and one confirmed readable receiving name, while retaining each source.author_name exactly.
+Explicitly distinct humans remain distinct even when both original names are Bob; sufficient same-human Bob/Robert correspondence may support one receiving U without universal U authorN registration, inferred aliases or another registry.
+For explicitly selected scopes under the same original anchor, preserve supplied scope and target correspondence; a common anchor alone does not make the ranges indivisible, and same-scope reuse retains its established receiving position.
+An exact expected prepared rolling combination may retain established scopes and add another necessary original at that same responsible position; keep all real per-unit facts and occupied-position protection without freezing the earlier origin set.
 Preserve each inspected edition and actual review limits.
 An absent or unreadable private source store does not prevent bibliography/U copying or create a fresh mathematical audit obligation.
 

@@ -30,7 +30,7 @@ Check whether the review covers the version now being used.
   Agreement between agents is not evidence in place of an argument.
   For project proof reviews, apply the [review arrangements and input disclosure](proof-audits.md#review-arrangements).
 - A material correction must identify the affected source units and project claims, review their downstream dependencies, and update the affected source or Claim assessments in their responsible records.
-  Preserve the earlier finding with a dated correction or supersession notice.
+  Apply the [rolling logical-repair rule](proof-audits.md#rolling-review-repair), retaining necessary evidence and true historical scope without a compulsory dated correction or supersession stream.
 
 Manuscript-specific review belongs with its document under the [manuscript review rules](writing.md#manuscript-review-and-mathematical-provenance).
 Project-mathematics R findings retain their actual C/T/computation targets and coverage.

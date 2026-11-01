@@ -72,7 +72,7 @@ class MarkdownInput:
         return MarkdownInput(self.text[start:end], structure=self.structure[start:end])
 
     def sections(self, heading):
-        pattern = r'^ {0,3}## ' + re.escape(heading) + r'[ \t]*\r?\n(.*?)(?=^ {0,3}#{1,2}(?:[ \t]|$)|\Z)'
+        pattern = r'^ {0,3}## ' + re.escape(heading) + r'[ \t]*(?:\r?\n|\Z)(.*?)(?=^ {0,3}#{1,2}(?:[ \t]|$)|\Z)'
         return [(self.slice(*item.span(1)), self.text[:item.start(1)].count('\n'))
                 for item in re.finditer(pattern, self.structure, re.M | re.S)]
 
@@ -275,7 +275,6 @@ def author_header(path, text):
     require(header.get('source_repository') == ident.source_repository, 'Path and source repository disagree.')
     source_fields = {'source_material'}
     if ident.source_repository:
-        require(ident.kind != 'U' or source_fields <= header.keys(), 'A source unit needs its original material binding.')
         if 'source_material' in header:
             if ident.kind == 'U':
                 # A genuine original locator is a source fact, not a second
@@ -298,11 +297,13 @@ def parse(path, text):
     if ident.kind in 'CT':
         name = 'Current assessment' if ident.kind == 'C' else 'Current decision'
         sections = body.sections(name)
-        require(len(sections) == 1, 'Material needs exactly one ' + name + ' section.')
+        require(len(sections) <= 1 if ident.kind == 'C' else len(sections) == 1,
+                'Material needs ' + ('at most' if ident.kind == 'C' else 'exactly') + ' one ' + name + ' section.')
         # Inline syntax is interpreted only in this explicitly selected field,
         # after block examples and unrelated sections have been excluded.
-        field = links.markdown_views(sections[0][0].structure)[1].strip()
-        current = locator(path, field)
+        field = links.markdown_views(sections[0][0].structure)[1].strip() if sections else ''
+        if ident.kind == 'T' or field:
+            current = locator(path, field)
         # Decision anchors and tables are parsed only in the designated history.
         history_name = 'Assessment history' if ident.kind == 'C' else 'Lifecycle and completion'
         histories = body.sections(history_name)

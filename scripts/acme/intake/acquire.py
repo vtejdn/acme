@@ -112,6 +112,7 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
     r.valid_stamp(value['at'])
     r.require(value.get('instruction') and value.get('items'), 'Acquisition needs its actual instruction and selected scope.')
     read = read or (lambda name:r.read_from(repo, name))
+    unit_humans = {}
     for item in value['items']:
         r.require(item['kind'] in KINDS, 'Select an eligible adapted mathematical home.')
         origin = item['source']
@@ -130,19 +131,24 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
             r.require((doc.header.get('source_repository'), doc.header['source_material']) ==
                       (origin['repository'], origin['path']), 'Acquisition metadata disagrees with the obtained original.')
         else:
-            r.require(bool(doc.identity.source_repository) and item['kind'] in 'CTRLJ',
+            r.require(bool(doc.identity.source_repository) and item['kind'] in KINDS,
                       'A combined original needs an external single-author receiving identity.')
-            external.person(repo, doc.identity.author, doc.identity.source_repository)
+            if item['kind'] == 'U':
+                external.repository(repo, doc.identity.source_repository)
+            else:
+                external.person(repo, doc.identity.author, doc.identity.source_repository)
         if item['kind'] in 'CTRLJ':
             r.require(doc.identity.author == origin['author'], 'Acquired author differs from its adopted local source record.')
         if item['kind'] == 'U':
-            r.require(doc.identity.author == origin['author_name']
-                      and origin.get('author', doc.identity.author) == doc.identity.author,
-                      'An acquired U retains its actual original human author.')
+            human = _unit_author(repo, origin, doc.identity.source_repository, doc.identity.author)
+            r.require(unit_humans.get(doc.path, human) == human,
+                      'A receiving U combines only one actual human, not matching readable names.')
+            unit_humans[doc.path] = human
         r.require(item.get('scope') and (item['kind'] == 'J' or not local.get('anchor')
                   or links.anchor_occurrences(doc.text)[local['anchor']] == 1),
                   'Acquired scope needs one actual local anchor and its description.')
-        if item['kind'] == 'C': r.require(local.get('anchor') in doc.decisions, 'Acquired Claim needs its exact decision.')
+        if item['kind'] == 'C' and doc.current is not None:
+            r.require(local.get('anchor') in doc.decisions, 'Acquired Claim needs its exact decision.')
         if item['kind'] == 'U': r.require(local.get('anchor') == doc.identity.anchor, 'Acquired U needs its exact unit.')
         if item['kind'] == 'R': _require_review_finding(doc, local.get('anchor', ''))
         if new_selection: check_selection(doc, local.get('anchor', ''))
@@ -177,6 +183,10 @@ def material_info(repo, document, *, read=None, seen=()):
                           (document.header['source_repository'], document.header['source_material']),
                           'Acquisition original identity disagrees with material header.')
             found.append({'operation': path, 'source': origin, 'scope': item['scope'], 'local': item['local']})
+    if found and document.identity.kind == 'U':
+        r.require(len({_unit_author(repo, row['source'], document.identity.source_repository, document.identity.author)
+                       for row in found}) == 1,
+                  'A receiving U combines only one actual human, not matching readable names.')
     if not found:
         inputs = documents.revision_inputs(document, read)
         r.require(inputs, 'A local revision needs its explicit acquired receiving input: ' + document.path)
@@ -277,7 +287,55 @@ def _mapped_author(source, repository, name):
     return matches[0]
 
 
+def _unit_person(repo, repository, name):
+    """Look up only an explicitly adopted qualified human, without aliases."""
+    rows = [row for row in external.table(repo, 'author')['people']
+            if isinstance(row.get('names'), list)
+            and {'repository': repository, 'name': name} in row['names']]
+    r.require(len(rows) <= 1, 'Conflicting qualified U human correspondence: ' + repository + '/' + name)
+    return external.person(repo, rows[0]['id'], repository, name) if rows else None
+
+
+def _person_key(row):
+    return ('local', row['local_human']) if row.get('local_human') else ('external', row['id'])
+
+
+def _unit_author(repo, origin, receiving_repository, name, *, correspondence=()):
+    """Check the selected readable name against actual original-human facts."""
+    original_name, original_repository = origin['author_name'], origin['repository']
+    r.require(origin.get('author', original_name) == original_name,
+              'An acquired U retains its actual original human author name.')
+    person = _unit_person(repo, original_repository, original_name)
+    selected = [entry['author'] for entry in correspondence
+                if isinstance(entry, dict) and entry.get('repository') == original_repository
+                and entry.get('name') == original_name]
+    if selected:
+        r.require(len(selected) == 1 and person is not None and selected[0] == person['id'],
+                  'The supplied U human correspondence contradicts the adopted qualified original.')
+    chosen = _unit_person(repo, receiving_repository, name)
+    if person is None:
+        r.require((receiving_repository, name) == (original_repository, original_name),
+                  'An acquired U retains its actual original human author; supply the qualified same-human correspondence for this receiving name.')
+        return ('qualified', original_repository, original_name)
+    if chosen is not None:
+        r.require(_person_key(chosen) == _person_key(person),
+                  'The receiving U name must belong to its actual original human.')
+        return _person_key(person)
+    external.person(repo, person['id'], receiving_repository)
+    r.require(name in {entry['name'] for entry in person['names']} | {person.get('local_human')},
+              'The receiving U name must belong to its actual original human.')
+    return _person_key(person)
+
+
 def _origin(source, doc, anchor='', record=None, choice=None):
+    if doc.identity.source_repository and choice == 'current' and doc.identity.kind in 'UR':
+        r.require(record is None, 'Current-origin scope cannot also select an inherited acquisition record.')
+        material_info(source.source_view(), doc)
+        origin = {'repository': source.transport, 'revision': source.revision,
+                  'path': doc.path, 'anchor': anchor, 'author_name': doc.identity.author}
+        if doc.identity.kind != 'U':
+            origin['author'] = _mapped_author(source, source.transport, doc.identity.author)
+        return origin
     if not doc.identity.source_repository:
         r.require(choice in (None, 'current'), 'An ordinary original has its current source context.')
         repository, name = source.transport, doc.identity.author
@@ -285,6 +343,8 @@ def _origin(source, doc, anchor='', record=None, choice=None):
     else:
         matches = []
         for operation, item in _source_items(source, doc, record):
+            if doc.identity.kind == 'U':
+                _unit_author(source.source_view(), item['source'], doc.identity.source_repository, doc.identity.author)
             if 'source_material' in doc.header:
                 r.require((item['source']['repository'], item['source']['path']) ==
                           (doc.header['source_repository'], doc.header['source_material']),
@@ -420,7 +480,8 @@ def manifest(source, selections, *, files=()):
             # A whole-container selection retains its complete validation scope.
             review.relationships(doc, finding=source_finding)
             selected_bindings = review.bindings(doc, finding=source_finding)
-        r.require(item.kind != 'C' or anchor in doc.decisions or selection.get('prepared'), 'Select the Claim decision or explicitly prepare the selected mathematical unit.')
+        r.require(item.kind != 'C' or selection.get('prepared') or doc.current is None or anchor in doc.decisions,
+                  'Select the Claim decision or explicitly prepare the selected mathematical unit.')
         r.require(item.kind != 'U' or anchor == item.anchor or selection.get('prepared'),
                   'Select the source unit anchor or explicitly adapt its actual older unit scope.')
         if not raw_source:
@@ -486,7 +547,7 @@ def _available_units(repo, requested):
             source, local = item['source'], item['local']
             if (source.get('repository'), source.get('path')) not in requested:
                 continue
-            key = source['repository'], source['path'], source['revision'], source.get('anchor', '')
+            key = source['repository'], source['path'], source['revision'], source.get('anchor', ''), item['scope']
             r.safe_path(repo.root, local['path'])
             destination = local['path'], local.get('anchor', '')
             r.require(key not in result or result[key] == destination,
@@ -527,6 +588,10 @@ def _unit_text(raw, choice):
               'Supply a positive explicit receiving unit number.')
     prepared = {key:value for key,value in choice.items() if key in {'edits', 'text'}}
     return links.edit_text(raw, prepared, context='unit') if prepared else raw
+
+
+def _unit_repository(item):
+    return item['selection'].get('local', {}).get('source_repository', item['source']['repository'])
 
 
 def acquire(repo, source_root, selections, *, revision, instruction, source_repository, correspondence,
@@ -575,11 +640,13 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                       'A new bibliography work needs its actual supplied entry; otherwise choose an adequate existing work explicitly.')
             unit_choice = item['selection'].get('unit')
             r.require(isinstance(unit_choice, dict), 'Choose the actual receiving U position.')
+            external.repository(repo, _unit_repository(item))
             unit_choice = {**unit_choice, **item['selection'].get('prepared', {})}
             item['unit_text'] = _unit_text(prepared[item['doc'].path].decode('utf-8-sig'), unit_choice)
             unit_header, _ = documents.header_values(item['unit_text'])
-            r.require(unit_header['author'] == item['doc'].identity.author,
-                      'Prepared U content retains its actual single original human author.')
+            item['unit_author'] = unit_header['author']
+            item['unit_human'] = _unit_author(repo, item['source'], _unit_repository(item), item['unit_author'],
+                                              correspondence=source.author_mapping)
             r.require(key not in choices or choices[key] == choice, 'Conflicting bibliography choices for '+key)
             choices[key] = choice
         bibliography_file = repo.root/bib.BIB
@@ -599,7 +666,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         import copy
         repo = copy.copy(repo)
         snapshot = _Preparation(repo.root,
-                                [names.SourceUnitIdentity(item['doc'].identity.author, item['source']['repository'],
+                                [names.SourceUnitIdentity(item['unit_author'], _unit_repository(item),
                                      chosen_works[item['doc'].identity.source_key], item['selection']['unit']['number'])
                                  for item in plan if item['doc'].identity.kind == 'U'],
                                 metadata=True)
@@ -615,7 +682,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         from ..materials import discovery
         unit_paths = sorted(p for p in snapshot.names if re.fullmatch(
             r'mathematics/audits/literature/[^/]+/[^/]+_U[0-9]+\.md', p))
-        positions, correspondence = discovery.unit_positions(unit_paths,snapshot.header)
+        positions, _ = discovery.unit_positions(unit_paths,snapshot.header)
         pending, metadata = dict(bibliography_pending), []
         planned_families, planned_positions = {}, {}
         for item in plan:
@@ -629,10 +696,9 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                 choice = item['selection'].get('unit')
                 number = choice['number']
                 prefix = 'mathematics/audits/literature/' + key + '/'
-                receiving = names.SourceUnitIdentity(ident.author, origin['repository'], key, number)
+                receiving_repository = _unit_repository(item)
+                receiving = names.SourceUnitIdentity(item['unit_author'], receiving_repository, key, number)
                 namespace = names.namespace(receiving)
-                family = origin['repository'], origin['path']
-                established = (namespace, family) in correspondence
                 for _, prior in operations(repo):
                     for acquired in prior['items']:
                         if (isinstance(acquired, dict) and acquired.get('kind') == 'U'
@@ -640,20 +706,17 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                                 and acquired['source'].get('repository') == origin['repository']
                                 and isinstance(acquired['source'].get('path'), str)
                                 and acquired['source']['path'] == origin['path']
+                                and acquired['source'].get('anchor', '') == origin.get('anchor', '')
+                                and acquired.get('scope') == item['scope']
                                 and names.parse(acquired['local']['path']).source_key == key):
-                            r.require(names.parse(acquired['local']['path']).number == number,
+                            prior_ident = names.parse(acquired['local']['path'])
+                            r.require(names.namespace(prior_ident) == namespace and prior_ident.number == number,
                                       'Reuse the established receiving position of this original U family.')
                             established = True
-                r.require((namespace, family) not in correspondence or correspondence[(namespace, family)] == number,
-                          'Keep the existing local position of this original U family.')
-                r.require((namespace, number) not in positions or positions[(namespace, number)] == family,
-                          'Conflicting local U position: '+key+f'-U{number:03d}; choose a free explicit position.')
-                positions[(namespace, number)] = family
-                correspondence[(namespace, family)] = number
-                exact = (origin['repository'], origin['path'], origin['revision'], origin.get('anchor',''))
+                exact = (origin['repository'], origin['path'], origin['revision'], origin.get('anchor',''), item['scope'])
                 if exact not in available:
                     for acquired, local in _available_units(repo, {exact[:2]}).items(): available.setdefault(acquired, local)
-                known = [(k, v) for k, v in available.items() if k == (origin['repository'], origin['path'], origin['revision'], origin.get('anchor',''))]
+                known = [(k, v) for k, v in available.items() if k == exact]
                 if known:
                     target = known[-1][1][0]
                     r.require(names.parse(target).source_key == key and names.parse(target).number == number,
@@ -692,14 +755,16 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                 target = 'mathematics/' + HOMES[item['kind']] + '/' + local.name + ('/readme.md' if item['kind'] == 'J' else '.md')
                 local_anchor = choice.get('anchor', item['anchor'])
             local_ident = names.parse(target)
-            family_key = names.namespace(local_ident), origin['repository'], ident.family, origin.get('anchor', '')
+            family_key = (names.namespace(local_ident), origin['repository'], ident.family, origin.get('anchor', ''),
+                          item['scope'] if ident.kind == 'U' else None)
             position_key = names.namespace(local_ident), local_ident.number
             r.require(family_key not in planned_families or planned_families[family_key] == local_ident.number,
                       'One original family must retain one receiving position across selected versions.')
             if position_key in planned_positions and planned_positions[position_key] != family_key:
                 peers = [other for other in plan if other.get('target') == target]
                 r.require(item['selection'].get('prepared') and peers
-                          and all(other['source']['author'] == origin['author']
+                          and all((other['unit_human'] == item['unit_human'] if ident.kind == 'U'
+                                   else other['source']['author'] == origin['author'])
                                   and other['selection'].get('prepared') for other in peers),
                           'A combination needs the same single author and complete prepared receiving text.')
             item['established'] = established or family_key in planned_families
@@ -709,7 +774,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
             if item['selection'].get('prepared'):
                 item['prepared_text'] = links.edit_text(doc.text, item['selection']['prepared'], context='intake')
                 prepared_header, _ = documents.header_values(item['prepared_text'])
-                receiving_author = origin['author'] if item['kind'] in 'CTRLJ' else doc.identity.author
+                receiving_author = origin['author'] if item['kind'] in 'CTRLJ' else item['unit_author']
                 r.require(prepared_header['author'] in {doc.identity.author, receiving_author},
                           'Prepared intake content must retain its original single human author.')
                 r.require(prepared_header.get('source_repository', origin['repository']) in
@@ -727,6 +792,20 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                               and names.parse(destination) == local_ident,
                               'A native-file arrangement stays within its actual receiving J group.')
                 item['file_targets'][path] = destination
+        for target in {item['target'] for item in plan if item['kind'] == 'U'}:
+            ident = names.parse(target)
+            if (names.namespace(ident), ident.number) not in positions:
+                continue
+            # Only this occupied receiving object needs its actual accounts.
+            # Header omissions and equal receiving paths prove no origin match.
+            previous = documents.parse(target, snapshot.bytes(target).decode('utf-8-sig'))
+            existing = material_info(repo, previous)['acquisitions']
+            peers = [item for item in plan if item['target'] == target]
+            r.require({(row['source']['repository'], row['source']['path']) for row in existing} <=
+                      {(item['source']['repository'], item['source']['path']) for item in peers},
+                      'Conflicting local U position: selected originals differ from the occupied receiving unit.')
+            for item in peers:
+                item['established'] = True
         combined = {target for target in (item['target'] for item in plan) if len({(item['source']['repository'], item['source']['path'])
                     for item in plan if item['target'] == target}) > 1}
         for item in plan:
@@ -747,7 +826,7 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     if path == doc.path:
                         actual_header, _ = documents.header_values(content)
                         body = content[re.search(r'\r?\n---\r?\n', content).end():]
-                        header = {'author': origin['author'] if item['kind'] in 'CTRLJ' else doc.identity.author}
+                        header = {'author': origin['author'] if item['kind'] in 'CTRLJ' else item['unit_author']}
                         header['source_repository'] = names.parse(target).source_repository
                         if target not in combined:
                             header['source_material'] = origin['path']
@@ -775,6 +854,8 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
         def validate(read, view):
             for item, planned in zip(metadata, plan):
                 document = documents.parse(item['local']['path'], read(item['local']['path']))
+                if document.identity.kind == 'U':
+                    material_info(view, document, read=read)
                 relatives = snapshot.family(document.identity) if document.identity.kind == 'T' else ()
                 documents.check(document, read, paths=set(relatives) | set(batch.pending),
                                 source_info=lambda doc: material_info(view, doc, read=read))
@@ -800,7 +881,9 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                 owner = next((item for item in plan if path in {pair['local'] for row in metadata if row['local']['path']==item['target'] for pair in row['files']}),None)
                 r.require(owner is not None, 'Acquired original collision: ' + path)
                 if owner['kind'] == 'U':
-                    r.require(owner['established'] and owner['selection']['unit'].get('expected') == original.decode('utf-8-sig'),
+                    peers = [item for item in plan if item['target'] == path]
+                    r.require(all(item['established'] and item['selection']['unit'].get('expected') == original.decode('utf-8-sig')
+                                  for item in peers),
                               'Rolling U replacement needs its same original and exact expected receiving text: ' + path)
                     continue
                 r.require(refresh_j and owner['doc'].identity.kind=='J',

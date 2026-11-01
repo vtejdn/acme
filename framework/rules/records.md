@@ -72,8 +72,11 @@ Retain useful alternate proofs, counterexamples, failures, native inputs and act
 Check mathematical correctness and claimed status at the intended use: conjectures, conditional conclusions, partial evidence, useful failures and review gaps retain their actual limits rather than becoming established results through format adaptation.
 For a substantive error or insufficient support, perform necessary checks within current authority or retain the concrete limitation; a failed argument may be received as useful failure evidence, not as a correct proof.
 Using a result as established support or making a new adoption retains its applicable evidence and review duties, without a universal reproof or new independent review of all source results merely for receipt.
-For external intake, adapt prose, classification, layout, numbering and references to current receiving rules without byte equality or a whole-source-container requirement.
-Same-author transfer instead follows the [minimal-adaptation and duplicate-comparison boundary](#same-author-transfer-and-duplicate-comparison).
+First reuse adequate responsible material by reference; when receipt is needed, preserve sufficient conforming mathematical prose by default through direct reuse or copying.
+Adapt only concrete differences needed for the receiving result to meet current local rules, such as identity, classification, numbering, paths, anchors, references and necessary structural joins.
+Neither style, length, preferred headings nor general organizational convenience justifies rewriting existing statements or proofs; complete prepared text supplies input, not additional content authority.
+Necessary adaptation preserves the mathematics and source/review facts without requiring byte equality or whole-source-container retention; a tool's erroneous refusal does not make conforming mathematics nonconforming.
+Same-author transfer retains its specific [minimal-adaptation and duplicate-comparison boundary](#same-author-transfer-and-duplicate-comparison).
 Confirmed sufficient local content is reused by exact reference; partial duplication retains its unique part, and unresolved equivalence remains unresolved.
 External intake may split or combine one author's units with complete necessary per-unit source correspondence; a synthesis of different authors belongs to its actual single synthesizing human with citations.
 An available older source can be adapted without changing its repository or fabricating an assessment, review, argument or missing evidence.
@@ -160,14 +163,15 @@ The [allocation state](identity.md#allocation-and-concurrency) preserves the nex
 A D address remains stable during use and becomes reusable only after its necessary content is adequately retained at responsible homes, actual consumers are updated and the redundant draft is retired.
 Already retained mathematics and setup-only residue require no new fixed successor.
 Reuse carries no earlier draft authority.
-A materially different statement or question gets an appropriate new C/T family; another proof of the unchanged statement stays with that family.
+Choose a C/T/R/L/J family by its core mathematical topic under the common boundary below, rather than issuing a new family for every changed statement or hypothesis.
 
 Physical v1, v2 and onward identify actual fixed mathematical material.
-A substantive revision retains the old file and creates the next version.
+A substantive research variant that genuinely needs separate retention uses the next appropriate version; ordinary maintenance and pure logical repair follow the in-place boundary below.
 An unchanged-mathematics assessment, proof selection or lifecycle decision is appended within the responsible C/T material; it does not create a metadata-only version.
 Retained fixed decisions remain at their exact anchors, preserving actual mathematical and evidence selections and currently effective authority.
 Purely administrative or authorization history may be reduced under the [common content decision](#substantive-material-retention), without a new mathematical version or alteration of necessary mathematics and evidence.
 The latest numeric main material supplies the family entrance, whose explicit Current selector may choose an older decision.
+An unselected C entrance remains unselected; only T requires a Current decision.
 File timestamps, an index row and an alternative proof do not make that choice.
 
 Rolling U uses `mathematics/audits/literature/SourceKey/Author_U001.md`, retaining independent source/author numbering, the inspected edition, precise passage and actual checking limits.
@@ -195,6 +199,38 @@ Research paths reject protected directory names `.git`, `.codex` and `.agents` w
 The resolved path must remain outside protected metadata and the physical PDF store.
 The declared `mathematics/literature/pdf/` source mount is read-only source access, not mathematical publication or intake storage.
 Approved intake uses its explicit fixed source/file scope, not arbitrary recursive discovery.
+
+### Mathematical topic families and necessary versions
+
+A family follows one identifiable core mathematical topic, not an entire field, research line, session, title, completion state, review round or verbatim statement.
+The agent judges actual objects, questions and use without a topic classifier or family-matching register.
+Keep the existing author, origin, kind and line namespaces separate; a common topic neither merges kinds nor aligns their numbers with T.
+Within a core topic, retain genuinely distinct statement variants, hypotheses, conclusions, proof approaches or evidence in appropriate versions instead of automatically issuing another family.
+Create a new family when the work turns to another core question or independently responsible object, or when author/origin/kind boundaries require it.
+Each version states its own exact mathematics, scope and evidence; a special case cannot complete a broader goal, and neither inputs nor review coverage pass automatically between versions.
+T follows the same core research goal and authorized contract evolution; lifecycle alone uses decisions, while ordinary/joint type and effective E stops and allowances remain unchanged.
+C follows a core mathematical object and proposition problem; R follows an actual review object and checking topic, preserving genuinely new independent evidence where necessary.
+L follows an exploration, comparison, synthesis or failure mechanism; J follows a specific computation, method or data/certificate construction.
+C/T/R/L keep their existing vN files and revise publication interface; J keeps its numbered group with optional versions/vN/ for truly necessary distinct programs, inputs and checking evidence, without a vN main directory, compulsory v1 or per-run version.
+The responsible J README identifies actual versions and scopes; a versions directory does not make every native child immutable.
+Existing families are not automatically merged, renumbered or migrated by this rule.
+
+### In-place maintenance and logical repair
+
+Meaning-preserving wording, layout, same-object locators and removal of retired fields or useless process text may be maintained in current or retained older materials under actual author authority.
+A pure logical error in C/R/L reasoning or J's implementation of its existing mathematical objective may be repaired in place, including necessary reasoning or auxiliary-domain corrections, without a new family, physical version, decision, review anchor or correction log merely because an error occurred.
+This includes retained older C and historical materials; the latest-only restriction governs creating new research versions or actual current adoption, not ordinary maintenance or pure repair.
+Do not weaken the main statement, change its actual hypotheses/object/goal or replace its conclusion and call that pure repair; genuine research variants retain their version, adoption and authority obligations.
+Check repaired reasoning, mathematical interfaces, dependencies and actual consumers, and for J check affected algorithm, inputs, finite scope, output and verifier relationships without shrinking the problem or relaxing tolerances to claim success.
+Reuse sufficient unaffected review; changed inputs are not retrospectively covered by an old finding, and applicable formal or independent rechecking still applies.
+If repair fails, seek separately sufficient support; without it remove unsupported reliance and retain truthful unresolved assessment rather than equating proof failure with refutation.
+Preserve useful obstructions, counterexamples, failed mechanisms and remaining possibilities in adequate existing C/R/J/L, adding L only for necessary substantive exploration or synthesis.
+Once necessary content and consumers are coherent, redundant erroneous text or containers may be removed without a failure archive, per-error ledger record, dated correction stream, compatibility copy or recovery receipt.
+Keep still-necessary original arguments, actual source/inspection facts and historical adoption scope at sufficient responsible homes; fixed Git inputs and original acquisition facts are not rewritten.
+Do not copy the same repair into every older physical file or use Git history alone as a substitute for mathematical evidence still needed now.
+Actual new decisions and genuinely performed formal reviews keep their real time and evidence; pure maintenance creates neither an event nor a timestamp.
+R's actual finding, bindings, relationship, checked repaired inputs and limits follow the [rolling review-repair rule](proof-audits.md#rolling-review-repair), without pretending an earlier self-review was independent or covered a later repair.
+Existing maintenance-stage isolation, participating-author confirmation, source authorship and Task/E authority remain in force.
 
 ## Acquired inputs and local revisions
 
@@ -224,7 +260,7 @@ The actual author, mathematical revision, review scope and evidence obligations 
 
 ## Time and human attribution
 
-New C/T decisions, substantive S decisions or recorded updates, and operator, approval, intake and correction acts use their actual UTC minute timestamp under the [new-event rule](workflow.md#new-record-timestamps).
+New C/T decisions, substantive S decisions or recorded updates, and actual operator, approval, intake and formally performed review acts use their real UTC minute under the [new-event rule](workflow.md#new-record-timestamps); in-place repair creates no compulsory correction event or dated stream.
 A genuinely added C/T decision requires `YYYY-MM-DDTHH:MM`, including when it assesses older mathematics; a year, month or date alone, a value with `Z`, an offset, seconds or fractions is invalid for it.
 A timestamp is neither an identity nor a mathematical version.
 Keep genuinely known year/month/date facts at their calendar precision for older mathematics and reviews, including historical reading or genuine reselection of an existing C/T decision; never invent a creation time, transition date or reviewer to fill a field.
@@ -244,6 +280,8 @@ Human registration does not register agents or models; review arrangement record
 | Fixed C, R, L, U and J materials in their responsible homes | C statements and substantial arguments; R formal agent reviews of all relationships; L exploration and synthesis; U source inspection; J computations with exact scope and group identity |
 | Rolling S/D materials | Routes and continuing draft mathematics; meaningful earlier findings and received originals retain their preservation boundaries |
 | `mathematics/maintenance.md` | Rolling coordination of unresolved conformity issues and their next maintenance action, without mathematical assessments or evidence ownership |
+| `mathematics/erratum.md` | Concrete substantive mathematical issues and doubts, with affected-author confirmation and actual evidence at its responsible home |
+| `mathematics/messages.md` | Shared mathematical correspondence, with recipient handling and human-authorized sender archives |
 | `intake/<initiator>/*.json` | Actual operation time, recorder, instruction, original/transport provenance, scope and outcome |
 | `execution/Author_E_SERIAL.md` | Stable persistent local boundary for an ordinary Task family actually selected for execution, with its exact Task decision and effective stops and limits under the [execution rules](execution.md#responsibility-and-version-boundary); a joint T has no E |
 | Claim, Task and strategy indexes | Rebuildable navigation derived from authored materials and actual acquisition provenance |
@@ -340,7 +378,7 @@ Source Task completion grants no local execution authority.
 Non-ACME literature remains external-source evidence under the source-audit rules.
 A receiver records its own judgments and feedback at its own material, rather than changing the original author's findings.
 
-Mathematical changes to a fixed file create the next material version and an actual assessment at that scope.
+Genuinely distinct research content follows the [topic-family and version boundary](#mathematical-topic-families-and-necessary-versions); ordinary maintenance and pure logical repair may remain in place with actual necessary checking.
 A candidate proof remains a draft until the required review; an unresolved condition remains explicit.
 An unaffected old proof may still support the unchanged Claim.
 A changed completed Task contract requires explicit reopening or a new applicable completion decision.
@@ -349,8 +387,94 @@ Preserve the actual self-review/independent-review relationship; a command does 
 
 Apply the [result-organization policy](claims.md#lemma-extraction-and-approval): internal Claim organization and proof repair within an assigned scope need no additional approval.
 Main-theorem designation, objective changes and execution retain their actual authorization boundaries.
-Maintain all affected direct consumers and meaningful history, then update the affected navigation through ordinary bounded edits or optional rendering.
+Maintain actual affected consumers and necessary evidence, then update navigation from responsible declarations; navigation alone requires no restoration or availability check of native evidence payloads.
 Harmless shared-material maintenance causes no publication cascade.
+
+## Shared mathematical coordination
+
+Use three distinct shared rolling files at their [responsible locations](organization.md#material-maintenance-worklist): maintenance for conformity, erratum for substantive mathematical issues, and messages for ideas, methods and useful progress notices.
+Register an issue once according to its actual nature, retaining necessary evidence and unresolved affected-author portions when correcting its location, without a fourth common issue board.
+These files have no material number or single mathematical author header; entries, replies and confirmations identify the actual human the agent represents under the existing identity rules.
+A signature, display name or write argument does not establish that representation or permission to alter another author's mathematics.
+Keep exact material/version or source locators, the concrete issue or addressee, necessary grounds and remaining action, without item IDs, agent/model registration, fixed machine syntax, receipt or new status enumeration.
+Maintenance and erratum require no per-item date; messages retain their true sending time.
+Complete mathematics, sources, formal checking, assessments and decisions remain in adequate C/R/L/U/J/D or other responsible materials, linked rather than owned by these coordination files.
+An ordinary question or message need not create R; an actual review retains its existing evidence and relationship obligations.
+
+### Mathematical issues and reliance
+
+Record concrete gaps, incorrect hypotheses, dependency failures or source misunderstandings in `mathematics/erratum.md`, distinguishing confirmed defects from doubts and the inspected step from an entire proof or refutation.
+Name the reporting human and affected material's actual author, with the precise version, location, evidence and necessary remaining check.
+Cross-author findings and corrections stay in the contributor's own responsible material; a report authorizes no change to another author's body, Current assessment or decision history.
+After correction or sufficient confirmation of a false alarm, the affected participating author's agent confirms and clears that author's resolved portion, reusing still-applicable evidence; received-material local disposition follows the exception below.
+Retain other authors' consumers, unresolved common context, failed, unverified and concurrent portions; withdrawal, reading, disagreement or a new PASS alone does not resolve them.
+Required mathematical versions, assessments and correction or independent review precede cleanup; an erratum entry alone neither requires a new R nor invokes all three conformity-maintenance stages.
+Before using an argument or established input, or completing a Task from it, inspect applicable erratum for the selected material, physical version and use, including relevant other-author inputs even when opening C directly.
+An unresolved defect in the sole supporting argument cannot be bypassed by old proved text; retain the consumer's actual unresolved obligation or use separately sufficient support.
+Do not automatically apply an old objection to a new version or infer resolution from elapsed time, an empty list or a later check.
+
+### Receiving-side local disposition
+
+When an external material's true original author does not participate in this receiving repository, the actually responsible receiving human's agent may confirm and clear a sufficiently resolved local maintenance/erratum portion within its current assignment and authority.
+Reuse adequate acceptance or independently confirmed false-alarm evidence without waiting for the external author to register, log in or approve, inventing same-human correspondence, or adding a custody/participant register.
+Conformity repair still requires the three stages and their context isolation; a repairer's self-check cannot close its own repair, and mathematical erratum keeps applicable correction and independent rechecking duties.
+This includes an accepted authorized locator repair or a sufficiently confirmed false alarm needing no body edit, without a fourth acceptance stage or disposition receipt.
+State the receiving human, actual local object and conclusion truthfully; do not claim the original author confirmed, changed a historical opinion or performed a different review.
+Retain real continuing objections, other participants' consumers, unresolved common context and concurrent additions; withdrawal, silence or deciding not to use a result is not sufficient resolution.
+This exception disposes only of local coordination, changing neither the external original, source authorship, Current/decisions, acquisition facts nor another author's editing rights, and never authorizes message deletion or archive handling.
+An actual participating original author retains author-side confirmation; missing local_human correspondence or a delayed reply does not establish nonparticipation, and unknown participation leaves the necessary portion pending clarification.
+
+### Mathematical messages
+
+Within existing research authority, an agent may send useful mathematical suggestions or progress notices, including at the human author's request, selecting actual collaborators and scope without scanning all Tasks or authors.
+Put each new message and each independent reply at the top of `mathematics/messages.md`, newest sending time first; identify the actual subject, sender, addressee, any agent authorship explanation and necessary reply or material locator.
+Use actual UTC minutes `YYYY-MM-DDTHH:MM` for new messages, preserving known sending order within a minute and the true precision or unknown time of old messages without invented history.
+Use existing unique Markdown anchors only when precise reply or archive links need them, without a message-number system.
+Keep agent-written messages concise and readable: explain relevance, key result, conditions, limits, evidence and any actual request, using the applicable [mathematical expression](writing.md#general-mathematical-exposition) and [author choices](preferences.md#selection-and-scope).
+This invokes no manuscript project, citation.md, build or formal review merely for communication, and an unchecked suggestion must not claim proof or independent verification.
+The recipient reads, judges, optionally replies or adopts, and may finish handling without accepting the suggestion, replying to every message or recording a read/refusal receipt.
+Replies, supplements and corrections are separately attributed new messages, preserving the old sender's original meaning and then-known limits.
+Recipient handling cannot delete or rewrite the sender's original, its sender/addressee information or another recipient's unresolved request; maintain only one's own necessary follow-up notes.
+One multi-recipient original stays shared; a reply, one completed Task or one recipient's handling does not establish that all recipients are finished.
+Move a substantive issue to erratum with its evidence and unresolved affected parties rather than treating it as disposable read correspondence.
+Messages change no Task/E, assessment or authority; actual adoption and substantive retention follow their responsible rules.
+Native harness communication remains sufficient for immediate coordination when available; no notification service, message writer or parser is required.
+
+For example, the following is an optional inert mail layout, not a sent message or required schema:
+
+```markdown
+### A possible reduction for Bob's estimate
+From: Alice, written by her agent
+To: Bob
+Sent: 2026-11-01T05:00 UTC
+
+Your estimate may reduce to the compact case if the parameter is positive.
+This is a tentative reduction; the endpoint and hypothesis matching remain unchecked.
+Would this conditional reduction help your current argument?
+```
+
+### Author message archives
+
+Keep original messages in the shared file until the sending human author authorizes their selected archive at `profiles/<human>/message-archive.md`.
+After a genuinely completed own Task with its applicable completion decision, prepare the specific related own messages and archive destination for that human's confirmation; reuse sufficient completion evidence without repeating the Task review.
+A direct human instruction to archive specified own messages needs no Task completion, and already explicit applicable scope or conditional authorization needs no repeated approval.
+Execution stop, a completed word, session end, elapsed time, reading, silence or the agent's judgment of usefulness supplies no archive authorization.
+Clarify only a decisive remaining scope or authority gap, preserving multi-Task, other-sender and unselected portions while completing independently authorized work.
+Judge sender ownership message by message: a reply belongs to its own sender, not to the original sender's whole discussion, and receiving a message grants no right to move its shared original.
+An explicit request for a personal copy of received content retains that distinct scope without removing the other sender's shared message.
+
+Archive the complete subject, sender/addressee information, agent explanation, original time, body, formulas, quotations, uncertainty and then-known conclusions without summarizing, polishing or changing attribution.
+Keep original sending-time order, including known order within a minute; do not add an archive date or fabricate missing sending history.
+Only relocate necessary document-relative links to preserve the same actual object, physical version, anchor and reply relationship, inspecting affected consumers without reformatting the original mathematics or replacing it with a later result.
+Use actual Markdown locators and expected text; preserve existing archives, avoid appending the same saved message twice and report real conflicts without overwriting or a permanent old/new address table.
+Where a selected message still has unhandled recipients or requests, its authorized complete original may move to a readable archive only with a precise short link and concrete remaining request kept in the shared file.
+The short entrance is temporary coordination for that unresolved use, not a duplicate body, read registry, evidence account or permanent move receipt.
+Recipients may handle their own follow-up or short-entrance portion, preserving other recipients and concurrent additions; remove the entrance only when its actual unresolved purpose is finished, without altering the archived original or clearing maintenance/erratum.
+Confirm that the archive and necessary links are actually saved and usable before removing shared originals; on failure, changed expected input or unavailable necessary entrances, preserve source messages and report the unfinished scope.
+Reread current originals and archives before retrying, preserving competing edits and already saved identical messages through ordinary editing, publication protection and native Git rather than a new cross-file transaction service.
+The archive retains the original shared visibility; a private choice cannot hide the sole original still needed by collaborators or justify a public link to private storage.
+Archives are historical correspondence, not policy, inboxes, current assessments or formal review, and are not automatically read as startup or independent-review context.
+Useful mathematics stays in its actual contributor's adequate responsible material; do not require fixed materials for every undeveloped idea or archive cleared maintenance/erratum as mail.
 
 <a id="local-material-maintenance"></a>
 ## Local mathematical material inspection, repair and acceptance
@@ -393,16 +517,18 @@ If the issue appears unfounded or cannot be repaired within current authority or
 
 Independently inspect the original issue, applicable rules and requirements, actual repair and necessary affected materials.
 Do not combine acceptance with material repair; contributing a substantive repair makes the agent ineligible to accept that contribution independently.
-The acceptance assignment includes authorization to remove the corresponding accepted items unless the human explicitly limits cleanup.
-An independently confirmed false alarm may also be removed, explaining the judgment in the normal reply without an unnecessary repair or a false-alarm archive.
+The acceptance assignment includes cleanup of the accepted portions belonging to the human represented by the agent, unless the human explicitly limits it; the repairer's self-check never supplies this acceptance.
+For another participating author's material, retain necessary acceptance results and locations for that author's agent to confirm and clear, without another full acceptance stage when the evidence remains sufficient; a nonparticipating external original uses [receiving-side local disposition](#receiving-side-local-disposition).
+An independently confirmed false alarm follows the same affected-author confirmation boundary, with the judgment explained in the normal reply rather than an unnecessary repair or false-alarm archive.
 For a failure, retain the specific defect, rule grounds and affected scope, and add a concrete new finding when necessary without repairing the materials yourself.
-Partial acceptance clears only its accepted portion; retain unrepaired, unaccepted, failed, unrelated, out-of-scope and concurrently added items and necessary unchecked continuation scope.
+Partial acceptance clears only its accepted and author-confirmed portion; retain unrepaired, unaccepted, failed, unrelated, out-of-scope, other-author, unknown-author and concurrently added items and necessary unchecked continuation scope.
+For a shared issue, retain common necessary context and each other author's unresolved material portion; truly authorless navigation or registration follows its existing shared administrative authority without an invented author.
 Return the actual acceptance result, cleanup and limits without claiming that stage isolation alone establishes an independently reviewed proof.
 
 ### Sole rolling worklist and current edits
 
 Use `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), creating it only when an actual issue or necessary continuation scope needs it.
-Keep only a material and title/anchor locator, concrete issue and rule grounds, affected scope, current next action and necessary repair references or unfinished reason, in the repository's actual document language.
+Keep only a material and title/anchor locator, concrete issue and rule grounds, affected scope, actual represented human, affected material author, current next action and necessary repair references or unfinished reason, in the repository's actual document language.
 No dedicated item number, discovery timestamp, owner enumeration, fixed schema, per-file PASS list or complete activity log is required.
 The worklist coordinates outstanding conformity work; it does not mirror C/T assessments, proof gaps, review conclusions or effective execution conditions, and an ordinary dependency update creates no item automatically.
 An actual conformity issue confirmed within ordinary authorized work may be added to the same worklist without launching a whole-library inspection.

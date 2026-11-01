@@ -97,8 +97,8 @@ Record direct reading versus secondary reporting, source access limitations, edi
 Do not infer an independent proof check from the presence of a theorem in a published source.
 Framework source reviews concern agent inspection; an independent classification requires the separate isolated mathematical context in the [review arrangements](proof-audits.md#review-arrangements), while the source author's assertions and human instructions remain distinct facts.
 
-When a source unit supports a [goal](tasks.md), route, or project claim, link the relevant IDs and say what the unit supplies.
-Identify limitations and conditions it does not supply.
+U owns source mathematics, inspected editions, actual checks and general applicability limits; the consuming Task, route or Claim owns its adoption, local hypothesis matching and remaining obligations.
+Necessary mathematical links remain useful, without a mandatory consumer list or a U update merely because another consumer is added.
 If a gap or misquotation is found, record the failed implication, correct the unit, and reassess affected claims and audits downstream.
 
 <a id="accepted-external-inputs"></a>
