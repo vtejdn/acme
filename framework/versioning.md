@@ -72,12 +72,24 @@ One explicit upgrade assignment covers ordinary retrieval, agent-selected adapta
    Select replacements and bounded merges from the actual affected files and their local responsibilities; a common file path alone does not authorize overwriting its locally maintained content.
    Preserve the actual named or unnamed configuration, human identities, allocation bounds, profiles, bibliography, source holdings, mathematics, manuscripts and effective Task/E conditions, without initializing empty state over them.
    Inspect mixed README, AGENTS, ignore and License contents before merging; retire a framework file only after judging its local role and necessary consumers, preserving authorship, original-source facts and actual decisions/review scope under existing rules.
+   Read each affected publication page and its necessary entrances to determine whether it remains an example, presents local results or contains mixed content; filename, directory and upstream distribution role do not determine replacement.
+   Preserve user-authored results, attribution, publication links and chosen page entrances, even when the page remains at `user-manual/publication-example.md`.
+   Apply only necessary bounded framework adaptations within existing authority, retaining local content and entrance intent rather than restoring upstream example prose or resetting a publication entrance to an example.
+   Unchanged examples retain their actual purpose and authorized maintenance scope; this does not freeze the entire `user-manual/` directory.
+   Direct overwrites used when copying framework files into the blank official source do not govern ordinary research-repository upgrades.
    Accompanying human-manual and request-guide maintenance covers necessary links, version literals and comparable mechanical changes; body editing follows its actual separate human-document assignment.
 4. Complete adaptation and checks at the affected scope before marking the target installed version or reporting success, and verify the final version metadata, files and required migrations agree.
    On failure restore this operation's affected changes while preserving foreign work; incomplete restoration requires a truthful state and remaining-limit report rather than a completed-upgrade claim.
    Preserve any still-needed recovery content before cleanup or handoff; a handoff cannot depend on recovery files held only in `.tmp/`.
    Reread newly applicable rules before affected work continues, preserving current assignment, stopped conditions and allowances; upgrading selects or resumes no research.
-   Report actual from/to versions, target commit, necessary adaptations, checks and remaining limitations to the human author in the normal response, then clean owned temporary work after its use and necessary diagnostics.
+5. In an actual multi-author shared Git repository, commit and push the verified upgrade and necessary adaptations to its actual agreed collaboration remote and branch through the [existing Git delivery action](agent-actions.md#commit-or-push-requested-work), then confirm the remote result.
+   This applies both to an upgrade before starting the original task and to a separately assigned upgrade, without a joint Task or another routine commit/push approval.
+   Reuse existing identity, serial index, outgoing-scope, integration and delivery checks, limiting the batch to this upgrade and its necessary adaptations while preserving unrelated work and staged contents.
+   Honor explicit local-only, offline, no-push or postponed-synchronization instructions; without Git or a collaboration remote, initialize neither Git nor a remote for this step.
+   On a connection, permission or integration failure, report local installation, any saved commit and unfinished push distinctly under the existing failure rules, continuing independently supported authorized work without claiming remote success.
+   Upgrade delivery neither resumes research nor supplies unrelated publication authority.
+
+After applicable delivery, report actual from/to versions, target commit, necessary adaptations, checks, actual Git delivery result and remaining limitations to the human author, then clean owned temporary work after its use and necessary diagnostics.
 
 Apply the existing connection, [content-retention](rules/records.md#substantive-material-retention), review, [current-rule reading](rules/workflow.md#proportionate-execution) and [temporary-cleanup](rules/organization.md#temporary-storage) duties at their actual scope.
 Ordinary agent reading, retrieval and prepared file operations suffice; this procedure requires no dedicated skill, mandatory installer, automatic semantic merger or generic migration engine.
@@ -99,9 +111,15 @@ At the [start of a work round](agent-actions.md#start-a-work-round), read the re
 The absent setting defaults to true; only Boolean false disables the check, and an invalid configured value is reported without interpreting it as permission.
 An explicit offline instruction also prevents the request.
 Use one bounded metadata request on a new UTC day; a same-day success, unavailable result or interrupted attempt is reused without an automatic retry.
-An explicit human recheck may retry that day.
+An explicit human recheck or the permission-granted recheck below may retry that day.
 Subagents reuse the responsible main agent's daily result.
 The bounded public HTTPS read needs no GitHub CLI authentication, Git remote or optional local skill; the agent applies actual network permissions and the [connection responsibilities](rules/identity.md#git-and-github-connection-checks).
+
+If execution permissions deny an enabled, non-offline official metadata read, request the minimum network permission needed for that read through the host's normal permission mechanism.
+After permission is granted, explicitly recheck once, using the existing `--force` if today's cached `unavailable` result would suppress that request.
+If permission is not granted or the recheck fails, report the actual limitation and continue independent authorized work without inferring that no update exists.
+Other same-day calls retain the reuse rule, and offline or disabled settings continue to prevent a request.
+The agent handles permissions; reuse the checker's existing bounded request, cache and concurrency mechanism without script self-elevation or new cache fields.
 
 The ignored repository/framework-update-check.json is a replaceable four-field cache:
 last_attempt_on is the UTC date bucket, result is success or unavailable, latest_version is the version verified by that attempt or null, and notified_version is the last version actually presented to the human or null.

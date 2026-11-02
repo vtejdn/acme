@@ -1,5 +1,6 @@
 """Explicit selected-file byte, view and material-declaration checks."""
 import json
+import os
 from io import BytesIO
 from pathlib import Path, PurePosixPath
 from types import SimpleNamespace
@@ -118,8 +119,24 @@ def check_files(root, selected=(), *, files=None, prepared=None, installed=False
     reader = None
     if typed:
         names = set(context) | set(selected) | {'repository/config.json', 'repository/people.json'}
-        if any(identity.candidate(name)['kind'] in 'STU' for name in typed):
+        if any(identity.candidate(name)['kind'] in 'ST' for name in typed):
             names.update(discovery.candidates(root))
+        for name in typed:
+            item = identity.candidate(name)
+            if item['kind'] != 'U':
+                continue
+            namespace = SimpleNamespace(source_key=item['source_key'], author=item['author'],
+                                        source_repository=item['origin'])
+            prefix = PurePosixPath(name).parent
+            folder = r.safe_path(root, prefix.as_posix())
+            try:
+                with os.scandir(folder) as entries:
+                    for entry in entries:
+                        sibling = (prefix / entry.name).as_posix()
+                        if discovery.unit_namespace(sibling, namespace):
+                            names.add(sibling)
+            except FileNotFoundError:
+                pass
         tree = SimpleNamespace(root=root, names=names, bytes=raw, header=header, json=lambda name: json.loads(raw(name)))
         view = git_views.research_view(tree, require_name=False)
         reader = runtime.Reader(view)

@@ -13,7 +13,12 @@ def views(repo):
     tree = getattr(repo, 'selected_tree', None)
     if isinstance(tree, _Snapshot):
         reader.read = tree.read
-    selected = runtime.entrances(tree.names) if tree is not None else discovery.inventory(repo.root)
+    if tree is not None:
+        candidates = runtime.entrances(tree.names, strict=False)
+        selected = runtime.entrances(tree.existing(candidates) if getattr(tree, 'ref', None) == 'WORKTREE'
+                                     else candidates)
+    else:
+        selected = discovery.inventory(repo.root)
     # Validate discovery collisions, registered original sources and numeric revision ordering.
     discovery.families(selected, reader.read, source_info=reader.source_info)
     fixed = [p for p in selected if reader.document(p).identity.kind in 'CT']

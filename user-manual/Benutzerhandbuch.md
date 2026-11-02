@@ -159,11 +159,11 @@ Mitwirkende im selben Repository können für ein gemeinsames mathematisches Zie
   Erteilen Sie dem Agenten die Berechtigungen, die er zum Lesen und Verwalten der Dateien in diesem Verzeichnis benötigt.
 - Wenn Agenten zugehörige Aufgaben automatisieren, bei denen Zugangsdaten verwendet werden, bewahren Sie Geheimnisse angemessen auf und schließen Sie sie von [Git](git-repository.md#notion-git) aus.
 
-### Ein Manuskript verfassen
+### <a id="manuscript-writing"></a>Ein Manuskript verfassen
 
 In Arbeit.
 
-### Formalisierung in Lean
+### <a id="lean-formalization"></a>Formalisierung in Lean
 
 In Arbeit.
 
@@ -171,7 +171,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.9.0.
+Die aktuelle Version des Rahmenwerks ist 0.9.1.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.
@@ -261,6 +261,7 @@ Abhängig von Ihren Werkzeugen und Einstellungen können außerdem die folgenden
 | <a id="notion-pull"></a>Pull | Änderungen aus einem entfernten Git-Repository abrufen und in die lokale Arbeit integrieren. |
 | <a id="notion-merge"></a>Merge | Änderungen aus einem anderen [Branch](#notion-git-branch) in den aktuellen Git-Branch zusammenführen und dabei widersprüchliche Bearbeitungen bei Bedarf auflösen. |
 | <a id="notion-intake"></a>Übernahme (Intake) | Ausgewählte Forschungsmaterialien aus einem anderen öffentlichen ACME-Repository in das eigene übernehmen und dabei Autorenschaft, Herkunft und Prüfungsgrenzen bewahren. |
+| <a id="notion-import"></a>Import | Eigene ausgewählte Forschungsmaterialien, Manuskripte oder anwendbare persönliche Einstellungen aus einem anderen Ordner oder Repository in den aktuellen Arbeitsbereich übernehmen, dabei die Autorenschaft bewahren und ausreichende vorhandene Materialien wiederverwenden. Benötigte Materialien anderer Autoren werden durch [Übernahme (Intake)](#notion-intake) bezogen. |
 | Zitierschlüssel | Eine kurze Kennung für ein Werk in der Bibliografie, mit der es in Forschungsaufzeichnungen und Manuskripten einheitlich zitiert werden kann. |
 
 ### <a id="material-task"></a>Forschungsaufgabe (Task)

@@ -59,6 +59,8 @@ def operations(repo):
     for path in paths:
         try: source_refs.check_path(path)
         except ValueError: continue
+        if getattr(tree, 'ref', None) == 'WORKTREE' and not any(tree.existing([path])):
+            continue
         try: value = json.loads(r.read_from(repo, path))
         except json.JSONDecodeError: continue
         if not isinstance(value, dict) or not isinstance(value.get('items'), list): continue
@@ -104,8 +106,8 @@ def _recorded_material_path(repo, path):
         r.safe_path(repo.root, path)
 
 
-def validate_operation(repo, path, value, *, read=None, new_selection=False):
-    """Validate recorded facts and original identity, not old scopes in mutable J."""
+def validate_operation(repo, path, value, *, read=None, new_selection=False, historical=False):
+    """Validate facts, keeping historical L scopes separate from current locators."""
     parts = PurePosixPath(path).parts
     r.require(len(parts) == 3 and parts[0] == 'intake' and parts[1] == value['initiator'], 'Intake belongs to its actual initiating human.')
     humans.person(repo, value['initiator']); humans.person(repo, value['recorded_by'])
@@ -144,7 +146,8 @@ def validate_operation(repo, path, value, *, read=None, new_selection=False):
             r.require(unit_humans.get(doc.path, human) == human,
                       'A receiving U combines only one actual human, not matching readable names.')
             unit_humans[doc.path] = human
-        r.require(item.get('scope') and (item['kind'] == 'J' or not local.get('anchor')
+        historical_ledger = historical and not new_selection and item['kind'] == 'L'
+        r.require(item.get('scope') and (item['kind'] == 'J' or historical_ledger or not local.get('anchor')
                   or links.anchor_occurrences(doc.text)[local['anchor']] == 1),
                   'Acquired scope needs one actual local anchor and its description.')
         if item['kind'] == 'C' and doc.current is not None:
@@ -176,7 +179,7 @@ def material_info(repo, document, *, read=None, seen=()):
                 continue
             # A requested original validates its own acquired item, not all
             # unrelated objects acquired in the same historical operation.
-            validate_operation(repo, path, {**operation, 'items': [item]}, read=read)
+            validate_operation(repo, path, {**operation, 'items': [item]}, read=read, historical=True)
             origin = item['source']
             if 'source_material' in document.header:
                 r.require((origin['repository'], origin['path']) ==
@@ -328,7 +331,7 @@ def _unit_author(repo, origin, receiving_repository, name, *, correspondence=())
 
 
 def _origin(source, doc, anchor='', record=None, choice=None):
-    if doc.identity.source_repository and choice == 'current' and doc.identity.kind in 'UR':
+    if doc.identity.source_repository and choice == 'current' and doc.identity.kind in 'CRULJ':
         r.require(record is None, 'Current-origin scope cannot also select an inherited acquisition record.')
         material_info(source.source_view(), doc)
         origin = {'repository': source.transport, 'revision': source.revision,
@@ -500,6 +503,8 @@ def manifest(source, selections, *, files=()):
         r.require(isinstance(records, dict), 'Choose existing acquisition records by their selected source file path.')
         r.require(set(records) <= set(owned) and all(isinstance(value, str) for value in records.values()),
                   'Choose an existing acquisition record only for an actually selected file.')
+        r.require(selection.get('origin') != 'current' or not records,
+                  'Current-origin scope cannot also select an inherited acquisition record.')
         origin = _origin(source, doc, anchor, records.get(path), selection.get('origin'))
         if ((item.kind == 'R' or (item.kind == 'L' and local_kind == 'R') or raw_review)
                 and (origin['repository'], origin['revision'], origin['path']) ==
@@ -511,7 +516,7 @@ def manifest(source, selections, *, files=()):
                 {'path': target.path, 'anchor': target.anchor, 'scope': scope}
                 for finding, target, scope in selected_bindings]
         file_origins = {}
-        if item.kind == 'J' and doc.identity.source_repository:
+        if item.kind == 'J' and doc.identity.source_repository and selection.get('origin') != 'current':
             # Omitted inputs keep their prior acquisition; a group refresh does
             # not attribute every file still present to the newer revision.
             for name in owned:
@@ -523,6 +528,8 @@ def manifest(source, selections, *, files=()):
                           'Selected file belongs to another original J: ' + name)
                 file_origins[name] = (origin['repository'], *original[1:])
         elif item.kind == 'J':
+            # Current selection supplies the entrance and every explicitly
+            # selected child from this fixed snapshot, including new files.
             file_origins = {name: (origin['repository'], name, source.revision, '') for name in owned}
         result.append({'doc': doc, 'kind': local_kind, 'source': origin, 'scope': selection['scope'],
                        'anchor': anchor, 'files': owned, 'file_origins': file_origins, 'selection': selection,

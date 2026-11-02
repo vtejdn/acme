@@ -28,13 +28,14 @@ def contracts(document):
             if role == 'contract' and loc.path == document.path}
 
 
-def validate(document, read, *, paths=(), previous=()):
+def validate(document, read, *, paths=(), previous=(), candidate_paths=None):
     if document.identity.kind != 'T':
         return
     family = [document]
-    for path in paths:
-        if path != document.path and identity.in_namespace(path, family=document.identity):
-            family.append(documents.parse(path, read(path)))
+    siblings = [path for path in paths if path != document.path
+                and identity.in_namespace(path, family=document.identity)]
+    for path in candidate_paths(siblings) if candidate_paths else siblings:
+        family.append(documents.parse(path, read(path)))
     family.extend(previous)
     require(all(doc.task_type == document.task_type for doc in family),
             'Task family type is invariant; every joint version declares task-type joint.')
@@ -51,4 +52,4 @@ def validate(document, read, *, paths=(), previous=()):
                 'The exact parent must be a joint Task without a parent.')
         require(parent.anchor in contracts(target) and links.anchor_occurrences(target.text)[parent.anchor] == 1,
                 'The joint parent must name an exact fixed contract anchor.')
-        validate(target, read, paths=paths)
+        validate(target, read, paths=paths, candidate_paths=candidate_paths)

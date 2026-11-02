@@ -119,12 +119,17 @@ def _check_operations(root, files, changes, moves):
         after = json.loads(changes.get(source, source.read_bytes()))
         r.require(_provenance(before) == _provenance(after),
                   'Prepared operation must preserve original/transport facts, scope, availability and unselected content.')
-        selected = [new for old,new in zip(before['items'], after['items'])
-                    if old != new or _location(root,old['local']['path']) in moves
-                    or _location(root,old['local']['path']) in changes]
-        if selected:
-            destination = moves.get(source, source).relative_to(root).as_posix()
-            acquire.validate_operation(repo, destination, {**after,'items':selected}, read=read)
+        selected = {False: [], True: []}
+        for old,new in zip(before['items'], after['items']):
+            if old != new or _location(root,old['local']['path']) in moves or _location(root,old['local']['path']) in changes:
+                # An unchanged L acquisition anchor remains a historical fact.
+                historical = (new['kind'] == 'L'
+                              and old['local'].get('anchor', '') == new['local'].get('anchor', ''))
+                selected[historical].append(new)
+        destination = moves.get(source, source).relative_to(root).as_posix()
+        for historical, items in selected.items():
+            if items:
+                acquire.validate_operation(repo, destination, {**after,'items':items}, read=read, historical=historical)
 
 
 def check_unit_layout(root, changes, moves, read):

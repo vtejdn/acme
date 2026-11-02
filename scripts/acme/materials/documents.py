@@ -421,10 +421,10 @@ def selected(document, read):
     return selection(document, read)[1]
 
 
-def check(document, read, *, paths=(), source_info=None):
+def check(document, read, *, paths=(), source_info=None, candidate_paths=None):
     if document.identity.kind == 'T':
         from . import tasks
-        tasks.validate(document, read, paths=paths)
+        tasks.validate(document, read, paths=paths, candidate_paths=candidate_paths)
     review_targets = []
     if document.identity.kind in 'RL':
         from . import review
@@ -432,7 +432,7 @@ def check(document, read, *, paths=(), source_info=None):
                           if not source_refs.external(target.path)]
     if document.identity.kind == 'S':
         from . import navigation as material_navigation
-        material_navigation.validate_routes([document], read, paths=paths)
+        material_navigation.validate_routes([document], read, paths=paths, candidate_paths=candidate_paths)
     loaded = {document.path: document}
 
     def target(path):

@@ -35,6 +35,7 @@ Read repository/config.json and the ignored repository/framework-update-check.js
 Reuse the main agent's actual result in subagents and reuse a current UTC-day success or unavailable result without another request.
 For an enabled new-day attempt, use the [bounded metadata helper](../scripts/readme.md#official-framework-version-check) or the same explicit read-only operation; its short cache coordination precedes one network request, never a clone or framework replacement.
 The bounded public HTTPS metadata read requires no Git remote, gh login or optional connectivity skill; apply actual network permissions and explicit offline instructions.
+If execution permissions deny an enabled, non-offline official metadata read, use the [official-query permission handling](versioning.md#official-version-check).
 If the setting is invalid, the request fails or the cache cannot be saved, report the specific limitation and continue authorized work without claiming a confirmed public version.
 
 When a verified newer version has not been presented, tell the human the installed and available versions, link the official repository and ask whether to arrange the upgrade.
@@ -101,7 +102,10 @@ Preserve recoverable affected contents, local customizations, unrelated work, th
 Merge any changed LICENSE content while retaining upstream and destination project notices, their scope and historical years; an upgrade does not repeat first registration or refresh attribution years.
 Judge mixed public-file merges and retired files by their actual local role, preserving existing human-document and authorship boundaries.
 Finish required adaptation and checks before marking the target installed version; on failure restore this operation's changes or report actual incomplete restoration while preserving foreign work and necessary recovery content.
-Reread new applicable rules, report actual from/to versions, target commit, checks and remaining limits, then perform existing creator cleanup; an upgrade grants no research resumption.
+Reread new applicable rules before affected work continues; an upgrade grants no research resumption.
+In an actual shared Git repository, complete the [authorized upgrade's scoped Git delivery](versioning.md#upgrading-an-installed-framework) before reporting its result or continuing the original task, including when upgrading before that task or under a separate upgrade assignment.
+Use the [existing delivery action](#commit-or-push-requested-work), honoring explicit local-only, offline or postponed-push instructions and reporting any unfinished delivery distinctly.
+Report actual from/to versions, target commit, checks, applicable Git delivery result and remaining limits, then perform existing creator cleanup.
 Ordinary authorized retrieval, editing and selected checks need no additional routine approval or mandatory installer.
 
 ## Set up repository or human identity
@@ -157,6 +161,7 @@ Apply [research coordination and Preparation](rules/workflow.md#records-review-a
 Delegate the current question, useful existing entrances and working Draft for Preparation; the subagent judges search, reading, applicability and sufficiency, retaining concise judgments and direct original-material locators in the [Draft](rules/ledger.md#working-drafts-and-fixed-findings).
 Reuse applicable Preparation, allow the same subagent to continue Draft research within an initial or extended assignment, and arrange suitable parallel work requested through ordinary coordination messages.
 Keep shared Task/E limits and the actual [independent-review boundary](rules/proof-audits.md#review-arrangements); proof development or inherited substantive development context prevents independent review of that proof.
+For material problems found during this research, use the [research repair entrance](#repair-material-problems-found-during-research) and its common contract within the existing assignment and author authority.
 
 ## Develop, register or reorganize mathematics
 
@@ -280,33 +285,33 @@ Use an acquired program's actual qualified J for self inputs/outputs and explici
 Keep necessary reproduction context, meaningful failures and actual limits without persistent mathematical digest gates or an archive for every run.
 Return the real command, inputs, result and checked scope; finite or floating-point observations do not prove an unrestricted theorem.
 
+## Repair material problems found during research
+
+Use the [research entrance to common problem handling](rules/records.md#entry-during-authorized-research) for problems found within the actual research assignment and author authority.
+For conformity problems in the actual human author's own materials, repair personally or delegate according to actual complexity and capability, without separate maintenance authorization or a preliminary independent inspection.
+Necessary research context may accompany delegated repair; discovery and diagnosis do not make the research agent a conformity inspector.
+After a bounded conformity-repair batch, start an independent acceptance subagent under the [common acceptance contract](rules/records.md#accept-local-material-repairs) and [context rule](rules/workflow.md#material-maintenance-contexts).
+For substantive mathematical errors, including reference errors affecting theorem applicability or logical dependencies, apply the common contract's actual mathematical version, assessment and review duties instead of treating them as pure locator repairs.
+Use its common recording and cleanup rules for unfinished or accepted work, returning actual repairs, checks and remaining obligations without claiming self-checks establish acceptance.
+
 ## Inspect local mathematical materials under current rules
 
-Use the [local material maintenance rule](rules/records.md#local-material-maintenance) to inspect conformity to the currently installed applicable rules, at the human's actual scope and depth.
-Without a narrower instruction, inspect local mathematical materials in batches, reading necessary inputs and consumers without turning this into a private-store or environment inventory.
-Judge actual content, versions, reference purposes and evidence; a tool result or repeated URL alone establishes no violation or redundancy.
-Read materials without repairing them, and record concrete unresolved findings and any necessary unchecked continuation scope in `mathematics/maintenance.md`, merging duplicate reports of the same issue.
-Apply the [stage-context rule](rules/workflow.md#material-maintenance-contexts); inspection, repair and acceptance of the same scope use different agents without inherited substantive discussion from the other stages.
-Return actual inspected scope, findings and limits; ordinary tool checks and installing or using the framework do not automatically invoke this action.
+Enter the [explicit maintenance entrance](rules/records.md#local-material-maintenance) only under the actual human maintenance instruction and its scope and depth.
+Perform the [read-only inspection action](rules/records.md#inspect-local-materials), with [stage-context isolation](rules/workflow.md#material-maintenance-contexts), recording supported unresolved problems and necessary continuation scope under the common contract.
+Return actual inspected scope, findings and limits without repairing materials or inferring this action from ordinary research, proofreading, mechanical checks or framework use.
 
 ## Repair local mathematical materials
 
-Use the [repair rule](rules/records.md#repair-local-materials) for explicitly selected materials or issues, or otherwise for worklist items awaiting repair.
-Independently verify the issue and applicable rules under the [stage-context rule](rules/workflow.md#material-maintenance-contexts), then repair only the authorized scope while preserving actual authorship, fixed mathematics, source facts, decisions and review limits.
-An explicit repair assignment may start directly without a preceding complete inspection; necessary diagnosis and self-checks do not supply independent acceptance.
-Inspect actual changed content and necessary consumers, keeping genuine mathematical or assessment changes within their existing version, decision and review duties.
-Preserve the original worklist problem, rule grounds and requirements; add only necessary repair locations or obstacles and change the next action to acceptance without deleting or clearing the item.
-Return actual repairs, checks and remaining limits, preserving unrelated work and effective T/E conditions.
+Under an actual explicit maintenance instruction, use the [common repair action](rules/records.md#repair-local-materials) for its selected materials or issues, or otherwise recorded items awaiting repair.
+Meet the [stage-context rule](rules/workflow.md#material-maintenance-contexts); a direct repair assignment needs no preceding full inspection, and necessary diagnosis belongs inside repair.
+Apply the common scope, author, mathematical, self-check, acceptance and worklist duties, returning actual repairs, checks and remaining limits without clearing conformity items through self-checks.
 
 ## Accept repairs to local mathematical materials
 
-Use the [acceptance rule](rules/records.md#accept-local-material-repairs) for the specified repairs or otherwise for submitted worklist items awaiting acceptance.
-Meet the [stage-context rule](rules/workflow.md#material-maintenance-contexts), independently checking the original issue, applicable requirements, actual repair and necessary affected scope without repairing the materials yourself.
-The acceptance instruction authorizes clearing actually accepted or independently confirmed false-alarm portions belonging to the human represented by this agent, unless the human explicitly limits cleanup; retain other-author portions for their author's confirmation without repeating sufficient acceptance.
-For a received original whose human author actually does not participate locally, the responsible receiving human may clear sufficiently resolved local portions under the [receiving-side exception](rules/records.md#receiving-side-local-disposition), retaining isolation, actual source authorship and other unresolved consumers without invented correspondence.
-Reread the current worklist before editing, clear only the accepted and author-confirmed scope and retain failed, unrepaired, unaccepted, unknown-author, unrelated and concurrently added portions and necessary continuation scope.
-If everything recorded is resolved, keep the established file at zero bytes without an archive or completion receipt; an empty worklist establishes no whole-repository conformity verdict.
-Return the actual accepted or rejected scope, cleanup and remaining limits; stage separation supplies no mathematical proof-review relationship by itself.
+Use the same [common acceptance action](rules/records.md#accept-local-material-repairs) for a research conformity-repair batch or an explicit maintenance acceptance instruction, within its actual scope.
+For an explicit instruction without a narrower selection, accept submitted worklist repairs awaiting acceptance.
+Meet the [context and arrangement rule](rules/workflow.md#material-maintenance-contexts), applying the common independent checks, failure handling, affected-author or receiving-side confirmation, and partial-cleanup duties without repairing the materials yourself.
+Return the actual accepted or rejected scope, cleanup and remaining limits; acceptance supplies no mathematical proof-review relationship by itself.
 
 ## Maintain shared materials or resolve a conflict
 
@@ -375,7 +380,8 @@ Before an explicit J source refresh, confirm the same original, inspect the sele
 
 Apply the common [adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving complete necessary selected mathematics and the single original human through adapted text, local numbering, justified splits/combinations and onward transfer.
 Keep the actual source version and selected scope separate from the receiving kind, line and version; use the existing operation for per-unit provenance.
-For rolling U or maintained R transfer containing actual current-repository contributions, choose the actual current origin rather than letting an old same-path/anchor acquisition absorb those contributions; unchanged selected old scopes retain their original source accounts.
+For lawfully maintained C/R/L/J or rolling U transfer containing actual current-repository contributions or repairs, explicitly choose current origin under the [source-selection rule](rules/intake.md#homes-and-independent-reuse), even when physical version, path, anchor and receiving header remain unchanged.
+Keep current J group and explicitly selected native-file provenance coherent with the selected fixed snapshot, preserving old records and unchanged selected old scopes at their actual original sources.
 Read actual references and prepare necessary final receiving text using true source/local correspondence; background prose does not cause tool discovery, mapping or provenance tracing.
 For targets absent from the selected sending Git tree, preserve useful source-only reference context and actual limits, without assigning unversioned bytes to the material's commit.
 Obtain or reproduce necessary input within the actual authorization, or retain its unresolved need at the consumer; omit obsolete mentions with no remaining mathematical, evidence or reproduction purpose.
@@ -395,6 +401,9 @@ Return the chosen installed scope and limitations, preserving the source's actua
 
 ## Export or import one's own selected content
 
+Start only under the actual human author's explicit instruction or authorization for this migration action under the [personal-transfer rule](rules/intake.md#personal-import).
+A direct request to transfer selected own materials suffices; reuse applicable authority and let the agent choose necessary content, dependencies and execution details within its scope without per-file approvals.
+General research authority, same-human identity, readable files or a helper plan alone does not initiate personal migration; clarify only a decisive missing action or scope while continuing independent authorized work.
 Establish the actual same human, selected object, source view, receiver and any explicit narrowing under the [personal-transfer rule](rules/intake.md#personal-import), without a Git-source or preliminary-commit requirement.
 For Task transfer, complete its [family collection and independent manuscript pass](rules/intake.md#task-and-manuscript-collection), including every extant selected fixed-family version and each version's necessary inputs before reducing content.
 Include the actual corresponding project's documents and complete required source chains, then merge support missed by the Task pass without unrelated projects, reverse consumers or Git-history recovery.
@@ -423,7 +432,7 @@ Return actual retained content, necessary adaptations, foreign acquisition scope
 
 ## Commit or push requested work
 
-Use this action for a direct delivery instruction or the [default joint-research permissions](rules/identity.md#shared-research-git-authority-and-integration) within actual human-authorized joint Task work, applying explicit human limits and the actual repository, branch and publishable scope.
+Use this action for a direct delivery instruction, [authorized shared-repository upgrade delivery](versioning.md#upgrading-an-installed-framework) or the [default joint-research permissions](rules/identity.md#shared-research-git-authority-and-integration) within actual human-authorized joint Task work, applying explicit human limits and the actual repository, branch and publishable scope.
 Read [serial delivery](rules/identity.md#submission-checks), the human-registered repository name, selected paths, existing index, actual operator/signature and intended branch/tree.
 Coordinate one stable delivery interval, preserve unrelated staged work and contributor identities, stage the intended deliverable, commit and confirm the actual resulting tree.
 Reinspect the affected delivery scope if relevant bytes or the index change; draft work may be committed with truthful status.

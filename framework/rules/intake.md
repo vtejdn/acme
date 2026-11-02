@@ -159,6 +159,9 @@ Record time, initiator/recorder, actual instruction, original and transport prov
 A recorded J anchor describes the scope obtained at that operation's revision, without asserting its availability in today's mutable J.
 Historical fact reading preserves original registered repoN/path consistency without requiring every earlier J anchor in current text.
 Validate a newly selected current J anchor against the proposed postimage, and check actual current consumer references at their requested scope and view.
+A historical L local anchor likewise describes the scope acquired then, rather than requiring an obsolete erroneous section to remain in current prose merely for provenance reading.
+The agent decides lawful retirement under the [retention and in-place repair rules](records.md#in-place-maintenance-and-logical-repair), preserving necessary mathematics, fixed evidence and actual consumers.
+Historical L reading still validates the material identity, source header, registered correspondence, fixed source/transport facts, scope and file ownership; actual selected source anchors, new receiving anchors and explicitly updated local locators must remain real and unique in their selected view or postimage.
 Keep earlier operation scopes and anchors intact rather than relabelling them as the new result.
 Intake stores no mathematical copy, mathematical acceptance or current-use selection.
 It has no proposal/approval phases, select/withdraw commands, immutable receipts, replacement adoption register or generic changed-file reminder.
@@ -221,8 +224,11 @@ The optional helper's [selected-origin input](../material-format.md#acquired-fin
 This transient choice creates no persistent inherited/new marker and changes neither the fixed input nor its earlier operation.
 
 The agent chooses each U's existing recipient work key or explicitly new work.
-For onward selection from rolling U or maintained R, the agent distinguishes unchanged acquired scope from actual current-repository additions or repairs and uses explicit origin: current for the latter, even under an unchanged path/anchor.
-Record the current source repository, selected fixed commit/path/anchor and real scope without rewriting earlier source_material or operation facts, adding U versions/Inputs, or attributing new checking to an old source blob that lacks it.
+For onward selection from lawfully maintained C/R/L/J or rolling U, the agent distinguishes unchanged acquired scope from actual current-repository additions or repairs and uses explicit origin: current for the latter, even under an unchanged physical version, path, anchor or receiving header.
+Record the actual current supplying repository, selected fixed commit/path/anchor and real scope without rewriting earlier source_material or operation facts or attributing repairs to an old source blob that lacks them.
+Operation-supported same-path maintenance requires no new physical version, acquisition event or self-referential Inputs; actual new physical C/T/R/L revisions retain their fixed acquired-input requirements.
+For an L repair that retires an obsolete acquired anchor, apply the [historical/current distinction](#one-operation-record) and explicitly select the actual current locator, without inferring inherited source or review coverage.
+Source selection changes neither human authorship, permission to modify, mathematical adoption, review applicability nor Task/E conditions.
 Retained old scopes keep their necessary acquisition disambiguation; tool matching or prose/anchor similarity does not infer contributions or inheritance.
 Tools execute exact field updates and allocate only the chosen new identity, without DOI/eprint precedence or implicit field fusion.
 If shared state invalidates the choice, report the observed change for fresh judgment.
@@ -252,6 +258,10 @@ Its publication snapshot covers the selected inputs, occupied identity evidence,
 Stale selected inputs, occupied prepared destinations and failed publication retain their existing refusal and rollback protections.
 The agent preserves earlier inputs and scopes that remain necessary; omitted native inputs keep their actual acquired revisions through partial refresh and onward transfer.
 Each selected file uses its actual acquired original repository, path and revision, with per-file overrides only where the item defaults differ.
+For an explicit current J selection, the group README and every explicitly selected native file use the selected current Git snapshot's actual path and blob, including new children and selected unchanged files.
+Keep actual native-file mappings and group boundaries; omitted files retain their earlier correspondence without being transferred or relabelled.
+Reject an old acquisition selector on that current-selected group or any selected native file rather than silently ignoring a conflicting choice.
+Current origin cannot refresh an occupied group of a different original repository or path as though it were the same group; existing same-original, same-human, native-ownership and occupied-target protections still apply.
 Select necessary correspondence candidates before strict path/availability checks; unrelated historical J files or other U keys do not gate this operation.
 New operation times use the shared UTC minute format `YYYY-MM-DDTHH:MM`, while genuinely date-only facts retain their calendar precision and existing necessary full timestamps are normalized under the [timestamp rule](workflow.md#new-record-timestamps).
 Competing same-minute correspondences with different origins require an explicitly selected existing record or mapping, rather than filename/UUID order or invented precision.
@@ -261,6 +271,12 @@ Reuse the same direct interface for onward U/L/J transfer, preserving original i
 ## Personal import
 
 A registered local human may import explicitly selected own C/T/S/D/R/L/U/J, settings, manuscripts, native programs, data and attachments into that human's ordinary local homes.
+Start personal export or import only under the human author's explicit instruction or authorization for that actual migration action.
+A direct request to transfer selected own materials supplies that authority without special approval wording or another record; reuse an applicable existing instruction without per-file or continuation approvals.
+Within that authority and actual author scope, the agent chooses necessary content, dependencies, reuse and execution details.
+General research authority, established same-human identity, readable files or the agent's judgment that migration is useful do not alone initiate personal transfer or whole-library reorganization.
+Clarify only a decisive missing migration instruction or scope while continuing independent authorized work; a helper instruction string, plan or syntax check supplies no authorization.
+External intake retains its existing autonomy within research authority, and neither common original authorship nor renaming an own transfer as intake changes the actual routing or authorization.
 Establish the actual human from the instruction and adopted identity facts; choosing an author name or matching a source name alone grants no right over another human's content.
 This same-author transfer rule also governs preparing an export copy; it requires neither a public Git source, Git initialization nor a preliminary commit.
 For an export without an actual receiver, retain the current local identities rather than allocating hypothetical receiving numbers.

@@ -131,6 +131,8 @@ Direct authoring maintains the same state, with no new migration command or auto
 `material.py check` checks material structure and direct required interfaces; public `show` uses those same shared-material checks and exposes a U's current text and necessary acquisition provenance.
 Neither operation consults a local literature account or queries original availability, private source bytes or native HTML anchors.
 For J, `check` and `show` retain current structure, necessary inputs and original-identity checks without requiring every historical acquired anchor in current text.
+For L, those ordinary readers likewise validate historical acquisition facts without requiring an obsolete acquired section to survive a lawful in-place repair under the [historical-locator rule](../framework/rules/intake.md#one-operation-record).
+Explicit current-source intake checks the actual selected fixed anchor, and new receipts and selected address updates retain strict postimage locator checks; current required inputs still reject missing or duplicate targets.
 The displayed acquisition scopes remain facts about their recorded revisions, rather than assertions of current availability.
 Structured show and discovery results use status for the exact selected decision of either a local or externally identified C/T family, with selected_decision retaining its declaring physical path and anchor.
 This replaces the former source_status field for externally identified materials; source and acquisition facts remain separate, and an unacquired selected source decision has null status rather than an inferred assessment.
@@ -255,7 +257,10 @@ For genuinely needed fixed computation input missing locally, an authorized rese
 Differing-byte replacement after receipt also requires adopted same-human authorship; a flag or chosen author alone does not authorize another human's correction.
 The occupied group header, necessary acquisition evidence and native-file correspondence establish that identity; equal display names or the flag alone do not.
 Same-original later revisions and onward transports remain eligible, with original and immediate transport identity recorded separately.
-An explicit origin: current on rolling U or maintained R selects actual current-repository additions/repairs at that fixed commit and scope even when old acquisition matches its path/anchor; U needs no new version or fixed-kind Inputs for this route.
+An explicit origin: current on lawfully maintained C/R/L/J or rolling U selects actual current-repository additions/repairs at that fixed commit and scope even when old acquisition matches its physical version/path/anchor or the receiving header is retained.
+Operation-supported same-path maintenance needs no new version, acquisition event or self-referential Inputs; actual new physical C/T/R/L revisions retain their fixed acquired-input requirements, and origin.input remains specific to inherited R findings.
+For current J selection, the group entrance and all explicitly selected native files use their actual paths and blobs in the current fixed snapshot, including new children and selected unchanged files; actual native mappings and group/per-file provenance remain coherent.
+Omitted files keep their existing correspondence, and an old acquisition selector on the current-selected group or any selected child is a conflict rather than an override; current origin cannot refresh an occupied group of a different original repository or path as the same original.
 Retained old scopes use their actual source facts and necessary acquisition disambiguation; neither body differences nor an anchor match automatically decide inherited/current scope, and old operations remain unchanged.
 Each selected file keeps its actual original revision; an omitted earlier input is not relabelled with a newer entrance's revision.
 The operation uses the shared item origin as its default and adds `files[].original: {repository, revision, path}` only for different per-file facts.
@@ -366,6 +371,7 @@ Ordinary files and native J constituents retain selected byte facts, while recog
 A success does not certify body references, mathematics, source applicability, review sufficiency or a build.
 
 S/T/U checks use necessary route or identity context without validating unrelated bodies or consulting local originals.
+U context enumerates only the selected SourceKey directory and filters its author/original-source namespace before reading necessary sibling headers, without a whole-mathematics discovery dependency.
 For U, simultaneously selected prepared siblings supply their selected headers, while necessary unselected receiving siblings supply binary-read identity headers only.
 An unselected prepared sibling supplies no alternate context; real conflicts, invalid necessary headers and installed-byte differences retain diagnostics.
 --context CONTEXT.json adds explicitly chosen necessary public view names, such as external registrations and selected intake metadata, without selecting their bodies for independent validation.
@@ -509,6 +515,11 @@ with Tree(root, 'INDEX') as tree:
 ~~~
 
 Use only actual selected paths; `WORKTREE` or an exact commit selects that postimage without an index/worktree fallback.
+WORKTREE enumerates candidate names without eagerly querying every candidate's metadata or shape; actual selected or necessary reads retain ordinary-file, containment and availability checks.
+Consumers first select their necessary namespace, family or other context, then qualify candidate files; deleted unselected WORKTREE candidates supply no current file or occupation.
+`Tree.existing(candidates)` performs that scoped qualification while `bytes` and `header` keep selected reads strict, including declared inputs, malformed necessary headers and access errors.
+INDEX reads only an unambiguous stage 0 for each selected or required path, so unrelated unmerged paths do not block a healthy selection.
+An unmerged selected path or necessary configuration, registration or other input reports its actual path's conflict without choosing another stage or view.
 For Markdown, select only `identity`, which reads the necessary header/prefix and original-author correspondence; whole-document source_links discovery is retired.
 For intake JSON, choose `transport.repository`, `items[N].source.repository` or `items[N].source.author`, with actual zero-based item indices; attachment-status fields are not a supported selection interface.
 Selecting `source.author` includes its necessary repository association and qualified original name; other operation fields remain outside that selection.
@@ -516,6 +527,7 @@ The shared JSON reader decodes the chosen object before field selection, so ordi
 The result's `files` counts selected objects, `fields` counts checked identity/provenance entries and `checked` lists their actual path and field.
 Neither these counts nor a PASS covers free prose or unselected consumers.
 This optional callable does not run full material/proof or intake-object validation, reconstruct old J objects/anchors, inspect private source bytes or create a durable selection record.
+These optional readers impose no prerequisite on ordinary Git operations; an actual whole-index or whole-library request retains its full stated scope.
 
 ### Explicit selected source reading
 

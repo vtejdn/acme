@@ -89,14 +89,15 @@ def route(document):
     return Route(document, tuple(associations), fields.get('disposition'), fields.get('priority'), parent, parent_line)
 
 
-def validate_routes(documents, read, *, paths=()):
+def validate_routes(documents, read, *, paths=(), candidate_paths=None):
     """Validate supplied local routes and their actual selected-view ancestors."""
     loaded, families, done, visiting = {}, {}, set(), []
     paths = list(paths)
 
     def register(document):
         if not document.identity.source_repository:
-            candidates = set(discovery.selected(paths, family=document.identity)) | {document.path}
+            siblings = discovery.selected(paths, family=document.identity)
+            candidates = set(candidate_paths(siblings) if candidate_paths else siblings) | {document.path}
             for candidate in candidates: identity.parse(candidate)
             require(len(candidates) == 1, 'Ambiguous route identity: ' + ', '.join(sorted(candidates)))
         key = (document.identity.family.casefold(), document.header.get('source_repository'),

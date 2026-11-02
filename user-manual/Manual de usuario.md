@@ -159,11 +159,11 @@ Los colaboradores de un mismo repositorio pueden establecer un Task conjunto par
   Conceda al agente los permisos necesarios para leer y gestionar los archivos de ese directorio.
 - Cuando los agentes automaticen tareas relacionadas que utilicen credenciales, guarde los secretos de forma adecuada y exclúyalos de [Git](git-repository.md#notion-git).
 
-### Redactar un manuscrito
+### <a id="manuscript-writing"></a>Redactar un manuscrito
 
 En elaboración.
 
-### Formalización en Lean
+### <a id="lean-formalization"></a>Formalización en Lean
 
 En elaboración.
 
@@ -171,7 +171,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.9.0.
+La versión actual del marco es 0.9.1.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.
@@ -261,6 +261,7 @@ Según sus herramientas y su configuración, también pueden aparecer los direct
 | <a id="notion-pull"></a>Pull | Obtención de los cambios de un repositorio Git remoto e incorporación de estos al trabajo local. |
 | <a id="notion-merge"></a>Fusión (Merge) | Integración de los cambios de otra [rama](#notion-git-branch) en la rama Git actual, resolviendo las ediciones en conflicto cuando sea necesario. |
 | <a id="notion-intake"></a>Recepción (Intake) | Incorporación a su propio repositorio de materiales de investigación seleccionados de otro repositorio ACME público, conservando su autoría, procedencia y limitaciones de revisión. |
+| <a id="notion-import"></a>Importación (Import) | Incorporación al espacio de trabajo actual de sus propios materiales de investigación, manuscritos o preferencias personales aplicables, seleccionados en otra carpeta o repositorio, conservando la autoría y reutilizando los materiales existentes adecuados. Los materiales necesarios de otros autores se obtienen mediante [recepción (Intake)](#notion-intake). |
 | Clave de cita | Identificador corto de una obra en la bibliografía que permite citarla de forma coherente en los registros de investigación y los manuscritos. |
 
 ### <a id="material-task"></a>Tarea de investigación (Task)

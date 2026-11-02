@@ -70,7 +70,7 @@ The Task material owns its exact question, scope, completion criteria, selected 
 Authorization history may be shortened or removed under the [common content decision](records.md#substantive-material-retention), keeping the current selected decision, effective conditions and necessary contract/evidence references coherent.
 Claim mathematical assessments stay with their selected C decisions; the [Claim index](../../mathematics/claims/index.md) derives their navigation.
 Each S material owns its own route priority/disposition and Task association, with a derived [strategy index](../../mathematics/strategies/index.md).
-Changes to target, quantifiers or criteria preserve the earlier contract and remain within actual human authorization.
+Changes to the mathematical target, quantifiers or mathematical completion criteria preserve the earlier contract and remain within actual human authorization.
 A tractable special case must not silently replace the original question.
 
 ## Execution boundary

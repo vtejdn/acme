@@ -228,7 +228,7 @@ R owns its actual checking relationship and conclusion, while C/T owns its adopt
 
 Only tables in the designated decision history and the designated selector are machine inputs.
 Unrestricted mathematical prose, examples in code fences, PASS text and filenames do not assert acceptance.
-Duplicate/missing selectors, unknown fields, missing necessary anchors and cross-family selections fail.
+Duplicate selectors, missing required selectors, malformed nonempty selectors, unknown fields, missing necessary anchors and cross-family selections fail.
 Keep mathematical exposition outside the small decision tables.
 Decision and navigation tables share escaped-pipe handling, including Scope cells such as `$\|x\|<1$`.
 Necessary anchors are read outside code blocks, code spans and comments; ATX headings may have zero to three leading spaces.
@@ -517,6 +517,8 @@ New operation times use `YYYY-MM-DDTHH:MM` UTC; genuinely date-only facts retain
 It stores no mathematics or current-use judgment.
 A historical J anchor records the scope acquired at that operation; it need not remain in today's mutable J merely for provenance reading.
 Newly prepared J selections check their current anchors against the actual postimage, while earlier operation scopes and anchors remain intact.
+A historical L item's `local.anchor` also retains its actual acquired scope without asserting that a retired erroneous section remains in the current body under the [intake rule](rules/intake.md#one-operation-record).
+Actual current source selections, new receiving anchors and explicitly maintained local locators still require their unique targets in the selected fixed view or postimage; this distinction changes neither old operation fields nor other material kinds' locator checks.
 Local consumers state their real mathematical use in their existing support/dependency/decision fields.
 
 ### Finding-level review relationships
@@ -559,8 +561,12 @@ A lawful same-human R revision may also contain a genuine locally performed find
 That local finding need not appear in its acquired input's historical operation; the input account remains limited to the actual acquired source scope rather than marking every finding in the revision as acquired.
 For onward selection from that revision, the agent explicitly chooses the current source or the exact fixed Input finding whose acquired scope is retained, including an existing acquisition selector when necessary.
 The optional helper uses `origin: "current"` or `origin: {"input": {"path": "EXACT_EARLIER_R.md", "anchor": "finding"}, "acquisition": "intake/Human/existing.json"}` with acquisition optional.
-For rolling U or maintained R, an explicit current-origin selection records actual current-repository contributions at the selected fixed commit/path/anchor and scope even when an old acquisition matches the same path and anchor.
-U requires neither a physical version nor a fixed-kind Inputs section for this choice; unchanged retained old scopes continue using their actual acquisition facts, without attributing current additions to a source blob that lacks them or rewriting old operations.
+For lawfully maintained C/R/L/J or rolling U, an explicit current-origin selection records actual current-repository contributions or repairs at the selected fixed commit/path/anchor and scope even when an old acquisition matches the same physical version, path and anchor or the receiving header is retained.
+Operation-supported same-path maintenance needs no new version, acquisition event or self-referential Inputs; actual new physical C/T/R/L revisions retain their required fixed acquired inputs.
+For current J selection, the group entrance and all explicitly selected native files use their actual paths and blobs in that current fixed snapshot, including new or unchanged selected files, with coherent group/per-file provenance and actual native mappings.
+Omitted files keep their existing correspondence; reject simultaneous acquisition selectors for the current-selected group or native files, and preserve same-original refresh, same-human and occupied-target protections.
+Unchanged retained old scopes continue using their actual acquisition facts and necessary disambiguation, without attributing current additions to a source blob that lacks them or rewriting old operations.
+Current origin supplies no new authorship, editing, review, adoption or execution authority; the exact origin.input choice remains specific to inherited R findings.
 The inherited locator must occur in the actual declared Inputs, retain the same original family/header binding and name a finding covered by the chosen earlier operation.
 An exact input anchor can differ from the selected current anchor when the agent has established that retained scope; spelling and ancestry alone establish no inheritance.
 That explicit onward origin choice is not a finding correspondence parameter for ordinary local revisions or readers.
@@ -599,7 +605,8 @@ An explicit empty reviewed_targets list records only an actually undeclared targ
 The helper checks these supplied facts without parsing old R/L declarations or deriving original targets from receiving bindings, and writes them only to the existing source.reviewed_targets account.
 The prepared finding retains its true relationship, including an undeclared relationship, and an actual independent finding goes to R; final receiving declarations, targets and anchors remain strictly checked before publication.
 These facts cannot override an already declared source_repository/source_material binding, and onward receiving retains its established original account.
-Split scopes use distinct selected original anchors and local destinations.
+Split scopes retain their true selected original anchors and explicit individual scopes, with distinct local destinations under the material's receiving-identity rules.
+The [same original anchor may supply distinct selected scopes](rules/intake.md#homes-and-independent-reuse); preserve each actual source and local correspondence without inventing source anchors or reallocating an already acquired same scope.
 Same-author combinations select their actual distinct source units with the same local destination and complete prepared final text; author, source association and every per-unit source/local account must agree.
 When several original repositories are involved, local.source_repository may choose one existing associated receiving namespace for the single canonical external human; all actual original repositories remain distinct in the same operation's per-unit source facts.
 Conflicting prepared outputs, authors, locators, source associations, occupied fixed positions and stale expected text fail before publication.

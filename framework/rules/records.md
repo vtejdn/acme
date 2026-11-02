@@ -1,7 +1,7 @@
 # Research Records and Publication
 
 The responsible mathematical material owns its assertions, selections and dated decisions.
-Routine naming, path, link and layout maintenance preserves mathematical meaning and needs no new mathematical version, review, operation entry or correspondence register.
+Routine naming, path, link and layout maintenance preserves mathematical meaning and needs no new mathematical version or mathematical review, operation entry or correspondence register.
 Check actual affected references and retain coherent edits and Git history.
 Substantive mathematics retains its version and review requirements.
 Shared registration/navigation maintenance and actual conflicts follow the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts), preserving substantive mathematics, authorship and captured provenance.
@@ -230,7 +230,7 @@ Keep still-necessary original arguments, actual source/inspection facts and hist
 Do not copy the same repair into every older physical file or use Git history alone as a substitute for mathematical evidence still needed now.
 Actual new decisions and genuinely performed formal reviews keep their real time and evidence; pure maintenance creates neither an event nor a timestamp.
 R's actual finding, bindings, relationship, checked repaired inputs and limits follow the [rolling review-repair rule](proof-audits.md#rolling-review-repair), without pretending an earlier self-review was independent or covered a later repair.
-Existing maintenance-stage isolation, participating-author confirmation, source authorship and Task/E authority remain in force.
+Apply the [common problem-handling contract](#material-error-handling), including its applicable context isolation and participating-author confirmation, while preserving source authorship and Task/E authority.
 
 ## Acquired inputs and local revisions
 
@@ -417,7 +417,7 @@ Do not automatically apply an old objection to a new version or infer resolution
 
 When an external material's true original author does not participate in this receiving repository, the actually responsible receiving human's agent may confirm and clear a sufficiently resolved local maintenance/erratum portion within its current assignment and authority.
 Reuse adequate acceptance or independently confirmed false-alarm evidence without waiting for the external author to register, log in or approve, inventing same-human correspondence, or adding a custody/participant register.
-Conformity repair still requires the three stages and their context isolation; a repairer's self-check cannot close its own repair, and mathematical erratum keeps applicable correction and independent rechecking duties.
+Conformity repair follows the [common repair and acceptance contract](#material-error-handling), including its applicable context isolation; a repairer's self-check cannot close its own repair, and mathematical erratum keeps applicable correction and independent rechecking duties.
 This includes an accepted authorized locator repair or a sufficiently confirmed false alarm needing no body edit, without a fourth acceptance stage or disposition receipt.
 State the receiving human, actual local object and conclusion truthfully; do not claim the original author confirmed, changed a historical opinion or performed a different review.
 Retain real continuing objections, other participants' consumers, unresolved common context and concurrent additions; withdrawal, silence or deciding not to use a result is not sufficient resolution.
@@ -476,58 +476,90 @@ The archive retains the original shared visibility; a private choice cannot hide
 Archives are historical correspondence, not policy, inboxes, current assessments or formal review, and are not automatically read as startup or independent-review context.
 Useful mathematics stays in its actual contributor's adequate responsible material; do not require fixed materials for every undeveloped idea or archive cleared maintenance/erratum as mail.
 
-<a id="local-material-maintenance"></a>
-## Local mathematical material inspection, repair and acceptance
+<a id="material-error-handling"></a>
+## Common handling of material problems
 
-The [action guide](../agent-actions.md#inspect-local-mathematical-materials-under-current-rules) provides three independently callable actions: inspection under current rules, repair and acceptance of repairs.
-Use the currently installed and actually applicable rules, the human's scope and depth, and the actual operator and author boundaries; an uninstalled version or design proposal supplies no local rule authority.
-These actions alone grant no research start, resumption, new allowance or transfer of authorship, and do not automatically create or modify T/E.
-Ordinary research, proofreading, explicit mechanical checks and framework upgrades do not automatically enter this workflow.
+Use this contract for format, reference, conformity and substantive mathematical problems in research materials, whether found during authorized research or an explicitly assigned maintenance action.
+Locate the problem and its effects, establish its nature, actual scope and author authority, repair with necessary diagnosis and self-checks, complete applicable review or acceptance, and update responsible materials and resolved coordination portions.
+These are common responsibilities, without new stages, status fields, a total issue board or a mandatory pipeline starting with inspection.
+Use the currently installed and actually applicable rules; an uninstalled version or design proposal supplies no local rule authority.
+Explicit directory, material, issue or depth limits govern writes and cleanup; follow necessary dependencies and consumers for reading and retain a relevant out-of-scope issue without expanding the repair.
+The [authorship boundary](identity.md#collaboration-maintenance-and-conflicts), including its bounded shared locator-only exception, applies independently of how the problem was found.
+Repair neither takes over another author's body nor rewrites fixed inputs or acquisition facts, changes real conclusions administratively, or resets effective Task/E conditions.
 
-Without a narrower instruction, inspection covers local mathematical materials in batches, repair covers recorded items awaiting repair, and acceptance covers submitted repairs awaiting acceptance.
-Explicit directory, material, issue or depth limits govern writes and item cleanup; follow necessary dependencies and consumers for reading and retain a relevant out-of-scope issue without expanding the repair.
-A full material inspection does not select all private settings, literature originals, private accounts, computation outputs or environments for inventory.
-Inspect applicable identity, authorship, responsible homes, fixed versions, decisions, references, source and review bindings, private boundaries, redundant content and layout from actual content and use.
-Necessary distinct contract/body anchors, versions, reference purposes and Review bindings rows remain distinct even when URLs coincide; do not deduplicate solely by URL.
-Retain old decisions and historical evidence at their actual scope and distinguish a genuinely new adoption; inspection alone requires no invented relationships, retrospective table backfill or full proof replay.
+Substantive mathematical problems follow the [in-place repair and version boundary](#in-place-maintenance-and-logical-repair), [dependency and assessment correction rule](claims.md#dependencies-and-corrections) and [actual mathematical review obligations](proof-audits.md#independent-review-obligations).
+A reference error affecting theorem applicability, assumptions or logical dependencies is a mathematical problem, rather than a same-object locator correction.
+Independently identified gap repairs, key proof points and the post-completion full chain keep their actual independent-review duties; ordinary self-reviewed mathematical corrections acquire no universal independent-proof or conformity-acceptance gate.
+Conformity acceptance neither establishes an independently reviewed mathematical finding nor requires a new R, relationship field or proof replay.
+A qualified independent post-repair check that actually covers both mathematical and conformity requirements may discharge both at its true scope, without duplicate acceptance; old findings do not automatically cover changed inputs.
 Tool success establishes only its actual checks, not conformity, mathematical equivalence, correctness or adequate review.
-The [stage-context rule](workflow.md#material-maintenance-contexts) applies to every stage, independently of the proof-review relationship.
+
+### Entry during authorized research
+
+For conformity problems in the actual human author's own materials within existing research authority and scope, the main agent may repair directly or delegate according to actual complexity and capability.
+"Own" follows the actual human author and established author correspondence, not file access or an agent's earlier participation.
+Research discovery, necessary reading, repair diagnosis and self-checks are not a separately assigned conformity-inspection stage and do not disqualify the research agent from repair.
+A repair subagent may receive necessary research context; after a bounded repair batch, the main agent starts an independent acceptance subagent under the [context and arrangement rule](workflow.md#material-maintenance-contexts).
+Use the common repair, acceptance and disposition rules below without a separate maintenance grant, independent preliminary inspector, T/E or complexity classification.
+Related small problems may share one bounded repair and acceptance batch, without a new agent group for every typo or file.
+
+<a id="local-material-maintenance"></a>
+### Entry under an explicit maintenance instruction
+
+Routine material maintenance starts from actual explicit human maintenance intent at the specified scope and action, rather than ordinary research, proofreading, a mechanical check, a worklist's existence or the word "check" alone.
+The [action guide](../agent-actions.md#inspect-local-mathematical-materials-under-current-rules) provides independently callable inspection, repair and acceptance entrances to this common contract.
+A full conformity-maintenance assignment covers inspection, repair and acceptance with [stage isolation](workflow.md#material-maintenance-contexts); one instruction covers the necessary stages and delegation without repeated stage approvals.
+A narrower inspection remains read-only, while an explicit repair may start directly without a prior full inspection.
+Without a narrower instruction, inspection covers local mathematical materials in batches, repair covers recorded items awaiting repair, and acceptance covers submitted repairs awaiting acceptance.
+These actions alone grant no research start, resumption, new allowance or transfer of authorship, and do not automatically create or modify T/E.
+A full material inspection does not select all private settings, literature originals, private accounts, computation outputs or environments for inventory.
 
 <a id="inspect-local-materials"></a>
 ### Inspect without repairing
 
-Read the actual materials, necessary inputs and consumers, identify concrete rule issues and their affected scope, and record supported unresolved items in the sole worklist.
+Read the actual materials, necessary inputs and consumers, identify concrete rule issues and their affected scope, and record supported unresolved items under the common classification and coordination rules.
 Do not repair mathematical materials in this action.
+Inspect applicable identity, authorship, responsible homes, fixed versions, decisions, references, source and review bindings, private boundaries, redundant content and layout from actual content and use.
+Necessary distinct contract/body anchors, versions, reference purposes and Review bindings rows remain distinct even when URLs coincide; do not deduplicate solely by URL.
+Retain old decisions and historical evidence at their actual scope and distinguish a genuinely new adoption; inspection alone requires no invented relationships, retrospective table backfill or full proof replay.
 Merge duplicate reports of the same issue; distinct problems in one material may remain separate, and an unconfirmed issue is explicitly awaiting verification.
 If a full inspection is unfinished, retain only a brief necessary account of the unchecked scope for continuation.
 Report actual coverage and limits rather than inferring repository-wide conformity from no new finding or an empty list.
 
 <a id="repair-local-materials"></a>
-### Repair and submit for acceptance
+### Repair and self-check
 
-Independently check the reported issue and its applicability, then make only authorized changes under the [authorship boundary](identity.md#collaboration-maintenance-and-conflicts) and the existing fixed-version, decision, source and review rules.
-An explicit material or issue repair needs no compulsory prior full inspection.
-Check the real modifications and necessary consumers; self-checks and successful tools do not discharge independent acceptance.
-Preserve the original issue, rule grounds, scope and acceptance requirements in the worklist, adding only necessary repair locations and actual remaining limits and changing the next action to acceptance.
-Do not delete or clear your repair items, rewrite their requirements to fit the repair or retain a closed-item history.
-If the issue appears unfounded or cannot be repaired within current authority or resources, retain the concrete reason for independent disposition rather than inventing a repair or silently closing it.
+Verify the actual problem and applicable requirements, diagnose it, then make only authorized changes under the common scope and author boundaries above.
+Repair includes necessary rule application, diagnosis, self-checks and affected-consumer checks; none requires a separate inspection stage.
+Check genuine mathematical, input and assessment changes under their existing version, decision and review duties rather than treating all corrections as conformity work.
+For conformity repair, check the real modifications and necessary consumers, then obtain the common independent acceptance below; self-checks and successful tools do not discharge it.
+Preserve an existing conformity worklist item's original issue, rule grounds, scope and acceptance requirements, adding only necessary repair locations and actual remaining limits and changing its next action to acceptance.
+Do not clear your conformity repair items through self-checks or rewrite their requirements to fit the repair.
+If the issue appears unfounded or cannot be repaired within current authority or resources, retain the concrete reason and remaining scope for applicable disposition rather than inventing a repair or silently closing it.
 
 <a id="accept-local-material-repairs"></a>
 ### Accept and clear only the checked scope
 
 Independently inspect the original issue, applicable rules and requirements, actual repair and necessary affected materials.
+Both research conformity repairs and explicitly assigned conformity maintenance use this acceptance scope, [context isolation](workflow.md#material-maintenance-contexts), failure handling and cleanup.
 Do not combine acceptance with material repair; contributing a substantive repair makes the agent ineligible to accept that contribution independently.
 The acceptance assignment includes cleanup of the accepted portions belonging to the human represented by the agent, unless the human explicitly limits it; the repairer's self-check never supplies this acceptance.
 For another participating author's material, retain necessary acceptance results and locations for that author's agent to confirm and clear, without another full acceptance stage when the evidence remains sufficient; a nonparticipating external original uses [receiving-side local disposition](#receiving-side-local-disposition).
 An independently confirmed false alarm follows the same affected-author confirmation boundary, with the judgment explained in the normal reply rather than an unnecessary repair or false-alarm archive.
 For a failure, retain the specific defect, rule grounds and affected scope, and add a concrete new finding when necessary without repairing the materials yourself.
+After repair, a still-qualified acceptance agent may recheck the affected scope without a fourth acceptance stage; an agent that supplied substantive repair cannot independently accept its contribution.
+If adequate independence is unavailable, retain the concrete unaccepted scope and continue unrelated authorized work without calling self-checks acceptance or building a new agent platform.
 Partial acceptance clears only its accepted and author-confirmed portion; retain unrepaired, unaccepted, failed, unrelated, out-of-scope, other-author, unknown-author and concurrently added items and necessary unchecked continuation scope.
 For a shared issue, retain common necessary context and each other author's unresolved material portion; truly authorless navigation or registration follows its existing shared administrative authority without an invented author.
 Return the actual acceptance result, cleanup and limits without claiming that stage isolation alone establishes an independently reviewed proof.
 
 ### Sole rolling worklist and current edits
 
-Use `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), creating it only when an actual issue or necessary continuation scope needs it.
+Keep continuing conformity issues in `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), and substantive mathematical issues in [erratum](#mathematical-issues-and-reliance).
+Classify each unresolved issue once by its actual nature; if its location is wrong, preserve necessary evidence and affected scope while moving it rather than mirroring it in both files or adding a total issue board.
+Mathematical erratum cleanup follows its actual mathematical review and affected-author confirmation duties, without an additional conformity-acceptance requirement.
+Completed and accepted incidental conformity repairs need no retrospective item, independent inspection report or correction log.
+Failed, unrepaired, unaccepted and out-of-scope conformity problems retain the concrete scope needed for continuation, creating the worklist only when such content is needed.
 Keep only a material and title/anchor locator, concrete issue and rule grounds, affected scope, actual represented human, affected material author, current next action and necessary repair references or unfinished reason, in the repository's actual document language.
 No dedicated item number, discovery timestamp, owner enumeration, fixed schema, per-file PASS list or complete activity log is required.
 The worklist coordinates outstanding conformity work; it does not mirror C/T assessments, proof gaps, review conclusions or effective execution conditions, and an ordinary dependency update creates no item automatically.

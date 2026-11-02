@@ -78,18 +78,19 @@ class Reader:
         else:
             humans.person(self.repo, doc.identity.author)
         route_paths = ()
+        tree = getattr(self.repo, 'selected_tree', None)
+        candidate_paths = tree.existing if getattr(tree, 'ref', None) == 'WORKTREE' else None
         if doc.identity.kind in 'ST':
-            tree = getattr(self.repo, 'selected_tree', None)
             if tree is None:
                 from . import discovery
                 route_paths = discovery.candidates(self.repo.root)
             else:
                 route_paths = entrances(tree.names, strict=False)
-        documents.check(doc, self.read, paths=route_paths, source_info=self.source_info)
+        documents.check(doc, self.read, paths=route_paths, source_info=self.source_info,
+                        candidate_paths=candidate_paths)
         if doc.identity.kind == 'U':
             from . import discovery
             prefix = str(PurePosixPath(path).parent) + '/'
-            tree = getattr(self.repo, 'selected_tree', None)
             candidates = (tree.names if tree is not None else
                           (p.relative_to(self.repo.root).as_posix()
                            for p in (self.repo.root / prefix).glob('*.md')))
@@ -98,7 +99,8 @@ class Reader:
                 if tree is None:
                     return discovery.unit_header(self.repo.root, name)
                 return tree.header(name)
-            discovery.unit_positions([p for p in candidates if discovery.unit_namespace(p, doc.identity)], header)
+            siblings = [p for p in candidates if discovery.unit_namespace(p, doc.identity)]
+            discovery.unit_positions(candidate_paths(siblings) if candidate_paths else siblings, header)
         return doc
 
     def show(self, path):

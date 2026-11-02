@@ -29,28 +29,24 @@ class Tree:
     def __init__(self, root, ref):
         self.root, self.ref = Path(root).resolve(), ref
         self.modes = {}
+        self.stages = {}
         self.object_ids, self.cache, self.json_cache = {}, {}, {}
         self.batch = None
         if ref == 'WORKTREE':
             names = git(root, 'ls-files', '--cached', '--others', '--exclude-standard', '-z')
-            # Exclude local notes and source stores before shape
-            # queries, even while indexed. Explicit profile selection stays.
-            self.names = set()
-            for name in names.decode().split('\0'):
-                if not name or paths.local_runtime(name) or paths.in_pdf_store(name):
-                    continue
-                try:
-                    mode = (self.root / name).stat().st_mode
-                except FileNotFoundError:
-                    continue
-                if stat.S_ISREG(mode):
-                    self.names.add(name)
+            # Names are candidates, not availability or ordinary-file facts.
+            # Keep lexical exclusions ahead of any actual selected access.
+            self.names = {name for name in names.decode().split('\0')
+                          if name and not paths.local_runtime(name) and not paths.in_pdf_store(name)}
         elif ref == 'INDEX':
-            r.require(not git(root, 'ls-files', '--unmerged'), 'Resolve Git index conflicts before reading this selected view.')
             entries = [n.split('\t', 1) for n in git(root, 'ls-files', '--stage', '-z').decode().split('\0') if n]
-            self.modes = {name: info.split()[0] for info, name in entries}
-            self.object_ids = {name: info.split()[1] for info, name in entries}
-            self.names = set(self.modes)
+            for info, name in entries:
+                mode, object_id, stage = info.split()
+                self.stages.setdefault(name, {})[stage] = (mode, object_id)
+            self.names = set(self.stages)
+            for name, stages in self.stages.items():
+                if set(stages) == {'0'}:
+                    self.modes[name], self.object_ids[name] = stages['0']
         elif ref is None:
             self.names = set()
         else:
@@ -61,10 +57,12 @@ class Tree:
 
     def bytes(self, path):
         r.require(path in self.names, 'Required file is absent from the selected Git view: ' + path)
+        r.require(self.ref != 'INDEX' or set(self.stages[path]) == {'0'},
+                  'Selected Git index path is unmerged: ' + path)
         r.require(self.modes.get(path) not in {'120000', '160000'}, 'Selected evidence must be an ordinary file: ' + path)
         if path not in self.cache:
             if self.ref == 'WORKTREE':
-                self.cache[path] = r.safe_path(self.root, path).read_bytes()
+                self.cache[path] = self._worktree_path(path).read_bytes()
             else:
                 if self.batch is None:
                     self.batch = subprocess.Popen(['git', 'cat-file', '--batch'], cwd=self.root,
@@ -78,6 +76,22 @@ class Tree:
                 r.require(len(self.cache[path]) == size and self.batch.stdout.read(1) == b'\n', 'Incomplete selected Git object.')
         return self.cache[path]
 
+    def _worktree_path(self, path):
+        selected = r.safe_path(self.root, path)
+        r.require(stat.S_ISREG(selected.stat().st_mode), 'Selected evidence must be an ordinary file: ' + path)
+        return selected
+
+    def existing(self, candidates):
+        """Qualify only the caller's explicitly scoped context candidates."""
+        for path in candidates:
+            r.require(path in self.names, 'Context candidate is absent from the selected Git view: ' + path)
+            if self.ref == 'WORKTREE':
+                try:
+                    self._worktree_path(path)
+                except FileNotFoundError:
+                    continue
+            yield path
+
     def json(self, path):
         if path not in self.json_cache:
             self.json_cache[path] = json.loads(self.bytes(path))
@@ -85,11 +99,14 @@ class Tree:
 
     def header(self, path):
         """Read a selected sibling's header without requesting its whole body."""
-        from ..materials import documents, discovery
+        from ..materials import documents
         r.require(path in self.names, 'Required file is absent from the selected Git view: ' + path)
+        r.require(self.ref != 'INDEX' or set(self.stages[path]) == {'0'},
+                  'Selected Git index path is unmerged: ' + path)
         r.require(self.modes.get(path) not in {'120000', '160000'}, 'Selected evidence must be an ordinary file: ' + path)
         if self.ref == 'WORKTREE':
-            return discovery.unit_header(self.root, path)
+            with self._worktree_path(path).open('rb') as stream:
+                return documents.header_stream(stream)
         process = subprocess.Popen(['git', 'cat-file', 'blob', self.object_ids[path]], cwd=self.root,
                                    stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
         try:

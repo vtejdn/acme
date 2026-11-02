@@ -311,26 +311,32 @@ Main-theorem designation and objective changes require their applicable authoriz
   Failure to find a result in a bounded literature search does not establish that it is new.
 
 <a id="material-maintenance-contexts"></a>
-## Contexts for local material maintenance
+## Contexts for material repair and acceptance
 
-The [inspection, repair and acceptance actions](records.md#local-material-maintenance) for the same maintenance scope require different agents without inherited substantive discussion from the other stages.
-If the current conversation has inspected that scope, a later repair must use a subagent that does not inherit the conversation history; later acceptance likewise cannot return to the original inspector or repairer.
-An agent that performed another stage or inherited its substantive discussion cannot qualify by changing its name, restating the context or calling its own recheck independent.
-A fresh qualified agent may perform its assigned stage directly; a still-qualified agent may continue its own stage or process a batch without three new agents for every item.
-The main agent coordinates scope, actual authority, resources and writes without substituting its own inspection for the required stage separation.
-
-Provide only actual human requirements, scope, current rule entrances, actual materials and necessary evidence locators, the original issue, necessary repair locations and known limits.
-Do not forward full conversations, another stage's internal reasoning, proposed repair discussions, author defenses or conclusions that the result is already correct.
-Do not inherit messages, personal mail archives or issue discussions as stage or independent-proof-review startup context; provide only permitted actual requirements, objects and necessary evidence.
-Necessary materials, original problems, human instructions and authority remain available; isolation must not discard the evidence needed for the assigned check.
-The repairer independently verifies the report, and the acceptance agent checks actual changes against the original requirements rather than repeating a repairer's passing opinion.
+Apply the two entrances and [common repair, acceptance and disposition contract](records.md#material-error-handling) at their actual scope.
+For explicitly assigned routine conformity maintenance, inspection, repair and acceptance of the same scope use different agents without inherited substantive discussion from the other stages.
+"Inspected that scope" means actually performing the separately assigned read-only conformity inspection, not research discovery, necessary reading, repair diagnosis or self-checks.
+If the current conversation performed that inspection, a later repair uses a subagent without inherited conversation history; later acceptance cannot return to that inspector or repairer.
+Research agents may repair directly, or share necessary research context with a repair subagent, under the research entrance without creating a preliminary inspection stage.
+After a bounded research conformity-repair batch, the main agent starts an independent acceptance subagent; explicit maintenance stages likewise use actually qualified agents.
+An acceptance agent must not have participated in the repair or inherited related substantive research, inspection or repair discussion.
+An agent cannot qualify by changing its name, restating inherited context or calling its own recheck independent.
+A fresh qualified agent may perform its assigned action directly; a still-qualified agent may continue its own action, accept a bounded batch or recheck a repair without new agents for every item or a fourth acceptance stage.
 An acceptance agent contributing a substantive repair no longer independently accepts that contribution.
+The main agent retains responsibility for actual scope, authority, capability arrangements, resources, dependency adoption, coordinated writes and necessary delivery; delegation adds no rights or transfer of that responsibility.
+
+For an isolated maintenance stage or common independent acceptance, provide only actual human requirements and authority, the original problem and scope, current rule entrances, actual materials and changes, necessary evidence locators and known limits.
+Do not forward full conversations, substantive research or another stage's internal reasoning, proposed repair discussions, author defenses or conclusions that the result is already correct.
+Do not inherit messages, personal mail archives or issue discussions as isolated-stage or independent-proof-review startup context; provide only the permitted requirements, objects and necessary evidence.
+Necessary materials, original problems and actual authority remain available; isolation must not discard evidence needed for the assigned check.
+The maintenance repairer independently verifies the report, and the acceptance agent judges actual changes against the original requirements rather than repeating a repairer's passing opinion.
 
 Prefer a native harness entry that actually omits inherited history; a full-history fork alone does not satisfy this contract.
 An already available and enabled API fallback may be reused at its actual scope, without building a new API platform, requiring runtime installation or enabling paid calls by default.
 If isolation is unavailable, report the affected stage as unfinished, preserve its items and continue unaffected authorized work without weakening the requirement or presenting a self-check as acceptance.
 No agent registry, context certificate, isolation receipt, chat archive or automatic independence classifier is needed.
-This separation belongs to the maintenance action contract and does not itself establish an `independently reviewed` proof; actual mathematical development, fixed inputs, scope and R evidence follow the [proof-review rules](proof-audits.md#review-arrangements).
+This context rule applies to the common conformity acceptance and explicit maintenance stages; it does not impose independent proof review on every mathematical correction or itself establish an `independently reviewed` proof.
+Actual mathematical development, fixed inputs, scope and R evidence follow the [proof-review rules](proof-audits.md#review-arrangements), with sufficient qualified post-repair checks reused at their true coverage under the common contract.
 
 ## Records, Review, and Handoff
 

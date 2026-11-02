@@ -159,11 +159,11 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
   Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce répertoire.
 - Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les de [Git](git-repository.md#notion-git).
 
-### Rédiger un manuscrit
+### <a id="manuscript-writing"></a>Rédiger un manuscrit
 
 En cours de rédaction.
 
-### Formalisation en Lean
+### <a id="lean-formalization"></a>Formalisation en Lean
 
 En cours de rédaction.
 
@@ -171,7 +171,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.9.0.
+La version actuelle du cadre est 0.9.1.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
@@ -260,7 +260,8 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 | <a id="notion-push"></a>Push | Envoi des commits locaux vers un dépôt Git distant afin d’y rendre le travail enregistré disponible. |
 | <a id="notion-pull"></a>Pull | Récupération des modifications d’un dépôt Git distant et intégration de celles-ci au travail local. |
 | <a id="notion-merge"></a>Fusion (Merge) | Intégration des modifications d’une autre [branche](#notion-git-branch) à la branche Git actuelle, avec résolution des modifications conflictuelles si nécessaire. |
-| <a id="notion-intake"></a>Importation (Intake) | Introduction dans votre dépôt de documents de recherche sélectionnés dans un autre dépôt ACME public, en conservant l’attribution, l’origine et les limites de vérification. |
+| <a id="notion-intake"></a>Réception (Intake) | Introduction dans votre dépôt de documents de recherche sélectionnés dans un autre dépôt ACME public, en conservant l’attribution, l’origine et les limites de vérification. |
+| <a id="notion-import"></a>Importation (Import) | Introduction dans l’espace de travail actuel de vos propres documents de recherche, manuscrits ou paramètres personnels applicables, sélectionnés dans un autre dossier ou dépôt, en préservant l’attribution et en réutilisant les documents existants suffisants. Les documents nécessaires d’autres auteurs sont obtenus par [réception (Intake)](#notion-intake). |
 | Clé de citation | Identifiant court d’une référence dans la bibliographie, utilisé pour la citer de manière cohérente dans les enregistrements de recherche et les manuscrits. |
 
 ### <a id="material-task"></a>Tâche de recherche (Task)
