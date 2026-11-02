@@ -194,7 +194,7 @@ Classify an actual maintenance or integration conflict by its content into two k
 
 Reading enough to locate a difference does not establish a new mathematical verdict.
 This conflict procedure adds no approval to routine maintenance, ordinary authorized research in each author's own materials or an already authorized review.
-Same-human repairs in acquired material preserve original mathematics and actual acquisition provenance; keep the actual input version separate from a receiving revision.
+Same-human repairs in acquired material preserve necessary original mathematics and truthful acquisition provenance under the [in-place repair rule](records.md#in-place-maintenance-and-logical-repair); keep the actual input version separate from a receiving revision.
 Distinct research repositories reuse material through intake; another author in this shared repository does not by itself create an intake operation.
 That reuse covers permitted authored mathematics and bibliography, not either repository's private local literature documents or holding accounts.
 

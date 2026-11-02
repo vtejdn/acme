@@ -206,6 +206,9 @@ No new review hash or extra standalone review file is required.
 If formalization is undertaken, identify the theorem artifact, pinned environment, successful commands, remaining placeholders, and actual trusted axioms or external assumptions.
 Distinguish a design or source/API inspection from implemented and checked code.
 A successful build alone does not certify the intended theorem, its definitions, or its trust boundary.
+When formal verification supports a C, check that the formal definitions, objects, hypotheses, quantifiers, scope and conclusion actually establish the exact selected Claim, retaining any necessary justified translation or reduction.
+Mathematical correspondence does not require literal identity between prose and formal syntax.
+Stronger assumptions, narrower coverage or different definitions support only that actual scope unless an adequate mathematical argument bridges the gap; a successful build, absence of placeholders or formal label alone does not establish that correspondence.
 This framework does not require formalization or prescribe a policy of accepting external mathematical axioms.
 
 ## Corrections and Reopening

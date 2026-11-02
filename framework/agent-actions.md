@@ -100,7 +100,8 @@ Without Git, use available public source evidence with an archive or selected fi
 Read applicable intervening notes, inspect their combined local paths and direct consumers, and prepare final target files with only genuinely ordered adaptations.
 Preserve recoverable affected contents, local customizations, unrelated work, the actual named or unnamed configuration, research and effective Task/E conditions without requiring a clean worktree, stash, preliminary commit or empty reinitialization.
 Merge any changed LICENSE content while retaining upstream and destination project notices, their scope and historical years; an upgrade does not repeat first registration or refresh attribution years.
-Judge mixed public-file merges and retired files by their actual local role, preserving existing human-document and authorship boundaries.
+Synchronize already published official human-document bodies under the [common upgrade contract](versioning.md#upgrading-an-installed-framework), merging actual local adaptations rather than limiting updates to links and version literals.
+Judge mixed public-file merges and retired files by their actual local role, preserving authorship and the separate responsibility for new human-document authoring.
 Finish required adaptation and checks before marking the target installed version; on failure restore this operation's changes or report actual incomplete restoration while preserving foreign work and necessary recovery content.
 Reread new applicable rules before affected work continues; an upgrade grants no research resumption.
 In an actual shared Git repository, complete the [authorized upgrade's scoped Git delivery](versioning.md#upgrading-an-installed-framework) before reporting its result or continuing the original task, including when upgrading before that task or under a separate upgrade assignment.
@@ -256,8 +257,9 @@ Prepare or reuse [searchable contents](rules/literature.md#searchable-contents) 
 
 ## Write or revise a manuscript
 
-Read the actual active TeX, responsible author's applicable choices, manuscript purpose and direct source/review inputs under the [writing rules](rules/writing.md).
-Keep an explicitly user-designated presentation home and its document choices; apply the same source, build and review responsibilities without creating a Task merely for directory naming.
+Read the selected document sources, including current TeX when present, the responsible author's applicable choices, writing purpose and direct source/review inputs under the [writing rules](rules/writing.md).
+Use the [writing-home rule](rules/writing.md#projects-and-documents) when no mathematical Task corresponds to the assignment, preserving an author-designated location and its choices.
+Apply the same source, applicable build and review responsibilities without creating a Task merely for directory naming.
 Apply exactly four writing layers: general rules, author-wide policy, applicable subfield policy, then manuscript-specific choices, overriding only conflicting portions.
 A changed local operator does not adopt another author's policies.
 Perform proportionate source preparation and definition registration; source observations remain evidence rather than a fifth writing layer.

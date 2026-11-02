@@ -65,11 +65,19 @@ One explicit upgrade assignment covers ordinary retrieval, agent-selected adapta
    For Git retrieval, acquire only the history and tags useful for that comparison; a shallow checkout does not establish availability of older contents.
    Unavailable necessary source or migration facts remain explicit limitations, without marking the target installed.
 2. Read the applicable notes between installed and target versions, combine their affected paths and inspect the local files and necessary direct consumers.
+   The upgrade includes synchronizing the selected official target's user manuals, human request guides and instruction examples in all actually affected existing languages, including body changes rather than only version literals and links.
+   Where there is no local adaptation, use the target's actual content without rewriting unchanged parts, inventing missing translations or executing installed examples.
+   Apply this common contract to general human-document maintenance wording in earlier notes, retaining their concrete applicable adaptations and actual release scope rather than rewriting finalized notes.
    Use final target files directly, ordering intermediate adaptations only when their actual dependencies require it, without serial complete installations of skipped versions.
    Retrieve older tagged sources when needed to understand local changes or incomplete guidance, without assuming that installed local contents still equal the old official source.
    Resolve or report an unavailable necessary baseline or migration fact as a concrete gap, without assuming no adaptation or defaulting to a whole-library comparison.
 3. Before writes, preserve unrelated work and a recoverable baseline of affected contents using ordinary recovery copies when Git is absent, or native Git and necessary temporary preservation when applicable, without requiring a clean worktree, automatic stash or preliminary commit.
    Select replacements and bounded merges from the actual affected files and their local responsibilities; a common file path alone does not authorize overwriting its locally maintained content.
+   Read actual local document content and necessary entrances, preserving local additions, purposes and choices while merging applicable official changes.
+   Protect committed adaptations, including files in a clean worktree, alongside staged and uncommitted edits; tracked status or comparison with local HEAD does not establish equality with earlier official contents.
+   Use earlier official contents, the selected target and actual local text as needed through native Git or ordinary comparison, without deciding replacement from filenames, directory placement, version numbers or timestamps.
+   An unavailable earlier baseline alone does not prevent adequate judgment from available facts; if a concrete missing fact or decisive intent conflict prevents a necessary merge, preserve that content, report the gap and finish independent authorized work without claiming a complete upgrade.
+   Local adaptation does not freeze the whole file or require keeping obsolete framework usage; make necessary bounded command, path, rule-reference and explanation updates within upgrade authority while preserving the local purpose and choices.
    Preserve the actual named or unnamed configuration, human identities, allocation bounds, profiles, bibliography, source holdings, mathematics, manuscripts and effective Task/E conditions, without initializing empty state over them.
    Inspect mixed README, AGENTS, ignore and License contents before merging; retire a framework file only after judging its local role and necessary consumers, preserving authorship, original-source facts and actual decisions/review scope under existing rules.
    Read each affected publication page and its necessary entrances to determine whether it remains an example, presents local results or contains mixed content; filename, directory and upstream distribution role do not determine replacement.
@@ -77,7 +85,9 @@ One explicit upgrade assignment covers ordinary retrieval, agent-selected adapta
    Apply only necessary bounded framework adaptations within existing authority, retaining local content and entrance intent rather than restoring upstream example prose or resetting a publication entrance to an example.
    Unchanged examples retain their actual purpose and authorized maintenance scope; this does not freeze the entire `user-manual/` directory.
    Direct overwrites used when copying framework files into the blank official source do not govern ordinary research-repository upgrades.
-   Accompanying human-manual and request-guide maintenance covers necessary links, version literals and comparable mechanical changes; body editing follows its actual separate human-document assignment.
+   Synchronizing and merging already published official document bodies is ordinary upgrade maintenance and needs no additional routine body-editing approval.
+   Framework-development limits on designing, authoring, translating or auditing those bodies do not restrict this installation work to mechanical edits.
+   Independent human-document authoring, substantial rewriting beyond necessary synchronization and adaptation, and new translations follow their actual separate assignment.
 4. Complete adaptation and checks at the affected scope before marking the target installed version or reporting success, and verify the final version metadata, files and required migrations agree.
    On failure restore this operation's affected changes while preserving foreign work; incomplete restoration requires a truthful state and remaining-limit report rather than a completed-upgrade claim.
    Preserve any still-needed recovery content before cleanup or handoff; a handoff cannot depend on recovery files held only in `.tmp/`.

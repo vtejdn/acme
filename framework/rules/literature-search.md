@@ -79,7 +79,7 @@ Apply verification labels only to the work actually done, and update affected cl
 
 ## Sources and Computation
 
-- Follow [the literature conventions](literature.md) for source naming, local registration and shared citations.
+- Maintain necessary canonical bibliographic facts and a stable citation key under [common source preparation](literature.md#source-preparation), following the existing source-naming and shared-citation conventions.
   Use the same unambiguous key throughout the repository, and cite the relevant theorem, section, or page when relying on a specific statement.
 - Organize reusable source inputs under the [literature-audit format](literature-audits.md), separating the original statement, notation conversion, checked hypotheses, proof-inspection depth, and local deductions.
   A file's presence in `mathematics/literature/` does not verify all of its claims.

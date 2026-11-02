@@ -25,7 +25,7 @@ A growing presentation collection uses the root and actual-author readme/index p
 Indexes confer no mathematical, review, lifecycle or execution authority.
 No directory classifier, exhaustive directory register or mandatory index in every folder is introduced.
 A directory's existence alone requires no README; create one only for a distinct necessary purpose, keeping operative rules at their governing framework homes.
-Live readings and execution disposition belong in E, with actual defaults selected by the [personal-policy rules](preferences.md).
+Current execution state and necessary still-effective conditions belong in E under the [execution rule](execution.md#current-contents-and-retained-limits), with actual defaults selected by the [personal-policy rules](preferences.md).
 
 Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; shared bibliographic fields in mathematics/literature/references.bib, useful author edition/source notes in source README and inspected mathematics/limits in rolling U or adequate C/L.
 Machine-local paths and secrets are not framework defaults.
@@ -168,7 +168,8 @@ All L materials live in mathematics/ledger/, including literature-related L.
 
 The canonical bibliography is mathematics/literature/references.bib.
 Definition entries point to authoritative formulations under the definition rules.
-Manuscript sources use mathematics/manuscripts/Author_T_SERIAL/<document>/ under an authorized local Task, with the actual author-designated line and serial.
+Manuscript sources associated with a mathematical Task normally use mathematics/manuscripts/Author_T_SERIAL/<document>/, with the actual author-designated line and serial.
+For a writing-only assignment without a corresponding Task, use the [writing-home rule](writing.md#projects-and-documents) to reuse or choose an appropriate document location within actual authority, without creating T/E merely for directory naming.
 An explicitly user-designated talk or presentation home preserves its actual path and follows the same writing, source, build and review duties without requiring a new Task or research identity.
 Document navigation may connect related writing, while authoritative mathematical evidence remains independent of mutable writing outputs in every such home.
 Own Tasks and selected manuscripts use personal import; intake excludes another human's ordinary Task/E authority and manuscript projects, with a narrow necessary joint-contract exception.

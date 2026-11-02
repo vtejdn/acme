@@ -3,12 +3,14 @@
 See the [current index](index.md) and [framework rules](../../framework/readme.md).
 
 Create a manuscript project only when authorized writing needs it.
-Use the assigned local Task family as its root, such as `Author_T_F0001/`.
+When a corresponding mathematical Task exists, use its assigned local family as the default root, such as `Author_T_F0001/`.
+For a writing assignment without such a Task, follow the [writing-home rule](../../framework/rules/writing.md#projects-and-documents): reuse a suitable existing or author-designated location, or choose a necessary purpose-named document home within actual writing authority, without creating T/E for directory naming.
 Manuscript projects and another human's ordinary Task/E execution authority are outside mathematical intake.
 A necessary fixed joint coordination contract may be received for actual continued collaboration under the [joint-Task conditions](../../framework/rules/tasks.md#joint-tasks-and-participation), with no E or adoption of another participant's Task, strategies or execution authority.
 Your own selected Tasks and manuscript sources, settings and necessary dependencies may be imported under the [personal-import rule](../../framework/rules/intake.md#personal-import), preserving authorship and effective execution conditions.
 Importing your own manuscript creates no unrequested Task or execution authority.
-Put the project title, responsible owner, exact Task/material inputs and document/build entries in its README.
+Put the title, responsible owner, actual writing assignment and purpose, necessary mathematical inputs and document entrances in its README or adequate document record.
+Include a Task only when it actually exists and applies, and build entries only when relevant; Markdown writing requires no unrequested TeX source or compilation.
 Standard children such as `paper/main.tex` inherit the unique project attribution without changing publication bylines or repeating the root name.
 
 For citation labels, author-name display, sorting and reference-list structure, consult the [AMS, EMS and LMS bibliography guidance](bibliography-guidelines.md).

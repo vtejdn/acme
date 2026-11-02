@@ -203,7 +203,8 @@ Routine index maintenance that changes no mathematics needs no separate operatio
 
 Within an assigned Task, extraction, decomposition, Claim registration and proof/dependency reorganization are ordinary autonomous research work.
 No separate extraction approval or explicit lemma label is required.
-Use ordinary mathematical titles and Claim identities: retain the ID for an unchanged statement, allocate appropriate IDs for genuinely different statements, and preserve the original obligation and relationships when splitting it.
+Use ordinary mathematical titles and choose Claim families and versions under the [core-topic family and necessary-version rule](records.md#mathematical-topic-families-and-necessary-versions).
+When splitting an obligation, preserve the original goal and necessary relationships.
 Do not weaken the Task target or erase useful original arguments.
 
 Organizational authority does not certify mathematics.
@@ -219,7 +220,7 @@ No separate approval registry or per-Claim report is required.
 
 For reuse, give a concise usable conclusion, hypotheses and material limitations in the Claim summary and link the Claim from its consuming argument or route.
 Consult existing navigation and targeted searches before repeating an argument.
-Add a method entry only for reusable methodological content, not every subresult.
+Retain necessary reusable methodological content in an appropriate existing S or adequate mathematical material under the [common content decision](records.md#substantive-material-retention), rather than adding an entry for every subresult.
 
 <a id="proof-versions"></a>
 ## Original and Lemma-Based Proof Versions

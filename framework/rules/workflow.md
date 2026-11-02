@@ -197,7 +197,8 @@ Apply the [Task rules](tasks.md) and distinguish registration, authorization, re
 
 Check the relevant Task index and likely matching contracts to avoid accidental duplication.
 Write one precise contract with the target, hypotheses and quantifiers, scope/conventions, completion criteria, actual authorization, and necessary starting references.
-A descriptive anchor can be fixed before allocation; use the ID returned by the tool instead of predicting the next serial.
+A descriptive anchor can be fixed before allocation; when choosing the optional allocator or writer, use its actual returned ID instead of predicting the next serial.
+Direct authoring follows the same [allocation state and concurrency protections](identity.md#allocation-and-concurrency).
 Optional template sections need content that helps continuation, not placeholders proving that setup occurred.
 
 Register a clear assignment with its complete contract, actual human author and initial decision with date, proposed/active status, real authority/reason and exact contract relation.
@@ -385,8 +386,10 @@ Disposable scratch drafts outside such records may be discarded.
 This adds no separate version-locator, commit or hash requirement.
 Link source files, scripts and audits rather than reproducing large outputs; an adequately recorded attempt needs no duplicate account here.
 
-Keep the exploration history understandable.
-A correction explains the mathematical reason, preserves earlier statement/argument/assessment, revises fixed mathematics as needed, and explicitly adopts the affected material decision/evidence before maintaining affected navigation.
+Keep necessary exploration history understandable.
+A correction explains the mathematical reason and follows the [in-place repair and necessary-version boundary](records.md#in-place-maintenance-and-logical-repair), retaining necessary mathematics, useful failures, fixed inputs, acquired facts and true historical adoption/review scope.
+Successful pure logical repair may remain in place after necessary checking, without retaining redundant erroneous text or creating a version, decision, date or correction log merely because an error occurred.
+Actual research variants retain their applicable version and evidence requirements; an actual assessment or adoption change updates the responsible decision and exact evidence under the applicable review rules before maintaining affected navigation.
 Check actual consumers.
 Distinguish a superseded argument from a refuted conclusion; neither erase a useful failure nor leave a known gap labelled established.
 

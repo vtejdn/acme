@@ -95,7 +95,9 @@ Preserve actual per-file originals and verify relevant behavior or mathematical-
 Keep meaningful child names for distinct mathematical scopes and distinguish author output from independent verification output.
 The documented generation command must work without root `tmp/` or `.tmp/` and without prior generated output, except declared input dependencies.
 An explicitly identified verification-only command requires its actual retained inputs.
-When one J consumes another's generated data, name that dependency and read the producing J's output home.
+For a temporary cross-J pipeline, name the actual dependency and command order and read generated data from the producing J's output home.
+Indispensable fixed proof, verification or later-computation input instead uses its selected tracked native input home under the [fixed-input responsibility](#computation-output-location), reusing adequate input by exact reference rather than copying it for each consumer.
+Missing necessary input follows the [existing authorized recovery rule](#recovery-of-necessary-fixed-inputs).
 The README links actual output files and explains input requirements, command order, observed scope and limitations.
 
 Keep an explicit output option when useful, using the responsible J output home in ordinary examples.

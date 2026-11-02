@@ -79,7 +79,7 @@ The human registry remains the authority for registered author spelling.
 
 Read material kind, line, serial and version from the path and the title from its single main heading.
 Do not copy them into metadata.
-Fixed source units use the source-key identity below; definitions retain their separate naming boundary.
+Rolling source units use the [source-key identity below](#fixed-source-unit-inputs); definitions retain their separate naming boundary.
 
 ### Acquired receiving inputs in local revisions
 
@@ -304,8 +304,8 @@ Put these declarations in the selected fixed review material, in addition to the
 ## Review bindings
 | Review | Target | Scope |
 | --- | --- | --- |
-| [Finding](#finding) | [Statement](../claims/Alice_C_F0001_v1.md#statement) | Exact hypotheses and conclusion checked. |
-| [Finding](#finding) | [Argument](../claims/Alice_C_F0001_v1.md#argument) | Exact argument checked under those hypotheses. |
+| [Finding](#finding) | [Statement](../../claims/Alice_C_F0001_v1.md#statement) | Exact hypotheses and conclusion checked. |
+| [Finding](#finding) | [Argument](../../claims/Alice_C_F0001_v1.md#argument) | Exact argument checked under those hypotheses. |
 ```
 
 Each `Review` locator belongs to that same fixed R material.

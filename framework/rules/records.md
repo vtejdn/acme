@@ -277,7 +277,7 @@ Human registration does not register agents or models; review arrangement record
 | `repository/repositories.json`, `repository/intake-people.json` | External repoN/authorN, qualified source facts and explicit two-way associations |
 | Git `config.worktree`: `research.actor` / `research.actorWorktree` | Local bound operator for this checkout; not committed |
 | `mathematics/claims/` and `mathematics/tasks/` | Exact statements/contracts, fixed decisions and explicit current selections, with their real authority and evidence |
-| Fixed C, R, L, U and J materials in their responsible homes | C statements and substantial arguments; R formal agent reviews of all relationships; L exploration and synthesis; U source inspection; J computations with exact scope and group identity |
+| C/R/L mathematical versions, rolling U and native J groups in their responsible homes | C statements and substantial arguments; R formal agent reviews of all relationships; L exploration and synthesis; U rolling source inspection under its [source-unit contract](../material-format.md#fixed-source-unit-inputs); J computations with exact scope and group identity |
 | Rolling S/D materials | Routes and continuing draft mathematics; meaningful earlier findings and received originals retain their preservation boundaries |
 | `mathematics/maintenance.md` | Rolling coordination of unresolved conformity issues and their next maintenance action, without mathematical assessments or evidence ownership |
 | `mathematics/erratum.md` | Concrete substantive mathematical issues and doubts, with affected-author confirmation and actual evidence at its responsible home |

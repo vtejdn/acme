@@ -18,11 +18,16 @@ Keep a manuscript's choices at its existing [writing-choice home](#document-choi
 
 ## Projects and Documents
 
-Use one manuscript project per user-defined research goal by default, named by its assigned local Task family, such as `Author_T_F0001/`.
+When a corresponding mathematical Task exists, use one manuscript project per user-defined research goal by default, named by its assigned local Task family, such as `Author_T_F0001/`.
 Another human's ordinary Task/E authority and manuscript projects are outside mathematical intake; own selected manuscripts may use [personal import](intake.md#personal-import).
-Use the actual author-designated line and numeric serial from the [Task index](../../mathematics/tasks/index.md).
-Omit a physical-version or topic suffix from the project root and put its title in the README.
+Use the actual author-designated line and numeric serial from the [Task index](../../mathematics/tasks/index.md) for that Task-named root.
+Omit a physical-version or topic suffix from that root and put its title in the README.
 Create a project when manuscript work is needed within the user's authorized scope; a recorded goal does not require an empty manuscript project.
+
+For an actual writing assignment without a corresponding mathematical Task, reuse a suitable existing or author-designated writing home.
+If none is suitable, choose a necessary purpose-named document location under ordinary organization within that writing authority, without manufacturing T/E, mathematical completion criteria or a routine directory-choice approval.
+Maintain the [actual project or document record](#project-and-document-records), preserving author choices, source accuracy, review and applicable build responsibilities.
+This writing work starts no research or execution allowance, and a Markdown assignment requires no TeX source or compilation merely for directory naming.
 
 A user may explicitly designate another home or directory name for a talk or presentation.
 Preserve that choice and apply the same author, source, writing, build and review responsibilities there; a presentation does not require a new Task merely to obtain a Task-named directory.
@@ -68,18 +73,18 @@ The document directory is the unit of compilation.
 Files included with `\input` or `\include` are sections of that document and need no separate document directory.
 A separately compiled supplement has its own directory; an appendix included in the paper belongs with the paper.
 
-Keep the goal ID stable when the manuscript title changes.
+Keep an existing Task family ID stable when the manuscript title changes.
 If one manuscript draws substantively on several goals, choose one primary project and link the other goals with a brief explanation in its project README.
 Do not duplicate the same manuscript under several goal directories.
 
-<a id="project-and-document-records"></a>
 ## Project and Document Records
 
-The project `readme.md` records the responsible human author, authorized local Task, primary goal, supporting goals and document entrances.
+The project `readme.md` records the responsible human author, actual writing assignment and purpose, necessary mathematical inputs and document entrances.
+Include the local Task and primary/supporting goal associations only when they actually exist and apply; a standalone writing document uses its adequate document record for this scope.
 It gives a compact mapping from principal manuscript result labels to the authoritative mathematical arguments, responsible records and applicable proof reviews.
 Expand the mapping only when a new substantive result needs its own provenance.
 
-Each document's `readme.md` records its purpose and entry file, compilation instructions, required local inputs, and the latest build and manuscript-review evidence.
+Each document's `readme.md` records its purpose, actual entry, required local inputs and real manuscript-review evidence, with compilation instructions and latest build facts only when compilation applies.
 Link actual editorial choices from their existing conventions or designated writing-choice home.
 Do not invent a model, fallback or extra adoption requirement for an author who has not chosen one.
 
@@ -481,6 +486,9 @@ When an actual edition, passage or inspection gap remains, follow the existing [
 U is the ordinary home for an independent reusable source-audit unit; an integrated project deduction or synthesis keeps its adequate C/L account and actual source/adaptation facts.
 Acquisition-only work maintains necessary bibliography and useful edition/source notes without creating a source unit or acquisition account.
 Record every application actually cited in current TeX, linking adequate source evidence and applicable definition entries where available and keeping manuscript-specific applicability, claims, notation, terminology and gaps in the same citation map.
+Uses sharing the same source, edition, mathematical role and hypothesis interface may share one applicability explanation with their actual TeX locations listed together, provided it covers the applicable conventions, representation conversions and inspection limits.
+Distinguish different assumptions, editions, roles, adaptations and unresolved checks; an equal citation key or one verified use does not verify other uses.
+Keep every actual use locatable and reuse sufficient source evidence without duplicating its inspection account for each occurrence.
 Adequate source-inspection evidence is required before describing the application as verified or using it as established support at its claimed scope; adequate retained U/C/L evidence can suffice without a new local PDF.
 If a source audit finds or checks a source not cited in the current TeX, retain any necessary finding at its responsible source-level home and do not add a `citation.md` entry.
 Stylistic consultation and bibliography-only work follow the same source-preparation duties at their actual scope; only citations present in the current TeX receive citation-map entries.

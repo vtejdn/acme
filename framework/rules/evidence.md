@@ -43,18 +43,6 @@ Review findings and the achieved scope determine completion; a checklist of atte
 ### Finding-level review relationships
 
 The R finding owns its actual agent checking relationship; the C/T decision owns adoption and mathematical/lifecycle assessment without an aggregate review-status.
-Use a `Review relationships` table with columns `Review` and `Relationship`, linking each finding to its real local anchor.
-Allowed relationships are `self-reviewed`, `independently reviewed` and genuinely unestablished historical/source `unknown`; an omitted row is a missing declaration, distinct from explicit unknown.
-Explain the actual review arrangement and inspected scope in the finding's existing account.
-Do not derive a finding's relationship from a consumer label or physical version.
-
-Tools check the exact supplied binding coverage without deriving an aggregate independent level from C or mixed findings.
-The agent determines mathematical sufficiency and actual required independent coverage under the [agent/context boundary](proof-audits.md#review-arrangements).
-An isolated separate agent can read the fixed proof and dependencies directly but must not inherit proof-development discussion, summaries or prior verdicts.
-After an independent finding identifies a gap and the proof is repaired, independent re-review of the correction and affected chain remains necessary; a repair contributor's self-check does not fulfill it.
-A new C/T physical version cannot turn a retained self-review into independent evidence.
-Unknown historical relationships remain unknown and old assessments remain historical;
-supplement only evidence necessary for actual new adoption or required review.
-Preserve known finding relationships and fixed scopes.
-Corrections to a known finding use new review evidence, not a rewritten relationship.
-This structural check does not certify mathematical correctness or require a new review registry.
+Follow the [finding-level review rule](proof-audits.md#finding-level-review-relationships) for actual relationship declarations, exact inputs and bindings, and new-adoption requirements; the [material format](../material-format.md#finding-level-review-relationships) owns field syntax.
+The [review-arrangement and independence rules](proof-audits.md#review-arrangements) govern actual agent relationships and required independent coverage; a consumer label or physical version establishes neither.
+For a repaired finding, follow the [rolling R repair rule](proof-audits.md#rolling-review-repair) for necessary rechecking and historical consumers, without requiring a new R container, rewriting an earlier relationship or claiming that old evidence covered later repairs.
