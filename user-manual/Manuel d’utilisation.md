@@ -81,7 +81,7 @@ Téléverser les travaux de recherche et rendre un dépôt public sont deux choi
 
 Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, suivez plutôt les étapes de la section suivante.
 
-1. Demandez à un [agent](#notion-agent) de télécharger le [cadre ACME](https://github.com/vtejdn/acme) dans le dossier de votre projet, ou de [cloner](#notion-clone) son dépôt si vous utilisez [Git](git-repository.md#notion-git).
+1. Demandez à un [agent](#notion-agent) de télécharger le [cadre ACME](https://github.com/vtejdn/acme) et de l’installer dans le dossier de votre projet.
 2. Choisissez une clé d’auteur unique, par exemple `Alice` ou `Ali`, et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`.
    Demandez à un agent de vous enregistrer comme auteur et d’ajouter cette attribution.
    Dans un espace de travail Git, demandez à l’agent d’associer cette copie de travail à votre clé d’auteur afin que les nouveaux enregistrements portent la bonne attribution.
@@ -171,7 +171,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.9.2.
+La version actuelle du cadre est 0.9.3.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.

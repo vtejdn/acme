@@ -2,6 +2,9 @@
 
 To human authors: the [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md), [ユーザーマニュアル](user-manual/ユーザーマニュアル.md) or [Manual de usuario](<user-manual/Manual de usuario.md>)) is all you need.
 
+To install ACME, obtain the selected version's files from the [official repository](https://github.com/vtejdn/acme) and integrate them into the actual project root under the [installation action](framework/agent-actions.md#install-the-framework).
+An existing project keeps its contents and Git history; an existing ACME installation uses the [upgrade action](framework/agent-actions.md#upgrade-installed-framework) when an upgrade is requested.
+
 This mathematical research repository uses ACME, Autonomous and Collaborative Mathematical Exploration.
 This entrance orients agents working in the existing checkout under the actual human instruction.
 At each work-round start, follow the [local-rule reading and daily official check](framework/agent-actions.md#start-a-work-round) and the [current-rule duty](framework/rules/workflow.md#proportionate-execution), independently of public-query availability.

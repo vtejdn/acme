@@ -56,7 +56,7 @@ Keep needed [upgrade notes](upgrade/) in the official starting repository for th
 
 ## Upgrading an installed framework
 
-The [upgrade action](agent-actions.md#upgrade-installed-framework) is separate from daily metadata checking and fresh installation by ordinary copying or cloning.
+The [upgrade action](agent-actions.md#upgrade-installed-framework) is separate from daily metadata checking and [first installation of selected framework files](agent-actions.md#install-the-framework).
 One explicit upgrade assignment covers ordinary retrieval, agent-selected adaptation and necessary checks; ask only for a decisive conflict, missing fact or operation outside that authority.
 
 1. Identify the installed version and selected official target, obtain its source in a creator-owned child of root `.tmp/`, and fix the exact target commit.
@@ -164,5 +164,5 @@ An unanswered reminder, deferral or successful query grants no upgrade permissio
 
 An explicitly authorized upgrade follows the [installed-framework procedure](#upgrading-an-installed-framework) for its selected official version, affected local framework/configuration and actual material-migration scope.
 Apply the [current-rule reading duty](rules/workflow.md#proportionate-execution) before affected work resumes, preserving actual assignment authority and Task/E stopped conditions.
-Fresh copying or cloning and upgrading an existing research project retain their separate setup and preservation responsibilities.
+First framework installation and upgrading an existing research project retain their separate setup and preservation responsibilities under the installation and upgrade actions.
 Metadata-query failure leaves the public version unconfirmed and does not block unrelated authorized work.

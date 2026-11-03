@@ -55,16 +55,32 @@ A reminder, silence or metadata response does not authorize replacement files, v
 
 ## Install the framework
 
-For an authorized fresh installation, clone the [official starting repository](https://github.com/vtejdn/acme) or copy its files to the selected location using ordinary tools.
-Copying without Git omits the source .git and does not initialize Git; cloning follows Git's ordinary history and configuration behavior.
-Inspect the actual destination and selected files, preserving an existing checkout's .git, index, refs, configuration and unrelated files while resolving actual file conflicts.
-Read the obtained framework version and its applicable entrances, then determine the actual purpose from the human request and destination contents, rather than treating an official URL, clone command, empty registry or folder name as a new-project instruction.
-An existing research installation follows the [upgrade action](#upgrade-installed-framework), without copying blank registries over its research state.
-Existing project identity, configuration or materials must not be reset as a blank installation or cleared to manufacture a new project.
-Copying an existing research repository is not fresh framework setup and supplies no new identity, reattribution or intake exemption.
-Source inspection, backup, review, upgrade preparation and maintenance of the official framework itself retain the actual source identity and notices without new-project registration or a project credit.
+Before creating a directory or retrieving content, determine the actual authorized purpose and final installation target from the human request, workspace and target contents.
+An official page, repository name, example or empty registry alone supplies no installation or new-project instruction.
+For installation into an existing project, use its actual root by default, rather than creating an acme child project from the official repository name.
+The shell's current subdirectory need not be that root; use actual project facts and, when available, native Git root information, applying the same protection to a .git directory or worktree pointer file.
+Use an already clear target directly; preserve relevant contents and clarify only a decisive target, authority or intent conflict instead of silently changing the destination.
 
-For an actual new research project obtained by downloading, copying, unpacking or cloning the official blank source, first prepare repository, repository_display_name and repository_abbr in repository/config.json as that project's human-chosen or explicitly confirmed values, or null for each missing choice.
+An existing ACME installation stays at its project root and follows the [upgrade action](#upgrade-installed-framework) when an upgrade is authorized; ordinary reading or use does not itself select an upgrade.
+For a first installation in an existing project or a new research project, integrate selected official version or fixed-commit files into the chosen project root.
+New research projects use this same file-installation path; when Git is wanted, use or establish the human project's own repository within actual setup authority, without adopting official history by default.
+Joining existing research collaboration may clone that actual research repository and retain its history, identity and materials.
+Framework development and actual explicit clone instructions retain their requested target and ordinary Git behavior; those uses neither recommend official cloning for ordinary installation nor require an exception approval.
+Copying an existing research repository is not fresh framework setup and supplies no new identity, reattribution or intake exemption.
+Source inspection, backup, review, upgrade preparation and framework maintenance keep their actual source purpose and identity, without treating a source copy as an installed project or creating a new-project registration or credit.
+
+Obtain a snapshot or the needed files from the [official repository](https://github.com/vtejdn/acme) at the selected version or fixed commit, reusing adequate available contents when applicable.
+Keep source retrieval distinct from final installation; a downloaded or unpacked outer directory does not determine the project root.
+When temporary local source is needed, explicitly choose its download or extraction destination in a creator-owned child of the project's root .tmp/ under the [temporary-storage rule](rules/organization.md#temporary-storage), and clean it after use without leaving continuing work dependent on that copy.
+Choose adequate retrieval tools for the actual comparison, source inspection or maintenance need, including Git when useful, without making cloning or a Git executable an installation prerequisite.
+Read the selected source's version and applicable entrances before integration.
+File installation carries no source .git, refs or official commit history into the project.
+Preserve the destination's own .git, index, refs, Git configuration, remotes, history and unrelated work, and merge affected README, AGENTS, ignore rules, complete LICENSE and other necessary public files according to their actual contents and roles.
+Without Git, integrate at the same actual project root without initializing a repository or remote merely for installation.
+Existing project identity, configuration or materials must not be reset as a blank installation or cleared to manufacture a new project.
+An existing project receiving ACME for the first time reuses its actual project choices and registrations and completes only genuinely missing framework setup, human information and checkout binding through the [setup action](#set-up-repository-or-human-identity).
+
+For an actual new research project, prepare repository, repository_display_name and repository_abbr in repository/config.json as that project's human-chosen or explicitly confirmed values, or null for each missing choice.
 Apply this preparation to both Git and non-Git copies; a valid inherited acme key is not evidence of the human's project choice, although that same key remains valid when explicitly chosen or confirmed.
 Then continue directly with the [setup action](#set-up-repository-or-human-identity): collect the missing human key/name and project choices together, register the actual human, append the scoped project notice and complete any necessary checkout binding.
 Reuse answers already supplied for that setup; while the required human key or License name is missing, finish independent retrieval and preparation and leave the copy authorless, without inventing an identity or starting research.
@@ -84,6 +100,12 @@ Create .tmp/, intake/, profiles/, execution/ and local source storage only when 
 The ordinary guides and their diagrams remain alongside the common framework files; copying carries no personal profiles, private holdings or research authorization from the official blank source.
 Cloning does not authorize pushing to an inherited remote or automatically changing that remote.
 
+Before reporting installation complete, check framework/version.json, necessary framework files and usable entrances at the final project root, together with preservation of existing contents and Git relationships and exclusion of source Git metadata and history from file installation.
+A version file in a temporary or unintended nested source copy, source-clone success or a command PASS alone does not establish installation at the requested root.
+Check the locations actually created or modified, without a whole-workspace nested-repository scan or removal of legitimate subrepositories.
+Insufficient permissions or necessary inputs remain concrete unfinished work; do not change the final project location to evade the limitation.
+Any actual Git delivery follows the [existing delivery action](#commit-or-push-requested-work) on the project's own history, including actual outgoing-chain checks, without making a preliminary commit or project-remote preflight a local installation prerequisite.
+
 Publishing common files from a development repository to the official starting repository requires its actual maintenance and remote-operation authority.
 Exclude the source's entire execution/ and .venv/ from framework copying and upgrades, including E, runtime notes and optional environment explanations; preserve the destination's actual local contents.
 Preserve the complete root LICENSE and applicable upstream notices; retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
@@ -95,6 +117,7 @@ Use ordinary copying and native Git without a permanent shipped-file inventory o
 ## Upgrade installed framework
 
 Apply the [version and upgrade rule](versioning.md#upgrading-an-installed-framework) under an explicit upgrade assignment, separately from the daily metadata read and fresh installation.
+Keep the actual installed project root as the destination; source retrieval prepares the selected files for that root.
 Identify the installed version and selected official target; obtain its fixed source in owned root `.tmp/` and verify agreement among tag, commit, version metadata and target-version note.
 Without Git, use available public source evidence with an archive or selected fixed-source files and ordinary recovery copies; Git initialization or a local clone is not required.
 Read applicable intervening notes, inspect their combined local paths and direct consumers, and prepare final target files with only genuinely ordered adaptations.

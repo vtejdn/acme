@@ -81,7 +81,7 @@ Das Hochladen von Forschungsaufzeichnungen und das öffentliche Bereitstellen ei
 
 Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME enthält, folgen Sie stattdessen den Schritten im nächsten Abschnitt.
 
-1. Bitten Sie einen [Agenten](#notion-agent), das [ACME-Rahmenwerk](https://github.com/vtejdn/acme) in Ihren Projektordner herunterzuladen oder dessen Repository zu [klonen](#notion-clone), wenn Sie [Git](git-repository.md#notion-git) verwenden.
+1. Bitten Sie einen [Agenten](#notion-agent), das [ACME-Rahmenwerk](https://github.com/vtejdn/acme) herunterzuladen und in Ihrem Projektordner zu installieren.
 2. Wählen Sie einen eindeutigen Autorenschlüssel, etwa `Alice` oder `Ali`, und wählen Sie unabhängig davon den Namen für die Namensnennung in `LICENSE`.
    Bitten Sie einen Agenten, Sie als Autor zu registrieren und diese Namensnennung hinzuzufügen.
    In einer Git-Arbeitsumgebung bitten Sie den Agenten außerdem, diese Arbeitskopie mit Ihrem Autorenschlüssel zu verknüpfen, damit neue Einträge dem richtigen Autor zugeordnet werden.
@@ -171,7 +171,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.9.2.
+Die aktuelle Version des Rahmenwerks ist 0.9.3.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.

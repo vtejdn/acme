@@ -1,7 +1,7 @@
 # Framework commands
 
 The standard-library runtime lives in classified `scripts/acme/` packages with thin root command entries.
-The common scripts accompany the official starting repository and are usable after ordinary copying or cloning.
+The common scripts accompany the official framework files and are usable after file installation or in an existing project clone.
 Run from the checkout root, or pass `--root ROOT`.
 The [agent action guide](../framework/agent-actions.md) selects the work and governing rules; this document describes optional CLI interfaces and their actual side effects.
 
@@ -91,10 +91,11 @@ The agent owns the wording and choice; the helper never installs a framework or 
 
 ## Installation and setup
 
-Use ordinary copying or cloning under the [installation action](../framework/agent-actions.md#install-the-framework).
-First read the obtained framework version and entrances and distinguish an actual new research project from source inspection, backup, maintenance, an existing shared-project clone or upgrade using the human request and actual target contents.
-For an actual new research project downloaded, copied, unpacked or Git-cloned from the official blank source, the agent first sets repository, repository_display_name and repository_abbr to actual human choices or null through ordinary bounded configuration edits.
-This includes clearing an unchosen inherited repository key in a Git clone before treating it as a project registration; a human may explicitly choose or confirm the same acme key without a new name restriction.
+Install selected official version files into the actual project root under the [installation action](../framework/agent-actions.md#install-the-framework), preserving the existing project and its Git relationships.
+Determine that target and the actual purpose before retrieval; source inspection, backup, maintenance, an existing shared-project clone and an authorized upgrade retain their own scopes.
+Read the obtained framework version and entrances before integration.
+For an actual new research project, the agent first sets repository, repository_display_name and repository_abbr to actual human choices or null through ordinary bounded configuration edits.
+Clear an unchosen inherited repository key before treating it as a project registration; a human may explicitly choose or confirm the same acme key without a new name restriction.
 Collect missing human key/name and project choices together, reusing supplied answers, then register the actual human, append the scoped project notice and complete necessary checkout binding.
 Missing human key/name answers leave an authorless preparation copy; missing project choices remain null while independent authorized setup continues, and official-source inspection, backup or upgrade preparation does not select fresh setup.
 Project identity and README content explicitly requested by the human are ordinary scoped edits; human registration and Git binding retain their separate explicit interfaces.

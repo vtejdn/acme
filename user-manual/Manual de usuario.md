@@ -81,7 +81,7 @@ Subir los registros de investigación y hacer público un repositorio son decisi
 
 Si se incorpora a un repositorio de investigación existente que ya contiene ACME, siga los pasos de la sección siguiente.
 
-1. Pida a un [agente](#notion-agent) que descargue el [marco ACME](https://github.com/vtejdn/acme) en la carpeta de su proyecto o que [clone](#notion-clone) su repositorio si utiliza [Git](git-repository.md#notion-git).
+1. Pida a un [agente](#notion-agent) que descargue e instale el [marco ACME](https://github.com/vtejdn/acme) en la carpeta de su proyecto.
 2. Elija una clave de autor única, como `Alice` o `Ali`, y elija de forma independiente el nombre que figurará en la atribución de `LICENSE`.
    Pida a un agente que le registre como autor y añada esa atribución.
    En un espacio de trabajo Git, pida al agente que asocie esta copia de trabajo con su clave de autor para que los nuevos registros tengan la autoría correcta.
@@ -171,7 +171,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.9.2.
+La versión actual del marco es 0.9.3.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.

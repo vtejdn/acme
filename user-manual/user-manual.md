@@ -80,7 +80,7 @@ Uploading research records and making a repository public are separate choices.
 
 If you are joining an existing research repository that already contains ACME, follow the steps in the next section instead.
 
-1. Ask an [agent](#notion-agent) to download the [ACME framework](https://github.com/vtejdn/acme) into your project folder, or [clone](#notion-clone) its repository if you are using [Git](git-repository.md#notion-git).
+1. Ask an [agent](#notion-agent) to download and install the [ACME framework](https://github.com/vtejdn/acme) in your project folder.
 2. Choose a unique author key, such as `Alice` or `Ali`, and independently choose the name to appear in the `LICENSE` attribution.
    Ask an agent to register you as an author and add that attribution.
    In a Git workspace, ask the agent to associate this working copy with your author key so that new records use the correct authorship.
@@ -169,7 +169,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.9.2.
+The current framework version is 0.9.3.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.

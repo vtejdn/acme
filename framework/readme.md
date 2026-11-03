@@ -9,7 +9,7 @@ This directory owns common rules, inert material templates and version guidance.
 It contains no live research status, bibliographic registry or selected manuscript.
 
 The current release identifier is maintained in the [version metadata](version.json) under the [versioning rules](versioning.md).
-Install the official starting repository by ordinary copying or cloning under the [installation action](agent-actions.md#install-the-framework).
+Install selected official version files into the actual project root under the [installation action](agent-actions.md#install-the-framework).
 The [start-of-work action](agent-actions.md#start-a-work-round) applies [current-rule reading](rules/workflow.md#proportionate-execution) independently of daily public-version checks and any upgrade reminder.
 
 ## Core principles and interpretation
