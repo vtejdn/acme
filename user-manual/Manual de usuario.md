@@ -155,8 +155,9 @@ Los colaboradores de un mismo repositorio pueden establecer un Task conjunto par
 ### Hábitos útiles
 
 - Pregunte a un [agente](#notion-agent) siempre que tenga dudas sobre el marco.
-- Si conserva la literatura en un directorio local sincronizado mediante un servicio en la nube, pida a un agente que conecte [el directorio local de literatura](../mathematics/literature/pdf) con él mediante una unión de directorios (directory junction).
-  Conceda al agente los permisos necesarios para leer y gestionar los archivos de ese directorio.
+- Si utiliza varios repositorios ACME en el mismo equipo, puede reunir la literatura en una única carpeta local de archivos PDF.
+  Pida a un agente que configure uniones de directorios (directory junctions) para que [el directorio local de literatura de cada repositorio](../mathematics/literature/pdf) apunte a esa carpeta.
+  Conceda al agente los permisos necesarios para leer y gestionar los archivos de esa carpeta.
 - Cuando los agentes automaticen tareas relacionadas que utilicen credenciales, guarde los secretos de forma adecuada y exclúyalos de [Git](git-repository.md#notion-git).
 
 ### <a id="manuscript-writing"></a>Redactar un manuscrito
@@ -171,7 +172,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.9.3.
+La versión actual del marco es 0.9.4.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.

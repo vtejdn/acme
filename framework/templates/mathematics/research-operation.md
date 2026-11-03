@@ -8,6 +8,7 @@ A template does not justify a process-only record.
 Use this for a [substantive operation or useful attempt](../../rules/ledger.md#substantive-mathematical-operations), not every scratch calculation.
 Pure logical repair alone needs no operation record or correction chronology under the [repair boundary](../../rules/records.md#in-place-maintenance-and-logical-repair); retain only useful mathematics, real decisions and necessary evidence.
 An exploratory entry may remain in its existing responsible section.
+Organize necessary content by its mathematical question, mechanism, comparison, synthesis or useful failure, without a separate dated history or an entry for every work round.
 Fill version transitions, consumers, reviews and authorization only when they apply; a missing Claim or completed review does not prevent recording a useful attempt.
 Internal extraction needs no separate approval; for main-theorem designation or objective changes, apply the [result-organization policy](../../rules/claims.md#lemma-extraction-and-approval); this field does not create an approval requirement for every operation.
 
@@ -30,8 +31,8 @@ Include the actual command, parameters, outcome/failure, limits and next action,
 No separate commit, locator or hash is required.
 Identify observations, conditional deductions and gaps.>
 
-## Versions, Consumers and Dated History, When Applicable
-<Existing version transitions, preserved originals, current-map owner, affected consumers and dated decisions.
+## Versions and Consumers, When Applicable
+<Necessary version transitions, preserved originals, current-map owner, affected consumers and actual adopted decisions, with dates when needed for those facts.
 An attempt without such transitions records only its relevant outcome and next action.
 Keep provenance separate from logical inputs.>
 ```

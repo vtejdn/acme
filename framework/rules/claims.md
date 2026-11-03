@@ -191,7 +191,10 @@ Research variants needing distinct retention follow the common version boundary;
 Substantive changes to a completed Task's contract, selected support or dependencies follow its [existing reopening or new-completion rules](tasks.md#task-records); an unresolved check alone selects no blocked state and changes no [effective E conditions](tasks.md#execution-boundary).
 Check affected material/relationships and derive needed [Claim](../../mathematics/claims/index.md), Task or strategy navigation, optionally using `scripts/render-research-navigation.py` after the relevant batch settles.
 Never change status by editing a generated row.
-Retain earlier assessments and the reason for each change in their responsible materials; the stable mathematics entrance needs no progress refresh.
+Retain genuine earlier assessments, necessary reasons for changes, exact adopted inputs, relations and decision anchors in their responsible materials.
+This protects the actual decisions and evidence, not their entire process narration: within actual author authority, remove process-only clauses or duplicate explanations while preserving complete necessary mathematics and facts at adequate responsible homes.
+Do not remove true decisions, imply adoption of later evidence by an earlier decision or leave necessary evidence only in Git history.
+The stable mathematics entrance needs no progress refresh.
 
 Use the ledger's [substantive mathematical-operation rules](ledger.md#substantive-mathematical-operations) to record the mathematical reason, before/after scope and consequences of a claim or proof change.
 Link a shared operation/version record when several claims are affected; keep actual proof dependencies in their identified proof artifacts.

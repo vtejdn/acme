@@ -51,9 +51,11 @@ A single coherent batch can own several related operations.
 For an approval-requiring action, prepare the concrete proposal first and record the decision when received; the existing approval rule is unchanged.
 A record of an operation is not approval to perform it, and ordinary record keeping introduces no additional approval gate.
 
-Within a research-operation record, keep a concise dated history of substantive decisions/outcomes separate from any mutable current version map.
+Organize a research-operation record by its mathematical question, exploration mechanism, comparison, synthesis or useful failure.
+Retain necessary findings, mathematical before/after differences, version and consumer relations, adoption reasons and unresolved consequences at their responsible homes, linking adequate existing evidence.
+No separate dated-history section or entry for each work round is required.
 Actual new decisions, reversals or research-scope changes keep their genuine dates and effects; pure logical repair follows the [in-place boundary](records.md#in-place-maintenance-and-logical-repair) without a compulsory dated correction stream or misrepresenting earlier conclusions.
-Group routine implementation edits with the operation they implement.
+Routine implementation edits need no separate narrative.
 Preserve unsuccessful reorganizations when they reveal a mathematical obstruction or explain why the old proof remains selected.
 
 Use an existing claim's review/correction section for a small local change.
@@ -73,7 +75,7 @@ Create one through ordinary authorized authoring or the optional `material.py cr
 Either path maintains the existing material_next bound and necessary short-lock and exclusive-publication protections for fixed-family allocation under the [allocation rule](identity.md#allocation-and-concurrency).
 All L materials, including source-specific reading supplements and cross-source syntheses, use this location and the same author/line L sequence.
 Link the relevant source-audit home when applicable; source-local U records retain their own identities and inspection scope.
-Dates record chronology; material identities preserve the substantive account.
+Dates identify actual findings, decisions, checks or necessary order; they do not require a continuing session, operation or result stream.
 
 Retain the program, necessary inputs, decisive parameters, relevant environment and a usable command plus mathematical checks.
 Generated outputs may be regenerated at the same path, overwritten or removed when their actual consumers remain coherent.
@@ -90,9 +92,9 @@ An attempt record should answer:
 - What method or discriminating test was attempted, and what evidence resulted?
 - What was observed, conditionally derived or established, what remains uncertain, and where is the supporting calculation or argument?
 - If the attempt failed, which assertion and parameter scope failed, and what remains possible?
-- What changed relative to the previous attempt, and what is the next useful action?
+- Which mathematical difference or decision affects continuation, and what is the next useful action?
 
-Move Claim arguments into their responsible fixed C materials and link them from the chronological record.
+Move Claim arguments into their responsible fixed C materials and link them from the relevant mathematical discussion.
 Do not keep independent, diverging copies of a proof in a session log and a module.
 During [same-author transfer](intake.md#personal-import), suspected L overlap with C, R, J or another kind follows [subagent comparison and responsible-home selection](records.md#same-author-transfer-and-duplicate-comparison), preserving unique exploration, useful failures, analysis and actual limits before trimming duplication.
 Preserved original complete proofs and explicitly distinguished new versions follow the [proof-version rules](claims.md#proof-versions); their different historical or current roles must be visible.
@@ -102,9 +104,9 @@ Link actual source-specific checks in [literature audits](literature-audits.md) 
 Do not duplicate their authoritative records or create a separate search-log directory.
 An unsuccessful search is evidence about the inspected scope, not proof that a result or method does not exist.
 
-A historical checkpoint identifies its date, the assessment or plan it preserves, a commit or artifact version when available, and the link to the current replacement.
-Mark it prominently as historical and not a current execution queue.
-A routine minor update need not generate a checkpoint.
+Retain a historical checkpoint only while its actual mathematics, evidence or continuation purpose remains necessary; an old plan, date or locator alone does not justify keeping it.
+A needed checkpoint identifies the actual date at its known precision, relevant assessment or plan, an available commit or artifact version when needed, and the current replacement.
+Mark it as historical, without treating it as a current execution queue or creating checkpoints for ordinary updates.
 
 Preserve failed approaches when they expose an obstruction or prevent repeated work.
 Distinguish an unsuccessful attempt, a refuted auxiliary method, and a counterexample to the goal itself.
@@ -143,6 +145,7 @@ Already fixed material never becomes freely editable by moving it into drafts.
 For delegated [Preparation](workflow.md#records-review-and-handoff), place concise ordinary prose after the Draft's identity header and before its research body, explaining useful results or methods, decisive conditions and limits, and actual remaining gaps.
 Put direct original-material locators beside the relevant judgments, using actual fixed material versions and anchors or source editions with theorem, section or page references as appropriate.
 Link adequate detailed materials and retain necessary new analysis in the Draft body or another responsible home, with the existing source and content-retention duties intact.
+Concrete unresolved literature work needing later handling in D or Preparation uses the [common maintenance entrance](records.md#pending-literature-work); keep necessary mathematical context, source facts and use limits in the Draft without leaving it as the only follow-up home.
 Reuse still-applicable Preparation and update only what relevant changes or concrete doubts require; no rerun is mandatory each round.
 The same subagent may continue research in that Draft within its initial or extended assignment, without copying the Draft or creating a handoff report merely for the assignment change.
 
@@ -156,5 +159,5 @@ Do not invent objects, duplicate narratives or rewrite original dates/attributio
 ## Ledger index
 
 mathematics/ledger/index.md manually links fixed L identity/title and concise subject labels drawn from each L.
-Findings and chronology remain in the material.
+Findings and any necessary dated facts remain in the material.
 The agent fixing or revising an L account updates its affected navigation entry after the material settles.

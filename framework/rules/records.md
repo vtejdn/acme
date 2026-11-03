@@ -260,7 +260,10 @@ The actual author, mathematical revision, review scope and evidence obligations 
 
 ## Time and human attribution
 
-New C/T decisions, substantive S decisions or recorded updates, and actual operator, approval, intake and formally performed review acts use their real UTC minute under the [new-event rule](workflow.md#new-record-timestamps); in-place repair creates no compulsory correction event or dated stream.
+When the responsible rule requires retaining a dated fact, its real time and precision follow the [timestamp rule](workflow.md#new-record-timestamps).
+Genuinely new C/T decisions, necessary substantive S decisions, actual intake and formally performed reviews retain their applicable real UTC-minute requirements; in-place repair creates no compulsory correction event or dated stream.
+An operator change, approval, session or ordinary current-state update does not by itself create a dated record or history.
+Necessary operator or approval facts use their existing responsible home and actual scope.
 A genuinely added C/T decision requires `YYYY-MM-DDTHH:MM`, including when it assesses older mathematics; a year, month or date alone, a value with `Z`, an offset, seconds or fractions is invalid for it.
 A timestamp is neither an identity nor a mathematical version.
 Keep genuinely known year/month/date facts at their calendar precision for older mathematics and reviews, including historical reading or genuine reselection of an existing C/T decision; never invent a creation time, transition date or reviewer to fill a field.
@@ -279,7 +282,7 @@ Human registration does not register agents or models; review arrangement record
 | `mathematics/claims/` and `mathematics/tasks/` | Exact statements/contracts, fixed decisions and explicit current selections, with their real authority and evidence |
 | C/R/L mathematical versions, rolling U and native J groups in their responsible homes | C statements and substantial arguments; R formal agent reviews of all relationships; L exploration and synthesis; U rolling source inspection under its [source-unit contract](../material-format.md#fixed-source-unit-inputs); J computations with exact scope and group identity |
 | Rolling S/D materials | Routes and continuing draft mathematics; meaningful earlier findings and received originals retain their preservation boundaries |
-| `mathematics/maintenance.md` | Rolling coordination of unresolved conformity issues and their next maintenance action, without mathematical assessments or evidence ownership |
+| `mathematics/maintenance.md` | Rolling coordination of unresolved conformity issues and concrete outstanding literature preparation, with their next action but no mathematical assessments or evidence ownership |
 | `mathematics/erratum.md` | Concrete substantive mathematical issues and doubts, with affected-author confirmation and actual evidence at its responsible home |
 | `mathematics/messages.md` | Shared mathematical correspondence, with recipient handling and human-authorized sender archives |
 | `intake/<initiator>/*.json` | Actual operation time, recorder, instruction, original/transport provenance, scope and outcome |
@@ -296,6 +299,9 @@ Keep the first in original materials, the second in concise intake metadata and 
 See [intake](intake.md).
 
 Keep earlier mathematical statements, useful failed arguments, selected proofs, dependencies and necessary review evidence, even without a current consumer.
+This protects necessary mathematics and genuine decisions with their exact inputs, adoption relations, scope and anchors, without requiring the entire original process narration.
+Within actual author authority, remove process-only clauses, consolidate duplicate explanations or cite adequate responsible material while preserving complete necessary arguments and facts.
+Do not replace necessary mathematics with a generic summary or leave evidence still needed now only in Git history.
 Lifecycle and authorization history follow the [common content decision](#substantive-material-retention); their category alone creates no permanent-retention duty.
 The [review-retirement exception](proof-audits.md#review-retirement) permits removing a fully redundant old review container only after sufficient actual replacement and truthful retention and reconciliation of its necessary content, inputs and historical adoption facts.
 Absence of current consumers or a later PASS alone does not permit that exception, and retirement never makes its fixed identity available again.
@@ -312,7 +318,9 @@ No hash-history log, replacement manifest or mathematical byte gate is introduce
 The retired C/T JSON records, snapshots and discovery products are not a second reader or authoring API.
 
 For locator-only maintenance, inspect all affected references and preserve the selected material, physical version, original identity, mathematical content, actual scope and review conclusions.
-[Coordinated citation-key correction](literature.md#coordinated-key-renaming) is local source-owner maintenance for the same unchanged work and edition, with the ordinary old/new note and corrected consumers.
+[Coordinated citation-key correction](literature.md#coordinated-key-renaming) is local source-owner maintenance for the same unchanged work and edition, with corrected consumers and necessary existing correspondence.
+Ordinary naming, path or same-object locator correction needs no old/new-key note, rename history, permanent map, transfer receipt or historical summary merely for the change.
+Keep an explanation only when needed for source identity, edition, actual inspection or consumer correspondence at its existing responsible home.
 It does not permit a recipient to rewrite an imported original's captured key, path or original source binding; later acquisition of a corrected source binding has its own scope.
 Neither maintenance nor a mere byte difference requires a new mathematical review.
 
@@ -392,7 +400,7 @@ Harmless shared-material maintenance causes no publication cascade.
 
 ## Shared mathematical coordination
 
-Use three distinct shared rolling files at their [responsible locations](organization.md#material-maintenance-worklist): maintenance for conformity, erratum for substantive mathematical issues, and messages for ideas, methods and useful progress notices.
+Use three distinct shared rolling files at their [responsible locations](organization.md#material-maintenance-worklist): maintenance for conformity and concrete outstanding literature preparation, erratum for substantive mathematical issues, and messages for ideas, methods and useful progress notices.
 Register an issue once according to its actual nature, retaining necessary evidence and unresolved affected-author portions when correcting its location, without a fourth common issue board.
 These files have no material number or single mathematical author header; entries, replies and confirmations identify the actual human the agent represents under the existing identity rules.
 A signature, display name or write argument does not establish that representation or permission to alter another author's mathematics.
@@ -400,6 +408,32 @@ Keep exact material/version or source locators, the concrete issue or addressee,
 Maintenance and erratum require no per-item date; messages retain their true sending time.
 Complete mathematics, sources, formal checking, assessments and decisions remain in adequate C/R/L/U/J/D or other responsible materials, linked rather than owned by these coordination files.
 An ordinary question or message need not create R; an actual review retains its existing evidence and relationship obligations.
+
+<a id="pending-literature-work"></a>
+### Outstanding literature preparation
+
+When authorized research, writing, source preparation, material receipt or an assigned material check identifies concrete unresolved literature acquisition, missing passages, locators, attribution, editions or necessary source verification requiring later handling, record that need in `mathematics/maintenance.md`.
+This applies even when no conformity violation or proof blocker exists, the material remains in D, or a sufficient local proof already settles the mathematics.
+Do not leave the only follow-up entrance in a Draft, Preparation, source note, handoff or ordinary reply.
+An agent with restricted write scope supplies the concrete item to the responsible agent with actual writing authority; if registration cannot be completed, report that unfinished scope without claiming an entrance exists.
+Complete and check straightforward preparation directly when possible, without retrospective items for resolved intermediate steps.
+A possible future reading interest or absent local PDF without an actual further preparation need creates no item, inventory or download duty.
+
+Reuse an existing item for the same actual work, edition and handling need, retaining distinct uses and unresolved author portions.
+Briefly identify the known work or source lead, affected material and use, unresolved need and next action or actual unfinished reason; useful known editions, public addresses and evidence locators may be included without requiring complete bibliographic identification or invented rule grounds.
+Keep necessary mathematics, bibliographic and source facts, inspection scope and use limits at their existing responsible homes, linking those facts rather than creating U/L/R or copying evidence merely for a worklist item.
+
+Ordinary lookup, acquisition, location, edition comparison and necessary verification follow the literature rules and actual authority; worklist registration alone requires no conformity-inspection stage, isolated repairer, independent conformity acceptance, R or mathematical decision.
+An explicit inspection-only or acceptance-only assignment retains its actual read-only and scope limits.
+Once the actual need is completed and checked and necessary facts, limits and consumers are maintained, the agent representing the responsible local author may confirm and clear that author's resolved portion within its authority, without another independent conformity acceptance or per-item human approval solely for this preparation.
+File presence, HTTP success, bibliography completion or a direct report does not discharge an unverified work, edition, passage or application need.
+Adequately verified alternative material or an authorized actual change of use may resolve the need after necessary consumer handling and preservation of still-needed evidence and provenance; failed retrieval, silence, temporary non-use or stopping a search alone does not.
+Preserve other-author, unknown-author, unverified, unfinished, out-of-scope and concurrent portions and necessary common context under the worklist's author and cleanup boundaries.
+The authors of a cited work do not thereby become local issue-confirmation owners; received-material local portions use the existing [receiving-side disposition boundary](#receiving-side-local-disposition).
+
+Actual conformity repair retains its [common repair and acceptance duties](#material-error-handling), including applicable context isolation; mixed batches apply each issue's real obligations without relabeling a repair to bypass acceptance.
+An unresolved attribution alone does not invalidate a sufficiently supported local proof or change its assessment, while an argument relying on an unverified source retains its actual unresolved input.
+Concrete mathematical defects or doubts, including theorem misuse or a failed dependency, use [erratum and the mathematical correction rules](#mathematical-issues-and-reliance); correct a single issue's responsible location rather than mirroring it across worklists, retaining separate entrances only for genuinely distinct problems.
 
 ### Mathematical issues and reliance
 
@@ -416,7 +450,8 @@ Do not automatically apply an old objection to a new version or infer resolution
 ### Receiving-side local disposition
 
 When an external material's true original author does not participate in this receiving repository, the actually responsible receiving human's agent may confirm and clear a sufficiently resolved local maintenance/erratum portion within its current assignment and authority.
-Reuse adequate acceptance or independently confirmed false-alarm evidence without waiting for the external author to register, log in or approve, inventing same-human correspondence, or adding a custody/participant register.
+Where conformity acceptance or independent false-alarm confirmation applies, reuse adequate evidence without waiting for the external author to register, log in or approve, inventing same-human correspondence, or adding a custody/participant register.
+Ordinary literature-preparation portions use the [completion and confirmation rule](#pending-literature-work), without an extra conformity-acceptance requirement.
 Conformity repair follows the [common repair and acceptance contract](#material-error-handling), including its applicable context isolation; a repairer's self-check cannot close its own repair, and mathematical erratum keeps applicable correction and independent rechecking duties.
 This includes an accepted authorized locator repair or a sufficiently confirmed false alarm needing no body edit, without a fourth acceptance stage or disposition receipt.
 State the receiving human, actual local object and conclusion truthfully; do not claim the original author confirmed, changed a historical opinion or performed a different review.
@@ -479,8 +514,9 @@ Useful mathematics stays in its actual contributor's adequate responsible materi
 <a id="material-error-handling"></a>
 ## Common handling of material problems
 
-Use this contract for format, reference, conformity and substantive mathematical problems in research materials, whether found during authorized research or an explicitly assigned maintenance action.
-Locate the problem and its effects, establish its nature, actual scope and author authority, repair with necessary diagnosis and self-checks, complete applicable review or acceptance, and update responsible materials and resolved coordination portions.
+Use this contract for format, reference, conformity and substantive mathematical problems and concrete outstanding literature preparation in research materials, whether found during authorized work or an explicitly assigned maintenance action.
+Locate the issue and its effects, establish its nature, actual scope and author authority, complete authorized handling and necessary checks, perform applicable review or acceptance, and update responsible materials and resolved coordination portions.
+Ordinary literature preparation follows its [handling and confirmation rule](#pending-literature-work); the conformity stages below apply to actual conformity work rather than every maintenance entry.
 These are common responsibilities, without new stages, status fields, a total issue board or a mandatory pipeline starting with inspection.
 Use the currently installed and actually applicable rules; an uninstalled version or design proposal supplies no local rule authority.
 Explicit directory, material, issue or depth limits govern writes and cleanup; follow necessary dependencies and consumers for reading and retain a relevant out-of-scope issue without expanding the repair.
@@ -510,7 +546,8 @@ Routine material maintenance starts from actual explicit human maintenance inten
 The [action guide](../agent-actions.md#inspect-local-mathematical-materials-under-current-rules) provides independently callable inspection, repair and acceptance entrances to this common contract.
 A full conformity-maintenance assignment covers inspection, repair and acceptance with [stage isolation](workflow.md#material-maintenance-contexts); one instruction covers the necessary stages and delegation without repeated stage approvals.
 A narrower inspection remains read-only, while an explicit repair may start directly without a prior full inspection.
-Without a narrower instruction, inspection covers local mathematical materials in batches, repair covers recorded items awaiting repair, and acceptance covers submitted repairs awaiting acceptance.
+For conformity work without a narrower instruction, inspection covers local mathematical materials in batches, repair covers recorded conformity items awaiting repair, and acceptance covers submitted conformity repairs awaiting acceptance.
+Interpret a general instruction to repair or accept maintenance by each item's actual need: ordinary literature work uses its preparation and confirmation rule, while actual conformity repair retains its stages and independence; an inspection-only or acceptance-only instruction still authorizes no material repair.
 These actions alone grant no research start, resumption, new allowance or transfer of authorship, and do not automatically create or modify T/E.
 A full material inspection does not select all private settings, literature originals, private accounts, computation outputs or environments for inventory.
 
@@ -540,7 +577,7 @@ If the issue appears unfounded or cannot be repaired within current authority or
 <a id="accept-local-material-repairs"></a>
 ### Accept and clear only the checked scope
 
-Independently inspect the original issue, applicable rules and requirements, actual repair and necessary affected materials.
+For conformity repair, independently inspect the original issue, applicable rules and requirements, actual repair and necessary affected materials.
 Both research conformity repairs and explicitly assigned conformity maintenance use this acceptance scope, [context isolation](workflow.md#material-maintenance-contexts), failure handling and cleanup.
 Do not combine acceptance with material repair; contributing a substantive repair makes the agent ineligible to accept that contribution independently.
 The acceptance assignment includes cleanup of the accepted portions belonging to the human represented by the agent, unless the human explicitly limits it; the repairer's self-check never supplies this acceptance.
@@ -555,14 +592,14 @@ Return the actual acceptance result, cleanup and limits without claiming that st
 
 ### Sole rolling worklist and current edits
 
-Keep continuing conformity issues in `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), and substantive mathematical issues in [erratum](#mathematical-issues-and-reliance).
+Keep continuing conformity issues and [concrete outstanding literature preparation](#pending-literature-work) in `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), and substantive mathematical issues in [erratum](#mathematical-issues-and-reliance).
 Classify each unresolved issue once by its actual nature; if its location is wrong, preserve necessary evidence and affected scope while moving it rather than mirroring it in both files or adding a total issue board.
 Mathematical erratum cleanup follows its actual mathematical review and affected-author confirmation duties, without an additional conformity-acceptance requirement.
 Completed and accepted incidental conformity repairs need no retrospective item, independent inspection report or correction log.
 Failed, unrepaired, unaccepted and out-of-scope conformity problems retain the concrete scope needed for continuation, creating the worklist only when such content is needed.
-Keep only a material and title/anchor locator, concrete issue and rule grounds, affected scope, actual represented human, affected material author, current next action and necessary repair references or unfinished reason, in the repository's actual document language.
+Keep only a material/title or known source locator, concrete issue, affected scope, actual represented human, affected local material author, current next action and necessary references or unfinished reason, in the repository's actual document language; include rule grounds for conformity issues rather than inventing a violation for ordinary literature preparation.
 No dedicated item number, discovery timestamp, owner enumeration, fixed schema, per-file PASS list or complete activity log is required.
-The worklist coordinates outstanding conformity work; it does not mirror C/T assessments, proof gaps, review conclusions or effective execution conditions, and an ordinary dependency update creates no item automatically.
+The worklist coordinates outstanding conformity and concrete literature-preparation work; it does not mirror C/T assessments, proof gaps, review conclusions or effective execution conditions, and an ordinary dependency update creates no item automatically.
 An actual conformity issue confirmed within ordinary authorized work may be added to the same worklist without launching a whole-library inspection.
 Keep necessary mathematics, decisions, source facts, proof gaps, review evidence and limits at their existing responsible homes, linking their locations rather than retaining the only copy in a removable item.
 Shared items use repository-relative locators and shareable facts without credentials, host paths, private account links or local E contents; mathematical materials do not use the worklist as evidence.

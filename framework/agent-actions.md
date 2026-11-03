@@ -184,6 +184,7 @@ Method changes and strategy priorities may adapt within the assignment unless th
 Apply [research coordination and Preparation](rules/workflow.md#records-review-and-handoff): the main agent coordinates available harness subagents, dependencies, shared resources, writes, necessary review and required retention/closeout while maintaining an overall understanding of the authorized Task.
 Delegate the current question, useful existing entrances and working Draft for Preparation; the subagent judges search, reading, applicability and sufficiency, retaining concise judgments and direct original-material locators in the [Draft](rules/ledger.md#working-drafts-and-fixed-findings).
 Reuse applicable Preparation, allow the same subagent to continue Draft research within an initial or extended assignment, and arrange suitable parallel work requested through ordinary coordination messages.
+The responsible agent records concrete literature work needing later handling under the [common worklist rule](rules/records.md#pending-literature-work); a restricted delegate supplies the item to that writer while the Draft retains its mathematical context and actual limits.
 Keep shared Task/E limits and the actual [independent-review boundary](rules/proof-audits.md#review-arrangements); proof development or inherited substantive development context prevents independent review of that proof.
 For material problems found during this research, use the [research repair entrance](#repair-material-problems-found-during-research) and its common contract within the existing assignment and author authority.
 
@@ -214,6 +215,7 @@ Repair actual references and maintain affected navigation after source edits set
 Navigation derives actual declarations and selected evidence metadata without checking or restoring native J payloads merely to display them; actual input recovery and mathematical adoption keep their own [computation](rules/computations.md#recovery-of-necessary-fixed-inputs) and [assessment](rules/claims.md#mathematical-assessment-and-review-findings) obligations.
 Retire a redundant D only after checking its actual historical uses and preserving any necessary content under the [draft rule](rules/ledger.md#working-drafts-and-fixed-findings).
 A setup-only residue whose mathematics is already fixed needs no replacement account or move receipt.
+Before handoff, give still-effective literature follow-up its [maintenance entrance](rules/records.md#pending-literature-work) rather than leaving the only remaining action in a Draft or reply.
 For human-authorized joint Task work, judge the retained progress under the [collaboration rule](rules/tasks.md#shared-git-research), completing a useful coherent batch through the [delivery action](#commit-or-push-requested-work) under the default permissions and actual human limits, without a separate first or recurring delivery approval.
 Major progress may be shared during the round; preserve truthful status and local-only contents, and report any concrete unfinished delivery without extending research past an effective stop.
 Return established results, remaining obligations and the next continuation point.
@@ -272,7 +274,7 @@ A current rolling U is not a frozen historical proof input or retroactive expans
 
 Same-repository reuse, including clone/pull/merge, obtains originals only when further source reading is needed.
 Actual personal import and external intake complete necessary selected original preparation to reuse, acquisition or a truthful failed outcome before delivery; report failure directly with work/edition, known address, reason and use limitation.
-Retain continuing useful restrictions in source notes or the actual consumer, without a failure queue or acquisition receipt.
+Retain continuing useful restrictions in source notes or the actual consumer, with concrete still-needed follow-up in the [existing maintenance worklist](rules/records.md#pending-literature-work), without a separate literature-failure list, acquisition account or receipt.
 An optional [fetch or bibliography helper](../scripts/readme.md#local-source-retrieval-and-registration) reports its explicit address, byte/format or field facts and does not certify identity, inspection or completion of these agent duties.
 Public original navigation remains read-free; startup, U display/discovery, ordinary maintenance and Git delivery do not check missing sources or trigger downloads.
 Actual selected reading and file operations retain physical containment, necessary format and target-conflict checks.
@@ -327,15 +329,17 @@ Return actual inspected scope, findings and limits without repairing materials o
 
 ## Repair local mathematical materials
 
-Under an actual explicit maintenance instruction, use the [common repair action](rules/records.md#repair-local-materials) for its selected materials or issues, or otherwise recorded items awaiting repair.
-Meet the [stage-context rule](rules/workflow.md#material-maintenance-contexts); a direct repair assignment needs no preceding full inspection, and necessary diagnosis belongs inside repair.
-Apply the common scope, author, mathematical, self-check, acceptance and worklist duties, returning actual repairs, checks and remaining limits without clearing conformity items through self-checks.
+Under an actual explicit maintenance instruction, interpret worklist items by their actual needs, using the [common repair action](rules/records.md#repair-local-materials) for selected materials or issues, or otherwise recorded conformity items awaiting repair.
+Ordinary literature preparation uses its [handling and confirmation rule](rules/records.md#pending-literature-work) within actual authority rather than acquiring conformity stages from its worklist location.
+For conformity repair, meet the [stage-context rule](rules/workflow.md#material-maintenance-contexts); a direct repair assignment needs no preceding full inspection, and necessary diagnosis belongs inside repair.
+Apply the applicable scope, author, mathematical, checking and disposition duties, returning actual handling, checks and remaining limits without clearing conformity items through self-checks.
 
 ## Accept repairs to local mathematical materials
 
-Use the same [common acceptance action](rules/records.md#accept-local-material-repairs) for a research conformity-repair batch or an explicit maintenance acceptance instruction, within its actual scope.
-For an explicit instruction without a narrower selection, accept submitted worklist repairs awaiting acceptance.
-Meet the [context and arrangement rule](rules/workflow.md#material-maintenance-contexts), applying the common independent checks, failure handling, affected-author or receiving-side confirmation, and partial-cleanup duties without repairing the materials yourself.
+Use the same [common acceptance action](rules/records.md#accept-local-material-repairs) for a research conformity-repair batch or an explicit conformity-maintenance acceptance instruction, within its actual scope.
+For conformity acceptance without a narrower selection, accept submitted conformity repairs awaiting acceptance.
+For that conformity work, meet the [context and arrangement rule](rules/workflow.md#material-maintenance-contexts), applying the common independent checks, failure handling, affected-author or receiving-side confirmation, and partial-cleanup duties without repairing the materials yourself.
+An assigned check of ordinary literature completion follows its actual read-only limits and [confirmation and cleanup rule](rules/records.md#pending-literature-work), without conformity stages solely because the item is in maintenance.
 Return the actual accepted or rejected scope, cleanup and remaining limits; acceptance supplies no mathematical proof-review relationship by itself.
 
 ## Maintain shared materials or resolve a conflict
@@ -390,7 +394,7 @@ Select bibliography targets and U positions within each actual source-key/author
 Before finalizing U receipt or invoking the optional helper for it, first complete the ordinary [original-acquisition procedure](rules/literature.md#acquisition-before-u-reception) for the actual work and inspected edition.
 Reuse an adequate receiver-local original or independently obtain and validate the needed work/edition; reuse an adequate same-work/edition outcome for several units.
 Maintain necessary canonical bibliographic fields and useful edition/source notes without original-file registration or an acquisition account.
-On failure, record the actual source/access outcome and directly report the work/edition, known address, failure, local availability and resulting limits to the human author.
+On failure, record the actual source/access outcome and directly report the work/edition, known address, failure, local availability and resulting limits to the human author; give any still-needed literature follow-up its [common maintenance entrance](rules/records.md#pending-literature-work).
 Retain useful authorized U evidence and its inspection limits without transporting sender-private originals or accounts, inventing fingerprints or treating the failure as a mathematical verdict.
 Check actual resulting files, references and affected U positions, and retain the operation once at its responsible intake home.
 Coordinate affected writes only as needed for coherent results; optional helpers apply their input and publication protocols only when chosen.

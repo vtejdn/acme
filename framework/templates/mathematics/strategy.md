@@ -27,13 +27,13 @@ author: Author
 | parent | [Actual coordinating S](ACTUAL_PARENT_PATH#route) |
 
 Related claims, when present: links to actual Claim material
-Updated: 2026-10-18T01:30
-Use the actual UTC minute timestamp for a new substantive decision or recorded update; genuinely known historical calendar precision is preserved.
+Use an actual UTC-minute date only for a substantive decision or dated fact requiring retention; preserve genuinely known historical calendar precision.
+Ordinary allocation, pause/restart and parent maintenance update current arrangements and necessary reasons without a dated change entry.
 Omit the parent row for a root; replace the illustrative locator when used.
 Historical lineage, when applicable: predecessor / successors and the dated formulation and obligations actually inherited.
 A current parent is not lineage.
 For a received predecessor: precise source formulation and obligations actually carried here;
-preserve the source disposition and history.
+preserve the source disposition, necessary formulation and carried obligations without changing the source.
 
 ## Current Question or Precise Target
 Exploratory question, mechanism or range to test; identify provisional assumptions and what remains to be determined.
@@ -61,8 +61,8 @@ The child owns its current parent, local next step and disposition; do not copy 
 
 ## Evidence and Changes
 Links to substantive ledger attempts, computations, and audits.
-Dated changes: acting agent, operation, before/after disposition, reason, affected route IDs, and next action;
-include the scope of any failure.
+Retain necessary mathematical reasons, useful failure scope, consequential decisions and carried obligations, linking adequate existing evidence.
+Current disposition, priority, parent, unfinished work and next action belong in their current sections, without a per-operation agent, date or before/after stream.
 For a major redirection or stage closeout: link the original dated expectation,
 actual result, explanation of the difference and resulting decision.
 Keep concise reusable lessons here and complete cases in their responsible mathematical evidence.

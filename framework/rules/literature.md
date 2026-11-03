@@ -21,6 +21,7 @@ Process complete definitions, terminology and symbols through [def registration]
 Reuse adequate inspection without a full-paper audit merely for a bibliographic or stylistic use.
 Prepare or reuse [searchable contents](#searchable-contents) when the selected source actually supplies a contents list.
 Use [progressive reading](#progressive-reading) and the [source-audit rules](literature-audits.md) at the needed depth.
+Concrete unresolved literature preparation needing later handling uses the [common maintenance entrance](records.md#pending-literature-work), while necessary source facts, inspected mathematics and use limits remain at their responsible homes.
 
 <a id="bibliography-content"></a>
 ## Bibliographic content
@@ -149,7 +150,8 @@ HTTP success or a filename suffix does not establish that a response is the inte
 Keep useful original locators and edition/use restrictions in concise author source notes; no registry, online exception form, fingerprint, date entry or completion receipt is required.
 
 On actual failure, directly tell the human the work, inspected edition, known address, reason and resulting use limitation.
-Retain a continuing useful limitation in the corresponding author's source notes or actual consumer, without a failure queue, periodic retry or routine warning from missing files.
+Retain a continuing useful limitation in the corresponding author's source notes or actual consumer, and record concrete remaining preparation under the [common worklist rule](records.md#pending-literature-work).
+Do not create a separate literature-failure list, acquisition account, periodic retry mechanism or failure history; this does not exempt still-needed later work from maintenance or trigger routine warnings or downloads merely because a file is missing.
 Useful U may still be retained honestly; acquisition failure establishes neither invalid mathematics nor completed original preparation.
 Continue authorized work independent of the missing source, without inventing access, retention, inspection or completion.
 A same-work revision retains the citation key while exact original locators distinguish editions.
@@ -163,6 +165,7 @@ Several selected units of the same work and applicable edition may share that ou
 Incoming U keeps its real author and inspection scope; independently obtaining the original neither transfers that author nor performs a new audit.
 Public Git sources do not supply sender-private originals.
 The optional import/intake helper does not fetch originals or certify that the agent has completed these duties, and requires no confirmation field or receipt.
+Record any still-needed later literature work under the common maintenance rule even when the current failed outcome has been adequately reported; receipt retains its actual evidence and limitation requirements without a new successful-acquisition gate.
 
 Same-repository reuse, including clone, pull and merge, first reuses sufficient U and obtains an original only when further reading is actually necessary.
 Pure organization during this upgrade likewise triggers acquisition only for a concrete necessary source-content check.

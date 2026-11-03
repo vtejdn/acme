@@ -182,7 +182,7 @@ Source observations remain in adequate U or compact source-reading accounts; com
 
 ## Material maintenance worklist
 
-Use `mathematics/maintenance.md` as the sole worklist for continuing conformity issues under the [common problem-handling contract](records.md#material-error-handling), `mathematics/erratum.md` for substantive mathematical issues and `mathematics/messages.md` for mathematical correspondence under the [coordination rule](records.md#shared-mathematical-coordination).
+Use `mathematics/maintenance.md` as the sole worklist for continuing conformity issues and concrete outstanding literature preparation under the [common worklist contract](records.md#sole-rolling-worklist-and-current-edits), `mathematics/erratum.md` for substantive mathematical issues and `mathematics/messages.md` for mathematical correspondence under the [coordination rule](records.md#shared-mathematical-coordination).
 They are distinct shared rolling Markdown files, without mathematical material numbers, a whole-file mathematical author, empty initialization templates or extra Task/E.
 Create each only when actual content needs it; keep mathematics/readme.md navigation to those files that actually exist, with code-form lookup paths in the action guide before creation.
 In Git they are normally tracked and synchronized with authorized related work; local personal use without Git requires no Git initialization or remote setup.

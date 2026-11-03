@@ -155,8 +155,9 @@ Mitwirkende im selben Repository können für ein gemeinsames mathematisches Zie
 ### Nützliche Gewohnheiten
 
 - Fragen Sie einen [Agenten](#notion-agent), wenn Sie Fragen zum Rahmenwerk haben.
-- Wenn Sie Literatur in einem lokalen, von einem Cloud-Dienst synchronisierten Verzeichnis aufbewahren, bitten Sie einen Agenten, den [lokalen Literaturordner](../mathematics/literature/pdf) über eine Verzeichnisverknüpfung (Directory Junction) damit zu verbinden.
-  Erteilen Sie dem Agenten die Berechtigungen, die er zum Lesen und Verwalten der Dateien in diesem Verzeichnis benötigt.
+- Wenn Sie mehrere ACME-Repositories auf demselben Gerät verwenden, können Sie Ihre Literatur zentral in einem einzigen lokalen PDF-Ordner speichern.
+  Bitten Sie einen Agenten, die [lokalen Literaturordner der einzelnen Repositories](../mathematics/literature/pdf) über Verzeichnisverknüpfungen (Directory Junctions) auf diesen Ordner verweisen zu lassen.
+  Erteilen Sie dem Agenten die Berechtigungen, die er zum Lesen und Verwalten der Dateien in diesem Ordner benötigt.
 - Wenn Agenten zugehörige Aufgaben automatisieren, bei denen Zugangsdaten verwendet werden, bewahren Sie Geheimnisse angemessen auf und schließen Sie sie von [Git](git-repository.md#notion-git) aus.
 
 ### <a id="manuscript-writing"></a>Ein Manuskript verfassen
@@ -171,7 +172,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.9.3.
+Die aktuelle Version des Rahmenwerks ist 0.9.4.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.

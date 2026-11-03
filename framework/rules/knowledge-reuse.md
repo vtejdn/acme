@@ -58,7 +58,7 @@ Recognizing a substantive step as a named or established theorem triggers a sour
 A plausible identification is a search lead until checked.
 Reuse an adequate recorded source check first, then search local literature and external sources as needed.
 A local proof alone can settle the mathematics without settling the source attribution; it is not sufficient evidence to stop the latter check.
-Complete or explicitly record the outstanding source check in the responsible source record or consuming argument before handing off the research step; do not defer it silently to manuscript preparation.
+Complete the source check or handle its unresolved facts and follow-up under the [pending-literature rule](records.md#pending-literature-work) before handing off the research step; do not defer it silently to manuscript preparation.
 
 Check a precise source statement and locator, match the hypotheses and conclusion, and record whether the source is an actual proof input, attribution for a known result proved locally, or a related result that does not cover the step.
 Follow the [dependency distinctions](claims.md#dependencies-and-corrections).
@@ -66,7 +66,7 @@ Source attribution remains necessary when retaining a self-contained proof, incl
 A suitable checked reference is sufficient; identifying the earliest publication is required only for a priority claim.
 Reuse existing bibliography, useful source-edition notes and adequate audit records without a new Claim, index or mandatory standalone file.
 
-If the source cannot yet be verified, record the search scope, unresolved identification and a concrete follow-up in the same record under the existing stopping rules.
+If the source cannot yet be verified, retain the actual search scope, unresolved identification and use limits in the responsible source record or consuming argument, with still-needed follow-up in maintenance under that rule and the existing stopping conditions.
 Do not assert a verified attribution or treat the source as an accepted input.
 Assess any independently supported local proof separately under the [external-input rules](literature-audits.md#accepted-external-inputs).
 Ordinary direct calculations still need no source search for every line.

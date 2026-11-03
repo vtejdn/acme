@@ -14,7 +14,7 @@ A Preparation subagent may continue the same Draft's research when its assignmen
 Initial priorities for strategies and substrategies are a starting allocation.
 Once exploration begins, agents may freely adjust them according to actual findings, obstacles, expected effort and available resources, without first exhausting the initially preferred route or seeking separate approval.
 An initial ranking alone is not a continuing constraint; an explicit user requirement to keep a priority or sequence fixed remains binding.
-A priority adjustment needs no new mathematical result, S identity or version: update the affected rolling S and briefly record the allocation reason under the ordinary rules below.
+A priority adjustment needs no new mathematical result, S identity or version: update the affected rolling S with its current allocation and necessary reason under the ordinary rules below.
 
 This authority concerns methods and work allocation.
 It does not authorize changing the goal's target, quantifiers, completion criteria, or scope beyond the existing authorization.
@@ -34,23 +34,25 @@ A public source material is not writable for local feedback solely because its a
 Explicit references make local derivation discoverable in reverse navigation without implying source-owner adoption or supersession, waiting for a response, or requiring remote synchronization.
 The source owner may later adopt the contribution through a real revision.
 
-| Operation | Agent action and required record |
+| Operation | Agent action and responsible content |
 | --- | --- |
 | Add | Allocate the next unused route ID, link the authorized goal, and state the mechanism, its relation to the goal, inputs and next discriminating step. Set `proposed` or `active` according to the actual work decision. |
-| Revise or reprioritize | Keep the ID when the route retains its mathematical identity. Update its scope or next step explicitly, preserve earlier failures, and explain the evidence or allocation reason for the change. A materially different mechanism or target gets a new route ID. |
+| Revise or reprioritize | Keep the ID when the route retains its mathematical identity. Update its scope, allocation or next step and necessary current reason; retain meaningful earlier findings at their responsible homes. A materially different mechanism or target gets a new route ID. |
 | Split | Allocate IDs for the distinct successor routes. For local writable predecessors, link predecessor and successors in both directions; keep the original active only if it retains a distinct coordinating role, otherwise mark it `superseded`. For a public source predecessor, link the precise source only from the local successors and preserve its disposition. Record which successors actually carry each unresolved obligation. |
-| Merge | Normally create a new route for the combined mechanism and mark local writable predecessors `superseded`. A local writable ID may absorb another local writable route when its mathematical identity remains intact; record the absorption and mark the absorbed route `superseded`. A local combination using a public source route records its source and carried obligations without marking that source absorbed or superseded. Preserve all relevant evidence, failed attempts and unresolved obligations. |
-| Pause | Set `paused` when work is intentionally deferred for priority, resource allocation or sequencing. Record the current result, unfinished obligation, reason for pausing and a useful reconsideration condition. State whether the hold includes subroutes. |
-| Restart | Return a paused route to `active` when priorities or available resources justify it, recheck its dependencies and record the next action. No new theorem or external evidence is required for this allocation decision. Apply the stricter evidence conditions below to blocked, refuted, completed or superseded routes. |
+| Merge | Normally create a new route for the combined mechanism and mark local writable predecessors `superseded`. A local writable ID may absorb another local writable route when its mathematical identity remains intact; record the absorption and mark the absorbed route `superseded`. A local combination using a public source route records its source and carried obligations without marking that source absorbed or superseded. Preserve necessary evidence, useful failed findings and unresolved obligations. |
+| Pause | Set `paused` when work is intentionally deferred for priority, resource allocation or sequencing. Maintain the current result, unfinished obligation, current reason for pausing and a useful reconsideration condition. State whether the hold includes subroutes. |
+| Restart | Return a paused route to `active` when priorities or available resources justify it, recheck its dependencies and maintain the next action. No new theorem or external evidence is required for this allocation decision. Apply the stricter evidence conditions below to blocked, refuted, completed or superseded routes. |
 
-Use a short dated entry in each affected local writable route's evidence/change section: acting agent, operation, previous and resulting disposition, reason, related route IDs, and outstanding work or next action.
+Maintain the current disposition, priority, parent, necessary reason, unfinished obligations and next action in each affected local writable route.
+Ordinary allocation, pause/restart or organizational updates need no per-operation agent, timestamp or before/after history.
+Retain consequential mechanism changes, useful failures and necessary split/merge lineage with their real known dates, carried obligations and evidence links.
 For a local derivation from a public source route, record the source relationship in the local route instead of editing the source.
 Link substantive mathematical evidence from the ledger or audits instead of duplicating it.
 Do not create a separate approval checklist or require a new audit merely for route administration; mathematical claim changes retain their existing review requirements.
 
 Each route material owns its disposition, priority, Task associations and next step.
 Update the actual S material and regenerate the derived route index.
-Preserve meaningful predecessor history and cited mathematical locations during split/merge.
+Preserve necessary predecessor formulations, carried obligations and cited mathematical locations during split/merge.
 Coordinate same-family edits and allocation among concurrent agents.
 If every current route is deferred, name the next selection/reassessment step rather than silently changing Task lifecycle.
 
@@ -77,7 +79,7 @@ Reverse children and Task entrances are derived from the child declarations, not
 
 The parent is current organization; a predecessor is historical lineage.
 A historical split or matching title, Task, line or serial does not establish a parent.
-Reparenting preserves identity and records a concise dated organizational change.
+Reparenting preserves identity and maintains the current parent and any necessary reason or carried obligation, without a dated organizational entry merely for the change.
 Cross-route and cross-Task reuse uses precise references rather than additional parents.
 Each child retains explicit Task associations and the exact scope served, including any additional Task.
 Public source Strategies remain at their original repository/revision/path; a local adaptation uses its own S and an explicit source reference.
@@ -116,14 +118,14 @@ Public source references remain explicit repository/revision/path locators; malf
 A strategy file is a rolling document, not a versioned material: it never mints a `name_vN.md` version file.
 Keep the same S identity while the core mechanism and intended contribution remain the same.
 A new estimate, repaired construction, revised auxiliary parameters or substantial progress does not by itself require a successor.
-Update the current question, allocation and next step in place while retaining meaningful earlier failures, expectations and consequential decisions in dated history or linked responsible evidence.
+Update the current question, allocation and next step in place while retaining meaningful earlier failures, consequential expectations and decisions at sufficient responsible homes.
 Identity and locator maintenance uses verified current identities without changing historical mathematical meaning.
 
 Allocate another S for a materially different mechanism or independently managed branch, not successive improvements of the same route.
 At a consequential split or redirection record the date at its available precision, earlier formulation, what is retained or rejected, and obligations actually carried.
 A predecessor is not the previous edit of the same S and does not assert that its current rolling body equals the earlier formulation.
 Preserve a cited historical location; if the actual formulation is unavailable, state that limitation.
-A short history entry and precise evidence links normally suffice.
+A concise account of the necessary formulation, reason and inherited obligations with precise evidence links normally suffices.
 Use an available Git revision or captured evidence when exact earlier bytes are needed; ordinary maintenance needs no snapshot, hash, receipt or per-edit archive.
 Mathematical reliance cites fixed arguments with their actual hypotheses, not a rolling predecessor as proof support.
 
@@ -176,7 +178,7 @@ Routine actions need no retrospective, and failure of a sufficient construction 
 | `blocked` | A named unmet prerequisite prevents the planned next step. Resume when that prerequisite changes, a justified alternative bypasses it, or the earlier diagnosis is corrected. If investigating the missing lemma is itself an executable next step, its being unproved alone does not require a blocked disposition. |
 | `completed` | The route's stated deliverable is achieved with the required evidence. Reopen the same route if a concrete challenge reveals an unmet completion obligation; broader follow-up work normally gets a new route. Route completion need not complete the goal. |
 | `refuted` | Evidence rules out the recorded mechanism or auxiliary assertion under its stated hypotheses. Reconsider only with a concrete change in evidence, assumptions, mechanism or diagnosis. Preserve the failed assertion; it remains refuted unless its refutation is overturned. A materially different replacement gets a successor ID. |
-| `superseded` | Work has been reorganized into identified successors or absorbed elsewhere. Keep the historical record and successor links. Restore the same ID only when deliberately reversing that reorganization while reinstating the same route identity; reconcile successor dispositions to avoid duplicate active ownership. |
+| `superseded` | Work has been reorganized into identified successors or absorbed elsewhere. Keep the disposition, necessary mathematical record and successor links. Restore the same ID only when deliberately reversing that reorganization while reinstating the same route identity; reconcile successor dispositions to avoid duplicate active ownership. |
 
 Link sufficient failure scope and evidence at its responsible L/J/C/R home; the S retains its disposition, reason and next action without duplicating that evidence.
 Failure of a sufficient strategy does not refute its goal.

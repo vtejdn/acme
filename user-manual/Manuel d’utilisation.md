@@ -155,8 +155,9 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 ### Habitudes utiles
 
 - Interrogez un [agent](#notion-agent) dès que vous avez des questions sur le cadre.
-- Si vous conservez la littérature dans un répertoire local synchronisé par un service cloud, demandez à un agent d’y relier le [répertoire local de littérature](../mathematics/literature/pdf) au moyen d’une jonction de répertoires (directory junction).
-  Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce répertoire.
+- Si vous utilisez plusieurs dépôts ACME sur le même appareil, vous pouvez regrouper votre littérature dans un seul dossier local de fichiers PDF.
+  Demandez à un agent de faire pointer le [répertoire local de littérature de chaque dépôt](../mathematics/literature/pdf) vers ce dossier au moyen de jonctions de répertoires (directory junctions).
+  Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce dossier.
 - Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les de [Git](git-repository.md#notion-git).
 
 ### <a id="manuscript-writing"></a>Rédiger un manuscrit
@@ -171,7 +172,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.9.3.
+La version actuelle du cadre est 0.9.4.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.

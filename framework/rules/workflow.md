@@ -275,7 +275,7 @@ Within an authorized objective, agents may adjust methods and pursue justified r
 Agents may autonomously add, revise, split, merge, reprioritize, pause, and restart strategies within an authorized research objective.
 These are ordinary research decisions and do not require a separate user request or confirmation for each change.
 Initial strategy and substrategy priorities may be freely adjusted after exploration starts as actual needs change, unless the user explicitly requires a fixed priority or sequence.
-Follow the [strategy-management rules](strategies.md#autonomous-strategy-management): preserve stable IDs and research history, record reasons and successor relationships, and keep the route index and handoff current.
+Follow the [strategy-management rules](strategies.md#autonomous-strategy-management): preserve stable IDs, necessary mathematical findings, reasons and successor relationships, and keep current route arrangements, navigation and useful handoff information coherent without per-operation history.
 Apply predecessor updates only to local writable routes; a local successor of public source route records its precise source and carried obligations without changing the source disposition.
 A priority-based pause may be reversed when priorities change; new mathematical evidence is not required merely to resume a paused route.
 Strategy changes do not by themselves change the task's target, quantifiers, completion criteria, or authorization.
@@ -315,6 +315,8 @@ Main-theorem designation and objective changes require their applicable authoriz
 ## Contexts for material repair and acceptance
 
 Apply the two entrances and [common repair, acceptance and disposition contract](records.md#material-error-handling) at their actual scope.
+These stage and independent-acceptance arrangements apply to actual conformity maintenance; recording or ordinarily handling [concrete pending literature work](records.md#pending-literature-work) does not activate them.
+An explicit inspection-only or acceptance-only assignment keeps its actual read-only and scope limits, and mixed batches retain each issue's real obligations.
 For explicitly assigned routine conformity maintenance, inspection, repair and acceptance of the same scope use different agents without inherited substantive discussion from the other stages.
 "Inspected that scope" means actually performing the separately assigned read-only conformity inspection, not research discovery, necessary reading, repair diagnosis or self-checks.
 If the current conversation performed that inspection, a later repair uses a subagent without inherited conversation history; later acceptance cannot return to that inspector or repairer.
@@ -336,7 +338,7 @@ Prefer a native harness entry that actually omits inherited history; a full-hist
 An already available and enabled API fallback may be reused at its actual scope, without building a new API platform, requiring runtime installation or enabling paid calls by default.
 If isolation is unavailable, report the affected stage as unfinished, preserve its items and continue unaffected authorized work without weakening the requirement or presenting a self-check as acceptance.
 No agent registry, context certificate, isolation receipt, chat archive or automatic independence classifier is needed.
-This context rule applies to the common conformity acceptance and explicit maintenance stages; it does not impose independent proof review on every mathematical correction or itself establish an `independently reviewed` proof.
+This context rule applies to the common conformity acceptance and explicit conformity-maintenance stages; it does not impose independent proof review on every mathematical correction or itself establish an `independently reviewed` proof.
 Actual mathematical development, fixed inputs, scope and R evidence follow the [proof-review rules](proof-audits.md#review-arrangements), with sufficient qualified post-repair checks reused at their true coverage under the common contract.
 
 ## Records, Review, and Handoff
@@ -357,7 +359,7 @@ Organize Claim arguments by mathematical topic or mechanism in fixed C, followin
 The same or another applicable C contains the actual reasoning; L is not a Claim-argument home.
 All formal project-review findings belong to fixed R; L retains exploration, useful failures, comparisons, syntheses and ordinary checks needed for that discussion.
 All L materials belong in `mathematics/ledger/`.
-Retain actual mathematical chronology under the [ledger conventions](ledger.md#exploration-and-history); inert templates and examples do not represent completed work.
+Organize L by mathematical topic under the [ledger conventions](ledger.md#exploration-and-history), retaining necessary findings, dates and relations without a default chronological stream; inert templates and examples do not represent completed work.
 
 Record [substantive mathematical operations](ledger.md#substantive-mathematical-operations): changes or significant findings concerning statements, hypotheses, proofs, dependencies or validity.
 C carries actual Claim arguments; ledger operation records explain their extraction, reorganization and version transitions.
@@ -471,7 +473,11 @@ Preserve unrelated staged work and recheck affected bytes if the batch changes.
 
 ## New Record Timestamps
 
-Newly made C/T decisions, actual substantive S decisions or recorded updates, and real operator, approval, intake and formally performed review acts use the actual UTC minute of that act, for example `2026-10-18T01:30`; pure logical repair has no compulsory correction event or dated log.
+When a responsible rule requires a dated fact to be retained, record the actual UTC minute of that act, for example `2026-10-18T01:30`.
+Genuinely new C/T decisions, necessary substantive S decisions, actual intake and formally performed reviews retain their applicable time requirements.
+An operator change, approval, session or ordinary current-state update does not by itself create a dated record or history.
+Necessary operator or approval facts use their existing responsible home and actual scope.
+Pure logical repair has no compulsory correction event or dated log.
 All maintained framework timestamps use the exact UTC format `YYYY-MM-DDTHH:MM`, with no `Z`, numeric offset, seconds or fractional seconds.
 A new decision about older mathematics records the current decision time separately from the mathematics' known original date.
 Source publication dates, edition dates and genuinely known year/month/date facts preserve their actual calendar precision; never invent minutes, timezone offsets or unknown historical facts.

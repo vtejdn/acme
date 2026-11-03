@@ -142,6 +142,11 @@ Keep the affected material decisions, locators and derived navigation coherent i
 Check the actual diff and repair affected incoming references under that same collaboration boundary, including its shared locator-only scope.
 An obsolete directory need not remain solely for compatibility.
 
+Within actual author authority, remove process-only prose from R in place while preserving the actual finding, necessary reasoning, inputs, checking relationship, conclusion, scope, limits and historical adoption facts.
+This prose cleanup alone requires no replacement review or [finding/container retirement](#review-retirement).
+Actual removal of a finding, necessary negative evidence, adopted input or review container retains its existing preservation, applicable retirement and consumer-reconciliation requirements; a later PASS or absence of current consumers alone is insufficient.
+Logical repair and actual conformity maintenance retain their applicable recheck and acceptance duties.
+
 Remove historical mathematical digest values and present byte-binding requirements while preserving the actual checked statement/argument, verdict, scope, limits and checking relationship.
 An unchanged relocation may repair exact input locators without implying a review of later mathematics; a mathematical change still requires the ordinary version/review process.
 Repairing a current locator preserves the actual original source path, `reviewed_targets`, acquired scope and other necessary provenance and review facts; later content or checks are not retroactively part of the earlier review.

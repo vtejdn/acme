@@ -153,8 +153,9 @@ Collaborators in the same repository can establish a joint Task for a common mat
 ### Useful habits
 
 - Ask an [agent](#notion-agent) whenever you have questions about the framework.
-- If you keep literature in a local directory synchronized by a cloud service, ask an agent to connect [the local literature directory](../mathematics/literature/pdf) to it through a directory junction.
-  Grant the agent the permissions needed to read and manage files in that directory.
+- If you use multiple ACME repositories on the same device, you can store your literature in a single local PDF folder.
+  Ask an agent to use directory junctions to point [each repository's local literature directory](../mathematics/literature/pdf) to that folder.
+  Grant the agent the permissions needed to read and manage files in that folder.
 - When agents automate related tasks involving credentials, store secrets appropriately and exclude them from [Git](git-repository.md#notion-git).
 
 ### <a id="manuscript-writing"></a>Write a manuscript
@@ -169,7 +170,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.9.3.
+The current framework version is 0.9.4.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.

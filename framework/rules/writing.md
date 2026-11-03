@@ -410,7 +410,11 @@ If documents share source files, keep those dependencies explicit and reproducib
 This convention applies to independently compiled LaTeX documents, including summaries and TeX supplements.
 Page renders and other inspection artifacts may remain in an ignored `build/` subdirectory without making it a second TeX output location.
 
-When migrating existing documents, preserve useful historical build commands, checked revision/sections and actual run results.
+When migrating existing documents, retain usable current build conditions, truthful checked source revision and sections, actual results and continuing limitations.
+Keep earlier commands or run facts at an adequate existing home only for necessary reproduction, evidence interpretation, actual comparison or current continuation.
+Their execution, success or presence before migration alone creates no retention duty.
+Remove obsolete build narration, repeated-run history and superseded check summaries without moving them to a README history appendix or another log.
+Do not present an old successful run as a current build or a necessary historical fact as a current result.
 Remove stored mathematical source/build/PDF digests and their retention obligations.
 Verify a fresh build from current sources before cleanup of duplicate outputs; changing instructions alone does not establish a new successful build.
 Before handing off a built manuscript, check compilation errors, unresolved citations and references, and layout problems in the generated PDF.

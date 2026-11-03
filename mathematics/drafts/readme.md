@@ -56,7 +56,9 @@ The main agent ensures necessary material organization at the end of each explor
    Preserve any unique argument, useful failure, review limitation or needed native work at its responsible destination: [Claims](../claims/readme.md), [Task contracts](../tasks/readme.md), [exploration and research records](../ledger/readme.md), [reviews](../audits/reviews/readme.md), [computations](../computations/readme.md), [definitions](../definitions/readme.md).
    A Claim argument belongs in the same or another applicable fixed C and contains the actual reasoning.
    Formal project-mathematics reviews of every actual agent relationship belong to fixed R; manuscript-specific review stays with its manuscript; exploration, comparisons, syntheses and ordinary in-discussion checks may remain in L.
-   Follow the destination's identity/version rules; never overwrite an existing fixed version.
+   When creating or promoting material, follow the destination's identity/version rules and never overwrite an occupied fixed target.
+   Existing current and retained older C/R/L/J may undergo [in-place maintenance and logical repair](../../framework/rules/records.md#in-place-maintenance-and-logical-repair) within actual author authority and applicable review requirements; a fixed identity does not make every byte immutable.
+   Pure process cleanup or successful repair of the same mathematical objective alone requires no error copy, new physical version or correction history; necessary research variants, fixed Git inputs, acquired originals and actual historical adoption and review scope remain protected.
    Keep the author/repository prefix where applicable.
 2. Update the affected links and required fixed-material registration, and verify the fixed result contains the selected mathematics and necessary scripts/data.
    An acceptance review binds the fixed material, not a continuing mutable draft.
