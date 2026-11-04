@@ -2,7 +2,7 @@
 
 ## Autonomous Literature Search
 
-Shared Git research follows the [common work-start update](workflow.md#shared-repository-work-starts) in every actual exploration round, independently of the conditional external-search triggers below and without repeating an already adequate literature search.
+Research in a Git working repository with a configured remote follows the [common work-start update](workflow.md#shared-repository-work-starts) in every actual exploration round, independently of the conditional external-search triggers below and without repeating an already adequate literature search.
 For local source discovery, follow the [common source-preparation order](literature.md#source-preparation), reusing adequate bibliography, edition-specific contents, author source notes and U/C/L, then inspecting relevant local candidates when further reading is needed before necessary external acquisition.
 The [edition-specific contents routes](literature.md#searchable-contents) locate actual works and passages; missing source notes or a contents match do not rule out a useful local edition.
 Use the actual applicable source, including a complete contribution in a volume or original HTML in its work-key group, retaining its edition, inspected extent and resource limitations.

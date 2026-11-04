@@ -42,13 +42,14 @@ Git research writing and delivery require the human-registered repository name a
 Repository names are validated separately from human path keys under the [name rule](../framework/rules/identity.md#repository-names-and-use-environments).
 Git-backed source access and selected Git views require a Git executable and their actual named Git source/view; unavailable Git in a managed checkout does not select personal mode.
 
-## Shared research with native Git
+<a id="shared-research-with-native-git"></a>
+## Repository work with native Git
 
-Actual shared-repository work follows the [common work-start update](../framework/rules/workflow.md#shared-repository-work-starts) and [target, authority and integration rule](../framework/rules/identity.md#shared-repository-updates-and-integration) through ordinary native Git, covering research, writing, literature, transfer preparation, review and maintenance.
+Git working repositories with configured remotes follow the [common work-start update](../framework/rules/workflow.md#shared-repository-work-starts) and [target, authority and integration rule](../framework/rules/identity.md#shared-repository-updates-and-integration) through ordinary native Git, including single-human projects, research, writing, literature, transfer preparation, review, maintenance and framework development.
 Actual human authorization to establish, advance or continue joint Task collaboration includes routine synchronization, commits and pushes within that scope by default, including through a participating individual T/E, without another delivery-mode adoption or push grant; explicit human limits take precedence.
-The responsible main agent refreshes the actual collaboration branch for a new assignment, resumption or autonomous exploration round, reuses that result within continuous work and applies the [integration capability duty](../framework/rules/workflow.md#integration-capability-and-delegation).
+The responsible main agent refreshes the applicable project branch and completes necessary authorized local integration before substantive work on a new assignment, resumption or autonomous exploration round, reuses that result within continuous work and applies the [integration capability duty](../framework/rules/workflow.md#integration-capability-and-delegation).
 Joint research also retains its [progress-sharing and delivery scope](../framework/rules/tasks.md#shared-git-research); the official framework-version request supplies no project-branch update.
-Material helpers do not synchronize project branches, select models, classify key progress or grant remote authority; ordinary local operations retain their actual scope without a per-operation network preflight.
+Material helpers do not implicitly query remotes or integrate project branches, select models, classify key progress or grant remote authority; ordinary local operations retain their actual scope without a per-operation network preflight.
 
 ## Official framework version check
 
@@ -91,8 +92,9 @@ The agent owns the wording and choice; the helper never installs a framework or 
 
 ## Installation and setup
 
-Install selected official version files into the actual project root under the [installation action](../framework/agent-actions.md#install-the-framework), preserving the existing project and its Git relationships.
-Determine that target and the actual purpose before retrieval; source inspection, backup, maintenance, an existing shared-project clone and an authorized upgrade retain their own scopes.
+For ordinary first installation, the [installation action](../framework/agent-actions.md#first-install-empty-target) first confirms that the actual local project root and any target project remote are empty apart from Git setup, before source preparation, target writes or project integration.
+If either side has project work, preserve it, stop and report it to the human author; an unconfirmed applicable remote postpones installation.
+An existing ACME installation upgrades at its actual root without the empty-target requirement; source inspection, backup, maintenance, an existing shared-project clone and explicitly authorized copying retain their own scopes.
 Read the obtained framework version and entrances before integration.
 For an actual new research project, the agent first sets repository, repository_display_name and repository_abbr to actual human choices or null through ordinary bounded configuration edits.
 Clear an unchosen inherited repository key before treating it as a project registration; a human may explicitly choose or confirm the same acme key without a new name restriction.

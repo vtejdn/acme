@@ -2,8 +2,9 @@
 
 To human authors: the [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md), [ユーザーマニュアル](user-manual/ユーザーマニュアル.md) or [Manual de usuario](<user-manual/Manual de usuario.md>)) is all you need.
 
-To install ACME, obtain the selected version's files from the [official repository](https://github.com/vtejdn/acme) and integrate them into the actual project root under the [installation action](framework/agent-actions.md#install-the-framework).
-An existing project keeps its contents and Git history; an existing ACME installation uses the [upgrade action](framework/agent-actions.md#upgrade-installed-framework) when an upgrade is requested.
+For first installation, use a local project root and any target project remote that are empty apart from Git setup, under the [installation action](framework/agent-actions.md#install-the-framework).
+Confirm these conditions before obtaining the selected version's files from the [official repository](https://github.com/vtejdn/acme) or writing to the target; if either side has project work, preserve it, stop and report it to the human author.
+An existing ACME installation uses the [upgrade action](framework/agent-actions.md#upgrade-installed-framework) at its current root when an upgrade is requested, without an empty-target requirement.
 
 This mathematical research repository uses ACME, Autonomous and Collaborative Mathematical Exploration.
 This entrance orients agents working in the existing checkout under the actual human instruction.

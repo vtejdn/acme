@@ -72,6 +72,13 @@ This is a local research operation: no extra promotion approval, cleanup certifi
 Further development may use a working draft while the fixed result remains intact.
 Preserve actual publication, evidence and execution-authorization boundaries.
 
+An [agent-S](../../framework/rules/agent-S.md#optional-dos-drafts-and-cleanup) result may be returned directly or use an ordinary D whose single main title includes `DoS` and its concrete question.
+This title marker creates no new material kind, field, numbering scheme or index.
+Only the main agent responsible for the delegation confirms that a DoS has been fully handled; delegate completion, delegation acceptance or a route decision alone is insufficient for cleanup.
+Before that confirmation, read the current content and actual uses, preserve unique useful mathematics, failures and source/review limits at adequate responsible homes, maintain actual choices in S, and repair and verify affected links, manuscript source maps, program inputs and dependent prose.
+Keep unhandled or continuing portions and concurrent additions, with other-author content handled by an authorized author.
+Once all content and uses are handled, the main agent confirms cleanup within actual author authority under the [existing retention and retirement rules](../../framework/rules/ledger.md#working-drafts-and-fixed-findings), without a receipt, empty replacement or compulsory S/R; the retired D address may be reused.
+
 Authored bodies are revised only by the established same human; another human records a correction in that human's own material with exact references.
 Substantive contributions use the responsible human's own numbered materials linked to the original under the [identity rule](../../framework/rules/identity.md).
 Tool capability does not authorize a substantive cross-author rewrite or taking over another human's Task/E.

@@ -9,7 +9,7 @@ This directory owns common rules, inert material templates and version guidance.
 It contains no live research status, bibliographic registry or selected manuscript.
 
 The current release identifier is maintained in the [version metadata](version.json) under the [versioning rules](versioning.md).
-Install selected official version files into the actual project root under the [installation action](agent-actions.md#install-the-framework).
+First installation uses a project root and any target project remote that are empty apart from Git setup under the [installation action](agent-actions.md#install-the-framework); existing ACME installations use their authorized upgrade path.
 The [start-of-work action](agent-actions.md#start-a-work-round) applies [current-rule reading](rules/workflow.md#proportionate-execution) independently of daily public-version checks and any upgrade reminder.
 
 ## Core principles and interpretation

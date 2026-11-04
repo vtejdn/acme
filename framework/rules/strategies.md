@@ -139,6 +139,26 @@ Explain consequential reuse at the consuming route: local objects and parameters
 Preserve losses and order of choices when they matter.
 A simple application can need only one sentence; no separate application record or reciprocal feedback workflow is required.
 
+Before substantial investment in a branch, state what its success would actually provide: the objects, assumptions, quantifiers, parameter-choice order and dependencies of constants.
+Use that expected assertion as an explicitly provisional premise and actually derive toward the Task's conclusion from its original inputs until the conclusion or the first unsupported step is reached.
+Reuse an adequate applicable conditional argument, checking the steps that matter to the present allocation.
+Check how the original inputs supply required objects, whether estimates hold uniformly over the needed range, and whether the promised conclusion applies to previously unresolved inputs.
+If a stronger branch result would make an existing construction usable, cover new cases or shorten the remaining proof, use that prospect to guide investment.
+If another unavailable input still blocks the derivation, prioritize obtaining or bypassing it while retaining the branch's value at its actual scope.
+Early ideas may receive bounded exploration around a discriminating attempt before a complete bridge is known; provisional premises remain distinguishable from established evidence.
+
+Allocate parallel work by what each successful route would establish for the original Task, the unproved inputs shared by routes, and the complementary parts needed for a complete proof.
+Several routes sharing one missing estimate may justify attempts to prove it, bypass it by a different mechanism or find its failure scope; independent complementary lemmas also support useful parallel work.
+A construction derived assuming the target remains conditional; an independent construction with a justified sufficient implication back to the target may merit bounded exploration even when its near-term prospects are uncertain.
+Choose the number of branches and resources from their mathematical dependencies, distinguishable next steps and actual available limits.
+Use counterexamples against the assertions and hypotheses they actually contradict, checking the original Task separately.
+
+When sustained work leaves representative results accumulating without a discernible reduction of the original Task's key gap or a useful next approach, the main agent should delegate a bounded [agent-S exploration](agent-S.md#when-to-delegate-and-assignment-boundaries) within existing authority and resources.
+Supply the original question, representative results and their applicability even when no precise bottleneck or alternative is yet known.
+User-requested alternatives, consequential allocation choices or new leads can also justify that delegation; neither result counts nor elapsed research time are thresholds.
+Progress covering a previously missing case or a clear next proof, calculation or check may instead justify continuing ordinary research assignments.
+Reuse still-applicable strategy exploration rather than repeat it merely because more C materials exist.
+
 When several families repeat the same realization or normalization problem, compare a concrete shared construction with the family-specific obligations before allocating work.
 Check the complete objects, boundary cases and unused scope of already retained sources.
 Similar matrices, scalars or finite coefficients do not establish a structural realization; one campaign supplies experience, not a universal ordering or success rate.

@@ -8,7 +8,7 @@ Apply the [work-obligation triggers](workflow.md#work-obligations) to the next a
 Substantial proof investment means committing to develop a nontrivial argument or resolve a substantive proof gap, including an intermediate step; it is not measured by a fixed number of lines or minutes.
 A brief direct calculation to learn what to conjecture need not await a search, while a sustained proof attempt remains subject to this check even within an exploratory route.
 Recognition of a known result has its own [source-check trigger](#recognized-known-results).
-For shared Git research, apply the [common work-start update](workflow.md#shared-repository-work-starts) before substantive work and use the relevant collaborator changes in local mathematical reuse, independently of whether an external literature search is needed.
+For a Git working repository with a configured remote, complete or reuse the [common work-start update](workflow.md#shared-repository-work-starts) before substantive work and use relevant incoming changes in local mathematical reuse, independently of whether an external literature search is needed.
 
 Prefer using established definitions, results and proof mechanisms to reconstructing them as project contributions.
 Use the [common source-preparation workflow](literature.md#source-preparation) during research, audit and writing; register needed complete definitions through def without duplicating adequate U/C/L content.

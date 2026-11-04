@@ -158,7 +158,7 @@ Participants using an agreed shared Git remote obtain current collaborator infor
 Human authorization to establish, advance or continue joint Task collaboration includes routine retrieval, integration, commits and pushes within that work's scope by default, with explicit human limits taking precedence.
 The same default applies when continuing an authorized individual T/E that participates through its exact adopted joint contract; keep its ordinary Task type and do not require renewed joint-participation or push wording on each continuation.
 Apply these permissions directly without a separate collaboration-mode adoption, delivery grant, permission sentence, new T/E decision or authorization record, while judging the actual progress, batch and sharing time.
-Work without Git or a shared remote, including purely local work, carries no additional network duty.
+Without Git or a configured project remote, this rule creates no project-network duty; a single-human Git project with a remote still applies the common work-start update without acquiring joint-research publication authority.
 Updates by another author in the same shared repository use ordinary Git collaboration and create no intake operation; receipt from a distinct repository still fixes the actual source commit under the [intake rules](intake.md).
 Project collaboration updates are separate from the [daily official framework version check](../versioning.md#official-version-check), which neither refreshes the research branch nor authorizes an upgrade.
 

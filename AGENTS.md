@@ -21,4 +21,4 @@ The [storage rule](framework/rules/organization.md#temporary-storage) reserves `
 
 For Git/GitHub remote operations, establish the actual target, relevant channel/account and authority under the [connection responsibilities](framework/rules/identity.md#git-and-github-connection-checks).
 Choose relevant checks from current evidence and the actual operation; local skills and authentication probes are optional aids rather than universal prerequisites.
-Local work requires no network preflight, and connection success alone authorizes no remote mutation.
+Individual local operations require no repeated network preflight; repository tasks in Git working copies with configured remotes still apply the [work-start update](framework/rules/workflow.md#shared-repository-work-starts) before substantive work, and connection success alone authorizes no remote mutation.

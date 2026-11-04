@@ -25,9 +25,13 @@ Do this independently of same-day query reuse, an unavailable result, disabled c
 Subagents reuse the main agent's metadata result and read the current rules needed for their own assignment.
 A newer official version that remains uninstalled leaves the current local rules in force.
 
-For actual shared-repository work with a collaboration remote, apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) and its [target, authority and integration rule](rules/identity.md#shared-repository-updates-and-integration) after establishing the current assignment from the necessary local entrances.
-The main agent obtains fresh project state for a newly assigned task, a resumption or a new autonomous exploration round, prioritizes authorized local integration, then reads relevant changes before dependent work.
-This covers ordinary and joint research, writing, literature work, transfer preparation, review, maintenance and framework-upgrade preparation; continuous steps and subagents in that working copy reuse the actual result.
+For ordinary first installation, apply the [empty-target conditions](#first-install-empty-target) before source preparation, target writes or project-branch integration.
+Known nonempty targets stop that installation under its responsible action instead of entering the general work-start merge below.
+
+For a Git-managed working repository with a configured remote, apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) and its [target, authority and integration rule](rules/identity.md#shared-repository-updates-and-integration) after establishing the assignment, current branch and explicit limits from the necessary local entrances.
+The main agent determines the applicable project target and protected work, obtains fresh branch facts and needed commits, completes necessary authorized local integration, then reads affected current rules and inputs before substantive task work.
+This covers single-human projects, ordinary and joint research, writing, literature work, transfer preparation, review, maintenance, framework development and upgrade preparation; continuous steps and subagents in that working copy reuse the actual result.
+Without Git or a configured remote, perform no project update or automatic setup; explicit offline, read-only or fixed-input limits and actual failures follow the common rule.
 The daily framework query below and an earlier same-day project query do not replace that responsibility.
 
 Apply the [official version-check rule](versioning.md#official-version-check) before the selected work.
@@ -55,19 +59,35 @@ A reminder, silence or metadata response does not authorize replacement files, v
 
 ## Install the framework
 
-Before creating a directory or retrieving content, determine the actual authorized purpose and final installation target from the human request, workspace and target contents.
+Before creating a target or source-staging directory, retrieving content, initializing Git or merging, determine the actual authorized purpose and final installation target from the human request, workspace and target contents.
 An official page, repository name, example or empty registry alone supplies no installation or new-project instruction.
-For installation into an existing project, use its actual root by default, rather than creating an acme child project from the official repository name.
+Use the actual selected project root, rather than creating an acme child project from the official repository name.
 The shell's current subdirectory need not be that root; use actual project facts and, when available, native Git root information, applying the same protection to a .git directory or worktree pointer file.
 Use an already clear target directly; preserve relevant contents and clarify only a decisive target, authority or intent conflict instead of silently changing the destination.
 
-An existing ACME installation stays at its project root and follows the [upgrade action](#upgrade-installed-framework) when an upgrade is authorized; ordinary reading or use does not itself select an upgrade.
-For a first installation in an existing project or a new research project, integrate selected official version or fixed-commit files into the chosen project root.
-New research projects use this same file-installation path; when Git is wanted, use or establish the human project's own repository within actual setup authority, without adopting official history by default.
+An existing ACME installation stays at its project root and follows the [upgrade action](#upgrade-installed-framework) when an upgrade is authorized, without an empty-target requirement; ordinary reading or use does not itself select an upgrade.
 Joining existing research collaboration may clone that actual research repository and retain its history, identity and materials.
 Framework development and actual explicit clone instructions retain their requested target and ordinary Git behavior; those uses neither recommend official cloning for ordinary installation nor require an exception approval.
 Copying an existing research repository is not fresh framework setup and supplies no new identity, reattribution or intake exemption.
 Source inspection, backup, review, upgrade preparation and framework maintenance keep their actual source purpose and identity, without treating a source copy as an installed project or creating a new-project registration or credit.
+
+<a id="first-install-empty-target"></a>
+
+For ordinary first installation, confirm that the actual local project root and any existing or explicitly selected target project remote are empty apart from Git setup, before source staging in `.tmp/`, extraction, copying, initialization or project integration.
+An existing `.git` administration directory or worktree pointer and native Git configuration may remain; project commits, staged content and other actual files, including untracked or ignored files, make the local target nonempty.
+A clean `git status` does not establish emptiness.
+Use native Git facts and an allowed read-only query such as `git ls-remote` to determine whether the target project remote has project history or content, not merely whether it has an upstream or a branch matching the local branch.
+Official source retrieval and reference-only remotes are not target project remotes for this condition.
+Check only the local target when there is no applicable target project remote.
+An explicitly specified target project remote still requires an allowed read-only check when the local directory has no Git setup or no Git executable is available.
+Create no Git repository, remote or initial commit for this check.
+
+As soon as either side is known to be nonempty, preserve files, index, configuration and both histories, stop this installation and report which side contains what project work to the human author.
+No check of the other side is then required, and do not pull or merge, clear or move contents, or switch to a child or different directory to continue installation.
+If an applicable remote cannot be confirmed because of offline limits, unavailable tools, permissions or query failure, preserve the target and report the unknown fact; resume installation only with sufficient empty-target evidence.
+Only after all applicable targets are confirmed empty, install the selected official version or fixed-commit files at that project root and complete necessary setup.
+An explicitly selected new root that does not yet exist may be created after confirming any applicable remote condition.
+When Git is wanted, use or establish the human project's own repository within actual setup authority, without adopting official history by default.
 
 Obtain a snapshot or the needed files from the [official repository](https://github.com/vtejdn/acme) at the selected version or fixed commit, reusing adequate available contents when applicable.
 Keep source retrieval distinct from final installation; a downloaded or unpacked outer directory does not determine the project root.
@@ -75,10 +95,9 @@ When temporary local source is needed, explicitly choose its download or extract
 Choose adequate retrieval tools for the actual comparison, source inspection or maintenance need, including Git when useful, without making cloning or a Git executable an installation prerequisite.
 Read the selected source's version and applicable entrances before integration.
 File installation carries no source .git, refs or official commit history into the project.
-Preserve the destination's own .git, index, refs, Git configuration, remotes, history and unrelated work, and merge affected README, AGENTS, ignore rules, complete LICENSE and other necessary public files according to their actual contents and roles.
-Without Git, integrate at the same actual project root without initializing a repository or remote merely for installation.
-Existing project identity, configuration or materials must not be reset as a blank installation or cleared to manufacture a new project.
-An existing project receiving ACME for the first time reuses its actual project choices and registrations and completes only genuinely missing framework setup, human information and checkout binding through the [setup action](#set-up-repository-or-human-identity).
+Preserve the confirmed empty target's own Git setup while copying the necessary README, AGENTS, ignore rules, complete LICENSE and other selected public files.
+Without Git, install at the same confirmed empty project root without initializing a repository or remote merely for installation.
+Never reset existing project identity, configuration or materials to manufacture an empty target; their presence stops ordinary first installation as above.
 
 For an actual new research project, prepare repository, repository_display_name and repository_abbr in repository/config.json as that project's human-chosen or explicitly confirmed values, or null for each missing choice.
 Apply this preparation to both Git and non-Git copies; a valid inherited acme key is not evidence of the human's project choice, although that same key remains valid when explicitly chosen or confirmed.
@@ -100,15 +119,16 @@ Create .tmp/, intake/, profiles/, execution/ and local source storage only when 
 The ordinary guides and their diagrams remain alongside the common framework files; copying carries no personal profiles, private holdings or research authorization from the official blank source.
 Cloning does not authorize pushing to an inherited remote or automatically changing that remote.
 
-Before reporting installation complete, check framework/version.json, necessary framework files and usable entrances at the final project root, together with preservation of existing contents and Git relationships and exclusion of source Git metadata and history from file installation.
+Before reporting installation complete, check framework/version.json, necessary framework files and usable entrances at the final project root, preservation of the permitted target Git setup, and exclusion of source Git metadata and history from file installation.
 A version file in a temporary or unintended nested source copy, source-clone success or a command PASS alone does not establish installation at the requested root.
 Check the locations actually created or modified, without a whole-workspace nested-repository scan or removal of legitimate subrepositories.
 Insufficient permissions or necessary inputs remain concrete unfinished work; do not change the final project location to evade the limitation.
-Any actual Git delivery follows the [existing delivery action](#commit-or-push-requested-work) on the project's own history, including actual outgoing-chain checks, without making a preliminary commit or project-remote preflight a local installation prerequisite.
+Any actual Git delivery follows the [existing delivery action](#commit-or-push-requested-work) on the project's own history, including actual outgoing-chain checks.
+A preliminary commit or repeated connection probes are not installation steps; the first-installation target checks above remain prerequisites.
 
 Publishing common files from a development repository to the official starting repository requires its actual maintenance and remote-operation authority.
 Exclude the source's entire execution/ and .venv/ from framework copying and upgrades, including E, runtime notes and optional environment explanations; preserve the destination's actual local contents.
-Preserve the complete root LICENSE and applicable upstream notices; retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
+For authorized upgrades, project clones or development copying, preserve the complete root LICENSE and applicable upstream notices and retain destination project notices and their actual years when merging framework files under the [project-notice rule](rules/identity.md#project-notices-during-setup).
 Inspect the selected content and keep development blueprints/tests, local profiles, temporary work, private holdings and actual research out of that starting tree.
 Original literature remains local under the [source-storage rule](rules/literature.md#local-pdf-storage); clean setup creates no original-store placeholder or literature account.
 Exclude the source's live `mathematics/maintenance.md`, `mathematics/erratum.md`, `mathematics/messages.md` and personal message archives, preserving destination contents under their [location and copying rule](rules/organization.md#material-maintenance-worklist), without empty placeholders.
@@ -172,7 +192,7 @@ For continuation, read the selected T contract/decision, any existing stable E's
 Read relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` for the actual author, Task and material scope under the [coordination rule](rules/records.md#shared-mathematical-coordination), completing applicable erratum lookup before mathematical reliance without a whole-library scan.
 When that selected execution has no local E, follow the [on-demand preparation rule](rules/execution.md#responsibility-and-version-boundary) using adequate real instructions and conditions; absence neither resets limits nor grants resumption.
 For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
-Apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) to ordinary and joint research in an actual shared Git repository, using relevant incoming work for mathematical reuse before any necessary external search.
+Complete or reuse the [common work-start update](rules/workflow.md#shared-repository-work-starts) before substantive research in a Git working repository with a configured remote, using relevant incoming work for mathematical reuse before any necessary external search.
 Human-authorized joint Task participation also uses its [default delivery permissions](rules/identity.md#shared-research-git-authority-and-integration) and [progress-sharing rule](rules/tasks.md#shared-git-research), including continuation through an already participating individual T/E.
 Reuse the known repository, collaboration branch and work scope, honoring explicit human limits without another mode adoption or push grant.
 Follow [execution rules](rules/execution.md#current-contents-and-retained-limits) before autonomous advancement.
@@ -181,6 +201,13 @@ An actually authorized continuation prepares the relevant exact Task reference a
 If authorized work may proceed, advance its next useful step and retain actual results, failures, gaps and continuation points.
 If a stop or missing authority prevents advancement, preserve current findings and report that actual boundary.
 Method changes and strategy priorities may adapt within the assignment unless the human explicitly fixed them; they do not change the objective or completion criteria.
+Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) to try a branch's expected assertion on the original Task before substantial investment and divide work by its mathematical dependencies.
+At consequential assembly or redirection points, the main agent tries the complete argument and uses its concrete gaps to adjust work under [research coordination](rules/workflow.md#records-review-and-handoff).
+When the next proof, calculation or check is already clear, use ordinary research or Preparation assignments directly, including complementary lemmas; that technical allocation alone needs no agent-S exploration.
+For substantive route choices or alternatives that could change an actual research allocation, the main agent may delegate a bounded [agent-S exploration](rules/agent-S.md) within the existing Task/E scope.
+When sustained work yields neither discernible progress on the original Task's key gap nor a useful next approach, the main agent should proactively delegate a bounded exploration within that authority and resources, even without a candidate lead.
+Follow an explicit human instruction to delegate within its actual scope, permissions and effective execution limits.
+Read that role only when needed; ordinary proof, calculation and Preparation assignments keep their existing entrances.
 Apply [research coordination and Preparation](rules/workflow.md#records-review-and-handoff): the main agent coordinates available harness subagents, dependencies, shared resources, writes, necessary review and required retention/closeout while maintaining an overall understanding of the authorized Task.
 Delegate the current question, useful existing entrances and working Draft for Preparation; the subagent judges search, reading, applicability and sufficiency, retaining concise judgments and direct original-material locators in the [Draft](rules/ledger.md#working-drafts-and-fixed-findings).
 Reuse applicable Preparation, allow the same subagent to continue Draft research within an initial or extended assignment, and arrange suitable parallel work requested through ordinary coordination messages.

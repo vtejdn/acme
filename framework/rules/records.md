@@ -608,7 +608,8 @@ Before an update or cleanup, reread the current worklist and inspect the actual 
 If relevant content, scope or items change after inspection or acceptance, recheck the affected part before clearing it; an old result, successful merge, fingerprint or pass token is no substitute.
 After all items and necessary continuation scope are resolved, keep the established file at zero bytes without a closed list, report archive or completion receipt.
 An empty file means only that no unresolved item is recorded; the normal reply still reports actual scope, results and limitations.
-Coordinate the worklist and affected materials through existing Git arrangements and actual delivery authority, checking relevant merge results and preserving each contributor's unresolved issues without another synchronization account or network preflight for local work.
+Coordinate the worklist and affected materials through existing Git arrangements and actual delivery authority, checking relevant merge results and preserving each contributor's unresolved issues without another synchronization account or per-operation network preflight.
+Task starts in Git working repositories with configured remotes still apply the [common work-start update](workflow.md#shared-repository-work-starts).
 Ordinary reading, editing, scoped checks and native Git suffice; no dedicated maintenance script, mandatory command sequence or management database is introduced.
 
 ## Commands

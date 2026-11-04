@@ -11,7 +11,13 @@ Use three nonnegative decimal integers, `MAJOR.MINOR.PATCH`, without leading zer
 The version covers common rules, templates, tools and installation guidance as one framework.
 Compatibility alone does not justify retaining non-substantive content, including administrative and authorization history; apply the [core principles](readme.md#core-principles-and-interpretation) and [content-retention rule](rules/records.md#substantive-material-retention).
 
-During development before 1.0.0, MAJOR remains zero; incompatible changes increment MINOR and other framework changes increment PATCH.
+Assess compatibility for repositories that already have ACME installed and are taking the relevant upgrade.
+An upgrade is compatible when ordinary synchronization and bounded merges of local edits let those repositories continue using their existing materials and project setup without substantive maintenance.
+An upgrade is incompatible when continued use requires substantive work such as migrating stored material, restructuring project configuration or adapting an existing integration to a removed supported interface.
+A change confined to first-installation eligibility leaves installed repositories compatible.
+
+During development before 1.0.0, MAJOR remains zero.
+Increment MINOR for an incompatible upgrade and PATCH for other framework changes.
 
 Historical compatibility obligations begin with formal releases starting at 1.0.0.
 Development releases in the 0.x series do not promise continued support for their obsolete formats, readers or workflows.
@@ -46,13 +52,27 @@ The tag identifies the official source commit, while the installed version metad
 The official repository and published branch retain the [existing metadata source](#official-version-check), and actual publication follows the [connection and authority rules](rules/identity.md#git-and-github-connection-checks).
 This contract grants no commit, tagging or remote-publication authority by itself.
 
-Each new official version ships `framework/upgrade/<target-version>.md`, naming its actual preceding published version, applicable upgrade scope and real restrictions.
-Describe added, modified, removed and moved shipped paths, grouping paths with the same handling where useful, including rules, scripts, templates and affected public entrances.
-Explain necessary local merging, configuration or material adaptation, explicitly state when no material migration is needed, and identify proportionate checks.
-Use the actual predecessor and release candidate's Git path differences to check coverage; the agent judges handling and migration meaning rather than deriving them from a filename or byte difference.
-Finalize the note's name and scope with the chosen release identifier at closeout; a preparation draft does not establish a released tag or installed version.
-Keep notes concise, without blueprint plans, development discussions, construction logs or complete test reports.
-Keep needed [upgrade notes](upgrade/) in the official starting repository for the upgrade paths actually offered, without a duplicate changed-file register, local applied-upgrade history or general 0.x compatibility promise.
+### Contents of an upgrade note
+
+Each new official version ships `framework/upgrade/<target-version>.md` for the existing installations that can take that upgrade.
+Identify the target version, actual preceding published version, its fixed official source and any restriction on which installations can take the upgrade at the start of the note.
+A draft identifies its working baseline and any pending scope until the target and shipped changes are verified at closeout.
+The body covers two subjects.
+
+1. **What changed.** Summarize the behavior, interface or file location that changed and identify the affected shipped paths, grouped by feature or by common handling.
+   For a removed or moved path, field or call that requires local action, give its exact former name and any replacement.
+   Use the predecessor and candidate Git differences to verify coverage of additions, modifications, removals and moves, including supplied human-document changes at their actual language and path scope.
+   Link to the responsible installed rule or interface when the reader needs its full contract.
+2. **Additional actions for this version.** State what an existing installation must do beyond the [ordinary upgrade procedure](#upgrading-an-installed-framework).
+   For each action give the local condition that triggers it, what to change and preserve, any necessary order and the check that establishes completion of that particular adaptation.
+   Include steps that must precede replacement, removal of an exclusion or advancement of the installed version when their order matters.
+   When the usual synchronization and local merges suffice, say so explicitly.
+   A duty first triggered during subsequent research belongs in the change summary.
+
+Ongoing research and operating instructions belong in the responsible rules and tool documentation, and design rationale, construction tests and acceptance cases belong in development materials.
+Keep the notes for offered upgrade paths together, with references usable from the distributed framework. [Upgrade notes](upgrade/)
+When an editorial cleanup of retained notes is in scope for a later distribution, preserve each original version transition, its source facts, compatibility limits and all still-needed migration actions and dependencies.
+Clarify later general handling in the selected target's common rules or a later note, keeping each earlier note about its own release.
 
 ## Upgrading an installed framework
 
@@ -67,7 +87,7 @@ One explicit upgrade assignment covers ordinary retrieval, agent-selected adapta
 2. Read the applicable notes between installed and target versions, combine their affected paths and inspect the local files and necessary direct consumers.
    The upgrade includes synchronizing the selected official target's user manuals, human request guides and instruction examples in all actually affected existing languages, including body changes rather than only version literals and links.
    Where there is no local adaptation, use the target's actual content without rewriting unchanged parts, inventing missing translations or executing installed examples.
-   Apply this common contract to general human-document maintenance wording in earlier notes, retaining their concrete applicable adaptations and actual release scope rather than rewriting finalized notes.
+   When using earlier notes, apply the selected target's common contract to ordinary human-document handling and carry forward the concrete adaptations required by each original transition.
    Use final target files directly, ordering intermediate adaptations only when their actual dependencies require it, without serial complete installations of skipped versions.
    Retrieve older tagged sources when needed to understand local changes or incomplete guidance, without assuming that installed local contents still equal the old official source.
    Resolve or report an unavailable necessary baseline or migration fact as a concrete gap, without assuming no adaptation or defaulting to a whole-library comparison.

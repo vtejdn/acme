@@ -149,24 +149,30 @@ These are execution defaults, not a new reporting system.
 Do not create per-read logs, permanent timing ledgers, validation receipts or another status registry to demonstrate compliance.
 Keep substantive mathematical findings and actual review evidence in their existing homes.
 
-## Shared-repository work starts
+<a id="shared-repository-work-starts"></a>
+## Repository work starts
 
-For actual same-repository collaboration with a collaboration remote, the responsible main agent obtains fresh remote state when starting a newly assigned repository task, resuming paused or interrupted work, or beginning a new autonomous exploration round.
-Apply this after reading the necessary local entrances to establish the actual assignment, target and authority, before work that depends on that repository state.
-It covers ordinary T, joint T participation, writing, literature work, transfer preparation, review, maintenance and framework-upgrade preparation.
-Registered collaborators, a configured remote or an external-source entry alone do not establish such work; local work without Git or a collaboration remote and merely inspecting or acquiring from another repository retain their actual scope.
+For a Git-managed working repository with a configured remote, the responsible main agent obtains fresh facts about the applicable project branch before substantive work on a newly assigned repository task, a resumption after pause or interruption, or a new autonomous exploration round.
+This applies to single-human projects, ordinary and joint research, writing, literature preparation, review, maintenance, framework development and upgrade preparation; multiple authors, a joint T or a collaboration-mode declaration are not prerequisites.
+Here a task is the actual repository assignment, not necessarily a mathematical T; checking a remote creates no T, E or decision record.
+First read the current local version and necessary entrances to establish the assignment, working branch and explicit limits, then use native Git to determine the applicable project target and protected local work.
+For ordinary first installation, the [installation target check](../agent-actions.md#first-install-empty-target) precedes source preparation, writes and project integration; a known nonempty local target or project remote stops that installation instead of being merged first.
+Obtain fresh remote facts and needed commits, complete any necessary authorized fast-forward or ordinary merge, and read affected current rules and inputs before starting substantive task work.
 
 Continuous reading, tool calls, substeps and progress questions within the same assignment may reuse the round's actual result while it remains applicable.
 The main agent coordinates integration and writes in that working copy; subagents reuse its result while reading their own applicable current rules.
 A new task or resumption needs fresh project facts even if a query ran earlier that day; old remote-tracking references and the daily official framework-version cache do not supply them.
 Refresh again when known relevant remote changes, a phase needing fresh facts or actual delivery requires it, without polling or a mandatory query for every call.
 
-Use native Git under the [target, authority and integration rule](identity.md#shared-repository-updates-and-integration), prioritizing authorized fast-forward or ordinary merge before dependent work.
+Use native Git under the [target, authority and integration rule](identity.md#shared-repository-updates-and-integration); one actual fetch can establish fresh facts and obtain the commits without a separate connection-probe sequence.
 With no incoming update, continue without an empty commit or synchronization event.
 After integration, read the changed rules, contracts, strategies, results, useful failures, reviews and source facts relevant to the current work before adopting or editing affected content.
 Reread changed applicable rules under the [current-rule duty](#proportionate-execution).
 A Git update creates no intake, adoption of a new exact joint contract, execution activation or resumption; it does not reset effective stops or renew an allowance.
 Honor the [execution boundary](execution.md#responsibility-and-version-boundary), actual author scope and fixed inputs; explicit offline, read-only and fixed-commit instructions and failures use the integration rule's bounded handling.
+Without Git or a configured remote, perform no project-remote update; do not install Git, initialize a repository or add a remote solely for this duty.
+The official daily version check keeps its separate setting and scope.
+If a Git-managed repository cannot currently use Git, report the actual capability limit instead of treating it as a non-Git folder.
 No round number, last-sync field, synchronization log, model register, scheduled service or receipt is required.
 
 ### Integration capability and delegation
@@ -248,7 +254,7 @@ The following sequence applies to mathematical research advancement; discussion,
    Keep only the current exact Task reference, state and still-effective conditions in the stable E, with an incremental baseline/window only when actually applicable.
    Stop on the first stopping observation or monitoring failure and directly retain the effective stopped condition.
    An active Task does not itself resume a stopped run.
-   For actual shared Git research, complete or reuse the [common work-start update](#shared-repository-work-starts) and read its relevant changes before relying on the local entries below, including when existing mathematics makes a new external search unnecessary.
+   For a Git working repository with a configured remote, complete or reuse the [common work-start update](#shared-repository-work-starts) before substantive work and read its relevant changes before relying on the local entries below, including when existing mathematics makes a new external search unnecessary.
 2. Follow the relevant [Claim entries](../../mathematics/claims/index.md) and [strategy index](../../mathematics/strategies/index.md) within the authorized task.
    Read the linked arguments and audit units needed for the next step; do not treat historical checkpoints as active instructions or reread unrelated history by default.
 3. Identify the current question, known and provisional assumptions, and smallest useful next step under the [work-obligation rules](#work-obligations).
@@ -411,6 +417,19 @@ Within that scope, subagents autonomously develop and select strategies, continu
 A subagent may request suitable parallel work from the main agent through ordinary coordination messages; the main agent arranges the additional subagents and their dependencies and writes.
 Assignments may adapt: a Preparation subagent may continue research in the same Draft when the assignment includes that work or the main agent extends it, without a replacement agent, copied Draft or handoff report.
 No fixed role hierarchy or one-to-one agent/S/D assignment is required.
+
+When components to be combined return, repeated attempts leave the same gap, or a major redirection will change investment, the main agent is responsible for trying the complete candidate argument from the Task's hypotheses to its conclusion.
+It may derive the argument directly or delegate a fresh attempt, while retaining its own understanding of the interfaces and resulting allocation choices.
+Reuse adequate arguments and actually establish each next premise from the same original input or a proved correspondence of objects.
+Check whether witnesses can satisfy the required conditions simultaneously, parameter choices and constants are compatible, cases cover all inputs, and no step assumes the target or an equivalent unresolved assertion.
+The first unsupported step identifies a concrete gap for further work, without making it necessary to all possible solutions absent a separate necessity argument.
+Reassign work to that gap and other independent obligations as useful; reaching the target still requires normal evidence adoption and whole-contract completion checks.
+A delegate that supplies substantive proof steps is a proof developer, and any required independent review follows the [actual participation boundary](proof-audits.md#review-arrangements).
+Keep current choices, necessary mathematical reasons and next steps in rolling S, and retain reusable arguments or useful failures at adequate responsible homes under the common content rule.
+Repeat this trial only when it can change a substantive research decision, without a per-round proof-writing or reporting requirement.
+
+For bounded discovery of alternative mechanisms, use [agent-S](agent-S.md) when the research and allocation conditions in the [strategy rules](strategies.md#choosing-and-revising-a-route) apply.
+The main agent evaluates the actual delegated result separately from adopting a route or obtaining independent mathematical review; useful strategy exploration need not create a new S.
 
 For Preparation, delegate the current question, useful existing entrances and working Draft to a subagent.
 That subagent decides how to search, read, compare and check applicability, how far to pursue dependencies and when preparation is sufficient for the current work, applying the actual source-reading duties.

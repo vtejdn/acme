@@ -13,7 +13,7 @@ On failure, report the relevant concrete error without exposing credentials and 
 A sandbox's lack of credential access does not establish expired credentials.
 Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
 Connection success grants no push, force-push, branch deletion, PR creation or other remote mutation.
-Local reading, edits, checks, commits and file copying require no per-operation network preflight; actual shared work separately applies the [work-start update](workflow.md#shared-repository-work-starts).
+Local reading, edits, checks, commits and file copying require no per-operation network preflight; a repository task in a Git working copy with a configured remote still applies the [work-start update](workflow.md#shared-repository-work-starts) before substantive work.
 The [daily metadata read](../versioning.md#official-version-check) retains its bounded public HTTPS endpoint, cache and separately authorized upgrade boundary.
 
 ## Stable keys and local attribution
@@ -109,7 +109,7 @@ The optional init helper supplies null display defaults; ordinary configuration 
 
 Git use supports local research and native versioning without a GitHub account or remote.
 An existing Git-managed checkout keeps its Git and binding requirements if the executable becomes unavailable, without falling back to a personal-folder operator.
-Local Git operations require no network preflight; the separately configured daily public-version check keeps its own scope.
+Individual local Git operations require no repeated network preflight; a task in a Git working repository with a configured remote still applies the [work-start update](workflow.md#shared-repository-work-starts), while the daily public-version read and actual remote delivery retain their own scope.
 
 When first establishing the actual GitHub project remote, after a relevant target change or for a remote operation needing fresh facts, compare the selected remote's repository name component with the registered local name.
 An official framework source, intake source or reference-only upstream is not automatically that project remote, and a GitHub login selects no repository.
@@ -315,20 +315,27 @@ Let Git perform file merging, then inspect the actual affected result and resolv
 Git's lack of a text conflict establishes neither mathematical agreement, source applicability nor permission to edit another human's body.
 Inspect earlier versions only when the actual question needs them; no ordinary commit or merge requires every parent to contain a material, a BASE selector, preimage mapping or framework pass token.
 
-### Shared-repository updates and integration
+<a id="shared-repository-updates-and-integration"></a>
+### Project remote updates and local integration
 
-An actual shared-repository task's start or resumption includes routine fetching and local integration within its assigned scope, subject to explicit human limits, without a separate first-sync permission or repeated confirmation.
-Apply the [common work-start timing and capability duties](workflow.md#shared-repository-work-starts) to all covered activities, rather than restricting updates to joint Tasks.
-Determine the actual repository, collaboration remote, branch and work scope from the instruction, existing collaboration agreements and native Git facts, reusing sufficient information and clarifying only a decisive missing target.
-Distinguish the project collaboration branch from the current local branch, the official framework source and a reference upstream; remote configuration, registered authors or an external-source entry alone establishes no collaboration assignment.
+A repository task in a Git working copy with a configured remote includes routine fetching and necessary local integration before substantive work, subject to explicit human limits, without a separate first-sync permission or repeated confirmation.
+Ordinary first installation first applies the [empty-target conditions](../agent-actions.md#first-install-empty-target), stopping and reporting known nonempty targets before this general integration path.
+Apply the [common work-start timing and capability duties](workflow.md#shared-repository-work-starts) to single-human projects and all other covered activities, without requiring a joint Task or multiple authors.
+Determine the actual repository, project remote, branch and work scope from the instruction and native Git facts, normally using the current working branch's upstream unless the human specifies another integration target.
+Without an upstream, use sufficient instructions and Git facts to select the target; clarify only a decisive ambiguity, without skipping the update or hardcoding a remote or branch name.
+Distinguish the project target from a reference-only upstream, external intake source and official framework download address; multiple configured remotes do not authorize integrating them all or changing remote, upstream or repository settings.
+If only reference sources are configured and no applicable project target is established, explain that boundary or resolve the decisive target gap before dependent work.
 An actual native Git fetch may establish fresh branch facts and obtain the needed objects together, without a fixed connection or account-probe sequence.
 This authority includes a local merge commit needed for the authorized integration; it does not by itself authorize committing the task's other work or publishing remotely.
 Actual delivery uses its existing authorization, including the joint-research default below.
 
-Choose native Git retrieval, fast-forward or ordinary merge from the actual branch relationship and explicit integration target, without prescribing one command sequence, helper or whole-library check.
+Choose native Git retrieval and integration from the fresh commit relationship and actual target, without prescribing one command sequence, helper or whole-library check.
+When the remote tip is already contained locally, continue without a merge or push; fast-forward when possible, and use an ordinary merge preserving both histories when both sides have new commits.
+This does not default to rebase, reset, forceful replacement or history rewriting.
 Integration concerns branches and commits, rather than pulling only one Task's files; select the relevant changed content for inspection afterwards.
 Protect uncommitted work, other sessions' staged contents and each contributor's authorship without requiring the entire worktree to be clean or defaulting to whole-tree add, stash, discard, overwrite or rebase.
 Coordinate integration, index and commits serially in this working copy, choosing any necessary native saving or temporary arrangement for the actual state without another permanent role, lock or parallel-copy management system.
+A necessary local merge commit contains the integration result without unrelated staged work or unfinished task changes.
 Use an appropriately capable model and reasoning configuration for the necessary content judgments under the [delegation duty](workflow.md#integration-capability-and-delegation), preserving author and review authority.
 After Git merges files, inspect affected mathematics, fixed versions, exact inputs, references and review applicability under the existing [conflict rule](#collaboration-maintenance-and-conflicts); a clean text merge certifies neither mathematical agreement nor authority to edit another human's body.
 Resolve administrative conflicts within existing authority, preserve competing mathematical evidence, and reuse any applicable scoped recheck approval rather than requesting it again.
@@ -338,6 +345,8 @@ Private settings, original literature, execution/, .venv/ and ignored outputs re
 
 Honor explicit offline instructions and postponed synchronization within their actual scope.
 For strictly read-only or fixed-commit work, make only permitted remote queries, preserve the selected input and do not integrate into the inspected object merely to make it current.
+An explicitly fixed installation, copying, intake or review source stays fixed when its source branch advances; project work-start updates do not select another source version.
+Integrating project history may bring framework-file changes that require current-rule reading and adaptation; the separate daily official version query alone still authorizes no framework replacement.
 On a connection, permission or integration failure, report the concrete unconfirmed or unintegrated scope and its impact, defer dependent work and continue independently supported authorized work.
 An explicit successful-synchronization requirement or effective execution stop takes precedence.
 Do not manufacture success through repeated queries, force-push, history rewriting or overwriting local work, or create a failure queue or retry ledger.
