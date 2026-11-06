@@ -227,10 +227,15 @@ An active Task does not resume a stopped run or bypass an applicable execution l
 ## Starting and Continuing Work
 
 Begin or resume with read-only inspection.
-Discussion, reading and maintenance analysis do not require generated-file writes.
+During discussion, reading and maintenance analysis, answer directly for explanations of existing material, routine short calculations or exploration with no lasting use.
+Cite adequate existing materials when useful.
+When that work produces mathematics worth retaining, apply the pre-delivery preservation duty within actual authority.
+See [Closing an Exploration Round](#exploration-round-closeout).
 Before research advancement inspect the relevant selected material decisions, contracts and execution state.
 Within the current human, Task, route and material scope, read relevant `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` when present under the [coordination rule](records.md#shared-mathematical-coordination).
-Before actual mathematical reliance, inspect applicable erratum for the chosen input/version, including other-author dependencies; reuse adequate still-applicable reading without a whole-library scan on each action.
+Before actual mathematical reliance, inspect applicable local-material erratum and relevant source evidence for the chosen input and version, including other-author dependencies.
+Reuse adequate reading while it remains applicable.
+Route new source defects and local misreadings, misuse or failed dependencies by their [actual mathematical object](records.md#mathematical-issues-and-reliance), rather than putting every external-source problem into erratum.
 Recipient handling and human-authorized sender archives follow the [message rule](records.md#mathematical-messages), without changing Task/E or automatically loading personal message archives.
 Routine startup does not trigger a full audit.
 Choose any useful scoped material, link or storage checks for the actual question, and resolve relevant findings before relying on them.
@@ -409,7 +414,8 @@ Audit notes should identify the claim or artifact reviewed, the checks performed
 Reviews must evaluate the argument itself rather than merely restating its conclusion.
 
 Each executing ordinary Task has one responsible main agent and one stable E; a joint coordination T has neither direct execution nor an E.
-The main research agent primarily coordinates the authorized Task, retaining an overall understanding of its objective, authority, progress and key mathematical interfaces.
+The main research agent maintains a substantive understanding of the original objective, the central mathematical difficulty, each branch's actual contribution and the key interfaces between branches.
+It uses that understanding, the Task's authority and its actual progress to choose direct work, concentrated delegation or parallel assistance.
 It starts, reuses and adjusts available harness subagents, coordinating dependencies, shared resources, overlapping writes and necessary review.
 It ensures required retention and closeout by doing or explicitly delegating that work, without routinely repeating the subagents' derivations or material operations.
 Internal subagents receive bounded delegated work and coordinated write targets; they share the Task/E authority, limits and stops rather than creating parallel identities or independent allowances.
@@ -418,18 +424,37 @@ A subagent may request suitable parallel work from the main agent through ordina
 Assignments may adapt: a Preparation subagent may continue research in the same Draft when the assignment includes that work or the main agent extends it, without a replacement agent, copied Draft or handoff report.
 No fixed role hierarchy or one-to-one agent/S/D assignment is required.
 
+When one mechanism depends on a global construction, interdependent parameter choices, simultaneous witnesses or an undiscovered representation, the main agent or one suitable delegate carries the necessary context and works continuously on the complete object for that mechanism.
+Assign auxiliary work within that mechanism where the mathematical interfaces are clear and the results can advance the whole construction.
+Independent mechanisms may each have a researcher responsible for the complete object and proceed in parallel when their dependencies, discriminating next steps, authority and resources permit.
+Reassess the division of work as the mathematical difficulty becomes clearer and adjust the actual assignments.
+Choose the researcher, available model and reasoning effort to suit the key proof, construction or strategy judgment.
+
 When components to be combined return, repeated attempts leave the same gap, or a major redirection will change investment, the main agent is responsible for trying the complete candidate argument from the Task's hypotheses to its conclusion.
 It may derive the argument directly or delegate a fresh attempt, while retaining its own understanding of the interfaces and resulting allocation choices.
 Reuse adequate arguments and actually establish each next premise from the same original input or a proved correspondence of objects.
 Check whether witnesses can satisfy the required conditions simultaneously, parameter choices and constants are compatible, cases cover all inputs, and no step assumes the target or an equivalent unresolved assertion.
-The first unsupported step identifies a concrete gap for further work, without making it necessary to all possible solutions absent a separate necessity argument.
-Reassign work to that gap and other independent obligations as useful; reaching the target still requires normal evidence adoption and whole-contract completion checks.
+Identify the first unsupported step in the candidate chain and the scope already established.
+That gap concerns the candidate chain unless a separate argument establishes its necessity.
+When the same decision also calls for an [investment check](strategies.md#choosing-and-revising-a-route), reuse the chain attempt and continue conditionally through decisive later gaps while preserving where established reasoning stopped.
+Reassign work to useful gaps or independent obligations in light of both judgments.
+Reaching the target still requires normal evidence adoption and whole-contract completion checks.
 A delegate that supplies substantive proof steps is a proof developer, and any required independent review follows the [actual participation boundary](proof-audits.md#review-arrangements).
 Keep current choices, necessary mathematical reasons and next steps in rolling S, and retain reusable arguments or useful failures at adequate responsible homes under the common content rule.
 Repeat this trial only when it can change a substantive research decision, without a per-round proof-writing or reporting requirement.
 
+<a id="candidate-research-follow-up"></a>
+
 For bounded discovery of alternative mechanisms, use [agent-S](agent-S.md) when the research and allocation conditions in the [strategy rules](strategies.md#choosing-and-revising-a-route) apply.
-The main agent evaluates the actual delegated result separately from adopting a route or obtaining independent mathematical review; useful strategy exploration need not create a new S.
+When agent-S or another researcher returns a candidate, the main agent chooses whether to execute the first investigation, clarify the concept, wait for a specific prerequisite or defer the route.
+For a candidate selected for continued work, carry out or explicitly assign the next discriminating investigation with its question, necessary inputs, resources and point for returning the result.
+Specify how possible results could change the decision and choose a scope suited to the candidate, such as a short derivation, counterexample probe, source-applicability check, computation or focused conceptual investigation.
+On return, use the evidence to decide whether to expand work, revise the mechanism, investigate a remaining question or defer, and update the actual assignments.
+Keep the decision and necessary reasons in the responsible S, with derivations and computations at their responsible homes.
+Evaluate completion of the delegation separately from adopting a route or obtaining independent mathematical review.
+Useful strategy exploration may be retained in an existing responsible material.
+
+When [reassessing proof and refutation direction](strategies.md#proof-and-refutation-direction), apply the decision to the selected Task's actual route use, assignments, computations and dependencies within its stable E.
 
 For Preparation, delegate the current question, useful existing entrances and working Draft to a subagent.
 That subagent decides how to search, read, compare and check applicability, how far to pursue dependencies and when preparation is sufficient for the current work, applying the actual source-reading duties.
@@ -450,6 +475,16 @@ At the end of each exploration round, the responsible main agent first applies t
 Preserve the necessary content and repair its consumers before removing redundant drafts.
 A delegation restricted to D/J authoring leaves the main agent responsible for performing or explicitly delegating this fixed-material work after receiving the result.
 Genuinely continuing work remains in D with its actual unresolved scope; any unfinished organization and the responsibility for completing it belong in the existing material or handoff.
+
+For a repository question or discussion, carry out the bounded reasoning needed for the reply under the current instruction and actual author authority.
+Apply the same content decision to resulting derivations, conclusions, counterexamples, useful failures or key computations that need to be available for checking, citation or later research.
+When the actual author is established and the current instruction authorizes writing the responsible materials, complete the applicable organization and fixed retention before the substantive answer or handoff.
+Reuse an adequate responsible material or retain the finding in the appropriate C, L, J, U or other home under its existing obligations.
+Keep a continuing argument or computation in an appropriate D or J with its actual gaps, and retain developed findings or failure evidence at their appropriate fixed homes.
+Preserve precise conditions, decisive grounds, established scope and unresolved checks, with necessary programs, inputs and evidence at their responsible homes.
+Give the responsible material locations, checked scope, unresolved conditions and actual mathematical and review status in the reply or handoff.
+For read-only or write-limited work, an unresolved author identity or an effective stop, preserve available evidence within actual authority and report the precise finding, existing evidence and what remains to be recorded.
+Apply the existing Task/E conditions to research advancement or resumption and the actual delivery authorization to commits and pushes.
 
 Fixing material does not itself establish a result: record its actual mathematical and review status under the [registration and acceptance rules](#work-obligations).
 This responsibility does not require a new material for every experiment, a separate closeout report or an additional approval gate.

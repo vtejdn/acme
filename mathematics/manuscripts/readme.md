@@ -2,6 +2,14 @@
 
 See the [current index](index.md) and [framework rules](../../framework/readme.md).
 
+Use the action matching the assignment to write, revise or review a manuscript.
+See [Write or revise a manuscript](../../framework/agent-actions.md#write-or-revise-a-manuscript) and [Review a manuscript](../../framework/agent-actions.md#review-a-manuscript).
+Writing self-checks and writing review use the same standards.
+See the [common manuscript checks](../../framework/rules/writing.md#manuscript-writing-rule-checks).
+Use the [selected manuscript's revision list](../../framework/rules/writing.md#manuscript-revisions) for writing opinions, including the rule for carrying forward attributable opinions from a prior single-manuscript list.
+Use the [mathematical-review home](../../framework/rules/writing.md#manuscript-review-and-mathematical-provenance) for proof findings, including proof-only revisions.
+Use the appropriate [companion records](../../framework/rules/writing.md#project-and-document-records) for citations and writing choices.
+
 Create a manuscript project only when authorized writing needs it.
 When a corresponding mathematical Task exists, use its assigned local family as the default root, such as `Author_T_F0001/`.
 For a writing assignment without such a Task, follow the [writing-home rule](../../framework/rules/writing.md#projects-and-documents): reuse a suitable existing or author-designated location, or choose a necessary purpose-named document home within actual writing authority, without creating T/E for directory naming.

@@ -21,6 +21,8 @@ Process complete definitions, terminology and symbols through [def registration]
 Reuse adequate inspection without a full-paper audit merely for a bibliographic or stylistic use.
 Prepare or reuse [searchable contents](#searchable-contents) when the selected source actually supplies a contents list.
 Use [progressive reading](#progressive-reading) and the [source-audit rules](literature-audits.md) at the needed depth.
+Reuse adequate, locatable evidence of a source problem at its existing U/C/L and use a suitable U when evidence needs supplementation or a distinct finding needs its own record.
+See [Mathematical issues and reliance](records.md#mathematical-issues-and-reliance).
 Concrete unresolved literature preparation needing later handling uses the [common maintenance entrance](records.md#pending-literature-work), while necessary source facts, inspected mathematics and use limits remain at their responsible homes.
 
 <a id="bibliography-content"></a>
@@ -225,7 +227,7 @@ The root [reuse-before-proof rule](knowledge-reuse.md#reuse-before-proof) also t
 Stop advancing when enough evidence is available; do not wait until a proof attempt stalls or repeat an adequate unchanged search.
 
 1. State the question and identify the definition, result, method, or decision that needs evidence.
-   Reuse relevant existing audit units and source notes, checking their inspected editions and actual unchecked dependencies.
+   Reuse adequate U/C/L and source notes, checking their inspected editions, exact passages, actual grounds and unchecked dependencies.
 2. If reviewed material is insufficient, search unaudited local sources: use the [searchable contents route](#searchable-contents) and source indexes, then relevant terminology, equivalent formulations, theorem names, and citation leads.
    Trigger this step for a missing input, unclear convention, new mathematical lead, suspected conflict, or changed source version.
    Do not wait for a whole-source audit.
@@ -248,7 +250,8 @@ Stop advancing when enough evidence is available; do not wait until a proof atte
 
 Author-owned source notes identify useful editions and locators; U or adequate C/L owns actual inspected passages, mathematics and review limits.
 Concrete cross-repository acquisition operations and their obtained or unavailable provenance belong in `intake/<initiator>/` under the [intake rule](intake.md#scope-and-routing).
-Source-specific reading/search notes and theorem-level audit coverage belong in `mathematics/audits/literature/`; use a compact section of an existing source record until a reusable unit warrants its own record.
+Keep substantive new reading and search findings, actual coverage and use limits at their responsible materials under the [search-evidence rule](literature-search.md#search-evidence) and their author and version boundaries.
+A compact section of an appropriate writable record can suffice.
 Do not create one file or unit for every search hit.
 Describe actual inspection depth and unresolved limits in ordinary prose under the [source-audit rules](literature-audits.md#coverage-states), without an enumerated coverage state.
 Existing full-source audits retain their documented scope; this policy neither downgrades them nor extends them to related sources.

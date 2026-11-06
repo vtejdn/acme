@@ -68,20 +68,25 @@ When a search materially affects a source assessment, proof, route, or novelty c
 Include enough scope information to interpret a negative search outcome.
 Record only actions actually performed.
 
-Put source-specific findings in the relevant `mathematics/audits/literature/` record; put substantive research-search outcomes in the relevant `mathematics/ledger/` entry or module.
+Reuse sufficient, locatable source evidence in its existing U/C/L, including its actual edition, passage, grounds and inspection limits.
+Retain substantive new search coverage, findings and use limits at the responsible material within its author and version boundaries.
+Maintain a suitable U when evidence needs supplementation or a distinct source finding needs its own record.
+See [Mathematical issues and reliance](records.md#mathematical-issues-and-reliance).
+Keep substantive research-search outcomes at their responsible ledger or other research material.
 Route records link the evidence and explain its effect on the next decision.
 Follow the [acquisition norm and failed-acquisition exceptions](literature.md#literature-acquisition); reuse adequate local copies and record access failures accurately.
 Original bytes remain machine-local under the [source-storage rule](literature.md#local-pdf-storage); useful author edition/source explanations and shared findings retain their actual scope without a registry, holding ledger or fingerprint.
 A compact section in an existing record is sufficient; no separate search-log directory is required.
 
 Discovery, successful download, statement checking, and proof review are distinct activities.
-Apply verification labels only to the work actually done, and update affected claim or status records when the evidence changes their assessment.
+Apply verification labels only to the work actually done, and follow [dependency follow-up](literature-audits.md#searches-and-dependency-follow-up) when evidence changes a consumer's applicability, adoption, assessment or remaining obligation.
 
 ## Sources and Computation
 
 - Maintain necessary canonical bibliographic facts and a stable citation key under [common source preparation](literature.md#source-preparation), following the existing source-naming and shared-citation conventions.
   Use the same unambiguous key throughout the repository, and cite the relevant theorem, section, or page when relying on a specific statement.
-- Organize reusable source inputs under the [literature-audit format](literature-audits.md), separating the original statement, notation conversion, checked hypotheses, proof-inspection depth, and local deductions.
+- Reuse adequate source inputs and retain necessary additions at the responsible home under the [source-evidence rule](records.md#mathematical-issues-and-reliance).
+  Distinguish the original statement, notation conversion, checked hypotheses, proof-inspection depth and local deductions.
   A file's presence in `mathematics/literature/` does not verify all of its claims.
 - Verify claims against primary sources when available.
   Distinguish direct reading from secondary reports, and record access or version limitations.

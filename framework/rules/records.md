@@ -283,7 +283,7 @@ Human registration does not register agents or models; review arrangement record
 | C/R/L mathematical versions, rolling U and native J groups in their responsible homes | C statements and substantial arguments; R formal agent reviews of all relationships; L exploration and synthesis; U rolling source inspection under its [source-unit contract](../material-format.md#fixed-source-unit-inputs); J computations with exact scope and group identity |
 | Rolling S/D materials | Routes and continuing draft mathematics; meaningful earlier findings and received originals retain their preservation boundaries |
 | `mathematics/maintenance.md` | Rolling coordination of unresolved conformity issues and concrete outstanding literature preparation, with their next action but no mathematical assessments or evidence ownership |
-| `mathematics/erratum.md` | Concrete substantive mathematical issues and doubts, with affected-author confirmation and actual evidence at its responsible home |
+| `mathematics/erratum.md` | Concrete substantive mathematical issues and doubts in this repository's materials, with affected-author confirmation and actual evidence at its responsible home. See [Mathematical issues and reliance](#mathematical-issues-and-reliance). |
 | `mathematics/messages.md` | Shared mathematical correspondence, with recipient handling and human-authorized sender archives |
 | `intake/<initiator>/*.json` | Actual operation time, recorder, instruction, original/transport provenance, scope and outcome |
 | `execution/Author_E_SERIAL.md` | Stable persistent local boundary for an ordinary Task family actually selected for execution, with its exact Task decision and effective stops and limits under the [execution rules](execution.md#responsibility-and-version-boundary); a joint T has no E |
@@ -400,7 +400,9 @@ Harmless shared-material maintenance causes no publication cascade.
 
 ## Shared mathematical coordination
 
-Use three distinct shared rolling files at their [responsible locations](organization.md#material-maintenance-worklist): maintenance for conformity and concrete outstanding literature preparation, erratum for substantive mathematical issues, and messages for ideas, methods and useful progress notices.
+Use three distinct shared rolling files at their [responsible locations](organization.md#material-maintenance-worklist): maintenance for conformity and concrete outstanding literature preparation, erratum for substantive mathematical issues in this repository's materials, and messages for ideas, methods and useful progress notices.
+Keep external-literature findings at their responsible source-evidence homes.
+See [Mathematical issues and reliance](#mathematical-issues-and-reliance).
 Register an issue once according to its actual nature, retaining necessary evidence and unresolved affected-author portions when correcting its location, without a fourth common issue board.
 These files have no material number or single mathematical author header; entries, replies and confirmations identify the actual human the agent represents under the existing identity rules.
 A signature, display name or write argument does not establish that representation or permission to alter another author's mathematics.
@@ -433,11 +435,19 @@ The authors of a cited work do not thereby become local issue-confirmation owner
 
 Actual conformity repair retains its [common repair and acceptance duties](#material-error-handling), including applicable context isolation; mixed batches apply each issue's real obligations without relabeling a repair to bypass acceptance.
 An unresolved attribution alone does not invalidate a sufficiently supported local proof or change its assessment, while an argument relying on an unverified source retains its actual unresolved input.
-Concrete mathematical defects or doubts, including theorem misuse or a failed dependency, use [erratum and the mathematical correction rules](#mathematical-issues-and-reliance); correct a single issue's responsible location rather than mirroring it across worklists, retaining separate entrances only for genuinely distinct problems.
+Concrete mathematical defects or doubts follow [object-based mathematical problem routing](#mathematical-issues-and-reliance), including erratum for local theorem misuse or a failed local dependency; correct a single issue's responsible location rather than mirroring it across worklists, retaining separate entrances only for genuinely distinct problems.
 
 ### Mathematical issues and reliance
 
-Record concrete gaps, incorrect hypotheses, dependency failures or source misunderstandings in `mathematics/erratum.md`, distinguishing confirmed defects from doubts and the inspected step from an entire proof or refutation.
+Route a mathematical problem by the actual object containing the defect, rather than where or by whom it was discovered.
+Reuse sufficient, locatable evidence of errors, proof gaps or excessive claims in external literature at its existing U/C/L home.
+Use the relevant U when a distinct source finding needs its own record or the existing evidence needs supplementation.
+See [Content and Verification](literature-audits.md#content-and-verification).
+For substantive defects or doubts in this repository's C/L/R/J, a local U's misreading or misrecording of a correct source, or another local mathematical material, retain complete evidence at the actual responsible material and coordinate necessary continuing work in `mathematics/erratum.md`.
+When a source defect removes support for a local argument, use erratum to locate the affected local argument or adoption interface and its remaining obligation, linking the responsible source evidence.
+Limit erratum coordination to affected local materials and correct a failed local dependency under its own material and review requirements.
+Manuscript revision opinions and citation records retain only their document-side actions or uses and references under the [writing rule](writing.md#manuscript-revisions), without copying the source finding or mathematical account into multiple lists.
+Distinguish confirmed defects from doubts and the inspected step from an entire proof or refutation.
 Name the reporting human and affected material's actual author, with the precise version, location, evidence and necessary remaining check.
 Cross-author findings and corrections stay in the contributor's own responsible material; a report authorizes no change to another author's body, Current assessment or decision history.
 After correction or sufficient confirmation of a false alarm, the affected participating author's agent confirms and clears that author's resolved portion, reusing still-applicable evidence; received-material local disposition follows the exception below.
@@ -446,6 +456,11 @@ Required mathematical versions, assessments and correction or independent review
 Before using an argument or established input, or completing a Task from it, inspect applicable erratum for the selected material, physical version and use, including relevant other-author inputs even when opening C directly.
 An unresolved defect in the sole supporting argument cannot be bypassed by old proved text; retain the consumer's actual unresolved obligation or use separately sufficient support.
 Do not automatically apply an old objection to a new version or infer resolution from elapsed time, an empty list or a later check.
+When handling a misplaced external-literature finding in an older erratum item, verify that sufficient evidence is locatable at its responsible home and repair necessary references before removing the misplaced portion.
+Reuse an adequate fixed C/L in place and supplement a suitable U when the evidence is insufficient or the finding requires separate maintenance.
+Preserve real local defects, unresolved consumer and other-author obligations, and concurrent additions in their responsible records.
+Apply the actual mathematical correction and review duties separately from reclassifying the selected item.
+External ACME-material receiving and receiving-side disposition retain their existing contracts, independently of this external-literature distinction.
 
 ### Receiving-side local disposition
 
@@ -471,7 +486,7 @@ The recipient reads, judges, optionally replies or adopts, and may finish handli
 Replies, supplements and corrections are separately attributed new messages, preserving the old sender's original meaning and then-known limits.
 Recipient handling cannot delete or rewrite the sender's original, its sender/addressee information or another recipient's unresolved request; maintain only one's own necessary follow-up notes.
 One multi-recipient original stays shared; a reply, one completed Task or one recipient's handling does not establish that all recipients are finished.
-Move a substantive issue to erratum with its evidence and unresolved affected parties rather than treating it as disposable read correspondence.
+Preserve a substantive finding and necessary coordination at its [object-specific mathematical home](#mathematical-issues-and-reliance), rather than treating it as disposable read correspondence.
 Messages change no Task/E, assessment or authority; actual adoption and substantive retention follow their responsible rules.
 Native harness communication remains sufficient for immediate coordination when available; no notification service, message writer or parser is required.
 
@@ -517,6 +532,7 @@ Useful mathematics stays in its actual contributor's adequate responsible materi
 Use this contract for format, reference, conformity and substantive mathematical problems and concrete outstanding literature preparation in research materials, whether found during authorized work or an explicitly assigned maintenance action.
 Locate the issue and its effects, establish its nature, actual scope and author authority, complete authorized handling and necessary checks, perform applicable review or acceptance, and update responsible materials and resolved coordination portions.
 Ordinary literature preparation follows its [handling and confirmation rule](#pending-literature-work); the conformity stages below apply to actual conformity work rather than every maintenance entry.
+Manuscript drafting, its ordinary writing self-checks and assigned manuscript writing-rule review follow their [writing activity contract](writing.md#document-choices-and-final-review); these activities do not themselves select the material-conformity maintenance stages below.
 These are common responsibilities, without new stages, status fields, a total issue board or a mandatory pipeline starting with inspection.
 Use the currently installed and actually applicable rules; an uninstalled version or design proposal supplies no local rule authority.
 Explicit directory, material, issue or depth limits govern writes and cleanup; follow necessary dependencies and consumers for reading and retain a relevant out-of-scope issue without expanding the repair.
@@ -592,7 +608,7 @@ Return the actual acceptance result, cleanup and limits without claiming that st
 
 ### Sole rolling worklist and current edits
 
-Keep continuing conformity issues and [concrete outstanding literature preparation](#pending-literature-work) in `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), and substantive mathematical issues in [erratum](#mathematical-issues-and-reliance).
+Keep continuing conformity issues and [concrete outstanding literature preparation](#pending-literature-work) in `mathematics/maintenance.md` under its [location and copying rule](organization.md#material-maintenance-worklist), and route substantive mathematical issues by their [actual local or external object](#mathematical-issues-and-reliance).
 Classify each unresolved issue once by its actual nature; if its location is wrong, preserve necessary evidence and affected scope while moving it rather than mirroring it in both files or adding a total issue board.
 Mathematical erratum cleanup follows its actual mathematical review and affected-author confirmation duties, without an additional conformity-acceptance requirement.
 Completed and accepted incidental conformity repairs need no retrospective item, independent inspection report or correction log.

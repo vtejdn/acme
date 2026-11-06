@@ -74,7 +74,7 @@ All framework review relationships concern agent reviews; human authorship, advi
   Point to the corresponding findings rather than duplicating the argument.
 
 Different sessions or models alone do not establish independence.
-An independent inspection requires a reviewer outside substantive proof development, without inherited or shared substantive development context about the proof.
+An independent proof inspection requires a reviewer outside substantive proof development, without inherited or shared substantive development context about the proof.
 The current reviewing agent may perform it directly when already meeting those conditions; independence is relative to proof development, not to the main-agent or subagent title.
 Inherited proof-development discussion, mathematical summaries, author explanations or prior conclusions prevent that independent classification even when the agent contributed no proof step.
 Provide the fixed statement, proof, necessary mathematical dependencies, exact scope and applicable rules directly, without forwarding the proposing agents' mathematical conversation or summary.
@@ -82,6 +82,7 @@ Keep actual human requirements and authorization available; context isolation ne
 The same model may serve in a separate isolated review arrangement; another name, session, model or role label alone establishes neither separation nor isolation.
 Delegation with the same substantive development context cannot establish independence, and ordinary useful delegation need not claim it.
 An `independently reviewed` relationship records that actual arrangement and reasoning examined, without an agent registry, isolation certificate, transcript archive or automatic context classifier.
+Assess independent manuscript writing review under the [writing review rule](writing.md#reviewing-a-manuscript), using the respective development boundary for each review kind.
 Self-review remains permitted.
 These descriptions introduce no new review states, independence grades, or mandatory multiple-agent or multiple-model review.
 If an actually required independent arrangement cannot be supplied, report the affected scope, retain the necessary unfinished obligation at its existing responsible home and continue unaffected authorized work without relabeling an ordinary check.
@@ -193,7 +194,7 @@ For manuscript reviews, apply the responsible author's actual writing and review
 Report the checked revision, sections or whole-manuscript coverage, applicable exemptions, findings and unresolved scope.
 Check mathematical meaning and source compliance separately; a formula may be clear while its standard name or citation is missing.
 A targeted correction does not imply a whole-manuscript pass.
-If a later omission shows that a manuscript coverage claim was too broad, correct the affected current manuscript-local entry under the [rolling review rule](writing.md#whole-manuscript-definition-review), without a history of superseded manuscript reviews.
+If a later omission shows that a manuscript coverage claim was too broad, correct the affected current manuscript-local entry under the [rolling review rule](writing.md#manuscript-review-and-mathematical-provenance), without a history of superseded manuscript reviews.
 Preserve unique necessary mathematics and source findings at their responsible homes; fixed R findings retain their own evidence and correction obligations.
 
 A substantial result assembled from several claims needs an end-to-end completion audit before it is treated as proved or used to close its goal.
@@ -320,7 +321,7 @@ Structural provenance checks neither authenticate a declaration nor prove mathem
 Manuscript exposition, definition/citation use and document-wide consistency belong in the reviewed manuscript's current manuscript-local review record; build and layout facts belong in the document README.
 R reviews project mathematics: an actual C argument, T completion, computation or mathematical input separately assigned and checked.
 Appearance in a manuscript does not change that distinction.
-The manuscript review retains its local scope; a concrete suspected defect may be reported as a doubt about the underlying mathematical object through erratum, without broadening that review or redirecting C/T acceptance to manuscript records.
+The manuscript review retains its local scope; route a concrete suspected defect to the [actual mathematical or source object](records.md#mathematical-issues-and-reliance), using erratum for affected local material, without broadening that review or redirecting C/T acceptance to manuscript records.
 
 ## Project review index
 

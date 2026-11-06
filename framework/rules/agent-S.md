@@ -130,6 +130,7 @@ The first investigation may be a lemma, an obstruction example, a source-applica
 Use short derivations, counterexample probes or conditional arguments when they discriminate mechanisms, identifying the first unsupported step back to the original Task; extended proof, computation or formal review belongs to its actual subsequent assignment.
 Choose a question that tests the proposed mechanism instead of merely producing another result compatible with every existing route.
 Explain what can be learned from an unfavorable outcome, without treating one failed implementation as a universal refutation.
+When the assignment concerns [proof and refutation direction](strategies.md#proof-and-refutation-direction), include useful counterexample or impossibility mechanisms for the original proposition within scope, distinguishing them from obstacles to a particular route.
 
 For an immature lead, a clear intuition, the nearest analogy and the next conceptual question can be sufficient.
 Do not fill missing parts with artificial precision, unsupported feasibility claims or assertions of mathematical novelty.
@@ -156,8 +157,9 @@ If agent-S contributes substantive proof development, any required independent r
 ## Handoff, feedback and responsible records
 
 Hand off detailed derivation, verification and computation through the actual research arrangement, with the candidate's purpose, dependencies and uncertainties intact.
+The main agent selects the direction and allocation and follows the [candidate investigation and feedback rule](workflow.md#candidate-research-follow-up) to turn a selected candidate into an actual research assignment or direct investigation.
 This role does not require spawning additional agents or creating a new Task for every idea.
-Research feedback should update the strategic picture: revise the mechanism, narrow its scope, combine it with another insight, or abandon it when warranted.
+Use investigation feedback to revise the mechanism, narrow its scope, combine it with another insight or abandon it when warranted.
 Do not absorb an extended technical proof obligation into agent-S's default role simply because the candidate originated here.
 
 Use the repository's [strategy rules](strategies.md#strategy-hierarchy) to decide whether an idea belongs in an existing strategy, warrants a substrategy, or supports an independent strategy.

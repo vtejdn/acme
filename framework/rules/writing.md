@@ -4,12 +4,10 @@ Apply the [common sentence-oriented source layout](organization.md#sentence-orie
 This shared format rule does not change the writing-choice hierarchy.
 
 Apply these general mathematical writing rules and the responsible author's author-wide, applicable subfield and manuscript-specific choices under the [four writing layers](preferences.md#scope-and-adoption) to all maintained natural-language prose under [mathematics/manuscripts/](../../mathematics/manuscripts/), not only prose compiled into TeX.
-This includes project and document `readme.md`, `writing.md`, `conventions.md`, `organization.md`, `review.md`, `citation.md` and prose in TeX sources; it governs terminology, notation and style in those records without changing their evidence, scope, findings or file responsibilities.
+This includes project and document `readme.md`, `writing.md`, `conventions.md`, `organization.md`, `review.md`, `citation.md`, `revisions.md` and prose in TeX sources; it governs terminology, notation and style in those records without changing their evidence, scope, findings or file responsibilities.
 Structured metadata, BibTeX fields, formulas, code, exact source quotations, acquired originals and generated outputs retain their native or responsible rules, while prose surrounding them remains governed by these writing rules.
 
-These general defaults apply to mathematical accuracy, necessary assumptions and conventions, logical justification and truthful attribution.
-Follow the [project and document requirements](#projects-and-documents) and the [four writing layers](preferences.md#scope-and-adoption) for the responsible author's actual choices.
-An author without a profile uses these general standards and any explicit manuscript choices; no other author's defaults are inherited.
+Use these content standards within the [project and document requirements](#projects-and-documents) and the responsible author's applicable [writing choices](preferences.md#scope-and-adoption).
 
 The [definition index](../../mathematics/definitions/index.md) locates responsible mathematical definitions.
 Canonical [references.bib](../../mathematics/literature/references.bib) owns shared bibliographic fields; useful author edition/source explanations belong to the source README; U and source audits own inspected edition, passages and actual inspection scope.
@@ -33,12 +31,15 @@ A user may explicitly designate another home or directory name for a talk or pre
 Preserve that choice and apply the same author, source, writing, build and review responsibilities there; a presentation does not require a new Task merely to obtain a Task-named directory.
 For a [same-author Task transfer](intake.md#task-and-manuscript-collection), include its actual corresponding manuscript project by default, identifying that relationship from the project ownership, description and delivery purpose rather than a matching directory number.
 After the Task pass, independently trace the manuscript's actual statements, proofs, definitions, computations and reviews to necessary support families, U and bibliography, adding inputs the Task pass missed.
-Include the project's actual papers, supplements and research notes, project/document READMEs, main files, sections, bibliography, necessary figures, styles, other build inputs, writing choices and real review records.
+Include the project's actual papers, supplements and research notes, project/document READMEs, main files, sections, bibliography, necessary figures, styles, other build inputs, writing choices, real review records and existing unresolved manuscript revisions.
 Documents genuinely belonging to that project are within scope; unrelated projects remain outside it, and an explicit narrower human selection takes precedence.
 Merge both passes without duplicate support or another copy of a shared manuscript.
 If no corresponding project exists, create no empty directory or placeholder.
 Own manuscript import uses an appropriate existing or designated receiving home without creating an unrequested Task.
 Preserve document choices and actual review scope, adapt entrances and build paths, and run proportionate affected local build checks without treating a source build as a successful receiving build.
+Carry only the unresolved revision opinions attributable to the selected manuscript, with their necessary references, and check them against the received current text.
+See the [revision-list rule](#manuscript-revisions).
+Use the source review only within the scope that its evidence still covers after receiving changes.
 Update project Task associations, mathematical source maps and build entrances to final local objects after reuse and numbering, retaining exact input versions and actual review limits.
 Generated deliverables follow the explicit delivery scope; caches and ordinary compilation products are not default transfer contents.
 Writing context and document navigation may link related authored documents, but authoritative C/L/U/R/J evidence remains independent of mutable presentation frames, draft theorem numbers and document-local review details.
@@ -79,23 +80,24 @@ Do not duplicate the same manuscript under several goal directories.
 
 ## Project and Document Records
 
-The project `readme.md` records the responsible human author, actual writing assignment and purpose, necessary mathematical inputs and document entrances.
-Include the local Task and primary/supporting goal associations only when they actually exist and apply; a standalone writing document uses its adequate document record for this scope.
-It gives a compact mapping from principal manuscript result labels to the authoritative mathematical arguments, responsible records and applicable proof reviews.
-Expand the mapping only when a new substantive result needs its own provenance.
+Use adequate existing homes, splitting out a companion file only for an actual independently maintained choice, organization, citation or evidence need.
+The responsibilities below are not a package of files to precreate; a short document may use its adequate README for brief organization or choices, without requiring both `writing.md` and `conventions.md`.
+Preserve sufficient citation and mathematical evidence at their actual homes rather than omitting it to reduce file count.
 
-Each document's `readme.md` records its purpose, actual entry, required local inputs and real manuscript-review evidence, with compilation instructions and latest build facts only when compilation applies.
-Link actual editorial choices from their existing conventions or designated writing-choice home.
-Do not invent a model, fallback or extra adoption requirement for an author who has not chosen one.
+| Home | Responsibility |
+| --- | --- |
+| Current manuscript sources | The content, notation, structure and exposition currently maintained under the [current-manuscript rule](#current-manuscript-authority). |
+| Project or adequate standalone-document `readme.md` | Actual human author, writing assignment and purpose, necessary mathematical inputs and document entrances; Task and primary/supporting goals only when they actually exist and apply. A compact map links principal result labels to responsible arguments and applicable proof reviews, expanding only for a substantive new result. |
+| Document `readme.md` | Purpose, actual entry, required inputs, necessary current review evidence and writing-choice entrances; build instructions and latest build facts when compilation applies. Link an actual revisions file when needed without copying its opinions or declaring a closed state. |
+| Existing `writing.md`, `conventions.md` or suitable choice home | Effective manuscript choices under the [preference rule](preferences.md#scope-and-adoption), without inventing a model or adoption requirement for an author who has chosen none. |
+| Suitable organization record | Selected content and order; a separate `organization.md` only when the actual organization needs it. |
+| Existing project/document `review.md` or adequate review home | Actual mathematical scrutiny of manuscript statements, hypotheses, proofs and inferences under the [mathematical-review rule](#manuscript-review-and-mathematical-provenance), with its true evidence and limits. |
+| `citation.md` | Current external citation applications and their applicability evidence or gaps under the [citation-record rule](#manuscript-review-and-citation-records). |
+| Manuscript `revisions.md` | Current writing opinions and links to proof findings that require manuscript revision when both reviews are requested. The assigned reviewer maintains the list for the selected manuscript under the [revision-list rule](#manuscript-revisions). |
 
-The project or document's existing `review.md` records actual mathematical scrutiny of the manuscript's statements, hypotheses, proofs and inferences.
-The manuscript's `citation.md` records actual external citation uses and links to their responsible source evidence.
-Neither record replaces the current TeX, fixed mathematical/source evidence, canonical bibliography or manuscript-specific writing choices.
-
-Task and Claim materials own mathematical decisions.
-The canonical bibliography owns bibliographic fields.
-Useful author source notes identify actual editions, original locators and continuing use limitations, without an acquisition account.
-These records may be short.
+Only inspect and maintain records actually affected by writing or review; unchanged files need no new "checked" entry or administrative update.
+Do not bulk merge or delete old companion files during upgrade; any later authorized consolidation preserves necessary substance and consumers.
+Task/Claim decisions, fixed mathematical evidence, source findings, canonical bibliography and true author source notes retain their own responsible homes, rather than becoming manuscript records.
 
 Describe ignored output paths as inline code rather than permanent Markdown links because those files will not exist in a fresh clone.
 Link to the tracked source directory and build instructions instead.
@@ -103,10 +105,13 @@ Link to the tracked source directory and build instructions instead.
 <a id="current-manuscript-authority"></a>
 ## Authority of the Current Manuscript
 
-For manuscript drafting and revision, subject to the current explicit human instructions, the current working manuscript is authoritative for its content, notation, definitions, organization and proof exposition.
+For drafting, revision and review, subject to current explicit human instructions, the current working manuscript establishes the content, notation, definitions, organization and proof exposition actually under consideration.
 Read the relevant current sources before editing.
 Memory, conversation summaries, earlier drafts, plans and historical review records may help locate context, but must not overwrite or revert content already updated in the current manuscript.
-Check recalled formulas and choices against the current sources, and synchronize affected writing-choice and planning records when they lag behind the current manuscript or the human's new instruction.
+This factual authority neither approves a departure from effective writing rules nor authorizes changing a policy to fit the current draft.
+Check recalled formulas against current sources; update a lagging writing-choice record only from actual explicit human instructions or adopted choices under the [choice-update rule](preferences.md#recording-and-updating).
+Maintain an affected organization record from the actual authorized content and order, without turning manuscript usage into a policy.
+Resolve a conflict between current text and effective choices within the actual instruction and writing layers, clarifying only a decisive remaining intent or authority gap while continuing independent work.
 
 **Deleting an existing manuscript environment requires explicit human authorization for that deletion.**
 Theorems, propositions, lemmas and corollaries have exactly the same protection as remarks.
@@ -136,6 +141,10 @@ Give sufficient justification for the deductions being claimed.
 An external result must match the statement, hypotheses and application attributed to it; a source mention alone supplies no missing argument.
 Describe contributions and comparisons truthfully.
 A bounded literature search or a self-contained proof does not establish historical priority.
+
+Judge coherence for the actual target reader and requested scope: the problem, contribution, applicable conditions, argument and limitations must form an understandable account for someone outside the research conversation.
+Whole-manuscript work considers the contribution and each part's role; local work checks its connections to the surrounding argument and intended uses without authorizing a whole-manuscript rewrite.
+Keep necessary explanation, hypotheses and reader navigation; word removal or a shorter manuscript alone is no quality measure.
 
 <a id="precise-object-names"></a>
 **Prefer precise object names.**
@@ -185,10 +194,13 @@ Explanations following a definition should help the reader understand the object
 Prefer useful mathematical properties and consequences to repeated normalization details or information already conveyed by the defining formula; retain conventions needed to determine the meaning or value of the object.
 
 <a id="direct-result-connections"></a>
-**Make direct relationships between results explicit.**
+**Make necessary mathematical relationships explicit.**
 When a theorem, proposition, lemma, corollary or remark directly applies, specializes, extends, compares or explains another result, identify that result and the relationship when introducing the statement, at the start of the proof, or at the step where it is used.
 State the relevant hypotheses or substitution when needed to make the application clear.
-Keep these explanations concise and avoid repeating a relationship already made explicit.
+Explanatory passages serving motivation, comparison, applicability or transition must likewise express the mathematical relationship needed to understand their role within the actual sentence group.
+State necessary condition differences, applicability limits or implications when they are not already clear from nearby text, formulas or an explicit reference.
+For example, failure to meet a cited theorem's hypotheses can limit its direct application; that fact alone establishes neither failure of its conclusion nor novelty of the present result.
+Do not repeat an already clear relationship, explain every sentence's writing intention or expand ordinary reasoning that is already clear to the target reader.
 
 <a id="mathematical-comparisons"></a>
 **Specify the aspect and strength of a mathematical comparison.**
@@ -357,40 +369,134 @@ Apply the author's actual writing and review procedures.
 Record what was checked, against which current manuscript revision, with its limits and unresolved findings.
 Claim whole-manuscript coverage only after that coverage was completed.
 A local check, successful build or style exemplar cannot establish whole-manuscript citation completeness or mathematical proof validity.
-When a check corrects the current text, record that finding truthfully in the current review entry rather than retaining the superseded review as history.
-No additional policy engine or per-term register is required.
+Use the distinct [record responsibilities](#project-and-document-records) for mathematical evidence, writing-rule opinions and build facts, without a policy engine or per-term register.
 
 ## Document Choices and Final Review
 
-Read the actual author, relevant subfield and manuscript choices before writing or revising.
-Keep a choice at its responsible scope without duplicating it in a second location.
-Keep manuscript-specific writing choices in the project's existing `writing.md` or `conventions.md`.
-Keep selected mathematical content and order in `organization.md`.
-Keep project identity, Task and document entrances, and the concise mathematical provenance map in the project `readme.md`.
-Keep document purpose, source inputs, build instructions and latest build evidence in the document `readme.md`.
-Keep manuscript-review findings and their limits in the existing `review.md`, and current external citation applications in `citation.md`.
-Mathematical proof review and build/layout facts remain separate from personal presentation preferences.
-Adopting these rules does not itself select a theorem or rewrite an existing manuscript.
+The [preference rule](preferences.md#scope-and-adoption) owns writing-choice precedence and adoption; the [record responsibilities](#project-and-document-records) own their actual locations.
+The two activities below use one common checking standard without adding a third role, approval or mandatory agent stage.
+Adopting these rules selects no theorem, writing task, review, publication or research resumption.
 
 <a id="writing-rule-execution"></a>
-Manuscript drafting and revision have the following execution and completion requirements:
+### Drafting and revision
 
-1. Before starting or resuming, the writing agent must determine the requirements applicable to the requested content and scope under the current human instructions and the four writing layers, and use them to make writing decisions.
-   Reading rule files alone does not fulfill this obligation.
-   Usage inherited from a draft or source, and the agent's own preferences, do not by themselves justify departing from an applicable rule.
+Under the actual writing or correction instruction, read the current manuscript, responsible author, effective choices and necessary direct inputs.
+Read the records that own the findings selected for the current revision.
+For writing opinions, use the [selected manuscript's revision list](#manuscript-revisions).
+For proof findings, use [`review.md` or the adequate mathematical-review home](#manuscript-review-and-mathematical-provenance), including when the manuscript has no revision list.
+For a revision covering both kinds, read each record at the scope of its selected findings.
+Judge each finding against the current text, actual human requirements and applicable rules within the current writing authority.
+Use the [common manuscript writing-rule checks](#manuscript-writing-rule-checks) before delivery of new, changed or adopted text and its direct effects, correcting required problems within actual writing and author authority and rechecking them.
+Reading rules, pointing to an existing rule or compiling successfully does not resolve a known violation.
+An optional suggestion may be adopted within actual authority and choices without per-suggestion approval; declining it alone does not make a revision incomplete.
 
-2. Before reporting a drafting or revision task complete, check new and revised text and directly affected content against the applicable writing rules.
-   Check mathematical meaning, object references, hypotheses, notation, citations and level of exposition as relevant to the change.
-   As part of this review, assess each modifier's function in its sentence under the [modifier rule](#direct-results-and-modifiers), including noun modifiers and compound object names, and remove unnecessary wording while preserving mathematical meaning and clear references.
-   Keyword searches can locate candidates but do not replace contextual judgment; no separate word blacklist or per-modifier register is required.
-   Text adapted or adopted from earlier drafts or sources is included.
-   Local work requires checks of its changes and direct effects; a requested whole-manuscript check requires that coverage.
-   Compilation, formatting and link checks do not replace this review.
+Maintain affected mathematical/source evidence before adopting a substantive change, and reconcile only the actual affected manuscript records under their responsible rules.
+Report the current result, actual completed scope and remaining mathematical, writing-rule, citation or build limitations; a known required problem in that scope prevents claiming that revision complete, although a partial result may be delivered with its gap explicit.
+Report corrected review opinions through the normal reply without deleting reviewer-owned items or declaring their recheck passed.
+A writing instruction alone starts no further review round; completed changes may truthfully await reviewer recheck.
+Self-checks do not establish independent review, and ordinary writing does not require a separate reviewer unless an actual applicable arrangement calls for one.
 
-3. Correct violations found within the authorized scope before delivery and recheck the affected content.
-   If a rule conflict, missing support or another concrete obstacle remains unresolved, state the issue, its effect and the resulting limit on the deliverable's status.
-   Do not substitute reading the rules, pointing to an existing rule or a successful build for resolving a known violation.
-   Do not report the requested revision complete while known violations within its scope remain unresolved.
+<a id="manuscript-writing-rule-checks"></a>
+### Common manuscript writing-rule checks
+
+Writing self-checks and the writing part of an assigned manuscript review use this standard and procedure at their actual scope.
+Check mathematical meaning, assumptions, object references, terminology, notation, definition and argument expression, citations and attribution, coherence, wording and actual human requirements under the applicable writing layers.
+Apply the [modifier rule](#direct-results-and-modifiers) to each modifier's function in context, including noun modifiers and compound object names; preserve necessary mathematical distinctions and human choices rather than optimizing a word count.
+Local work covers new, modified and adopted content and direct effects; requested whole-manuscript review requires actual whole-manuscript coverage.
+Searches locate candidates and tools supply stated mechanical facts; reading rules, keyword matches, compilation, formatting and link checks do not replace contextual content judgment.
+
+1. Determine the actual manuscript, responsible author, requested scope and applicable choices, and whether the work is self-checking, assigned review or an already authorized recheck.
+2. Read current source files and the mathematical, source, writing-choice and review evidence needed for the selected check.
+   For review inputs, follow the relationship, purpose and reading order in the [manuscript review rule](#reviewing-a-manuscript).
+3. Judge content and reader understanding in context, choosing necessary tool checks and direct consumers from the actual effects.
+4. Distinguish required corrections, with their effective rule or concrete mathematical/source grounds, from optional suggestions with an expected reader or manuscript benefit; use the [problem-routing rule](records.md#mathematical-issues-and-reliance) and the record responsibilities above.
+5. Act and recheck within the current role's authority, or deliver accurate findings and unfinished scope, reporting checking, correction and manuscript delivery as distinct facts.
+
+Both uses include a reader-perspective rereading of explanatory passages in the checked scope.
+If understanding their role requires a key mathematical relationship absent from the text and its explicit references, verify the relationship and its grounds.
+The writer adds the necessary relationship within the writing authorization, and the reviewer records the needed correction in the selected manuscript's list.
+If the relationship is unsupported or false, correct the associated assertion within authority or report the precise gap rather than inventing a connection.
+
+| Actual change or deliverable | Necessary checks |
+| --- | --- |
+| Local wording or expression | Mathematical meaning, object references and necessary context, without automatically repeating a whole proof review. |
+| Terminology, notation, definition expression or TeX macros | Actual affected uses and consumers, including cross-section uses; a small character change need not have local impact. |
+| Hypotheses, conclusions, proofs or a citation's mathematical role | Responsible mathematical/source materials, necessary dependencies and whether prior review still covers them, completing applicable correction and rechecking duties. |
+| A built PDF for delivery | Build results from current sources, unresolved citations and cross-references, layout in the generated PDF and actual necessary inputs under the [build rule](#reproducible-local-builds); a source-only delivery follows its actual instruction and applicable build duties. |
+
+Reuse a review while its inputs, reasoning and conclusions still apply; unrelated file or commit changes do not invalidate all review, and affected inputs do not retain coverage merely because an old verdict remains recorded.
+Report build success, layout inspection, writing-rule review and mathematical scrutiny at their actual scopes without substituting one for another.
+These checks add no checklist file, approval, state field or automatic agent stage, and grant no policy change, environment deletion, mathematical decision or extra research authority.
+Required independent or fixed mathematical review retains its actual obligations; calling this same standard supplies no independent relationship.
+
+<a id="manuscript-writing-rule-review"></a>
+### Reviewing a manuscript
+
+A human request or an applicable explicit review arrangement selects the current manuscript and the actual whole-manuscript, section or issue scope.
+When the request and arrangement leave the review kind unspecified, review writing under the responsible author's four applicable layers.
+For a request limited to proof, check that proof at the specified depth.
+When both are requested, perform both checks in the same action and report their coverage separately.
+Use the applicable review action for selected fixed Claims, Tasks, sources or computations.
+See [Review specified work](../agent-actions.md#review-specified-work).
+
+Determine the review relationship and purpose before selecting inputs.
+Required independent writing review uses a reviewer outside substantive development of the reviewed exposition and structure, without inherited or shared substantive discussions or summaries of that development.
+Apply the [proof review arrangements](proof-audits.md#review-arrangements) to independence from substantive proof development and its context.
+When both kinds of independent review are required, determine qualification separately for each reviewed object.
+The same reviewer may perform both when qualified for both, and an ordinary review may proceed directly under its actual arrangement.
+For an independent initial review, form initial findings from the permitted current manuscript, actual human requirements and authorized scope, applicable rules and necessary dependencies before consulting existing opinions or prior conclusions in any form.
+Compare earlier opinions after forming those findings and identify which evidence supports each part of the review.
+For a targeted recheck, select inputs for the actual scope and review relationship and report the known findings and evidence used.
+
+For writing review, apply the common checks and maintain the [selected manuscript's revision opinions](#manuscript-revisions).
+Ground required opinions in the effective rule or actual mathematical or source issue and describe its specific effect.
+Record a reviewer's preference as an optional suggestion.
+For proof review, check the manuscript's hypotheses, reasoning and conclusions and record the scoped findings, evidence and limits in `review.md` or its adequate mathematical-review home.
+See [Mathematical review evidence](#manuscript-review-and-mathematical-provenance).
+When reviewing both, link a proof finding that requires manuscript revision from the corresponding opinion in `revisions.md` to its mathematical evidence.
+
+Limit review-only writes to the selected review records and report any needed corrections to the text, writing policy, citation records or mathematical materials.
+For mathematical errors or missing support, retain the precise problem and evidence locators for continuation within the actual authority over the responsible materials.
+When the instruction also authorizes correction, carry out the authorized writing work and report inspection, correction and recheck separately with their actual relationships.
+Complete the review assignment by delivering its findings, checked scope and limitations, including any unresolved opinions and their effect on manuscript conformity.
+
+<a id="manuscript-revisions"></a>
+### Current manuscript revision opinions
+
+At the first actual writing review, establish or reuse one `revisions.md` for the selected manuscript in its own suitable or author-designated directory.
+A paper can use `mathematics/manuscripts/Author_T_F0001/paper/revisions.md`, and a separately reviewed supplement uses its own directory.
+Use one list for all sections of the same manuscript and keep common project materials in their existing project home.
+Place new lists for independent manuscripts sharing a directory in dedicated manuscript subdirectories and identify the actual source in each list.
+For `notes/overview.md` and `notes/example.md`, use `notes/overview/revisions.md` and `notes/example/revisions.md` respectively.
+
+If a valid single-manuscript list predates the shared directory use, identify the selected manuscript's unresolved opinions from the original manuscript, specific location and opinion content.
+Until its dedicated list takes over, use those attributable opinions and necessary references at their existing location for writing, review and personal transfer.
+When migration is needed, move only the selected manuscript's authorized unresolved opinions, maintain their necessary references and preserve the other content and uses of the old record.
+
+Any manuscript move follows its actual writing authorization.
+If `revisions.md` in the selected manuscript's directory serves another purpose, preserve that record in a suitable location and update its necessary references within actual authority before using the path.
+Report the location conflict if the existing record's disposition falls outside that authority.
+Refer to shared writing choices at their responsible homes and record only the action needed for the selected manuscript.
+
+Use short ordinary prose to identify the current source file and section, environment label or recognizable wording, the concrete problem, effective rule or human requirement and necessary direction for correction.
+Line numbers may help but are not the sole locator after edits; quote only enough text to locate the issue rather than copying the manuscript or its policies.
+Group repeated instances of one issue with their actual scope, using a brief stable title or necessary evidence and limits when useful, without mandatory numbers, severity levels, status enums, dates, compliance tables or file fingerprints.
+Mark required corrections and optional suggestions by their actual effect; an unadopted suggestion neither violates a rule nor independently blocks a correction task.
+
+The currently assigned reviewer owns opinions, rulings and removal; the writer changes the manuscript and reports corrections through the normal reply.
+Recheck directly when already covered by the human instruction or continuing review arrangement, not merely because a correction was submitted.
+Reread changed text, applicable rules and necessary direct effects before updating unresolved portions or removing opinions actually resolved, withdrawn by an effective human choice or no longer applicable.
+Do not close an opinion solely from the writer's "fixed" response or retain abandoned suggestions and closed-opinion history.
+Limit recheck, cleanup and transfer to the actual manuscript selected and the authorized parts of its opinions and references.
+When handling mixed legacy records within authority, move the selected manuscript's unresolved writing opinions to its own list and preserve other manuscripts' opinions, mathematical evidence and necessary references.
+Keep only current unresolved items and facts needed for continuation.
+When all opinions of the selected manuscript are resolved, clear its established list to zero bytes if it serves that manuscript alone and retain its entrance.
+Report actual review coverage and unchecked limits normally; an empty file supplies no whole-manuscript verdict or independent qualification.
+
+Necessary substantive evidence belongs at its [responsible mathematical or source home](records.md#mathematical-issues-and-reliance), with manuscript-side actions and exact links here rather than a duplicate proof or source-error account.
+For mathematical manuscript scrutiny use `review.md`, for actual citation use `citation.md`, and for effective choices their existing home; revisions are no substitute Claim/Task assessment or sole evidence store.
+Before removing an opinion containing uniquely needed mathematics or source evidence, preserve it under the [substantive-content rule](records.md#substantive-material-retention) and maintain necessary consumers, without archiving management history.
+Keep unresolved substance and limitations, author rights, the [environment-deletion protection](#current-manuscript-authority) and actual research, Git and publication authority; writing or closing opinions does not change them.
 
 ## Reproducible Local Builds
 
@@ -463,10 +569,10 @@ Local compilation, PDF eligibility and source versioning do not authorize commit
 ## Manuscript Review and Citation Records
 
 For drafting and revision, the current working manuscript is authoritative for statements, notation, definitions, organization and proof exposition, subject to current explicit human instructions and the [current-manuscript rule](#current-manuscript-authority).
-Read the actual TeX and direct mathematical/source inputs before deciding what the manuscript records must contain.
+Read the current manuscript sources and direct mathematical and source inputs before deciding what the manuscript records must contain.
 
-The existing project or document `review.md` records mathematical scrutiny of the current manuscript exposition.
-Each retained review entry identifies the mathematical object and TeX location, the exact scope checked in the current working-tree TeX, the reviewer or review method and relationship, the evidence consulted, actual findings or corrections, and unresolved points and limits.
+The existing project or document `review.md`, or its adequate mathematical-review home, records mathematical scrutiny of the current manuscript exposition.
+Each retained review entry identifies the mathematical object and manuscript location, exact scope checked in the current sources, reviewer or review method and relationship, evidence consulted, actual findings or corrections, and unresolved points and limits.
 These framework reviews describe actual agent inspection under the [review relationship and arrangement rules](proof-audits.md#review-arrangements); human authorship, suggestions and authorization are separate facts.
 The current agent may directly undertake an ordinary or complete manuscript review without isolated context, another agent, a new Task or a fixed R solely for that review.
 An explicitly required independent manuscript inspection meets the actual independent-context conditions, using the current reviewer directly when already qualified, while its findings retain their manuscript-local home.
@@ -489,7 +595,7 @@ A local result's proof status, a bare citation or a bibliography entry alone sup
 When an actual edition, passage or inspection gap remains, follow the existing [literature-acquisition](literature.md#literature-acquisition), [progressive-reading](literature.md#progressive-reading), and [source-audit](literature-audits.md#organization-and-stable-units) procedures for that gap and retain the necessary finding at its appropriate existing or new U or fixed C/L home under the [common content decision](records.md#substantive-material-retention).
 U is the ordinary home for an independent reusable source-audit unit; an integrated project deduction or synthesis keeps its adequate C/L account and actual source/adaptation facts.
 Acquisition-only work maintains necessary bibliography and useful edition/source notes without creating a source unit or acquisition account.
-Record every application actually cited in current TeX, linking adequate source evidence and applicable definition entries where available and keeping manuscript-specific applicability, claims, notation, terminology and gaps in the same citation map.
+In authorized citation-map work, record every application actually cited in current TeX, linking adequate source evidence and applicable definition entries where available and keeping manuscript-specific applicability, claims, notation, terminology and gaps in the same citation map.
 Uses sharing the same source, edition, mathematical role and hypothesis interface may share one applicability explanation with their actual TeX locations listed together, provided it covers the applicable conventions, representation conversions and inspection limits.
 Distinguish different assumptions, editions, roles, adaptations and unresolved checks; an equal citation key or one verified use does not verify other uses.
 Keep every actual use locatable and reuse sufficient source evidence without duplicating its inspection account for each occurrence.
@@ -510,13 +616,9 @@ Source-only facts and inspection limits stay at their responsible source-level h
 Fixed mathematical and source records must not point back to a manuscript or describe its manuscript-specific use.
 Citation use grants no prose-reuse permission and does not adopt source style, terminology or conventions; keep those choices in the responsible author policy, `writing.md` or `conventions.md`.
 
-After every writing or review task, reconcile `review.md` and `organization.md` with the affected current TeX and update them only when their scope, evidence, findings or summary needs to change.
-Reconcile `citation.md` after any task that checks, adds, changes or removes a manuscript citation.
-This is a current-content check, not a per-task change log or no-op receipt.
-A style-only edit, build, link check or citation-formatting check is not mathematical review.
-
-Drafting that discovers a substantive mathematical change updates its responsible mathematical material before adoption.
-Neither a successful build nor a manuscript-local verdict supplies a fixed mathematical review for Claim or Task acceptance.
+When checking, adding, changing or removing a manuscript citation, reconcile `citation.md` within the current authorization to edit that record.
+In review-only work, report citation discrepancies and needed corrections in the assigned review record.
+The [record responsibilities](#project-and-document-records) and [common checks](#manuscript-writing-rule-checks) govern other affected records and review applicability without a per-task change log or no-op receipt.
 
 ## Manuscript Reference Boundary
 
@@ -565,10 +667,9 @@ They acquire standing in a manuscript only when its writing layers adopt them, a
 
 Claim materials own project statements and actual arguments.
 Formal project-mathematics review findings of every agent relationship belong to fixed R under [proof-audit rules](proof-audits.md); L retains discussion and ordinary local checks, and manuscript-local reviews retain their document responsibility.
-Manuscript-specific reviews belong in the reviewed document README or an established project/document `review.md`, including independent manuscript reviews.
-Actual manuscript citation applications belong in `citation.md`; source-inspection evidence remains at its adequate responsible U or fixed C/L home.
-When drafting discovers a new substantive argument, changed hypothesis or mathematical error, update the responsible research record and assessment, then synchronize the manuscript.
-Preserve the affected mathematical history and review scope.
+For manuscript evidence, citation applications and revision opinions, use their distinct [responsible records](#project-and-document-records) rather than treating every review as mathematical scrutiny.
+When writing or review discovers a substantive argument, changed hypothesis or mathematical error, use the [object-based routing rule](records.md#mathematical-issues-and-reliance), maintaining the responsible mathematics and applicable assessments before adopting the change in the manuscript.
+Preserve necessary mathematical evidence, source facts and actual review scope under the existing repair/version duties.
 
 Internal extraction of reusable results within an assigned Task is autonomous under the [Claim organization policy](claims.md#lemma-extraction-and-approval).
 Main-theorem designation and objective changes retain their actual authorization boundary.
@@ -576,10 +677,7 @@ A manuscript organization proposal is not an implemented designation.
 When an approved revision introduces a lemma-based proof, preserve the original complete Claim argument, identify the new proof version and update the manuscript provenance map to the version actually used.
 This does not require retaining duplicate current TeX documents.
 
-An audit of a Claim argument does not automatically review its manuscript presentation.
-Before describing a manuscript as reviewed, compare its exact statements, assumptions, proof steps, citations and scope with the reviewed inputs.
-Record the checked source revision and any remaining issues.
-A successful TeX build is a separate fact from mathematical review.
+Use the [truthful-scope](#truthful-review-scope), [common-check](#manuscript-writing-rule-checks) and actual mathematical-review requirements for claims about a manuscript's review and coverage.
 Manuscript preparation does not reopen a completed research goal merely because writing or formatting remains.
 A mathematical Task's contract and completion criteria cover its mathematical objective and necessary review under the [Task rules](tasks.md#task-records).
 Manuscript preparation, whole-manuscript review, builds and delivery follow the actual writing instruction and are not mathematical Task completion criteria.

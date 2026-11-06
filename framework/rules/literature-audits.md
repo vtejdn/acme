@@ -97,9 +97,17 @@ Record direct reading versus secondary reporting, source access limitations, edi
 Do not infer an independent proof check from the presence of a theorem in a published source.
 Framework source reviews concern agent inspection; an independent classification requires the separate isolated mathematical context in the [review arrangements](proof-audits.md#review-arrangements), while the source author's assertions and human instructions remain distinct facts.
 
-U owns source mathematics, inspected editions, actual checks and general applicability limits; the consuming Task, route or Claim owns its adoption, local hypothesis matching and remaining obligations.
+The responsible U or adequate existing C/L owns source mathematics, inspected editions, actual checks and general applicability limits.
+The consuming Task, route or Claim owns its adoption, local hypothesis matching and remaining obligations.
 Necessary mathematical links remain useful, without a mandatory consumer list or a U update merely because another consumer is added.
-If a gap or misquotation is found, record the failed implication, correct the unit, and reassess affected claims and audits downstream.
+For errors, proof gaps and overstrong claims in external literature itself, reuse sufficient and locatable U/C/L evidence at its existing home.
+Maintain a suitable U when the evidence is insufficient or a distinct source finding needs independent maintenance.
+See [Organization and Stable Units](#organization-and-stable-units).
+Retain the actual edition and original passage, concrete failed implication or other problem, checking evidence and conclusion strength; distinguish a confirmed error, a doubt, an unchecked proof step and a refuted conclusion without condemning a whole source from a local gap.
+Preserve necessary counterexamples, reasons and applicability limits by reference to sufficient existing evidence when available.
+A local finding authorizes no alteration of the external original, another author's U or other material, and supplies no source-author confirmation.
+A new project argument or correction result keeps its appropriate mathematical home rather than masquerading as a source finding.
+For a local U's misreading or a failed local dependency, apply the [object-based problem-routing and correction rule](records.md#mathematical-issues-and-reliance); consumers own actual adoption, reliance and state changes, so a source-unit update alone does not fix them.
 
 <a id="accepted-external-inputs"></a>
 
@@ -141,11 +149,15 @@ Apply the [autonomous search triggers and stopping rules](literature-search.md#a
 Trace the exact external input used in the argument before deciding how deeply to inspect its proof.
 Optional related results need not become required audit tasks merely because the source cites them.
 
-Record consequential searches in the source-specific audit, following the [search evidence fields](literature-search.md#search-evidence).
+Reuse sufficient, locatable source evidence in its existing U/C/L, including fixed C/L that already establishes the edition, passage, mathematical issue, grounds and scope.
+Retain substantive new search coverage, checked findings and limits under the [search-evidence rule](literature-search.md#search-evidence), respecting the responsible material's author and version boundaries.
+Supplement a suitable U when the source evidence is insufficient or a distinct source finding needs separate maintenance.
 Link the inspected source and exact version, distinguish located statements from checked proofs, and retain the scope of unsuccessful searches.
 Useful source/edition explanations belong in concise author source notes under the [literature rule](literature.md#literature-acquisition); do not create a second bibliography or infer an inspection from acquisition.
 
-When a search resolves or challenges a dependency, update the authoritative unit and assess its actual downstream consumers.
+When a search or recheck changes evidence for a dependency, retain the change at its responsible home and reassess the actual affected consumers.
+Maintain their applicability judgments, adopted support, current assessments and remaining obligations where affected and within actual authority.
+Use erratum to coordinate unresolved local defects or loss of support in a local dependency under [Mathematical issues and reliance](records.md#mathematical-issues-and-reliance).
 If the search is paused with the dependency unresolved, preserve that limitation.
 A locally verified repair does not require indefinite searching for author confirmation.
 

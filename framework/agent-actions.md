@@ -15,6 +15,8 @@ When actually selected content or input is incompatible with current rules, read
 Use ordinary reading, editing, current receiving preparation, direct-reference repair or another adequate tool path; an optional helper's refusal supplies a concrete limitation rather than a requirement to stop all work or upgrade the source repository.
 Judge the needed scope, responsible home, retention/reuse, actual mathematical changes and checks under the [content and adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving authorship, fixed evidence, true provenance and Task/E limits.
 Pure metadata, layout or link maintenance creates no mathematical decision, version, review, acquisition or timestamp; genuine changes retain their applicable obligations.
+When a repository question or discussion produces mathematics worth retaining, apply the same pre-delivery preservation rule as for an exploration round within the actual author and write scope.
+See [Closing an Exploration Round](rules/workflow.md#exploration-round-closeout).
 Clarify only remaining decisive intent, authority, identity correspondence or necessary facts while continuing independent authorized work, without a routine adaptation approval, whole-library cleanup or compatibility parser.
 
 ## Start a work round
@@ -201,13 +203,16 @@ An actually authorized continuation prepares the relevant exact Task reference a
 If authorized work may proceed, advance its next useful step and retain actual results, failures, gaps and continuation points.
 If a stop or missing authority prevents advancement, preserve current findings and report that actual boundary.
 Method changes and strategy priorities may adapt within the assignment unless the human explicitly fixed them; they do not change the objective or completion criteria.
-Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) to try a branch's expected assertion on the original Task before substantial investment and divide work by its mathematical dependencies.
-At consequential assembly or redirection points, the main agent tries the complete argument and uses its concrete gaps to adjust work under [research coordination](rules/workflow.md#records-review-and-handoff).
+Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) to check the consequences and decisive later gaps of a branch's expected result for the original Task before substantial investment.
+Organize sustained whole-object reasoning and parallel work by the mathematical dependencies under [research coordination](rules/workflow.md#records-review-and-handoff).
+At consequential assembly or redirection points, the main agent tries the complete argument and uses the concrete gaps to adjust work.
 When the next proof, calculation or check is already clear, use ordinary research or Preparation assignments directly, including complementary lemmas; that technical allocation alone needs no agent-S exploration.
 For substantive route choices or alternatives that could change an actual research allocation, the main agent may delegate a bounded [agent-S exploration](rules/agent-S.md) within the existing Task/E scope.
 When sustained work yields neither discernible progress on the original Task's key gap nor a useful next approach, the main agent should proactively delegate a bounded exploration within that authority and resources, even without a candidate lead.
 Follow an explicit human instruction to delegate within its actual scope, permissions and effective execution limits.
 Read that role only when needed; ordinary proof, calculation and Preparation assignments keep their existing entrances.
+Put a candidate selected for continued work into an executable [investigation and follow-up](rules/workflow.md#candidate-research-follow-up).
+When substantive work stalls on the original proposition, [reassess proof and refutation direction](rules/strategies.md#proof-and-refutation-direction) and apply the decision to the selected Task's work allocation.
 Apply [research coordination and Preparation](rules/workflow.md#records-review-and-handoff): the main agent coordinates available harness subagents, dependencies, shared resources, writes, necessary review and required retention/closeout while maintaining an overall understanding of the authorized Task.
 Delegate the current question, useful existing entrances and working Draft for Preparation; the subagent judges search, reading, applicability and sufficiency, retaining concise judgments and direct original-material locators in the [Draft](rules/ledger.md#working-drafts-and-fixed-findings).
 Reuse applicable Preparation, allow the same subagent to continue Draft research within an initial or extended assignment, and arrange suitable parallel work requested through ordinary coordination messages.
@@ -265,14 +270,18 @@ An instruction to finish the current work and then pause permits that closeout, 
 ## Review specified work
 
 Identify the actual source, manuscript, Claim, argument, computation or Task and the requested review depth.
+For writing or proof review of a manuscript, use the manuscript action at the requested scope.
+See [Review a manuscript](#review-a-manuscript).
+Use this general action for selected fixed Claims, Tasks, sources or computations, including those used by a manuscript.
 Determine whether the actual work requires independent inspection under the [review obligations](rules/proof-audits.md#independent-review-obligations) or an applicable explicit human requirement before choosing the arrangement.
-An ordinary review request, a complete manuscript proof check, R placement or an available subagent does not itself require independence, isolation or delegation.
-Read exact versions, hypotheses, arguments, dependencies and existing findings under the applicable [proof-review](rules/proof-audits.md), [source-audit](rules/literature-audits.md) or [manuscript-review](rules/writing.md#manuscript-review-and-citation-records) rules.
+Base any required isolation or delegation on the actual review relationship and obligations.
+Read exact versions, hypotheses, arguments and dependencies and select prior findings according to the actual review arrangement.
+See the [proof-review rules](rules/proof-audits.md) and [source-audit rules](rules/literature-audits.md).
 Inspect the requested whole scope; do not substitute structural checking for mathematical scrutiny or silently expand a narrow source inspection into a full proof audit.
 Reproduce decisive computations or behavior where needed rather than mechanically repeating all prior tests.
 Source audits exclude associated Lean code unless expressly included; retain any reliance on unchecked code as a review limitation.
-Keep formal project findings in R for every actual agent relationship, source inspection in U and manuscript-specific findings in their document review home.
-Ordinary manuscript review may be performed directly by the current agent and retained in the existing document README or review.md, without automatically creating R or a Task; an actual independent manuscript review keeps that same manuscript-local responsibility.
+Keep formal project findings in R for every actual agent relationship and source inspection at its responsible source-evidence home.
+See [Source evidence selection](rules/literature-audits.md#organization-and-stable-units).
 New or substantively revised findings declare their actual relationships explicitly; a genuinely new C/T acceptance selects findings with both matching relationship rows and exact required bindings, without backfilling unchanged historical findings.
 For required independent review use a reviewer outside substantive proof development and its inherited mathematical context; the current reviewer may act directly when already qualified under the [arrangement rule](rules/proof-audits.md#review-arrangements).
 Supply fixed inputs, necessary dependencies, exact scope, applicable rules and actual human requirements directly without forwarding development discussion or its mathematical summary; another agent layer or the same context under a new label supplies no independence.
@@ -291,13 +300,17 @@ Canonical bibliography keeps publication identity; source README may keep concis
 Each human maintains cross-machine validity of those links, with agent assistance within authority; private locations and access parameters stay in private setup.
 No source ledger, per-file entry, literature fingerprint, mandatory date or empty U is created by retention.
 
-For reusable source mathematics, read and maintain the actual author's rolling SourceKey/Author_U001.md, with independent source/author numbering and necessary stable file-local anchors.
+When a source unit is needed, use the actual author's rolling SourceKey/Author_U001.md, with independent source/author numbering and necessary stable file-local anchors.
 Choose [U boundaries and maintenance](rules/literature-audits.md#unit-granularity-and-maintenance) by reusing sufficient material first, maintaining a suitable existing U next, and creating a new unit for an actual independent organization, reference or human-author attribution need.
 Retain precise statements, hypotheses, conventions, inspected edition/passages and actual checking limits in ordinary prose, without U physical versions, compulsory tables or enumerated coverage states.
-Reuse adequate U rather than duplicating an audit; collaborators may write their own supplement or correction, while substantive maintenance remains with the original author's agents.
+Reuse adequate U/C/L at its existing location.
+Collaborators may write their own supplement or correction, while substantive maintenance remains with the original author's agents.
 Complete definitions and terminology follow [def registration](rules/definitions.md); new project deductions keep their adequate responsible home.
 When changing U or source organization, repair actual downstream references and distinguish authorized shared locator repair from another author's substantive mathematical change.
 A current rolling U is not a frozen historical proof input or retroactive expansion of an old R.
+Reuse sufficient, locatable evidence of a problem in the external text and maintain the relevant U when the finding needs its own source record.
+Track local misreading, misuse or failed local dependencies at their responsible local materials.
+See [Mathematical issues and reliance](rules/records.md#mathematical-issues-and-reliance).
 
 Same-repository reuse, including clone/pull/merge, obtains originals only when further source reading is needed.
 Actual personal import and external intake complete necessary selected original preparation to reuse, acquisition or a truthful failed outcome before delivery; report failure directly with work/edition, known address, reason and use limitation.
@@ -311,20 +324,36 @@ Prepare or reuse [searchable contents](rules/literature.md#searchable-contents) 
 
 Read the selected document sources, including current TeX when present, the responsible author's applicable choices, writing purpose and direct source/review inputs under the [writing rules](rules/writing.md).
 Use the [writing-home rule](rules/writing.md#projects-and-documents) when no mathematical Task corresponds to the assignment, preserving an author-designated location and its choices.
-Apply the same source, applicable build and review responsibilities without creating a Task merely for directory naming.
-Apply exactly four writing layers: general rules, author-wide policy, applicable subfield policy, then manuscript-specific choices, overriding only conflicting portions.
-A changed local operator does not adopt another author's policies.
+Apply the responsible author's [writing layers and choice-update rule](rules/preferences.md#scope-and-adoption), preserving the [current manuscript and actual policy boundary](rules/writing.md#current-manuscript-authority).
+Read the evidence for the findings selected for revision under the [writing execution rule](rules/writing.md#writing-rule-execution).
+Use the [manuscript's writing opinions](rules/writing.md#manuscript-revisions) for writing findings and the [manuscript's mathematical-review evidence](rules/writing.md#manuscript-review-and-mathematical-provenance) for proof findings.
 Perform proportionate source preparation and definition registration; source observations remain evidence rather than a fifth writing layer.
 Use actual own/coauthored source designations or manuscript-specific permissions under the [text-reuse rule](rules/writing.md#default-reuse-permission); a style-only reference grants no text reuse.
 
-Preserve precise mathematics and attribution, reconcile a discovered substantive proof change with its responsible mathematical material, and update actual citation uses, writing choices, review findings and latest build facts at their existing manuscript homes.
-Map every current TeX citation use, including plainly unchecked or partially checked entries with actual evidence and gaps; verified application still requires adequate source evidence.
-Reuse adequate fixed C/L source evidence directly without manufacturing a duplicate U; an unresolved support gap remains an obligation.
-Use current TeX to determine actual citations, with exact designated edits for mixed text.
-Compile or inspect layout as applicable to the requested work and actual author instructions, reporting exactly what was checked.
+Before delivery, apply the [common manuscript writing-rule checks](rules/writing.md#manuscript-writing-rule-checks), correct required problems within authority and recheck their actual effects.
+Route mathematical and source problems to their responsible homes, reconcile affected [mathematical review and citation evidence](rules/writing.md#manuscript-review-and-citation-records) and actual companion records, and compile or inspect layout as applicable to the delivery.
 Select available build and inspection capabilities under the [host-capability responsibility](rules/workflow.md#agent-and-tool-responsibilities), reusing applicable project settings and the [local-build convention](rules/writing.md#reproducible-local-builds).
 If a required build or check remains unavailable, report the specific affected scope, consequence and useful next action to the human author while continuing independent authorized work.
-Return the manuscript result and remaining mathematical, citation, build or layout limitations; editing TeX does not by itself update a Claim or complete a Task.
+Return actual corrections and remaining mathematical, writing-rule, citation, build or layout limits, identifying review opinions still awaiting reviewer recheck under the execution rule without closing them as the writer.
+
+<a id="review-a-manuscript-against-writing-rules"></a>
+## Review a manuscript
+
+Select writing review, proof review or both according to the requested scope and any applicable review arrangement.
+When the request and arrangement leave the review kind unspecified, review writing under the responsible author's four layers.
+See the [manuscript review rule](rules/writing.md#reviewing-a-manuscript).
+Determine the relationship and purpose before reading prior opinions.
+For an independent initial review, form initial findings from permitted inputs before reading prior opinions or conclusions.
+For targeted rechecks, choose inputs by the actual scope and relationship and report their use.
+Apply the manuscript review rule's writing independence criteria and the [proof review arrangements](rules/proof-audits.md#review-arrangements) to their respective objects.
+
+Use the common checks and the selected manuscript's revision opinions for writing review.
+See the [common checks](rules/writing.md#manuscript-writing-rule-checks) and [revision-list rule](rules/writing.md#manuscript-revisions).
+For proof review, examine the manuscript's reasoning at the requested depth and retain the scoped evidence at its mathematical-review home.
+See [Mathematical review evidence](rules/writing.md#manuscript-review-and-mathematical-provenance).
+When both are requested, report their coverage separately and link any proof finding that requires manuscript revision from `revisions.md` to the mathematical evidence.
+Limit review-only writes to the selected review records and use the actual correction authority for changes to the text, policy, citation records or mathematical materials.
+Return the findings, inspected scope and limits, distinguishing review completion, manuscript conformity, completed corrections and build results.
 
 ## Develop or reproduce a computation
 
@@ -387,7 +416,7 @@ Return the repaired administrative result or concrete remaining conflict and nee
 
 Use the [coordination and mail rules](rules/records.md#shared-mathematical-coordination) within the actual represented human's research or explicit communication authority.
 Look for relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` by the current author, Task, strategy and material scope; these lookup paths require no empty files or whole-library scan.
-Register conformity work, substantive mathematical issues and ordinary suggestions at their separate homes, preserving actual author attribution and necessary evidence.
+Register work under the [coordination and problem-routing rules](rules/records.md#shared-mathematical-coordination), preserving the actual local or external object, author attribution and necessary evidence.
 Before mathematical adoption, inspect relevant erratum for the chosen input/version, including other-author inputs; substantive findings do not authorize changing another author's decisions or body.
 Send concise mail-style messages and independent replies newest first with actual UTC-minute sending times, clear human sender/addressee and exact necessary reply/evidence locators, using applicable mathematical expression and author choices without a manuscript workflow.
 Recipients judge, optionally reply or adopt, and maintain only their own follow-up; they cannot delete or rewrite the sender's original or infer that all recipients have finished.

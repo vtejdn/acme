@@ -12,6 +12,7 @@ A higher applicable layer overrides the conflicting portion and inherits everyth
 No repeated approval is needed.
 Source observations in responsible source-reading records are evidence for choices, not a fifth layer; definitions, terminology and symbols use the common def/source workflow.
 The current author's new instruction updates the layer and scope it actually names; a paper-specific request never becomes author-wide automatically.
+Current manuscript usage establishes the text being maintained, not an additional policy layer or approval to depart from an effective choice.
 
 Personal defaults live under profiles/<human>/, with writing/readme.md and actual named subfield files where useful.
 The author's message-archive.md is historical correspondence, not personal policy; its location or existence does not select it for startup or independent-review context.
@@ -69,6 +70,8 @@ Each entry states the current rule and its applicable scope.
 Do not record instruction dates, adoption or supersession history, or administrative metadata.
 Update the affected entry directly when a rule changes.
 Questions, examples, silence and an agent preference do not create a policy.
+Update a lagging manuscript choice only from actual explicit human instructions or adopted choices at that scope; neither current draft usage, historical opinions nor reviewer suggestions justify changing policy to fit the text.
+Use the existing writing layers to resolve an applicable text/choice conflict, clarifying only a decisive same-layer, intent or authority gap while continuing independent authorized work.
 Keep manuscript-specific choices with their manuscript; source observations stay in responsible source-reading accounts.
 Bibliographic facts belong to canonical references.bib; useful edition/source notes belong to the source README, and inspected mathematics and limits belong to U or adequate C/L.
 

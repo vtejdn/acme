@@ -139,13 +139,19 @@ Explain consequential reuse at the consuming route: local objects and parameters
 Preserve losses and order of choices when they matter.
 A simple application can need only one sentence; no separate application record or reciprocal feedback workflow is required.
 
-Before substantial investment in a branch, state what its success would actually provide: the objects, assumptions, quantifiers, parameter-choice order and dependencies of constants.
-Use that expected assertion as an explicitly provisional premise and actually derive toward the Task's conclusion from its original inputs until the conclusion or the first unsupported step is reached.
+Before substantial investment in a branch, state what success would provide to the original Task, specifying the objects, assumptions, quantifiers, parameter-choice order and dependencies of constants.
+Try to assemble the argument from the Task's original inputs to its conclusion, treating the expected branch result as an explicitly provisional premise.
 Reuse an adequate applicable conditional argument, checking the steps that matter to the present allocation.
-Check how the original inputs supply required objects, whether estimates hold uniformly over the needed range, and whether the promised conclusion applies to previously unresolved inputs.
+For this investment judgment, mark the first unsupported step and a few decisive later gaps as explicit provisional premises where needed to derive far enough to identify obstacles that could change the allocation.
+Check whether the required objects, quantifiers, uniformity, parameter-choice order, constant dependencies and accumulated losses are jointly compatible, including on previously unresolved inputs.
+Identify when a provisional premise may carry the full difficulty of the original problem and state the relationship known so far.
+
+Use the derivation to judge which gaps the branch would reduce and whether a later obstacle changes the value of that work.
 If a stronger branch result would make an existing construction usable, cover new cases or shorten the remaining proof, use that prospect to guide investment.
-If another unavailable input still blocks the derivation, prioritize obtaining or bypassing it while retaining the branch's value at its actual scope.
-Early ideas may receive bounded exploration around a discriminating attempt before a complete bridge is known; provisional premises remain distinguishable from established evidence.
+Limit the derivation to what the current decision needs, and allow bounded conceptual exploration or a discriminating test of early ideas whose bridge is still unclear.
+Keep each unresolved premise and the resulting conditional scope of a consequential argument in the appropriate [working Draft or responsible mathematical material](ledger.md#working-drafts-and-fixed-findings), and maintain the allocation choice and reason in the relevant S.
+When [actual argument assembly](workflow.md#records-review-and-handoff) also applies, reuse the attempt and distinguish the established chain from the conditional continuation.
+Adopt mathematical results only at the scope supported by the evidence and required review.
 
 Allocate parallel work by what each successful route would establish for the original Task, the unproved inputs shared by routes, and the complementary parts needed for a complete proof.
 Several routes sharing one missing estimate may justify attempts to prove it, bypass it by a different mechanism or find its failure scope; independent complementary lemmas also support useful parallel work.
@@ -177,7 +183,7 @@ Give explicit conditions for continuing, redirecting, or reopening the route.
 
 A concrete obstruction or promising external mechanism can trigger autonomous literature search under the [repository search policy](literature-search.md#autonomous-literature-search).
 Specify the question and how possible findings would affect the route.
-Link consequential search evidence from the relevant ledger entry or source audit, and identify any new lead that justifies expansion or reopening.
+Link consequential [search evidence](literature-search.md#search-evidence) at its responsible home, and identify any new lead that justifies expansion or reopening.
 Repeated searches with no useful new evidence call for reassessment; stopping a search does not refute the route or discharge an unresolved dependency.
 
 At a consequential redirection or stage closeout, compare the dated expectation with the actual result, explain the discrepancy and its effect on the next decision.
@@ -186,6 +192,41 @@ Complete attempts, calculations and proof arguments remain in their responsible 
 Independent substantive synthesis belongs in appropriate ledger material only when worth preserving separately.
 For a received source, record the precise source formulation, applicability and necessary evidence in local writable material; no source amendment or response is required.
 Routine actions need no retrospective, and failure of a sufficient construction does not by itself refute its Task.
+
+### Proof and Refutation Direction
+
+After sustained substantive work on an unresolved proposition, reassess the main direction when representative results have not discernibly reduced the central gap, attempts return to the same difficulty and no executable new mechanism offers a way past it.
+The main agent gives priority consideration to refuting the original proposition, constructing a counterexample or establishing impossibility.
+Judge the direction by actual mathematical progress, grounds for the proposition and the value of the next discriminating investigation, using time and counts only as background.
+If proof remains the main direction, identify the mathematical reason, the progress underway or a bounded next investigation that could change the judgment, and carry that choice into the assignments.
+For reproduction of a reliable existing proof or work under a human restriction, choose investigations that serve the stated purpose and scope.
+
+An ordinary assignment to prove a proposition permits testing that proposition by counterexample or refutation within the existing method authority and human limits.
+Keep the original statement, hypotheses, quantifiers and completion conditions under its [Task contract](tasks.md#task-records).
+When the contract allows proof or refutation, a refutation can complete it under the existing evidence and review requirements.
+For a proof-only contract, deliver any reliable refutation with its effect on the required proof, and handle the Task's disposition under actual authority and its original completion criteria.
+
+If refutation becomes the main direction, first adjust the selected Task's route use and resource allocation and select or establish the responsible S under the [existing route identity rules](#strategy-hierarchy).
+Focus the main effort on a concrete candidate, extreme parameters, a negative argument or counterexample validation, and reduce or defer stalled proof work with its reason and resumption conditions.
+Adjust actual delegations, computations and dependencies within the same Task and its effective E limits and stops.
+Assign each selected [next investigation](workflow.md#candidate-research-follow-up) to an executor with a discriminating question and a point for returning the result.
+For a shared S, record each Task's use, allocation, deferral scope and resumption conditions in its [Task associations](../material-format.md#route-and-feedback-tables) `Scope` and necessary prose.
+The `Route` disposition and priority describe the whole route, which stays `active` while another Task continues current work on it.
+Split uses that need independent management under the existing strategy organization rules and link their common mathematical evidence.
+
+Determine the exact negation from all original hypotheses, the order of quantifiers, parameter dependencies and convergence requirements before selecting the objects and scope of the investigation.
+For example, to negate that every admissible x has a suitable y, find one admissible x for which every allowed y fails.
+For existence, uniform estimates or limits, use the object families and bounds that the actual negation requires, and state each partial result's scope and remaining obligations.
+Distinguish refuting the original proposition, refuting an auxiliary assertion and finding an obstacle to a mechanism.
+Verify a candidate against the original hypotheses and its logical contradiction of the conclusion, applying [counterexample validation](computations.md#counterexample-validation) to numerical candidates and retaining applicable error control and review.
+Keep the verified refutation and precise scope with the original proposition's responsible evidence under the [mathematical assessment rules](claims.md#separate-assessment-fields).
+
+After investigation, use the candidate, structural restriction, effective input or remaining gap to decide whether to continue refutation, return to proof or explore a different mechanism.
+When returning to proof or changing direction again, identify the changed mathematical understanding, mechanism or actual conditions and the next investigation whose result now matters.
+Apply the distinct [restart conditions](#route-dispositions) for an allocation pause, an unmet prerequisite and a refuted route.
+If a search yields no counterexample, report its actual range, results and unchecked space, and base the proposition's assessment on sufficient mathematical evidence.
+When neither direction has a useful next step, choose an informative investigation of an obstruction, representation or mechanism within actual authority and available resources.
+Maintain the current direction, reason, next action and resumption conditions for the actual Task use in S, and keep complete derivations, computations and useful failures at their responsible homes.
 
 <a id="route-dispositions"></a>
 ### Dispositions and Restart Conditions
