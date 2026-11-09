@@ -3,19 +3,8 @@
 ## Autonomous Literature Search
 
 Research in a Git working repository with a configured remote follows the [common work-start update](workflow.md#shared-repository-work-starts) in every actual exploration round, independently of the conditional external-search triggers below and without repeating an already adequate literature search.
-For local source discovery, follow the [common source-preparation order](literature.md#source-preparation), reusing adequate bibliography, edition-specific contents, author source notes and U/C/L, then inspecting relevant local candidates when further reading is needed before necessary external acquisition.
-The [edition-specific contents routes](literature.md#searchable-contents) locate actual works and passages; missing source notes or a contents match do not rule out a useful local edition.
-Use the actual applicable source, including a complete contribution in a volume or original HTML in its work-key group, retaining its edition, inspected extent and resource limitations.
-Do not infer a missing standalone PDF for those sources.
-A match locates a source passage; no match establishes no theorem absence.
-Existing reviewed inputs remain first and progressive reading remains available.
-
-Local literature discovery and review follow the [progressive reading policy](literature.md#progressive-reading).
-At Task startup, reuse relevant source notes and adequate inspections at the actual question's scope, without a local-original availability check or whole-source reading by default.
-Search unaudited local material when existing reviewed inputs do not answer the current question.
-Before relying on a result, verify its exact statement, version, hypotheses, and applicability.
-Distinguish [accepted external theorems from unresolved dependencies](literature-audits.md#accepted-external-inputs), and apply the detailed proof-review triggers where needed.
-Whole-book review is not a prerequisite for research and requires a task-specific reason or explicit assignment.
+Reuse adequate local knowledge first under [common source preparation](literature.md#source-preparation).
+When adequate evidence is missing, use [searchable contents](literature.md#searchable-contents) and [progressive reading](literature.md#progressive-reading) to look for the needed edition and passages locally before any necessary external search.
 Respect the [material-access rules](literature.md#unpublished-material) before external searches or transfers.
 
 Agents may autonomously search the web and download relevant publicly available literature for the current research task, source audit, or other authorized exploration.
@@ -46,10 +35,8 @@ Expand when a new term, theorem, author, citation branch, or related mechanism g
 State what the expansion could resolve.
 A promising connection may justify exploration before a particular supporting lemma is known.
 
-For a cited dependency, first inspect the exact statement and applicability needed by the current argument.
-Then apply the [external-input acceptance and proof-review rules](literature-audits.md#accepted-external-inputs): an established theorem may be accepted with its original proof unreviewed, while unresolved evidence, applicability, objections, or local extensions remain explicit obligations.
-A bibliography entry alone does not require another download or a recursive audit of all its references.
-Record foundational inputs and optional identifications with their actual verification depth.
+For a cited dependency, use the [external-input acceptance and proof-review rules](literature-audits.md#accepted-external-inputs) to determine what evidence is needed and record the actual verification depth.
+A bibliography entry alone does not require downloading or auditing the work.
 
 End a search when the evidence is sufficient for the current decision and proceed to reading, audit, derivation, or another justified step.
 If different formulations and search methods keep returning the same or irrelevant material without useful new evidence, pause that branch and record the unresolved question.

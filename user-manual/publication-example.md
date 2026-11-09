@@ -1,8 +1,8 @@
-# Publication
+# Publications
 
 You may use this example page to record work published with the ACME framework.
 
-## WIP
+## Work in progress
 
 ## [Hexagon](https://hexagonmath.org/)
 
@@ -10,6 +10,6 @@ You may use this example page to record work published with the ACME framework.
 
 ## [Palomar](https://palomar-registry.org/)
 
-## [ArXiv](https://arxiv.org/)
+## [arXiv](https://arxiv.org/)
 
-## Journal publication
+## Journal publications

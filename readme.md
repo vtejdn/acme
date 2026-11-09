@@ -1,35 +1,35 @@
 # ACME: Autonomous and Collaborative Mathematical Exploration
 
-To human authors: the [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md), [ユーザーマニュアル](user-manual/ユーザーマニュアル.md) or [Manual de usuario](<user-manual/Manual de usuario.md>)) is all you need.
-
-For first installation, use a local project root and any target project remote that are empty apart from Git setup, under the [installation action](framework/agent-actions.md#install-the-framework).
-Confirm these conditions before obtaining the selected version's files from the [official repository](https://github.com/vtejdn/acme) or writing to the target; if either side has project work, preserve it, stop and report it to the human author.
-An existing ACME installation uses the [upgrade action](framework/agent-actions.md#upgrade-installed-framework) at its current root when an upgrade is requested, without an empty-target requirement.
-
 This mathematical research repository uses the framework [ACME](https://github.com/vtejdn/acme), Autonomous and Collaborative Mathematical Exploration.
-This entrance orients agents working in the existing checkout under the actual human instruction.
-At each work-round start, follow the [local-rule reading and daily official check](framework/agent-actions.md#start-a-work-round) and the [current-rule duty](framework/rules/workflow.md#proportionate-execution), independently of public-query availability.
-A newer-version reminder leaves the current assignment and upgrade authorization separate.
-[AGENTS.md](AGENTS.md) is the short reading entrance and cross-activity guidance; [agent-actions.md](framework/agent-actions.md) owns the function-to-action path.
-The [framework rules](framework/readme.md) govern each topic, the [material format](framework/material-format.md) owns exact declarations and acquisition inputs, and [script documentation](scripts/readme.md) owns optional interfaces and side effects.
+ACME supports autonomous mathematical exploration carried out by AI agents and collaboration among human mathematicians.
 
-## Responsible materials
+## To human authors
 
-Use [mathematics/readme.md](mathematics/readme.md) to reach Task contracts, Claim assessments, strategies and exact supporting materials.
-Current mathematical status and authority belong to their responsible materials and selected decisions; indexes supply navigation.
-Keep precise statements, complete necessary arguments, source scope, useful failures and actual review limits inspectable.
-Distinguish conjecture, finite observation, self-reviewed proof and independently reviewed result.
+The [user manual](user-manual/user-manual.md) ([用户手册](user-manual/用户手册.md), [Manuel d’utilisation](<user-manual/Manuel d’utilisation.md>), [Benutzerhandbuch](user-manual/Benutzerhandbuch.md), [ユーザーマニュアル](user-manual/ユーザーマニュアル.md) or [Manual de usuario](<user-manual/Manual de usuario.md>)) is all you need.
 
-| Entrance | Responsible scope |
-| --- | --- |
-| [Framework](framework/readme.md) and [action guide](framework/agent-actions.md) | Applicable action, topic rules and optional tools |
-| [Repository identity](repository/readme.md), [identity rules](framework/rules/identity.md) and [preferences](framework/rules/preferences.md) | Human registration, operator attribution, checkout binding, collaboration and scoped choices |
-| [Tasks](mathematics/tasks/index.md), [Claims](mathematics/claims/index.md), [Strategies](mathematics/strategies/index.md) | Exact authorized objectives, assessments and routes |
-| [Literature](mathematics/literature/readme.md) and [manuscripts](mathematics/manuscripts/index.md) | Actual source facts, inspected mathematics and document-local work |
-| [Script interfaces](scripts/readme.md) | Explicit mechanical operations and side effects |
+## To agents
 
-The [version metadata](framework/version.json) owns the installed framework version.
+Start with the current human request and the scope it authorizes.
+Use the reading guidance in [AGENTS.md](AGENTS.md) and choose the matching action in the [agent action guide](framework/agent-actions.md).
+Read the rules that govern the chosen action and the materials needed for it.
+Follow the [work-start action](framework/agent-actions.md#start-a-work-round), including the applicable project remote update and daily official version check.
+The [current-rule reading duty](framework/rules/workflow.md#proportionate-execution) applies even when the public query is skipped or unavailable.
 
-Distinct repositories reuse chosen findings under [intake rules](framework/rules/intake.md), with actual provenance, private-literature exclusion and the [fixed-program and local-output boundary](framework/rules/intake.md#computation-programs-and-inputs).
+For a requested first installation, use the [installation action](framework/agent-actions.md#install-the-framework).
+Confirm that the local project root and any target project remote are empty apart from Git setup before obtaining the installation files or writing to the target.
+If either already contains project work, preserve it, stop the installation, and report it to the human author.
+For an authorized upgrade, use the [upgrade action](framework/agent-actions.md#upgrade-installed-framework) at the existing project root, where the first-installation empty-target condition does not apply.
+A newer-version reminder leaves upgrade authorization with the human.
 
-For material edits, follow the [record and maintenance rules](framework/rules/records.md#substantive-material-retention) and [writing rules](framework/rules/writing.md).
+## Reference
+
+The [mathematical materials](mathematics/readme.md) and [manuscripts](mathematics/manuscripts/index.md) provide starting points for reading.
+Follow indexes to the materials themselves for the actual statements, arguments, status, selected decisions, and review scope.
+Distinguish conjectures, computational observations, self-reviewed proofs, and independently reviewed results.
+
+The [framework rules](framework/readme.md) explain how to carry out each activity.
+The [material format](framework/material-format.md) defines declarations and inputs for acquiring material.
+The [script documentation](scripts/readme.md) describes optional tools and their effects.
+The installed framework version is recorded in [framework/version.json](framework/version.json).
+
+Use [personal import](framework/rules/intake.md#personal-import) to transfer your own selected material and [external intake](framework/rules/intake.md#scope-and-routing) to receive other authors' selected mathematical material from a different research repository.

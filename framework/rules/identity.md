@@ -12,7 +12,8 @@ Check the actual behavior of any diagnostic described as read-only; avoid silent
 On failure, report the relevant concrete error without exposing credentials and diagnose the actual environment and channel before inferring expiry or changing an account.
 A sandbox's lack of credential access does not establish expired credentials.
 Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
-Connection success grants no push, force-push, branch deletion, PR creation or other remote mutation.
+Connection success establishes the access actually exercised.
+Determine authority for remote changes from the current human instruction and the applicable activity rules, including the [default delivery permissions](#shared-research-git-authority-and-integration) for authorized joint Task work.
 Local reading, edits, checks, commits and file copying require no per-operation network preflight; a repository task in a Git working copy with a configured remote still applies the [work-start update](workflow.md#shared-repository-work-starts) before substantive work.
 The [daily metadata read](../versioning.md#official-version-check) retains its bounded public HTTPS endpoint, cache and separately authorized upgrade boundary.
 
@@ -300,8 +301,8 @@ A draft or unfinished result may be committed with its truthful status.
 Do not automatically run framework regressions, full material scans, recursive proof review or PDF-store hashing.
 Reuse applicable construction/research verification; repeat it only for relevant changes, repaired failures or uncovered uses.
 
-When push is authorized, choose relevant checks for the actual target and account/channel under the [connection responsibilities](#git-and-github-connection-checks), verify the target remote tip and branch relationship, push the authorized local tip and verify the remote result.
-Connectivity alone authorizes no mutation.
+When a push is authorized by a direct instruction or an applicable activity rule, choose relevant checks for the actual target and account/channel under the [connection responsibilities](#git-and-github-connection-checks), verify the target remote tip and branch relationship, push the authorized local tip and verify the remote result.
+Apply the [host execution and access boundaries](workflow.md#workspace-boundaries) to any required permission request or execution failure.
 Within an authorized remote-delivery sequence, a pending batch is its already committed, unpublished work for the selected repository, branch, destination and delivery scope.
 Publish that batch before constructing the next delivery batch; a concrete blocker permits only the smallest committed repair and necessary references first.
 Other unpushed commits do not create that sequence; a local-only commit needs neither push authority nor a network check merely because earlier commits remain unpublished.
@@ -354,6 +355,7 @@ Do not manufacture success through repeated queries, force-push, history rewriti
 ### Shared research Git authority and integration
 
 When a human actually authorizes establishing, advancing or continuing [joint Task collaboration](tasks.md#shared-git-research), routine fetch, pull/merge, commit and push within that assigned collaboration scope are permitted by default.
+This includes continuation through an individual T/E participating under its adopted exact joint contract.
 Apply explicit human restrictions such as local-only work, commit without push, postponed synchronization or limited publication content; an absent separate push grant does not block the default.
 Use the current assignment and existing participation facts without asking for separate mode adoption, first-delivery approval or recurring permission, or requiring a permission sentence, new T/E decision or authorization record.
 Determine the actual repository, collaboration branch and publishable scope from the current Task, existing agreements and native Git facts under the [common integration rule](#shared-repository-updates-and-integration), without a URL/branch mirror, authorization table, flag or receipt.
@@ -363,8 +365,11 @@ Apply the default to the currently assigned human-authorized collaboration, with
 Handle target changes within that scope from actual facts and existing arrangements; publication beyond it, unrelated remote operations, PR creation, history rewriting, force-push and branch-protection changes are outside these default permissions.
 
 Before a push, inspect the whole outgoing commit chain and its actual destination under [serial delivery](#submission-checks), rather than treating the currently staged paths as the whole publication scope.
+Judge a multi-file batch by its actual content and impact, and use the branch agreed for the collaboration, which may be `main`.
 Resolve an unclear or unauthorized outgoing scope before publishing it, without automatically creating another branch or rewriting history to bypass that issue.
-Obtain the fresh remote facts needed for delivery; if the remote advances or rejects the push, retrieve, normally integrate, inspect affected changes and retry within the existing authority and effective limits, without force-push or unlimited retries.
+Obtain the fresh remote facts needed for delivery.
+If the remote advances, including when Git reports a non-fast-forward rejection, retrieve and integrate under the [common integration rule](#shared-repository-updates-and-integration), then inspect affected changes and retry within existing authority and effective limits.
+Handle other remote rejections according to the actual cause and preserve the existing limits on retries and history rewriting.
 Use the project's actual collaboration branches and contribution requirements; protection or a PR requirement does not itself authorize another remote action or a new publication workflow.
 Verify the actual remote result and apply the common failure handling, identifying any saved commit or unfinished push scope in the ordinary response or existing material.
 Keep the existing pending-batch ordering within an authorized delivery sequence; unrelated unpublished commits do not block all local research.

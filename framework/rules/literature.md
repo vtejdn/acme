@@ -12,6 +12,8 @@ Literature preparation and source audits exclude associated Lean code unless its
 Reuse sufficient existing mathematical and source evidence before obtaining or inspecting an original.
 Use shared bibliography, edition-specific contents, concise source notes and adequate C/U/L at their actual scope.
 When further source reading is necessary, reuse an applicable local original, look for relevant local candidates and then perform necessary authorized external search or acquisition.
+A useful local copy may exist even when source notes are absent or a contents search yields no match.
+Use a [complete contribution in a volume](#actual-source-holdings) or [original HTML](#original-html-sources) when it supplies the applicable original.
 The current question, work, edition and available facts determine the scope; stop once adequate material is available rather than scanning the whole store.
 A candidate title, filename or identifier match is a lead, not mathematical identity, edition agreement or sufficient evidence.
 Reading candidate metadata or passages requires no prior key registration, U creation, source ledger or search receipt.
@@ -235,14 +237,9 @@ Stop advancing when enough evidence is available; do not wait until a proof atte
    Record the exact source version, chapter/section, theorem or equation number, and printed/PDF page mapping where available.
    A search hit or extracted snippet is only a locator, not a verified result.
    If extraction is unreliable, inspect the relevant rendered pages; failed text search is not evidence of absence.
-4. Before using a result in a proof, formalization, or substantive research conclusion, verify its exact source statement, version, locator, hypotheses, and local applicability.
-   An ordinary established external theorem may be accepted without re-auditing its proof when no unresolved objection affects its use; document that acceptance and the actual inspection depth under the [accepted external-input rule](literature-audits.md#accepted-external-inputs).
-   Trigger detailed proof review for a suspected error, a critical nonstandard input, incompatible conventions or a local extension requiring new reasoning, a version discrepancy, or an explicit task.
+4. Before using a result in a proof, formalization, or substantive research conclusion, apply the [external-input acceptance and proof-review rules](literature-audits.md#accepted-external-inputs).
    Candidate routes may cite unaudited leads if clearly marked as conditional.
-   Acceptance is not proof-assistant verification.
 5. Expand to the definitions, lemmas, and dependency interfaces required by the current result.
-   Distinguish accepted external inputs from unresolved evidence, applicability, or local deductions.
-   An accepted foundational theorem does not become an unresolved condition merely because its proof was not reread; genuinely unresolved inputs and adaptations keep the affected conclusions conditional.
    Do not recursively audit every bibliography entry.
    Extend to an entire chapter or book only when the needed dependency structure or explicit task warrants it, recording the reason.
 6. Stop when evidence is sufficient for the current decision, or record the exact unresolved gap and next useful action when access or repeated unproductive searches prevent progress.

@@ -19,17 +19,13 @@ Assignment to this role does not itself select a Task, resume paused research or
 
 ## When to delegate and assignment boundaries
 
-The main agent may delegate this role when the human requests alternatives or when the exploration could change an actual research allocation, including initial choices, expanded investment or a consequential new lead.
-After sustained work, if representative results still leave the original Task's key gap without a discernible reduction or a useful next approach, the main agent should arrange a bounded exploration within existing authority and resources.
-The original question and representative results suffice to begin, even when the main agent cannot identify the exact bottleneck or propose a candidate mechanism.
-Neither the number of C or S materials nor elapsed research time determines that judgment; a clear next substantive proof, calculation or check can justify continuing ordinary research work.
-Reuse still-applicable prior exploration without repeating it merely because more results have accumulated.
+Use the [route-selection criteria](strategies.md#choosing-and-revising-a-route) to choose a bounded assignment for requested alternatives, a consequential allocation choice or a sustained lack of progress.
 
 A single strategy discussion follows the actual question's scope; autonomous research requires the selected Task, its stable E and currently effective authority and limits.
 The main agent supplies the original question and completion conditions, the question for exploration, useful route or evidence entrances, actual read/write scope, resources and a return point through the existing harness delegation capability.
 This role represents the actual human author and shares the Task/E limits and stops, without a new Task, E, author identity or allowance.
 If the environment cannot launch the requested delegate, state that the separate delegation was not completed and identify any strategy analysis actually performed by the main agent.
-The main agent retains overall understanding of the Task and its branches under [research coordination](workflow.md#records-review-and-handoff).
+The main agent retains overall understanding of the Task and its branches under [research coordination](workflow.md#research-coordination).
 
 ## Intellectual stance
 

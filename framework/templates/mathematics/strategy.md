@@ -36,20 +36,23 @@ For a received predecessor: precise source formulation and obligations actually 
 preserve the source disposition, necessary formulation and carried obligations without changing the source.
 
 ## Current Question or Precise Target
-Exploratory question, mechanism or range to test; identify provisional assumptions and what remains to be determined.
+Identify the exploratory question, mechanism or range to test and mark provisional assumptions.
 For a particular proof target, state its exact hypotheses, quantifiers and conclusion.
-Relation to the goal: justify established necessary / sufficient / equivalent implications;
-distinguish partial targets and heuristic associations.
+When claiming a necessary, sufficient or equivalent relation to the goal, give its justification.
+Mark provisional implications and partial targets explicitly.
+For example, estimate A would settle the bounded-parameter case, while the full target also needs an unproved uniform estimate B.
 
 ## Inputs and Obstruction
-Verified inputs, with links where available.
-Provisional premises, unchecked applicability and the current uncertainty or obstruction;
-state the conditions carried into any exploratory conclusion.
+Identify verified inputs, with links where available, and state which premises or applicability checks remain open.
+Explain the current obstruction and the conditions carried into any exploratory conclusion.
+For example, a family may rule out the uniformity needed by a normalization while leaving the original proposition open.
 
 ## Next Step and Decision Conditions
-Next discriminating step and expected evidence.
-Continue if ...; redirect if ...; reopen a stopped approach if ... .
-When paused or blocked: reason, outstanding obligation, and restart condition.
+State the next step and how its result could change the decision to continue or redirect.
+In the example with A and B, test the feasibility of B before fully developing A and retain any established bounded-parameter result for its local use.
+After the normalization failure, look for a mechanism that addresses the failed uniformity.
+Renaming the variables leaves the same obstruction.
+For paused or blocked work, give the reason, outstanding obligation and restart condition.
 
 ## Reuse and Branch Roles (when consequential)
 Explain reused constructions through local objects, satisfied/missing hypotheses, actual output and remaining gap, with exact evidence.
@@ -82,7 +85,10 @@ Apply the [route ownership boundary](../../rules/strategies.md#writable-route-bo
 Explicit source references support reverse discovery without implying source adoption or supersession.
 Omit inapplicable sections; no replacement knowledge registry, version chain or retrospective is required for every ordinary action.
 
-Only the established same human directly revises an authored body.
-Other humans put corrections and contributions in their own suitable materials with exact references under the [identity rule](../../rules/identity.md).
+Responsibility for the strategy body and layout belongs to the established author.
+Under the [locator-only maintenance rule](../../rules/identity.md#collaboration-maintenance-and-conflicts), an agent with maintenance authority may repair a path or anchor in another author's local writable S after confirming that the repair preserves the actual target, mathematical meaning and scope of adoption and review.
+Keep the existing S, its author, provenance, evidence, route decisions, Task associations and actual reviews, and repair affected downstream references under that rule.
+The responsible author handles substantive revisions and adoption under the applicable rules.
+Other authors put substantive corrections and contributions in their own suitable materials with exact references.
 Coordinate concurrent writes and maintain shared registration/navigation at their actual scope.
 Preserve acquired-source provenance and historical mathematics.

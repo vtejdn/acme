@@ -11,17 +11,13 @@ Recognition of a known result has its own [source-check trigger](#recognized-kno
 For a Git working repository with a configured remote, complete or reuse the [common work-start update](workflow.md#shared-repository-work-starts) before substantive work and use relevant incoming changes in local mathematical reuse, independently of whether an external literature search is needed.
 
 Prefer using established definitions, results and proof mechanisms to reconstructing them as project contributions.
-Use the [common source-preparation workflow](literature.md#source-preparation) during research, audit and writing; register needed complete definitions through def without duplicating adequate U/C/L content.
-Reusing adequate existing U or fixed C/L does not itself reacquire the original; same-repository collaboration prepares originals only when further source reading is needed.
-Actual personal import and external intake complete necessary selected original preparation and direct failure reporting under the [literature rule](literature.md#acquisition-before-u-reception), without a source account or receipt.
+Use [common source preparation](literature.md#source-preparation) during research, audit and writing, including the existing duties for complete definitions.
+For personal import or external intake, apply the [original-preparation rule](literature.md#acquisition-before-u-reception).
 Before investing substantial work in a nontrivial intermediate claim, definition-related assertion, or main argument, state the exact needed conclusion and hypotheses, then search in this order:
 
 1. Check existing Claims, arguments, relevant source audits, related strategies, constructions, useful failures and prior search findings by the needed conclusion and problem features.
    Verify their actual conditions, scope and review limits.
-2. If those inputs are insufficient, follow the [common source-preparation order](literature.md#source-preparation): reuse adequate bibliography, edition-specific contents, useful author source notes and U/C/L, then inspect relevant local originals when further reading is needed, before necessary external acquisition.
-   Missing contents or source notes do not establish local absence; inspect only the candidate scope needed for this question.
-   Establish the actual work, edition and applicable extent from source facts, including complete contributions inside volumes and original HTML pages; a same-key standalone PDF or source registration is not required.
-   Retain actual partial-source and resource limitations and follow the [progressive reading rules](literature.md#progressive-reading); an incomplete audit is a reason to inspect useful passages, not to ignore the source.
+2. If those inputs are insufficient, look for applicable local sources under [common source preparation](literature.md#source-preparation) and use [progressive reading](literature.md#progressive-reading) for the actual question and edition.
 3. If local material still does not supply enough evidence or a workable method, search external literature and primary sources for results, alternative formulations, proof techniques and counterexamples under the [search policy](literature-search.md#autonomous-literature-search).
 
 Stop advancing through these layers once there is sufficient usable evidence.
@@ -43,9 +39,7 @@ Ordinary source attribution and meaningful failure retention continue; no method
 | A result that covers only part of the needed conclusion or requires a substantive extension | Reuse the established part and isolate the remaining project argument or gap; register substantive reusable deductions under the claim rules |
 | A related mechanism, analogy or possible counterexample | Inspect its scope and explain how it informs the strategy; a lead does not itself discharge a proof obligation |
 
-Apply the [external-input acceptance rules](literature-audits.md#accepted-external-inputs): verify the exact statement, version, hypotheses and applicability, and disclose inspection depth.
-Established inputs do not require a fresh proof or full-source audit merely because they are used.
-Concrete objections, critical nonstandard inputs and substantive adaptations trigger the relevant deeper checks.
+Before relying on an external theorem, apply the [external-input acceptance and proof-review rules](literature-audits.md#accepted-external-inputs) at the depth its actual use requires.
 If a previously registered project claim is later covered by a source, update its provenance and supporting inputs with the appropriate review and history; retain its ID and earlier artifacts rather than maintaining a redundant obligation to prove it independently.
 
 Record searches that materially affect an argument or strategy under the [search evidence rules](literature-search.md#search-evidence).

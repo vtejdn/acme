@@ -203,21 +203,15 @@ An actually authorized continuation prepares the relevant exact Task reference a
 If authorized work may proceed, advance its next useful step and retain actual results, failures, gaps and continuation points.
 If a stop or missing authority prevents advancement, preserve current findings and report that actual boundary.
 Method changes and strategy priorities may adapt within the assignment unless the human explicitly fixed them; they do not change the objective or completion criteria.
-Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) to check the consequences and decisive later gaps of a branch's expected result for the original Task before substantial investment.
-Organize sustained whole-object reasoning and parallel work by the mathematical dependencies under [research coordination](rules/workflow.md#records-review-and-handoff).
-At consequential assembly or redirection points, the main agent tries the complete argument and uses the concrete gaps to adjust work.
-When the next proof, calculation or check is already clear, use ordinary research or Preparation assignments directly, including complementary lemmas; that technical allocation alone needs no agent-S exploration.
-For substantive route choices or alternatives that could change an actual research allocation, the main agent may delegate a bounded [agent-S exploration](rules/agent-S.md) within the existing Task/E scope.
-When sustained work yields neither discernible progress on the original Task's key gap nor a useful next approach, the main agent should proactively delegate a bounded exploration within that authority and resources, even without a candidate lead.
+Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) to judge expected gains, decisive gaps and any inexpensive probes before substantial investment.
+Under [research coordination](rules/workflow.md#research-coordination), try the complete argument at consequential points and adjust assignments as evidence changes.
+Use ordinary research or [Preparation](rules/workflow.md#research-preparation) for clear next steps.
+Use the [strategy delegation criteria](rules/strategies.md#choosing-and-revising-a-route) for a consequential choice or sustained lack of progress, and read [agent-S](rules/agent-S.md#when-to-delegate-and-assignment-boundaries) when assigning that role.
 Follow an explicit human instruction to delegate within its actual scope, permissions and effective execution limits.
-Read that role only when needed; ordinary proof, calculation and Preparation assignments keep their existing entrances.
 Put a candidate selected for continued work into an executable [investigation and follow-up](rules/workflow.md#candidate-research-follow-up).
-When substantive work stalls on the original proposition, [reassess proof and refutation direction](rules/strategies.md#proof-and-refutation-direction) and apply the decision to the selected Task's work allocation.
-Apply [research coordination and Preparation](rules/workflow.md#records-review-and-handoff): the main agent coordinates available harness subagents, dependencies, shared resources, writes, necessary review and required retention/closeout while maintaining an overall understanding of the authorized Task.
-Delegate the current question, useful existing entrances and working Draft for Preparation; the subagent judges search, reading, applicability and sufficiency, retaining concise judgments and direct original-material locators in the [Draft](rules/ledger.md#working-drafts-and-fixed-findings).
-Reuse applicable Preparation, allow the same subagent to continue Draft research within an initial or extended assignment, and arrange suitable parallel work requested through ordinary coordination messages.
+When substantive work stalls on the original proposition, [reassess proof and refutation direction](rules/strategies.md#proof-and-refutation-direction).
 The responsible agent records concrete literature work needing later handling under the [common worklist rule](rules/records.md#pending-literature-work); a restricted delegate supplies the item to that writer while the Draft retains its mathematical context and actual limits.
-Keep shared Task/E limits and the actual [independent-review boundary](rules/proof-audits.md#review-arrangements); proof development or inherited substantive development context prevents independent review of that proof.
+Keep shared Task/E limits and the actual [independent-review boundary](rules/proof-audits.md#review-arrangements).
 For material problems found during this research, use the [research repair entrance](#repair-material-problems-found-during-research) and its common contract within the existing assignment and author authority.
 
 ## Develop, register or reorganize mathematics
@@ -276,12 +270,11 @@ Use this general action for selected fixed Claims, Tasks, sources or computation
 Determine whether the actual work requires independent inspection under the [review obligations](rules/proof-audits.md#independent-review-obligations) or an applicable explicit human requirement before choosing the arrangement.
 Base any required isolation or delegation on the actual review relationship and obligations.
 Read exact versions, hypotheses, arguments and dependencies and select prior findings according to the actual review arrangement.
-See the [proof-review rules](rules/proof-audits.md) and [source-audit rules](rules/literature-audits.md).
+Apply the [proof-review rules](rules/proof-audits.md) and any applicable [external-input and source-review depth rules](rules/literature-audits.md#accepted-external-inputs) to the selected input.
 Inspect the requested whole scope; do not substitute structural checking for mathematical scrutiny or silently expand a narrow source inspection into a full proof audit.
 Reproduce decisive computations or behavior where needed rather than mechanically repeating all prior tests.
-Source audits exclude associated Lean code unless expressly included; retain any reliance on unchecked code as a review limitation.
-Keep formal project findings in R for every actual agent relationship and source inspection at its responsible source-evidence home.
-See [Source evidence selection](rules/literature-audits.md#organization-and-stable-units).
+For source audits, apply the [Lean scope and unchecked reliance rule](rules/literature-audits.md#default-audit-scope).
+Keep formal project findings in R for every actual agent relationship and use the [source-evidence selection rule](rules/literature-audits.md#organization-and-stable-units) for source inspection.
 New or substantively revised findings declare their actual relationships explicitly; a genuinely new C/T acceptance selects findings with both matching relationship rows and exact required bindings, without backfilling unchanged historical findings.
 For required independent review use a reviewer outside substantive proof development and its inherited mathematical context; the current reviewer may act directly when already qualified under the [arrangement rule](rules/proof-audits.md#review-arrangements).
 Supply fixed inputs, necessary dependencies, exact scope, applicable rules and actual human requirements directly without forwarding development discussion or its mathematical summary; another agent layer or the same context under a new label supplies no independence.
@@ -293,32 +286,17 @@ A review request does not itself authorize substantive editing of another author
 
 ## Prepare or reuse literature
 
-Apply the [source-preparation rule](rules/literature.md#source-preparation), [source-audit rules](rules/literature-audits.md) and actual disclosure limits.
-Reuse sufficient bibliography, source notes, contents and U/C/L evidence; when further original reading is needed, reuse applicable local files before necessary external acquisition.
-Determine the actual work, edition, passages and use from source facts, without inferring identity from a filename, URL or successful fetch.
-Canonical bibliography keeps publication identity; source README may keep concise useful author sections for editions, logical originals, page correspondences and use limits.
-Each human maintains cross-machine validity of those links, with agent assistance within authority; private locations and access parameters stay in private setup.
-No source ledger, per-file entry, literature fingerprint, mandatory date or empty U is created by retention.
+Follow [common source preparation](rules/literature.md#source-preparation) to reuse sufficient evidence, identify the actual work and edition, and inspect necessary passages.
+Apply the [disclosure limits](rules/literature.md#unpublished-material) to the selected source and its use.
+Maintain original links under the [local source-storage rules](rules/literature.md#local-pdf-storage).
+Use the [searchable-contents rule](rules/literature.md#searchable-contents) when the selected source supplies contents, and follow [progressive reading](rules/literature.md#progressive-reading) at the needed depth.
 
-When a source unit is needed, use the actual author's rolling SourceKey/Author_U001.md, with independent source/author numbering and necessary stable file-local anchors.
-Choose [U boundaries and maintenance](rules/literature-audits.md#unit-granularity-and-maintenance) by reusing sufficient material first, maintaining a suitable existing U next, and creating a new unit for an actual independent organization, reference or human-author attribution need.
-Retain precise statements, hypotheses, conventions, inspected edition/passages and actual checking limits in ordinary prose, without U physical versions, compulsory tables or enumerated coverage states.
-Reuse adequate U/C/L at its existing location.
-Collaborators may write their own supplement or correction, while substantive maintenance remains with the original author's agents.
-Complete definitions and terminology follow [def registration](rules/definitions.md); new project deductions keep their adequate responsible home.
-When changing U or source organization, repair actual downstream references and distinguish authorized shared locator repair from another author's substantive mathematical change.
-A current rolling U is not a frozen historical proof input or retroactive expansion of an old R.
-Reuse sufficient, locatable evidence of a problem in the external text and maintain the relevant U when the finding needs its own source record.
-Track local misreading, misuse or failed local dependencies at their responsible local materials.
-See [Mathematical issues and reliance](rules/records.md#mathematical-issues-and-reliance).
+When source evidence needs maintenance, choose an existing home or a rolling U under the [source-unit boundaries](rules/literature-audits.md#unit-granularity-and-maintenance).
+Use the [source-audit rules](rules/literature-audits.md#content-and-verification) for actual inspection scope and [mathematical issue routing](rules/records.md#mathematical-issues-and-reliance) for problems with the source or its local use.
 
-Same-repository reuse, including clone/pull/merge, obtains originals only when further source reading is needed.
-Actual personal import and external intake complete necessary selected original preparation to reuse, acquisition or a truthful failed outcome before delivery; report failure directly with work/edition, known address, reason and use limitation.
-Retain continuing useful restrictions in source notes or the actual consumer, with concrete still-needed follow-up in the [existing maintenance worklist](rules/records.md#pending-literature-work), without a separate literature-failure list, acquisition account or receipt.
-An optional [fetch or bibliography helper](../scripts/readme.md#local-source-retrieval-and-registration) reports its explicit address, byte/format or field facts and does not certify identity, inspection or completion of these agent duties.
-Public original navigation remains read-free; startup, U display/discovery, ordinary maintenance and Git delivery do not check missing sources or trigger downloads.
-Actual selected reading and file operations retain physical containment, necessary format and target-conflict checks.
-Prepare or reuse [searchable contents](rules/literature.md#searchable-contents) when the selected source supplies them, and report unfinished transcription accurately.
+For personal import or external intake, follow the [original-preparation rule](rules/literature.md#acquisition-before-u-reception) before delivery.
+For necessary acquisition, apply the [acquisition and failure rule](rules/literature.md#literature-acquisition) and record concrete remaining preparation in the [existing maintenance worklist](rules/records.md#pending-literature-work).
+Use the optional [fetch or bibliography helper](../scripts/readme.md#local-source-retrieval-and-registration) only for its explicit mechanical operation, with the applicable containment, format and conflict checks.
 
 ## Write or revise a manuscript
 
@@ -521,15 +499,18 @@ Use this action for a direct delivery instruction, [authorized shared-repository
 Read [serial delivery](rules/identity.md#submission-checks), the human-registered repository name, selected paths, existing index, actual operator/signature and intended branch/tree.
 Coordinate one stable delivery interval, preserve unrelated staged work and contributor identities, stage the intended deliverable, commit and confirm the actual resulting tree.
 Reinspect the affected delivery scope if relevant bytes or the index change; draft work may be committed with truthful status.
-For an authorized push, establish the actual target and account/channel under the [connection responsibilities](rules/identity.md#git-and-github-connection-checks), verify the remote/base relationship and outgoing identities, push the intended tip and verify the remote result.
-Inspect the whole outgoing commit chain; apply the [shared-research integration and failure rule](rules/identity.md#shared-research-git-authority-and-integration) to new remote commits, a rejected push or an unclear publication scope, preserving unrelated work and the existing pending-batch boundary.
+For an authorized push, establish the actual target and account/channel under the [connection responsibilities](rules/identity.md#git-and-github-connection-checks) and verify the remote/base relationship.
+Before publishing, inspect the whole outgoing commit chain, including its scope and contributor identities.
+If the operation requires host approval, apply the [permission and refusal rules](rules/workflow.md#workspace-boundaries) using the actual human authority, destination and scope of this delivery.
+Push the authorized tip and verify the remote result.
+Apply the [shared-research integration and failure rule](rules/identity.md#shared-research-git-authority-and-integration) to new remote commits, a rejected push or an unclear publication scope, preserving unrelated work and the existing pending-batch boundary.
 At actual project-remote setup, a relevant target change or a remote operation needing fresh facts, apply the [non-blocking name suggestion](rules/identity.md#repository-names-and-use-environments) for that selected GitHub project.
 Keep a differing local name unless the human chooses to update it; official-source, intake-source and reference-only upstream names do not select the repository name.
 Ordinary delivery grants no force-push or history rewrite.
 Apply pending-batch ordering and its smallest concrete blocker-repair exception within the authorized remote-delivery sequence defined by the [identity rule](rules/identity.md#submission-checks); unrelated unpushed commits impose no remote check on local-only work.
 Plain commit/push performs delivery without launching framework regressions, whole-library scans, recursive proof review or source-store hashing.
 Reuse applicable verification and perform separately requested checks at their actual scope.
-Return the actual commit or confirmed remote result and remaining worktree state.
+Return the actual commit or confirmed remote result, remaining worktree state and any specific blocker or unpublished scope.
 
 ## Run an explicitly requested check
 

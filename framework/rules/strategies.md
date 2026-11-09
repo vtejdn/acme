@@ -7,9 +7,7 @@ Do not wait for a separate user request or approval for these ordinary methodolo
 A `proposed` strategy is a research candidate, not a request awaiting permission; an agent may activate it when there is a justified next step within scope.
 Explicit user constraints continue to govern.
 
-Subagents exercise these methodological choices within their delegated scope under the main agent's [research coordination](workflow.md#records-review-and-handoff).
-They may request suitable parallel work through ordinary coordination messages; the main agent adjusts assignments, dependencies, resources and overlapping writes without a fixed role hierarchy or one-to-one agent/S/D assignment.
-A Preparation subagent may continue the same Draft's research when its assignment includes that work or is extended, without a replacement agent, copied Draft or handoff report.
+Subagents exercise these choices within their delegated scope and coordinate changes to assignments or resources under the main agent's [research coordination](workflow.md#research-coordination).
 
 Initial priorities for strategies and substrategies are a starting allocation.
 Once exploration begins, agents may freely adjust them according to actual findings, obstacles, expected effort and available resources, without first exhausting the initially preferred route or seeking separate approval.
@@ -26,7 +24,10 @@ Route management preserves the original objective, actual mathematical review an
 
 <a id="writable-route-boundary"></a>
 Route revisions and predecessor-disposition changes below apply to local writable materials.
-Route body maintenance belongs to the same established human under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts); other humans contribute through their own materials and references.
+Route body and layout maintenance belongs to the same established human under actual authority.
+Under the [collaboration rule for locator repairs](identity.md#collaboration-maintenance-and-conflicts), an agent with maintenance authority may repair a path or anchor in another author's local writable S after confirming that the actual target, mathematical meaning and scope of adoption and review are preserved.
+Keep the existing S, its author, provenance, evidence, route decisions, Task associations and actual reviews, and repair affected downstream references under that rule.
+A change to the mathematical input or the scope of adoption or review follows the responsible author's applicable revision, adoption and review rules.
 Publish a substantive contribution under its responsible human's own material identity with exact links, and apply the actual conflict procedure when needed.
 When deriving a local successor from a public source material, record the precise source revision or identifiable formulation and the obligations actually carried in the local successor.
 Do not change the source route's disposition, priority or history.
@@ -139,6 +140,18 @@ Explain consequential reuse at the consuming route: local objects and parameters
 Preserve losses and order of choices when they matter.
 A simple application can need only one sentence; no separate application record or reciprocal feedback workflow is required.
 
+Before substantial investment in an uncertain new conjecture, a widened assertion or a consequential bridge, consider an inexpensive counterexample or feasibility probe whose outcome could change the research decision.
+Choose the test and its necessary precision from the problem, such as a minimal object, degenerate case, scaling, quantifier order, uniformity or compatibility of conditions.
+For example, if the route needs an estimate uniform in dimension, first check whether a simple family forces the constant to grow with dimension.
+Use adequate existing evidence, a direct argument or an optional computation at the actual scope.
+Continue with reliable established inputs or short direct work when a probe would add little, and proceed with a justified approach when no suitable low-cost test is available.
+
+Distinguish a counterexample to the Task's original statement from failure of an auxiliary assertion or one proposed mechanism.
+If a probe finds no counterexample, retain its actual range when useful and keep unchecked cases open.
+Check a candidate refutation against the exact hypotheses and conclusion, including necessary error control under the [counterexample validation rule](computations.md#counterexample-validation).
+Keep useful findings in their responsible mathematical materials and apply [independent-review obligations](proof-audits.md#independent-review-obligations) when actually triggered.
+The probe itself requires no new Claim, formal review or delegation and leaves the original Task contract in force.
+
 Before substantial investment in a branch, state what success would provide to the original Task, specifying the objects, assumptions, quantifiers, parameter-choice order and dependencies of constants.
 Try to assemble the argument from the Task's original inputs to its conclusion, treating the expected branch result as an explicitly provisional premise.
 Reuse an adequate applicable conditional argument, checking the steps that matter to the present allocation.
@@ -147,17 +160,19 @@ Check whether the required objects, quantifiers, uniformity, parameter-choice or
 Identify when a provisional premise may carry the full difficulty of the original problem and state the relationship known so far.
 
 Use the derivation to judge which gaps the branch would reduce and whether a later obstacle changes the value of that work.
-If a stronger branch result would make an existing construction usable, cover new cases or shorten the remaining proof, use that prospect to guide investment.
+Compare the next investigation's possible gains, such as settling a needed premise, ruling out a mechanism or covering new cases, with its actual cost, shared dependencies and viable alternatives.
+If neither a positive nor a negative result would change the next decision, reconsider the investigation's scope or priority.
+Use qualitative judgment and leave the actual uncertainty explicit.
 Limit the derivation to what the current decision needs, and allow bounded conceptual exploration or a discriminating test of early ideas whose bridge is still unclear.
 Keep each unresolved premise and the resulting conditional scope of a consequential argument in the appropriate [working Draft or responsible mathematical material](ledger.md#working-drafts-and-fixed-findings), and maintain the allocation choice and reason in the relevant S.
-When [actual argument assembly](workflow.md#records-review-and-handoff) also applies, reuse the attempt and distinguish the established chain from the conditional continuation.
+When [actual argument assembly](workflow.md#research-coordination) also applies, reuse the attempt and distinguish the established chain from the conditional continuation.
 Adopt mathematical results only at the scope supported by the evidence and required review.
 
 Allocate parallel work by what each successful route would establish for the original Task, the unproved inputs shared by routes, and the complementary parts needed for a complete proof.
 Several routes sharing one missing estimate may justify attempts to prove it, bypass it by a different mechanism or find its failure scope; independent complementary lemmas also support useful parallel work.
 A construction derived assuming the target remains conditional; an independent construction with a justified sufficient implication back to the target may merit bounded exploration even when its near-term prospects are uncertain.
 Choose the number of branches and resources from their mathematical dependencies, distinguishable next steps and actual available limits.
-Use counterexamples against the assertions and hypotheses they actually contradict, checking the original Task separately.
+Apply [research coordination](workflow.md#research-coordination) as returns change the allocation and its remaining uses.
 
 When sustained work leaves representative results accumulating without a discernible reduction of the original Task's key gap or a useful next approach, the main agent should delegate a bounded [agent-S exploration](agent-S.md#when-to-delegate-and-assignment-boundaries) within existing authority and resources.
 Supply the original question, representative results and their applicability even when no precise bottleneck or alternative is yet known.

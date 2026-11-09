@@ -265,17 +265,14 @@ The following sequence applies to mathematical research advancement; discussion,
 3. Identify the current question, known and provisional assumptions, and smallest useful next step under the [work-obligation rules](#work-obligations).
    During exploration, state which parts of the eventual target remain to be determined.
    Prefer resolving a known gap or testing a concrete mechanism over starting an unrelated line of inquiry.
-   Record the route's established or heuristic relationship to the task and its continuation or redirection conditions.
+   Use the [route-selection rules](strategies.md#choosing-and-revising-a-route) to judge the next step, including any inexpensive probe that could change a decision before substantial investment.
 4. Before substantial proof work, apply [reuse before proof](knowledge-reuse.md#reuse-before-proof), including for intermediate steps.
    Read, derive, compute, or search for counterexamples as appropriate.
    Preserve substantive evidence in its responsible record, including unsuccessful approaches and their exact scope.
 5. Update the responsible evidence and affected Claim entries; reconsider route priorities when appropriate and update task records/index when their authorized scope, selection or completion changes.
    Leave the relevant records sufficient for another agent to resume without relying on chat history.
 
-When choosing routes or responding to an obstruction, search the relevant Claims, arguments, source audits, related strategies and failed attempts.
-Explain consequential applicability, limitations and adaptations in the consuming route.
-Cite fixed evidence for mathematical reliance; a rolling route or source analogy is not proof.
-Useful lessons remain with the actual route or a substantive fixed synthesis, without a mandatory adoption form or reciprocal feedback obligation.
+When choosing routes or responding to an obstruction, apply the [route-reuse and applicability rules](strategies.md#choosing-and-revising-a-route) and cite fixed evidence for mathematical reliance.
 Receive prepared local content under the common [adaptation rule](records.md#receiving-and-adapting-selected-content), retaining exact necessary source scope and the original human.
 Apply the [shared locator-only exception](identity.md#collaboration-maintenance-and-conflicts) to corresponding reference repairs; later substantive corrections and other body or layout changes to another human's material belong in the correcting human's own material.
 
@@ -283,13 +280,8 @@ If no active research objective is recorded, make that absence explicit and cont
 A proposed question is not automatically an active task.
 Within an authorized objective, agents may adjust methods and pursue justified routes without seeking repeated approval for ordinary research decisions.
 
-Agents may autonomously add, revise, split, merge, reprioritize, pause, and restart strategies within an authorized research objective.
-These are ordinary research decisions and do not require a separate user request or confirmation for each change.
-Initial strategy and substrategy priorities may be freely adjusted after exploration starts as actual needs change, unless the user explicitly requires a fixed priority or sequence.
-Follow the [strategy-management rules](strategies.md#autonomous-strategy-management): preserve stable IDs, necessary mathematical findings, reasons and successor relationships, and keep current route arrangements, navigation and useful handoff information coherent without per-operation history.
-Apply predecessor updates only to local writable routes; a local successor of public source route records its precise source and carried obligations without changing the source disposition.
-A priority-based pause may be reversed when priorities change; new mathematical evidence is not required merely to resume a paused route.
-Strategy changes do not by themselves change the task's target, quantifiers, completion criteria, or authorization.
+Adjust routes and priorities within the authorized objective under the [strategy-management rules](strategies.md#autonomous-strategy-management), respecting any human-fixed priority or sequence.
+Keep the current arrangement and affected navigation coherent, following the [route ownership](strategies.md#writable-route-boundary) and [restart conditions](strategies.md#route-dispositions).
 
 Proceed autonomously with routine reading, web searches, relevant literature downloads, local notes, derivations, reversible edits, and computations within the assigned scope.
 The [search policy](literature-search.md#autonomous-literature-search) governs when to search and how to extend or stop a search.
@@ -413,6 +405,8 @@ Revisit a blocked or refuted route only with an identified change in assumptions
 Audit notes should identify the claim or artifact reviewed, the checks performed, findings and their consequences, and any remaining limitations.
 Reviews must evaluate the argument itself rather than merely restating its conclusion.
 
+<a id="research-coordination"></a>
+
 Each executing ordinary Task has one responsible main agent and one stable E; a joint coordination T has neither direct execution nor an E.
 The main research agent maintains a substantive understanding of the original objective, the central mathematical difficulty, each branch's actual contribution and the key interfaces between branches.
 It uses that understanding, the Task's authority and its actual progress to choose direct work, concentrated delegation or parallel assistance.
@@ -427,8 +421,18 @@ No fixed role hierarchy or one-to-one agent/S/D assignment is required.
 When one mechanism depends on a global construction, interdependent parameter choices, simultaneous witnesses or an undiscovered representation, the main agent or one suitable delegate carries the necessary context and works continuously on the complete object for that mechanism.
 Assign auxiliary work within that mechanism where the mathematical interfaces are clear and the results can advance the whole construction.
 Independent mechanisms may each have a researcher responsible for the complete object and proceed in parallel when their dependencies, discriminating next steps, authority and resources permit.
-Reassess the division of work as the mathematical difficulty becomes clearer and adjust the actual assignments.
 Choose the researcher, available model and reasoning effort to suit the key proof, construction or strategy judgment.
+
+Reassess assignments as relevant results arrive, including while other branches are still working.
+When a needed premise fails, a result is already covered, or an investigation can no longer inform the decision, identify which work still serves a useful purpose.
+Preserve required independent verification and other useful work, including another authorized Task's use of a shared S.
+Narrow, pause or end the affected delegation, computation or search accordingly.
+Coordinate the actual processes, resource use and overlapping writes so withdrawn work ceases to consume its original allocation.
+Keep useful partial results and failures at their responsible mathematical homes and the current allocation, necessary reasons and any restart conditions in S.
+Apply changes within the current Task and its stable E, updating only the effective conditions that actually change under the [execution rules](execution.md#current-contents-and-retained-limits).
+A decision to stop allocating work leaves the Task lifecycle, mathematical assessment and E state to their own applicable rules.
+Leave reasonable room within the effective limits for necessary checking, retention and delivery, adjusting it as the work changes.
+An effective stop takes precedence over this allocation and bars further proof, review or new work that would exceed it, even during closeout.
 
 When components to be combined return, repeated attempts leave the same gap, or a major redirection will change investment, the main agent is responsible for trying the complete candidate argument from the Task's hypotheses to its conclusion.
 It may derive the argument directly or delegate a fresh attempt, while retaining its own understanding of the interfaces and resulting allocation choices.
@@ -455,6 +459,8 @@ Evaluate completion of the delegation separately from adopting a route or obtain
 Useful strategy exploration may be retained in an existing responsible material.
 
 When [reassessing proof and refutation direction](strategies.md#proof-and-refutation-direction), apply the decision to the selected Task's actual route use, assignments, computations and dependencies within its stable E.
+
+<a id="research-preparation"></a>
 
 For Preparation, delegate the current question, useful existing entrances and working Draft to a subagent.
 That subagent decides how to search, read, compare and check applicability, how far to pursue dependencies and when preparation is sufficient for the current work, applying the actual source-reading duties.
@@ -511,15 +517,30 @@ Prefer small, reviewable edits and reproducible artifacts.
 Do not overwrite necessary mathematical or review evidence, remove source material, rewrite Git history, publish results, contact third parties, or incur costs without authorization covering that action.
 These boundaries do not require repeated approval for work already authorized by the user.
 
-Execution permission and research authorization are separate.
+Determine activity authority from the current human instruction and applicable rules, including the [default delivery permissions](identity.md#shared-research-git-authority-and-integration) for authorized joint Task work.
+Apply the host's permissions to the files, network, commands and tools the operation requires.
+For remote operations, also check the actual target, account access, branch relationship and platform restrictions under the [connection responsibilities](identity.md#git-and-github-connection-checks).
+
 Test a suitable available interpreter with a harmless startup and workspace I/O check before a large batch; use explicit runtime paths when launcher resolution is unreliable.
 Diagnose executable access, credential visibility and file permissions in the actual execution account.
 A sandbox failure alone does not establish a broken interpreter, expired credentials or defective research content.
-Follow the host's escalation requirements where needed; do not weaken sandbox protections or request unrestricted interpreter approval to avoid repeated prompts.
+Use the host's normal permission path when needed, preserving sandbox protections and limiting any request to the actual operation.
+When an operation requires host approval, briefly explain the applicable human authority, actual target and intended effects using the current instruction, relevant materials and operation facts.
+For Git delivery, include the instruction's relation to the collaboration, the repository and branch, and the outgoing work as needed to explain the request.
+Distinguish what the human explicitly authorized from any permissions that follow from activity rules and the agent's judgment of the batch.
+For ordinary Claim registration, host permission concerns execution, and the Claim's mathematical and review obligations follow its material rules.
 
-Distinguish a content/integrity failure, an environment-caused verification gap, and a nonblocking reminder.
-Report the failing operation and concrete evidence, preserve successful results for their unchanged scope, and choose a targeted next step.
-Ordinary Claim registration does not gain a scientific approval requirement merely because its command needs execution permission.
+Distinguish a host refusal, an actual access or platform error, and a gap in activity authority or publication scope from the observed evidence.
+If the host refuses a push before it runs, report that refusal and leave remote write access, credential validity and branch restrictions unconfirmed unless separately established.
+After an explicit host refusal, use its normal permission or review path and retry only when that path allows it.
+Use a genuinely safer alternative only when the host permits it and the activity authority covers it.
+Changing tools, APIs, invocations or branches, splitting the same operation, or weakening security settings cannot be used to bypass a refusal.
+When human action is needed, identify the specific host requirement and its stated reason.
+Report the blocked operation, concrete evidence, any saved commit and the unfinished scope in the ordinary response or existing responsible material.
+Keep applicable Task/E limits and delivery ordering, and continue authorized work independent of the obstacle.
+
+Distinguish a content or integrity failure, an environment-caused verification gap, and a nonblocking reminder.
+Preserve successful results where their scope is unchanged and choose a targeted next step.
 Batch authorized operations where practical without hiding their effects or broadening their authority.
 
 Shared-worktree Git delivery follows the [serial delivery interval](identity.md#submission-checks): one coordinated batch and stable index/tip at a time, while unrelated research can continue.
