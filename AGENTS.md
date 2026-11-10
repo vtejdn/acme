@@ -9,7 +9,8 @@ Apply the [core principles and interpretation](framework/readme.md#core-principl
 Apply the current human request, actual operator and activity-specific authority under the [identity rules](framework/rules/identity.md) and applicable [personal or manuscript choices](framework/rules/preferences.md).
 Autonomous research requires the selected Task and its stable E under the [execution rules](framework/rules/execution.md); maintenance or discussion does not select a Task.
 
-Apply the [sentence-oriented source layout](framework/rules/organization.md#sentence-oriented-source-layout) to maintained prose and inspect the actual changed sentences and syntax before delivery, within the assigned role.
+Follow the [repository writing language](framework/rules/organization.md#repository-writing-language) and [sentence-oriented source layout](framework/rules/organization.md#sentence-oriented-source-layout) rules for maintained prose.
+Inspect the actual changed sentences and syntax before delivery, within the assigned role.
 Preserve unrelated working changes, fixed mathematical versions, necessary decisions and evidence, and acquired provenance.
 Current status belongs to responsible materials and their explicit decisions; navigation supplies no authority.
 

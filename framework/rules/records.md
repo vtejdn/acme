@@ -613,7 +613,9 @@ Classify each unresolved issue once by its actual nature; if its location is wro
 Mathematical erratum cleanup follows its actual mathematical review and affected-author confirmation duties, without an additional conformity-acceptance requirement.
 Completed and accepted incidental conformity repairs need no retrospective item, independent inspection report or correction log.
 Failed, unrepaired, unaccepted and out-of-scope conformity problems retain the concrete scope needed for continuation, creating the worklist only when such content is needed.
-Keep only a material/title or known source locator, concrete issue, affected scope, actual represented human, affected local material author, current next action and necessary references or unfinished reason, in the repository's actual document language; include rule grounds for conformity issues rather than inventing a violation for ordinary literature preparation.
+Keep only a material/title or known source locator, concrete issue, affected scope, actual represented human, affected local material author, current next action and necessary references or unfinished reason.
+Use the [repository writing language rule](organization.md#repository-writing-language) for worklist entries.
+State the rule grounds for conformity issues and the concrete need for ordinary literature preparation.
 No dedicated item number, discovery timestamp, owner enumeration, fixed schema, per-file PASS list or complete activity log is required.
 The worklist coordinates outstanding conformity and concrete literature-preparation work; it does not mirror C/T assessments, proof gaps, review conclusions or effective execution conditions, and an ordinary dependency update creates no item automatically.
 An actual conformity issue confirmed within ordinary authorized work may be added to the same worklist without launching a whole-library inspection.

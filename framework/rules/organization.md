@@ -1,10 +1,5 @@
 # Repository Organization
 
-Locally authored research records, framework rules, reports and code comments use English by default.
-Official non-English human-facing translations maintained alongside their responsible originals are permitted in any language and explain the same framework without becoming a competing rule authority.
-Existing Chinese guides retain that role; planned German, French, Japanese and later editions gain navigation entries only when their actual files are added.
-An arbitrary non-English research note is not an official translation.
-Other explicitly authorized document-language scopes retain their actual instructions and role boundaries; original quotations and acquired material retain their source-preservation rules.
 Directory names use short lowercase English words without spaces; registered citation keys keep their case.
 
 The root README is an entry point.
@@ -30,6 +25,24 @@ Current execution state and necessary still-effective conditions belong in E und
 Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; shared bibliographic fields in mathematics/literature/references.bib, useful author edition/source notes in source README and inspected mathematics/limits in rolling U or adequate C/L.
 Machine-local paths and secrets are not framework defaults.
 Link the responsible record when summarizing it.
+
+## Repository writing language
+
+Use English when writing or substantively revising repository prose, except in non-English editions of the user manual and instruction examples.
+Write each localized edition in its own language.
+This rule applies to blueprints, reports, code comments and Git-ignored local notes.
+Preserve exact source evidence, including original quotations, and follow the [existing preservation and adaptation rules](records.md#receiving-and-adapting-selected-content) for acquired material.
+
+Apply an author's writing choices within this rule.
+Use the adopted language of an existing manuscript or locally maintained publication page to guide reading, review and preservation of its existing prose.
+Use English for new review comments on those documents and for substantive revisions of their prose.
+For edits limited to links, paths or version numbers, preserve the surrounding prose.
+If a necessary substantive edit cannot satisfy this rule within the authorized purpose, preserve the affected passage and resolve the specific conflict with the author under the [instruction scope rule](preferences.md#instruction-scope).
+Complete independent authorized work.
+
+During setup, preserve the human's exact project display name and abbreviation in the root `readme.md` heading, using Markdown escaping where needed for faithful rendering.
+Preserve the human's exact attribution name in the project notice in `LICENSE`.
+Write the surrounding explanatory prose in English and follow the existing rules for [project names](identity.md#repository-names-and-use-environments) and [project notices](identity.md#project-notices-during-setup).
 
 ## Sentence-oriented source layout
 

@@ -9,6 +9,7 @@ A policy locator reports the responsible files; it does not interpret instructio
 For writing, apply exactly four layers, from lowest to highest: general mathematical writing rules; the responsible author's author-wide personal policy; that author's applicable subfield policy; the manuscript-specific choice.
 This order governs notation, terminology, definition presentation, source/model selection and style alike.
 A higher applicable layer overrides the conflicting portion and inherits everything else.
+Apply the author's writing choices within the [repository writing language rule](organization.md#repository-writing-language).
 No repeated approval is needed.
 Source observations in responsible source-reading records are evidence for choices, not a fifth layer; definitions, terminology and symbols use the common def/source workflow.
 The current author's new instruction updates the layer and scope it actually names; a paper-specific request never becomes author-wide automatically.
@@ -65,7 +66,8 @@ A genuinely unresolved same-layer conflict needs only the missing scope/choice c
 <a id="recording-and-updating"></a>
 ## Recording Choices
 
-Record explicit human instructions or approved proposals promptly in English as individual entries at the responsible scope.
+Record explicit human instructions or approved proposals promptly as individual entries at the responsible scope.
+Follow the [repository writing language rule](organization.md#repository-writing-language) when writing those entries.
 Each entry states the current rule and its applicable scope.
 Do not record instruction dates, adoption or supersession history, or administrative metadata.
 Update the affected entry directly when a rule changes.
