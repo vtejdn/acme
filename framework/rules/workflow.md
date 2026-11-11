@@ -512,13 +512,14 @@ Keep a continuing argument or computation in an appropriate D or J with its actu
 Preserve precise conditions, decisive grounds, established scope and unresolved checks, with necessary programs, inputs and evidence at their responsible homes.
 Give the responsible material locations, checked scope, unresolved conditions and actual mathematical and review status in the reply or handoff.
 For read-only or write-limited work, an unresolved author identity or an effective stop, preserve available evidence within actual authority and report the precise finding, existing evidence and what remains to be recorded.
-Apply the existing Task/E conditions to research advancement or resumption and the actual delivery authorization to commits and pushes.
+Apply the existing Task/E conditions to research advancement or resumption and the [common delivery default](identity.md#submission-checks) to authorized repository writing.
 
 Fixing material does not itself establish a result: record its actual mathematical and review status under the [registration and acceptance rules](#work-obligations).
 This responsibility does not require a new material for every experiment, a separate closeout report or an additional approval gate.
 Applicable execution stops take precedence; preserve available evidence and the necessary handoff under those rules rather than extending research or review to finish organization.
 
-For human-authorized joint Task participation, the main agent assesses the retained progress for [timely collaborative delivery](tasks.md#shared-git-research) and completes a useful coherent commit/push under the [default joint-research permissions](identity.md#shared-research-git-authority-and-integration), honoring explicit human limits without seeking a separate delivery grant.
+For authorized repository writing with an applicable project remote, the main agent assesses remaining delivery at closeout and completes a useful coherent commit and push under the [common delivery default](identity.md#submission-checks), honoring explicit human limits.
+Judge collaborative progress sharing under the [Task guidance](tasks.md#shared-git-research) when that activity applies.
 Major progress may warrant earlier sharing during the round; closeout is not a fixed-frequency commit obligation, a proof verdict or permission to bypass an effective stop.
 
 Before ending a task, ensure the responsible records support continuation and give the user a concise update with:
@@ -539,7 +540,7 @@ Prefer small, reviewable edits and reproducible artifacts.
 Do not overwrite necessary mathematical or review evidence, remove source material, rewrite Git history, publish results, contact third parties, or incur costs without authorization covering that action.
 These boundaries do not require repeated approval for work already authorized by the user.
 
-Determine activity authority from the current human instruction and applicable rules, including the [default delivery permissions](identity.md#shared-research-git-authority-and-integration) for authorized joint Task work.
+Determine activity authority from the current human instruction and applicable rules, including the [common delivery default](identity.md#submission-checks) for authorized repository writing.
 Apply the host's permissions to the files, network, commands and tools the operation requires.
 For remote operations, also check the actual target, account access, branch relationship and platform restrictions under the [connection responsibilities](identity.md#git-and-github-connection-checks).
 
@@ -548,7 +549,7 @@ Diagnose executable access, credential visibility and file permissions in the ac
 A sandbox failure alone does not establish a broken interpreter, expired credentials or defective research content.
 Use the host's normal permission path when needed, preserving sandbox protections and limiting any request to the actual operation.
 When an operation requires host approval, briefly explain the applicable human authority, actual target and intended effects using the current instruction, relevant materials and operation facts.
-For Git delivery, include the instruction's relation to the collaboration, the repository and branch, and the outgoing work as needed to explain the request.
+For Git delivery, identify the writing assignment, applicable default or explicit delivery instruction, actual repository and branch, and outgoing scope as needed to explain the request.
 Distinguish what the human explicitly authorized from any permissions that follow from activity rules and the agent's judgment of the batch.
 For ordinary Claim registration, host permission concerns execution, and the Claim's mathematical and review obligations follow its material rules.
 
@@ -609,7 +610,7 @@ Human record authorship and mathematical-review evidence remain separate facts.
 
 ## Human attribution and Git submission
 
-Follow the [identity rules](identity.md) for the actual worktree operator and serial Git delivery.
+Follow the [common delivery default and serial coordination](identity.md#submission-checks) under the actual worktree operator and activity authority.
 Inspect intended paths/index, authorship, resulting commit, outgoing branch and actual remote result.
 A plain commit/push does not run material scans or repeat unchanged construction/research checks.
 Within the authorized remote-delivery sequence defined by the [identity rule](identity.md#submission-checks), publish its pending committed batch first, with only the existing smallest-blocker-repair exception; preserve concurrent work and verify the remote after an authorized push.

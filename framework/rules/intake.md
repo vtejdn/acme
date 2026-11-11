@@ -340,4 +340,7 @@ The agent keeps public prose free of private lookup links, and actual explicit t
 For callers choosing the independent optional `material.py import`, its roots, dependency edges, prepared text, file arrangements and publication protocol follow the [input format](../material-format.md#personal-import-input).
 Those helpers protect their explicitly captured inputs, collisions, allocation and selected publication; they are not a required import pipeline, and only actual foreign branches create intake records.
 Report the actual transferred scope, necessary changes, missing inputs and real build/check limits in the ordinary delivery reply, without a separate export report or transfer register.
-This action supplies no commit, push, public-release or research-resumption authority and initiates no whole-library migration or deduplication.
+Authorized personal import and export preparation use the [common Git delivery default](identity.md#submission-checks) for their actual repository writing scope, honoring explicit human limits such as commit-only work.
+Select the actual receiving or export project destination under the [target-selection rule](identity.md#shared-repository-updates-and-integration).
+Public-release operations beyond ordinary scoped Git delivery and research resumption require separate applicable authority.
+Select whole-library migration or deduplication only under authorization for that scope.

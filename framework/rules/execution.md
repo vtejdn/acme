@@ -7,7 +7,7 @@ An ordinary individual local Task selected for execution uses one stable local E
 A joint T is only a common contract and coordination entrance, with no E, directly associated S, team allowance or direct execution.
 Continue its goal through the actual human's selected individual T, adopted joint contract and stable E under the [Task rule](tasks.md#joint-tasks-and-participation).
 A Git working repository with a configured remote applies the [common work-start update](workflow.md#shared-repository-work-starts) before substantive task work, including single-human, ordinary and participating individual Tasks.
-Incoming commits and [joint progress delivery](tasks.md#shared-git-research) neither adopt a different exact joint contract nor activate or resume E, reset a stop or renew effective local limits.
+Incoming commits and [ordinary Git delivery](identity.md#submission-checks) neither adopt a different exact joint contract nor activate or resume E, reset a stop or renew effective local limits.
 All physical Task versions, authorized resumptions and later reactivations share that address.
 Task creation, reading, maintenance and ordinary import do not require or create E.
 Prepare or reuse it only when the actual human's ordinary Task is selected for local execution under adequate authority and necessary conditions; a new boundary defaults to not-running and supplies no fresh authority or allowance.

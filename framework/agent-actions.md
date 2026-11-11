@@ -38,6 +38,7 @@ This covers single-human projects, ordinary and joint research, writing, literat
 Without Git or a configured remote, perform no project update or automatic setup; explicit offline, read-only or fixed-input limits and actual failures follow the common rule.
 Apply the [common connection-recovery responsibility](rules/workflow.md#connection-recovery) within the authorized update before treating a connection failure as an unresolved obstacle.
 The daily framework query below and an earlier same-day project query do not replace that responsibility.
+Authorized repository writing with an applicable project remote also follows the [common delivery default](rules/identity.md#submission-checks), within its actual scope and explicit human limits.
 
 Apply the [official version-check rule](versioning.md#official-version-check) before the selected work.
 Read repository/config.json and the ignored repository/framework-update-check.json; honor an explicit offline instruction and the repository Boolean setting.
@@ -154,7 +155,7 @@ Synchronize already published official human-document bodies under the [common u
 Judge mixed public-file merges and retired files by their actual local role, preserving authorship and the separate responsibility for new human-document authoring.
 Finish required adaptation and checks before marking the target installed version; on failure restore this operation's changes or report actual incomplete restoration while preserving foreign work and necessary recovery content.
 Reread new applicable rules before affected work continues; an upgrade grants no research resumption.
-In an actual shared Git repository, complete the [authorized upgrade's scoped Git delivery](versioning.md#upgrading-an-installed-framework) before reporting its result or continuing the original task, including when upgrading before that task or under a separate upgrade assignment.
+With an applicable project remote, complete the [authorized upgrade's scoped Git delivery](versioning.md#upgrading-an-installed-framework) before reporting its result or continuing the original task, including when upgrading before that task or under a separate upgrade assignment.
 Use the [existing delivery action](#commit-or-push-requested-work), honoring explicit local-only, offline or postponed-push instructions and reporting any unfinished delivery distinctly.
 Report actual from/to versions, target commit, checks, applicable Git delivery result and remaining limits, then perform existing creator cleanup.
 Ordinary authorized retrieval, editing and selected checks need no additional routine approval or mandatory installer.
@@ -200,8 +201,9 @@ Read relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` an
 When that selected execution has no local E, follow the [on-demand preparation rule](rules/execution.md#responsibility-and-version-boundary) using adequate real instructions and conditions; absence neither resets limits nor grants resumption.
 For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
 Complete or reuse the [common work-start update](rules/workflow.md#shared-repository-work-starts) before substantive research in a Git working repository with a configured remote, using relevant incoming work for mathematical reuse before any necessary external search.
-Human-authorized joint Task participation also uses its [default delivery permissions](rules/identity.md#shared-research-git-authority-and-integration) and [progress-sharing rule](rules/tasks.md#shared-git-research), including continuation through an already participating individual T/E.
-Reuse the known repository, collaboration branch and work scope, honoring explicit human limits without another mode adoption or push grant.
+Authorized research writing follows the [common delivery default](rules/identity.md#submission-checks).
+Apply the [collaborative progress-sharing rule](rules/tasks.md#shared-git-research) to actual joint participation, including continuation through an already participating individual T/E.
+Reuse the known project repository, branch and actual work scope, honoring explicit human limits.
 Follow [execution rules](rules/execution.md#current-contents-and-retained-limits) before autonomous advancement.
 Use one responsible main agent and one stable E for the Task family; a new chat, revision or policy expiry does not reset allowance or resume a stopped run.
 An actually authorized continuation prepares the relevant exact Task reference and current conditions directly; a pointer update preserves stops unless actual resumption is authorized.
@@ -247,7 +249,7 @@ Navigation derives actual declarations and selected evidence metadata without ch
 Retire a redundant D only after checking its actual historical uses and preserving any necessary content under the [draft rule](rules/ledger.md#working-drafts-and-fixed-findings).
 A setup-only residue whose mathematics is already fixed needs no replacement account or move receipt.
 Before handoff, give still-effective literature follow-up its [maintenance entrance](rules/records.md#pending-literature-work) rather than leaving the only remaining action in a Draft or reply.
-For human-authorized joint Task work, judge the retained progress under the [collaboration rule](rules/tasks.md#shared-git-research), completing a useful coherent batch through the [delivery action](#commit-or-push-requested-work) under the default permissions and actual human limits, without a separate first or recurring delivery approval.
+For authorized repository writing with an applicable project remote, assess remaining delivery at closeout and complete a useful coherent batch through the [delivery action](#commit-or-push-requested-work) under the [common default](rules/identity.md#submission-checks) and actual human limits.
 Major progress may be shared during the round; preserve truthful status and local-only contents, and report any concrete unfinished delivery without extending research past an effective stop.
 Return established results, remaining obligations and the next continuation point.
 Round closeout neither resolves the whole Task nor resumes research after an instruction to stop at that boundary.
@@ -501,7 +503,8 @@ Return actual retained content, necessary adaptations, foreign acquisition scope
 
 ## Commit or push requested work
 
-Use this action for a direct delivery instruction, [authorized shared-repository upgrade delivery](versioning.md#upgrading-an-installed-framework) or the [default joint-research permissions](rules/identity.md#shared-research-git-authority-and-integration) within actual human-authorized joint Task work, applying explicit human limits and the actual repository, branch and publishable scope.
+Use this action for ordinary delivery of an authorized repository writing task with an applicable project remote under the [common default](rules/identity.md#submission-checks), or for a direct commit/push instruction.
+Apply explicit human limits and the actual repository, branch and publishable scope.
 Read [serial delivery](rules/identity.md#submission-checks), the human-registered repository name, selected paths, existing index, actual operator/signature and intended branch/tree.
 Coordinate one stable delivery interval, preserve unrelated staged work and contributor identities, stage the intended deliverable, commit and confirm the actual resulting tree.
 Reinspect the affected delivery scope if relevant bytes or the index change; draft work may be committed with truthful status.
@@ -509,7 +512,7 @@ For an authorized push, establish the actual target and account/channel under th
 Before publishing, inspect the whole outgoing commit chain, including its scope and contributor identities.
 If the operation requires host approval, apply the [permission and refusal rules](rules/workflow.md#workspace-boundaries) using the actual human authority, destination and scope of this delivery.
 Push the authorized tip and verify the remote result.
-Apply the [shared-research integration and failure rule](rules/identity.md#shared-research-git-authority-and-integration) to new remote commits, a rejected push or an unclear publication scope, preserving unrelated work and the existing pending-batch boundary.
+Apply the [common integration rule](rules/identity.md#shared-repository-updates-and-integration) and [delivery scope](rules/identity.md#submission-checks) to new remote commits, a rejected push or an unclear publication scope, preserving unrelated work and the existing pending-batch boundary.
 Handle connection failures under the [common recovery responsibility](rules/workflow.md#connection-recovery) within the actual delivery authority.
 At actual project-remote setup, a relevant target change or a remote operation needing fresh facts, apply the [non-blocking name suggestion](rules/identity.md#repository-names-and-use-environments) for that selected GitHub project.
 Keep a differing local name unless the human chooses to update it; official-source, intake-source and reference-only upstream names do not select the repository name.

@@ -112,10 +112,11 @@ One explicit upgrade assignment covers ordinary retrieval, agent-selected adapta
    On failure restore this operation's affected changes while preserving foreign work; incomplete restoration requires a truthful state and remaining-limit report rather than a completed-upgrade claim.
    Preserve any still-needed recovery content before cleanup or handoff; a handoff cannot depend on recovery files held only in `.tmp/`.
    Reread newly applicable rules before affected work continues, preserving current assignment, stopped conditions and allowances; upgrading selects or resumes no research.
-5. In an actual multi-author shared Git repository, commit and push the verified upgrade and necessary adaptations to its actual agreed collaboration remote and branch through the [existing Git delivery action](agent-actions.md#commit-or-push-requested-work), then confirm the remote result.
-   This applies both to an upgrade before starting the original task and to a separately assigned upgrade, without a joint Task or another routine commit/push approval.
+5. With an applicable project remote, deliver the verified upgrade and necessary adaptations through the [common Git delivery default](rules/identity.md#submission-checks) and [delivery action](agent-actions.md#commit-or-push-requested-work), then confirm the actual remote result.
+   This applies both to an upgrade before starting the original task and to a separately assigned upgrade in a single-author or collaborative repository.
    Reuse existing identity, serial index, outgoing-scope, integration and delivery checks, limiting the batch to this upgrade and its necessary adaptations while preserving unrelated work and staged contents.
-   Honor explicit local-only, offline, no-push or postponed-synchronization instructions; without Git or a collaboration remote, initialize neither Git nor a remote for this step.
+   Honor explicit local-only, offline, no-push or postponed-synchronization instructions.
+   Without Git or an applicable project remote, complete the authorized local upgrade without creating either for delivery.
    On a connection, permission or integration failure, report local installation, any saved commit and unfinished push distinctly under the existing failure rules, continuing independently supported authorized work without claiming remote success.
    Upgrade delivery neither resumes research nor supplies unrelated publication authority.
 

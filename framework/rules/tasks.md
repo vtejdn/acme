@@ -206,11 +206,8 @@ Neither disposition resets execution conditions, creates an allowance or fabrica
 
 ### Shared Git research
 
-Participants using an agreed shared Git remote obtain current collaborator information through the [common work-start update](workflow.md#shared-repository-work-starts) and share useful progress under the [default joint-research Git permissions and integration rule](identity.md#shared-research-git-authority-and-integration).
-Human authorization to establish, advance or continue joint Task collaboration includes routine retrieval, integration, commits and pushes within that work's scope by default, with explicit human limits taking precedence.
-The same default applies when continuing an authorized individual T/E that participates through its exact adopted joint contract; keep its ordinary Task type and do not require renewed joint-participation or push wording on each continuation.
-Apply these permissions directly without a separate collaboration-mode adoption, delivery grant, permission sentence, new T/E decision or authorization record, while judging the actual progress, batch and sharing time.
-Without Git or a configured project remote, this rule creates no project-network duty; a single-human Git project with a remote still applies the common work-start update without acquiring joint-research publication authority.
+Participants using an agreed shared Git remote obtain current collaborator information through the [common work-start update](workflow.md#shared-repository-work-starts).
+Authorized ordinary and joint Task writing, including continuation through an individual T/E with its adopted exact joint contract, uses the [common Git delivery default](identity.md#submission-checks) within actual human limits.
 Updates by another author in the same shared repository use ordinary Git collaboration and create no intake operation; receipt from a distinct repository still fixes the actual source commit under the [intake rules](intake.md).
 Project collaboration updates are separate from the [daily official framework version check](../versioning.md#official-version-check), which neither refreshes the research branch nor authorizes an upgrade.
 
@@ -224,4 +221,4 @@ First retain the necessary content, truthful mathematical status, hypotheses, ch
 Drafts and unresolved gaps can be shared truthfully; commit or push creates no proof, independent review or adoption and imposes no new independent inspection or complete regression requirement on every batch.
 Keep E, private settings, original literature, temporary files and ignored computation outputs within their existing local boundaries; collaboration supplies no reason to upload them or recover them as missing remote files.
 Incoming commits do not automatically replace an individual's exact adopted joint contract or change its Task/E authority, effective stops or allowance.
-Apply the [Git failure and delivery scope](identity.md#shared-research-git-authority-and-integration) to actual obstacles while preserving those individual conditions.
+Apply the [common Git delivery and failure rules](identity.md#submission-checks) to actual obstacles while preserving those individual conditions.

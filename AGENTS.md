@@ -20,7 +20,7 @@ Tool results establish neither mathematical equivalence, review sufficiency nor 
 Before creating/registering, retaining or reorganizing substantive mathematics/evidence or retiring drafts, read the [common content decision](framework/rules/records.md#substantive-material-retention), including before direct creation in C/J/R/L/U or another responsible home.
 The [storage rule](framework/rules/organization.md#temporary-storage) reserves `.tmp/` for disposable operational byproducts and creator cleanup.
 
-For Git/GitHub remote operations, determine authority from the current human request and applicable activity rules, including the [default delivery permissions](framework/rules/identity.md#shared-research-git-authority-and-integration) for authorized joint Task work.
+For Git/GitHub remote operations, apply the [common delivery default](framework/rules/identity.md#submission-checks) to authorized repository writing with an applicable project remote, subject to explicit human limits and actual execution permissions.
 Establish the actual target and relevant channel or account under the [connection responsibilities](framework/rules/identity.md#git-and-github-connection-checks).
 Choose relevant checks from current evidence and the actual operation; local skills and authentication probes are optional aids rather than universal prerequisites.
 Individual local operations require no repeated network preflight.

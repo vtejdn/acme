@@ -13,7 +13,7 @@ On a connection failure, apply the [common recovery responsibility](workflow.md#
 A sandbox's lack of credential access does not establish expired credentials.
 Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
 Connection success establishes the access actually exercised.
-Determine authority for remote changes from the current human instruction and the applicable activity rules, including the [default delivery permissions](#shared-research-git-authority-and-integration) for authorized joint Task work.
+Determine authority for remote changes from the current human instruction and the applicable activity rules, including the [common delivery default](#submission-checks) for authorized repository writing.
 Local reading, edits, checks, commits and file copying require no per-operation network preflight; a repository task in a Git working copy with a configured remote still applies the [work-start update](workflow.md#shared-repository-work-starts) before substantive work.
 The [daily metadata read](../versioning.md#official-version-check) retains its bounded public HTTPS endpoint, cache and separately authorized upgrade boundary.
 
@@ -289,14 +289,35 @@ Re-read shared state after acquiring the lock; do not hold it across network ret
 <a id="submission-checks"></a>
 ## Git delivery
 
+An authorized repository writing task with an applicable project remote includes ordinary scoped Git commit and push of its deliverable by default, subject to explicit human limits and actual execution permissions.
+Apply this default in single-author and collaborative repositories, including mathematical writing, manuscript and literature maintenance, material transfer, framework development, installation, upgrades and requested target copying.
+The actual activity determines writing authority and content responsibilities, including the existing roles in framework development.
+Read-only inspection, source browsing and discussion without an authorized retained write do not select delivery.
+
+Select the actual project repository, remote and branch from the current instruction, existing arrangements and native Git facts under the [target-selection rule](#shared-repository-updates-and-integration).
+The current branch's upstream normally supplies that target unless the human specifies another one.
+Clarify only a decisive unresolved destination or publication-scope conflict.
+An official source, intake source or reference-only remote supplies no project publication destination by itself.
+A configured remote or successful connection alone supplies no writing assignment.
+Without Git or an applicable project remote, complete the authorized local work within its actual scope.
+Honor explicit read-only, local-only, commit-only, offline, postponed-synchronization and publication-scope limits.
+Use the default for the current writing assignment without a separate first or recurring push grant, mode adoption, permission sentence or authorization record.
+
 Research proceeds in parallel; Git delivery within one human's local worktree proceeds serially.
-Before research writing or delivery, a Git-managed project has its human-chosen registered name and the actual operator binding; native Git supplies no such authorization by itself.
+Before research writing or delivery in a Git-managed research project, confirm its human-chosen registered name and actual operator binding.
 One responsible agent coordinates each intended batch, index and commit.
 Preserve another agent's staged work; identify actual paths rather than a research-line glob.
 Keep submitted files stable, inspect the exact index, and confirm the completed commit matches the intended deliverable.
 Navigation in a commit must resolve within that same deliverable.
 If relevant files or index change, repeat the affected delivery inspection.
 Ordinary coordination does not establish a new lock, permanent role or research-wide pause.
+
+The responsible main agent chooses a useful coherent batch and its delivery time from the actual assignment and work ready to share.
+Share useful progress earlier when appropriate and assess remaining delivery at task or round closeout, completing the current deliverable within actual limits.
+Include only authorized task changes, necessary integration and bounded repairs, preserving unrelated work, each contribution's authorship and necessary evidence.
+Inspect the actual intended tree and whole outgoing commit chain, including earlier commits the push would make reachable.
+Resolve a concrete outgoing-scope conflict within existing coordination and authority before publication.
+When there is no in-scope change or pending deliverable, make no empty commit or ceremonial push.
 
 Plain commit/push requests perform Git delivery.
 Inspect intended scope, local actor, effective author/committer, actual outgoing commit identities, branch relationship and the intended tree.
@@ -315,7 +336,12 @@ Other unpushed commits do not create that sequence; a local-only commit needs ne
 A worktree-only fix does not repair committed HEAD.
 Preserve concurrent work and each contribution's authorship.
 Resolve divergence and inspect the affected delivery again if the local or remote tip changes.
-Commit/push requests do not authorize history rewriting or force-push; any rewrite requires explicit human authority.
+If the remote advances, including after a non-fast-forward rejection, retrieve and integrate under the [common integration rule](#shared-repository-updates-and-integration), then inspect affected changes and retry within existing authority and effective limits.
+Handle other rejections according to their actual cause and preserve the existing limits on retries and history rewriting.
+Use the project's actual branch and contribution requirements, which may select its default branch.
+When the platform requires a PR or blocks the selected branch, handle that constraint within the actual authority and report any remaining delivery limit.
+Ordinary delivery uses the selected repository's existing destination and visibility.
+Visibility changes, creating or redirecting remotes, PR creation, GitHub Releases, branch-protection changes, history rewriting and force-push require authority covering those separate operations.
 A supplied login is not authentication, and an email or remote URL does not establish the logged-in person.
 
 Let Git perform file merging, then inspect the actual affected result and resolve conflicts under the [maintenance rule](#collaboration-maintenance-and-conflicts).
@@ -334,7 +360,7 @@ Distinguish the project target from a reference-only upstream, external intake s
 If only reference sources are configured and no applicable project target is established, explain that boundary or resolve the decisive target gap before dependent work.
 An actual native Git fetch may establish fresh branch facts and obtain the needed objects together, without a fixed connection or account-probe sequence.
 This authority includes a local merge commit needed for the authorized integration; it does not by itself authorize committing the task's other work or publishing remotely.
-Actual delivery uses its existing authorization, including the joint-research default below.
+Authorized repository writing uses the [common delivery default](#submission-checks) for its actual deliverable.
 
 Choose native Git retrieval and integration from the fresh commit relationship and actual target, without prescribing one command sequence, helper or whole-library check.
 When the remote tip is already contained locally, continue without a merge or push; fast-forward when possible, and use an ordinary merge preserving both histories when both sides have new commits.
@@ -358,28 +384,6 @@ Apply the [common connection-recovery responsibility](workflow.md#connection-rec
 If a connection, permission or integration obstacle remains, report the concrete unconfirmed or unintegrated scope and its impact, defer dependent work and continue independently supported authorized work.
 An explicit successful-synchronization requirement or effective execution stop takes precedence.
 Do not manufacture success through repeated queries, force-push, history rewriting or overwriting local work, or create a failure queue or retry ledger.
-
-### Shared research Git authority and integration
-
-When a human actually authorizes establishing, advancing or continuing [joint Task collaboration](tasks.md#shared-git-research), routine fetch, pull/merge, commit and push within that assigned collaboration scope are permitted by default.
-This includes continuation through an individual T/E participating under its adopted exact joint contract.
-Apply explicit human restrictions such as local-only work, commit without push, postponed synchronization or limited publication content; an absent separate push grant does not block the default.
-Use the current assignment and existing participation facts without asking for separate mode adoption, first-delivery approval or recurring permission, or requiring a permission sentence, new T/E decision or authorization record.
-Determine the actual repository, collaboration branch and publishable scope from the current Task, existing agreements and native Git facts under the [common integration rule](#shared-repository-updates-and-integration), without a URL/branch mirror, authorization table, flag or receipt.
-Clarify only a genuinely missing destination or branch needed for execution, rather than asking again whether routine joint-research delivery is allowed; actual account capabilities and platform restrictions still apply.
-A joint file, active label, clone, registered identity, configured remote or successful connection alone selects no research or delivery.
-Apply the default to the currently assigned human-authorized collaboration, without scanning every joint Task or treating Git permissions as permission to begin or resume research.
-Handle target changes within that scope from actual facts and existing arrangements; publication beyond it, unrelated remote operations, PR creation, history rewriting, force-push and branch-protection changes are outside these default permissions.
-
-Before a push, inspect the whole outgoing commit chain and its actual destination under [serial delivery](#submission-checks), rather than treating the currently staged paths as the whole publication scope.
-Judge a multi-file batch by its actual content and impact, and use the branch agreed for the collaboration, which may be `main`.
-Resolve an unclear or unauthorized outgoing scope before publishing it, without automatically creating another branch or rewriting history to bypass that issue.
-Obtain the fresh remote facts needed for delivery.
-If the remote advances, including when Git reports a non-fast-forward rejection, retrieve and integrate under the [common integration rule](#shared-repository-updates-and-integration), then inspect affected changes and retry within existing authority and effective limits.
-Handle other remote rejections according to the actual cause and preserve the existing limits on retries and history rewriting.
-Use the project's actual collaboration branches and contribution requirements; protection or a PR requirement does not itself authorize another remote action or a new publication workflow.
-Verify the actual remote result and apply the common failure handling, identifying any saved commit or unfinished push scope in the ordinary response or existing material.
-Keep the existing pending-batch ordering within an authorized delivery sequence; unrelated unpublished commits do not block all local research.
 
 ### Explicit material checks
 
