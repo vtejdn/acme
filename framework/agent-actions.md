@@ -15,6 +15,8 @@ When actually selected content or input is incompatible with current rules, read
 Use ordinary reading, editing, current receiving preparation, direct-reference repair or another adequate tool path; an optional helper's refusal supplies a concrete limitation rather than a requirement to stop all work or upgrade the source repository.
 Judge the needed scope, responsible home, retention/reuse, actual mathematical changes and checks under the [content and adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving authorship, fixed evidence, true provenance and Task/E limits.
 Pure metadata, layout or link maintenance creates no mathematical decision, version, review, acquisition or timestamp; genuine changes retain their applicable obligations.
+Apply the [common literature registration and source-preparation rule](rules/literature.md#source-preparation) to works of confirmed identity and reference value identified during any authorized repository action or related discussion.
+Apply the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability) when publishing declarations, associations or decisions that rely on earlier content.
 When a repository question or discussion produces mathematics worth retaining, apply the same pre-delivery preservation rule as for an exploration round within the actual author and write scope.
 See [Closing an Exploration Round](rules/workflow.md#exploration-round-closeout).
 Clarify only remaining decisive intent, authority, identity correspondence or necessary facts while continuing independent authorized work, without a routine adaptation approval, whole-library cleanup or compatibility parser.
@@ -34,6 +36,7 @@ For a Git-managed working repository with a configured remote, apply the [common
 The main agent determines the applicable project target and protected work, obtains fresh branch facts and needed commits, completes necessary authorized local integration, then reads affected current rules and inputs before substantive task work.
 This covers single-human projects, ordinary and joint research, writing, literature work, transfer preparation, review, maintenance, framework development and upgrade preparation; continuous steps and subagents in that working copy reuse the actual result.
 Without Git or a configured remote, perform no project update or automatic setup; explicit offline, read-only or fixed-input limits and actual failures follow the common rule.
+Apply the [common connection-recovery responsibility](rules/workflow.md#connection-recovery) within the authorized update before treating a connection failure as an unresolved obstacle.
 The daily framework query below and an earlier same-day project query do not replace that responsibility.
 
 Apply the [official version-check rule](versioning.md#official-version-check) before the selected work.
@@ -86,7 +89,8 @@ Create no Git repository, remote or initial commit for this check.
 
 As soon as either side is known to be nonempty, preserve files, index, configuration and both histories, stop this installation and report which side contains what project work to the human author.
 No check of the other side is then required, and do not pull or merge, clear or move contents, or switch to a child or different directory to continue installation.
-If an applicable remote cannot be confirmed because of offline limits, unavailable tools, permissions or query failure, preserve the target and report the unknown fact; resume installation only with sufficient empty-target evidence.
+Handle connection failures under the [common recovery responsibility](rules/workflow.md#connection-recovery) within the empty-target check's authority.
+If an applicable remote remains unconfirmed within the actual offline, tool, permission or query limits, preserve the target and report the unknown fact, resuming installation only with sufficient empty-target evidence.
 Only after all applicable targets are confirmed empty, install the selected official version or fixed-commit files at that project root and complete necessary setup.
 An explicitly selected new root that does not yet exist may be created after confirming any applicable remote condition.
 When Git is wanted, use or establish the human project's own repository within actual setup authority, without adopting official history by default.
@@ -141,6 +145,7 @@ Use ordinary copying and native Git without a permanent shipped-file inventory o
 Apply the [version and upgrade rule](versioning.md#upgrading-an-installed-framework) under an explicit upgrade assignment, separately from the daily metadata read and fresh installation.
 Keep the actual installed project root as the destination; source retrieval prepares the selected files for that root.
 Identify the installed version and selected official target; obtain its fixed source in owned root `.tmp/` and verify agreement among tag, commit, version metadata and target-version note.
+Apply the [common connection-recovery responsibility](rules/workflow.md#connection-recovery) to authorized retrieval and delivery failures.
 Without Git, use available public source evidence with an archive or selected fixed-source files and ordinary recovery copies; Git initialization or a local clone is not required.
 Read applicable intervening notes, inspect their combined local paths and direct consumers, and prepare final target files with only genuinely ordered adaptations.
 Preserve recoverable affected contents, local customizations, unrelated work, the actual named or unnamed configuration, research and effective Task/E conditions without requiring a clean worktree, stash, preliminary commit or empty reinitialization.
@@ -415,6 +420,7 @@ Keep the actual fixed Git names and required entry/blob facts through manifest, 
 Prepare canonical receiving paths through actual correspondence, including an explicit native-child mapping when needed; fixed source names need no local alias resolution or renaming.
 Actual local sources and receiving publication retain their physical protections under the [intake rule](rules/intake.md#scope-and-routing).
 Use actual authorized public source reads and ordinary file operations when Git is unavailable; the optional Git-based source helper retains its own source-access prerequisite.
+Apply the [common connection-recovery responsibility](rules/workflow.md#connection-recovery) within the selected fixed-source operation's authority.
 First reuse adequate material and preserve conforming source prose under the [common preservation rule](rules/records.md#receiving-and-adapting-selected-content), adapting only actual receiving-rule differences in identity, classification, layout, numbering or references.
 Inspect the resulting text, author correspondence, exact references and necessary direct consumers.
 Sender framework versions, current-format support or missing installation metadata do not independently bar adequate receiving preparation or require a sender upgrade.
@@ -504,6 +510,7 @@ Before publishing, inspect the whole outgoing commit chain, including its scope 
 If the operation requires host approval, apply the [permission and refusal rules](rules/workflow.md#workspace-boundaries) using the actual human authority, destination and scope of this delivery.
 Push the authorized tip and verify the remote result.
 Apply the [shared-research integration and failure rule](rules/identity.md#shared-research-git-authority-and-integration) to new remote commits, a rejected push or an unclear publication scope, preserving unrelated work and the existing pending-batch boundary.
+Handle connection failures under the [common recovery responsibility](rules/workflow.md#connection-recovery) within the actual delivery authority.
 At actual project-remote setup, a relevant target change or a remote operation needing fresh facts, apply the [non-blocking name suggestion](rules/identity.md#repository-names-and-use-environments) for that selected GitHub project.
 Keep a differing local name unless the human chooses to update it; official-source, intake-source and reference-only upstream names do not select the repository name.
 Ordinary delivery grants no force-push or history rewrite.

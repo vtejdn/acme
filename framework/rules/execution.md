@@ -14,19 +14,25 @@ Prepare or reuse it only when the actual human's ordinary Task is selected for l
 Retain an existing boundary and its effective limits across Task completion, later selection and local cleanup.
 
 The root execution/ directory is persistent local state, ignored by Git and outside temporary or generated storage.
-Its E files retain their flat Task-family addresses, while `execution/runtime/readme.md` separately holds on-demand nonsensitive [machine-local runtime notes](organization.md#machine-local-runtime).
+E stays local to its working copy.
+Automatic matching or synchronization of E across working copies falls outside the supported scope.
+E files retain their flat Task-family addresses, while `execution/runtime/readme.md` separately holds on-demand nonsensitive [machine-local runtime notes](organization.md#machine-local-runtime).
 Runtime notes are not E and require neither a Task nor execution authority to maintain; they grant no research start, resumption or allowance.
 Do not track, synchronize or copy source execution/ or .venv/ through Git, framework installation, upgrades or default material transfer; preserve destination E, runtime notes and environment.
 Missing local notes or an environment in a new clone are normal; an explicitly authorized personal backup or move uses ordinary selected files without automatic machine-setting recovery.
 For an already tracked E, stop tracking its exact file with native Git while retaining local bytes and effective conditions, without rewriting history or recovering execution state from old commits.
 
 Before actual advancement, read the current human instruction, exact Task contract/decision, applicable [operator policy](preferences.md#scope-and-adoption) and still-effective E conditions.
+After a branch change in the supported working copy, confirm that the local E belongs to the intended Task and verify the exact decision and applicable local conditions before execution.
+Resolve the association before reusing, resuming or resetting E.
 An active lifecycle, new session, changed account/window, expired policy or edited Task pointer does not resume a stopped boundary or grant another allowance.
 Only actual applicable authorization permits resumption or replacement of an effective allowance.
 Task active/paused lifecycle and E running/stopped execution states are independent.
 Changing either one neither changes the other nor establishes execution permission, resets effective limits or manufactures a mathematical decision.
 When a real instruction affects both research arrangements and execution, maintain the necessary T and E separately under that instruction.
-On a new device, clone, account/window change or missing E, retain known stops, shared thresholds, incremental baselines, caps and account/window scope through actual instructions, policies and same-human handoff.
+For an actual device or working-copy replacement, use the existing same-human handoff to continue in the new copy and retire the former one from research use under the [working-copy rule](identity.md#collaboration-maintenance-and-conflicts).
+The authorized one-time handoff may read an explicitly selected old E to prepare the continuing local boundary and preserves any existing receiving E.
+On such a handoff, an account or window change, or when E is missing, retain known stops, shared thresholds, incremental baselines, caps and account/window scope through actual instructions and policies.
 Resolve only a concrete missing fact that determines whether execution may proceed; absence supplies neither an empty authorization nor a new allowance.
 
 ## Current contents and retained limits

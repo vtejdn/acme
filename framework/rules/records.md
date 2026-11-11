@@ -158,7 +158,8 @@ See the [material format](../material-format.md).
 
 Choose a research line letter explicitly or inherit only that letter from an actual Task.
 Each author/origin/kind/line has its own numeric sequence: F0001 through F9999, F10000 and onward.
-Never recycle a fixed C/T/R/L/U/J identity or continuing S identity, or switch to another letter because four digits are exhausted.
+Keep issued C/T/R/L/U/J and continuing S identities unavailable for unrelated reuse except under the [locally authored Task release rule](tasks.md#task-number-reuse).
+Keep the same line when a sequence grows beyond four digits.
 The [allocation state](identity.md#allocation-and-concurrency) preserves the next unissued C/T/R/L/J or continuing S family number even after its highest surviving material is removed.
 A D address remains stable during use and becomes reusable only after its necessary content is adequately retained at responsible homes, actual consumers are updated and the redundant draft is retired.
 Already retained mathematics and setup-only residue require no new fixed successor.
@@ -646,7 +647,8 @@ python scripts/render-research-navigation.py
 ```
 
 The allocator returns the actual next unissued family address under the [allocation state](identity.md#allocation-and-concurrency); D keeps its separate reusable-address rule.
-C/T revise, append and select check exact `--expect PATH#decision` under the existing local lock and reject stale choices.
+C/T revise, append and select check the explicit `--expect` locator under the existing local lock.
+Prepared declarations, associations and decisions follow the [common preparation-input responsibility](workflow.md#prepared-work-and-input-applicability).
 These commands edit only the latest local main material under established same-human authorship and actual authority, preserving its author.
 Substantive contributions use the responsible human's own numbered materials under the identity rule; tool capability does not authorize rewriting another human's mathematics.
 Imported originals and fixed evidence retain their separate protection.

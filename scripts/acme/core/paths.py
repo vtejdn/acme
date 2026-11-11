@@ -220,13 +220,16 @@ def pdf_storage(root):
     # Neither mathematics nor literature may itself be an undeclared link.
     ordinary_path(root, PDF_ROOT.parent)
     mount = root / PDF_ROOT
-    if is_reparse(mount) and getattr(mount.lstat(), 'st_reparse_tag', None) != getattr(stat, 'IO_REPARSE_TAG_MOUNT_POINT', 0xA0000003):
+    linked = is_reparse(mount)
+    if linked and getattr(mount.lstat(), 'st_reparse_tag', None) != getattr(stat, 'IO_REPARSE_TAG_MOUNT_POINT', 0xA0000003):
         raise PathError('The local literature entrance must be an ordinary directory or top-level directory junction.')
-    if is_reparse(mount) and not mount.is_dir():
+    if linked and not mount.is_dir():
         raise PathError('The literature source junction has a missing or inaccessible directory target; preserve it and resolve that storage arrangement.')
     target = resolved_path(mount)
     if root.is_relative_to(target):
         raise PathError('PDF storage cannot point to the repository or one of its parent directories.')
+    if linked and target.is_relative_to(root):
+        raise PathError('The literature source junction must resolve to a private directory outside the checkout.')
     if mount.exists() and not mount.is_dir():
         raise PathError(f'{PDF_ROOT.as_posix()} must be an ordinary directory or top-level directory junction.')
     return mount, target

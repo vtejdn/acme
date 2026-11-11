@@ -161,29 +161,45 @@ def check_unit_layout(root, changes, moves, read):
     discovery.unit_positions(sorted(path.relative_to(root).as_posix() for path in final),header)
 
 
-def publish(changes, moves):
+def publish(changes, moves, *, root=None):
     """Publish the selected plan exclusively and roll back only our own writes."""
-    before = {path:path.read_bytes() for path in changes}
+    def ordinary_root(path):
+        # Chosen originals outside the checkout have already gone through the
+        # source-mount resolver. Keep the ordinary guard on in-checkout paths.
+        return root if root is not None and path.is_relative_to(root) else None
+
+    before = {path: r.read_bytes(path, root=ordinary_root(path)) for path in changes}
     staged, installed, written = {}, [], []
     import uuid
     try:
         for source in moves:
-            temporary = source.with_name('.rename-'+uuid.uuid4().hex)
-            source.rename(temporary); staged[source] = temporary
+            checked = r.checked_path(ordinary_root(source), source)
+            temporary = checked.with_name('.rename-'+uuid.uuid4().hex)
+            checked.rename(temporary); staged[source] = temporary
         for source,destination in moves.items():
-            r.write_bytes(destination, staged[source].read_bytes(), exclusive=True)
+            raw = r.read_bytes(staged[source], root=ordinary_root(source))
+            r.write_bytes(destination, raw, exclusive=True, root=ordinary_root(destination))
             installed.append(source)
         for source,raw in changes.items():
-            r.write_bytes(moves.get(source,source), raw); written.append(source)
+            target = moves.get(source, source)
+            r.write_bytes(target, raw, root=ordinary_root(target))
+            written.append(source)
     except BaseException:
         for source in reversed(written):
-            if source not in moves: r.write_bytes(source,before[source])
-        for source in reversed(installed): moves[source].unlink()
+            if source not in moves:
+                r.write_bytes(source, before[source], root=ordinary_root(source))
+        for source in reversed(installed):
+            target = moves[source]
+            r.unlink(target, root=ordinary_root(target))
         for source,temporary in staged.items():
-            if temporary.exists(): temporary.rename(source)
+            guard = ordinary_root(source)
+            temporary = r.checked_path(guard, temporary)
+            if temporary.exists(): temporary.rename(r.checked_path(guard, source))
         raise
-    for temporary in staged.values(): temporary.unlink()
+    for source,temporary in staged.items():
+        r.unlink(temporary, root=ordinary_root(source))
     for directory in sorted({source.parent for source in moves},key=lambda path:len(path.parts),reverse=True):
+        directory = r.checked_path(ordinary_root(directory), directory)
         if directory.exists() and not any(directory.iterdir()): directory.rmdir()
     return {'rewritten':len(changes),'relocated':len(moves)}
 
@@ -246,9 +262,10 @@ def _reserve_unit_moves(root, changes, moves, key_mapping):
 
 
 def rename(root, entries, mapping, *, files=(), moves=None, updates=None):
-    root = Path(root).resolve()
+    root = paths.resolved_path(root)
     moves, updates = moves or {}, updates or {}
-    original = (root/bib.BIB).read_bytes()
+    bibliography = r.safe_path(root, bib.BIB)
+    original = bibliography.read_bytes()
     text = original.decode('utf-8-sig')
     r.require(bib.parse(text) == entries, 'Supplied bibliography changed; prepare from the current entries again.')
     for old,new in mapping.items():
@@ -257,12 +274,12 @@ def rename(root, entries, mapping, *, files=(), moves=None, updates=None):
                   'A bibliography destination is already occupied: '+str(new))
     selected = tuple(dict.fromkeys((*files, *moves, *updates)))
     changes, relocations = plan(root,files=selected,moves=moves,updates=updates)
-    text = changes.get(root/bib.BIB,original).decode('utf-8-sig')
+    text = changes.get(bibliography, original).decode('utf-8-sig')
     updated = rename_keys(text,mapping)
     chosen = bib.parse(updated)
-    if updated != original.decode('utf-8-sig'): changes[root/bib.BIB] = updated.encode('utf8')
+    if updated != original.decode('utf-8-sig'): changes[bibliography] = updated.encode('utf8')
     _check_operations(root,selected,changes,relocations)
     _reserve_unit_moves(root,changes,relocations,mapping)
-    result = publish(changes,relocations)
+    result = publish(changes, relocations, root=root)
     entries.clear(); entries.update(chosen)
     return result

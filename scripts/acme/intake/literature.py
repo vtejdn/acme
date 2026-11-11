@@ -1,4 +1,5 @@
 """Chosen bibliography fields and explicit retrieval; no source accounts."""
+import os
 from pathlib import Path
 from urllib.request import Request, urlopen
 from ..core import repository as r, paths, source_files
@@ -23,16 +24,27 @@ def fetch_source(urls, output, *, root, source_format='pdf', retrieve=None):
     urls = list(dict.fromkeys(urls))
     r.require(1 <= len(urls) <= 2, 'Supply one or two exact retrieval addresses.')
     r.require(source_format in {'pdf', 'html'}, 'Select PDF or HTML format facts.')
-    root = Path(root).resolve()
+    root = paths.resolved_path(root)
     output = Path(output)
     if output.is_absolute():
         r.require(output.is_relative_to(root), 'Local output must stay inside the selected repository.')
         output = output.relative_to(root)
-    source_output = paths.in_pdf_store(output)
+    source_prefix = paths.PDF_ROOT.parts
+    source_output = output.parts[:len(source_prefix)] == source_prefix and len(output.parts) > len(source_prefix)
+    temporary_output = output.parts[:1] == ('.tmp',) and len(output.parts) > 1
+    r.require(source_output or temporary_output,
+              'Choose an output beneath root .tmp/ or mathematics/literature/pdf/.')
     if source_output:
         r.require(output.suffix.lower() in ({'.pdf'} if source_format == 'pdf' else {'.html', '.htm'}),
                   'A retained original filename must agree with its selected source format.')
-    destination = paths.source_path(root, output) if source_output else paths.material_path(root, output)
+        destination = paths.source_path(root, output)
+    else:
+        if os.name == 'nt':
+            r.require(all(part.rstrip(' .') == part for part in output.parts),
+                      'Choose a canonical disposable output path without trailing-dot or space aliases.')
+        destination = paths.material_path(root, output)
+        r.require(destination.is_relative_to(root / '.tmp') and destination != root / '.tmp',
+                  'A disposable response must resolve beneath root .tmp/.')
     r.require(not destination.exists(), 'Local output already exists; choose an unoccupied destination.')
     retrieve = retrieve or (fetch_html if source_format == 'html' else fetch)
     attempts = []
@@ -58,7 +70,8 @@ def _json_info(info):
 
 
 def _entry_snapshot(repo, existing_key):
-    text = (repo.root/bib.BIB).read_text(encoding='utf-8-sig') if (repo.root/bib.BIB).exists() else ''
+    path = r.safe_path(repo.root, bib.BIB)
+    text = path.read_bytes().decode('utf-8-sig') if path.exists() else ''
     entries = bib.parse(text)
     if existing_key is not None:
         r.require(existing_key in entries, 'Chosen existing bibliography key is absent: ' + existing_key)
@@ -95,9 +108,12 @@ def register_work(repo, entry=None, *, existing_key=None, new_work=False, chosen
     """Apply exact chosen bibliographic fields without creating an artifact account."""
     snapshot = _entry_snapshot(repo, existing_key)
     with r.locked(repo.root, timeout=timeout):
-        path = repo.root/bib.BIB
-        entries = bib.parse(path.read_text(encoding='utf-8-sig')) if path.exists() else {}
+        path = r.safe_path(repo.root, bib.BIB)
+        original = path.read_bytes() if path.exists() else None
+        entries = bib.parse(original.decode('utf-8-sig')) if original is not None else {}
         key = _choose(entries, entry, existing_key=existing_key, new_work=new_work, chosen_key=chosen_key,
                       field_updates=field_updates, snapshot=snapshot)
-        r.write_bytes(path, bib.render(entries).encode('utf8'), root=repo.root)
+        updated = bib.edit_selected(original, {key: entries[key]})
+        if updated != original:
+            r.write_bytes(path, updated, root=repo.root)
     return key

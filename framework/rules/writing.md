@@ -19,7 +19,10 @@ Keep a manuscript's choices at its existing [writing-choice home](#document-choi
 When a corresponding mathematical Task exists, use one manuscript project per user-defined research goal by default, named by its assigned local Task family, such as `Author_T_F0001/`.
 Another human's ordinary Task/E authority and manuscript projects are outside mathematical intake; own selected manuscripts may use [personal import](intake.md#personal-import).
 Use the actual author-designated line and numeric serial from the [Task index](../../mathematics/tasks/index.md) for that Task-named root.
-Omit a physical-version or topic suffix from that root and put its title in the README.
+Use the unversioned family name for the default root and put the title in the README.
+Check the actual project's ownership and scope before using a Task-named root.
+If that root already holds a retained manuscript project for an unrelated Task, preserve the project and its author-designated entrances and choose a distinct suitable writing home within current writing authority.
+When the same Task changes lines, preserve its actual manuscript association and update the affected entrances, keeping its current project location when suitable.
 Create a project when manuscript work is needed within the user's authorized scope; a recorded goal does not require an empty manuscript project.
 
 For an actual writing assignment without a corresponding mathematical Task, reuse a suitable existing or author-designated writing home.
@@ -374,6 +377,14 @@ Use the distinct [record responsibilities](#project-and-document-records) for ma
 ## Document Choices and Final Review
 
 The [preference rule](preferences.md#scope-and-adoption) owns writing-choice precedence and adoption; the [record responsibilities](#project-and-document-records) own their actual locations.
+
+Omit the author byline by default when preparing a new manuscript in TeX, Markdown or another format.
+Leave a format-required author field empty by default.
+For a new or changed byline, use only what the responsible human specifies in the current instruction or through an applicable choice under the existing writing layers.
+Preserve an established byline in routine revision unless the authorized assignment includes a change to it.
+Keep project ownership, author keys, Task attribution and Git signatures separate from the byline choice.
+Keep the responsible author in the existing project or document record, and preserve required citations and source attribution.
+
 The two activities below use one common checking standard without adding a third role, approval or mandatory agent stage.
 Adopting these rules selects no theorem, writing task, review, publication or research resumption.
 
@@ -419,6 +430,7 @@ If the relationship is unsupported or false, correct the associated assertion wi
 
 | Actual change or deliverable | Necessary checks |
 | --- | --- |
+| Title or byline | Apply the [manuscript byline rule](#document-choices-and-final-review), including any applicable choice and preservation of an established byline in routine revision. |
 | Local wording or expression | Mathematical meaning, object references and necessary context, without automatically repeating a whole proof review. |
 | Terminology, notation, definition expression or TeX macros | Actual affected uses and consumers, including cross-section uses; a small character change need not have local impact. |
 | Hypotheses, conclusions, proofs or a citation's mathematical role | Responsible mathematical/source materials, necessary dependencies and whether prior review still covers them, completing applicable correction and rechecking duties. |

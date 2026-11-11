@@ -4,6 +4,7 @@ Keys use simplified ASCII name/year abbreviations, not exact alpha.bst labels.
 Bibliographic names remain unchanged; character-aware identity is separate
 from the address's lossy transliteration.
 """
+from codecs import BOM_UTF8
 from dataclasses import dataclass
 from pathlib import Path
 import re
@@ -19,7 +20,7 @@ class Entry:
     fields: dict
 
 
-def parse(text, *, spans=None):
+def parse(text, *, spans=None, layout=None):
     """Read balanced BibTeX values, strings and concatenations without executing TeX."""
     entries, strings = {}, {}
     strings.update(dict(zip(('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'),
@@ -28,18 +29,23 @@ def parse(text, *, spans=None):
 
     def skip():
         nonlocal i
+        comma = None
         while i < size:
-            if text[i].isspace() or text[i] == ',':
+            if text[i].isspace():
+                i += 1
+            elif text[i] == ',':
+                if comma is None:
+                    comma = i
                 i += 1
             elif text[i] == '%':
-                end = text.find('\n', i)
-                i = size if end < 0 else end + 1
+                while i < size and text[i] not in '\r\n':
+                    i += 1
             else:
                 break
+        return comma
 
-    def value():
+    def value(*, opaque=False):
         nonlocal i
-        skip()
         if i >= size:
             raise ValueError('Missing BibTeX value.')
         start = i
@@ -71,11 +77,26 @@ def parse(text, *, spans=None):
         while i < size and text[i] not in ',#})\r\n\t ':
             i += 1
         token = text[start:i]
-        if token.isdigit():
+        if token.isdigit() or (opaque and token):
             return token
         if token.casefold() not in strings:
             raise ValueError('Undefined BibTeX string: ' + token)
         return strings[token.casefold()]
+
+    def expression(*, opaque=False):
+        nonlocal i
+        skip()
+        start = i
+        item = value(opaque=opaque)
+        end = i
+        comma = skip()
+        while i < size and text[i] == '#':
+            i += 1
+            skip()
+            item += value(opaque=opaque)
+            end = i
+            comma = skip()
+        return item, start, end, comma
 
     while i < size:
         skip()
@@ -92,13 +113,21 @@ def parse(text, *, spans=None):
         kind, opening = match.groups(); kind = kind.casefold()
         i += match.end()
         closing = '}' if opening == '{' else ')'
-        if kind in {'comment', 'preamble'}:
+        if kind == 'preamble':
+            # Scan the value as an expression so a parenthesis inside it
+            # cannot make directive text look like a selected entry.
+            expression(opaque=True)
+            if i >= size or text[i] != closing:
+                raise ValueError('Unterminated BibTeX preamble.')
+            i += 1
+            continue
+        if kind == 'comment':
             depth = 1
             while i < size and depth:
                 if text[i] == '\\': i += 2; continue
                 depth += (text[i] == opening) - (text[i] == closing)
                 i += 1
-            if depth: raise ValueError('Unterminated BibTeX comment/preamble.')
+            if depth: raise ValueError('Unterminated BibTeX comment.')
             continue
         fields = {}
         if kind != 'string':
@@ -109,6 +138,9 @@ def parse(text, *, spans=None):
             key = match[1]; i += match.end()
             if any(existing.casefold() == key.casefold() for existing in entries):
                 raise ValueError('Duplicate bibliography key ignoring case: ' + key)
+            if layout is not None:
+                field_layout = {}
+                layout[key] = i, field_layout
         while True:
             skip()
             if i >= size: raise ValueError('Unterminated BibTeX entry.')
@@ -116,24 +148,71 @@ def parse(text, *, spans=None):
                 i += 1; break
             match = re.match(r'([A-Za-z][A-Za-z0-9_-]*)\s*=\s*', text[i:])
             if not match: raise ValueError('Invalid BibTeX field near ' + text[i:i+60])
+            assignment = i
             field = match[1].casefold(); i += match.end()
-            start = i
-            item = value(); end = i; skip()
-            while i < size and text[i] == '#':
-                i += 1; item += value(); end = i; skip()
+            span_start = i
+            item, start, end, comma = expression()
             if field in fields: raise ValueError('Repeated BibTeX field: ' + field)
             fields[field] = item
-            if spans is not None and kind != 'string':
-                spans.append((key, field, start, end))
+            if kind != 'string':
+                if spans is not None:
+                    spans.append((key, field, span_start, end))
+                if layout is not None:
+                    field_layout[field] = assignment, start, end, comma
         if kind == 'string': strings.update(fields)
         else: entries[key] = Entry(kind, key, fields)
     return entries
 
 
-def render(entries):
-    return '\n\n'.join('@' + entry.kind + '{' + entry.key + ',\n' + '\n'.join(
-        '  ' + field + ' = {' + value + '},' for field, value in entry.fields.items()) + '\n}'
-        for entry in entries.values()) + ('\n' if entries else '')
+def render(entries, *, newline='\n'):
+    blocks = []
+    for entry in entries.values():
+        opening = '@' + entry.kind + '{' + entry.key + ','
+        fields = newline.join(f'  {field} = {{{value}}},' for field, value in entry.fields.items())
+        blocks.append(newline.join((opening, fields, '}')))
+    return (newline * 2).join(blocks) + (newline if blocks else '')
+
+
+def edit_selected(original, selected):
+    """Prepare only the chosen fields and new entries, keeping all other text."""
+    text = (original or b'').decode('utf-8-sig')
+    layout = {}
+    entries = parse(text, layout=layout)
+    line_break = re.search(r'\r\n|[\r\n]', text)
+    newline = line_break[0] if line_break else '\n'
+    edits, additions = [], {}
+    for key, entry in selected.items():
+        current = entries.get(key)
+        if current is None:
+            additions[key] = entry
+            continue
+        if current.kind != entry.kind:
+            raise ValueError('Selected bibliography fields cannot change the entry type: ' + key)
+        after_key, fields = layout[key]
+        for field, (assignment, start, end, comma) in fields.items():
+            if field not in entry.fields:
+                edits.append((assignment, end, ''))
+                if comma is not None:
+                    edits.append((comma, comma + 1, ''))
+            elif entry.fields[field] != current.fields[field]:
+                edits.append((start, end, '{' + entry.fields[field] + '}'))
+        # The key's existing comma gives an insertion point even when the
+        # original last field has no trailing comma.
+        extra = ''.join(f'{newline}  {field} = {{{value}}},' for field, value in entry.fields.items()
+                        if field not in fields)
+        if extra:
+            edits.append((after_key, after_key, extra))
+    if not edits and not additions:
+        return original
+    for start, end, replacement in sorted(edits, reverse=True):
+        text = text[:start] + replacement + text[end:]
+    if additions:
+        if text and not text.endswith(newline * 2):
+            text += newline if text.endswith(('\r', '\n')) else newline * 2
+        text += render(additions, newline=newline)
+    if parse(text) != {**entries, **selected}:
+        raise ValueError('Cannot preserve the bibliography with the selected fields.')
+    return text.encode('utf-8-sig' if original and original.startswith(BOM_UTF8) else 'utf8')
 
 
 def split_top(value, separator):

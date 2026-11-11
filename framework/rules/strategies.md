@@ -52,6 +52,7 @@ Link substantive mathematical evidence from the ledger or audits instead of dupl
 Do not create a separate approval checklist or require a new audit merely for route administration; mathematical claim changes retain their existing review requirements.
 
 Each route material owns its disposition, priority, Task associations and next step.
+Prepared Task associations follow the [common preparation-input responsibility](workflow.md#prepared-work-and-input-applicability), with the agent judging the actual route scope and methodological choices within Task authority.
 Update the actual S material and regenerate the derived route index.
 Preserve necessary predecessor formulations, carried obligations and cited mathematical locations during split/merge.
 Coordinate same-family edits and allocation among concurrent agents.

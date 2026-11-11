@@ -3,22 +3,35 @@
 All fixed L reading notes and mathematical supplements belong in mathematics/ledger/, using the single author/line L sequence.
 Source audits contain author-owned rolling U and source navigation, reusing adequate C/U/L rather than duplicating inspections.
 Bibliographic identity belongs to references.bib; concise useful edition/source explanations belong to the source-specific README, and inspected mathematics and limits belong to U or an adequate existing responsible material.
-Apply the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities) to identity, editions, mathematical applicability and necessary acquisition.
+Under the [agent/tool responsibility](workflow.md#agent-and-tool-responsibilities), the agent judges work identity, reference value, edition suitability and completeness, mathematical applicability, evidence adequacy, necessary acquisition and unresolved scope.
 Literature preparation and source audits exclude associated Lean code unless its audit is explicitly requested under the [default audit scope](literature-audits.md#default-audit-scope).
 
 <a id="source-preparation"></a>
 ## Common source preparation
 
-Reuse sufficient existing mathematical and source evidence before obtaining or inspecting an original.
-Use shared bibliography, edition-specific contents, concise source notes and adequate C/U/L at their actual scope.
-When further source reading is necessary, reuse an applicable local original, look for relevant local candidates and then perform necessary authorized external search or acquisition.
-A useful local copy may exist even when source notes are absent or a contents search yields no match.
+During any authorized repository action or related discussion, register each work whose identity and reference value to the repository the agent has confirmed.
+Within the actual write and disclosure scope, add or update its [canonical entry](#bibliography-content) in `mathematics/literature/references.bib` before delivering the result, even if the work has yet to be cited or its original obtained.
+Reuse an adequate existing entry and keep the established citation key across editions of the same work.
+Keep an unverified search hit as a lead only when useful.
+Bibliographic registration alone creates no duty to obtain the original, inspect its proof or create a U.
+
+Reuse sufficient existing mathematical and source evidence, including shared U and adequate C/L, before obtaining or inspecting an original.
+Use the shared bibliography, edition-specific contents and concise source notes at their actual scope.
+When the actual use requires an original, look first for applicable local copies identifiable through the bibliography or source notes.
+If those copies are insufficient, look for relevant local copies without such a record, including when a contents search yields no match.
 Use a [complete contribution in a volume](#actual-source-holdings) or [original HTML](#original-html-sources) when it supplies the applicable original.
-The current question, work, edition and available facts determine the scope; stop once adequate material is available rather than scanning the whole store.
+When local material remains insufficient, obtain the needed original from a permitted public source when available under the [acquisition rule](#literature-acquisition).
+Limit the lookup to the selected work and actual use, and stop once adequate material is available.
 A candidate title, filename or identifier match is a lead, not mathematical identity, edition agreement or sufficient evidence.
 Reading candidate metadata or passages requires no prior key registration, U creation, source ledger or search receipt.
+For personal import and external intake, apply the [original-preparation rule](#acquisition-before-u-reception).
 
-Establish the real work and edition, maintain necessary bibliographic fields and useful source explanations, and inspect the actual passages required for use.
+Among verified editions suitable for the actual use, prefer the most complete one.
+When editions are equally suitable and complete, prefer the newer verified edition.
+Preserve earlier editions and exact locators still needed by arguments, U or reviews, and check affected references when changing the preferred local original.
+Keep originals in the [local source store](#local-pdf-storage) and maintain useful edition distinctions and page correspondences in the author's [source notes](#artifact-source-association).
+
+For source reading, verify the selected edition and inspect the passages required for the actual use.
 Process complete definitions, terminology and symbols through [def registration](definitions.md), preserving source conventions and application limits.
 Reuse adequate inspection without a full-paper audit merely for a bibliographic or stylistic use.
 Prepare or reuse [searchable contents](#searchable-contents) when the selected source actually supplies a contents list.
@@ -35,18 +48,23 @@ A concise note may explain publication, language, edition uncertainty or a meani
 It is not an acquisition log, local path/configuration, proof verdict, Task account or execution report.
 Keep true publication fields, stable keys and uncertainty; remove duplicate workflow prose only after necessary unique facts have their responsible home.
 Source notes and inspected mathematics retain their separate purposes, and metadata copying grants no inspection or redistribution authority.
+Optional standalone and intake bibliography writes preserve unselected entries and effective BibTeX directives, including `@preamble` and `@string`, while changing only the chosen new entries or existing fields.
+If the helper cannot preserve that content, it refuses before publication and leaves the selected edit to ordinary maintenance.
+For standalone updates, selected intake and explicit key renaming, check the ordinary path to the selected bibliography before querying its existence or reading it.
 
 <a id="local-pdf-storage"></a>
 ## Local Source Storage
 
 Original PDFs, HTML and selected related resources use the Git-ignored logical entrance mathematics/literature/pdf/.
 PDFs retain flat filenames; HTML and related resources use a directory named by the established work key.
-The entrance is an ordinary directory or one top-level directory junction; symbolic links and nested linked paths are unsupported.
+The entrance is an ordinary ignored directory or one top-level directory junction to an authorized private directory outside the checkout.
+Symbolic links and nested linked paths are unsupported.
 Original files stay local and outside Git/GitHub, framework copying and authored-material intake, even when publicly available elsewhere.
 Keep relative logical links; necessary physical targets, access parameters and mount arrangements belong only to the responsible human's ignored [private setup](organization.md#machine-local-locators).
 Each human is responsible for cross-machine validity of their links, with agent assistance within actual authority and no framework path synchronization or availability certification.
 
 Concrete source access and file maintenance resolve the actual selected mount and verify containment, file shape and applicable access.
+The agent confirms the selected external private storage arrangement, and the resolver rejects a junction into the checkout before actual source access or retrieval.
 On first authorized retention, create the ordinary ignored entrance on demand if it is absent and no applicable external arrangement exists; clean installation and bibliography-only work need no directory or placeholder.
 Preserve and report a broken junction, occupied non-directory entrance or inaccessible configured target instead of silently substituting another store.
 Resolve only selected source operations; their authority does not extend to external sibling directories.
@@ -76,7 +94,7 @@ A concrete selected access failure is reported truthfully without inferring avai
 Choose the actual object, edition and necessary check from the current activity, reusing sufficient applicable evidence.
 An edit, commit, push or shared U display supplies no automatic original-access or inventory duty.
 Tools may check explicit paths, file/format facts or selected source bytes; they do not decide identity, completeness, mathematical applicability or review sufficiency.
-Use ordinary reading or [explicit retrieval](../../scripts/readme.md#local-source-retrieval-and-registration) when needed, without a source account, confirmation field or compulsory helper sequence.
+Use ordinary reading and editing or [optional helpers](../../scripts/readme.md#local-source-retrieval-and-registration) for explicit retrieval, selected bibliography updates, applicable path and format checks, and protected writes.
 Keep an access failure, invalid supplied format, stale expected content and a missing necessary mathematical input distinct.
 
 <a id="artifact-source-association"></a>
@@ -144,22 +162,25 @@ The current framework creates collection entrances, not an automatic selection o
 
 ## Literature Acquisition
 
-Within authorized research or source preparation, reuse an adequate local original before obtaining a missing selected work/edition.
+Use the [local-first preparation order](#source-preparation) when the actual use requires an original.
 Publicly available no-charge sources relevant to that work may be downloaded without repeated approval under the [search policy](literature-search.md#autonomous-literature-search).
 Apply the [ACME material boundary](intake.md#scope-and-routing) to the actual selected content; external literature does not acquire ACME authorship or review status from its hosting platform.
 Use bounded requests with timeouts and finite attempts, and preserve actual destination conflicts, containment and necessary format checks.
+The optional retrieval helper accepts a file below root `.tmp/` for a disposable response or below the logical `mathematics/literature/pdf/` store for a retained original and rejects other destinations before making a request.
 Retrieval tools use supplied addresses and report actual requested/final URLs and bytes; they do not choose work identity, canonical editions or fallback sources.
 Inspect a response's intended format, readable content, title, authors and edition before using it as the selected original.
 HTTP success or a filename suffix does not establish that a response is the intended paper.
 Keep useful original locators and edition/use restrictions in concise author source notes; no registry, online exception form, fingerprint, date entry or completion receipt is required.
 
-On actual failure, directly tell the human the work, inspected edition, known address, reason and resulting use limitation.
-Retain a continuing useful limitation in the corresponding author's source notes or actual consumer, and record concrete remaining preparation under the [common worklist rule](records.md#pending-literature-work).
-Do not create a separate literature-failure list, acquisition account, periodic retry mechanism or failure history; this does not exempt still-needed later work from maintenance or trigger routine warnings or downloads merely because a file is missing.
+When a necessary original cannot be obtained from permitted public sources, tell the human author directly which work is needed, any known edition and public address, the actual barrier and the resulting use limitation.
+Retain a continuing useful limitation in the corresponding author's source notes or actual consumer.
+Record the concrete unresolved need and next action in `mathematics/maintenance.md` under the [common worklist rule](records.md#pending-literature-work).
+Reuse the item for the same work, edition and handling need, and clear the responsible portion after resolving and checking it under that rule.
+Keep the confirmed bibliography entry while original preparation is pending.
+A missing file by itself creates no maintenance item or routine availability warning.
+Use the existing worklist without a separate failure list, acquisition account, periodic retry mechanism or failure history.
 Useful U may still be retained honestly; acquisition failure establishes neither invalid mathematics nor completed original preparation.
 Continue authorized work independent of the missing source, without inventing access, retention, inspection or completion.
-A same-work revision retains the citation key while exact original locators distinguish editions.
-Preserve originals still needed by existing evidence before replacing a current link, and compare affected uses rather than silently assigning a newer edition to old checks.
 
 ### Acquisition before U reception
 
@@ -358,13 +379,13 @@ Keep genuine source, applicability and inspection gaps explicit and follow the a
 
 ## 5. Checklist for Adding or Updating Literature
 
-1. Identify the actual expected use and work/edition, reusing sufficient evidence and applicable local originals before necessary acquisition.
-2. Establish true bibliography and access facts, check the selected source's intended format/content, and respect disclosure restrictions.
-3. Maintain the stable canonical key and necessary bibliographic fields; retain only useful author-specific edition/source notes and real use limitations.
-4. Complete necessary original preparation to reuse, acquisition or a truthful failed result, reporting failure directly to the human without a ledger or receipt.
+1. Identify the actual expected use and apply [common source preparation](#source-preparation).
+2. Establish true bibliographic and access facts and respect disclosure restrictions.
+3. Maintain the stable canonical key and necessary bibliographic fields for a confirmed work, with only useful author-specific edition notes and real use limitations.
+4. For a necessary original, follow the local-first order, verify the selected edition, format and content, and complete preparation by reuse, acquisition or a [reported failure](#literature-acquisition).
 5. Keep actual inspected mathematics and limits in U or adequate C/L, with complete definitions and applicable def registration.
 6. Reuse or prepare actual same-edition contents when supplied, reporting unfinished work accurately.
 7. Repair affected source notes, U, contents and downstream references, preserving actual objects, hypotheses, adoption and review scope under [shared maintenance](records.md#substantive-material-retention).
 
-Preparatory originals and their quantity create no registration, cleanup, download or audit debt.
+The presence or number of preparatory originals alone creates no registration, cleanup, download or audit duty.
 Ordinary startup and shared-material operations do not inventory their local availability.

@@ -7,7 +7,6 @@ Selectable research defaults follow [preference precedence](preferences.md#scope
 ## Agent and tool responsibilities
 
 The agent reads the actual materials and decides content, work/edition identity, necessary homes and inputs, review applicability and authorization.
-Reuse still-applicable judgments.
 Tools optionally execute explicitly chosen objects, field updates, files and mappings, and report bytes, paths, differences, request/response facts and structural constraints.
 The agent reads free prose, identifies actual references and purposes, prepares final text and checks affected consumers.
 Ordinary creation, reading, import, intake and publication do not discover targets or infer source limitations from whole-body Markdown, mathematical, code or comment syntax.
@@ -40,6 +39,29 @@ Actual personal import and external intake complete the agent-selected necessary
 Typed namespace occupancy, fixed identity entrances, numerical/field constraints, OS locking, exclusive creation, stale-input refusal and rollback remain mechanical responsibilities.
 Direct collaboration, same-human body maintenance, shared navigation/registration and the two kinds of actual conflict follow the [identity rule](identity.md#collaboration-maintenance-and-conflicts).
 Apply its scoped mathematical-recheck approval only when that conflict actually arises; ordinary authorized research and maintenance keep their existing authority.
+
+### Prepared work and input applicability
+
+Before publishing a prepared declaration, association or decision that relies on previously read content, confirm that its input still identifies the intended object and supports the prepared use within actual authority.
+Reuse current-context reading and judgments while they remain applicable.
+After a relevant change, Task switch, interleaved work or concrete uncertainty, reread only the affected content and judge the necessary adjustment.
+Judge object continuity, mathematical applicability, review sufficiency and authorization from the actual materials and instructions, including when paths and anchors match or structural checks succeed.
+
+Coordinate affected dependency-changing writes in the supported working copy, including Task release and reuse.
+If a relevant modification could intervene between confirmation and publication, preserve the confirmed premise through existing write coordination, selected expected-content comparison or an equivalent guarded edit.
+When choosing expected-content publication, supply the actual selected input used for preparation, including when its locator matches and address reuse is unknown.
+Keep any necessary final comparison and publication within the same existing short write protection.
+Keep mathematical reading and reasoning, network access and long computation outside that protection.
+Select only the preparation inputs needed for the actual operation.
+
+If a selected preparation input changes, hold the old prepared result while establishing what still applies and preparing any necessary adjustment.
+Assess a byte difference for its actual mathematical effect before choosing the necessary revision, review or authorization step.
+Retain sufficient prior work when its mathematics and intended use remain valid, preserving actual authorship, source facts, review scope and effective conditions.
+Retain earlier evidence at the inputs actually inspected and confirm a finding's actual scope and adequacy before selecting it for completion.
+
+Apply this responsibility to dependent Task append, revision and selection, formal R bindings, an individual Task's joint-parent declaration and an S material's explicit Task association.
+Tools report their actual field, type, path and locator checks and compare only the expected content explicitly selected for comparison.
+The agent reads free prose and judges its dependencies and mathematical applicability under the actual operation's scope.
 
 <a id="record-ownership"></a>
 ## Record Ownership and Summaries
@@ -354,7 +376,7 @@ Use each material family's canonical address and a descriptive mathematical titl
 Choose the proper home under the [agent/tool responsibility](#agent-and-tool-responsibilities) and [identity rules](identity.md); the optional `material.py create` writer allocates C/T/S/R/D/J/L with the chosen line or actual Task context.
 Source-unit identities retain their existing citation-key/unit sequence.
 Numbers do not encode priority.
-Fixed C/T/R/L/U/J and continuing S identities are not recycled; retired D working addresses may be reused under the identity rule.
+Apply the [identity and reuse rules](identity.md#identifier-and-repository-identity), including the bounded cases for locally authored Tasks and retired D addresses.
 Coordinate allocation and preserve anchors/incoming references.
 S dispositions and priorities belong in their own material, not an index reservation.
 
@@ -545,6 +567,28 @@ Batch authorized operations where practical without hiding their effects or broa
 
 Shared-worktree Git delivery follows the [serial delivery interval](identity.md#submission-checks): one coordinated batch and stable index/tip at a time, while unrelated research can continue.
 Preserve unrelated staged work and recheck affected bytes if the batch changes.
+
+### Connection recovery
+
+An authorized network operation includes proportionate diagnosis and handling within its actual authority.
+On a connection failure, choose purposeful bounded checks and the smallest adequate permitted handling from the actual error, target, transport, execution context and available evidence.
+Use suitable existing channels, reversible invocation-level choices or the host's normal permission path as appropriate, preserving the intended operation and its scope.
+Reuse established authorization and involve the human only for a remaining decisive fact, authority gap or required human interaction.
+
+Apply the existing host permission and refusal provisions to recovery.
+Preserve certificate verification, credential confidentiality and actual access boundaries, and assess a diagnostic's real effects before calling it read-only.
+Keep persistent configuration, account and credential changes within authority covering their actual effects.
+
+After adequate handling, return to the original operation and verify its actual result at the intended target.
+A diagnostic establishes only the access it exercised, and a successful read establishes only that read access.
+Reuse a verified working method and applicable diagnosis while the target, account, channel and execution context remain relevant.
+Use that method to obtain fresh project-branch facts when the operation requires them.
+Each further attempt addresses a concrete uncertainty or changed condition.
+
+Honor explicit offline and synchronization limits, operation-specific retry bounds, the daily metadata cache, host permissions and effective Task/E conditions.
+If recovery remains unavailable within those limits, report the specific unfinished operation, evidence and remaining need, defer dependent work and continue independently supported authorized work.
+Keep uncertainty about credential visibility, expiry, account rights and host execution permission distinct unless the evidence resolves it.
+Retain a continuing nonsensitive local choice only when needed under the [runtime-note rule](organization.md#machine-local-runtime).
 
 ## New Record Timestamps
 

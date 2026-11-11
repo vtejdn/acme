@@ -57,7 +57,8 @@ Externally acquired C/T/R/L/J use explicitly chosen receiving classification, re
 
 Rolling S and mutable D omit the version suffix.
 D is a working address stable during current use and reusable after retirement, once useful content is fixed and actual consumers repaired.
-A reused D inherits no earlier statement, scope, review or authority; fixed C/T/R/L/J and continuing S identities, and stable rolling U positions are not recyclable.
+A reused D inherits no earlier statement, scope, review or authority.
+Keep fixed C/T/R/L/J and continuing S identities and stable rolling U positions unavailable for unrelated reuse, subject to the [released local Task exception](rules/tasks.md#task-number-reuse).
 Every J computation has a numbered directory whose `readme.md` and native children share its identity.
 Do not allocate a new identity to a computation's output file.
 
@@ -118,7 +119,9 @@ D has no permanent entry because its retired working address can be reused after
 For example, `{"material_next": {"Alice_C_F": 8, "author3_repo2_R_G": 12, "U/Src26/Yin": 4}}` records only the next unissued positions in those illustrative namespaces.
 The official blank starting repository uses `"material_next": {}`; copying an existing research repository preserves its actual issued-number bounds.
 Initialize an existing affected namespace from an agent-confirmed used-number upper bound before its first relevant allocation or retirement; surviving filenames alone cannot establish that no higher number was previously issued.
-Under the existing short mutation lock, issue or explicitly install the new position and advance its bound without decreasing it after deletion or failure.
+Issue or explicitly install a fresh position under the existing short mutation lock and advance its bound without decreasing it after deletion or failure.
+The agent can directly author a new Task `v1` at an explicitly selected [confirmed released number](rules/tasks.md#task-number-reuse) below that bound.
+Preserve the existing `material_next` value for this reuse, and continue ordinary allocation from that bound.
 A fresh receiving number below that bound is unavailable even when its path is empty; gaps are acceptable.
 An already established original family retains its receiving number across later physical versions, and an ordinary next vN revision allocates no new family.
 Direct authoring maintains the same state; no per-retirement row, issue date, stub, history reconstruction or migration registry is introduced.
@@ -250,8 +253,10 @@ Any genuinely new assessment records the actual present decision and its evidenc
 
 The optional `material.py create` allocates the next numeric address for the bound human author and chosen line.
 Supply a complete Markdown document, including its author header, from `--file PATH` or standard input with `--file -`.
-An explicit `--line F` selects that series; `--task mathematics/tasks/Alice_T_F0001_v1.md` inherits only the Task's line letter.
-If both are omitted, new local material uses A; Task inheritance precedes this fallback, and counters remain independent by author/kind/line.
+An explicit `--line F` selects that series.
+`--task mathematics/tasks/Alice_T_F0001_v1.md` inherits the actual Task's line letter and checks its type, requiring an ordinary Task for S.
+The agent prepares the body's actual associations under the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability).
+Omitting both `--task` and `--line` uses A for new local material, with independent counters by author, kind and line.
 C/T/R/L creation starts at physical v1, while S/D and a J directory use their adopted stable addresses.
 New C/T/R/L/J and continuing S families use the current `material_next` bound; this operation does not infer an unissued number from surviving filenames, while D retains its reusable-address rule.
 No C/T record or snapshot is written.
@@ -273,11 +278,14 @@ Apply the common [existing-decision boundary](rules/records.md#existing-and-newl
 Create/revise optionally accept repeated --new-decision ANCHOR to check explicitly selected actual new dates and acceptance bindings; append-decision explicitly makes its supplied new decision.
 Preserve existing decision precision and review scope in actual material work and delivery, without retrospective bindings, an import marker or a history mechanism.
 
-C/T revision, append and select require an explicit current expectation: `--expect PATH#anchor` for an actual selected decision, or `--expect PATH` only to assert that the actual selected C is unselected.
-The expectation path must match the operated material; a selected C or any T cannot use the anchorless form, and omitted expectation is not an instruction to ignore concurrency.
+C/T revision, append and select require an explicit current expectation.
+With a selected decision, `--expect PATH#anchor` compares only that decision's full locator, which may point to an older physical version.
+Use the anchorless `--expect PATH` only to assert that a C is unselected, with the path matching the operated material.
 The Python interface uses explicit expected_current=None for unselected C, distinct from omitting the argument.
 An initial append/select can establish a missing Current section; a candidate append does not select itself, and --decision still names a real decision rather than clearing a selector.
-The command protects its actual material read, expectation/current-main check, modification and publication under the short write lock and rejects a stale expectation before writing.
+The command reads the material, checks the locator and current main, and publishes under the same short write lock.
+It rejects a missing or mismatched expectation before writing.
+Prepared declarations, associations and decisions follow the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability), including when the expected locator matches.
 Candidate appends read the fresh history even when the selector is unchanged, retaining all earlier decisions.
 The command does not retry a supplied mathematical decision against a different predecessor.
 The writer's latest-main restriction applies to creating new research versions and actual current-adoption operations; ordinary maintenance or pure logical repair of current or retained older materials uses ordinary authorized editing under the [repair/version boundary](rules/records.md#in-place-maintenance-and-logical-repair).
@@ -313,6 +321,7 @@ Only the rows for the actually selected finding count; another finding in the fi
 Use its actual `self-reviewed`, `independently reviewed` or permitted historical/source `unknown` relationship, rather than copying the illustrative self-review value.
 An explicit permitted `unknown` is distinguishable from omission; the structural rule neither requires all findings to be independent nor certifies mathematical sufficiency.
 Targets match exact physical paths and anchors.
+Prepared formal R bindings follow the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability) at their actual inspected inputs and scope.
 Each Target cell names exactly one explicit material locator; repeat the Review locator in separate rows when one finding checks several targets, retaining their actual joint scope and limitations.
 Composite Target cells are unsupported in R/L reading, comparison, revision, receiving and navigation, including same-anchor findings; unselected findings remain outside an explicitly selected operation's scope.
 Retaining an external identity or source header does not make a local revision the earlier acquired physical target.

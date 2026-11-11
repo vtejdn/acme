@@ -1,6 +1,10 @@
 # Framework commands
 
-The standard-library runtime lives in classified `scripts/acme/` packages with thin root command entries.
+The optional framework Python commands require Python 3.12 or newer and use only the Python standard library.
+Their runtime lives in classified `scripts/acme/` packages with thin root command entries.
+Invoke a suitable available interpreter directly for the selected command.
+Framework rules can be read and applied independently of these commands.
+Use each research program's or document build's own requirements for that work.
 The common scripts accompany the official framework files and are usable after file installation or in an existing project clone.
 Run from the checkout root, or pass `--root ROOT`.
 The [agent action guide](../framework/agent-actions.md) selects the work and governing rules; this document describes optional CLI interfaces and their actual side effects.
@@ -121,7 +125,9 @@ Agent-led upgrades may use fixed official public files and ordinary recovery cop
 Material creation supports C/T/S/R/D/J/L.
 For C, absent or actually empty Current assessment means unselected, not open or an unknown fourth state; malformed nonempty selectors and malformed existing decisions remain errors, and no initial decision/date is invented.
 T keeps its required Current decision; actual key C and Task-completion premises retain their separate [assessment/adoption duties](../framework/rules/claims.md#mathematical-assessment-and-review-findings).
-`--task PATH` inherits only the Task's line instead of `--line`; omitting both uses A for new local material, after any Task inheritance.
+`--task PATH` inherits the selected actual Task's line and checks its type, requiring an ordinary Task for S.
+Omitting both `--task` and `--line` uses A for new local material.
+The agent prepares the body's actual associations under the [common preparation-input responsibility](../framework/rules/workflow.md#prepared-work-and-input-applicability).
 C/T/R/L start at physical v1, S/D use stable paths, and J allocates a group README.
 All L use `mathematics/ledger/`.
 General creation does not allocate U.
@@ -163,15 +169,19 @@ Supported retained syntax remains readable in that input and the revision, inclu
 This comparison does not infer mathematical equivalence, date a review, select an ancestor or establish review applicability from unchanged declarations.
 
 `material.py revise PATH --file revised.md` creates a new fixed version.
-C/T require explicit `--expect PATH#decision` for a selected decision, or `--expect PATH` only to assert that the actual operated C is unselected; T remains selected and a mismatched path or omitted expectation cannot bypass stale-input checks.
+C/T require `--expect PATH#decision` for a selected decision or `--expect PATH` to assert that the operated C is unselected.
+The expectation compares the locator only and rejects a missing expectation or a mismatched path or anchor.
+Prepared Task writes follow the [common preparation-input responsibility](../framework/rules/workflow.md#prepared-work-and-input-applicability), including when the expected locator matches.
 The Python interface uses explicit expected_current=None for an unselected C, distinct from omission; first append/select may establish a missing Current section, while candidate append remains unselected.
 `append-decision` adds a real decision and `select --decision PATH#decision` selects an exact real decision, without a clearing bypass.
-Stale predecessors and exclusive-create collisions require a fresh retry.
+On a changed premise or exclusive-create collision, prepare again only if the intended operation still applies to the actual selected material.
 Family issuance checks the stored bound and current occupation under the existing short mutation lock, advances the next unissued value and exclusively publishes the destination.
 Deletion or failure does not lower the bound; unused gaps are acceptable.
 A revision preserves its existing family and advances only its physical version.
 The writer creates a genuine research version; ordinary maintenance and pure logical repair, including retained older material, use ordinary authorized edits under the [common repair/version boundary](../framework/rules/records.md#in-place-maintenance-and-logical-repair), without a new family, version or dated correction stream solely for repair.
 Successfully rechecked R logical repair may update the same finding, bindings, relationship and limits truthfully under the [rolling rule](../framework/rules/proof-audits.md#rolling-review-repair); genuinely new independent evidence needing distinct retention uses its appropriate same-topic version.
+The optional R writer and checkers validate the applicable declarations and locators.
+Prepared formal R bindings follow that common responsibility at the actual inspected input and scope.
 Task setup creates no E or operational link; actual selected ordinary execution prepares or reuses its local boundary, and a joint T has no E or direct S.
 The optional Task coordination table declares task-type joint in every joint physical version, or one exact joint-task parent on an ordinary individual T under the [format](../framework/material-format.md#task-coordination).
 Family type is invariant; omitted/changed joint declarations and either direction of same-family conversion fail before publication, preserving existing E and fixed contracts.
@@ -209,8 +219,9 @@ Historical decisions retain real calendar precision and evidence through generic
 
 ## Current execution boundary
 
-`execution.py check --task TASK_PATH` reads only the selected current local E and its exact local ordinary Task, identity and necessary fields.
+`execution.py check --task TASK_PATH` reports the selected local E's family identity, declared fields and exact local Task decision locator within its structural scope.
 Its required Task decision must be a declared decision with one unique target under the [existing anchor contract](../framework/material-format.md#claim-and-task-decisions); a unique older decision may remain selected independently of the Task's current selector.
+After a branch change, establish actual Task continuity and verify the decision and applicable local conditions before using E for execution under the [execution rule](../framework/rules/execution.md#responsibility-and-version-boundary).
 There is no Git --view option or historical-state fallback; normal Task check/show/navigation and Git operations require no E and do not read execution state.
 The agent maintains public Task E addresses as inline code under the [execution rule](../framework/rules/execution.md#mathematics-and-operational-entrances); ordinary Task operations do not scan body references.
 Explicit Task/E decisions, selected-target classification and concrete file access retain their existing protections.
@@ -251,6 +262,8 @@ For U combinations, explicit qualified same-human correspondence may unite real 
 Same-anchor explicit scopes retain their selected ranges and targets, and an occupied rolling combination may extend its selected original set with exact expected text and established correspondences rather than freezing the earlier set.
 The private original store is excluded; retired source/holding/update inputs fail before private access or receiving publication.
 Sender-local document links retain unacquired original-local context.
+The selected bibliography edit preserves unrelated entries and effective directives under the [bibliography write contract](#local-source-retrieval-and-registration).
+If bibliography preparation fails, intake stops before publishing any of the selected files.
 Prepare the selected materials, bibliography and operation before the short lock, then recheck captured inputs and final U positions and publish them together.
 
 Repeat `--include PATH` for indispensable chosen tracked J files; `--refresh-j` requests that explicit group's refresh.
@@ -404,13 +417,20 @@ material.py fetch-source --url URL --format pdf --output .tmp/chosen/response.pd
 HTML uses --format html.
 The helper returns requested/final URLs, byte length, format/decoding facts and real retrieval errors, without a digest, work/edition verdict or inspection assessment.
 Inspect an unestablished response before using it as the selected original; HTTP success and a supported suffix do not identify the work.
-Fresh output may use the actual ignored logical source store, such as mathematics/literature/pdf/SourceKey.pdf or mathematics/literature/pdf/SourceKey/source.html, under its explicit physical containment and file-shape contract.
-An occupied destination is preserved and refused before retrieval; reuse an adequate existing original directly rather than fetching merely to reconfirm it.
+Choose a file beneath root `.tmp/` for a disposable response or beneath the logical `mathematics/literature/pdf/` store for a retained original, such as `mathematics/literature/pdf/SourceKey.pdf` or `mathematics/literature/pdf/SourceKey/source.html`.
+The helper rejects other destinations and occupied targets before retrieval and checks the selected format and applicable containment rules.
+The retained store uses an ordinary ignored directory or a top-level junction to authorized private storage outside the checkout.
+The resolver refuses a junction into the checkout before actual source access or retrieval.
 Nested links, source-group escapes, broken mounts and protected paths retain their errors.
-Disposable response files stay under root .tmp/ and follow creator cleanup.
+Clean up disposable response files under the [temporary storage rule](../framework/rules/organization.md#temporary-storage).
 
 material.py bibliography --file entry.bib requires --existing-key KEY or --new-work, with optional --chosen-key KEY for an explicitly chosen new work.
 It applies exact supplied fields through register_work and the existing short-lock/stale-entry protections, without source-file registration, source access or a new availability account.
+Standalone updates, intake that selects a receiving bibliography, and explicit key renaming check the bibliography's ordinary repository path before any existence query or read, including no-op requests and rereads under the lock.
+Key renaming keeps the ordinary path check through publication.
+Standalone and intake bibliography edits preserve unselected entries and effective directives such as `@preamble` and `@string`.
+An unchanged bibliography keeps its original bytes.
+If a bounded edit cannot preserve existing content, the helper refuses before publishing and the agent can use ordinary bibliography maintenance.
 The agent chooses same-work correspondence and actual publication fields under the [bibliographic boundary](../framework/rules/literature.md#bibliography-content); the helper performs no fuzzy field fusion.
 The former register-source command, local-PDF/HTML registration, Artifact/Resource facts, source-version/URL/fingerprint parameters and account readers/writers are removed.
 Necessary actual source locators, editions, page correspondences and continuing use restrictions belong in concise author sections of the source README; inspected mathematics and true checking limits belong in U or adequate C/L.
@@ -426,8 +446,11 @@ Logical source navigation remains read-free even when a source is absent; actual
 
 Family-number issuance, coupled identity registration and intake/U allocation use the OS lock at `repository/.lock`, as do explicitly selected navigation and bibliography helpers.
 Ordinary bounded navigation and bibliography prose edits coordinate actual affected writes without universally requiring this helper lock or publication protocol.
-C/T append/select and fixed-material revision protect their actual read, predecessor/current-main check and publication with the same short lock.
-Preparation of mathematical decisions remains outside the lock; a stale predecessor fails without retrying against another decision.
+C/T append/select and fixed-material revision protect their actual read, current-main check and publication with the same short lock.
+The optional writer checks `--expect` by locator.
+Prepared declarations, associations and decisions follow the [common preparation-input responsibility](../framework/rules/workflow.md#prepared-work-and-input-applicability).
+For selected expected-content publication, a caller can hold the existing short write lock and supply the actual preparation input bytes and complete selected writes to `acme.core.publication.publish_files`, retaining applicable authorization and content checks.
+A mismatch refuses that prepared publication for the agent to assess under the common rule.
 An unselected candidate append reads fresh protected history and preserves every existing decision even when the selector has not changed.
 Shared commands accept `--maintenance-wait SECONDS`, default 30; zero fails immediately.
 Waiting is cancellable and emits one notice.

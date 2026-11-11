@@ -27,7 +27,11 @@ A commit and file/anchor are useful when available; otherwise identify the dated
 State whether the review covers the whole argument, a particular interface, source use, computations, or completion.
 An audit of an older revision does not automatically cover later substantive changes.
 
+Prepared formal R bindings follow the [common preparation-input responsibility](workflow.md#prepared-work-and-input-applicability) at their actual inspected inputs and scope.
+Preserve earlier review evidence at its actual scope.
+
 Before acceptance identify the exact statement/contract, complete argument, selected support and direct dependencies, with path/version/anchor and actual applicability scope.
+Before selecting a finding for Task completion, confirm the contract and other inputs that it actually inspected.
 New accepted C decisions select a fixed R finding whose [Review bindings](../material-format.md#review-bindings-for-new-accepted-decisions) cover the precise statement and argument; completed T decisions require coverage of contract and all declared support/dependencies.
 For each finding actually selected by a genuinely new acceptance, require its matching explicit `Review relationships` row as well as those exact bindings.
 An explicit allowed historical/source `unknown` declaration differs from omission; neither it nor a self-reviewed finding is mechanically converted into an independent verdict.

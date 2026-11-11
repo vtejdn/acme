@@ -9,7 +9,7 @@ The authorized read itself may supply connection evidence.
 A gh authentication check concerns that gh account, an SSH Git operation uses its actual SSH channel, and an anonymous public HTTPS read needs neither gh authentication nor a repository remote.
 When useful, git ls-remote targets the selected remote or explicit URL, without assuming origin.
 Check the actual behavior of any diagnostic described as read-only; avoid silently refreshing credentials or changing configuration.
-On failure, report the relevant concrete error without exposing credentials and diagnose the actual environment and channel before inferring expiry or changing an account.
+On a connection failure, apply the [common recovery responsibility](workflow.md#connection-recovery) using actual environment and channel evidence, preserving credential confidentiality.
 A sandbox's lack of credential access does not establish expired credentials.
 Preserve higher-priority permissions and existing task authorization, asking only for a remaining decisive gap in facts or authority.
 Connection success establishes the access actually exercised.
@@ -167,7 +167,9 @@ References to the shared repository and its existing checkout mean each human's 
 Different humans sharing one machine, operating-system account, physical working copy or private storage are outside the default supported scope.
 Apply this scope without machine identification, isolation certification, private-file inventories or mandatory environment preflight.
 Private settings and originals retain their [local-only boundary](organization.md#machine-local-locators).
-Additional parallel research copies for one human are not recommended; this framework defines no coordination or management workflow for them.
+The framework supports one working copy per human author for a given repository.
+Parallel or alternating research use of multiple copies by the same author falls outside the supported scope.
+When an author replaces a device or working copy, retire the former copy from research use and continue in the new copy under the [same-human handoff](execution.md#responsibility-and-version-boundary).
 Within each human's working copy, the actual operator binding remains shared by its chats and does not change another author's mathematical or manuscript choices.
 
 Each collaborator maintains shared registration and derived navigation at their responsible scope.
@@ -209,8 +211,9 @@ U uses its separate `SourceKey/Author[_repoN]_U001.md` source-key/unit placement
 The human key identifies authorship, not a paper byline, ownership permission or an automatic right to alter an acquired original.
 
 Each author/origin/kind/line has an independent numeric sequence: F0001 through F9999, F10000 and onward.
-The chosen research line letter remains unchanged; a Task-derived address inherits only its letter.
-C/T/R/L/U/J identities and continuing S identities are not recycled.
+A Task-derived address inherits only the selected Task's line letter.
+Keep the chosen research line except for an authorized local Task move under the [Task number reuse rule](tasks.md#task-number-reuse).
+Issued C/T/R/L/U/J and continuing S identities remain unavailable for unrelated reuse, subject to that bounded exception for released locally authored Task numbers.
 D is a working address, stable during its current use and reusable after retirement; a reused D inherits none of the earlier draft's content, scope, review or authority.
 Choose families by the [core mathematical topic](records.md#mathematical-topic-families-and-necessary-versions), using necessary versions for variants within it and a new family for a distinct core question; pure logical repair does not issue either merely because an error was fixed.
 Source-unit numbers have independent sequences for each citation key and human author, with necessary external origins distinguished, separate from research-line allocation.
@@ -257,12 +260,14 @@ For C/T/R/L/J and continuing S, `repository/config.json` keeps one `material_nex
 Local registered authors and receiving external authorN/repoN namespaces stay distinct; an original source serial or immediate sender does not replace the actual receiving namespace.
 U uses the same compact map with its separate source-key/author namespace, including necessary external origin distinctions, under the [allocation format](../material-format.md#material-family-allocation-state).
 D is outside this permanent counter because its retired working address can be reused.
-Retiring a material, replacing it through another author or line, or leaving its namespace empty does not decrease the bound or make an issued fixed identity available again.
+Retiring a material, replacing it through another author or line, or leaving its namespace empty does not decrease the bound.
+An issued fixed number remains unavailable for unrelated reuse except under the [release rule for locally authored Tasks](tasks.md#task-number-reuse).
 No per-deletion entry, issue date, retirement log, reserved-file stub, hash or migration registry is required.
 
 Before the first relevant allocation or retirement, initialize the affected entry from an agent-confirmed upper bound on previously issued family numbers.
 Surviving filenames supply only a lower bound; if the actual used-number upper bound is unresolved, resolve that concrete initialization question rather than resetting the counter or reconstructing Git history automatically.
-Under the existing short mutation lock, re-read the stored bound and current occupation, issue a new family and advance the bound without decreasing it after deletion or failure.
+For ordinary allocation, re-read the stored bound and current occupation under the existing short mutation lock, issue a new family and advance the bound without decreasing it after deletion or failure.
+Explicit reuse of a confirmed released Task number preserves the existing bound.
 The destination remains exclusively created and an occupation conflict fails clearly; unused gaps are acceptable.
 Direct agent authoring maintains this same current state instead of bypassing it.
 Installing a new explicitly chosen receiving family or U position also advances its actual namespace bound; a fresh number below that initialized bound is not available even if no file occupies it.
@@ -301,6 +306,7 @@ A draft or unfinished result may be committed with its truthful status.
 Do not automatically run framework regressions, full material scans, recursive proof review or PDF-store hashing.
 Reuse applicable construction/research verification; repeat it only for relevant changes, repaired failures or uncovered uses.
 
+For public delivery that affects joint Task source addresses, include the affected outgoing commits under the [public joint Task rule](tasks.md#public-joint-task-addresses).
 When a push is authorized by a direct instruction or an applicable activity rule, choose relevant checks for the actual target and account/channel under the [connection responsibilities](#git-and-github-connection-checks), verify the target remote tip and branch relationship, push the authorized local tip and verify the remote result.
 Apply the [host execution and access boundaries](workflow.md#workspace-boundaries) to any required permission request or execution failure.
 Within an authorized remote-delivery sequence, a pending batch is its already committed, unpublished work for the selected repository, branch, destination and delivery scope.
@@ -348,7 +354,8 @@ Honor explicit offline instructions and postponed synchronization within their a
 For strictly read-only or fixed-commit work, make only permitted remote queries, preserve the selected input and do not integrate into the inspected object merely to make it current.
 An explicitly fixed installation, copying, intake or review source stays fixed when its source branch advances; project work-start updates do not select another source version.
 Integrating project history may bring framework-file changes that require current-rule reading and adaptation; the separate daily official version query alone still authorizes no framework replacement.
-On a connection, permission or integration failure, report the concrete unconfirmed or unintegrated scope and its impact, defer dependent work and continue independently supported authorized work.
+Apply the [common connection-recovery responsibility](workflow.md#connection-recovery) to connection failures within the integration authority.
+If a connection, permission or integration obstacle remains, report the concrete unconfirmed or unintegrated scope and its impact, defer dependent work and continue independently supported authorized work.
 An explicit successful-synchronization requirement or effective execution stop takes precedence.
 Do not manufacture success through repeated queries, force-push, history rewriting or overwriting local work, or create a failure queue or retry ledger.
 

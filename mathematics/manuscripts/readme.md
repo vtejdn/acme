@@ -11,8 +11,7 @@ Use the [mathematical-review home](../../framework/rules/writing.md#manuscript-r
 Use the appropriate [companion records](../../framework/rules/writing.md#project-and-document-records) for citations and writing choices.
 
 Create a manuscript project only when authorized writing needs it.
-When a corresponding mathematical Task exists, use its assigned local family as the default root, such as `Author_T_F0001/`.
-For a writing assignment without such a Task, follow the [writing-home rule](../../framework/rules/writing.md#projects-and-documents): reuse a suitable existing or author-designated location, or choose a necessary purpose-named document home within actual writing authority, without creating T/E for directory naming.
+Choose the project's location under the [writing-home rule](../../framework/rules/writing.md#projects-and-documents), including when a Task-named default root is already occupied or its Task changes lines.
 Manuscript projects and another human's ordinary Task/E execution authority are outside mathematical intake.
 A necessary fixed joint coordination contract may be received for actual continued collaboration under the [joint-Task conditions](../../framework/rules/tasks.md#joint-tasks-and-participation), with no E or adoption of another participant's Task, strategies or execution authority.
 Your own selected Tasks and manuscript sources, settings and necessary dependencies may be imported under the [personal-import rule](../../framework/rules/intake.md#personal-import), preserving authorship and effective execution conditions.
