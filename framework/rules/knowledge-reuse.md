@@ -18,9 +18,12 @@ Before investing substantial work in a nontrivial intermediate claim, definition
 1. Check existing Claims, arguments, relevant source audits, related strategies, constructions, useful failures and prior search findings by the needed conclusion and problem features.
    Verify their actual conditions, scope and review limits.
 2. If those inputs are insufficient, look for applicable local sources under [common source preparation](literature.md#source-preparation) and use [progressive reading](literature.md#progressive-reading) for the actual question and edition.
-3. If local material still does not supply enough evidence or a workable method, search external literature and primary sources for results, alternative formulations, proof techniques and counterexamples under the [search policy](literature-search.md#autonomous-literature-search).
+3. If local mathematics and literature are insufficient, use the [public repository index](../../intake/reuse-repositories.md) to find related ACME results, proof mechanisms, source inspections, counterexamples, programs or inputs under the [relevant directory-refresh rule](literature-search.md#public-repository-discovery-and-reuse).
+   Read the actual candidate materials and necessary context before judging applicability; an index summary or repository description supplies no accepted mathematical input.
+4. When those layers remain insufficient, search other external literature and primary sources for results, alternative formulations, proof techniques and counterexamples under the [search policy](literature-search.md#autonomous-literature-search).
 
 Stop advancing through these layers once there is sufficient usable evidence.
+This priority requires neither visiting every repository nor delaying an already identified adequate primary source, and grants public ACME work no higher mathematical authority.
 When an existing result covers the needed step, check its assumptions and invoke it directly, citing the project Claim and supporting proof version or the external source as appropriate.
 Reconstruct its underlying lemmas only when the available conclusion is insufficient, a concrete objection needs investigation, or the task requires that reconstruction.
 Reuse an adequate previous search within its recorded scope; ordinary substitutions, definition expansions and direct calculations need no separate search for every line.

@@ -29,11 +29,82 @@ A helper's unsupported filename, layout or input is a limitation of that interfa
 Keep actual missing inputs, substantive errors, unresolved author/source correspondence and access limits at the affected unit or intended use, while continuing independent authorized receiving work.
 
 Another human's ordinary Task/E authority, live execution, profiles and manuscript projects are outside intake.
+A public source Task may guide an explicitly instructed [Task-rooted mathematical intake](#task-rooted-mathematical-intake) without being installed as an ordinary local T.
 Needed S/D mathematics may be explicitly adapted into its appropriate receiving mathematical home, retaining its actual original path and scope without inventing a Claim assessment or review.
 A necessary joint T contract may be received for continuing shared local research under the [Task rule](tasks.md#joint-tasks-and-participation), without receiving unselected participants or authority.
 Own selected Tasks, settings, manuscripts and other personal files use the independent [personal import](#personal-import).
 New mathematical contributions use the contributor's own responsible materials.
 Ordinary non-ACME literature follows the [literature rule](literature.md).
+
+## Discovery and actual receiving
+
+The shared [public repository index](../../intake/reuse-repositories.md) locates resources under the [discovery and refresh rule](literature-search.md#public-repository-discovery-and-reuse).
+Its public links and summaries are navigation, separate from initiator-owned actual acquisition provenance under `intake/<initiator>/`.
+Listing or browsing a repository creates no repoN/authorN registration, intake operation, receipt, mathematical assessment or permission.
+Actual receipt retains the fixed-source, original-author, selected-scope, source-preparation and evidence requirements above; ordinary literature, same-author personal transfer and same-repository collaboration keep their existing distinct routes.
+
+## Task-rooted mathematical intake
+
+An explicit human instruction to receive the mathematical materials associated with an identified public repository's Task authorizes agent-led top-down collection within that scope.
+The human need not enumerate each file, prepare a selection list or approve each necessary dependency separately.
+Resolve the actual source Task and fix the full source commit before dependent collection, honoring an explicitly selected version, subgoal, route or other narrowing.
+Clarify only a decisive unresolved source, purpose or authority gap while continuing independently supported work.
+Discovery or browsing alone does not select whole-Task receipt; ordinary unit intake retains its existing autonomy within authorized research, and same-author transfer and same-repository collaboration retain their distinct routes.
+
+The source Task supplies a reading and scope entrance, not a new acquired material kind or local execution selection.
+Retain its necessary question, hypotheses, scope and limits through precise source references and the actual receiving materials' required context even when the source T is not installed locally.
+
+### Collection scope
+
+Read from the source Task through its actual associated S and relevant subroutes to necessary C/R/L/J/D mathematics, then U, bibliography and required sources.
+This direction guides content reading rather than imposing a layer order, automatic expansion or tool-built dependency graph.
+Establish relevance from actual associations, contracts, source references, arguments, findings and computation inputs, rather than matching numbers, directory names or titles.
+Retain useful results, informative failures, counterexamples and unresolved conditions; paused or superseded routes are not omitted merely because they are inactive.
+
+| Human-selected entrance | Scope |
+| --- | --- |
+| An ordinary Task | Its actual strategies, relevant subroutes and necessary mathematical support; read an adopted joint contract when needed to understand that work. |
+| A joint Task | Its common contract and relevant work of actual individual Tasks adopting it, following their Task-to-S associations rather than inventing direct S membership or a participant register. |
+| A named subgoal, route or stage | The human's narrower selection and the mathematical support necessary for it. |
+
+An ordinary Task's joint parent does not automatically select the other participants' work, and reading their Tasks through a joint entrance transfers no execution authority.
+Process repeated objects once and stop cyclic expansion; when a dependency reaches another Task, select only its necessary inputs rather than that Task wholesale.
+Background links do not collect unrelated projects, reverse consumers, every cited work or an entire U library.
+If Task records leave a concrete coverage gap, read an actually corresponding manuscript or synthesis as needed to find additional mathematical inputs.
+This optional check receives only selected mathematical materials, without copying another author's manuscript project, writing policy or build environment or imposing the complete personal-transfer workflow.
+
+### Versions, preparation and receiving results
+
+Select the actual versions and scopes needed for the intended use, retaining exact statements, arguments, decisions and review inputs, including a necessary earlier physical version.
+Neither every physical family version nor the highest-numbered file is the default selection or a substitute for an exact input.
+An explicit all-version or more complete instruction governs its actual scope in the selected fixed view, without recovering disappeared files from Git history or manufacturing rolling snapshots.
+Read the Task, selected content and required provenance from their actual fixed source views, without sending-worktree fallback or a silent switch to a later branch tip; dependencies from other supplying repositories retain their own actual fixed sources.
+
+Source S/D remain reading inputs whose necessary mathematics is adapted into appropriate existing receiving homes, without installing external rolling S/D families or inventing assessments.
+Receive J programs, necessary inputs and explanations under the [J receiving rule](#computation-programs-and-inputs), excluding output bytes.
+For selected U, retain its rolling unit and actual edition/inspection facts and complete the [necessary original-preparation procedure](literature.md#acquisition-before-u-reception) before receipt.
+Reuse adequate receiver-local originals or obtain the needed edition; directly report a failed acquisition, preserve its real use limits and give still-needed follow-up the [existing maintenance entrance](records.md#pending-literature-work).
+
+Use the existing source/author correspondence and [operation record](#one-operation-record) to preserve actual original and transport facts, exact inputs, acquired scope and review limits.
+Reuse adequate receiving content; mathematical resemblance alone establishes neither same-original correspondence, review coverage nor permission to merge different authors' work.
+Receipt preserves source assessments at their actual scope and establishes no local proof acceptance, independent review or Task completion.
+Report unavailable necessary inputs at their affected consumers, retain accurate source references and continue independently useful coherent receipt where possible.
+Do not fabricate local targets, complete support or whole-Task coverage from a partial collection.
+
+### Authority, tools and delivery
+
+Do not install another human's ordinary source Task as a local T or transfer its live execution, budgets, stops, lifecycle authority or permissions.
+A necessary joint T contract retains its [existing narrow receiving contract](tasks.md#joint-tasks-and-participation), actual original author, joint type and no-E boundary.
+Private originals, profiles, source E, runtime notes, environment directories, caches and temporary byproducts remain outside this receipt.
+Collection changes neither another Task's lifecycle nor an existing local E.
+If the instruction also authorizes continued research, reuse or establish the responsible human's appropriate local Task and stable E under the [research](workflow.md#from-an-inquiry-to-approved-research) and [execution](execution.md#responsibility-and-version-boundary) rules, without another routine grant for already authorized continuation or a reset of effective stops and allowances.
+A material-only receiving instruction starts no research, creates no E and grants no fresh allowance.
+
+The agent judges membership, necessary dependencies, useful failures, version scope, receiving homes, reuse, mathematical applicability and review sufficiency; tools assist explicit reads, retrieval, edits, allocation and mechanical publication checks.
+Retain the actual instruction and required per-unit source/local facts at their existing homes, identifying the entrance Task in necessary source/scope explanations and the normal delivery reply.
+Report actual retained scope and material limits without a new selection account, receipt, JSON field, Task crawler, required command, compulsory prepared plan or uniform batch transaction.
+An optional intake helper executes only explicit eligible unit selections; an ordinary source T used as context stays outside its installation list.
+Keep its existing source, identity, occupied-target, stale-input and publication protections, without broadening accepted T types or adding historical parsers for this entrance.
 
 ## Receiving external correspondence
 

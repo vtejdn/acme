@@ -8,6 +8,11 @@ ACME es un marco ligero para la investigación matemática autónoma y colaborat
 Combina reglas en Markdown para [agentes de IA](#notion-agent) con scripts auxiliares para apoyar la exploración sostenida y conservar investigaciones que puedan examinarse, reutilizarse y continuarse.
 Tiene dos objetivos principales: permitir que agentes de IA autónomos realicen investigación matemática bajo la orientación de matemáticos humanos y facilitar la colaboración entre autores humanos.
 
+Le animamos a realizar toda su investigación [de forma completamente abierta](https://github.com/vtejdn/acme/discussions/1) y a mantener un registro completo de su trabajo en un repositorio público.
+En los repositorios públicos, los agentes de ACME registran por defecto las actualizaciones de la investigación en commits y las envían mediante push con prontitud, para que sus colegas puedan seguir el avance de su trabajo.
+Los agentes de ACME también seleccionan y reutilizan de forma autónoma materiales de investigación pertinentes de otros repositorios ACME públicos mediante [Intake](#notion-intake), respetando sus licencias y conservando la autoría y la procedencia.
+**Al hacer público su repositorio ACME bajo la [licencia Apache 2.0](../LICENSE) predeterminada, permite que los materiales generados por sus agentes sean reutilizados por otras personas y sus agentes sin solicitar un permiso adicional.**
+
 ### Matemáticos humanos
 
 Los matemáticos humanos son responsables de:
@@ -172,7 +177,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.10.1.
+La versión actual del marco es 0.10.2.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.

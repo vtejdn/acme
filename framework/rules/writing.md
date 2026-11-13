@@ -202,6 +202,36 @@ A discrepancy requires checking the actual materials; memory alone is never a re
 
 ## General Mathematical Exposition
 
+### Common mathematical writing defaults
+
+Apply the [common reader-oriented prose and academic-language principle](organization.md#reader-oriented-prose) and the existing [four writing layers](preferences.md#scope-and-adoption).
+The following defaults guide mathematical exposition at its actual scope and inherit more specific applicable author, subfield or document choices.
+Use them proportionately in other authored mathematical prose without extending manuscript-specific files, TeX, citation maps, builds or review arrangements to every material or agent-facing support record.
+
+1. **Write for other professional mathematicians interested in the subject.**
+   Without a more specific applicable choice, address that reader without assuming immediate-subtopic expertise, participation in the research conversation or access to private reasoning, unshared drafts, agent memory or internal material identifiers.
+   Supply necessary context, definitions, hypotheses and explicit references while using suitable standard background and precise citations instead of reproducing every prerequisite or cited proof.
+   Infer a more specific readership from the actual request, document purpose and effective choices; clarify only a remaining audience or purpose choice that materially determines the work.
+2. **Make the problem and contribution easy to find.**
+   Introduce the actual question and relevant objects, explain the role of the result or construction, and identify the main conclusion and important conditions early enough to orient the technical development.
+   Distinguish established background, the document's contribution, conjectures and unresolved limits.
+   Use an overview when helpful without requiring an abstract, roadmap or fixed section order for every document.
+3. **Organize the exposition around the mathematical argument.**
+   Order definitions, results and explanations so their roles are apparent when needed, giving each paragraph a coherent purpose connected to its neighbors.
+   Explain a substantial proof's main idea or decomposition when useful, and state the actual dependency, implication, obstruction or scope change at a transition rather than the agent's writing process.
+   Fit local edits to the surrounding argument while retaining the authorized local scope.
+4. **Explain the steps that create a real obstacle.**
+   Give enough justification for the selected reader to follow deductions, explaining a non-obvious reduction, construction, estimate, hypothesis use or source application where needed.
+   Calling a step clear or standard cannot hide a missing argument or unsupported application; familiar applicable steps can remain concise.
+   Intuition, a proof outline, an example or a citation does not replace the proof or source evidence the assertion requires.
+5. **Reduce unnecessary reading effort while preserving precision.**
+   Use direct natural sentences, concrete mathematical referents and suitable established terminology, preserving technical terms, hypotheses, quantifiers and necessary distinctions while removing repetition and administration that contribute no understanding.
+   Follow the existing [notation-in-context](#notation-in-context) and [formula/prose rules](#formulas-and-prose), and split dense sentences or paragraphs when their logical structure becomes easier to follow.
+   Judge brevity and understanding together without word counts, paragraph limits, formula quotas or phrase blacklists; neither compression nor expansion is an objective by itself.
+6. **Use examples and comparisons when they resolve a concrete difficulty.**
+   Choose a small example, interpretation, special case, counterexample or comparison when it materially clarifies an abstract definition, result or limitation, stating what it shows and what it does not establish.
+   Use adequately supported mathematics and computations within the actual assignment and research authority, without an example after every statement or unapproved research to satisfy an exposition pattern.
+
 State the actual objects, hypotheses, quantifiers and conclusions.
 Keep notation, domains, normalizations and convergence conventions consistent.
 Make the distinction between definitions, adopted conventions, proved results, conjectures and exploratory questions clear.
@@ -483,7 +513,7 @@ Apply the [modifier rule](#direct-results-and-modifiers) to each modifier's func
 Local work covers new, modified and adopted content and direct effects; requested whole-manuscript review requires actual whole-manuscript coverage.
 Searches locate candidates and tools supply stated mechanical facts; reading rules, keyword matches, compilation, formatting and link checks do not replace contextual content judgment.
 
-1. Determine the actual manuscript, responsible writer(s), requested scope and applicable choices, and whether the work is self-checking, assigned review or an already authorized recheck.
+1. Determine the actual manuscript, responsible writer(s), intended reader and purpose, requested scope and applicable choices, and whether the work is self-checking, assigned review or an already authorized recheck.
 2. Read current source files and the mathematical, source, writing-choice and review evidence needed for the selected check.
    For review inputs, follow the relationship, purpose and reading order in the [manuscript review rule](#reviewing-a-manuscript).
 3. Judge content and reader understanding in context, choosing necessary tool checks and direct consumers from the actual effects.
@@ -491,6 +521,7 @@ Searches locate candidates and tools supply stated mechanical facts; reading rul
 5. Act and recheck within the current role's authority, or deliver accurate findings and unfinished scope, reporting checking, correction and manuscript delivery as distinct facts.
 
 Both uses include a reader-perspective rereading of explanatory passages in the checked scope.
+Use the [six common defaults](#common-mathematical-writing-defaults) to judge whether the actual selected text supplies needed context, explains its key relationships and fits that reader and purpose, reusing adequate context without a separate review stage or whole-manuscript reread after every local edit.
 If understanding their role requires a key mathematical relationship absent from the text and its explicit references, verify the relationship and its grounds.
 The writer adds the necessary relationship within the writing authorization, and the reviewer records the needed correction in the selected manuscript's list.
 If the relationship is unsupported or false, correct the associated assertion within authority or report the precise gap rather than inventing a connection.

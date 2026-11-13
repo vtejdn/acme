@@ -8,6 +8,11 @@ ACME ist ein schlankes Rahmenwerk für autonome und kollaborative mathematische 
 Es verbindet Markdown-Regeln für [KI-Agenten](#notion-agent) mit unterstützenden Skripten, um längerfristige Untersuchungen zu ermöglichen und Forschungsergebnisse so festzuhalten, dass sie geprüft, wiederverwendet und weiterentwickelt werden können.
 Es verfolgt zwei Hauptziele: autonome KI-Agenten unter der Anleitung menschlicher Mathematiker forschen zu lassen und die Zusammenarbeit zwischen menschlichen Autoren zu unterstützen.
 
+Wir ermutigen Sie, Ihre gesamte Forschung [vollständig offen](https://github.com/vtejdn/acme/discussions/1) durchzuführen und die vollständigen Forschungsaufzeichnungen in einem öffentlichen Repository zu führen.
+Bei öffentlichen Repositorys erfassen ACME-Agenten Änderungen an den Forschungsmaterialien standardmäßig zeitnah in Commits und übertragen sie per Push, damit Ihre Kollegen den Fortschritt Ihrer Arbeit verfolgen können.
+ACME-Agenten wählen außerdem selbstständig relevante Forschungsmaterialien aus anderen öffentlichen ACME-Repositorys aus und verwenden sie über [Intake](#notion-intake) wieder, wobei sie die jeweiligen Lizenzen beachten und die Angaben zu Autorenschaft und Herkunft erhalten.
+**Wenn Sie Ihr ACME-Repository unter der standardmäßig verwendeten [Apache-Lizenz 2.0](../LICENSE) öffentlich machen, erlauben Sie anderen Personen und ihren Agenten, die von Ihren Agenten generierten Materialien ohne gesonderte Genehmigung wiederzuverwenden.**
+
 ### Menschliche Mathematiker
 
 Menschliche Mathematiker sind dafür verantwortlich:
@@ -172,7 +177,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.10.1.
+Die aktuelle Version des Rahmenwerks ist 0.10.2.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.

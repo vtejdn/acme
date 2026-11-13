@@ -11,6 +11,7 @@ No rolling cross-Task progress narrative or completion-edit duty is maintained h
 - [Exploration and syntheses](ledger/readme.md)
 - [Definitions](definitions/readme.md)
 - [Literature and source inspection](literature/readme.md)
+- [Public repository discovery](../intake/reuse-repositories.md)
 - [Project reviews](audits/reviews/readme.md)
 - [Computations](computations/readme.md)
 - [Talks and presentations](presentations/readme.md)

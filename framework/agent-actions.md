@@ -208,6 +208,7 @@ Read relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` an
 When that selected execution has no local E, follow the [on-demand preparation rule](rules/execution.md#responsibility-and-version-boundary) using adequate real instructions and conditions; absence neither resets limits nor grants resumption.
 For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
 Complete or reuse the [common work-start update](rules/workflow.md#shared-repository-work-starts) before substantive research in a Git working repository with a configured remote, using relevant incoming work for mathematical reuse before any necessary external search.
+When local mathematics and literature are insufficient, use [public repository discovery](rules/literature-search.md#public-repository-discovery-and-reuse) under the existing reuse priority, including its relevant daily directory check without a universal startup query.
 Authorized research writing follows the [common delivery default](rules/identity.md#submission-checks).
 Apply the [collaborative progress-sharing rule](rules/tasks.md#shared-git-research) to actual joint participation, including continuation through an already participating individual T/E.
 Reuse the known project repository, branch and actual work scope, honoring explicit human limits.
@@ -303,6 +304,7 @@ A review request does not itself authorize substantive editing of another author
 ## Prepare or reuse literature
 
 Follow [common source preparation](rules/literature.md#source-preparation) to reuse sufficient evidence, identify the actual work and edition, and inspect necessary passages.
+When local inputs are insufficient and a further result or method is needed, use [indexed public repository reuse](rules/literature-search.md#public-repository-discovery-and-reuse) before a broader search, without delaying an already identified adequate primary source or treating discovery as actual intake.
 Apply the [disclosure limits](rules/literature.md#unpublished-material) to the selected source and its use.
 Maintain original links under the [local source-storage rules](rules/literature.md#local-pdf-storage).
 Use the [searchable-contents rule](rules/literature.md#searchable-contents) when the selected source supplies contents, and follow [progressive reading](rules/literature.md#progressive-reading) at the needed depth.
@@ -316,7 +318,8 @@ Use the optional [fetch or bibliography helper](../scripts/readme.md#local-sourc
 
 ## Write or revise a manuscript
 
-Determine the actual responsible writer(s), writing assignment and purpose, any relevant Task and direct source/review inputs under the [writing rules](rules/writing.md), then read the actual current TeX manuscript and needed supporting records.
+Determine the actual responsible writer(s), intended reader, writing assignment and purpose, any relevant Task and direct source/review inputs under the [writing rules](rules/writing.md), then read the actual current TeX manuscript and needed supporting records.
+Use the [six common mathematical writing defaults](rules/writing.md#common-mathematical-writing-defaults) and actual higher-layer choices, with the default reader of other interested professional mathematicians when no more specific choice applies.
 ACME supports TeX manuscripts; human authors use those sources to guide the agent or edit them directly under the [supported writing scope](rules/writing.md#tex-manuscripts-and-supporting-records).
 A manuscript assignment calls for the actual TeX deliverable, while a request limited to agent-facing Markdown records keeps that scope without inventing a manuscript or compilation.
 Any writer may write manuscripts or slides for any actual repository Task without a matching personal or participation Task; writing creates no research execution authority.
@@ -340,6 +343,7 @@ Return actual corrections and remaining mathematical, writing-rule, citation, bu
 
 Select writing review, proof review or both according to the requested scope and any applicable review arrangement.
 When the request and arrangement leave the review kind unspecified, review writing under the responsible author's four layers.
+Apply the [common defaults](rules/writing.md#common-mathematical-writing-defaults) through the existing scoped self-check and review standard, judging actual reader understanding without an additional review stage or automatic readability verdict.
 See the [manuscript review rule](rules/writing.md#reviewing-a-manuscript).
 Determine the relationship and purpose before reading prior opinions.
 For an independent initial review, form initial findings from permitted inputs before reading prior opinions or conclusions.
@@ -429,6 +433,11 @@ Report actual moved messages, retained unresolved entrances and remaining limits
 ## Acquire material from another research repository
 
 Use [intake](rules/intake.md#scope-and-routing) for distinct research repositories; another registered human in the same repository is direct collaboration.
+For an explicit instruction to receive a source Task's mathematical materials, apply [Task-rooted intake](rules/intake.md#task-rooted-mathematical-intake): resolve the actual Task and full source commit, honor explicit narrowing and collect relevant associated S/subroutes and necessary mathematical inputs without asking the human to enumerate files.
+For a joint entrance, follow actual individual Task-to-S relationships; an ordinary Task's joint parent does not select all other participants.
+Choose needed exact versions, process repeated or cyclic references once, and use an actually corresponding manuscript or synthesis only to resolve a concrete coverage gap.
+The source Task is a reading/scope entrance, not an ordinary T to install or an execution selection; receive eligible mathematics with its actual source and review limits.
+Material-only receipt changes no Task/E authority; if the instruction also authorizes research, use the responsible human's appropriate local Task/E under that authority and its still-effective limits, without a routine second grant.
 Read each actually selected file or mathematical unit at the exact source commit, its intended scope, necessary inputs and receiving candidates before deciding what to copy, retain, reuse and adapt.
 Check its mathematics and claimed state for the intended use and confirm the real original human and source facts, preserving precise content, useful failures, unresolved inputs and actual review limits rather than treating format or tool success as acceptance.
 The intake source is an identified public GitHub repository at a full fixed Git commit; a receiving no-Git personal folder may remain unnamed.
@@ -480,7 +489,7 @@ Record the actual operation once in intake, preserving historical J scopes witho
 Per-file handling retains necessary per-unit original and transport correspondence in that operation without per-file approvals, checklists, receipts, permanent mapping graphs or duplicate receiving accounts.
 New reasoning, different-author synthesis or substantive correction belongs to its actual contributor's own responsible material with exact references; initial adaptation does not relax the post-receipt same-human and fixed-source boundaries.
 For local maintenance, prepare the selected operation item's exact path, actual anchor and file/artifact correspondences together with its material; validate the selected postimage before publication and preserve original/transport facts, scope, availability and unselected items.
-Return the chosen installed scope and limitations, preserving the source's actual inspection and review depth.
+Return the chosen retained scope, necessary entrance-Task context and actual missing-input or coverage limits, preserving the source's actual inspection and review depth without a new selection account.
 
 <a id="import-ones-own-selected-content"></a>
 

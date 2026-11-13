@@ -1,0 +1,16 @@
+# Public Mathematical Repository Discovery
+
+This shared index locates public mathematical resources by topic and useful entrances.
+Its discovery source is [Share your ACME repository](https://github.com/vtejdn/acme/discussions/1); listing is separate from actual acquisition provenance under `intake/<initiator>/`.
+The [public repository reuse rule](../framework/rules/literature-search.md#public-repository-discovery-and-reuse) owns search and refresh responsibilities.
+
+Directory last checked (UTC): **2026-11-13**.
+Coverage: the discussion body and all three displayed repository-sharing comments, each showing no replies.
+This date describes the directory check, not a freshness or whole-repository inspection claim for the entries below.
+The summaries use the sharing descriptions and the explicitly linked entrances read; no mathematical statement, proof, formalization build or review was checked for this index.
+
+| Public repository | Topics and short summary | Entrances read | Category, summary basis and limits |
+| --- | --- | --- | --- |
+| [yin-math-research](https://github.com/vtejdn/yin-math-research) | Free probability and random matrices are the interests named in the author's sharing description. The README presents Sheng Yin's personal ACME research repository; its mathematical entrance locates Tasks, Claims, strategies, source inspection and computations. | [README](https://github.com/vtejdn/yin-math-research/blob/main/readme.md); [mathematical entrance](https://github.com/vtejdn/yin-math-research/blob/main/mathematics/readme.md). | ACME project navigation observed in the README. Basis: the [Nov 2 sharing description](https://github.com/vtejdn/acme/discussions/1) and the entrances read; no underlying research material or current mathematical status was inspected. |
+| [Lehmer-problem](https://github.com/vtejdn/Lehmer-problem) | Lehmer's Mahler measure problem and polynomials with integer coefficients. The README identifies the research topic and points to a separate publication page for current status; its mathematical entrance locates the project materials. | [README](https://github.com/vtejdn/Lehmer-problem/blob/main/readme.md); [mathematical entrance](https://github.com/vtejdn/Lehmer-problem/blob/main/mathematics/readme.md). | ACME project navigation observed in the README. Basis: the [Nov 9 sharing description](https://github.com/vtejdn/acme/discussions/1) and the entrances read; the publication page, mathematical arguments and review findings were not inspected. |
+| [generalized-gamma-convolution-power-problem](https://github.com/vtejdn/generalized-gamma-convolution-power-problem) | Generalized gamma convolutions, Bondesson's deterministic-power problem and Lean formalization. The README introduces the question and links written arguments, source notes, manuscript and formalization entrances. | [README](https://github.com/vtejdn/generalized-gamma-convolution-power-problem/blob/main/README.md), opening question, formalization description and navigation. | Other public research resource: the author's [Nov 1 sharing description](https://github.com/vtejdn/acme/discussions/1) explicitly says it does not use ACME. Basis: that description and the README passages read; proof and audit claims remain source descriptions, without verification or ACME intake classification here. |

@@ -8,6 +8,7 @@ The root README is an entry point.
 Its on-demand runtime notes have a separate [machine-local purpose](#machine-local-runtime) and create no Task or E.
 Joint coordination Tasks have no E, and destination execution state is preserved when copying framework files.
 `intake/<initiator>/` holds concise operation provenance.
+The shared `intake/reuse-repositories.md` index locates public mathematical resources; discovery entries are navigation, separate from acquired-source identity and operation provenance.
 Classified runtime tools belong in `scripts/acme/`, with thin command entries in `scripts/`.
 
 Keep `mathematics/readme.md` as a short, stable directory entrance to Tasks, Claims, strategies and their responsible materials.
@@ -25,6 +26,18 @@ Current execution state and necessary still-effective conditions belong in E und
 Do not duplicate authority: current assessments live in exact Claim/Task decisions; statements and proofs in their materials; reviews in audit records; shared bibliographic fields in mathematics/literature/references.bib, useful author edition/source notes in source README and inspected mathematics/limits in rolling U or adequate C/L.
 Machine-local paths and secrets are not framework defaults.
 Link the responsible record when summarizing it.
+
+## Reader-oriented prose
+
+Write maintained prose so its intended reader can understand and assess the actual content at the requested scope.
+Choose context, explanation and organization from the actual audience and purpose, preserving necessary precision, evidence and qualifications.
+Agent-facing instructions and structured records remain concise and functional at their responsible homes; they need no teaching narrative or manuscript-specific records merely to satisfy this principle.
+Judge understanding from the actual text and its necessary references, rather than word counts, heading patterns, explanation length or successful compilation.
+Use the [common mathematical writing defaults](writing.md#common-mathematical-writing-defaults) proportionately for authored mathematical exposition, without imposing manuscript-specific files, builds or review arrangements on every material.
+
+Use English as the default academic working language for reading and writing within the [repository writing-language rule](#repository-writing-language) and its stated exceptions.
+Necessary sources in other languages remain usable with their authentic meaning, edition facts, attribution and exact quotations preserved.
+Judge source applicability from the actual source need rather than language alone.
 
 ## Repository writing language
 

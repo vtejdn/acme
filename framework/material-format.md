@@ -428,6 +428,8 @@ Check selected mathematics, claimed status, real original authorship and suffici
 Sender versions, current-format support or missing framework metadata alone do not prevent adequate receiving preparation or require changing the sender; actual source, author, evidence and receiving-result obligations remain.
 Ordinary file operations and existing registration/allocation mechanisms suffice; a dedicated command, prepared-text payload, mapping plan or uniform batch protocol is not a receiving prerequisite.
 The resulting identities and provenance below remain required; command payloads and publication protocols apply only when choosing the optional intake helper.
+An explicitly instructed [Task-rooted intake](rules/intake.md#task-rooted-mathematical-intake) uses the source Task as a reading/scope entrance, then selects the actual eligible mathematical units under these existing contracts.
+It introduces no new material kind, plan field or operation schema.
 
 ### Local external identities and prepared correspondence
 
@@ -483,6 +485,7 @@ Select explicit C/U/L/J units, useful R findings, needed S/D mathematics for ada
 No C-to-R or source-artifact expansion occurs.
 R uses its actual finding anchor and retains actual targets and review limitations, with necessary references explicitly prepared or mapped.
 An external T must be an actual necessary joint contract and has no E; another human's ordinary Task/E authority is excluded.
+An ordinary source T read to guide collection stays outside the optional helper's installation selections; reading it does not broaden accepted T types or require a Task-crawling interface.
 For callers choosing the [intake command](../scripts/readme.md#cross-repository-intake), save its JSON selection list containing `path`, `anchor` and `scope`; an assessed C keeps its exact decision anchor, an unselected C selects actual statement/argument scope without inventing a decision, and U uses its exact unit anchor.
 The following selection fields, prepared-text inputs and publication protocol describe that optional interface rather than a compulsory receiving pipeline.
 For a newly selected L finding, read its designated locator and declared relationship through the shared reader.
@@ -522,6 +525,7 @@ Ordinary authorized file operations remain sufficient, without a mandatory prepa
 Onward transfer of a selected object preserves its original repository, source path/revision and inspection, even when the recipient has another bibliography key or U001 allocation.
 
 One `intake/<initiator>/*.json` operation records the actual recorder, timestamp, instruction, original/transport provenance, selected scope, local locators and outcome.
+Identify a necessary entrance Task in the existing instruction or source/scope explanations, preserving actual per-unit source/local facts without new selection fields or a separate receipt.
 New operation times use `YYYY-MM-DDTHH:MM` UTC; genuinely date-only facts retain calendar precision and existing necessary full timestamps are normalized under the [timestamp rule](rules/workflow.md#new-record-timestamps).
 It stores no mathematics or current-use judgment.
 A historical J anchor records the scope acquired at that operation; it need not remain in today's mutable J merely for provenance reading.

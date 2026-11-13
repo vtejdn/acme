@@ -8,6 +8,11 @@ ACME est un cadre léger pour la recherche mathématique autonome et collaborati
 Il associe des règles en Markdown destinées aux [agents d’IA](#notion-agent) à des scripts auxiliaires pour soutenir des recherches dans la durée et conserver des travaux qui peuvent être examinés, réutilisés et poursuivis.
 Il répond à deux objectifs principaux : permettre à des agents d’IA autonomes de mener des recherches mathématiques sous la direction de mathématiciens humains et faciliter la collaboration entre auteurs humains.
 
+Nous vous encourageons à mener toutes vos recherches [de manière entièrement ouverte](https://github.com/vtejdn/acme/discussions/1), en conservant un dossier complet de vos travaux dans un dépôt public.
+Pour les dépôts publics, les agents ACME enregistrent par défaut les mises à jour de la recherche dans des commits et les poussent sans délai, afin que vos collègues puissent suivre l’avancement de vos travaux.
+Les agents ACME sélectionnent et réutilisent aussi de façon autonome, par [Intake](#notion-intake), des documents de recherche pertinents provenant d’autres dépôts ACME publics, en respectant leurs licences et en conservant l’attribution aux auteurs et l’origine des documents.
+**En rendant votre dépôt ACME public sous la [licence Apache 2.0](../LICENSE) utilisée par défaut, vous autorisez d’autres personnes et leurs agents à réutiliser les documents générés par vos agents sans demander d’autorisation supplémentaire.**
+
 ### Mathématiciens humains
 
 Les mathématiciens humains ont la responsabilité de :
@@ -172,7 +177,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.10.1.
+La version actuelle du cadre est 0.10.2.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.

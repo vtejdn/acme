@@ -82,6 +82,20 @@ An authorized writer may associate a manuscript or presentation with any actual 
 This needs neither a personal participation Task, matching serial nor separate permission from the Task creator merely to select the writing subject.
 Writing association changes no Task author, lifecycle, participation, completion or E authority, and an explicit joint-writing container is no joint mathematical-material author.
 
+## Public source Tasks as collection entrances
+
+Under an explicit human instruction, a public source Task may be the reading and scope entrance for [Task-rooted mathematical intake](intake.md#task-rooted-mathematical-intake) without being received as an ordinary local T.
+Read its necessary question, hypotheses and limits in the selected fixed source view and preserve required context in the actual receiving materials and precise source references.
+This neither installs another human's ordinary Task nor transfers its lifecycle, execution authority, stops, budgets or completion verdict.
+
+An ordinary entrance follows its actual S associations and relevant subroutes, reading its adopted joint contract when needed; that parent alone does not select other participants' work.
+A joint entrance reads the common contract and relevant individual Tasks adopting it, then their S associations, preserving the existing absence of directly associated S or an editable participant register on the joint T.
+Reading those individual Tasks creates no local participation or execution selection.
+The [existing receipt of a necessary joint contract](#joint-tasks-and-participation) remains unchanged.
+
+Material-only collection installs no ordinary source T, creates no E and does not alter existing local Task/E authority.
+An instruction also authorizing continued research uses the responsible human's appropriate authorized local Task and stable E under the [research approval](workflow.md#from-an-inquiry-to-approved-research) and [execution](#execution-boundary) rules, reusing the actual grant and preserving effective stops and allowances.
+
 ## Task number reuse
 
 A locally authored Task number may be reused within its original author and research-line sequence after an authorized deletion or an authorized move of the same Task to another line, once the former family is clear from that address in the relevant maintained work.
