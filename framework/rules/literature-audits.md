@@ -21,7 +21,7 @@ A local rolling U uses mathematics/audits/literature/SourceKey/Author_U001.md, w
 An acquired U retains its necessary registered original-repository prefix, for example Bob_repo1_U001.md, and exact original provenance.
 It has no physical _vN, current pointer, fixed copy or snapshot account; arXiv v2 or a publication edition remains a distinct source fact.
 Each source-key and human-author namespace starts at 001 independently, with necessary original-source distinctions retained.
-Yin_U001.md and Ma_U001.md in the same source directory are separate units; Yin's next number is 002 and Ma consumes none of Yin's sequence.
+Alice_U001.md and Bob_U001.md in the same source directory are separate units; Alice's next number is 002 and Bob consumes none of Alice's sequence.
 Use the existing author-specific [allocation state](../material-format.md#material-family-allocation-state), not a shared directory-wide upper bound or a new unit register.
 Full author/origin/path identity distinguishes units; SourceKey-U001 alone is not a cross-author identity.
 The lowercase sourcekey-u001 anchor is file-local, so equal anchors in different authors' files are legal.

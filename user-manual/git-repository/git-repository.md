@@ -18,12 +18,12 @@ The main concepts are:
 Typical commands are:
 
 ```bash
-git status        # show what has changed
-git diff          # show the actual differences
-git add FILE      # stage a change
-git commit -m ""  # record a snapshot
-git log           # show the history
-git branch        # list branches
+git status                         # show what has changed
+git diff                           # show the actual differences
+git add FILE                       # stage a change
+git commit -m "Describe the change" # record a snapshot
+git log                            # show the history
+git branch                         # list branches
 ```
 
 ## <a id="notion-git-repository"></a>Git Repository
@@ -48,7 +48,7 @@ GitHub adds remote storage, a web interface, pull requests, issues, discussions,
 Git repositories can also be hosted on GitLab, Gitee, a company server or even a local disk.
 GitHub is a popular hosting and collaboration layer, not a requirement for using Git.
 
-### Connect a local project to GitHub
+### <a id="connect-github"></a>Connect a local project to GitHub
 
 Use these steps to connect a project folder on your computer to GitHub for the first time.
 The project folder holds the files you edit, and the GitHub repository is the online location for the project.
@@ -59,11 +59,12 @@ This walkthrough uses SSH, which lets Git sign in to GitHub with a key from your
    Open [GitHub](https://github.com/) and select **Sign in**.
    If you need an account, select **Sign up** and follow the instructions to verify your email address.
    Use this account when you add your SSH key later.
+   If you are joining a collaborator's existing repository, first follow the [collaboration setup steps](../user-manual.md#setup-collaboration) to accept the invitation and confirm your access.
 
 2. **Create an empty repository for your project.**
 
-   If your project already has a GitHub repository, skip to step 3.
-   Open the [new repository page](https://github.com/new).
+   If your project already has a GitHub repository, for example when you are joining a collaborator's repository, skip to step 3.
+   Otherwise, open the [new repository page](https://github.com/new).
 
    1. Under **Owner**, select your GitHub account.
    2. Under **Repository name**, enter a name such as `my-math-project`.
@@ -77,8 +78,9 @@ This walkthrough uses SSH, which lets Git sign in to GitHub with a key from your
 
 3. **Ask your agent to prepare Git.**
 
-   Open your project folder in the app where you use your agent.
-   Send your agent the [Install Git instruction](user-instructions/user-instructions.md#install-git).
+   For an existing local project, open its folder in your agent harness, such as a folder where ACME is already installed and in use.
+   If you are joining a collaborator's existing repository, create a new empty local folder and open that folder in your agent harness.
+   Send your agent the [Install Git instruction](../user-instructions/user-instructions.md#install-git).
    Continue when the agent confirms that Git is ready.
 
 4. **Set up SSH access for your GitHub account.**
@@ -104,11 +106,11 @@ This walkthrough uses SSH, which lets Git sign in to GitHub with a key from your
 
    See [GitHub's instructions for adding a public key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
-   After adding the key, send your agent the [SSH test instruction](user-instructions/user-instructions.md#test-github-ssh).
+   After adding the key, send your agent the [SSH test instruction](../user-instructions/user-instructions.md#test-github-ssh).
    Continue when the agent confirms that GitHub recognizes your account.
 
 5. **Connect your project to GitHub.**
 
-   In the [connection instruction](user-instructions/user-instructions.md#connect-github), replace the example address with your repository's GitHub page address.
-   Send the instruction to your agent.
-   The connection is ready when the agent confirms it can read the repository.
+   For an existing local project, use the [connection instruction](../user-instructions/user-instructions.md#connect-github) and replace the example address with the target repository's address.
+   To join a collaborator's existing repository, use the [clone instruction](../user-instructions/user-instructions.md#clone-repo) and explicitly ask the agent to clone into the empty folder prepared in step 3.
+   After cloning, follow the [collaboration setup steps](../user-manual.md#setup-collaboration) to complete any necessary author registration and configuration of your Git commit identity.

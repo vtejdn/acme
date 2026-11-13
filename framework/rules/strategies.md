@@ -136,6 +136,18 @@ A split or merge preserves meaningful lineage in the routes and maintains affect
 
 ## Choosing and Revising a Route
 
+At the start of an [approved research assignment](workflow.md#from-an-inquiry-to-approved-research), assess the original objective against relevant retained progress.
+Read established inputs, provisional premises, promising constructions, useful failures, earlier search findings and source-applicability limits at their responsible homes.
+Judge their actual contribution to the target, distinguishing progress from a renamed formulation or another example of the same unresolved mechanism.
+
+Use comprehensive strategy exploration to consider materially relevant mechanisms and perspectives, their relationship to the target and the evidence for choosing among them.
+Consider proof and refutation directions when relevant, and alternative representations, constructions or source mechanisms when they can change the decision.
+Choose sufficient breadth, necessary depth and investment from the actual question, evidence and effective resources, reusing adequate earlier exploration.
+This requires neither every possible route, exhaustive literature coverage, a fixed alternative count, a comparison matrix nor a mandatory agent-S assignment.
+An adequate decisive result can resolve the objective without pursuing the remaining alternatives.
+Reuse an applicable S under the [route-identity rule](#strategy-hierarchy), separating a route only when its mechanism needs independent selection, comparison, assignment, pause or abandonment.
+State its contribution to the Task, actual inputs, provisional obligations, next discriminating investigation and useful continuation or redirection conditions; generic method names and setup alone do not justify route files.
+
 When selecting or materially redirecting a route, search existing Claims, arguments, source audits, constructions, related strategies and failed attempts by the conclusion and problem features actually needed, under [knowledge reuse](knowledge-reuse.md#reuse-before-proof).
 Explain consequential reuse at the consuming route: local objects and parameters, satisfied and missing hypotheses, actual output and remaining gap.
 Preserve losses and order of choices when they matter.
@@ -196,6 +208,10 @@ Identify verified inputs separately from conjectural dependencies and unchecked 
 Conditional exploration may proceed using those explicitly marked premises without registering or resolving every tentative subclaim first.
 State the current uncertainty or obstruction and the next discriminating step: a calculation, candidate assertion, example, or source check whose outcome can change the route's assessment.
 Give explicit conditions for continuing, redirecting, or reopening the route.
+
+For a selected investigation, carry it out directly or explicitly assign it under [research follow-up](workflow.md#candidate-research-follow-up), then use the result to choose the next action and update actual work allocation.
+Task/S/E preparation or a list of possible strategies alone does not complete approval to explore strategies and advance the objective.
+An approval limited to strategy planning retains that deliverable and limit.
 
 A concrete obstruction or promising external mechanism can trigger autonomous literature search under the [repository search policy](literature-search.md#autonomous-literature-search).
 Specify the question and how possible findings would affect the route.

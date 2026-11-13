@@ -7,7 +7,8 @@ At the start of a work round, apply the [local-rule reading and daily official c
 
 Apply the [core principles and interpretation](framework/readme.md#core-principles-and-interpretation) to all agent actions, including framework conflicts, omissions, ambiguity and matters requiring discretion.
 Apply the current human request, actual operator and activity-specific authority under the [identity rules](framework/rules/identity.md) and applicable [personal or manuscript choices](framework/rules/preferences.md).
-Autonomous research requires the selected Task and its stable E under the [execution rules](framework/rules/execution.md); maintenance or discussion does not select a Task.
+Autonomous research requires the selected Task and its stable E under the [execution rules](framework/rules/execution.md).
+An inquiry or discussion enters formal research through the [preliminary lookup, report and approval boundary](framework/rules/workflow.md#from-an-inquiry-to-approved-research); maintenance and discussion alone select no Task.
 
 Follow the [repository writing language](framework/rules/organization.md#repository-writing-language) and [sentence-oriented source layout](framework/rules/organization.md#sentence-oriented-source-layout) rules for maintained prose.
 Inspect the actual changed sentences and syntax before delivery, within the assigned role.

@@ -112,11 +112,11 @@ No Inputs declaration is required merely for an unrelated local original or an a
 `repository/config.json` contains one compact `material_next` object of positive next unissued integers under the [allocation rule](rules/identity.md#allocation-and-concurrency).
 A local C/T/R/L/J or continuing S key is `Author_Kind_Line`, such as `Alice_C_F`; a received C/T/R/L/J key is `authorN_repoN_Kind_Line`, such as `author3_repo2_R_G`.
 These components identify the actual registered receiving author, original-repository correspondence, material kind and research line, not the immediate transport repository or source serial.
-A U key is `U/SourceKey/Author`, such as `U/Src26/Yin`, with a necessary origin prefix included in the author namespace, for example `U/Src26/Bob_repo1`.
-Each source/author namespace starts at 001 independently; Yin_U001.md and Ma_U001.md may coexist without consuming each other's numbers or sharing an allocation bound.
+A U key is `U/SourceKey/Author`, such as `U/Src26/Alice`, with a necessary origin prefix included in the author namespace, for example `U/Src26/Bob_repo1`.
+Each source/author namespace starts at 001 independently; Alice_U001.md and Bob_U001.md may coexist without consuming each other's numbers or sharing an allocation bound.
 D has no permanent entry because its retired working address can be reused after retention and consumer repair.
 
-For example, `{"material_next": {"Alice_C_F": 8, "author3_repo2_R_G": 12, "U/Src26/Yin": 4}}` records only the next unissued positions in those illustrative namespaces.
+For example, `{"material_next": {"Alice_C_F": 8, "author3_repo2_R_G": 12, "U/Src26/Alice": 4}}` records only the next unissued positions in those illustrative namespaces.
 The official blank starting repository uses `"material_next": {}`; copying an existing research repository preserves its actual issued-number bounds.
 Initialize an existing affected namespace from an agent-confirmed used-number upper bound before its first relevant allocation or retirement; surviving filenames alone cannot establish that no higher number was previously issued.
 Issue or explicitly install a fresh position under the existing short mutation lock and advance its bound without decreasing it after deletion or failure.

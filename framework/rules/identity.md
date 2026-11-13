@@ -173,12 +173,16 @@ When an author replaces a device or working copy, retire the former copy from re
 Within each human's working copy, the actual operator binding remains shared by its chats and does not change another author's mathematical or manuscript choices.
 
 Each collaborator maintains shared registration and derived navigation at their responsible scope.
-Every authored mathematical document retains exactly one human author, including a joint Task.
+Every canonical C/T/S/D/R/L/U/J material retains exactly one human author, including a joint Task.
+An [explicit joint-writing assignment](writing.md#explicit-joint-writing) permits its named responsible writers to maintain the expressly shared manuscript/presentation sources and document-local writing records within that scope.
+Its joined writing-container label creates no registered human or canonical material author, Task participation or E authority.
+Each writer keeps their own working copy, actual operator binding and Git attribution, coordinating overlapping edits under the ordinary rules without a group account or recurring per-writer permission.
+The assignment leaves unrelated documents, canonical mathematical materials, fixed evidence, source facts and private settings under their existing boundaries; the directory label alone grants no permission.
 Initial intake preparation follows the [common adaptation rule](records.md#receiving-and-adapting-selected-content); later corrections to another human's document belong in the correcting human's own suitable material with exact references.
 Substantive mathematics and general body/layout changes retain that author boundary.
 A locator-only repair that preserves the actual object, mathematical meaning and adoption/review scope is shared maintenance under actual authorization, including corresponding references in another author's material.
 Repair necessary downstream references together without inventing a mathematical version, decision, date or review; this exception grants no substantive author takeover or development-role permission.
-Outside that bounded locator-only repair, only the same established human may directly revise the body under actual authority and applicable version/evidence requirements.
+Outside that bounded locator-only repair and the expressly shared writing sources and local records above, only the same established human may directly revise the body under actual authority and applicable version/evidence requirements.
 For an external representation, an explicitly adopted local_human correspondence in the existing external-person record can establish that relationship; names, a write argument or changing the checkout binding alone cannot.
 Do not take over another human's Task/E.
 Shared administration needs no per-author approval, additional review or maintenance receipt.
@@ -222,7 +226,7 @@ repository/config.json stores this repository's actual key, separate project dis
 Machine-local interpreters, OS versions, virtual-environment state and their mirrors do not belong in shared configuration; necessary nonsensitive choices use the [runtime home](organization.md#machine-local-runtime), with Git configuration and private resources at their existing responsible homes.
 Determine project remote addresses from native Git configuration and the actual selected target under the current instruction and authority, without a project URL mirror in config.json.
 It contains no global identity or local self-repository number.
-repository/people.json registers local humans by unique readable names such as Yin, Alice and Alice2, with actual Git/GitHub mappings and no shared active-user setting.
+repository/people.json registers local humans by unique readable names such as Alice, Bob and Alice2, with actual Git/GitHub mappings and no shared active-user setting.
 Canonical external author numbers are reserved and cannot register or bind a local operator.
 
 repository/repositories.json and repository/intake-people.json are the sole local homes for external repoN and authorN records.
@@ -301,7 +305,7 @@ An official source, intake source or reference-only remote supplies no project p
 A configured remote or successful connection alone supplies no writing assignment.
 Without Git or an applicable project remote, complete the authorized local work within its actual scope.
 Honor explicit read-only, local-only, commit-only, offline, postponed-synchronization and publication-scope limits.
-Use the default for the current writing assignment without a separate first or recurring push grant, mode adoption, permission sentence or authorization record.
+Use the default to proactively complete necessary scoped commit and push for the current writing assignment without a separate first or recurring push grant, operation-by-operation request, mode adoption, permission sentence or authorization record.
 
 Research proceeds in parallel; Git delivery within one human's local worktree proceeds serially.
 Before research writing or delivery in a Git-managed research project, confirm its human-chosen registered name and actual operator binding.
@@ -352,6 +356,7 @@ Inspect earlier versions only when the actual question needs them; no ordinary c
 ### Project remote updates and local integration
 
 A repository task in a Git working copy with a configured remote includes routine fetching and necessary local integration before substantive work, subject to explicit human limits, without a separate first-sync permission or repeated confirmation.
+The responsible agent completes the needed retrieval, fast-forward or ordinary merge and any necessary authorized local merge commit under the [core autonomy principle](../readme.md#core-principles-and-interpretation), then verifies the applicable integration result.
 Ordinary first installation first applies the [empty-target conditions](../agent-actions.md#first-install-empty-target), stopping and reporting known nonempty targets before this general integration path.
 Apply the [common work-start timing and capability duties](workflow.md#shared-repository-work-starts) to single-human projects and all other covered activities, without requiring a joint Task or multiple authors.
 Determine the actual repository, project remote, branch and work scope from the instruction and native Git facts, normally using the current working branch's upstream unless the human specifies another integration target.
@@ -364,6 +369,7 @@ Authorized repository writing uses the [common delivery default](#submission-che
 
 Choose native Git retrieval and integration from the fresh commit relationship and actual target, without prescribing one command sequence, helper or whole-library check.
 When the remote tip is already contained locally, continue without a merge or push; fast-forward when possible, and use an ordinary merge preserving both histories when both sides have new commits.
+Omit operations without applicable work rather than turn retrieval, integration, commit and push into a fixed command sequence.
 This does not default to rebase, reset, forceful replacement or history rewriting.
 Integration concerns branches and commits, rather than pulling only one Task's files; select the relevant changed content for inspection afterwards.
 Protect uncommitted work, other sessions' staged contents and each contributor's authorship without requiring the entire worktree to be clean or defaulting to whole-tree add, stash, discard, overwrite or rebase.

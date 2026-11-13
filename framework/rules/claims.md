@@ -56,7 +56,7 @@ Once registered, the ordinary material, dependency and version rules apply; expl
 - Follow the [core-topic family and necessary-version boundary](records.md#mathematical-topic-families-and-necessary-versions) for statement variants, retaining a suitable family within the same mathematical question.
   Pure logical repair may remain in place under the [repair boundary](records.md#in-place-maintenance-and-logical-repair); preserve necessary mathematical/evidence facts and actual consumers without a compulsory correction history.
 - Task and route paths use their separate T and S counters.
-  Source units use author-owned rolling files such as Miy22/Yin_U001.md, with precise source edition, locators and applicability at the actual consumer.
+  Source units use author-owned rolling files such as Miy22/Alice_U001.md, with precise source edition, locators and applicability at the actual consumer.
   Definitions retain their own rules and do not automatically become Claims.
 - Direct source reuse, notation conversion and parameter substitution need no automatic project Claim.
   Register a substantive reusable local deduction when appropriate, with exact source/application scope.

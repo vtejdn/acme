@@ -4,7 +4,7 @@ Before creating or retaining content, apply the [common content decision](../../
 This template supplies no authorization, completed inspection or mandatory field checklist.
 
 Use mathematics/audits/literature/SourceKey/Author_U001.md for an author-owned rolling unit, without _vN.
-Numbers are independent for each source key and author, with actual external origins distinguished; Yin_U001.md and Ma_U001.md may coexist.
+Numbers are independent for each source key and author, with actual external origins distinguished; Alice_U001.md and Bob_U001.md may coexist.
 Maintain the author-specific [allocation state](../../material-format.md#material-family-allocation-state) and keep file-local anchors stable.
 The short author/provenance header follows the [material format](../../material-format.md#fixed-source-unit-inputs).
 

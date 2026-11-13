@@ -33,7 +33,7 @@ For ordinary first installation, apply the [empty-target conditions](#first-inst
 Known nonempty targets stop that installation under its responsible action instead of entering the general work-start merge below.
 
 For a Git-managed working repository with a configured remote, apply the [common work-start update](rules/workflow.md#shared-repository-work-starts) and its [target, authority and integration rule](rules/identity.md#shared-repository-updates-and-integration) after establishing the assignment, current branch and explicit limits from the necessary local entrances.
-The main agent determines the applicable project target and protected work, obtains fresh branch facts and needed commits, completes necessary authorized local integration, then reads affected current rules and inputs before substantive task work.
+The main agent proactively determines the applicable project target and protected work, obtains fresh branch facts and needed commits, completes necessary authorized local integration, then reads affected current rules and inputs before substantive task work.
 This covers single-human projects, ordinary and joint research, writing, literature work, transfer preparation, review, maintenance, framework development and upgrade preparation; continuous steps and subagents in that working copy reuse the actual result.
 Without Git or a configured remote, perform no project update or automatic setup; explicit offline, read-only or fixed-input limits and actual failures follow the common rule.
 Apply the [common connection-recovery responsibility](rules/workflow.md#connection-recovery) within the authorized update before treating a connection failure as an unresolved obstacle.
@@ -191,10 +191,17 @@ Git-dependent helpers remain optional and state their actual prerequisites.
 
 ## Start or continue research
 
-For a new objective, read the [Task setup rules](rules/workflow.md#new-task-setup), likely existing contracts and actual human assignment.
-Reuse an adequate existing Task or establish its precise question, hypotheses, quantifiers, scope, completion criteria and actual proposed/active decision.
-Task setup creates no E; prepare or reuse the ordinary family's local boundary only when execution is actually selected under the [execution rule](rules/execution.md).
-A joint coordination T has no E, and setup creates no execution or fabricated review.
+For an initial question, apply the [inquiry-to-research rule](rules/workflow.md#from-an-inquiry-to-approved-research): use relevant existing evidence and proportionate preliminary lookup, answering directly when sufficient.
+When the question remains unanswered and further work needs formal research, report the findings, unresolved question and concrete proposed scope and wait for applicable human approval before dependent strategy exploration and Task advancement.
+Reuse an existing explicit research instruction or approval for that objective and scope, without recurring approval because a lookup, round or session changes.
+Explanation, bounded source work, maintenance and an explicitly limited plan keep their actual deliverable and scope.
+
+After sufficient approval, read the [Task setup rules](rules/workflow.md#new-task-setup) and likely matching contracts, reuse an adequate same-human Task or establish the precise approved contract with its actual human author and initial active decision.
+An explicitly requested registration awaiting research authorization uses proposed status.
+The responsible responding agent takes main research responsibility by default under the [execution rule](rules/execution.md#main-agent-responsibility-and-exact-maintenance), coordinating with an existing executing main agent rather than starting overlapping writers.
+Task setup alone creates no E; prepare or reuse the ordinary family's stable local boundary only when execution is actually selected under the [execution rule](rules/execution.md#responsibility-and-version-boundary).
+The same approval may cover setup and first execution; a prepared E starts non-running and work starts only when that approval and effective conditions permit it.
+A joint coordination T has no E, and setup alone creates no execution or fabricated review.
 
 For continuation, read the selected T contract/decision, any existing stable E's effective conditions, applicable operator policy, current S and directly needed C/D/J/source evidence.
 Read relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` and `mathematics/messages.md` for the actual author, Task and material scope under the [coordination rule](rules/records.md#shared-mathematical-coordination), completing applicable erratum lookup before mathematical reliance without a whole-library scan.
@@ -207,10 +214,12 @@ Reuse the known project repository, branch and actual work scope, honoring expli
 Follow [execution rules](rules/execution.md#current-contents-and-retained-limits) before autonomous advancement.
 Use one responsible main agent and one stable E for the Task family; a new chat, revision or policy expiry does not reset allowance or resume a stopped run.
 An actually authorized continuation prepares the relevant exact Task reference and current conditions directly; a pointer update preserves stops unless actual resumption is authorized.
-If authorized work may proceed, advance its next useful step and retain actual results, failures, gaps and continuation points.
 If a stop or missing authority prevents advancement, preserve current findings and report that actual boundary.
 Method changes and strategy priorities may adapt within the assignment unless the human explicitly fixed them; they do not change the objective or completion criteria.
-Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) to judge expected gains, decisive gaps and any inexpensive probes before substantial investment.
+Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) for initial comprehensive exploration based on actual retained progress, then judge expected gains, decisive gaps and any inexpensive probes before substantial investment.
+Choose useful breadth, depth and direct work or bounded delegation from the question and evidence, without a fixed route count or compulsory agent-S assignment.
+If authorized work may proceed, carry out or explicitly assign a useful next investigation and use its result, retaining actual findings, failures, gaps and continuation points.
+Task/S/E preparation or a strategy list alone does not fulfill an assignment to explore and advance research.
 Under [research coordination](rules/workflow.md#research-coordination), try the complete argument at consequential points and adjust assignments as evidence changes.
 Use ordinary research or [Preparation](rules/workflow.md#research-preparation) for clear next steps.
 Use the [strategy delegation criteria](rules/strategies.md#choosing-and-revising-a-route) for a consequential choice or sustained lack of progress, and read [agent-S](rules/agent-S.md#when-to-delegate-and-assignment-boundaries) when assigning that role.
@@ -307,9 +316,14 @@ Use the optional [fetch or bibliography helper](../scripts/readme.md#local-sourc
 
 ## Write or revise a manuscript
 
-Read the selected document sources, including current TeX when present, the responsible author's applicable choices, writing purpose and direct source/review inputs under the [writing rules](rules/writing.md).
-Use the [writing-home rule](rules/writing.md#projects-and-documents) when no mathematical Task corresponds to the assignment, preserving an author-designated location and its choices.
-Apply the responsible author's [writing layers and choice-update rule](rules/preferences.md#scope-and-adoption), preserving the [current manuscript and actual policy boundary](rules/writing.md#current-manuscript-authority).
+Determine the actual responsible writer(s), writing assignment and purpose, any relevant Task and direct source/review inputs under the [writing rules](rules/writing.md), then read the actual current TeX manuscript and needed supporting records.
+ACME supports TeX manuscripts; human authors use those sources to guide the agent or edit them directly under the [supported writing scope](rules/writing.md#tex-manuscripts-and-supporting-records).
+A manuscript assignment calls for the actual TeX deliverable, while a request limited to agent-facing Markdown records keeps that scope without inventing a manuscript or compilation.
+Any writer may write manuscripts or slides for any actual repository Task without a matching personal or participation Task; writing creates no research execution authority.
+Reuse an adequate project and apply the [writer/full-Task layout](rules/writing.md#projects-and-documents), using a purpose-named project in the writer container when no Task corresponds.
+Use a joined writer container only under an [explicit joint-writing assignment](rules/writing.md#explicit-joint-writing), preserving actual operator identities and the one actual document home.
+Apply the actual single-writer or joint-document [writing layers and choice-update rule](rules/preferences.md#scope-and-adoption), preserving the [current manuscript and actual policy boundary](rules/writing.md#current-manuscript-authority).
+For a gap requiring formal research beyond the writing assignment, apply the [inquiry-to-research boundary](rules/workflow.md#from-an-inquiry-to-approved-research) rather than inherit Task/E authority from the document association.
 Read the evidence for the findings selected for revision under the [writing execution rule](rules/writing.md#writing-rule-execution).
 Use the [manuscript's writing opinions](rules/writing.md#manuscript-revisions) for writing findings and the [manuscript's mathematical-review evidence](rules/writing.md#manuscript-review-and-mathematical-provenance) for proof findings.
 Perform proportionate source preparation and definition registration; source observations remain evidence rather than a fifth writing layer.
@@ -504,6 +518,7 @@ Return actual retained content, necessary adaptations, foreign acquisition scope
 ## Commit or push requested work
 
 Use this action for ordinary delivery of an authorized repository writing task with an applicable project remote under the [common default](rules/identity.md#submission-checks), or for a direct commit/push instruction.
+Proactively complete necessary scoped commit and push under that default without a separate routine request, choosing actual operations from the work ready for delivery.
 Apply explicit human limits and the actual repository, branch and publishable scope.
 Read [serial delivery](rules/identity.md#submission-checks), the human-registered repository name, selected paths, existing index, actual operator/signature and intended branch/tree.
 Coordinate one stable delivery interval, preserve unrelated staged work and contributor identities, stage the intended deliverable, commit and confirm the actual resulting tree.

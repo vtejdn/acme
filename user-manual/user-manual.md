@@ -32,8 +32,8 @@ Within the authorized scope, autonomous [agents](#notion-agent) are responsible 
 
 ### Collaboration
 
-Mathematicians can [collaborate](#joint-task) through a shared [Git repository](git-repository.md#notion-git-repository), sharing research materials and reusing one another's results.
-The repository can be hosted on a platform such as [GitHub](git-repository.md#notion-github), allowing collaborators to work on their own devices and synchronize changes.
+Mathematicians can [collaborate](#joint-task) through a shared [Git repository](git-repository/git-repository.md#notion-git-repository), sharing research materials and reusing one another's results.
+The repository can be hosted on a platform such as [GitHub](git-repository/git-repository.md#notion-github), allowing collaborators to work on their own devices and synchronize changes.
 See the [Git repository collaboration diagram](git-repo.png).
 
 Different mathematicians or teams can also collaborate across repositories by receiving selected materials through [Intake](#notion-intake); see the [cross-repository collaboration diagram](collaboration.jpg).
@@ -67,41 +67,33 @@ For individual research on a single device, use a suitable [agent harness](agent
 2. Choose a folder on your device to store the framework and future research materials.
 3. Select the model and provider in the settings or model picker.
 
-Without [Git](git-repository.md#notion-git), the default is personal research on your local device.
-To synchronize work across devices or collaborate through a shared [Git repository](git-repository.md#notion-git-repository), you may choose a hosting platform such as [GitHub](git-repository.md#notion-github).
+Without [Git](git-repository/git-repository.md#notion-git), the default is personal research on your local device.
+To synchronize work across devices or collaborate through a shared [Git repository](git-repository/git-repository.md#notion-git-repository), you may choose a hosting platform such as [GitHub](git-repository/git-repository.md#notion-github).
 Uploading research records and making a repository public are separate choices.
 
-4. (Optional) Install Git on your device, or ask an [agent](#notion-agent) in your chosen harness to do it for you.
+4. (Optional) Install Git on your device, or ask an [agent](#notion-agent) in your chosen harness to do it for you; see [install Git](./user-instructions/user-instructions.md#install-git) for an instruction example.
 5. (Optional) Create or sign in to a repository hosting account, then connect to an existing repository or create a new one.
-
-- See also [Setup instructions](user-instructions/user-instructions.md#setup).
+   For a step-by-step guide, see [Connect a local project to GitHub](git-repository/git-repository.md#connect-github).
 
 ### Step III. Install and initialize the framework
 
 If you are joining an existing research repository that already contains ACME, follow the steps in the next section instead.
 
-1. Ask an [agent](#notion-agent) to download and install the [ACME framework](https://github.com/vtejdn/acme) in your project folder.
+1. Ask an [agent](#notion-agent) to download and install the [ACME framework](https://github.com/vtejdn/acme) in your project folder; see [install ACME](user-instructions/user-instructions.md#install-acme) for an instruction example.
 2. Choose a unique author key, such as `Alice` or `Ali`, and independently choose the name to appear in the `LICENSE` attribution.
-   Ask an agent to register you as an author and add that attribution.
-   In a Git workspace, ask the agent to associate this working copy with your author key so that new records use the correct authorship.
-3. (When using Git) Configure the name and email associated with your [commits](#notion-commit), or ask an agent to do so.
-4. (When using Git) Choose or confirm a short name for your research [repository](git-repository.md#notion-git-repository) and ask an agent to ensure it is recorded correctly in the framework.
+   Ask an agent to register you as an author and add that attribution; see [register](user-instructions/user-instructions.md#register) for an instruction example.
+3. (When using Git) Configure the name and email associated with your [commits](#notion-commit), or ask an agent to do so; see [set up Git](user-instructions/user-instructions.md#setup-git) for an instruction example.
+4. (When using Git) Choose or confirm a short name for your research [repository](git-repository/git-repository.md#notion-git-repository) and ask an agent to ensure it is recorded correctly in the framework; see [set the repository key](user-instructions/user-instructions.md#setup-repo) for an instruction example.
 5. (Optional) When appropriate, we strongly recommend sharing your research records through a public repository.
 
-- See also [Setup instructions](user-instructions/user-instructions.md#setup).
-
-### <a id="setup-collaboration"></a>Join an existing [Git repository](git-repository.md#notion-git-repository) as a collaborator
+### <a id="setup-collaboration"></a>Join an existing [Git repository](git-repository/git-repository.md#notion-git-repository) as a collaborator
 
 1. Sign in to the repository hosting platform and accept your coauthor's invitation.
 2. Ask an [agent](#notion-agent) to help configure access to the shared repository.
-3. Give the repository address to an agent and ask it to [clone](#notion-clone) the repository into a new local folder.
-   Open that folder in your agent harness.
-4. If you are not yet registered in the research repository, choose an author key distinct from those of your collaborators and independently choose the name to appear in the `LICENSE` attribution,
-   then ask an agent to register you and add that attribution.
-   Ask the agent to associate this working copy with your author key in ACME.
-5. Configure the name and email used for your [Git](git-repository.md#notion-git) [commits](#notion-commit), or ask an agent to do so.
-
-- See also [Setup instructions](user-instructions/user-instructions.md#setup).
+3. Create a new local folder on your computer and open that folder in your agent harness.
+   Give your agent the repository address and ask it to [clone](#notion-clone) the repository into that empty folder; see [clone repository](user-instructions/user-instructions.md#clone-repo) for an instruction example.
+4. If you are not yet registered in the research repository, choose an author key distinct from those of your collaborators and independently choose the name to appear in the `LICENSE` attribution, then ask an agent to register you and add that attribution; see [register](user-instructions/user-instructions.md#register) for an instruction example.
+5. Configure the name and email used for your [Git](git-repository/git-repository.md#notion-git) [commits](#notion-commit), or ask an agent to do so; see [set up Git](user-instructions/user-instructions.md#setup-git) for an instruction example.
 
 ## Getting started
 
@@ -116,7 +108,7 @@ If you are joining an existing research repository that already contains ACME, f
 5. Think through and understand the mathematical materials produced by agents (no agent can do this for you).
    Discuss the mathematics with agents to deepen and accelerate your understanding.
    Ask for relevant references and question the sources of arguments and ideas Socratically, especially when an argument relies on model knowledge without explicit source support.
-6. (Optional, when using [Git](git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; use undo for local edits or revert commits when appropriate.
+6. (Optional, when using [Git](git-repository/git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; use undo for local edits or revert commits when appropriate.
 
 - See also [research instruction examples](user-instructions/user-instructions.md#research-instructions).
 
@@ -137,7 +129,7 @@ Collaborators in the same repository can establish a joint Task for a common mat
 ### Cautions
 
 - [Agents](#notion-agent) will try to download publicly available literature to [the local literature directory](../mathematics/literature/pdf).
-  This directory is ignored by [Git](git-repository.md#notion-git) by default.
+  This directory is ignored by [Git](git-repository/git-repository.md#notion-git) by default.
   If you put your own private material there, make sure this directory is ignored by Git and is not uploaded to a public repository.
 - If collaborators would otherwise use the same author key, agree on distinct keys, such as `Wang1` and `Wang2`.
 - Use different [research-line letters](#notion-research-line-letter) for [Tasks](#material-task) that will be advanced concurrently by separate main research agents.
@@ -156,7 +148,7 @@ Collaborators in the same repository can establish a joint Task for a common mat
 - If you use multiple ACME repositories on the same device, you can store your literature in a single local PDF folder.
   Ask an agent to use directory junctions to point [each repository's local literature directory](../mathematics/literature/pdf) to that folder.
   Grant the agent the permissions needed to read and manage files in that folder.
-- When agents automate related tasks involving credentials, store secrets appropriately and exclude them from [Git](git-repository.md#notion-git).
+- When agents automate related tasks involving credentials, store secrets appropriately and exclude them from [Git](git-repository/git-repository.md#notion-git).
 
 ### <a id="manuscript-writing"></a>Write a manuscript
 
@@ -170,7 +162,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.9.10.
+The current framework version is 0.10.0.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.
@@ -192,13 +184,13 @@ Some directories are created only when needed.
 | `.tmp/` | Holds temporary inputs and byproducts created by [agents](#notion-agent) and removed after use. |
 | `execution/` | Records the current execution state, limits and stopping conditions for individual research [Tasks](#material-task). |
 | [`framework/`](../framework/readme.md) | Contains framework rules, material templates, format specifications and version guidance. |
-| `intake/` | Records which materials were received from other [repositories](git-repository.md#notion-git-repository), their sources and the scope of each acquisition. |
+| `intake/` | Records which materials were received from other [repositories](git-repository/git-repository.md#notion-git-repository), their sources and the scope of each acquisition. |
 | [`mathematics/`](../mathematics/readme.md) | Holds research materials, literature records, computations, manuscripts and presentations. |
 | `profiles/` | Holds personal research policies, execution preferences and mathematical writing choices. |
 | [`repository/`](../repository/readme.md) | Stores repository settings, author registrations and mappings to external repositories and authors. |
 | [`scripts/`](../scripts/readme.md) | Provides optional command-line tools for setup, material management, navigation and checks. |
 | [`user-manual/`](./) | Contains user guides, setup explanations and instruction examples. |
-| `.gitattributes` | Configures [Git](git-repository.md#notion-git) handling of text and binary files, including line endings. |
+| `.gitattributes` | Configures [Git](git-repository/git-repository.md#notion-git) handling of text and binary files, including line endings. |
 | `.gitignore` | Specifies untracked files and directories that Git should ignore. |
 | `AGENTS.md` | Provides entry instructions that direct agents to the applicable framework rules and materials. |
 | `LICENSE` | Contains the repository’s license terms and notices. |
@@ -231,7 +223,7 @@ Depending on your tools and setup, you may also see the following directories.
 | — | Presentation | [`mathematics/presentations/`](../mathematics/presentations/readme.md) | Develops talks and slides for a specified audience, with presentation sources, writing choices, build information and review records. |
 
 - Each computation has a numbered J directory containing its programs, required inputs and `readme.md`.
-  Generated outputs are stored separately under the local, [Git](git-repository.md#notion-git)-ignored path `mathematics/computations/outputs/<J>/`.
+  Generated outputs are stored separately under the local, [Git](git-repository/git-repository.md#notion-git)-ignored path `mathematics/computations/outputs/<J>/`.
 - Literature audit units are grouped by citation key under `mathematics/audits/literature/`.
 - The [definition index](../mathematics/definitions/index.md) organizes definitions, terminology and symbols by concept, with links to their complete formulations in the responsible C, L or U materials.
 - The canonical [bibliography](../mathematics/literature/references.bib) records publication identity and citation keys.
@@ -253,9 +245,9 @@ Depending on your tools and setup, you may also see the following directories.
 | Material version | A particular retained revision of a material, such as the `v1` or `v2` version of a Claim. |
 | <a id="notion-main-research-agent"></a>Main research agent | The agent leading work on a [Task](#material-task), coordinating any other subagents involved and keeping the research records consistent. |
 | Task round | A period of work on a Task, ending with a record of progress, unresolved issues and where to continue. |
-| <a id="notion-git-branch"></a>Git branch | A named line of development in a [Git repository](git-repository.md#notion-git-repository), allowing changes to be developed separately from other lines of work. |
+| <a id="notion-git-branch"></a>Git branch | A named line of development in a [Git repository](git-repository/git-repository.md#notion-git-repository), allowing changes to be developed separately from other lines of work. |
 | <a id="notion-clone"></a>Clone | Copying an existing Git repository to a new local folder, including its files and version history. |
-| <a id="notion-commit"></a>Commit | A saved version in local [Git](git-repository.md#notion-git) history, recording selected changes with a message describing them. |
+| <a id="notion-commit"></a>Commit | A saved version in local [Git](git-repository/git-repository.md#notion-git) history, recording selected changes with a message describing them. |
 | <a id="notion-push"></a>Push | Sending local commits to a remote Git repository so that the recorded work is available there. |
 | <a id="notion-pull"></a>Pull | Retrieving changes from a remote Git repository and incorporating them into your local work. |
 | <a id="notion-merge"></a>Merge | Combining changes from another [branch](#notion-git-branch) into your current Git branch, resolving conflicting edits when necessary. |

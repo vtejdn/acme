@@ -33,6 +33,10 @@ Write each localized edition in its own language.
 This rule applies to blueprints, reports, code comments and Git-ignored local notes.
 Preserve exact source evidence, including original quotations, and follow the [existing preservation and adaptation rules](records.md#receiving-and-adapting-selected-content) for acquired material.
 
+Use Alice and Bob for generic example people in maintained framework guidance.
+Preserve actual human identities, source facts, quotations and copyright notices rather than treating them as placeholders.
+This is agent-owned editorial maintenance, without a name linter or automatic identity rewrite.
+
 Apply an author's writing choices within this rule.
 Use the adopted language of an existing manuscript or locally maintained publication page to guide reading, review and preservation of its existing prose.
 Use English for new review comments on those documents and for substantive revisions of their prose.
@@ -181,8 +185,7 @@ All L materials live in mathematics/ledger/, including literature-related L.
 
 The canonical bibliography is mathematics/literature/references.bib.
 Definition entries point to authoritative formulations under the definition rules.
-Manuscript sources associated with a mathematical Task normally use mathematics/manuscripts/Author_T_SERIAL/<document>/, with the actual author-designated line and serial.
-For a writing-only assignment without a corresponding Task, use the [writing-home rule](writing.md#projects-and-documents) to reuse or choose an appropriate document location within actual authority, without creating T/E merely for directory naming.
+Use the [writing-home rule](writing.md#projects-and-documents) for manuscript and presentation projects, including single-writer, explicitly joint and Task-free assignments; writing association grants no Task/E authority.
 An explicitly user-designated talk or presentation home preserves its actual path and follows the same writing, source, build and review duties without requiring a new Task or research identity.
 Document navigation may connect related writing, while authoritative mathematical evidence remains independent of mutable writing outputs in every such home.
 Own Tasks and selected manuscripts use personal import; intake excludes another human's ordinary Task/E authority and manuscript projects, with a narrow necessary joint-contract exception.

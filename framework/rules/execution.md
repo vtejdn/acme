@@ -9,8 +9,10 @@ Continue its goal through the actual human's selected individual T, adopted join
 A Git working repository with a configured remote applies the [common work-start update](workflow.md#shared-repository-work-starts) before substantive task work, including single-human, ordinary and participating individual Tasks.
 Incoming commits and [ordinary Git delivery](identity.md#submission-checks) neither adopt a different exact joint contract nor activate or resume E, reset a stop or renew effective local limits.
 All physical Task versions, authorized resumptions and later reactivations share that address.
-Task creation, reading, maintenance and ordinary import do not require or create E.
+Task creation alone, reading, maintenance and ordinary import do not require or create E.
 Prepare or reuse it only when the actual human's ordinary Task is selected for local execution under adequate authority and necessary conditions; a new boundary defaults to not-running and supplies no fresh authority or allowance.
+Approval under the [inquiry-to-research rule](workflow.md#from-an-inquiry-to-approved-research) may cover both Task establishment and its first execution, without another routine grant merely because those responsibilities are distinct.
+After preparing the non-running E, start work only when the actual approval and all effective conditions permit it, preserving existing stops, shared limits, required observations and actual resumption conditions.
 Retain an existing boundary and its effective limits across Task completion, later selection and local cleanup.
 
 The root execution/ directory is persistent local state, ignored by Git and outside temporary or generated storage.
@@ -69,6 +71,8 @@ An E address grants no execution authority and requires no remote counterpart.
 ## Main-agent responsibility and exact maintenance
 
 Each executing Task has one main agent, coordinating overlapping writes and any authorized harness subagents at responsible mathematical homes.
+By default, the agent responding to the approved research assignment takes that responsibility under the actual human's authorship.
+When the Task already has an executing main agent, use existing coordination rather than create an overlapping execution writer.
 Apply the [research coordination and Preparation duties](workflow.md#records-review-and-handoff) while retaining the current Task/E authority and shared resource limits and stops for every delegated assignment.
 Starting, reusing or extending a subagent assignment does not reset an allowance or resume a stopped Task.
 The main agent ensures required retention and closeout by doing or explicitly delegating the work; coordination does not require repeating each subagent's derivation or material operation.

@@ -17,6 +17,10 @@ def material_identity(path):
         return None
 
 
+def _authored_entrance(path, ident):
+    return ident.kind != 'J' or path == 'mathematics/computations/programs/' + ident.name + '/readme.md'
+
+
 def selected(plan):
     """Traverse only explicit necessary edges; never discover textual links."""
     r.require(isinstance(plan, dict) and isinstance(plan.get('entries'), list)
@@ -49,7 +53,8 @@ def _destination(repo, path, author):
     r.require(isinstance(path, str) and PurePosixPath(path).as_posix() == path,
               'Use a canonical explicit receiving file path.')
     target = r.safe_path(repo.root, path)
-    # The selected file must belong to the actual human's responsible home.
+    # Typed materials and profiles retain their actual human's homes;
+    # the agent judges authority for explicitly selected document destinations.
     ident = material_identity(path)
     if ident:
         r.require(ident.author == author and ident.source_repository is None,
@@ -72,22 +77,20 @@ def _destination(repo, path, author):
                    or source_note
                    or any(path.startswith('mathematics/' + home + '/')
                           for home in ('manuscripts', 'presentations', 'talks')))
-        r.require(allowed, 'Select the actual author\'s profile, document or typed mathematical home.')
-        for person in humans.registry(repo)['people']:
-            if person['id'] == author:
-                continue
-            r.require(not any(path.startswith('mathematics/' + home + '/' + person['id'] + '_')
-                              for home in ('manuscripts', 'presentations', 'talks')),
-                      'Do not place own imported content in another registered human\'s document home.')
+        r.require(allowed, 'Select the importing human\'s profile, an explicit document destination or a typed mathematical home.')
     return target
 
 
-def _source_author(path, raw, author, correspondence):
+def _source_author(path, raw, author, correspondence, *, receiving_path=None):
     ident = material_identity(path)
-    if ident is None and raw.startswith((b'---\n', b'---\r\n', b'\xef\xbb\xbf---\n', b'\xef\xbb\xbf---\r\n')):
-        # An explicitly prepared older source may have an obsolete filename.
-        # Its actual author header is sufficient here; local parsing uses only
-        # the current receiving contract and supplies no legacy U reader.
+    receiving = material_identity(receiving_path) if receiving_path is not None else None
+    if (ident is None and receiving is not None
+            and _authored_entrance(receiving_path, receiving)
+            and raw.startswith((b'---\n', b'---\r\n', b'\xef\xbb\xbf---\n', b'\xef\xbb\xbf---\r\n'))):
+        # Authored receiving entrances select these original author facts.
+        # Native J children inherit their group's authored entrance;
+        # their bytes and ordinary document metadata stay opaque here.
+        # Receiving declarations use the current format, without a legacy reader.
         header, _body = documents.header_values(raw.decode('utf-8-sig'), known=False)
         r.require(not {'source_repository', 'source_material'} & header.keys(),
                   'Already-intaken content keeps its existing acquired identity.')
@@ -98,7 +101,7 @@ def _source_author(path, raw, author, correspondence):
                   'Already-intaken content keeps its existing acquired identity; reuse its actual local counterpart.')
         # A J child inherits its source entrance's author; it has no new author.
         source_name = ident.author
-        if path.endswith('.md') and (ident.kind != 'J' or PurePosixPath(path).name == 'readme.md'):
+        if path.endswith('.md') and _authored_entrance(path, ident):
             header, _body = documents.header_values(raw.decode('utf-8-sig'), known=False)
             r.require(header['author'] == ident.author, 'Source path and actual single author disagree.')
             r.require(not {'source_repository', 'source_material'} & header.keys(),
@@ -174,9 +177,9 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             r.require(source_parts[1] == author or correspondence.get(source_parts[1]) == author,
                       'Select only the actual importing human\'s own profile settings.')
         original = source.bytes(entry['source'])
-        _source_author(entry['source'], original, author, correspondence)
+        _source_author(entry['source'], original, author, correspondence, receiving_path=path)
         source_ident = material_identity(entry['source'])
-        if source_ident and source_ident.kind == 'J' and PurePosixPath(entry['source']).name != 'readme.md':
+        if source_ident and source_ident.kind == 'J' and not _authored_entrance(entry['source'], source_ident):
             entrance = 'mathematics/computations/programs/' + source_ident.name + '/readme.md'
             _source_author(entrance, source.bytes(entrance), author, correspondence)
         if 'prepared' in entry:
@@ -194,7 +197,7 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             ident = candidate
             relatives = batch.snapshot.family(ident)
             established = bool(relatives)
-            if ident.kind != 'J' or PurePosixPath(path).name == 'readme.md':
+            if _authored_entrance(path, ident):
                 doc = documents.parse(path, raw.decode('utf-8-sig'))
                 if ident.kind == 'T':
                     source_ident = material_identity(entry['source'])
@@ -229,15 +232,11 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
         for path in own:
             raw = read(path)
             ident = material_identity(path)
-            if ident and ident.kind == 'J' and PurePosixPath(path).name != 'readme.md':
-                if r.paths.in_computation_outputs(path):
-                    entrance = 'mathematics/computations/programs/' + ident.name + '/readme.md'
-                else:
-                    parts = PurePosixPath(path).parts
-                    entrance = PurePosixPath(*parts[:parts.index(ident.name) + 1], 'readme.md').as_posix()
+            if ident and ident.kind == 'J' and not _authored_entrance(path, ident):
+                entrance = 'mathematics/computations/programs/' + ident.name + '/readme.md'
                 owner = documents.parse(entrance, read(entrance))
                 r.require(owner.identity == ident, 'A native J input needs its actual same-group authored entrance.')
-            if ident and (ident.kind != 'J' or PurePosixPath(path).name == 'readme.md'):
+            if ident and _authored_entrance(path, ident):
                 doc = documents.parse(path, raw)
                 documents.check(doc, read, paths=entrances)
                 if ident.kind == 'U':

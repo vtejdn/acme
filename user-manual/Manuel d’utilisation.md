@@ -32,8 +32,8 @@ Dans le périmètre autorisé, les [agents](#notion-agent) autonomes ont la resp
 
 ### Collaboration
 
-Les mathématiciens peuvent [collaborer](#joint-task) au moyen d’un [dépôt Git](git-repository.md#notion-git-repository) commun, partager les documents de recherche et réutiliser les résultats des autres.
-Le dépôt peut être hébergé sur une plateforme telle que [GitHub](git-repository.md#notion-github), permettant aux collaborateurs de travailler sur leurs propres appareils et de synchroniser les modifications.
+Les mathématiciens peuvent [collaborer](#joint-task) au moyen d’un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) commun, partager les documents de recherche et réutiliser les résultats des autres.
+Le dépôt peut être hébergé sur une plateforme telle que [GitHub](<git-repository/Dépôts Git.md#notion-github>), permettant aux collaborateurs de travailler sur leurs propres appareils et de synchroniser les modifications.
 Voir le [schéma de collaboration au moyen d’un dépôt Git](git-repo.png).
 
 Différents mathématiciens ou équipes peuvent aussi collaborer entre dépôts en recevant des documents sélectionnés par [Intake](#notion-intake) ; voir le [schéma de collaboration entre dépôts](collaboration.jpg).
@@ -68,41 +68,41 @@ Pour une recherche individuelle sur un seul appareil, utilisez un [environnement
 2. Choisissez un dossier sur votre appareil pour y conserver le cadre et les futurs documents de recherche.
 3. Choisissez le modèle et le fournisseur dans les paramètres ou le sélecteur de modèles.
 
-Sans [Git](git-repository.md#notion-git), le mode par défaut est la recherche personnelle sur votre appareil local.
-Pour synchroniser votre travail entre appareils ou collaborer au moyen d’un [dépôt Git](git-repository.md#notion-git-repository) partagé, vous pouvez choisir une plateforme d’hébergement telle que [GitHub](git-repository.md#notion-github).
+Sans [Git](<git-repository/Dépôts Git.md#notion-git>), le mode par défaut est la recherche personnelle sur votre appareil local.
+Pour synchroniser votre travail entre appareils ou collaborer au moyen d’un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) partagé, vous pouvez choisir une plateforme d’hébergement telle que [GitHub](<git-repository/Dépôts Git.md#notion-github>).
 Téléverser les travaux de recherche et rendre un dépôt public sont deux choix distincts.
 
 4. (Facultatif) Installez Git sur votre appareil ou demandez à un [agent](#notion-agent) de l’installer dans l’environnement d’exécution choisi.
+   Consultez l’exemple de consigne [Installer Git](<user-instructions/Exemples de consignes.md#install-git>).
 5. (Facultatif) Créez un compte sur une plateforme d’hébergement de dépôts ou connectez-vous, puis reliez votre espace de travail à un dépôt existant ou créez-en un.
-
-- Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
+   Pour un guide pas à pas, consultez [Relier un projet local à GitHub](<git-repository/Dépôts Git.md#connect-github>).
 
 ### Étape III. Installer et initialiser le cadre
 
 Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, suivez plutôt les étapes de la section suivante.
 
 1. Demandez à un [agent](#notion-agent) de télécharger le [cadre ACME](https://github.com/vtejdn/acme) et de l’installer dans le dossier de votre projet.
+   Consultez l’exemple de consigne [Installer ACME](<user-instructions/Exemples de consignes.md#install-acme>).
 2. Choisissez une clé d’auteur unique, par exemple `Alice` ou `Ali`, et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`.
    Demandez à un agent de vous enregistrer comme auteur et d’ajouter cette attribution.
-   Dans un espace de travail Git, demandez à l’agent d’associer cette copie de travail à votre clé d’auteur afin que les nouveaux enregistrements portent la bonne attribution.
+   Consultez l’exemple de consigne [Enregistrer un auteur](<user-instructions/Exemples de consignes.md#register>).
 3. (Si vous utilisez Git) Configurez le nom et l’adresse électronique associés à vos [commits](#notion-commit), ou demandez à un agent de le faire.
-4. (Si vous utilisez Git) Choisissez ou confirmez un nom court pour votre [dépôt](git-repository.md#notion-git-repository) de recherche et demandez à un agent de vérifier qu’il est correctement enregistré dans le cadre.
+   Consultez l’exemple de consigne [Configurer Git](<user-instructions/Exemples de consignes.md#setup-git>).
+4. (Si vous utilisez Git) Choisissez ou confirmez un nom court pour votre [dépôt](<git-repository/Dépôts Git.md#notion-git-repository>) de recherche et demandez à un agent de vérifier qu’il est correctement enregistré dans le cadre.
+   Consultez l’exemple de consigne [Définir la clé du dépôt](<user-instructions/Exemples de consignes.md#setup-repo>).
 5. (Facultatif) Lorsque cela est approprié, nous vous recommandons vivement de partager vos travaux de recherche dans un dépôt public.
 
-- Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
-
-### <a id="setup-collaboration"></a>Rejoindre un [dépôt Git](git-repository.md#notion-git-repository) existant comme collaborateur
+### <a id="setup-collaboration"></a>Rejoindre un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) existant comme collaborateur
 
 1. Connectez-vous à la plateforme d’hébergement du dépôt et acceptez l’invitation de votre coauteur.
 2. Demandez à un [agent](#notion-agent) de vous aider à configurer l’accès au dépôt partagé.
-3. Donnez l’adresse du dépôt à un agent et demandez-lui de le [cloner](#notion-clone) dans un nouveau dossier local.
-   Ouvrez ce dossier dans votre environnement d’exécution d’agents.
-4. Si vous n’êtes pas encore enregistré dans le dépôt de recherche, choisissez une clé d’auteur différente de celles de vos collaborateurs et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`,
-   puis demandez à un agent de vous enregistrer et d’ajouter cette attribution.
-   Demandez à l’agent d’associer cette copie de travail à votre clé d’auteur dans ACME.
-5. Configurez le nom et l’adresse électronique utilisés pour vos [commits](#notion-commit) [Git](git-repository.md#notion-git), ou demandez à un agent de le faire.
-
-- Voir les [consignes de configuration](<user-instructions/Exemples de consignes.md#setup>).
+3. Créez un nouveau dossier local sur votre ordinateur et ouvrez-le dans votre environnement d’exécution d’agents.
+   Donnez l’adresse du dépôt à votre agent et demandez-lui de le [cloner](#notion-clone) dans ce dossier vide.
+   Consultez l’exemple de consigne [Cloner un dépôt](<user-instructions/Exemples de consignes.md#clone-repo>).
+4. Si vous n’êtes pas encore enregistré dans le dépôt de recherche, choisissez une clé d’auteur différente de celles de vos collaborateurs et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`, puis demandez à un agent de vous enregistrer et d’ajouter cette attribution.
+   Consultez l’exemple de consigne [Enregistrer un auteur](<user-instructions/Exemples de consignes.md#register>).
+5. Configurez le nom et l’adresse électronique utilisés pour vos [commits](#notion-commit) [Git](<git-repository/Dépôts Git.md#notion-git>), ou demandez à un agent de le faire.
+   Consultez l’exemple de consigne [Configurer Git](<user-instructions/Exemples de consignes.md#setup-git>).
 
 ## Premiers pas
 
@@ -117,7 +117,7 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 5. Réfléchissez aux documents mathématiques produits par les agents et comprenez-les ; aucun agent ne peut le faire à votre place.
    Discutez des mathématiques avec les agents pour approfondir et accélérer votre compréhension.
    Demandez des références pertinentes et questionnez de manière socratique les sources des arguments et des idées, en particulier lorsqu’un argument s’appuie sur les connaissances du modèle sans source explicite.
-6. (Facultatif, si vous utilisez [Git](git-repository.md#notion-git)) Enregistrez les modifications que vous souhaitez conserver dans des [commits](#notion-commit) ; au besoin, annulez les modifications locales ou utilisez un revert pour annuler des commits.
+6. (Facultatif, si vous utilisez [Git](<git-repository/Dépôts Git.md#notion-git>)) Enregistrez les modifications que vous souhaitez conserver dans des [commits](#notion-commit) ; au besoin, annulez les modifications locales ou utilisez un revert pour annuler des commits.
 
 - Voir les [exemples de consignes de recherche](<user-instructions/Exemples de consignes.md#research-instructions>).
 
@@ -139,7 +139,7 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 ### Points d’attention
 
 - Les [agents](#notion-agent) tenteront de télécharger la littérature publiquement accessible dans le [répertoire local de littérature](../mathematics/literature/pdf).
-  Ce répertoire est ignoré par [Git](git-repository.md#notion-git) par défaut.
+  Ce répertoire est ignoré par [Git](<git-repository/Dépôts Git.md#notion-git>) par défaut.
   Si vous y placez vos propres documents privés, assurez-vous qu’il est ignoré par Git et qu’il n’est pas téléversé vers un dépôt public.
 - Si des collaborateurs devaient utiliser la même clé d’auteur, convenez de clés distinctes, par exemple `Wang1` et `Wang2`.
 - Utilisez des [lettres de ligne de recherche](#notion-research-line-letter) différentes pour les [Tasks](#material-task) menés en parallèle par des agents principaux de recherche distincts.
@@ -158,7 +158,7 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 - Si vous utilisez plusieurs dépôts ACME sur le même appareil, vous pouvez regrouper votre littérature dans un seul dossier local de fichiers PDF.
   Demandez à un agent de faire pointer le [répertoire local de littérature de chaque dépôt](../mathematics/literature/pdf) vers ce dossier au moyen de jonctions de répertoires (directory junctions).
   Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce dossier.
-- Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les de [Git](git-repository.md#notion-git).
+- Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les de [Git](<git-repository/Dépôts Git.md#notion-git>).
 
 ### <a id="manuscript-writing"></a>Rédiger un manuscrit
 
@@ -172,7 +172,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.9.10.
+La version actuelle du cadre est 0.10.0.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
@@ -194,13 +194,13 @@ Certains répertoires ne sont créés qu’en cas de besoin.
 | `.tmp/` | Contient les entrées temporaires et les fichiers intermédiaires créés par les [agents](#notion-agent) et supprimés après utilisation. |
 | `execution/` | Consigne l’état d’exécution actuel, les limites et les conditions d’arrêt des [Tasks](#material-task) de recherche individuels. |
 | [`framework/`](../framework/readme.md) | Contient les règles du cadre, les modèles de documents, les spécifications de format et les indications de version. |
-| `intake/` | Consigne les documents reçus d’autres [dépôts](git-repository.md#notion-git-repository), leurs sources et le périmètre de chaque acquisition. |
+| `intake/` | Consigne les documents reçus d’autres [dépôts](<git-repository/Dépôts Git.md#notion-git-repository>), leurs sources et le périmètre de chaque acquisition. |
 | [`mathematics/`](../mathematics/readme.md) | Contient les documents de recherche, les enregistrements bibliographiques, les calculs, les manuscrits et les présentations. |
 | `profiles/` | Contient les politiques personnelles de recherche, les préférences d’exécution et les choix de rédaction mathématique. |
 | [`repository/`](../repository/readme.md) | Conserve les paramètres du dépôt, les enregistrements des auteurs et les correspondances avec les dépôts et auteurs externes. |
 | [`scripts/`](../scripts/readme.md) | Fournit des outils facultatifs en ligne de commande pour la configuration, la gestion des documents, la navigation et les vérifications. |
 | [`user-manual/`](./) | Contient les guides d’utilisation, les explications de configuration et les exemples de consignes. |
-| `.gitattributes` | Configure le traitement des fichiers texte et binaires par [Git](git-repository.md#notion-git), notamment les fins de ligne. |
+| `.gitattributes` | Configure le traitement des fichiers texte et binaires par [Git](<git-repository/Dépôts Git.md#notion-git>), notamment les fins de ligne. |
 | `.gitignore` | Indique les fichiers et répertoires non suivis que Git doit ignorer. |
 | `AGENTS.md` | Fournit les consignes d’entrée qui orientent les agents vers les règles et documents applicables du cadre. |
 | `LICENSE` | Contient les conditions de licence et les mentions du dépôt. |
@@ -233,7 +233,7 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 | — | Présentation (Presentation) | [`mathematics/presentations/`](../mathematics/presentations/readme.md) | Permet de préparer des exposés et des diapositives pour un public donné, avec les fichiers sources, les choix de rédaction, les informations de compilation et les comptes rendus de vérification. |
 
 - Chaque calcul dispose d’un répertoire J numéroté contenant ses programmes, les données d’entrée nécessaires et un fichier `readme.md`.
-  Les sorties générées sont conservées séparément sous le chemin local `mathematics/computations/outputs/<J>/`, ignoré par [Git](git-repository.md#notion-git).
+  Les sorties générées sont conservées séparément sous le chemin local `mathematics/computations/outputs/<J>/`, ignoré par [Git](<git-repository/Dépôts Git.md#notion-git>).
 - Les unités de vérification de la littérature sont regroupées par clé de citation sous `mathematics/audits/literature/`.
 - L’[index des définitions](../mathematics/definitions/index.md) organise les définitions, la terminologie et les symboles par concept, avec des liens vers leurs formulations complètes dans les documents C, L ou U qui en sont responsables.
 - La [bibliographie](../mathematics/literature/references.bib) de référence consigne l’identité des publications et leurs clés de citation.
@@ -255,9 +255,9 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 | Version de document | Révision particulière conservée d’un document, par exemple la version `v1` ou `v2` d’un Claim. |
 | <a id="notion-main-research-agent"></a>Agent principal de recherche | Agent qui dirige le travail sur un [Task](#material-task), coordonne les éventuels sous-agents et veille à la cohérence des enregistrements de recherche. |
 | Cycle de travail d’un Task | Période de travail sur un Task, qui se termine par un relevé des progrès, des questions non résolues et du point de reprise. |
-| <a id="notion-git-branch"></a>Branche Git (Branch) | Ligne de développement nommée dans un [dépôt Git](git-repository.md#notion-git-repository), permettant de développer des modifications séparément des autres lignes de travail. |
+| <a id="notion-git-branch"></a>Branche Git (Branch) | Ligne de développement nommée dans un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>), permettant de développer des modifications séparément des autres lignes de travail. |
 | <a id="notion-clone"></a>Clonage (Clone) | Copie d’un dépôt Git existant dans un nouveau dossier local, avec ses fichiers et son historique de versions. |
-| <a id="notion-commit"></a>Commit | Version enregistrée dans l’historique [Git](git-repository.md#notion-git) local, contenant une sélection de modifications et un message qui les décrit. |
+| <a id="notion-commit"></a>Commit | Version enregistrée dans l’historique [Git](<git-repository/Dépôts Git.md#notion-git>) local, contenant une sélection de modifications et un message qui les décrit. |
 | <a id="notion-push"></a>Push | Envoi des commits locaux vers un dépôt Git distant afin d’y rendre le travail enregistré disponible. |
 | <a id="notion-pull"></a>Pull | Récupération des modifications d’un dépôt Git distant et intégration de celles-ci au travail local. |
 | <a id="notion-merge"></a>Fusion (Merge) | Intégration des modifications d’une autre [branche](#notion-git-branch) à la branche Git actuelle, avec résolution des modifications conflictuelles si nécessaire. |

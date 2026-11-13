@@ -12,7 +12,10 @@ Source-only audits and setup operations keep their appropriate homes instead of 
 Use current canonical identities in historical accounts as well as current instructions; preserve historical meaning through a verified current identity or precise descriptive mathematics, without retired identifiers or aliases.
 
 Distinguish user-assigned tasks from agent proposals.
+Determine the actual research assignment under the [inquiry-to-research rule](workflow.md#from-an-inquiry-to-approved-research), including the meaning of a conversational proposal and any existing explicit approval for the same objective and scope.
+An initial request for an answer or an unsuccessful preliminary lookup alone does not assign sustained research.
 A proposed question is not an active objective until it falls within an existing exploration authorization or the user authorizes it.
+After sufficient approval, read likely matching contracts and reuse an adequate same-human Task, preserving its effective conditions instead of duplicating it to avoid them.
 Ordinary methodological choices within an active task do not require another approval.
 
 The selected Task decision owns lifecycle, authority, reason and exact contract/evidence:
@@ -33,6 +36,7 @@ Claim assessments, individual review findings and proof/refutation acceptance fo
 
 A new Task states proposed or active explicitly in its initial decision.
 Use active only for an actual assignment or existing exploration authorization, recorded in `authority` and `reason`.
+Register a new approved research assignment as active in that initial decision, without a second activation event.
 An inert template and a proposed question do not grant execution permission.
 Task creation starts no run and needs no fictitious setup review.
 
@@ -73,6 +77,10 @@ Claim mathematical assessments stay with their selected C decisions; the [Claim 
 Each S material owns its own route priority/disposition and Task association, with a derived [strategy index](../../mathematics/strategies/index.md).
 Changes to the mathematical target, quantifiers or mathematical completion criteria preserve the earlier contract and remain within actual human authorization.
 A tractable special case must not silently replace the original question.
+
+An authorized writer may associate a manuscript or presentation with any actual repository Task, including another human's ordinary Task or a joint Task, under the [writing rule](writing.md#projects-and-documents).
+This needs neither a personal participation Task, matching serial nor separate permission from the Task creator merely to select the writing subject.
+Writing association changes no Task author, lifecycle, participation, completion or E authority, and an explicit joint-writing container is no joint mathematical-material author.
 
 ## Task number reuse
 

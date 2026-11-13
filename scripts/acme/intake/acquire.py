@@ -432,6 +432,8 @@ def manifest(source, selections, *, files=()):
         r.require(not r.paths.in_computation_outputs(path), 'J intake selects fixed programs and inputs, not local outputs.')
         item = names.parse(path)
         r.require(item.kind in SOURCE_KINDS, 'Select a mathematical unit; personal files use personal import.')
+        r.require(item.kind != 'J' or path == 'mathematics/' + HOMES['J'] + '/' + item.name + '/readme.md',
+                  'Select the actual J group README and explicit indispensable files.')
         r.require(path in source.names, 'Selected source file is unavailable: ' + path)
         raw = source.read(path).decode('utf-8-sig')
         original_header = None
@@ -490,7 +492,6 @@ def manifest(source, selections, *, files=()):
         if not raw_source:
             check_selection(doc, anchor, receiving_kind=local_kind, prepared=bool(selection.get('prepared')))
         r.require(selection.get('scope'), 'Describe the actual selected mathematical scope.')
-        r.require(item.kind != 'J' or PurePosixPath(path).name == 'readme.md', 'Select the J group README and explicit indispensable files.')
         owned = [path]
         if item.kind == 'J':
             prefix = posixpath.dirname(path) + '/'

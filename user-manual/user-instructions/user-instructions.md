@@ -2,7 +2,8 @@
 
 [User manual](../user-manual.md)
 
-Use natural language to describe your goal.
+Use your preferred language to describe your goal.
+Give your agent clear instructions in your chosen harness, using the examples below as a guide.
 The examples below are grouped into [setup](#setup), [research](#research-instructions), [administration](#administration-instructions), [manuscript writing](#writing-instructions) and [Lean formalization](#lean-instructions) instructions.
 Adapt the wording to your actual question, files and scope.
 
@@ -13,16 +14,17 @@ See the manual's [setup](../user-manual.md#setup) section for the sequence of in
 
 | Example instruction | Expected agent actions |
 | --- | --- |
-| Download and install ACME (https://github.com/vtejdn/acme) in `D:\my-math-repository`. | Check the existing contents of the specified directory and integrate the framework files from the selected official version into the actual project root, preserving existing content and Git history and excluding the official repository's Git metadata. Reuse existing project and author information, complete any necessary setup, verify the framework version and entry points at the root, and report the actual installation location, version and unfinished work. |
-| <a id="install-git"></a> Install [Git](../git-repository.md#notion-git). | Check whether Git is already installed, install it if needed, and report the available version and any remaining setup steps. |
-| Register Ali as my author key; use Alice for the full name. | Use the supplied `Ali` as your author key and `Alice` as your `LICENSE` attribution name, after checking the key and existing registrations. Register you, add the attribution while preserving existing identities and notices, and associate this working copy with `Ali` if it uses Git. |
-| Tell me how to connect to [GitHub](../git-repository.md#notion-github). | Explain how to sign in, authenticate and connect to a remote repository, identifying any steps you need to complete yourself. |
+| <a id="install-acme"></a> Download and install ACME (https://github.com/vtejdn/acme) in `D:\my-math-repository`. | Check the existing contents of the specified directory and integrate the framework files from the selected official version into the actual project root, preserving existing content and Git history and excluding the official repository's Git metadata. Reuse existing project and author information, complete any necessary setup, verify the framework version and entry points at the root, and report the actual installation location, version and unfinished work. |
+| <a id="register"></a>Register Ali as my author key; use Alice for the full name. | Use the supplied `Ali` as your author key and `Alice` as your `LICENSE` attribution name, after checking the key and existing registrations. Register you, add the attribution while preserving existing identities and notices, and associate this working copy with `Ali` if it uses Git. |
+| <a id="install-git"></a> Install [Git](../git-repository/git-repository.md#notion-git). | Check whether Git is already installed, install it if needed, and report the available version and any remaining setup steps. |
+| <a id="setup-git"></a> Set the Git commit name to `Alice` and email to `alice@email.com` for this repository. | Check the effective Git commit identity for this repository. Configure the supplied name and email at the repository or worktree scope when needed. Verify that they match the registered author's Git identity mapping and report the effective values. |
+| Tell me how to connect to [GitHub](../git-repository/git-repository.md#notion-github). | Explain how to sign in, authenticate and connect to a remote repository, identifying any steps you need to complete yourself. |
 | <a id="test-github-ssh"></a> Test my SSH connection to GitHub | Test authentication with `ssh -T git@github.com` using the SSH settings intended for Git, substituting the configured host alias if applicable. Verify any new host key's fingerprint against GitHub's published values before accepting it. Treat GitHub's authentication greeting as success even with exit status `1`. Report the account named in the greeting and any mismatch with the expected account, or report the specific failure. [GitHub's SSH test guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection) |
 | I have set up the connection to Github. Test the connection. | Identify the intended GitHub repository and use `git ls-remote` over its configured SSH or HTTPS connection to test read access. A successful check can return no refs for an empty repository. Report the target, transport, verified account if available, and read result or specific error. [Git reference for `ls-remote`](https://git-scm.com/docs/git-ls-remote) |
-| Set the repository key to `〈repository key〉`. | Validate the selected repository key, record a valid value and update affected current references; ask you to choose another if it is invalid. The repository key is independent of the project abbreviation, full name and README title; preserve the meaning of author keys, material identities and historical source facts. |
+| <a id="setup-repo"></a> Set the repository key to `〈repository key〉`. | Validate the selected repository key, record a valid value and update affected current references; ask you to choose another if it is invalid. The repository key is independent of the project abbreviation, full name and README title; preserve the meaning of author keys, material identities and historical source facts. |
 | Set the repository abbreviation and full name to `〈abbreviation〉` and `〈full name〉`. | Record your separately chosen project abbreviation and full name, checking that both are nonempty single-line text. Use them to form the README's main heading as “〈abbreviation〉: 〈full name〉”, keeping the configuration and heading consistent and preserving the remaining prose. Set the repository key separately from these choices. |
 | <a id="connect-github"></a>Set up Git and connect it to my repository <https://github.com/alice/acme>. | Initialize Git only if needed, complete any missing repository name or author registration using your choices, and associate the working copy with your author key. Check or configure the commit identity to match your registration, connect the specified remote and test access through the relevant account or authentication channel. Preserve existing commits, unrelated settings and Task limits, and report the configured destination and any remaining setup steps. |
-| [Clone](../user-manual.md#notion-clone) my collaborator's repository <https://github.com/alice/acme> and register me as Bob. | Clone the shared repository and check the author key `Bob`, your actual identity and existing registration. For first registration, ask for your independently chosen `LICENSE` attribution name before registering you and adding any required notice. Reuse an applicable existing identity, associate the new Git working copy with the verified author key, preserve existing authors and research materials, and explain the Git commit identity settings. |
+| <a id="clone-repo"></a> [Clone](../user-manual.md#notion-clone) my collaborator's repository <https://github.com/alice/acme> and register me as Bob. | Clone the shared repository and check the author key `Bob`, your actual identity and existing registration. For first registration, ask for your independently chosen `LICENSE` attribution name before registering you and adding any required notice. Reuse an applicable existing identity, associate the new Git working copy with the verified author key, preserve existing authors and research materials, and explain the Git commit identity settings. |
 
 ## Research instructions
 
@@ -73,7 +75,7 @@ Use these examples to work with literature and explore mathematical questions.
 
 ## Administration instructions
 
-Use these examples for [Git](../git-repository.md#notion-git) operations, environment settings and routine maintenance.
+Use these examples for [Git](../git-repository/git-repository.md#notion-git) operations, environment settings and routine maintenance.
 
 ### [Commit](../user-manual.md#notion-commit) and [push](../user-manual.md#notion-push)
 

@@ -126,7 +126,7 @@ Local checks are useful at any point and do not require completion of a whole re
 
 These rules operate within the authorized Task or current instruction.
 Existing execution limits, source-intake requirements and protected [main-theorem/objective decisions](claims.md#lemma-extraction-and-approval) retain their own triggers.
-Do not introduce a stage-transition approval, a mandatory Claim for every experiment, or an additional log or directory merely to apply this section.
+Within an already authorized assignment, do not introduce an additional stage-transition approval, a mandatory Claim for every experiment, or an additional log or directory merely to apply this section.
 
 Continue arguments directly in D and continued/reusable programs in their responsible J program home.
 Generated output uses that J's `mathematics/computations/outputs/<J>/` home under the [computation rule](computations.md#computation-output-location).
@@ -138,6 +138,8 @@ The [temporary-storage boundary](organization.md#temporary-storage) permits oper
 ## Proportionate Execution
 
 Select the activity covered by the current instruction before reading or changing records: discussion, maintenance, Task setup, research advancement, or review.
+Apply the [core autonomy principle](../readme.md#core-principles-and-interpretation) to proactively complete necessary work, verification, integration and delivery within that activity's actual authority and effective limits.
+An analysis-only assignment retains its analytical deliverable; authorized retained writing includes its applicable delivery without requiring another routine operation request.
 Before starting or continuing affected work, read the current local [version metadata](../version.json) and entrances, then the current rules governing that activity, the relevant object and its directly needed inputs.
 Reread the current needed entrances and governing rules before dependent operations when the installed framework version changes, an applicable rule's content, authority or scope changes, or the continued applicability of earlier actual reading cannot be established.
 This includes an upgrade during an existing assignment and local rule edits before version advancement; an unchanged version number does not establish unchanged applicable text.
@@ -179,7 +181,7 @@ This applies to single-human projects, ordinary and joint research, writing, lit
 Here a task is the actual repository assignment, not necessarily a mathematical T; checking a remote creates no T, E or decision record.
 First read the current local version and necessary entrances to establish the assignment, working branch and explicit limits, then use native Git to determine the applicable project target and protected local work.
 For ordinary first installation, the [installation target check](../agent-actions.md#first-install-empty-target) precedes source preparation, writes and project integration; a known nonempty local target or project remote stops that installation instead of being merged first.
-Obtain fresh remote facts and needed commits, complete any necessary authorized fast-forward or ordinary merge, and read affected current rules and inputs before starting substantive task work.
+Proactively obtain fresh remote facts and needed commits, complete any necessary authorized fast-forward or ordinary merge without a separate routine instruction, and read affected current rules and inputs before starting substantive task work.
 
 Continuous reading, tool calls, substeps and progress questions within the same assignment may reuse the round's actual result while it remains applicable.
 The main agent coordinates integration and writes in that working copy; subagents reuse its result while reading their own applicable current rules.
@@ -214,6 +216,44 @@ Do not claim an unavailable model participated or create a capability certificat
 <a id="new-task-setup"></a>
 ## Registering and Activating a Task
 
+### From an inquiry to approved research
+
+Determine the human's requested answer and actual instruction scope from its meaning, including a conversationally phrased research proposal.
+Use relevant existing Task contracts, strategies, mathematical materials and source evidence, completing the applicable [work-start update](#shared-repository-work-starts) before substantive work.
+Perform proportionate [preliminary lookup](literature-search.md#autonomous-literature-search) where the available evidence is insufficient.
+An adequate short explanation, direct calculation or established result can answer the question without creating a Task or requesting formal-research approval.
+The agent judges when the lookup supplies enough orientation; it requires neither external search nor a fixed number of queries or attempts.
+Reuse adequate earlier lookup and stop a clearly unproductive branch at its actual scope.
+Distinguish a mathematical gap from an ambiguous formulation, an access failure or an unchecked source; unsuccessful lookup proves neither novelty, nonexistence nor the absence of a known solution.
+
+When an initial inquiry remains unanswered and further work requires formal strategy exploration and sustained Task advancement, report the situation and request human approval before that transition.
+An initial request for an answer, framework installation or an unsuccessful lookup alone does not authorize it.
+Give a concise account of what the preliminary work established, what remains unresolved and the concrete research scope proposed, including known decisive constraints or missing facts.
+Make clear that approval would authorize the responding agent to reuse or establish the appropriate Task, take main research responsibility, explore strategies and advance that objective.
+Use an ordinary response without a compulsory form, budget questionnaire or invented effort estimate.
+Wait for an actual applicable human response before dependent formal work; silence, elapsed time, a tool result or confidence supplies no approval.
+Honor refusal, deferral and narrower approval at their actual scope.
+Before approval, remain within the initial assignment and its retention and literature duties; do not activate a research Task, start its E or conduct the proposed comprehensive strategy campaign as approval preparation.
+Presenting the proposal requires no proposed Task, approval document or new research container.
+An explicitly requested question registration may use the proposed-Task route below.
+
+Reuse an existing explicit instruction or approval covering formal research on the same objective and scope, including a direct instruction to establish and pursue its Task.
+An inconclusive lookup, continuation, new exploration round or new session creates no recurring approval requirement while that authority remains applicable.
+Preserve all still-effective human restrictions, execution stops, shared limits and resumption conditions.
+A new objective or expansion beyond the approved scope needs its actual applicable authority.
+
+This boundary concerns the initial inquiry's transition to formal research, without a global research mode, search-failed status or sequential acceptance protocol.
+Pure explanation, a bounded literature request, a source audit, maintenance and an explicitly limited plan retain their actual deliverable and scope.
+An unanswered bounded request does not become an assignment to prove the underlying assertion.
+
+After sufficient approval, apply the [Task rules](tasks.md#task-records), [main-agent and execution responsibilities](execution.md#main-agent-responsibility-and-exact-maintenance) and [strategy-selection rules](strategies.md#choosing-and-revising-a-route) without another routine grant for setup, main responsibility, ordinary methods or the next authorized investigation.
+Keep necessary current authority and scope in the existing responsible Task decision or E conditions when they actually change.
+An unchanged authorization needs no new decision, full approval transcript, timestamp history, receipt or parallel permission ledger.
+Approval to explore strategies and advance the objective calls for substantive investigation under the [follow-up rule](#candidate-research-follow-up); Task/S/E preparation or a list of possibilities alone does not fulfill that assignment.
+Continue within scope until the actual completion criteria are met, an effective stop applies or a decisive missing human fact or authority prevents dependent progress, retaining necessary findings and continuation points at their responsible homes.
+
+### Task registration and activation
+
 Apply the [Task rules](tasks.md) and distinguish registration, authorization, review and execution:
 
 | Instruction or situation | Normal result |
@@ -240,7 +280,7 @@ Task setup alone does not require a Claim, strategy, audit file, mathematical-op
 Add related records only when the substantive work calls for them.
 
 Update necessary links and generated navigation when the new objective affects them, then check the final affected changes.
-Task setup creates no E and grants no execution, usage baseline or allowance; prepare or reuse the local boundary only for actually selected execution under the [execution rule](execution.md).
+Task setup alone creates no E and grants no execution, usage baseline or allowance; prepare or reuse the local boundary only for actually selected execution under the [execution rule](execution.md).
 A joint coordination T has no E and is used through the actual human's individual Task.
 Keep live run state out of the contract and the mathematical Task decision; use a stable link to the [execution rules](execution.md).
 If the instruction also authorizes immediate research, continue under those rules without another setup approval.
@@ -251,6 +291,7 @@ An active Task does not resume a stopped run or bypass an applicable execution l
 Begin or resume with read-only inspection.
 During discussion, reading and maintenance analysis, answer directly for explanations of existing material, routine short calculations or exploration with no lasting use.
 Cite adequate existing materials when useful.
+For an unanswered initial inquiry, apply the [reporting and approval boundary](#from-an-inquiry-to-approved-research); an approved research assignment then follows the advancement sequence below.
 When that work produces mathematics worth retaining, apply the pre-delivery preservation duty within actual authority.
 See [Closing an Exploration Round](#exploration-round-closeout).
 Before research advancement inspect the relevant selected material decisions, contracts and execution state.
@@ -271,11 +312,11 @@ For bounded discovery, use ordinary scoped search and reading or the optional `m
 Use operation-local material and reference readers for the actual question; completed authoring or rendering adds no aggregate delivery audit.
 Run observations and execution queries do not trigger mathematical navigation regeneration.
 
-The following sequence applies to mathematical research advancement; discussion, maintenance and Task setup use their applicable scope above.
+The following sequence applies to mathematical research advancement, including an approved transition from discussion; explanation, maintenance and Task setup alone retain their applicable scope above.
 
 1. Read the root README and the stable mathematics entrance, then verify the relevant objective in the [task index](../../mathematics/tasks/index.md).
    Check the working tree before editing and preserve existing work.
-   A currently authorized maintenance or discussion request does not itself select a new research step.
+   Maintenance and discussion alone do not select a new research step; use the actual approved assignment under the [inquiry-to-research rule](#from-an-inquiry-to-approved-research).
    Before autonomous task advancement, read the actual operator's applicable personal execution policy, the current Task contract and its stable [E record](execution.md), including still-effective stopped conditions.
    Obtain required fresh readings at the policy's boundaries without retaining a quota diary or temporary response.
    Keep only the current exact Task reference, state and still-effective conditions in the stable E, with an incremental baseline/window only when actually applicable.
@@ -518,7 +559,7 @@ Fixing material does not itself establish a result: record its actual mathematic
 This responsibility does not require a new material for every experiment, a separate closeout report or an additional approval gate.
 Applicable execution stops take precedence; preserve available evidence and the necessary handoff under those rules rather than extending research or review to finish organization.
 
-For authorized repository writing with an applicable project remote, the main agent assesses remaining delivery at closeout and completes a useful coherent commit and push under the [common delivery default](identity.md#submission-checks), honoring explicit human limits.
+For authorized repository writing with an applicable project remote, the main agent proactively assesses remaining delivery at closeout and completes a useful coherent commit and push under the [common delivery default](identity.md#submission-checks), honoring explicit human limits without waiting for a separate routine delivery instruction.
 Judge collaborative progress sharing under the [Task guidance](tasks.md#shared-git-research) when that activity applies.
 Major progress may warrant earlier sharing during the round; closeout is not a fixed-frequency commit obligation, a proof verdict or permission to bypass an effective stop.
 
@@ -556,6 +597,7 @@ For ordinary Claim registration, host permission concerns execution, and the Cla
 Distinguish a host refusal, an actual access or platform error, and a gap in activity authority or publication scope from the observed evidence.
 If the host refuses a push before it runs, report that refusal and leave remote write access, credential validity and branch restrictions unconfirmed unless separately established.
 After an explicit host refusal, use its normal permission or review path and retry only when that path allows it.
+Additional evidence alone creates no retry permission or authority to bypass that refusal.
 Use a genuinely safer alternative only when the host permits it and the activity authority covers it.
 Changing tools, APIs, invocations or branches, splitting the same operation, or weakening security settings cannot be used to bypass a refusal.
 When human action is needed, identify the specific host requirement and its stated reason.
@@ -581,6 +623,7 @@ Preserve certificate verification, credential confidentiality and actual access 
 Keep persistent configuration, account and credential changes within authority covering their actual effects.
 
 After adequate handling, return to the original operation and verify its actual result at the intended target.
+A proposed remedy or successful diagnostic alone does not complete the authorized operation.
 A diagnostic establishes only the access it exercised, and a successful read establishes only that read access.
 Reuse a verified working method and applicable diagnosis while the target, account, channel and execution context remain relevant.
 Use that method to obtain fresh project-branch facts when the operation requires them.

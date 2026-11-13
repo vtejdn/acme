@@ -271,6 +271,9 @@ Reuse the same direct interface for onward U/L/J transfer, preserving original i
 ## Personal import
 
 A registered local human may import explicitly selected own C/T/S/D/R/L/U/J, settings, manuscripts, native programs, data and attachments into that human's ordinary local homes.
+For selected manuscripts or presentations, establish the actual single or explicitly joint writing assignment and permitted transfer scope under the [writing rule](writing.md#one-actual-document-and-selected-transfer), preserving all responsible writers.
+Use the writer or expressly shared container and complete actual Task family when applicable, without replacing the Task author, creating a participation Task or treating a joined label as a registered person.
+Document selection supplies no authority over unrelated documents, another human's ordinary Task/E, private settings or original literature.
 Start personal export or import only under the human author's explicit instruction or authorization for that actual migration action.
 A direct request to transfer selected own materials supplies that authority without special approval wording or another record; reuse an applicable existing instruction without per-file or continuation approvals.
 Within that authority and actual author scope, the agent chooses necessary content, dependencies, reuse and execution details.
@@ -308,7 +311,7 @@ This is a dependency direction, not a type whitelist or mandatory layer order; p
 Do not collect reverse consumers, unrelated Tasks or projects, or an entire U library, and do not restore Git history or manufacture rolling-material snapshots.
 A personal T includes only its necessary joint contract, without acquiring other participants' work or Task/E authority by association.
 
-After the Task pass, identify its actual corresponding manuscript project from project ownership, description and delivery purpose, and trace the manuscript's mathematical inputs independently under the [writing rule](writing.md#projects-and-documents).
+After the Task pass, identify its actual corresponding manuscript project from the responsible single or joint writing assignment, project description and delivery purpose, and trace the manuscript's mathematical inputs independently under the [writing rule](writing.md#projects-and-documents).
 Include the project's actual papers, supplements and research notes and their required source chains, choices and real review records; unrelated projects remain outside the selection.
 Follow the statements, proofs, definitions, computations and reviews actually used there to necessary support families, U and bibliography, adding what the first pass missed.
 Merge the two collections without duplicate support or a second manuscript copy; using another research result does not select that research's entire Task or manuscript project.
@@ -339,6 +342,8 @@ An explicitly selected own private settings file retains authorized expected-con
 The agent keeps public prose free of private lookup links, and actual explicit target operations reject private targets before access.
 For callers choosing the independent optional `material.py import`, its roots, dependency edges, prepared text, file arrangements and publication protocol follow the [input format](../material-format.md#personal-import-input).
 Those helpers protect their explicitly captured inputs, collisions, allocation and selected publication; they are not a required import pipeline, and only actual foreign branches create intake records.
+For selected document destinations, the agent judges actual writing and transfer scope; the helper infers no exclusive owner from another human's name prefix and parses no joined label into group permission.
+Exact typed-material author checks and the importing human's private-profile ownership, selected paths, expected-content and publication protections remain applicable.
 Report the actual transferred scope, necessary changes, missing inputs and real build/check limits in the ordinary delivery reply, without a separate export report or transfer register.
 Authorized personal import and export preparation use the [common Git delivery default](identity.md#submission-checks) for their actual repository writing scope, honoring explicit human limits such as commit-only work.
 Select the actual receiving or export project destination under the [target-selection rule](identity.md#shared-repository-updates-and-integration).

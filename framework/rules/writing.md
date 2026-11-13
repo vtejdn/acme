@@ -3,42 +3,88 @@
 Apply the [common sentence-oriented source layout](organization.md#sentence-oriented-source-layout) to maintained prose, preserving mathematical and typesetting structure.
 This shared format rule does not change the writing-choice hierarchy.
 
-Apply these general mathematical writing rules and the responsible author's author-wide, applicable subfield and manuscript-specific choices under the [four writing layers](preferences.md#scope-and-adoption) to all maintained natural-language prose under [mathematics/manuscripts/](../../mathematics/manuscripts/), not only prose compiled into TeX.
+Apply these general mathematical writing rules and the effective single-writer or joint-document choices under the [four writing layers](preferences.md#scope-and-adoption) to all maintained natural-language prose under [mathematics/manuscripts/](../../mathematics/manuscripts/), not only prose compiled into TeX.
 This includes project and document `readme.md`, `writing.md`, `conventions.md`, `organization.md`, `review.md`, `citation.md`, `revisions.md` and prose in TeX sources; it governs terminology, notation and style in those records without changing their evidence, scope, findings or file responsibilities.
 Structured metadata, BibTeX fields, formulas, code, exact source quotations, acquired originals and generated outputs retain their native or responsible rules, while prose surrounding them remains governed by these writing rules.
 
-Use these content standards within the [project and document requirements](#projects-and-documents) and the responsible author's applicable [writing choices](preferences.md#scope-and-adoption).
+Use these content standards within the [project and document requirements](#projects-and-documents) and the applicable single-writer or joint-document [writing choices](preferences.md#scope-and-adoption).
 
 The [definition index](../../mathematics/definitions/index.md) locates responsible mathematical definitions.
 Canonical [references.bib](../../mathematics/literature/references.bib) owns shared bibliographic fields; useful author edition/source explanations belong to the source README; U and source audits own inspected edition, passages and actual inspection scope.
 Source observations in responsible source records are evidence, not an additional policy layer.
 Keep a manuscript's choices at its existing [writing-choice home](#document-choices-and-final-review).
 
+## TeX manuscripts and supporting records
+
+ACME supports TeX manuscripts; Markdown and other source formats are not alternative manuscript formats.
+Human authors use the TeX sources to guide the agent's writing or edit those sources themselves.
+The actual current TeX manuscript is the writing and review object under the [current-manuscript rule](#current-manuscript-authority).
+A request to write a manuscript is not fulfilled by delivering only Markdown prose while claiming the TeX manuscript is complete.
+
+Markdown in a writing project supplies agent-facing instructions, project explanations, choices, organization, citation and review records, and necessary supporting working documents at their existing homes.
+An assignment limited to those records needs no invented TeX manuscript or compilation merely to choose their location.
+The [manuscript citation map](#manuscript-review-and-citation-records) retains its scope of actual external citation applications present in the current TeX, with source evidence, applicability, uncertainty and review-only write authority preserved.
+Supporting Markdown does not create another manuscript citation map merely by containing citations; necessary source facts and mathematical findings retain their existing literature and retention duties.
+Uncited bibliography entries and style-only consultation remain outside the manuscript citation map.
+
 ## Projects and Documents
 
-When a corresponding mathematical Task exists, use one manuscript project per user-defined research goal by default, named by its assigned local Task family, such as `Author_T_F0001/`.
-Another human's ordinary Task/E authority and manuscript projects are outside mathematical intake; own selected manuscripts may use [personal import](intake.md#personal-import).
-Use the actual author-designated line and numeric serial from the [Task index](../../mathematics/tasks/index.md) for that Task-named root.
-Use the unversioned family name for the default root and put the title in the README.
-Check the actual project's ownership and scope before using a Task-named root.
-If that root already holds a retained manuscript project for an unrelated Task, preserve the project and its author-designated entrances and choose a distinct suitable writing home within current writing authority.
-When the same Task changes lines, preserve its actual manuscript association and update the affected entrances, keeping its current project location when suitable.
-Create a project when manuscript work is needed within the user's authorized scope; a recorded goal does not require an empty manuscript project.
+An authorized writer may prepare and maintain manuscripts or presentations for any actual repository Task, including another human's ordinary Task or a joint Task.
+No matching personal Task number, participation Task or separate permission from the Task creator is needed merely to select that writing subject.
+A writer without a personal mathematical Task can receive the assignment.
+The actual writing instruction supplies its scope; association transfers no Task authorship, lifecycle, participation, mathematical completion or E authority.
+If writing exposes a gap requiring formal research beyond that assignment, apply the [inquiry-to-research boundary](workflow.md#from-an-inquiry-to-approved-research).
 
-For an actual writing assignment without a corresponding mathematical Task, reuse a suitable existing or author-designated writing home.
-If none is suitable, choose a necessary purpose-named document location under ordinary organization within that writing authority, without manufacturing T/E, mathematical completion criteria or a routine directory-choice approval.
+Use `mathematics/manuscripts/<writing-author>/<task-family>/` or `mathematics/presentations/<writing-author>/<task-family>/` by default for Task-associated projects.
+The first component is the actual responsible writer's canonical human key.
+The second is the complete actual local Task family, including its own author and any source namespace, without the physical `vN` suffix.
+Use the actual Task identity from its responsible contract and [navigation](../../mathematics/tasks/index.md), without replacing its author with the writer or manufacturing a Task to make those keys agree.
+For example, writer `Alice` can use `mathematics/manuscripts/Alice/Bob_T_A0002/paper/main.tex` or `mathematics/presentations/Alice/Bob_T_A0002/joint-results/main.tex`.
+The project README identifies the actual Task and relevant contract/version; the directory creates no material identity.
+When a Task changes lines, preserve the actual manuscript association and adapt its Task-family home and affected entrances together, preserving unrelated projects at occupied destinations.
+Create a project only when authorized writing needs it; neither a Task nor a writer container requires an empty project, per-author index or README at every directory level.
+
+For writing without a corresponding mathematical Task, use the responsible writer's container and a suitable purpose-named project, reusing adequate existing work without manufacturing T/E, mathematical completion criteria or a routine directory-choice approval.
 Maintain the [actual project or document record](#project-and-document-records), preserving author choices, source accuracy, review and applicable build responsibilities.
-This writing work starts no research or execution allowance, and a Markdown assignment requires no TeX source or compilation merely for directory naming.
+This writing work starts no research or execution allowance.
+An assignment limited to agent-facing project/document records needs no TeX manuscript or compilation merely for directory naming under the [supported writing scope](#tex-manuscripts-and-supporting-records).
 
 A user may explicitly designate another home or directory name for a talk or presentation.
 Preserve that choice and apply the same author, source, writing, build and review responsibilities there; a presentation does not require a new Task merely to obtain a Task-named directory.
+An old project location alone supplies no exception to the [required upgrade migration](#upgrading-existing-writing-projects).
+
+### Explicit joint writing
+
+An explicit human assignment to joint writing permits the named responsible writers to maintain the shared manuscript or presentation sources and document-local writing records within that scope.
+Use their canonical keys joined by underscores as the writing container, such as `Bob_Alice`, followed by the full Task family when one applies.
+For example, use `mathematics/manuscripts/Bob_Alice/Bob_T_A0002/paper/main.tex` or `mathematics/presentations/Bob_Alice/Bob_T_A0002/joint-results/main.tex`.
+Joint writing can concern an ordinary or joint Task; a joint Task, several mathematical contributors or a publication byline alone does not request joint editing.
+Use the requested container label and order when supplied, otherwise choose a stable adequate order and reuse the same actual document; another ordering of the same keys does not justify a duplicate.
+
+Keep the actual writers, collaboration scope, purpose and relevant Task in the existing project/document record.
+The joined label is a location, never a human registration, mathematical-material author or Task/E identity.
+Each writer retains their own working copy, operator binding and Git attribution under the [shared-writing exception](identity.md#collaboration-maintenance-and-conflicts), coordinating overlapping edits without a group account, signature collection, owner service or recurring per-writer permission.
+Directory names grant no authority over unrelated documents, another human's research materials, fixed evidence or private settings.
+Canonical C/T/S/D/R/L/U/J authorship and individual Task/E responsibility retain their existing boundaries.
+
+Use the responsible writer's applicable choices for a single-writer document independently of the Task's author.
+Joint documents use existing shared choices and common defaults under the [preference rule](preferences.md#scope-and-adoption), incorporating individual policies only when actually adopted for the document.
+The writing container, responsible writers, Task creator and Git signatures determine no publication byline, speaker name or ordering; apply the existing [byline default](#document-choices-and-final-review) and actual human instructions.
+Preserve real mathematical and source attribution.
+
+### One actual document and selected transfer
+
+Reuse an adequate existing project for the same actual document, including when the responding writer changes.
+Explicit joint writing uses one shared home rather than synchronized per-writer copies.
+Distinct papers or talks may have distinct purposes, and primary/supporting Task links state actual scope without another document copy or research permission.
+Manuscript projects and another human's ordinary Task/E authority remain outside mathematical intake; selected personal documents use [personal import](intake.md#personal-import) under their actual single or joint writing assignment.
 For a [same-author Task transfer](intake.md#task-and-manuscript-collection), include its actual corresponding manuscript project by default, identifying that relationship from the project ownership, description and delivery purpose rather than a matching directory number.
 After the Task pass, independently trace the manuscript's actual statements, proofs, definitions, computations and reviews to necessary support families, U and bibliography, adding inputs the Task pass missed.
 Include the project's actual papers, supplements and research notes, project/document READMEs, main files, sections, bibliography, necessary figures, styles, other build inputs, writing choices, real review records and existing unresolved manuscript revisions.
 Documents genuinely belonging to that project are within scope; unrelated projects remain outside it, and an explicit narrower human selection takes precedence.
 Merge both passes without duplicate support or another copy of a shared manuscript.
 If no corresponding project exists, create no empty directory or placeholder.
-Own manuscript import uses an appropriate existing or designated receiving home without creating an unrequested Task.
+Personal document transfer uses an appropriate single or expressly shared receiving home and preserves all actual responsible writers, without creating an unrequested Task or selecting unrelated Task/E, documents, private settings or original literature by association.
 Preserve document choices and actual review scope, adapt entrances and build paths, and run proportionate affected local build checks without treating a source build as a successful receiving build.
 Carry only the unresolved revision opinions attributable to the selected manuscript, with their necessary references, and check them against the received current text.
 See the [revision-list rule](#manuscript-revisions).
@@ -56,21 +102,22 @@ The following is a layout example, not a new goal or an assertion that these doc
 ```text
 mathematics/manuscripts/
   readme.md
-  Author_T_F0001/
-    readme.md
-    paper/
+  Writer/
+    Author_T_F0001/
       readme.md
-      main.tex
-      references.bib
-      sections/
-        introduction.tex
-        main-result.tex
-      figures/
-      main.pdf               # Generated output; ignored by default.
-    supplement/
-      readme.md
-      main.tex
-      main.pdf               # Generated output; ignored by default.
+      paper/
+        readme.md
+        main.tex
+        references.bib
+        sections/
+          introduction.tex
+          main-result.tex
+        figures/
+        main.pdf             # Generated output; ignored by default.
+      supplement/
+        readme.md
+        main.tex
+        main.pdf             # Generated output; ignored by default.
 ```
 
 The document directory is the unit of compilation.
@@ -81,6 +128,26 @@ Keep an existing Task family ID stable when the manuscript title changes.
 If one manuscript draws substantively on several goals, choose one primary project and link the other goals with a brief explanation in its project README.
 Do not duplicate the same manuscript under several goal directories.
 
+### Upgrading existing writing projects
+
+An upgrade adopting this layout must move and adapt all affected maintained manuscript and presentation projects, including old Task-only roots, before advancing the installed version or claiming completion.
+Read each actual writing assignment, responsible project/document record and necessary content to establish the writer(s), purpose and Task correspondence.
+Use a joint container only under an actual explicit joint-writing assignment; infer neither the writer from the old prefix or Task creator nor joint editing from a byline.
+Reuse applicable instructions and clarify only a decisive missing fact while continuing independent authorized adaptation.
+
+Move Task-associated projects under the actual writer or explicitly requested joint container and complete Task family; move genuine Task-free writing under its writer and purpose-named project.
+Preserve necessary sources, styles, bibliography, figures, build inputs, choices, citation maps, actual reviews and unresolved revisions, including needed local untracked files and their output exclusions.
+A Git-only rename must not lose those local files or force-add build products.
+Inspect occupied destinations and resolve real collisions without overwriting an unrelated project, duplicating the manuscript or returning to the retired layout.
+Repair affected indexes, incoming/outgoing links, source maps, build instructions, included-file paths and selected local ignore exceptions, then check the moved documents and direct consumers.
+Relocation alone causes no mathematical renumbering, Task transfer, E move, source reattribution or fresh review.
+
+Remove retired homes after preserving necessary content and repairing consumers, without old-path aliases, redirects, symlinks, shadow copies or compatibility readers.
+Complete all affected project moves during the upgrade rather than defer them to a later writing request; an installation without projects needs no invented project or migration record.
+The agent judges the necessary moves and preservation through ordinary reading and selected file/Git operations, without a mandatory migration tool, fingerprint, historical replay or per-file receipt.
+If a required move or adaptation cannot be finished, preserve recoverable contents and report its exact incomplete scope under the [upgrade rule](../versioning.md#upgrading-an-installed-framework).
+Apply that rule's incompatible-upgrade classification at closeout because affected installations require project restructuring and consumer adaptation.
+
 ## Project and Document Records
 
 Use adequate existing homes, splitting out a companion file only for an actual independently maintained choice, organization, citation or evidence need.
@@ -90,7 +157,7 @@ Preserve sufficient citation and mathematical evidence at their actual homes rat
 | Home | Responsibility |
 | --- | --- |
 | Current manuscript sources | The content, notation, structure and exposition currently maintained under the [current-manuscript rule](#current-manuscript-authority). |
-| Project or adequate standalone-document `readme.md` | Actual human author, writing assignment and purpose, necessary mathematical inputs and document entrances; Task and primary/supporting goals only when they actually exist and apply. A compact map links principal result labels to responsible arguments and applicable proof reviews, expanding only for a substantive new result. |
+| Project or adequate standalone-document `readme.md` | Actual responsible writer(s), single or expressly joint writing assignment and scope, purpose, necessary mathematical inputs and document entrances; actual Task/contract and primary/supporting goals only when they exist and apply. A compact map links principal result labels to responsible arguments and applicable proof reviews, expanding only for a substantive new result. |
 | Document `readme.md` | Purpose, actual entry, required inputs, necessary current review evidence and writing-choice entrances; build instructions and latest build facts when compilation applies. Link an actual revisions file when needed without copying its opinions or declaring a closed state. |
 | Existing `writing.md`, `conventions.md` or suitable choice home | Effective manuscript choices under the [preference rule](preferences.md#scope-and-adoption), without inventing a model or adoption requirement for an author who has chosen none. |
 | Suitable organization record | Selected content and order; a separate `organization.md` only when the actual organization needs it. |
@@ -214,7 +281,7 @@ Where needed, support the comparison with explicit correspondences, equalities, 
 <a id="definition-environments"></a>
 ## Presentation of Definitions
 
-Apply the responsible author's and manuscript's choices for definition environments, numbering, explanatory detail and audience.
+Apply the effective single-writer or joint-document choices for definition environments, numbering, explanatory detail and audience.
 The general requirement is that the adopted definition and its use are mathematically unambiguous.
 This framework does not prescribe a universal threshold for numbering a concept or explaining a familiar term.
 
@@ -378,12 +445,12 @@ Use the distinct [record responsibilities](#project-and-document-records) for ma
 
 The [preference rule](preferences.md#scope-and-adoption) owns writing-choice precedence and adoption; the [record responsibilities](#project-and-document-records) own their actual locations.
 
-Omit the author byline by default when preparing a new manuscript in TeX, Markdown or another format.
-Leave a format-required author field empty by default.
+Omit the author byline by default when preparing a new TeX manuscript.
+Leave a required TeX author field empty by default.
 For a new or changed byline, use only what the responsible human specifies in the current instruction or through an applicable choice under the existing writing layers.
 Preserve an established byline in routine revision unless the authorized assignment includes a change to it.
 Keep project ownership, author keys, Task attribution and Git signatures separate from the byline choice.
-Keep the responsible author in the existing project or document record, and preserve required citations and source attribution.
+Keep the actual responsible writer(s) in the existing project or document record, and preserve required citations and source attribution.
 
 The two activities below use one common checking standard without adding a third role, approval or mandatory agent stage.
 Adopting these rules selects no theorem, writing task, review, publication or research resumption.
@@ -391,7 +458,7 @@ Adopting these rules selects no theorem, writing task, review, publication or re
 <a id="writing-rule-execution"></a>
 ### Drafting and revision
 
-Under the actual writing or correction instruction, read the current manuscript, responsible author, effective choices and necessary direct inputs.
+Under the actual writing or correction instruction, read the current manuscript, responsible writer(s), effective choices and necessary direct inputs.
 Read the records that own the findings selected for the current revision.
 For writing opinions, use the [selected manuscript's revision list](#manuscript-revisions).
 For proof findings, use [`review.md` or the adequate mathematical-review home](#manuscript-review-and-mathematical-provenance), including when the manuscript has no revision list.
@@ -416,7 +483,7 @@ Apply the [modifier rule](#direct-results-and-modifiers) to each modifier's func
 Local work covers new, modified and adopted content and direct effects; requested whole-manuscript review requires actual whole-manuscript coverage.
 Searches locate candidates and tools supply stated mechanical facts; reading rules, keyword matches, compilation, formatting and link checks do not replace contextual content judgment.
 
-1. Determine the actual manuscript, responsible author, requested scope and applicable choices, and whether the work is self-checking, assigned review or an already authorized recheck.
+1. Determine the actual manuscript, responsible writer(s), requested scope and applicable choices, and whether the work is self-checking, assigned review or an already authorized recheck.
 2. Read current source files and the mathematical, source, writing-choice and review evidence needed for the selected check.
    For review inputs, follow the relationship, purpose and reading order in the [manuscript review rule](#reviewing-a-manuscript).
 3. Judge content and reader understanding in context, choosing necessary tool checks and direct consumers from the actual effects.
@@ -445,7 +512,7 @@ Required independent or fixed mathematical review retains its actual obligations
 ### Reviewing a manuscript
 
 A human request or an applicable explicit review arrangement selects the current manuscript and the actual whole-manuscript, section or issue scope.
-When the request and arrangement leave the review kind unspecified, review writing under the responsible author's four applicable layers.
+When the request and arrangement leave the review kind unspecified, review writing under the effective single-writer or joint-document choices in the four applicable layers.
 For a request limited to proof, check that proof at the specified depth.
 When both are requested, perform both checks in the same action and report their coverage separately.
 Use the applicable review action for selected fixed Claims, Tasks, sources or computations.
@@ -476,10 +543,11 @@ Complete the review assignment by delivering its findings, checked scope and lim
 ### Current manuscript revision opinions
 
 At the first actual writing review, establish or reuse one `revisions.md` for the selected manuscript in its own suitable or author-designated directory.
-A paper can use `mathematics/manuscripts/Author_T_F0001/paper/revisions.md`, and a separately reviewed supplement uses its own directory.
+A paper can use `mathematics/manuscripts/Writer/Author_T_F0001/paper/revisions.md`, and a separately reviewed supplement uses its own directory.
 Use one list for all sections of the same manuscript and keep common project materials in their existing project home.
 Place new lists for independent manuscripts sharing a directory in dedicated manuscript subdirectories and identify the actual source in each list.
-For `notes/overview.md` and `notes/example.md`, use `notes/overview/revisions.md` and `notes/example/revisions.md` respectively.
+For independent TeX manuscripts `overview/main.tex` and `example/main.tex`, use `overview/revisions.md` and `example/revisions.md` respectively.
+Included sections stay within their manuscript's list; supporting Markdown records acquire no manuscript-specific revision list merely from their extension or location.
 
 If a valid single-manuscript list predates the shared directory use, identify the selected manuscript's unresolved opinions from the original manuscript, specific location and opinion content.
 Until its dedicated list takes over, use those attributable opinions and necessary references at their existing location for writing, review and personal transfer.
@@ -558,6 +626,7 @@ Certificate data, the machine-readable form of the paper's tables, travels with 
 
 Document PDFs and TeX compilation products stay local by default.
 The responsible author may explicitly choose which manuscript or presentation PDFs are eligible for Git tracking in their applicable author-wide writing profile or more specific document choices under the [preference hierarchy](preferences.md#scope-and-adoption).
+For joint writing, use an applicable shared document choice; without one, retain the common output exclusions rather than combine individual PDF exceptions.
 That choice covers only the stated author, documents and PDF paths; non-PDF compilation products remain local.
 Keep necessary editable figure sources, generation programs and reproducibility inputs in appropriate tracked source homes outside ignored workspace trees, and document how required local images are obtained or regenerated.
 
@@ -567,7 +636,7 @@ Admit other necessary editable inputs, generation programs and build configurati
 For an actual author PDF choice, add only the selected PDF path to those local exceptions.
 These exceptions must not reopen ignored workspace trees.
 Do not change generic defaults into an all-author exception or force-add an output without an applicable author choice.
-Read the actual responsible author and their selected preference before preparing files for delivery; extension and conventional directory alone do not decide permission.
+Read the actual responsible writer(s) and applicable single-writer or shared document choice before preparing files for delivery; extension and conventional directory alone do not decide permission.
 Git ignore rules do not remove files already tracked, so inspect the selected filenames and correct accidental tracking without deleting needed local files.
 
 TeX outputs and other generated file types remain ignored without an auxiliary-extension list.
@@ -626,7 +695,7 @@ The map is not an inventory of consulted works or uncited bibliography entries.
 Do not copy source-audit evidence into the map or make the map the sole inspection record.
 Source-only facts and inspection limits stay at their responsible source-level home; project C/L content retains its own mathematical responsibility.
 Fixed mathematical and source records must not point back to a manuscript or describe its manuscript-specific use.
-Citation use grants no prose-reuse permission and does not adopt source style, terminology or conventions; keep those choices in the responsible author policy, `writing.md` or `conventions.md`.
+Citation use grants no prose-reuse permission and does not adopt source style, terminology or conventions; keep choices in the applicable single-writer policy or document's existing `writing.md` or `conventions.md` under the preference rule.
 
 When checking, adding, changing or removing a manuscript citation, reconcile `citation.md` within the current authorization to edit that record.
 In review-only work, report citation discrepancies and needed corrections in the assigned review record.

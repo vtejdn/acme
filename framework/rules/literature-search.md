@@ -7,6 +7,12 @@ Reuse adequate local knowledge first under [common source preparation](literatur
 When adequate evidence is missing, use [searchable contents](literature.md#searchable-contents) and [progressive reading](literature.md#progressive-reading) to look for the needed edition and passages locally before any necessary external search.
 Respect the [material-access rules](literature.md#unpublished-material) before external searches or transfers.
 
+For an initial mathematical inquiry, apply the [common inquiry-to-research boundary](workflow.md#from-an-inquiry-to-approved-research).
+Judge sufficient preliminary lookup from the question and evidence, without a required external query, fixed search count or arbitrary attempts on an unproductive branch.
+If preliminary work leaves the inquiry unanswered and further work requires formal strategy exploration and sustained Task advancement, report and obtain applicable human approval under that rule before dependent research.
+Reuse an existing explicit research instruction or approval for the same objective and scope; a bounded literature request retains its actual deliverable.
+Distinguish an unresolved mathematical question from access failure, ambiguous formulation or an unchecked source.
+
 Agents may autonomously search the web and download relevant publicly available literature for the current research task, source audit, or other authorized exploration.
 Routine searches and downloads within that scope do not require approval for each query or file.
 Follow the [literature acquisition and version rules](literature.md#literature-acquisition) when retaining a source.

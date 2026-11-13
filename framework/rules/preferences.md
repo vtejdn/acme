@@ -6,7 +6,7 @@ A policy locator reports the responsible files; it does not interpret instructio
 <a id="scope-and-adoption"></a>
 ## Selection and Scope
 
-For writing, apply exactly four layers, from lowest to highest: general mathematical writing rules; the responsible author's author-wide personal policy; that author's applicable subfield policy; the manuscript-specific choice.
+For single-writer documents, apply exactly four writing layers, from lowest to highest: general mathematical writing rules; the responsible writer's author-wide personal policy; that writer's applicable subfield policy; the manuscript-specific choice.
 This order governs notation, terminology, definition presentation, source/model selection and style alike.
 A higher applicable layer overrides the conflicting portion and inherits everything else.
 Apply the author's writing choices within the [repository writing language rule](organization.md#repository-writing-language).
@@ -15,9 +15,15 @@ Source observations in responsible source-reading records are evidence for choic
 The current author's new instruction updates the layer and scope it actually names; a paper-specific request never becomes author-wide automatically.
 Current manuscript usage establishes the text being maintained, not an additional policy layer or approval to depart from an effective choice.
 
+For [explicit joint writing](writing.md#explicit-joint-writing), use the existing shared manuscript choices and common framework defaults.
+An individual's author-wide or subfield choices apply to that shared document only when actually adopted for it; retain adopted common choices in its existing writing/conventions home under the same four layers.
+This creates no fifth layer, automatic profile merge, group policy register or duty to obtain every writer's private profile.
+Changing the current operator does not switch the shared document's effective choices, and the associated Task's author does not supply the writing policy.
+Without an applicable shared PDF-tracking choice, retain the common local-output defaults rather than take the union of individual exceptions.
+
 Personal defaults live under profiles/<human>/, with writing/readme.md and actual named subfield files where useful.
 The author's message-archive.md is historical correspondence, not personal policy; its location or existence does not select it for startup or independent-review context.
-Read the manuscript's responsible author and actual topic/readership, not merely the bound operator or Task line.
+Read the manuscript's actual responsible writer(s), effective choices and topic/readership, not merely the bound operator or Task line.
 Changing a local actor does not alter another author's adopted manuscript choices.
 An author without a profile uses general mathematical standards plus any explicit manuscript choices.
 An author may explicitly choose tracking exceptions for their document PDFs at the applicable writing-profile or document scope under the [local-output rule](writing.md#files-kept-local).
@@ -32,7 +38,7 @@ Task/decision/E changes use their existing scoped procedures and actual authorit
 Current human instructions retain their actual authority, including an already authorized named role exception, without transferring authorship or rewriting past evidence.
 In a Git workspace, the operator comes from the existing worktree research.actor binding and repository/people.json, not a Task's author, Git display name or agent nickname.
 Without Git, use the currently explicitly identified human and existing registration under the [identity rule](identity.md#stable-keys-and-local-attribution).
-Profiles are selected automatically without a separate repository adoption.
+Applicable individual profiles are selected automatically without a separate repository adoption, subject to the joint-document adoption boundary above.
 A checkout has one binding shared by its chats; it is not a per-chat identity.
 Work directly in the shared repository and existing checkout under the [collaboration boundary](identity.md#collaboration-maintenance-and-conflicts).
 The actual operator binding supplies no authority to adopt another author's policies or take over their materials.
