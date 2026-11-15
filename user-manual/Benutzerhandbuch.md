@@ -1,6 +1,6 @@
 # Benutzerhandbuch
 
-[Anweisungsbeispiele](user-instructions/Anweisungsbeispiele.md) · [Beispiel einer Erklärung zur KI-Unterstützung](ai-disclosure-example.md) · [Beispiel einer Veröffentlichungsseite](publication-example.md) · [Repository-Beispiele](https://github.com/vtejdn/acme/discussions/1)
+[Anweisungsbeispiele](user-instructions/Anweisungsbeispiele.md) · [Beispiel einer Erklärung zur KI-Nutzung](ai-disclosure-example.md) · [Beispiel einer Veröffentlichungsseite](publication-example.md) · [Repository-Beispiele](https://github.com/vtejdn/acme/discussions/1)
 
 ## ACME: Autonomous and Collaborative Mathematical Exploration
 
@@ -18,7 +18,7 @@ ACME-Agenten wählen außerdem selbstständig relevante Forschungsmaterialien au
 Menschliche Mathematiker sind dafür verantwortlich:
 
 1. Forschungsfragen, ihren freigegebenen Umfang und Abschlusskriterien festzulegen, um [Forschungsaufgaben (Task)](#material-task) anzustoßen.
-2. Gemeinsam mit [Agenten](#notion-agent) die Entwicklung von [Forschungsstrategien](#material-strategy) zu steuern.
+2. Gemeinsam mit [Agenten](#notion-agent) [Forschungsstrategien](#material-strategy) auszuwählen, zu bewerten und anzupassen.
 3. Ideen beizutragen, mathematische Absichten zu präzisieren, wissenschaftliche Prioritäten zu setzen, Argumente zu hinterfragen, Fragen zu verfeinern und Untersuchungen neu auszurichten.
 4. Die Forschungsergebnisse zu verstehen und die Grenzen des mathematischen Wissens zu erkunden.
 5. Verantwortung für die mathematischen Ergebnisse zu übernehmen.
@@ -37,11 +37,25 @@ Innerhalb des freigegebenen Umfangs sind autonome [Agenten](#notion-agent) dafü
 
 ### Zusammenarbeit
 
-Mathematiker können über ein gemeinsames [Git-Repository](git-repository/Git-Repositorys.md#notion-git-repository) [zusammenarbeiten](#joint-task), Forschungsmaterialien teilen und die Ergebnisse der anderen wiederverwenden.
-Das Repository kann auf einer Plattform wie [GitHub](git-repository/Git-Repositorys.md#notion-github) gehostet werden, sodass die Mitwirkenden auf ihren eigenen Geräten arbeiten und Änderungen synchronisieren können.
-Siehe die [Abbildung zur Zusammenarbeit über ein Git-Repository](git-repo.png).
+ACME bietet zwei Möglichkeiten zur Zusammenarbeit und zum Austausch von Materialien.
 
-Verschiedene Mathematiker oder Teams können auch über Repository-Grenzen hinweg zusammenarbeiten, indem sie ausgewählte Materialien durch [Intake](#notion-intake) übernehmen; siehe die [Abbildung zur repositoryübergreifenden Zusammenarbeit](collaboration.jpg).
+- Mathematiker können über ein gemeinsames [Git-Repository](git-repository/Git-Repositorys.md#notion-git-repository) [zusammenarbeiten](#joint-task), Forschungsmaterialien teilen und die Ergebnisse der anderen wiederverwenden.
+  Das Repository kann auf einer Plattform wie [GitHub](git-repository/Git-Repositorys.md#notion-github) gehostet werden, sodass die Mitwirkenden auf ihren eigenen Geräten arbeiten und Änderungen synchronisieren können.
+  Siehe die [Abbildung zur Zusammenarbeit über ein Git-Repository](git-repo.png).
+
+- Verschiedene Mathematiker oder Teams können auch über Repository-Grenzen hinweg zusammenarbeiten, indem sie ausgewählte Materialien durch [Übernahme (Intake)](#notion-intake) beziehen.
+  Sie können Forschungsmaterialien über ein öffentliches Git-Repository mit der standardmäßigen [Apache-2.0-Lizenz](../LICENSE) teilen.
+  Andere Personen und ihre Agenten dürfen die dort von Ihren Agenten erzeugten Materialien ohne gesonderte Erlaubnis wiederverwenden.
+  ACME-Agenten wählen durch Übernahme (Intake) selbstständig relevante Forschungsmaterialien aus anderen öffentlichen ACME-Repositories aus und verwenden sie wieder, wobei sie deren Lizenzen beachten und Autorenschaft sowie Herkunft bewahren.
+  Im aktuellen öffentlichen Repository können Sie eine [Importanweisung](#notion-import) geben, um Materialien aus Ihren anderen, auch privaten Repositories auszuwählen, die Sie öffentlich machen möchten, und hierher zu importieren.
+  Siehe die [Abbildung zur repositoryübergreifenden Zusammenarbeit](collaboration.jpg).
+
+### Erklärung zur KI-Nutzung
+
+Geben Sie bei der Veröffentlichung von Forschungsergebnissen wahrheitsgemäß an, wie Sie das ACME-Rahmenwerk verwendet haben.
+Wenn Sie einen Preprint auf Plattformen wie [arXiv](https://arxiv.org/) oder [Hexagon](https://hexagonmath.org/) veröffentlichen oder einen Beitrag bei einer Fachzeitschrift einreichen, empfehlen wir, einen Link zu Ihrem öffentlichen ACME-Git-Repository anzugeben, damit Fachkollegen und Gutachter die zugehörigen Materialien und vollständigen Forschungsaufzeichnungen einsehen, Argumente prüfen, den Forschungsprozess nachvollziehen und die Arbeit beurteilen können.
+Als Vorlage dient das [Beispiel einer Erklärung zur KI-Nutzung](./ai-disclosure-example.md).
+Sie können sich auch am [Beispiel einer Veröffentlichungsseite](./publication-example.md) orientieren, um den Grad des Verständnisses und die konkreten Beiträge der menschlichen Autoren darzustellen und Ihre Haltung zum Teilen und Wiederverwenden unbearbeiteter, von Agenten erzeugter Materialien zu erläutern.
 
 ### Arbeitsablauf
 
@@ -67,15 +81,20 @@ Wählen Sie Modelle für mathematische Forschung und Verwaltungsaufgaben unter B
 
 ### <a id="setup-workplace"></a>Schritt II. Arbeitsumgebung einrichten
 
-Für individuelle Forschung auf einem einzelnen Gerät verwenden Sie eine geeignete [Agenten-Laufzeitumgebung](agent-harness.md) mit Zugang zu einem leistungsfähigen [LLM](#notion-llm).
+Wählen Sie eine geeignete [Agenten-Laufzeitumgebung](agent-harness.md) und verbinden Sie sie mit einem leistungsfähigen [LLM](#notion-llm).
 
 1. Installieren Sie eine Agenten-Laufzeitumgebung als eigenständige Anwendung oder innerhalb einer [IDE](agent-harness.md#notion-ide) und melden Sie sich an, sofern dies erforderlich oder gewünscht ist.
-2. Wählen Sie auf Ihrem Gerät einen Ordner für das Rahmenwerk und spätere Forschungsmaterialien.
-3. Wählen Sie das Modell und den Anbieter in den Einstellungen oder der Modellauswahl.
+2. Wählen Sie das Modell und den Anbieter in den Einstellungen oder der Modellauswahl.
+3. Wählen Sie auf Ihrem Gerät einen Ordner für das Rahmenwerk und spätere Forschungsmaterialien.
+   Verwenden Sie für die Erstinstallation in einem neuen Projekt einen lokalen Ordner, der noch keine Projektinhalte enthält.
+   Wenn Sie einem bestehenden ACME-Forschungsrepository beitreten möchten, folgen Sie den Schritten zum [Beitritt zu einem bestehenden Git-Repository als Mitwirkender](#setup-collaboration).
 
 Ohne [Git](git-repository/Git-Repositorys.md#notion-git) ist persönliche Forschung auf Ihrem lokalen Gerät der Standard.
 Um Arbeit zwischen Geräten zu synchronisieren oder über ein gemeinsames [Git-Repository](git-repository/Git-Repositorys.md#notion-git-repository) zusammenzuarbeiten, können Sie eine Hosting-Plattform wie [GitHub](git-repository/Git-Repositorys.md#notion-github) wählen.
-Das Hochladen von Forschungsaufzeichnungen und das öffentliche Bereitstellen eines Repositorys sind getrennte Entscheidungen.
+Wenn bereits ein entferntes Repository ausgewählt ist, prüfen Sie vor der Erstinstallation, dass auch dieses noch keine Projektinhalte enthält.
+
+Wählen Sie beim Erstellen eines GitHub-Repositorys nach Bedarf zwischen privat und öffentlich.
+Ob Sie das Repository öffentlich machen und ob Sie Forschungsaufzeichnungen zur geräteübergreifenden Synchronisierung oder Zusammenarbeit pushen, sind getrennte Entscheidungen.
 
 4. (Optional) Installieren Sie Git auf Ihrem Gerät oder bitten Sie einen [Agenten](#notion-agent) in Ihrer gewählten Laufzeitumgebung darum.
    Ein Anweisungsbeispiel finden Sie unter [Git installieren](user-instructions/Anweisungsbeispiele.md#install-git).
@@ -109,7 +128,7 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
 5. Konfigurieren Sie den Namen und die E-Mail-Adresse für Ihre [Git](git-repository/Git-Repositorys.md#notion-git)-[Commits](#notion-commit) oder bitten Sie einen Agenten darum.
    Ein Anweisungsbeispiel finden Sie unter [Git einrichten](user-instructions/Anweisungsbeispiele.md#setup-git).
 
-## Erste Schritte
+## Mit der Forschung beginnen
 
 ### Einen [Task](#material-task) beginnen
 
@@ -123,6 +142,7 @@ Wenn Sie einem bestehenden Forschungs-Repository beitreten, das bereits ACME ent
    Besprechen Sie die Mathematik mit Agenten, um Ihr Verständnis zu vertiefen und schneller voranzukommen.
    Bitten Sie um einschlägige Literaturangaben und hinterfragen Sie die Quellen von Argumenten und Ideen im sokratischen Gespräch, insbesondere wenn ein Argument ohne ausdrückliche Quellenbelege auf Modellwissen beruht.
 6. (Optional, bei Verwendung von [Git](git-repository/Git-Repositorys.md#notion-git)) Halten Sie Änderungen, die Sie bewahren möchten, in einem [Commit](#notion-commit) fest; machen Sie bei Bedarf lokale Bearbeitungen rückgängig oder setzen Sie Commits durch einen Revert zurück.
+   Sobald ein entferntes Git-Repository eingerichtet ist, hält der Agent Forschungsaktualisierungen standardmäßig zeitnah in Commits fest und pusht sie gemäß den getroffenen Vereinbarungen.
 
 - Siehe die [Anweisungsbeispiele zur Forschung](user-instructions/Anweisungsbeispiele.md#research-instructions).
 
@@ -163,11 +183,67 @@ Mitwirkende im selben Repository können für ein gemeinsames mathematisches Zie
 - Wenn Sie mehrere ACME-Repositories auf demselben Gerät verwenden, können Sie Ihre Literatur zentral in einem einzigen lokalen PDF-Ordner speichern.
   Bitten Sie einen Agenten, die [lokalen Literaturordner der einzelnen Repositories](../mathematics/literature/pdf) über Verzeichnisverknüpfungen (Directory Junctions) auf diesen Ordner verweisen zu lassen.
   Erteilen Sie dem Agenten die Berechtigungen, die er zum Lesen und Verwalten der Dateien in diesem Ordner benötigt.
-- Wenn Agenten zugehörige Aufgaben automatisieren, bei denen Zugangsdaten verwendet werden, bewahren Sie Geheimnisse angemessen auf und schließen Sie sie von [Git](git-repository/Git-Repositorys.md#notion-git) aus.
+- Wenn Agenten zugehörige Aufgaben automatisieren, bei denen Zugangsdaten verwendet werden, bewahren Sie Geheimnisse angemessen auf und schließen Sie sie von der Versionsverwaltung durch [Git](git-repository/Git-Repositorys.md#notion-git) aus.
 
-### <a id="manuscript-writing"></a>Ein Manuskript verfassen
+## <a id="manuscript-writing"></a>Ein Manuskript verfassen
 
-In Arbeit.
+### Vier Ebenen von Schreibvorgaben
+
+Das Rahmenwerk unterstützt die Aufbereitung von Forschungsmaterialien zu TeX-Manuskripten sowie deren Überarbeitung, Kompilierung und Prüfung.
+ACME ordnet das Schreiben von Manuskripten in vier Ebenen von Vorgaben, von der niedrigsten zur höchsten Priorität:
+
+- Allgemeine Vorgaben für mathematisches Schreiben.
+  Sie stehen in [framework/rules/writing.md](../framework/rules/writing.md#common-mathematical-writing-defaults) und werden mit dem Rahmenwerk als Standardvorgaben installiert.
+  Diese Vorgaben und das eigene Urteil eines [Agenten](#notion-agent) allein genügen möglicherweise noch nicht den Konventionen eines Fachgebiets oder den persönlichen Anforderungen eines Autors.
+- Allgemeine Schreibpräferenzen des Autors.
+  Der Agent hält sie bei Bedarf auf Grundlage der ausdrücklichen Anforderungen des Autors in `profiles/<human>/writing/readme.md` fest (`<human>` ist der [Autorenschlüssel](#notion-author-key), etwa `Alice`) und aktualisiert sie entsprechend diesen Anforderungen.
+- Präferenzen des Autors für ein bestimmtes Forschungsgebiet.
+  Der Agent hält sie bei Bedarf in der entsprechenden fachgebietsspezifischen Präferenzdatei unter `profiles/<human>/writing/` fest.
+- Vereinbarungen für das aktuelle Manuskript.
+  Sie stehen üblicherweise in `writing.md`, `conventions.md` oder einem Abschnitt „Schreibvereinbarungen“ der `readme.md` im Manuskriptverzeichnis und werden vom Agenten bei Bedarf gepflegt.
+
+Eine Ebene mit höherer Priorität ersetzt nur die widersprechenden Teile niedrigerer Ebenen; alle übrigen Anforderungen gelten weiter.
+Wenn noch keine persönlichen oder fachgebietsspezifischen Präferenzen und keine Manuskriptvereinbarungen festgelegt sind, beginnt der Agent nach den allgemeinen Vorgaben zu schreiben.
+
+### Referenzwerke für das Schreiben
+
+Autoren können drei Arten von Referenzwerken auswählen: vorhandene Arbeiten zur direkten Wiederverwendung von Inhalten, Vorbilder für den Schreibstil sowie Referenzen für Fachterminologie und Notation.
+Sie können Literatur bereitstellen oder vorhandene Werke benennen; der [Agent](#notion-agent) übernimmt die nötige Ordnung und Registrierung.
+Dasselbe Werk kann mehreren Zwecken dienen, für die jeweils ein eigener Geltungsbereich festgelegt werden kann.
+
+- Wiederverwendbare vorhandene Arbeiten.
+  Sie können eigene oder mitverfasste Arbeiten benennen, die der Agent im angegebenen Umfang direkt wiederverwenden darf, gegebenenfalls begrenzt auf bestimmte Abschnitte oder Passagen.
+- Vorrangige Vorbilder für den Schreibstil des Manuskripts.
+  Sie können eine oder mehrere Referenzarbeiten auswählen, an deren Aufbau, Darstellung und Stil sich der Agent orientieren kann.
+- Referenzen für Fachterminologie und Notation.
+  Sie können Referenzwerke benennen, an denen sich der Agent bei Terminologie, Notation und der Darstellung von Definitionen orientiert.
+
+Diese Auswahl kann für Ihr Schreiben allgemein, für ein bestimmtes Forschungsgebiet oder für das aktuelle Manuskript gelten und wird mit den entsprechenden Präferenzen oder Vereinbarungen gespeichert.
+Referenzwerke und ihre Verwendungszwecke für das allgemeine Schreiben stehen in `profiles/<human>/writing/readme.md`.
+Die nur für ein Fachgebiet geltenden Referenzen und Zwecke stehen in der entsprechenden Präferenzdatei unter `profiles/<human>/writing/`.
+Die nur für das aktuelle Manuskript geltenden Referenzen und Zwecke stehen in `writing.md`, `conventions.md` oder einem Abschnitt „Schreibvereinbarungen“ der `readme.md` im Manuskriptverzeichnis.
+
+### Prüfung und Überarbeitung
+
+Die Überarbeitung richtet sich nach der aktuellen Manuskriptfassung und der ausdrücklichen Absicht des Autors.
+Ohne ausdrückliche Zustimmung des Autors entfernt ein [Agent](#notion-agent) keine vollständigen vorhandenen Passagen wie Sätze, Definitionen, Beweise, Beispiele oder Bemerkungen.
+Das Rahmenwerk unterstützt die Prüfung der Darstellung und der mathematischen Argumente eines Manuskripts, getrennt oder gemeinsam.
+
+- Prüfung der Darstellung: Der Agent prüft Darstellung, Aufbau, Terminologie, Notation und Zitate anhand der vier Ebenen; noch zu bearbeitende Überarbeitungshinweise stehen in `revisions.md` im Manuskriptverzeichnis.
+- Prüfung der mathematischen Argumente: Der Agent prüft Voraussetzungen, Schlussfolgerungen und die dazwischenliegenden Argumente; aktuelle ungelöste mathematische Probleme und ihre notwendigen Begründungen stehen in `review.md` im Manuskriptverzeichnis und werden bei Nachprüfungen aktualisiert.
+
+Die Prüfungsergebnisse nennen den tatsächlich geprüften Umfang, die Befunde und noch offene Punkte.
+Wenn eine unabhängige Prüfung benötigt wird, können Sie Schreiben und Prüfung in getrennten Sitzungen organisieren und die Prüfung einem Agenten übertragen, der weder an der inhaltlichen Ausarbeitung oder Argumentation mitgewirkt noch die entsprechenden inhaltlichen Diskussionen erhalten hat, um einen unabhängigen [Kontext](#notion-context) zu gewährleisten.
+Bei einer unabhängigen Erstprüfung bildet der Agent zunächst anhand des aktuellen Manuskripts und der geltenden Vereinbarungen ein eigenes Urteil und vergleicht es erst danach mit vorhandenen Hinweisen.
+Spätere Nachprüfungen greifen die ungelösten Hinweise der vorigen Runde auf, prüfen die entsprechenden Manuskriptänderungen und ihre Auswirkungen, aktualisieren die Hinweise und entfernen erledigte Punkte.
+
+### Schreibgedächtnis der Agenten
+
+Beim Schreiben und Überarbeiten fasst der [Agent](#notion-agent) Rückmeldungen und Erfahrungen aktiv zu nützlichen, nach Autor geführten Schreibnotizen zusammen.
+Diese Notizen stehen in `profiles/<human>/writing/notes.md` und werden vom Agenten selbstständig angelegt und gepflegt.
+Sie sind beratend und setzen ausdrückliche Schreibvereinbarungen nicht außer Kraft.
+Gespeicherte Schreibpräferenzen und Notizen werden bei späteren einschlägigen Schreibarbeiten nach Bedarf herangezogen.
+Der Agent überarbeitet, bündelt und strafft die Notizen fortlaufend anhand neuer Rückmeldungen; formelle Präferenzen und Manuskriptvereinbarungen werden aufgrund ausdrücklicher Anforderungen des Autors oder seiner ausdrücklichen Übernahme entsprechender Vorgaben aktualisiert.
 
 ### <a id="lean-formalization"></a>Formalisierung in Lean
 
@@ -177,7 +253,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.10.2.
+Die aktuelle Version des Rahmenwerks ist 0.11.0.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.
@@ -199,17 +275,17 @@ Einige Verzeichnisse werden erst bei Bedarf angelegt.
 | `.tmp/` | Enthält temporäre Eingaben und Nebenprodukte, die von [Agenten](#notion-agent) erstellt und nach Gebrauch entfernt werden. |
 | `execution/` | Dokumentiert den aktuellen Ausführungszustand, Grenzen und Abbruchbedingungen individueller Forschungs-[Tasks](#material-task). |
 | [`framework/`](../framework/readme.md) | Enthält Regeln des Rahmenwerks, Materialvorlagen, Formatvorgaben und Versionshinweise. |
-| `intake/` | Dokumentiert, welche Materialien aus anderen [Repositories](git-repository/Git-Repositorys.md#notion-git-repository) übernommen wurden, ihre Quellen und den Umfang jeder Übernahme. |
+| [`intake/`](../intake) | Dokumentiert, welche Materialien aus anderen [Repositories](git-repository/Git-Repositorys.md#notion-git-repository) übernommen wurden, ihre Quellen und den Umfang jeder Übernahme. |
 | [`mathematics/`](../mathematics/readme.md) | Enthält Forschungsmaterialien, Literatureinträge, Berechnungen, Manuskripte und Präsentationen. |
-| `profiles/` | Enthält persönliche Forschungsrichtlinien, Ausführungspräferenzen und Vorgaben für mathematisches Schreiben. |
+| `profiles/` | Speichert persönliche Forschungs- und Ausführungspräferenzen, Vorgaben für mathematisches Schreiben sowie von Agenten gepflegte Erfahrungsnotizen. |
 | [`repository/`](../repository/readme.md) | Speichert Repository-Einstellungen, Autorenregistrierungen und Zuordnungen zu externen Repositories und Autoren. |
 | [`scripts/`](../scripts/readme.md) | Bietet optionale Befehlszeilenwerkzeuge für Einrichtung, Materialverwaltung, Navigation und Prüfungen. |
 | [`user-manual/`](./) | Enthält Benutzeranleitungen, Erläuterungen zur Einrichtung und Anweisungsbeispiele. |
 | `.gitattributes` | Konfiguriert die Behandlung von Text- und Binärdateien durch [Git](git-repository/Git-Repositorys.md#notion-git), einschließlich Zeilenenden. |
 | `.gitignore` | Legt fest, welche nicht versionierten Dateien und Verzeichnisse Git ignorieren soll. |
-| `AGENTS.md` | Enthält Einstiegsanweisungen, die Agenten zu den einschlägigen Regeln und Materialien des Rahmenwerks führen. |
-| `LICENSE` | Enthält die Lizenzbedingungen und Hinweise des Repositorys. |
-| `readme.md` | Stellt das Repository vor und verlinkt auf das Benutzerhandbuch, die Regeln des Rahmenwerks und Forschungsmaterialien. |
+| [`AGENTS.md`](../AGENTS.md) | Enthält Einstiegsanweisungen, die Agenten zu den einschlägigen Regeln und Materialien des Rahmenwerks führen. |
+| [`LICENSE`](../LICENSE) | Enthält die Lizenzbedingungen und Hinweise des Repositorys. |
+| [`readme.md`](../readme.md) | Stellt das Repository vor und verlinkt auf das Benutzerhandbuch, die Regeln des Rahmenwerks und Forschungsmaterialien. |
 
 Abhängig von Ihren Werkzeugen und Einstellungen können außerdem die folgenden Verzeichnisse vorhanden sein.
 
@@ -255,7 +331,7 @@ Abhängig von Ihren Werkzeugen und Einstellungen können außerdem die folgenden
 | <a id="notion-session"></a>Sitzung (Session) | Eine fortlaufende Interaktion mit einem [Agenten](#notion-agent), die von einer [Agenten-Laufzeitumgebung](agent-harness.md) verwaltet wird. Sie kann mehrere Gesprächsrunden enthalten, die jeweils typischerweise mit einer Benutzernachricht beginnen und die Antworten des Agenten sowie Werkzeugaufrufe umfassen. Die Laufzeitumgebung verwaltet den Gesprächsverlauf und bereitet den [Kontext](#notion-context) für jeden Modellaufruf vor; um die [Kontextlänge](#notion-context-length) des Modells einzuhalten, kann sie frühere Teile des Verlaufs auswählen oder zusammenfassen. |
 | Materialkennung | Eine strukturierte Referenz, die ein Material und gegebenenfalls dessen Version bezeichnet. Beispielsweise kennzeichnet `Alice_C_F0007_v1.md` einen [Claim](#material-claim) durch Autor, Materialart, Forschungslinie, laufende Nummer und Version. |
 | <a id="notion-research-line-letter"></a>Forschungslinien-Buchstabe | Ein Buchstabe, etwa `F` in `Alice_C_F0007_v1.md`, mit dem nummerierte Forschungsmaterialien geordnet werden. Von einem Task abgeleitete Materialien übernehmen dessen Buchstaben, erhalten jedoch eigene laufende Nummern. Ohne Angabe einer Linie wird standardmäßig `A` verwendet. |
-| Autorenschlüssel | Ein stabiler registrierter Schlüssel für einen menschlichen Autor, etwa `Alice`, der in Materialkennungen und Autoreneinträgen verwendet wird. |
+| <a id="notion-author-key"></a>Autorenschlüssel | Ein stabiler registrierter Schlüssel für einen menschlichen Autor, etwa `Alice`, der in Materialkennungen und Autoreneinträgen verwendet wird. |
 | Materialfamilie | Die aufbewahrten Versionen desselben Materials, etwa `Alice_C_F0007_v1.md` und `Alice_C_F0007_v2.md`. |
 | Materialversion | Eine bestimmte aufbewahrte Überarbeitung eines Materials, etwa die Version `v1` oder `v2` eines Claims. |
 | <a id="notion-main-research-agent"></a>Leitender Forschungsagent | Der Agent, der die Arbeit an einem [Task](#material-task) leitet, beteiligte Unteragenten koordiniert und die Forschungsaufzeichnungen konsistent hält. |
@@ -285,7 +361,8 @@ Ein Task organisiert Forschung um ein präzises mathematisches Ziel, seinen frei
 
 - Ein Task kann aktiv bleiben, auch wenn gerade kein [Agent](#notion-agent) daran arbeitet.
 - Ein Task führt die Forschungsmaterialien zusammen, die Ihre Untersuchung unterstützen.
-  Zugehörige Manuskripte, Fortschrittsberichte und andere von Ihnen angeforderte Dokumente können in einem Projekt wie `mathematics/manuscripts/Alice_T_A0007/` gesammelt werden.
+  Zugehörige Manuskripte, Fortschrittsberichte und andere von Ihnen angeforderte Dokumente können in einem Projekt wie `mathematics/manuscripts/Alice/Alice_T_A0007/` gesammelt werden.
+  Manuskriptprojekte werden nach dem für das Schreiben verantwortlichen Autor geordnet und dem zugehörigen Forschungs-Task zugeordnet.
 - Sie können darum bitten, einen abgeschlossenen Task für weitere Arbeit am betreffenden Forschungsziel zu reaktivieren.
   Erläutern Sie, was Sie als Nächstes untersuchen möchten und welche Änderungen an Umfang oder Grenzen vorgesehen sind.
   Ein wesentlich anderes Forschungsziel sollte als neuer Task angelegt werden.

@@ -181,6 +181,8 @@ When both project display choices are known, use ordinary bounded editing to mai
 When choices are missing, report the missing project-title setup explicitly rather than presenting a retained template heading as a human choice.
 Changing only the repository key leaves those independent choices and heading unchanged; no new init arguments, generator, Git setup or remote operation is required.
 Requested README text means genuinely explicit content, not an environment section inferred from setup; keep machine choices out of public entrances and shared configuration under the [runtime rule](rules/organization.md#machine-local-runtime).
+For human-requested GitHub project-remote initialization, add exactly `acme-math` under the [Topic setup rule](rules/identity.md#github-topic-during-project-initialization) as part of that authorized setup, preserving existing Topics and explicit limits and reporting the actual metadata outcome.
+Local identity setup, authentication or ordinary Git work alone selects no Topic administration or recurring metadata preflight.
 Inspect the resulting configuration, people.json, full root LICENSE and scoped project notice, README and necessary binding, then report the installed version, actual completed setup and specific missing information.
 A successful init or registration result alone does not establish a completed project title, License notice, effective Git signature or remote setup; add no completion receipt or state field.
 This setup selects no research Task or execution authority.
@@ -208,7 +210,7 @@ Read relevant existing `mathematics/maintenance.md`, `mathematics/erratum.md` an
 When that selected execution has no local E, follow the [on-demand preparation rule](rules/execution.md#responsibility-and-version-boundary) using adequate real instructions and conditions; absence neither resets limits nor grants resumption.
 For a joint goal, first resolve the actual human's appropriate individual T and its adopted exact common contract under the [joint-Task rule](rules/tasks.md#joint-tasks-and-participation); clarify a real unresolved choice among several individual Tasks instead of starting several.
 Complete or reuse the [common work-start update](rules/workflow.md#shared-repository-work-starts) before substantive research in a Git working repository with a configured remote, using relevant incoming work for mathematical reuse before any necessary external search.
-When local mathematics and literature are insufficient, use [public repository discovery](rules/literature-search.md#public-repository-discovery-and-reuse) under the existing reuse priority, including its relevant daily directory check without a universal startup query.
+When local mathematics and literature are insufficient, use [public repository discovery](rules/literature-search.md#public-repository-discovery-and-reuse) under the existing reuse priority, using the primary `acme-math` Topic query and chosen supplementary routes at the relevant daily scope without a universal startup query.
 Authorized research writing follows the [common delivery default](rules/identity.md#submission-checks).
 Apply the [collaborative progress-sharing rule](rules/tasks.md#shared-git-research) to actual joint participation, including continuation through an already participating individual T/E.
 Reuse the known project repository, branch and actual work scope, honoring explicit human limits.
@@ -220,6 +222,7 @@ Method changes and strategy priorities may adapt within the assignment unless th
 Use the [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) for initial comprehensive exploration based on actual retained progress, then judge expected gains, decisive gaps and any inexpensive probes before substantial investment.
 Choose useful breadth, depth and direct work or bounded delegation from the question and evidence, without a fixed route count or compulsory agent-S assignment.
 If authorized work may proceed, carry out or explicitly assign a useful next investigation and use its result, retaining actual findings, failures, gaps and continuation points.
+For an actual authorized Task start or continuation, apply the [host-supported continuous-execution default](rules/execution.md#host-supported-continuous-execution) within effective Task/E limits and host conditions.
 Task/S/E preparation or a strategy list alone does not fulfill an assignment to explore and advance research.
 Under [research coordination](rules/workflow.md#research-coordination), try the complete argument at consequential points and adjust assignments as evidence changes.
 Use ordinary research or [Preparation](rules/workflow.md#research-preparation) for clear next steps.
@@ -328,7 +331,7 @@ Use a joined writer container only under an [explicit joint-writing assignment](
 Apply the actual single-writer or joint-document [writing layers and choice-update rule](rules/preferences.md#scope-and-adoption), preserving the [current manuscript and actual policy boundary](rules/writing.md#current-manuscript-authority).
 For a gap requiring formal research beyond the writing assignment, apply the [inquiry-to-research boundary](rules/workflow.md#from-an-inquiry-to-approved-research) rather than inherit Task/E authority from the document association.
 Read the evidence for the findings selected for revision under the [writing execution rule](rules/writing.md#writing-rule-execution).
-Use the [manuscript's writing opinions](rules/writing.md#manuscript-revisions) for writing findings and the [manuscript's mathematical-review evidence](rules/writing.md#manuscript-review-and-mathematical-provenance) for proof findings.
+Use the [manuscript's writing opinions](rules/writing.md#manuscript-revisions) for writing findings and the [manuscript's current mathematical problems](rules/writing.md#manuscript-review-and-mathematical-provenance) for proof findings.
 Perform proportionate source preparation and definition registration; source observations remain evidence rather than a fifth writing layer.
 Use actual own/coauthored source designations or manuscript-specific permissions under the [text-reuse rule](rules/writing.md#default-reuse-permission); a style-only reference grants no text reuse.
 
@@ -336,7 +339,7 @@ Before delivery, apply the [common manuscript writing-rule checks](rules/writing
 Route mathematical and source problems to their responsible homes, reconcile affected [mathematical review and citation evidence](rules/writing.md#manuscript-review-and-citation-records) and actual companion records, and compile or inspect layout as applicable to the delivery.
 Select available build and inspection capabilities under the [host-capability responsibility](rules/workflow.md#agent-and-tool-responsibilities), reusing applicable project settings and the [local-build convention](rules/writing.md#reproducible-local-builds).
 If a required build or check remains unavailable, report the specific affected scope, consequence and useful next action to the human author while continuing independent authorized work.
-Return actual corrections and remaining mathematical, writing-rule, citation, build or layout limits, identifying review opinions still awaiting reviewer recheck under the execution rule without closing them as the writer.
+Return actual corrections and remaining mathematical, writing-rule, citation, build or layout limits, identifying writing opinions or mathematical findings still awaiting reviewer recheck under the execution rule without closing them as the writer.
 
 <a id="review-a-manuscript-against-writing-rules"></a>
 ## Review a manuscript
@@ -352,8 +355,9 @@ Apply the manuscript review rule's writing independence criteria and the [proof 
 
 Use the common checks and the selected manuscript's revision opinions for writing review.
 See the [common checks](rules/writing.md#manuscript-writing-rule-checks) and [revision-list rule](rules/writing.md#manuscript-revisions).
-For proof review, examine the manuscript's reasoning at the requested depth and retain the scoped evidence at its mathematical-review home.
-See [Mathematical review evidence](rules/writing.md#manuscript-review-and-mathematical-provenance).
+For proof review, examine the manuscript's reasoning at the requested depth and retain only actual current unresolved mathematical problems and their necessary grounds, locations, scope and limits at its mathematical-review problem home.
+Apply the [rolling problem-list rule](rules/writing.md#manuscript-review-and-mathematical-provenance) to problem-only reporting and cleanup; a problem-free result needs only a concise reply with its necessary scope.
+For an authorized recheck, update unresolved findings in place and remove only those actually resolved or no longer applicable, preserving unchecked problems.
 When both are requested, report their coverage separately and link any proof finding that requires manuscript revision from `revisions.md` to the mathematical evidence.
 Limit review-only writes to the selected review records and use the actual correction authority for changes to the text, policy, citation records or mathematical materials.
 Return the findings, inspected scope and limits, distinguishing review completion, manuscript conformity, completed corrections and build results.

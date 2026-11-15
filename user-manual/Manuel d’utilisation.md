@@ -10,7 +10,7 @@ Il répond à deux objectifs principaux : permettre à des agents d’IA autonom
 
 Nous vous encourageons à mener toutes vos recherches [de manière entièrement ouverte](https://github.com/vtejdn/acme/discussions/1), en conservant un dossier complet de vos travaux dans un dépôt public.
 Pour les dépôts publics, les agents ACME enregistrent par défaut les mises à jour de la recherche dans des commits et les poussent sans délai, afin que vos collègues puissent suivre l’avancement de vos travaux.
-Les agents ACME sélectionnent et réutilisent aussi de façon autonome, par [Intake](#notion-intake), des documents de recherche pertinents provenant d’autres dépôts ACME publics, en respectant leurs licences et en conservant l’attribution aux auteurs et l’origine des documents.
+Les agents ACME sélectionnent et réutilisent aussi de façon autonome, par [réception (Intake)](#notion-intake), des documents de recherche pertinents provenant d’autres dépôts ACME publics, en respectant leurs licences et en conservant l’attribution aux auteurs et l’origine des documents.
 **En rendant votre dépôt ACME public sous la [licence Apache 2.0](../LICENSE) utilisée par défaut, vous autorisez d’autres personnes et leurs agents à réutiliser les documents générés par vos agents sans demander d’autorisation supplémentaire.**
 
 ### Mathématiciens humains
@@ -18,7 +18,7 @@ Les agents ACME sélectionnent et réutilisent aussi de façon autonome, par [In
 Les mathématiciens humains ont la responsabilité de :
 
 1. Définir les questions de recherche, leur périmètre autorisé et les critères d’achèvement afin de lancer des [tâches de recherche (Task)](#material-task).
-2. Orienter avec les [agents](#notion-agent) le développement des [stratégies de recherche](#material-strategy).
+2. Choisir, évaluer et ajuster les [stratégies de recherche](#material-strategy) avec les [agents](#notion-agent).
 3. Apporter des idées, préciser l’intention mathématique, fixer les priorités scientifiques, questionner les arguments, affiner les questions et réorienter les recherches.
 4. Comprendre les résultats des recherches et explorer les frontières des connaissances mathématiques.
 5. Assumer la responsabilité des résultats mathématiques.
@@ -37,11 +37,25 @@ Dans le périmètre autorisé, les [agents](#notion-agent) autonomes ont la resp
 
 ### Collaboration
 
-Les mathématiciens peuvent [collaborer](#joint-task) au moyen d’un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) commun, partager les documents de recherche et réutiliser les résultats des autres.
-Le dépôt peut être hébergé sur une plateforme telle que [GitHub](<git-repository/Dépôts Git.md#notion-github>), permettant aux collaborateurs de travailler sur leurs propres appareils et de synchroniser les modifications.
-Voir le [schéma de collaboration au moyen d’un dépôt Git](git-repo.png).
+ACME propose deux façons de collaborer et de partager des documents.
 
-Différents mathématiciens ou équipes peuvent aussi collaborer entre dépôts en recevant des documents sélectionnés par [Intake](#notion-intake) ; voir le [schéma de collaboration entre dépôts](collaboration.jpg).
+- Les mathématiciens peuvent [collaborer](#joint-task) au moyen d’un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) commun, partager les documents de recherche et réutiliser les résultats des autres.
+  Le dépôt peut être hébergé sur une plateforme telle que [GitHub](<git-repository/Dépôts Git.md#notion-github>), permettant aux collaborateurs de travailler sur leurs propres appareils et de synchroniser les modifications.
+  Voir le [schéma de collaboration au moyen d’un dépôt Git](git-repo.png).
+
+- Différents mathématiciens ou équipes peuvent aussi collaborer entre dépôts en recevant des documents sélectionnés par [réception (Intake)](#notion-intake).
+  Vous pouvez partager des documents de recherche dans un dépôt Git public utilisant la [licence Apache 2.0](../LICENSE) par défaut.
+  Les autres personnes et leurs agents peuvent réutiliser les documents produits par vos agents dans ce dépôt sans demander d’autorisation supplémentaire.
+  Les agents ACME sélectionnent et réutilisent de manière autonome des documents de recherche pertinents provenant d’autres dépôts ACME publics par réception (Intake), en respectant leurs licences et en préservant l’attribution et la provenance.
+  Dans le dépôt public actuel, vous pouvez donner une consigne d’[importation (Import)](#notion-import) pour sélectionner, dans vos autres dépôts, y compris privés, les documents que vous souhaitez rendre publics et les importer ici.
+  Voir le [schéma de collaboration entre dépôts](collaboration.jpg).
+
+### Déclaration d’utilisation de l’IA
+
+Lors de la publication de résultats de recherche, déclarez fidèlement la manière dont vous avez utilisé le cadre ACME.
+Lorsque vous déposez une prépublication sur une plateforme telle qu’[arXiv](https://arxiv.org/) ou [Hexagon](https://hexagonmath.org/), ou soumettez un article à une revue, nous recommandons d’y joindre un lien vers votre dépôt Git ACME public afin que les collègues et les évaluateurs puissent consulter les documents pertinents et l’ensemble des enregistrements de recherche, vérifier les arguments, comprendre la démarche et évaluer le travail.
+Vous pouvez vous inspirer de l’[exemple de déclaration d’utilisation de l’IA](./ai-disclosure-example.md).
+Vous pouvez aussi consulter l’[exemple de page de publication](./publication-example.md) pour préciser le degré de compréhension et les contributions concrètes des auteurs humains, ainsi que votre position sur le partage et la réutilisation des documents bruts produits par les agents.
 
 ### Déroulement du travail
 
@@ -67,15 +81,20 @@ Choisissez des modèles pour la recherche mathématique et les tâches administr
 
 ### <a id="setup-workplace"></a>Étape II. Configurer votre espace de travail
 
-Pour une recherche individuelle sur un seul appareil, utilisez un [environnement d’exécution d’agents](agent-harness.md) adapté, donnant accès à un [LLM](#notion-llm) performant.
+Choisissez un [environnement d’exécution d’agents](agent-harness.md) adapté et connectez-le à un [LLM](#notion-llm) performant.
 
 1. Installez un environnement d’exécution d’agents, sous forme d’application autonome ou au sein d’un [EDI](agent-harness.md#notion-ide), puis connectez-vous si cela est nécessaire ou souhaité.
-2. Choisissez un dossier sur votre appareil pour y conserver le cadre et les futurs documents de recherche.
-3. Choisissez le modèle et le fournisseur dans les paramètres ou le sélecteur de modèles.
+2. Choisissez le modèle et le fournisseur dans les paramètres ou le sélecteur de modèles.
+3. Choisissez un dossier sur votre appareil pour y conserver le cadre et les futurs documents de recherche.
+   Pour une première installation dans un nouveau projet, utilisez un dossier local ne contenant encore aucun contenu de projet.
+   Pour rejoindre un dépôt de recherche ACME existant, suivez les étapes pour [rejoindre un dépôt Git en tant que collaborateur](#setup-collaboration).
 
 Sans [Git](<git-repository/Dépôts Git.md#notion-git>), le mode par défaut est la recherche personnelle sur votre appareil local.
 Pour synchroniser votre travail entre appareils ou collaborer au moyen d’un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) partagé, vous pouvez choisir une plateforme d’hébergement telle que [GitHub](<git-repository/Dépôts Git.md#notion-github>).
-Téléverser les travaux de recherche et rendre un dépôt public sont deux choix distincts.
+Si vous avez déjà choisi un dépôt distant, vérifiez qu’il ne contient lui non plus aucun contenu de projet avant la première installation.
+
+Lors de la création d’un dépôt GitHub, choisissez de le rendre privé ou public selon vos besoins.
+Le rendre public et y pousser les enregistrements de recherche pour synchroniser le travail entre appareils ou collaborer sont deux choix distincts.
 
 4. (Facultatif) Installez Git sur votre appareil ou demandez à un [agent](#notion-agent) de l’installer dans l’environnement d’exécution choisi.
    Consultez l’exemple de consigne [Installer Git](<user-instructions/Exemples de consignes.md#install-git>).
@@ -109,7 +128,7 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 5. Configurez le nom et l’adresse électronique utilisés pour vos [commits](#notion-commit) [Git](<git-repository/Dépôts Git.md#notion-git>), ou demandez à un agent de le faire.
    Consultez l’exemple de consigne [Configurer Git](<user-instructions/Exemples de consignes.md#setup-git>).
 
-## Premiers pas
+## Commencer l’exploration
 
 ### Commencer un [Task](#material-task)
 
@@ -123,6 +142,7 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
    Discutez des mathématiques avec les agents pour approfondir et accélérer votre compréhension.
    Demandez des références pertinentes et questionnez de manière socratique les sources des arguments et des idées, en particulier lorsqu’un argument s’appuie sur les connaissances du modèle sans source explicite.
 6. (Facultatif, si vous utilisez [Git](<git-repository/Dépôts Git.md#notion-git>)) Enregistrez les modifications que vous souhaitez conserver dans des [commits](#notion-commit) ; au besoin, annulez les modifications locales ou utilisez un revert pour annuler des commits.
+   Une fois un dépôt Git distant configuré, l’agent crée et pousse rapidement les commits de recherche par défaut, conformément aux dispositions convenues.
 
 - Voir les [exemples de consignes de recherche](<user-instructions/Exemples de consignes.md#research-instructions>).
 
@@ -163,11 +183,67 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 - Si vous utilisez plusieurs dépôts ACME sur le même appareil, vous pouvez regrouper votre littérature dans un seul dossier local de fichiers PDF.
   Demandez à un agent de faire pointer le [répertoire local de littérature de chaque dépôt](../mathematics/literature/pdf) vers ce dossier au moyen de jonctions de répertoires (directory junctions).
   Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce dossier.
-- Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les de [Git](<git-repository/Dépôts Git.md#notion-git>).
+- Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les du suivi par [Git](<git-repository/Dépôts Git.md#notion-git>).
 
-### <a id="manuscript-writing"></a>Rédiger un manuscrit
+## <a id="manuscript-writing"></a>Rédiger un manuscrit
 
-En cours de rédaction.
+### Quatre niveaux de consignes de rédaction
+
+Le cadre permet d’organiser les documents de recherche en manuscrits TeX, de les réviser, de les compiler et de les vérifier.
+ACME organise la rédaction selon quatre niveaux de consignes, par ordre de priorité croissante :
+
+- Les consignes générales de rédaction mathématique.
+  Elles figurent dans [framework/rules/writing.md](../framework/rules/writing.md#common-mathematical-writing-defaults) et sont installées avec le cadre comme consignes de rédaction par défaut.
+  Ces consignes et le seul jugement de l’[agent](#notion-agent) peuvent toutefois ne pas suffire aux usages d’un domaine ou aux exigences personnelles d’un auteur.
+- Les préférences générales de rédaction de l’auteur.
+  Selon les exigences explicites de l’auteur, l’agent consigne au besoin les préférences générales dans `profiles/<human>/writing/readme.md` (`<human>` est la [clé d’auteur](#notion-author-key), par exemple `Alice`) et les actualise selon ces exigences.
+- Les préférences de l’auteur pour un domaine de recherche particulier.
+  L’agent les consigne au besoin dans le fichier de préférences du domaine concerné sous `profiles/<human>/writing/`.
+- Les conventions du manuscrit actuel.
+  Elles sont généralement consignées dans `writing.md`, `conventions.md` ou une section « Conventions de rédaction » du `readme.md` du répertoire du manuscrit, et tenues à jour par l’agent selon les besoins.
+
+Un niveau de priorité supérieure ne remplace que les parties incompatibles des niveaux inférieurs ; toutes les autres exigences restent applicables.
+En l’absence de préférences personnelles, de préférences propres à un domaine et de conventions du manuscrit, l’agent commence à rédiger selon les consignes générales.
+
+### Ouvrages de référence pour la rédaction
+
+Les auteurs peuvent choisir trois types de références : des travaux existants dont le contenu peut être repris directement, des modèles de style et des références pour la terminologie et les notations du domaine.
+Vous pouvez fournir des travaux ou désigner des références existantes ; l’[agent](#notion-agent) assure leur organisation et leur enregistrement lorsque cela est nécessaire.
+Une même référence peut servir à plusieurs usages, chacun avec son propre périmètre.
+
+- Travaux existants réutilisables.
+  Vous pouvez désigner vos travaux ou ceux dont vous êtes coauteur pour que l’agent les réutilise directement dans le périmètre indiqué, éventuellement limité à certaines sections ou à certains passages.
+- Modèles principaux de style du manuscrit.
+  Vous pouvez choisir une ou plusieurs références dont l’agent peut s’inspirer pour l’organisation, l’exposition et le style.
+- Références pour la terminologie et les notations du domaine.
+  Vous pouvez choisir des travaux pour guider l’agent dans la terminologie, les notations et la présentation des définitions.
+
+Ces choix peuvent s’appliquer à votre rédaction en général, à un domaine particulier ou au manuscrit actuel, et sont conservés avec les préférences ou conventions correspondantes.
+Les références et leurs usages pour la rédaction en général sont consignés dans `profiles/<human>/writing/readme.md`.
+Ceux qui ne concernent qu’un domaine sont consignés dans le fichier de préférences du domaine sous `profiles/<human>/writing/`.
+Ceux qui ne concernent que le manuscrit actuel sont consignés dans `writing.md`, `conventions.md` ou une section « Conventions de rédaction » du `readme.md` du répertoire du manuscrit.
+
+### Vérification et révision
+
+La révision prend pour base la version actuelle du manuscrit et l’intention explicite de l’auteur.
+Sans accord explicite de l’auteur, l’[agent](#notion-agent) ne supprime pas des passages entiers tels que des théorèmes, définitions, démonstrations, exemples ou remarques déjà présents.
+Le cadre permet une relecture rédactionnelle et une vérification mathématique du manuscrit, séparément ou conjointement.
+
+- Relecture rédactionnelle : l’agent vérifie l’exposition, la structure, la terminologie, les notations et les citations selon les quatre niveaux de consignes ; les remarques de révision encore à traiter sont conservées dans `revisions.md`, dans le répertoire du manuscrit.
+- Vérification mathématique : l’agent vérifie les hypothèses, les raisonnements et les conclusions ; les problèmes mathématiques actuellement non résolus et les éléments nécessaires pour les étayer sont conservés dans `review.md`, dans le répertoire du manuscrit, et actualisés lors des vérifications ultérieures.
+
+Les résultats indiquent le périmètre réellement examiné, les constats et les points encore non résolus.
+Lorsqu’une vérification indépendante est nécessaire, vous pouvez répartir la rédaction et la vérification entre des sessions distinctes et confier la vérification à un agent qui n’a participé ni à la rédaction de fond ni à l’élaboration des arguments concernés et n’a pas reçu les discussions de fond liées à cette élaboration, afin de préserver un [contexte](#notion-context) indépendant.
+Lors d’un premier examen indépendant, l’agent forme d’abord son propre jugement à partir du manuscrit actuel et des conventions applicables, puis le compare aux remarques existantes.
+Les vérifications ultérieures reprennent les remarques non résolues du tour précédent, examinent les modifications correspondantes et leurs effets, actualisent les remarques et retirent les points résolus.
+
+### Mémoire de rédaction des agents
+
+Pendant la rédaction et la révision, l’[agent](#notion-agent) synthétise activement les retours et l’expérience pour en tirer des notes de rédaction utiles, conservées par auteur.
+Ces notes se trouvent dans `profiles/<human>/writing/notes.md`, que l’agent crée et tient à jour de manière autonome.
+Elles ont valeur de conseil et ne remplacent pas les conventions de rédaction explicites.
+Les préférences et les notes enregistrées sont consultées au besoin lors des travaux de rédaction ultérieurs pertinents.
+L’agent révise, fusionne et condense les notes au fil des nouveaux retours ; les préférences formelles et les conventions du manuscrit sont mises à jour selon les exigences explicites ou les choix adoptés par l’auteur.
 
 ### <a id="lean-formalization"></a>Formalisation en Lean
 
@@ -177,7 +253,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.10.2.
+La version actuelle du cadre est 0.11.0.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
@@ -199,17 +275,17 @@ Certains répertoires ne sont créés qu’en cas de besoin.
 | `.tmp/` | Contient les entrées temporaires et les fichiers intermédiaires créés par les [agents](#notion-agent) et supprimés après utilisation. |
 | `execution/` | Consigne l’état d’exécution actuel, les limites et les conditions d’arrêt des [Tasks](#material-task) de recherche individuels. |
 | [`framework/`](../framework/readme.md) | Contient les règles du cadre, les modèles de documents, les spécifications de format et les indications de version. |
-| `intake/` | Consigne les documents reçus d’autres [dépôts](<git-repository/Dépôts Git.md#notion-git-repository>), leurs sources et le périmètre de chaque acquisition. |
+| [`intake/`](../intake) | Consigne les documents reçus d’autres [dépôts](<git-repository/Dépôts Git.md#notion-git-repository>), leurs sources et le périmètre de chaque acquisition. |
 | [`mathematics/`](../mathematics/readme.md) | Contient les documents de recherche, les enregistrements bibliographiques, les calculs, les manuscrits et les présentations. |
-| `profiles/` | Contient les politiques personnelles de recherche, les préférences d’exécution et les choix de rédaction mathématique. |
+| `profiles/` | Conserve les préférences personnelles de recherche et d’exécution, les choix de rédaction mathématique et les notes d’expérience tenues par les agents. |
 | [`repository/`](../repository/readme.md) | Conserve les paramètres du dépôt, les enregistrements des auteurs et les correspondances avec les dépôts et auteurs externes. |
 | [`scripts/`](../scripts/readme.md) | Fournit des outils facultatifs en ligne de commande pour la configuration, la gestion des documents, la navigation et les vérifications. |
 | [`user-manual/`](./) | Contient les guides d’utilisation, les explications de configuration et les exemples de consignes. |
 | `.gitattributes` | Configure le traitement des fichiers texte et binaires par [Git](<git-repository/Dépôts Git.md#notion-git>), notamment les fins de ligne. |
 | `.gitignore` | Indique les fichiers et répertoires non suivis que Git doit ignorer. |
-| `AGENTS.md` | Fournit les consignes d’entrée qui orientent les agents vers les règles et documents applicables du cadre. |
-| `LICENSE` | Contient les conditions de licence et les mentions du dépôt. |
-| `readme.md` | Présente le dépôt et renvoie vers le manuel d’utilisation, les règles du cadre et les documents de recherche. |
+| [`AGENTS.md`](../AGENTS.md) | Fournit les consignes d’entrée qui orientent les agents vers les règles et documents applicables du cadre. |
+| [`LICENSE`](../LICENSE) | Contient les conditions de licence et les mentions du dépôt. |
+| [`readme.md`](../readme.md) | Présente le dépôt et renvoie vers le manuel d’utilisation, les règles du cadre et les documents de recherche. |
 
 Selon vos outils et votre configuration, les répertoires suivants peuvent également être présents.
 
@@ -255,7 +331,7 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 | <a id="notion-session"></a>Session | Interaction continue avec un [agent](#notion-agent), gérée par un [environnement d’exécution d’agents](agent-harness.md). Elle peut comporter plusieurs tours de conversation, chacun commençant généralement par un message de l’utilisateur et comprenant les réponses de l’agent ainsi que les opérations des outils. L’environnement conserve l’historique de la conversation et prépare le [contexte](#notion-context) de chaque appel au modèle ; pour respecter la [longueur de contexte](#notion-context-length) du modèle, il peut sélectionner ou résumer les parties antérieures de l’historique. |
 | Identifiant de document | Référence structurée identifiant un document et, le cas échéant, sa version. Par exemple, `Alice_C_F0007_v1.md` identifie un [Claim](#material-claim) par auteur, type, ligne de recherche, numéro de série et version. |
 | <a id="notion-research-line-letter"></a>Lettre de ligne de recherche | Lettre, telle que `F` dans `Alice_C_F0007_v1.md`, servant à organiser les documents de recherche numérotés. Les documents issus d’un Task héritent de sa lettre, mais reçoivent leurs propres numéros de série. Par défaut, la lettre `A` est utilisée lorsqu’aucune ligne n’est indiquée. |
-| Clé d’auteur | Clé stable enregistrée pour un auteur humain, par exemple `Alice`, utilisée dans les identifiants de documents et les enregistrements d’auteur. |
+| <a id="notion-author-key"></a>Clé d’auteur | Clé stable enregistrée pour un auteur humain, par exemple `Alice`, utilisée dans les identifiants de documents et les enregistrements d’auteur. |
 | Famille de documents | Ensemble des versions conservées d’un même document, par exemple `Alice_C_F0007_v1.md` et `Alice_C_F0007_v2.md`. |
 | Version de document | Révision particulière conservée d’un document, par exemple la version `v1` ou `v2` d’un Claim. |
 | <a id="notion-main-research-agent"></a>Agent principal de recherche | Agent qui dirige le travail sur un [Task](#material-task), coordonne les éventuels sous-agents et veille à la cohérence des enregistrements de recherche. |
@@ -285,7 +361,8 @@ Un Task organise la recherche autour d’un objectif mathématique précis, de s
 
 - Un Task peut rester actif même si aucun [agent](#notion-agent) n’y travaille à cet instant.
 - Un Task rassemble les documents de recherche qui soutiennent votre investigation.
-  Les manuscrits associés, rapports d’avancement et autres documents que vous demandez peuvent être réunis dans un projet tel que `mathematics/manuscripts/Alice_T_A0007/`.
+  Les manuscrits associés, rapports d’avancement et autres documents que vous demandez peuvent être réunis dans un projet tel que `mathematics/manuscripts/Alice/Alice_T_A0007/`.
+  Les projets de manuscrits sont organisés par auteur responsable de la rédaction et associés au Task de recherche concerné.
 - Vous pouvez demander la réactivation d’un Task achevé afin de poursuivre le travail sur l’objectif de recherche concerné.
   Expliquez ce que vous souhaitez étudier ensuite et les éventuels changements de périmètre ou de limites.
   Un objectif de recherche substantiellement différent doit faire l’objet d’un nouveau Task.

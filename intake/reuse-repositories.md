@@ -1,12 +1,14 @@
 # Public Mathematical Repository Discovery
 
 This shared index locates public mathematical resources by topic and useful entrances.
-Its discovery source is [Share your ACME repository](https://github.com/vtejdn/acme/discussions/1); listing is separate from actual acquisition provenance under `intake/<initiator>/`.
+The primary discovery entrance is [public repositories carrying acme-math](https://github.com/search?q=topic%3Aacme-math+is%3Apublic+fork%3Atrue&type=repositories), including forks.
+Supplementary entrances are [Share your ACME repository](https://github.com/vtejdn/acme/discussions/1) and the [framework full-name README search](https://github.com/search?q=%22Autonomous+and+Collaborative+Mathematical+Exploration%22+in%3Areadme+is%3Apublic+fork%3Atrue&type=repositories), including useful unmarked resources.
+Listing is separate from actual acquisition provenance under `intake/<initiator>/`.
 The [public repository reuse rule](../framework/rules/literature-search.md#public-repository-discovery-and-reuse) owns search and refresh responsibilities.
 
-Directory last checked (UTC): **2026-11-13**.
+Sharing discussion last checked (UTC): **2026-11-13**.
 Coverage: the discussion body and all three displayed repository-sharing comments, each showing no replies.
-This date describes the directory check, not a freshness or whole-repository inspection claim for the entries below.
+This date covers that discussion read, not the Topic or README searches linked above or the freshness or whole-repository inspection of the entries below.
 The summaries use the sharing descriptions and the explicitly linked entrances read; no mathematical statement, proof, formalization build or review was checked for this index.
 
 | Public repository | Topics and short summary | Entrances read | Category, summary basis and limits |

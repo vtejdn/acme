@@ -39,6 +39,15 @@ Use English as the default academic working language for reading and writing wit
 Necessary sources in other languages remain usable with their authentic meaning, edition facts, attribution and exact quotations preserved.
 Judge source applicability from the actual source need rather than language alone.
 
+### Mathematical conversation
+
+Use established mathematical terminology and notation in a natural, direct discussion between mathematicians.
+Keep the actual objects, necessary assumptions and distinction between established conclusions, intuition and speculation clear.
+Choose explanation, definitions and shorthand for the actual exchange without imposing manuscript formality, repeated definitions or a fixed response pattern.
+
+Follow the actual human request for conversation language; retained repository notes still follow the [repository writing-language rule](#repository-writing-language).
+Use [applicable personal communication and writing guidance](preferences.md#personal-communication-and-writing-guidance), including shared terminology and advisory notes within the effective choices and their actual scope.
+
 ## Repository writing language
 
 Use English when writing or substantively revising repository prose, except in non-English editions of the user manual and instruction examples.

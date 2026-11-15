@@ -22,6 +22,7 @@ Changing the current operator does not switch the shared document's effective ch
 Without an applicable shared PDF-tracking choice, retain the common local-output defaults rather than take the union of individual exceptions.
 
 Personal defaults live under profiles/<human>/, with writing/readme.md and actual named subfield files where useful.
+The [personal guidance layout](#personal-communication-and-writing-guidance) separates explicit preferences, advisory notes and shared terminology without adding a writing layer.
 The author's message-archive.md is historical correspondence, not personal policy; its location or existence does not select it for startup or independent-review context.
 Read the manuscript's actual responsible writer(s), effective choices and topic/readership, not merely the bound operator or Task line.
 Changing a local actor does not alter another author's adopted manuscript choices.
@@ -58,6 +59,62 @@ The [daily public version check](../versioning.md#official-version-check) is a n
 It neither authorizes retrieval or application of replacement files nor changes the installed version, mathematical status or Task/E authority.
 Explain a suggested common-rule difference at its actual scope and continue authorized work where possible.
 A separately explicit framework-maintenance assignment retains its own scope and actual responsibilities; an agent's name or a directory's presence does not assign that responsibility.
+
+## Personal communication and writing guidance
+
+### Responsible homes and precedence
+
+Use the following matching communication and writing layout under `profiles/<human>/` only when there is actual content to retain.
+
+| Profile-relative path | Responsible content |
+| --- | --- |
+| `communication/readme.md` | Explicit author preferences for dialogue, with their actual scope. |
+| `communication/notes.md` | Agent-derived general guidance for communicating with this author. |
+| `writing/readme.md` and existing named subfield files | Explicit author writing preferences at their existing applicable scope. |
+| `writing/notes.md` | Agent-derived general writing guidance, with necessary field, audience or document limits. |
+| `terminology.md` | Shared personal terminology, notation and related mathematical expression choices used by conversation and writing. |
+
+First determine effective human choices under the [actual instruction scope](#instruction-scope) and [existing precedence and four writing layers](#scope-and-adoption), then use agent notes within the remaining permitted discretion.
+Applicable explicit author preferences always prevail over conflicting agent summaries.
+Agent notes remain advisory and create no additional policy layer, adopted author choice or permission.
+Only an actual explicit human instruction or adoption changes the responsible preference; retain an adopted choice at its proper home and remove redundant note content.
+Keep a one-off request within that exchange unless the actual instruction adopts a lasting preference, and correct the application of an existing rule without creating a new personal preference.
+
+Maintain shared terminology and notation once in `profiles/<human>/terminology.md`, preserving actual scope and clearly distinguishing explicit author choices from advisory agent suggestions when both are retained.
+Communication and writing files may point to the relevant section instead of copying its list; agent summaries cannot silently change an explicit convention.
+This shared file stays within the existing author and subfield choice scope, preserving the precedence of a more specific applicable manuscript choice.
+Keep manuscript-specific choices at their document home, including when discussing that manuscript, rather than promoting them into general personal terminology.
+Mathematical definitions, source facts and their evidence retain their existing mathematical or source homes; this file owns expression choices rather than another definition catalog.
+
+### Active summarization and rolling maintenance
+
+During actual dialogue, writing and revision, proactively extract useful lasting guidance from feedback and experience and update the responsible notes without routine per-entry approval.
+Summarize retained experience as clear, general current guidance with only the scope needed for correct use.
+Revise, combine or remove entries as understanding improves, consolidating overlapping lessons rather than appending one entry after each exchange or revision.
+Keep no accumulating transcript, incident list, correction history, dated learning log or score, and impose no arbitrary note-size quota.
+Retain no observation that supplies no useful general guidance and create no empty profile, note or section.
+Record explicit author instructions at their preference home rather than as agent inference; draft usage, silence and agent recommendations establish no explicit preference.
+
+### Reading and tool boundaries
+
+For dialogue under the [conversation norm](organization.md#mathematical-conversation), read the actual human's applicable communication guidance; for writing, read the actual responsible writer's applicable choices and notes, using relevant shared terminology in either case.
+Reuse adequate current-context reading and select necessary sections without loading every profile file for each response.
+Absent notes leave the common defaults usable, without a startup creation or whole-profile reading requirement.
+Before revision, read the current manuscript and its effective choices under [current-manuscript authority](writing.md#current-manuscript-authority); an experience note cannot restore outdated text or override that actual material and its effective choices.
+Joint writing retains its adopted shared choices without automatically importing an operator's personal preferences or notes when the operator changes.
+Keep shared notes suitable for the [existing profile visibility](organization.md#machine-local-locators), retaining concise nonsensitive guidance rather than raw private exchanges or speculation about the author.
+Mathematical evidence, research status and execution authority retain their responsible homes.
+[Independent review](proof-audits.md#review-arrangements) receives only its necessary scoped instructions rather than automatic conversation-memory context.
+An optional policy locator may retain its narrow explicit-path output; that output neither replaces reading necessary shared terminology and notes nor ranks advisory notes as human policy.
+The agent judges terminology, explanation, useful generalization and consolidation through ordinary reading and editing, without a memory service, classifier, semantic checker, learning register or mandatory tool sequence.
+
+### Bounded adaptation of existing profiles
+
+When an affected profile contains the former mixed `profiles/<human>/communication.md`, read it and move useful explicit preferences to `communication/readme.md` and consolidated agent experience to `communication/notes.md`.
+Move shared terminology and notation from affected communication or writing locations to `terminology.md`, preserving actual scope and the distinction between explicit author choices and agent suggestions without duplicate lists.
+Do not label content of uncertain origin as an explicit author choice without the necessary actual evidence.
+Repair actual references and confirm useful content is retained at its responsible homes before removing the retired flat file and redundant entries.
+Complete necessary bounded adaptation before marking an upgraded target version installed, without old-path aliases, compatibility readers, transcript processing or an unrelated profile scan.
 
 ## Defaults and Active Policy
 

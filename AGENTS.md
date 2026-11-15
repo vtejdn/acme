@@ -10,6 +10,9 @@ Apply the current human request, actual operator and activity-specific authority
 Autonomous research requires the selected Task and its stable E under the [execution rules](framework/rules/execution.md).
 An inquiry or discussion enters formal research through the [preliminary lookup, report and approval boundary](framework/rules/workflow.md#from-an-inquiry-to-approved-research); maintenance and discussion alone select no Task.
 
+For mathematical conversation, apply the [conversation norm](framework/rules/organization.md#mathematical-conversation).
+Use the [personal communication and writing guidance](framework/rules/preferences.md#personal-communication-and-writing-guidance) for the actual human and responsible writer at their applicable scope.
+
 Apply the [common reader-oriented prose principle](framework/rules/organization.md#reader-oriented-prose), [repository writing language](framework/rules/organization.md#repository-writing-language) and [sentence-oriented source layout](framework/rules/organization.md#sentence-oriented-source-layout) rules to maintained prose.
 Inspect the actual changed sentences and syntax before delivery, within the assigned role.
 Preserve unrelated working changes, fixed mathematical versions, necessary decisions and evidence, and acquired provenance.

@@ -14,6 +14,7 @@ Reuse an existing explicit research instruction or approval for the same objecti
 Distinguish an unresolved mathematical question from access failure, ambiguous formulation or an unchecked source.
 
 Agents may autonomously search the web and download relevant publicly available literature for the current research task, source audit, or other authorized exploration.
+Agents may use GitHub search to discover relevant mathematical literature and public research repositories.
 Routine searches and downloads within that scope do not require approval for each query or file.
 Follow the [literature acquisition and version rules](literature.md#literature-acquisition) when retaining a source.
 GitHub hosting does not change external-literature input.
@@ -40,27 +41,43 @@ Use the shared [public repository index](../../intake/reuse-repositories.md) aft
 Reuse an adequate earlier search and stop on sufficient usable evidence, without irrelevant repository traversal or delaying an already identified adequate primary source.
 The index locates candidates, not mathematical assessments, acquisition facts or registered external identities.
 
-On the first actual need for this reuse layer in a UTC day, the responsible main agent checks [Share your ACME repository](https://github.com/vtejdn/acme/discussions/1) unless adequate same-day evidence is already available.
-Reuse that result within the round and through adequate shared index information, including in subagents; an explicit recheck or concrete new lead can justify another query.
-Sufficient local evidence or an unrelated task creates no daily directory-query prerequisite or background update duty.
+Use GitHub's native [public Topic query](https://github.com/search?q=topic%3Aacme-math+is%3Apublic+fork%3Atrue&type=repositories) as the primary precise discovery entrance:
 
-After a successful actual directory check, the index may retain one simple directory-last-checked UTC date with the real coverage and any partial limit.
-That fact describes directory coverage, not the freshness or inspection of every repository, and an incomplete or failed retrieval establishes no successful full check.
+```text
+topic:acme-math is:public fork:true
+```
+
+These [repository-search qualifiers](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories) select the adopted Topic, public visibility and inclusion of forks; do not add popularity, language or similar filters that silently exclude applicable research repositories.
+Retain [Share your ACME repository](https://github.com/vtejdn/acme/discussions/1) and the [full-name README search](https://github.com/search?q=%22Autonomous+and+Collaborative+Mathematical+Exploration%22+in%3Areadme+is%3Apublic+fork%3Atrue&type=repositories) as supplementary routes, including for useful unmarked repositories:
+
+```text
+"Autonomous and Collaborative Mathematical Exploration" in:readme is:public fork:true
+```
+
+On the first actual need for this reuse layer in a UTC day, the responsible main agent checks the primary Topic query unless adequate same-day evidence is already available.
+Choose supplementary reads for the actual question and available evidence rather than requiring every route each round.
+Reuse that result within the round and through adequate shared index information, including in subagents; an explicit recheck or concrete new lead can justify another query.
+Sufficient local evidence or an unrelated task creates no daily discovery-query prerequisite or background update duty.
+
+After a successful actual discovery check, the index may retain a simple last-checked UTC date identifying the source/query actually covered and any partial limit.
+That fact describes the observed discovery coverage, not the freshness or inspection of every repository, and an incomplete or failed retrieval establishes no successful full check.
+Changing configured discovery links alone advances no check date and changes no older entry's summary basis.
 On failure preserve usable entries and the earlier successful-check fact, report an actual affected limitation and continue supported work or direct access to known sources under the [connection-recovery rule](workflow.md#connection-recovery).
 Reuse a known unavailable result in the actual context rather than query repeatedly without a new reason, respecting explicit offline limits.
 No separate daily register, cache protocol, scheduler or universal startup gate is needed.
 
-Directory maintenance discovers new links and relevant changed descriptions, without inspecting every repository's contents.
+Discovery maintenance finds relevant candidates and changed descriptions, without inspecting every repository's contents or inventing a complete catalog.
 Read necessary public entrances for a new or changed candidate when needed for an accurate useful summary; distinguish the author's description from what the agent actually inspected.
 Maintain public links, topics, concise summaries, useful entrances, content categories, known limits and actual summary sources in the one shared index, correcting known errors through bounded edits.
-Do not mirror repositories, clone the directory's entire list or build a full-text or vector database for this purpose.
-When a mathematical question matches a candidate, read its relevant materials and necessary context even if the directory entry is unchanged; an unchanged entry does not establish unchanged repository contents.
+Do not mirror repositories, clone the entire candidate list or build a full-text or vector database for this purpose.
+When a mathematical question matches a candidate, read its relevant materials and necessary context even if the discovery entry is unchanged; an unchanged entry does not establish unchanged repository contents.
 
-Classify the actual selected content rather than its host, directory listing or framework-version marker.
+A Topic hit, README mention or shared URL is a candidate; unmarked material remains usable under the existing source rules.
+Classify actual framework use, source category and selected content from relevant materials rather than the label, host, directory listing or framework-version marker.
 Other public resources and ordinary literature retain their [literature route](literature.md#source-preparation); actual receipt of identifiable ACME material retains the [fixed-source intake boundary](intake.md#scope-and-routing), while same-author transfer retains its actual [personal-import authority](intake.md#personal-import).
 Browsing alone receives no material or mathematical authority, and discovery supplies neither proof acceptance nor a novelty conclusion from an unsuccessful search.
 The agent judges relevance, category, summaries and applicability with suitable ordinary tools, without a compulsory scraper, classifier, semantic search system, new registration or tool sequence.
-Reading the directory grants no authority to post there, modify another repository or change project remotes.
+Discovery grants no authority to tag candidate repositories, post to the discussion, modify another repository, change project remotes or receive a whole library.
 
 ### Expanding, Stopping, and Reopening Searches
 

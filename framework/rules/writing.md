@@ -8,6 +8,8 @@ This includes project and document `readme.md`, `writing.md`, `conventions.md`, 
 Structured metadata, BibTeX fields, formulas, code, exact source quotations, acquired originals and generated outputs retain their native or responsible rules, while prose surrounding them remains governed by these writing rules.
 
 Use these content standards within the [project and document requirements](#projects-and-documents) and the applicable single-writer or joint-document [writing choices](preferences.md#scope-and-adoption).
+Use the [personal writing guidance](preferences.md#personal-communication-and-writing-guidance) applicable to the actual responsible writer(s) and document, reading necessary explicit choices, shared terminology and advisory writing notes within the remaining permitted discretion.
+Applying notes preserves [current-manuscript authority](#current-manuscript-authority) and the adopted choices and scope of [joint writing](#explicit-joint-writing).
 
 The [definition index](../../mathematics/definitions/index.md) locates responsible mathematical definitions.
 Canonical [references.bib](../../mathematics/literature/references.bib) owns shared bibliographic fields; useful author edition/source explanations belong to the source README; U and source audits own inspected edition, passages and actual inspection scope.
@@ -161,7 +163,7 @@ Preserve sufficient citation and mathematical evidence at their actual homes rat
 | Document `readme.md` | Purpose, actual entry, required inputs, necessary current review evidence and writing-choice entrances; build instructions and latest build facts when compilation applies. Link an actual revisions file when needed without copying its opinions or declaring a closed state. |
 | Existing `writing.md`, `conventions.md` or suitable choice home | Effective manuscript choices under the [preference rule](preferences.md#scope-and-adoption), without inventing a model or adoption requirement for an author who has chosen none. |
 | Suitable organization record | Selected content and order; a separate `organization.md` only when the actual organization needs it. |
-| Existing project/document `review.md` or adequate review home | Actual mathematical scrutiny of manuscript statements, hypotheses, proofs and inferences under the [mathematical-review rule](#manuscript-review-and-mathematical-provenance), with its true evidence and limits. |
+| Existing project/document `review.md` or adequate mathematical-review problem home | Current unresolved mathematical problems in manuscript statements, hypotheses, proofs and inferences, with necessary locations, grounds, scope and limits under the [rolling problem-list rule](#manuscript-review-and-mathematical-provenance). |
 | `citation.md` | Current external citation applications and their applicability evidence or gaps under the [citation-record rule](#manuscript-review-and-citation-records). |
 | Manuscript `revisions.md` | Current writing opinions and links to proof findings that require manuscript revision when both reviews are requested. The assigned reviewer maintains the list for the selected manuscript under the [revision-list rule](#manuscript-revisions). |
 
@@ -466,7 +468,8 @@ Distinct standalone documents or substantively different presentations may have 
 ## Truthful Review Scope
 
 Apply the author's actual writing and review procedures.
-Record what was checked, against which current manuscript revision, with its limits and unresolved findings.
+Report the actual checked scope, current manuscript revision and necessary limits truthfully.
+For manuscript mathematical scrutiny, retain only current unresolved problems and their necessary grounds under the [rolling problem-list rule](#manuscript-review-and-mathematical-provenance); a problem-free result needs only a concise reply with its necessary scope.
 Claim whole-manuscript coverage only after that coverage was completed.
 A local check, successful build or style exemplar cannot establish whole-manuscript citation completeness or mathematical proof validity.
 Use the distinct [record responsibilities](#project-and-document-records) for mathematical evidence, writing-rule opinions and build facts, without a policy engine or per-term register.
@@ -489,6 +492,7 @@ Adopting these rules selects no theorem, writing task, review, publication or re
 ### Drafting and revision
 
 Under the actual writing or correction instruction, read the current manuscript, responsible writer(s), effective choices and necessary direct inputs.
+During authorized writing and revision, proactively consolidate useful lasting feedback and experience under the [personal guidance rule](preferences.md#active-summarization-and-rolling-maintenance), without inferring a change to effective human choices.
 Read the records that own the findings selected for the current revision.
 For writing opinions, use the [selected manuscript's revision list](#manuscript-revisions).
 For proof findings, use [`review.md` or the adequate mathematical-review home](#manuscript-review-and-mathematical-provenance), including when the manuscript has no revision list.
@@ -500,7 +504,7 @@ An optional suggestion may be adopted within actual authority and choices withou
 
 Maintain affected mathematical/source evidence before adopting a substantive change, and reconcile only the actual affected manuscript records under their responsible rules.
 Report the current result, actual completed scope and remaining mathematical, writing-rule, citation or build limitations; a known required problem in that scope prevents claiming that revision complete, although a partial result may be delivered with its gap explicit.
-Report corrected review opinions through the normal reply without deleting reviewer-owned items or declaring their recheck passed.
+Report corrections to writing opinions and mathematical findings through the normal reply without deleting reviewer-owned items or declaring their recheck passed.
 A writing instruction alone starts no further review round; completed changes may truthfully await reviewer recheck.
 Self-checks do not establish independent review, and ordinary writing does not require a separate reviewer unless an actual applicable arrangement calls for one.
 
@@ -561,8 +565,8 @@ For a targeted recheck, select inputs for the actual scope and review relationsh
 For writing review, apply the common checks and maintain the [selected manuscript's revision opinions](#manuscript-revisions).
 Ground required opinions in the effective rule or actual mathematical or source issue and describe its specific effect.
 Record a reviewer's preference as an optional suggestion.
-For proof review, check the manuscript's hypotheses, reasoning and conclusions and record the scoped findings, evidence and limits in `review.md` or its adequate mathematical-review home.
-See [Mathematical review evidence](#manuscript-review-and-mathematical-provenance).
+For proof review, check the manuscript's hypotheses, reasoning and conclusions and maintain only actual current unresolved mathematical problems and their necessary grounds, locations, scope and limits in `review.md` or its adequate problem home.
+Apply the [rolling problem-list rule](#manuscript-review-and-mathematical-provenance) to reporting, authorized rechecks and cleanup.
 When reviewing both, link a proof finding that requires manuscript revision from the corresponding opinion in `revisions.md` to its mathematical evidence.
 
 Limit review-only writes to the selected review records and report any needed corrections to the text, writing policy, citation records or mathematical materials.
@@ -683,21 +687,36 @@ Local compilation, PDF eligibility and source versioning do not authorize commit
 For drafting and revision, the current working manuscript is authoritative for statements, notation, definitions, organization and proof exposition, subject to current explicit human instructions and the [current-manuscript rule](#current-manuscript-authority).
 Read the current manuscript sources and direct mathematical and source inputs before deciding what the manuscript records must contain.
 
-The existing project or document `review.md`, or its adequate mathematical-review home, records mathematical scrutiny of the current manuscript exposition.
-Each retained review entry identifies the mathematical object and manuscript location, exact scope checked in the current sources, reviewer or review method and relationship, evidence consulted, actual findings or corrections, and unresolved points and limits.
+The existing project or document `review.md`, or its adequate mathematical-review problem home, is a rolling list of current unresolved mathematical problems in the manuscript.
+Each retained problem identifies the mathematical object and manuscript location, concrete grounds, evidence and the scope and limits needed to understand and resolve it.
+Include the actual review relationship and consulted inputs where needed to interpret the finding, without retaining a full-review report.
+Omit passed-item lists, successful-check accounts, positive review conclusions and review chronology, even when the checked text still matches the current manuscript.
+When no problem is found, report that result and its necessary scope concisely in the normal reply; create no empty review file solely for that result.
+
 These framework reviews describe actual agent inspection under the [review relationship and arrangement rules](proof-audits.md#review-arrangements); human authorship, suggestions and authorization are separate facts.
 The current agent may directly undertake an ordinary or complete manuscript review without isolated context, another agent, a new Task or a fixed R solely for that review.
 An explicitly required independent manuscript inspection meets the actual independent-context conditions, using the current reviewer directly when already qualified, while its findings retain their manuscript-local home.
-An entry may review the complete written proof of an internal result whether or not an independent R exists.
+A review may examine the complete written proof of an internal result whether or not an independent R exists.
 A manuscript-local review does not replace fixed R evidence required by a separate Claim or Task acceptance workflow.
 An audit of a fixed Claim does not automatically review its manuscript presentation.
-Do not turn `review.md` into a build log, citation inventory, general prose-editing diary, fixed R review or substitute proof.
-After a change, reconcile only the affected entries.
-A scoped entry may remain while its reviewed text and conclusions still match the current authoritative manuscript; if the reviewed text has been superseded, review the current text and update the entry in place or remove it rather than retaining the former review as history.
-Do not retain historical full-manuscript reviews or superseded-state summaries in `review.md`.
-Before removing an entry, move any unique substantive mathematical result, argument, gap, counterexample or source finding to its responsible existing mathematical or source home under the [common content decision](records.md#substantive-material-retention).
-Do not transfer administrative review chronology or add a deletion receipt.
-Current build and layout facts belong in the document `readme.md`; do not retain historical build or visual summaries in `review.md`.
+Apply the rolling-list rule by the record's actual manuscript-review purpose, not its filename; a fixed R named `review.md` keeps its fixed evidence responsibilities.
+
+The responsible reviewer maintains unresolved findings in place and judges resolution from the current manuscript and necessary evidence under the actual instruction and review arrangement.
+Recheck directly when already authorized by the human instruction or continuing arrangement; a writer's report that an issue is fixed supplies neither that authorization nor a completed recheck.
+Remove only findings actually resolved or no longer applicable through that authorized recheck.
+Starting another review, reviewing superseding text or checking a narrower passage preserves earlier unresolved findings outside the actual recheck.
+When all findings are cleared, empty an established record to zero bytes and retain its entrance if it serves that manuscript alone.
+Preserve other manuscripts' current findings and other responsible content in a shared home.
+An empty problem list establishes neither a proof verdict, whole-manuscript coverage nor independent qualification.
+
+Before clearing an entry, preserve any uniquely needed mathematical result, argument, gap, counterexample or source finding at its responsible mathematical or source home under the [common content decision](records.md#substantive-material-retention), and repair actual consumers.
+Confirm necessary substance and references are preserved before removing redundant content, including when adapting an existing review record.
+Do not relocate retired success accounts or review history into a README, another report or a new R merely to preserve the process, or add a deletion receipt.
+Necessary substantive content and existing fixed review facts retain their actual responsibilities.
+Keep writing opinions in [`revisions.md`](#manuscript-revisions), linking any required manuscript correction to the current mathematical problem without duplicating its account.
+Citation applicability belongs in `citation.md`, and current build and layout facts belong in the document `readme.md`.
+Do not turn the problem list into a build log, citation inventory, prose-editing diary, fixed R review or substitute proof.
+The agent judges findings, evidence preservation, necessary references and closure through ordinary reading and editing, without a new schema, closure receipt, semantic classifier, mandatory tool or compatibility mechanism.
 
 When mapping a current citation in `citation.md`, check whether actual source-inspection evidence covers the exact source edition and passages needed, and state any unresolved check honestly.
 An adequate rolling U or complete relevant fixed C/L source account supplies this evidence at its existing responsible home, without copying, relocation or an extra U solely for citation.

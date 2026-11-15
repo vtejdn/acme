@@ -119,6 +119,36 @@ The mismatch alone blocks neither local research nor an otherwise authorized rem
 Do not automatically rename the remote repository, derive a local choice by sanitizing the remote name or rewrite remote configuration to remove a mismatch.
 Use the actual target address, account/channel and authority independently of name matching, reusing still-applicable evidence without a reminder registry or comparison on each local read.
 
+### GitHub Topic during project initialization
+
+Use the exact GitHub repository Topic `acme-math` as the common discovery label for declared use of this framework, without versioned labels, owner-specific variants or alias handling.
+When the human requests help setting up or initializing the project's GitHub remote repository, adding this Topic to that actual selected project is part of the same authorized initialization work.
+This includes creating and connecting the chosen project remote or completing requested initialization with an existing GitHub repository, without a separate routine Topic confirmation, permission sentence or adoption record.
+Honor explicit limits such as local remote configuration only or no GitHub metadata changes; a direct instruction to add the Topic to a selected existing project supplies its actual maintenance scope.
+
+Establish the actual project target, account or channel and initialization scope under the [connection responsibilities](#git-and-github-connection-checks).
+An official source, reference-only upstream, intake source or another repository owned by the account is not automatically the target.
+Authentication or SSH-only assistance without a project-initialization assignment selects no Topic write.
+Ordinary reading, cloning, framework copying or upgrade, fetch, merge, commit and push do not themselves select initialization, an account-wide scan or a recurring Topic check.
+Other hosting platforms retain their actual setup behavior without emulating GitHub Topics or moving the project to GitHub.
+
+Use adequate actual Topic information from initialization or an appropriate read to preserve every existing Topic and add `acme-math` only when absent.
+Reuse an already present Topic without rewriting the set or adding another label.
+Choose an adequate available GitHub connector, API or browser capability; GitHub CLI and a new helper are not prerequisites.
+The REST [Topic replacement operation](https://docs.github.com/en/rest/repos/repos#replace-all-repository-topics) replaces the whole set and needs appropriate repository-administration capability, so supply the retained set with `acme-math` included when choosing it.
+Successful Git transport alone establishes no Topic-administration permission through another channel.
+
+Preserve the selected visibility, owner, name, branches, description and protection settings.
+Under [GitHub's Topic behavior](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics), Topic names are public even on private repositories, while private-repository discovery depends on actual access.
+Keep a private repository private; public discovery filters grant no access or publication authority.
+The freely chosen label supplies neither exclusive ownership of its name nor complete discovery, certification, mathematical authorship, correctness, proof review, intake acceptance or Task/E authority.
+Adding it selects no research Task, creates no E and changes no effective execution condition.
+
+Verify the actual resulting Topic set through an adequate write response or repository metadata/UI observation, without requiring immediate public-search appearance or using a search hit as the metadata verdict.
+On a connection, permission or platform failure, apply [permitted recovery](workflow.md#connection-recovery), preserve other metadata and complete independent authorized setup or delivery work.
+Report the concrete unfinished Topic step and useful human action in the ordinary setup reply, without claiming success, repeatedly seeking unchanged authorization or creating another worklist or registration account.
+A missing Topic blocks neither ordinary research, material use nor Git delivery; retain actual host permissions and required human interaction without automatic privilege or credential changes.
+
 ## Checkout binding and personal operators
 
 Each Git working copy binds research.actor and its worktree scope in Git's config.worktree, located with git rev-parse --git-path config.worktree.
@@ -167,9 +197,14 @@ References to the shared repository and its existing checkout mean each human's 
 Different humans sharing one machine, operating-system account, physical working copy or private storage are outside the default supported scope.
 Apply this scope without machine identification, isolation certification, private-file inventories or mandatory environment preflight.
 Private settings and originals retain their [local-only boundary](organization.md#machine-local-locators).
-The framework supports one working copy per human author for a given repository.
-Parallel or alternating research use of multiple copies by the same author falls outside the supported scope.
-When an author replaces a device or working copy, retire the former copy from research use and continue in the new copy under the [same-human handoff](execution.md#responsibility-and-version-boundary).
+The framework supports one working copy of a given repository per human author on each device.
+The same author may use their own different devices, synchronizing tracked project work through ordinary remote push, pull and merge under the [work-start and integration rules](#shared-repository-updates-and-integration) and [delivery default](#submission-checks).
+Using another device does not itself require retiring the first device's working copy or declaring a replacement.
+Multiple research copies of the same repository on the same device, including extra clones or parallel research worktrees, fall outside the supported scope.
+Distinct projects, source inspection, selected backups and upgrade preparation keep their actual purposes rather than automatically becoming another research working copy.
+Preserve local E and known effective conditions during cross-device continuation under the [execution rule](execution.md#responsibility-and-version-boundary).
+When a device or working copy is actually replaced, retire the replaced copy from research use and continue under the same rule's existing same-human handoff.
+Judge the actual device and use context from current instructions and ordinary Git facts, without device identifiers, a device registry, an environment inventory, copy detection or cross-device locks.
 Within each human's working copy, the actual operator binding remains shared by its chats and does not change another author's mathematical or manuscript choices.
 
 Each collaborator maintains shared registration and derived navigation at their responsible scope.

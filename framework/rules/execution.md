@@ -24,7 +24,7 @@ Do not track, synchronize or copy source execution/ or .venv/ through Git, frame
 Missing local notes or an environment in a new clone are normal; an explicitly authorized personal backup or move uses ordinary selected files without automatic machine-setting recovery.
 For an already tracked E, stop tracking its exact file with native Git while retaining local bytes and effective conditions, without rewriting history or recovering execution state from old commits.
 
-Before actual advancement, read the current human instruction, exact Task contract/decision, applicable [operator policy](preferences.md#scope-and-adoption) and still-effective E conditions.
+Before actual advancement, including continuation on another supported device, read the current human instruction, exact Task contract/decision, applicable [operator policy](preferences.md#scope-and-adoption), local E and known still-effective conditions.
 After a branch change in the supported working copy, confirm that the local E belongs to the intended Task and verify the exact decision and applicable local conditions before execution.
 Resolve the association before reusing, resuming or resetting E.
 An active lifecycle, new session, changed account/window, expired policy or edited Task pointer does not resume a stopped boundary or grant another allowance.
@@ -32,10 +32,38 @@ Only actual applicable authorization permits resumption or replacement of an eff
 Task active/paused lifecycle and E running/stopped execution states are independent.
 Changing either one neither changes the other nor establishes execution permission, resets effective limits or manufactures a mathematical decision.
 When a real instruction affects both research arrangements and execution, maintain the necessary T and E separately under that instruction.
+Cross-device use follows the [device-scoped working-copy rule](identity.md#collaboration-maintenance-and-conflicts); switching devices does not itself retire another supported copy.
+E, runtime notes, private settings and private originals retain their local-only responsibilities, and ordinary Git synchronization creates no recurring E-transfer or handoff step.
+A device change supplies no research start or resumption, new authority or allowance; known effective stops and shared limits remain binding.
 For an actual device or working-copy replacement, use the existing same-human handoff to continue in the new copy and retire the former one from research use under the [working-copy rule](identity.md#collaboration-maintenance-and-conflicts).
-The authorized one-time handoff may read an explicitly selected old E to prepare the continuing local boundary and preserves any existing receiving E.
-On such a handoff, an account or window change, or when E is missing, retain known stops, shared thresholds, incremental baselines, caps and account/window scope through actual instructions and policies.
-Resolve only a concrete missing fact that determines whether execution may proceed; absence supplies neither an empty authorization nor a new allowance.
+When an authorized handoff of selected files is actually needed for the same human, it may read an explicitly selected old E to prepare the continuing local boundary and must preserve any existing receiving E.
+On such a handoff, a device, account or window change, or when E is missing, retain known stops, shared thresholds, incremental baselines, caps and account/window scope through actual instructions and policies.
+Resolve only a concrete missing fact that determines whether execution may proceed; a missing local E supplies no research authority or allowance.
+
+## Host-supported continuous execution
+
+When the human actually starts or continues an authorized Task and its effective execution conditions permit advancement, the main agent defaults to enabling or reusing the host's supported and permitted goal, loop or equivalent continuous-execution capability.
+Interpret the actual research instruction by its meaning and scope, without a keyword classifier or an additional routine framework approval.
+Discussion, Task registration, maintenance, an explicitly limited plan and an inquiry awaiting research approval retain their actual scope and do not select sustained research merely because the host offers this capability.
+Joint research continues through the actual human's selected individual Task/E under the [joint-Task rule](tasks.md#joint-tasks-and-participation).
+
+Reuse an adequate existing run for the same authorized objective, coordinating with the [responsible main agent](#main-agent-responsibility-and-exact-maintenance) without duplicate goals, overlapping main agents or another execution writer.
+Preserve unrelated host goals and assignments; do not replace or complete one merely to make room for the selected Task.
+Use the current authorized research objective and deliverable scope, grounded in the selected Task, for the host's working goal without creating another research contract, status source or strategy register.
+An intermediate update or exploration round does not by itself complete the continuing assignment.
+Continue useful research, necessary retention, verification and [applicable Git delivery](identity.md#submission-checks) until the actual objective is fulfilled, an effective stop or limit applies, the human changes the instruction or a concrete blocker prevents further authorized work.
+
+The host mechanism supplies no research authority, mathematical acceptance, Task activation or E resumption and resets no stopped condition, shared limit, baseline or allowance.
+Preserve still-effective Task/E conditions across goal creation, reuse, session changes and exploration rounds.
+On a required stop, cease dependent research and handle the host run only through its permitted controls, without falsely marking the objective complete or allowing automatic continuation to bypass the stop.
+Do not invent a token budget, duration or fresh allowance; use explicitly specified limits or permitted host defaults without changing effective Task/E restrictions.
+
+The host's actual capabilities, tool contracts and execution permissions determine whether and how its facility can be enabled or reused.
+Where the host requires an explicit goal request or human interaction beyond the current instruction, follow that condition; this framework default neither supplies the missing request nor permits bypassing the host.
+Choose an adequate existing native facility without a mandatory command, interface sequence, capability inventory or live probe for every operation.
+If no suitable permitted facility is available, continue independently supported authorized work through the available interaction and report the concrete continuity limitation when it affects delivery; do not claim that goal/loop is running.
+The agent retains responsibility for mathematical judgment, next steps, completion and necessary stopping, while the host carries out its explicit continuation controls.
+Introduce no custom scheduler, background daemon, polling/retry service, capability register, goal-ID field in E, duplicated execution record or historical compatibility mechanism.
 
 ## Current contents and retained limits
 
