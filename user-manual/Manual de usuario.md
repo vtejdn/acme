@@ -35,6 +35,17 @@ Dentro del alcance autorizado, los [agentes](#notion-agent) autónomos son respo
 6. Organizar [revisiones](#material-review) independientes cuando sea necesario y registrar su alcance, hallazgos y limitaciones.
 7. Preparar y revisar manuscritos de acuerdo con los criterios generales de redacción matemática y las preferencias del autor responsable.
 
+### Flujo de trabajo
+
+La investigación comienza con un [Task](#material-task) definido por una persona y con criterios de finalización explícitos.
+Los [agentes](#notion-agent) primero consultan y reutilizan los materiales de investigación y la literatura locales pertinentes, y después buscan fuentes adicionales en la Web cuando es necesario.
+Comprueban la aplicabilidad de los resultados, desarrollan [estrategias](#material-strategy) e iteran entre intentos de demostración, cálculos y búsquedas de contraejemplos.
+Cada intento informa el siguiente: los hallazgos útiles, los fracasos y las preguntas sin resolver se conservan en los materiales de investigación adecuados, incluidos los [Claims](#material-claim) y los [Ledgers](#material-ledger).
+Las estrategias se adaptan dentro del objetivo autorizado.
+Los resultados propuestos se someten a [revisión](#material-review) matemática y la finalización del Task se evalúa según los criterios originales.
+
+Véase el [diagrama del flujo de trabajo](workflow.jpg).
+
 ### Colaboración
 
 ACME ofrece dos formas de colaborar y compartir materiales.
@@ -57,17 +68,6 @@ Al publicar un preprint en plataformas como [arXiv](https://arxiv.org/) o [Hexag
 Puede adaptar el [ejemplo de declaración de uso de IA](./ai-disclosure-example.md).
 También puede consultar el [ejemplo de página de publicación](./publication-example.md) para explicar el grado de comprensión y las contribuciones concretas de los autores humanos, y expresar su postura sobre compartir y reutilizar los materiales en bruto generados por agentes.
 
-### Flujo de trabajo
-
-La investigación comienza con un [Task](#material-task) definido por una persona y con criterios de finalización explícitos.
-Los [agentes](#notion-agent) primero consultan y reutilizan los materiales de investigación y la literatura locales pertinentes, y después buscan fuentes adicionales en la Web cuando es necesario.
-Comprueban la aplicabilidad de los resultados, desarrollan [estrategias](#material-strategy) e iteran entre intentos de demostración, cálculos y búsquedas de contraejemplos.
-Cada intento informa el siguiente: los hallazgos útiles, los fracasos y las preguntas sin resolver se conservan en los materiales de investigación adecuados, incluidos los [Claims](#material-claim) y los [Ledgers](#material-ledger).
-Las estrategias se adaptan dentro del objetivo autorizado.
-Los resultados propuestos se someten a [revisión](#material-review) matemática y la finalización del Task se evalúa según los criterios originales.
-
-Véase el [diagrama del flujo de trabajo](workflow.jpg).
-
 ## <a id="setup"></a>Configuración
 
 Para un nuevo proyecto de investigación, siga los pasos I–III que se indican a continuación.
@@ -81,9 +81,9 @@ Elija modelos para la investigación matemática y las tareas administrativas te
 
 ### <a id="setup-workplace"></a>Paso II. Preparar el espacio de trabajo
 
-Elija un [entorno de ejecución de agentes](agent-harness.md) adecuado y conéctelo a un [LLM](#notion-llm) con capacidad suficiente.
+Elija un [entorno de ejecución de agentes](<harness/Entorno de ejecución de agentes.md>) adecuado y conéctelo a un [LLM](#notion-llm) con capacidad suficiente.
 
-1. Instale un entorno de ejecución de agentes, como aplicación independiente o dentro de un [IDE](agent-harness.md#notion-ide), e inicie sesión si es necesario o lo desea.
+1. Instale un entorno de ejecución de agentes, como aplicación independiente o dentro de un [IDE](<harness/Entorno de ejecución de agentes.md#notion-ide>), e inicie sesión si es necesario o lo desea.
 2. Seleccione el modelo y el proveedor en la configuración o en el selector de modelos.
 3. Elija una carpeta en su equipo para guardar el marco y los futuros materiales de investigación.
    Para la primera instalación en un proyecto nuevo, utilice una carpeta local que todavía no contenga contenido del proyecto.
@@ -107,19 +107,18 @@ Si se incorpora a un repositorio de investigación existente que ya contiene ACM
 
 1. Pida a un [agente](#notion-agent) que descargue e instale el [marco ACME](https://github.com/vtejdn/acme) en la carpeta de su proyecto.
    Consulte el ejemplo de instrucción [Instalar ACME](<user-instructions/Ejemplos de instrucciones.md#install-acme>).
-2. Elija una clave de autor única, como `Alice` o `Ali`, y elija de forma independiente el nombre que figurará en la atribución de `LICENSE`.
+2. Elija una [clave de autor](#notion-author-key) única, como `Alice` o `Ali`, y elija de forma independiente el nombre que figurará en la atribución de `LICENSE`.
    Pida a un agente que le registre como autor y añada esa atribución.
    Consulte el ejemplo de instrucción [Registrar al autor](<user-instructions/Ejemplos de instrucciones.md#register>).
 3. (Si utiliza Git) Configure el nombre y el correo electrónico asociados a sus [commits](#notion-commit), o pida a un agente que lo haga.
    Consulte el ejemplo de instrucción [Configurar Git](<user-instructions/Ejemplos de instrucciones.md#setup-git>).
-4. (Si utiliza Git) Elija o confirme un nombre corto para su [repositorio](<git-repository/Repositorios Git.md#notion-git-repository>) de investigación y pida a un agente que compruebe que está registrado correctamente en el marco.
-   Consulte el ejemplo de instrucción [Establecer la clave del repositorio](<user-instructions/Ejemplos de instrucciones.md#setup-repo>).
+4. (Si utiliza Git) Elija o confirme la clave de su [repositorio](<git-repository/Repositorios Git.md#notion-git-repository>) de investigación y pida a un agente que compruebe que está registrada correctamente en el marco; consulte el ejemplo [Establecer la clave del repositorio](<user-instructions/Ejemplos de instrucciones.md#setup-repo>).
 5. (Opcional) Cuando resulte apropiado, recomendamos encarecidamente compartir sus registros de investigación mediante un repositorio público.
 
 ### <a id="setup-collaboration"></a>Incorporarse a un [repositorio Git](<git-repository/Repositorios Git.md#notion-git-repository>) existente como colaborador
 
 1. Inicie sesión en la plataforma de alojamiento del repositorio y acepte la invitación de su coautor.
-2. Pida a un [agente](#notion-agent) que le ayude a configurar el acceso al repositorio compartido.
+2. Pida a un [agente](#notion-agent) que le ayude a configurar el acceso a la plataforma que aloja el repositorio remoto; véase [Conectar con GitHub](<git-repository/Repositorios Git.md#connect-github>).
 3. Cree una nueva carpeta local en su ordenador y ábrala en su entorno de ejecución de agentes.
    Proporcione la dirección del repositorio a su agente y pídale que lo [clone](#notion-clone) en esa carpeta vacía.
    Consulte el ejemplo de instrucción [Clonar un repositorio](<user-instructions/Ejemplos de instrucciones.md#clone-repo>).
@@ -132,26 +131,30 @@ Si se incorpora a un repositorio de investigación existente que ya contiene ACM
 
 ### Iniciar un [Task](#material-task)
 
-1. (Opcional) Proporcione literatura pertinente o pida a un [agente](#notion-agent) que la busque.
-   Pida al agente que guarde los archivos fuente en [el directorio local de literatura](../mathematics/literature/pdf) y revise las partes indicadas de los artículos pertinentes con la profundidad solicitada.
-2. Establezca un Task mediante la discusión con los agentes, especificando las preguntas, restricciones y criterios de finalización.
-   Puede elegir una [letra de línea de investigación](#notion-research-line-letter) para organizar el Task y sus materiales relacionados.
-3. Para el trabajo autónomo sostenido, especifique o adopte límites de ejecución y condiciones de parada.
-4. Autorice las acciones necesarias de las herramientas cuando se le solicite y responda a las preguntas de los agentes.
-5. Reflexione sobre los materiales matemáticos producidos por los agentes y compréndalos; ningún agente puede hacerlo por usted.
+1. (Opcional) Aporte la literatura pertinente o pida a un [agente](#notion-agent) que la busque; consulte el ejemplo [Buscar literatura](<user-instructions/Ejemplos de instrucciones.md#search-article>).
+   Pida al agente que revise las partes indicadas de los artículos pertinentes; consulte el ejemplo [Revisar literatura](<user-instructions/Ejemplos de instrucciones.md#audit>).
+2. Establezca un Task mediante la discusión con los agentes, precisando la pregunta, las restricciones y los criterios de finalización; consulte el ejemplo [Crear un Task](<user-instructions/Ejemplos de instrucciones.md#create-task>).
+   Puede elegir una [letra de línea de investigación](#notion-research-line-letter) para organizar el Task y sus materiales.
+3. Para la investigación autónoma continuada, especifique o adopte límites de ejecución y condiciones de parada; consulte el ejemplo [Establecer condiciones de parada predeterminadas](<user-instructions/Ejemplos de instrucciones.md#set-stop-condition>).
+4. (Opcional) Discuta y desarrolle [estrategias de investigación](#material-strategy) con el agente; consulte el ejemplo [Crear una estrategia](<user-instructions/Ejemplos de instrucciones.md#create-strategy>).
+5. Inicie el Task de investigación; consulte el ejemplo [Iniciar un Task](<user-instructions/Ejemplos de instrucciones.md#start-task>).
+   Autorice las operaciones de herramientas necesarias cuando se le solicite y responda a las preguntas de los agentes.
+6. Reflexione sobre los materiales matemáticos producidos por los agentes y compréndalos (ningún agente puede hacerlo por usted).
    Discuta las matemáticas con los agentes para profundizar y acelerar su comprensión.
-   Pida referencias pertinentes y cuestione de forma socrática las fuentes de los argumentos y las ideas, especialmente cuando un argumento se base en el conocimiento del modelo sin respaldo explícito de fuentes.
-6. (Opcional, si utiliza [Git](<git-repository/Repositorios Git.md#notion-git>)) Cree [commits](#notion-commit) de los cambios que desee conservar; deshaga las ediciones locales o revierta commits cuando corresponda.
-   Una vez configurado un repositorio Git remoto, el agente crea y envía commits de las actualizaciones de investigación con prontitud de forma predeterminada, según lo acordado.
+   Pida referencias pertinentes y cuestione de forma socrática el origen de los argumentos y las ideas, especialmente cuando dependan del conocimiento del modelo sin una fuente explícita.
+7. (Opcional, si utiliza [Git](<git-repository/Repositorios Git.md#notion-git>)) Cree [commits](#notion-commit) con los cambios que quiera conservar; consulte el ejemplo [Crear un commit](<user-instructions/Ejemplos de instrucciones.md#commit>).
+   Deshaga las modificaciones locales o revierta commits existentes cuando sea necesario.
+   Una vez configurado un repositorio Git remoto, el agente crea y envía oportunamente los commits de investigación por defecto, conforme a lo acordado.
 
-- Véanse también los [ejemplos de instrucciones de investigación](<user-instructions/Ejemplos de instrucciones.md#research-instructions>).
+- Véanse más [ejemplos de instrucciones de investigación](<user-instructions/Ejemplos de instrucciones.md#research>).
 
 ### <a id="joint-task"></a>Iniciar un [Task](#material-task) conjunto
 
 Los colaboradores de un mismo repositorio pueden establecer un Task conjunto para un objetivo matemático común, definiendo la pregunta compartida, las hipótesis, el alcance y los criterios de finalización; cada participante avanza en su investigación mediante su propio Task.
 
-1. Pida a un [agente](#notion-agent) que establezca un Task conjunto; si un colaborador ya ha establecido uno adecuado, puede pasar directamente al siguiente paso.
-2. Pida al agente que establezca o reutilice su Task individual, lo vincule al Task conjunto que usted y sus colaboradores hayan acordado adoptar y precise su alcance de participación y sus criterios personales de finalización.
+1. Pida a un [agente](#notion-agent) que establezca un Task conjunto; consulte el ejemplo [Crear un Task conjunto](<user-instructions/Ejemplos de instrucciones.md#create-joint-task>).
+   Si un colaborador ya ha establecido uno adecuado, puede pasar directamente al siguiente paso.
+2. Pida al agente que establezca o reutilice su Task individual y lo vincule al Task conjunto; consulte el ejemplo [Crear un Task individual](<user-instructions/Ejemplos de instrucciones.md#create-personal-task>).
    El Task individual puede abarcar toda la pregunta común o parte de ella; sus criterios de finalización pueden coincidir con los del Task conjunto o determinarse según el alcance de su participación.
    Los participantes también pueden repartirse el trabajo sobre la misma pregunta: una persona intenta encontrar una demostración y otra busca un contraejemplo.
    Se recomienda elegir, de acuerdo con los colaboradores, distintas [estrategias de investigación (Strategy)](#material-strategy) para reducir la repetición del trabajo matemático y aprovechar mejor los recursos computacionales de IA.
@@ -160,6 +163,8 @@ Los colaboradores de un mismo repositorio pueden establecer un Task conjunto par
    en el momento oportuno, realiza [commits](#notion-commit) y [pushes](#notion-push) de los avances de investigación que se pueden compartir.
    El agente resuelve los conflictos administrativos dentro del alcance de su autoridad; ante discrepancias matemáticas sustanciales, explica el problema y realiza una revisión conforme a la autorización existente o tras obtener la autorización necesaria.
    También puede solicitar expresamente operaciones de sincronización como pushes, pulls y fusiones.
+
+- Véanse más [ejemplos de instrucciones para Tasks conjuntos](<user-instructions/Ejemplos de instrucciones.md#joint-task>).
 
 ### Precauciones
 
@@ -181,7 +186,7 @@ Los colaboradores de un mismo repositorio pueden establecer un Task conjunto par
 
 - Pregunte a un [agente](#notion-agent) siempre que tenga dudas sobre el marco.
 - Si utiliza varios repositorios ACME en el mismo equipo, puede reunir la literatura en una única carpeta local de archivos PDF.
-  Pida a un agente que configure uniones de directorios (directory junctions) para que [el directorio local de literatura de cada repositorio](../mathematics/literature/pdf) apunte a esa carpeta.
+  Pida al agente que utilice uniones de directorio (junctions) para que [el directorio local de literatura de cada repositorio](../mathematics/literature/pdf) apunte a esa carpeta; consulte el ejemplo [Crear una unión](<user-instructions/Ejemplos de instrucciones.md#create-junction>).
   Conceda al agente los permisos necesarios para leer y gestionar los archivos de esa carpeta.
 - Cuando los agentes automaticen tareas relacionadas que utilicen credenciales, guarde los secretos de forma adecuada y exclúyalos del seguimiento de [Git](<git-repository/Repositorios Git.md#notion-git>).
 
@@ -197,13 +202,19 @@ ACME organiza la redacción en cuatro niveles de normas, de menor a mayor priori
   Estas normas y el criterio propio de un [agente](#notion-agent) pueden no bastar para satisfacer las convenciones de un campo o las exigencias personales de un autor.
 - Preferencias generales de redacción del autor.
   Según las exigencias explícitas del autor, el agente registra cuando sea necesario las preferencias generales en `profiles/<human>/writing/readme.md` (`<human>` es la [clave de autor](#notion-author-key), como `Alice`) y las actualiza conforme a esas exigencias.
+  Consulte el ejemplo [Preferencias generales de redacción](<user-instructions/Ejemplos de instrucciones.md#personal-preference>).
 - Preferencias del autor para un campo de investigación concreto.
   El agente las registra cuando sea necesario en el archivo de preferencias del campo correspondiente dentro de `profiles/<human>/writing/`.
+  Consulte el ejemplo [Preferencias de redacción de un campo](<user-instructions/Ejemplos de instrucciones.md#community-preference>).
 - Convenciones del manuscrito actual.
   Suelen registrarse en `writing.md`, `conventions.md` o una sección «Convenciones de redacción» del `readme.md` del directorio del manuscrito, y el agente las mantiene y actualiza según sea necesario.
+  Consulte el ejemplo [Convenciones del manuscrito](<user-instructions/Ejemplos de instrucciones.md#manuscript-convention>).
+
+Véanse más [ejemplos de instrucciones de redacción](<user-instructions/Ejemplos de instrucciones.md#writing-instructions>).
 
 Un nivel de mayor prioridad sustituye únicamente las partes incompatibles de los niveles inferiores; los demás requisitos siguen siendo aplicables.
 Si todavía no se han establecido preferencias personales, preferencias de un campo ni convenciones del manuscrito, el agente empieza a redactar conforme a las normas generales.
+Las preferencias de terminología y notación del autor compartidas por el diálogo y la redacción se conservan juntas en `profiles/<human>/terminology.md`.
 
 ### Obras de referencia para la redacción
 
@@ -213,10 +224,13 @@ Una misma obra puede tener varios usos, cada uno con su propio alcance.
 
 - Trabajos existentes reutilizables.
   Puede señalar trabajos propios o de los que sea coautor para que el agente los reutilice directamente dentro del alcance indicado, con límites adicionales a secciones o pasajes concretos si lo desea.
+  Consulte el ejemplo [Permitir la reutilización de texto](<user-instructions/Ejemplos de instrucciones.md#record-my-article>).
 - Modelos principales de estilo del manuscrito.
   Puede elegir una o varias referencias cuya organización, exposición y estilo sirvan de modelo al agente.
+  Consulte el ejemplo [Elegir un modelo de estilo](<user-instructions/Ejemplos de instrucciones.md#style-model>).
 - Referencias de terminología y notación del campo.
   Puede elegir obras para orientar al agente en la terminología, la notación y la presentación de las definiciones.
+  Consulte el ejemplo [Elegir referencias terminológicas](<user-instructions/Ejemplos de instrucciones.md#terminology-references>).
 
 Estas elecciones pueden aplicarse a su redacción en general, a un campo concreto o al manuscrito actual, y se guardan con las preferencias o convenciones correspondientes.
 Las obras de referencia y sus usos para la redacción general se registran en `profiles/<human>/writing/readme.md`.
@@ -230,12 +244,14 @@ Sin el consentimiento explícito del autor, el [agente](#notion-agent) no elimin
 El marco permite revisar la redacción y los argumentos matemáticos del manuscrito por separado o conjuntamente.
 
 - Revisión de la redacción: el agente comprueba la exposición, la estructura, la terminología, la notación y las citas conforme a los cuatro niveles; los comentarios de revisión pendientes se conservan en `revisions.md`, en el directorio del manuscrito.
+  Consulte el ejemplo [Revisión de la redacción](<user-instructions/Ejemplos de instrucciones.md#writing-review>).
 - Revisión matemática: el agente comprueba las hipótesis, el razonamiento y las conclusiones; los problemas matemáticos actualmente no resueltos y sus fundamentos necesarios se conservan en `review.md`, en el directorio del manuscrito, y se actualizan al volver a comprobarlos.
+  Consulte el ejemplo [Revisión matemática del manuscrito](<user-instructions/Ejemplos de instrucciones.md#manuscript-review>).
 
 Los resultados indican el alcance real de la revisión, los hallazgos y los asuntos aún no resueltos.
 Cuando se necesite una revisión independiente, puede organizar la redacción y la revisión en sesiones distintas y encargar la revisión a un agente que no haya participado en la elaboración sustantiva del texto o de los argumentos, ni recibido las discusiones sustantivas de esa elaboración, para mantener un [contexto](#notion-context) independiente.
 En una primera revisión independiente, el agente forma su propio juicio a partir del manuscrito actual y las convenciones aplicables antes de compararlo con los comentarios existentes.
-Las comprobaciones posteriores retoman los comentarios no resueltos de la ronda anterior, examinan las modificaciones correspondientes y sus efectos, actualizan los comentarios y retiran los asuntos resueltos.
+El agente redactor informa de las correcciones; el agente revisor comprueba los cambios y sus efectos antes de actualizar o retirar los comentarios correspondientes.
 
 ### Memoria de redacción de los agentes
 
@@ -253,7 +269,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.11.0.
+La versión actual del marco es 0.11.1.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.
@@ -315,6 +331,8 @@ Según sus herramientas y su configuración, también pueden aparecer los direct
 
 - Cada cálculo tiene un directorio J numerado que contiene sus programas, las entradas necesarias y un archivo `readme.md`.
   Los resultados generados se guardan por separado en la ruta local `mathematics/computations/outputs/<J>/`, ignorada por [Git](<git-repository/Repositorios Git.md#notion-git>).
+  Para los datos necesarios en demostraciones, comprobaciones o reproducciones posteriores, el agente conserva en el repositorio los propios datos necesarios o suficientes programas de generación, datos de entrada básicos, parámetros, condiciones relativas a las dependencias y métodos de validación para reconstruirlos de forma fiable y a un coste razonable.
+  Si la reconstrucción no es fiable o resulta demasiado costosa, o si debe conservarse un objeto específico, el agente conserva los propios datos necesarios.
 - Las unidades de revisión de literatura se agrupan por clave de cita en `mathematics/audits/literature/`.
 - El [índice de definiciones](../mathematics/definitions/index.md) organiza las definiciones, la terminología y los símbolos por concepto, con enlaces a sus formulaciones completas en los materiales C, L o U responsables.
 - La [bibliografía](../mathematics/literature/references.bib) canónica registra la identidad de las publicaciones y sus claves de cita.
@@ -325,10 +343,10 @@ Según sus herramientas y su configuración, también pueden aparecer los direct
 | Término | Significado |
 | --- | --- |
 | <a id="notion-llm"></a>LLM (modelo de lenguaje de gran tamaño) | Modelo de IA entrenado con grandes cantidades de texto para procesar y generar lenguaje, incluidas las explicaciones matemáticas y el código informático. |
-| <a id="notion-agent"></a>Agente (Agent) | Sistema de IA basado en un [LLM](#notion-llm) que puede planificar y ejecutar tareas, utilizar herramientas y adaptar sus acciones a los resultados. Funciona mediante un [entorno de ejecución de agentes](agent-harness.md), dentro del alcance y los límites autorizados por el usuario humano. Aún no ha evolucionado hasta convertirse en un [Agente](https://es.wikipedia.org/wiki/Matrix#Argumento). |
+| <a id="notion-agent"></a>Agente (Agent) | Sistema de IA basado en un [LLM](#notion-llm) que puede planificar y ejecutar tareas, utilizar herramientas y adaptar sus acciones a los resultados. Funciona mediante un [entorno de ejecución de agentes](<harness/Entorno de ejecución de agentes.md>), dentro del alcance y los límites autorizados por el usuario humano. Aún no ha evolucionado hasta convertirse en un [Agente](https://es.wikipedia.org/wiki/Matrix#Argumento). |
 | <a id="notion-context"></a>Contexto (Context) | Información disponible para un LLM durante una llamada al modelo, incluidas las instrucciones, el historial de conversación, los materiales proporcionados y los resultados de las herramientas. El contexto actual puede contener solo una selección o un resumen del historial completo de la [sesión](#notion-session). |
 | <a id="notion-context-length"></a>Longitud del contexto (Context length) | Longitud máxima combinada de entrada y salida que un LLM puede procesar de una vez, normalmente medida en tokens, pequeñas unidades de texto. Incluye las instrucciones, el historial de conversación, los materiales proporcionados y la respuesta generada. |
-| <a id="notion-session"></a>Sesión (Session) | Interacción continuada con un [agente](#notion-agent), gestionada por un [entorno de ejecución de agentes](agent-harness.md). Puede contener varios turnos de conversación, cada uno de los cuales suele comenzar con un mensaje del usuario e incluir las respuestas del agente y las operaciones de las herramientas. El entorno conserva el historial de conversación y prepara el [contexto](#notion-context) de cada llamada al modelo; para respetar la [longitud del contexto](#notion-context-length) del modelo, puede seleccionar o resumir partes anteriores del historial. |
+| <a id="notion-session"></a>Sesión (Session) | Interacción continuada con un [agente](#notion-agent), gestionada por un [entorno de ejecución de agentes](<harness/Entorno de ejecución de agentes.md>). Puede contener varios turnos de conversación, cada uno de los cuales suele comenzar con un mensaje del usuario e incluir las respuestas del agente y las operaciones de las herramientas. El entorno conserva el historial de conversación y prepara el [contexto](#notion-context) de cada llamada al modelo; para respetar la [longitud del contexto](#notion-context-length) del modelo, puede seleccionar o resumir partes anteriores del historial. |
 | Identificador de material | Referencia estructurada que identifica un material y, cuando corresponde, su versión. Por ejemplo, `Alice_C_F0007_v1.md` identifica un [Claim](#material-claim) por autor, tipo, línea de investigación, número de serie y versión. |
 | <a id="notion-research-line-letter"></a>Letra de línea de investigación | Letra, como la `F` de `Alice_C_F0007_v1.md`, que se utiliza para organizar materiales de investigación numerados. Los materiales derivados de un Task heredan su letra, pero reciben sus propios números de serie. La letra predeterminada es `A` cuando no se especifica ninguna línea. |
 | <a id="notion-author-key"></a>Clave de autor | Clave estable registrada para un autor humano, como `Alice`, utilizada en los identificadores de materiales y los registros de autoría. |

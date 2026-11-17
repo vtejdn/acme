@@ -269,7 +269,9 @@ Prepare the selected materials, bibliography and operation before the short lock
 Repeat `--include PATH` for indispensable chosen tracked J files; `--refresh-j` requests that explicit group's refresh.
 `--refresh-j` permits replacement of selected files with the same registered original repository and J path/family, preserving fixed C/T/R/L.
 A rolling U instead uses the same original correspondence and unit.expected containing the exact occupied receiving text; a later acquisition does not rewrite earlier operation scopes or create U snapshots.
-For genuinely needed fixed computation input missing locally, an authorized research, repair or recovery task may use the existing generator and verifier, check the actual finite mathematical requirements and save selected tracked native input under the [recovery rule](../framework/rules/computations.md#recovery-of-necessary-fixed-inputs), without a new recovery CLI, history report or implicit execution during ordinary reads/navigation/intake.
+For necessary computation data missing locally, an authorized research, repair or recovery task may use the existing generator and verifier and check the actual finite mathematical requirements under the [recovery rule](../framework/rules/computations.md#recovery-of-necessary-fixed-inputs).
+Maintain selected tracked data or sufficient retained generation materials under the [retention decision](../framework/rules/computations.md#retained-data-and-generation-materials), with actual prerequisites, generated paths and command order.
+Ordinary reads, navigation and intake do not implicitly execute that reconstruction.
 Differing-byte replacement after receipt also requires adopted same-human authorship; a flag or chosen author alone does not authorize another human's correction.
 The occupied group header, necessary acquisition evidence and native-file correspondence establish that identity; equal display names or the flag alone do not.
 Same-original later revisions and onward transports remain eligible, with original and immediate transport identity recorded separately.
@@ -289,6 +291,7 @@ New selected J anchors are checked against the proposed postimage; earlier opera
 The agent first reads the proposed changes and maintains necessary inputs and actual consumers under the [intake rule](../framework/rules/intake.md#homes-and-independent-reuse).
 Intake performs no implicit public-Markdown consumer scan, automatic anchor veto or consumer notice, and an unrelated unselected edit does not invalidate its publication snapshot.
 J intake receives only selected fixed-commit programs, necessary inputs and explanations under the [J receiving rule](../framework/rules/intake.md#computation-programs-and-inputs).
+For a generation-based representation, select its actual tracked generators, base inputs and necessary validation explanations through the existing explicit file selection, preserving their per-file provenance.
 It neither reads nor queries source outputs, copies or maps them, nor modifies destination outputs; output_attachments, including an empty array, is unsupported input.
 The agent prepares useful sending-output references as source-only context, without output-byte claims or an unavailable attachment state; program receipt alone establishes no run, reproduction or review.
 Prepared local references remain final text; actual explicitly chosen targets keep their applicable navigation checks.

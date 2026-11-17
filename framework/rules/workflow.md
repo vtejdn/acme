@@ -226,16 +226,24 @@ The agent judges when the lookup supplies enough orientation; it requires neithe
 Reuse adequate earlier lookup and stop a clearly unproductive branch at its actual scope.
 Distinguish a mathematical gap from an ambiguous formulation, an access failure or an unchecked source; unsuccessful lookup proves neither novelty, nonexistence nor the absence of a known solution.
 
-When an initial inquiry remains unanswered and further work requires formal strategy exploration and sustained Task advancement, report the situation and request human approval before that transition.
-An initial request for an answer, framework installation or an unsuccessful lookup alone does not authorize it.
+When a sufficiently specified initial question remains unanswered, sustained research is needed and no applicable authorization covers it, register or reuse a same-human proposed Task before asking whether to start that research.
+The inquiry permits this bounded registration within the actual author's write authority under the [Task rules](tasks.md#task-records).
+Before allocation, check relevant entrances and likely matching contracts and reuse adequate preliminary results.
+Record the actual question, hypotheses and quantifiers, scope, completion criteria, useful starting evidence and unresolved gap, with an explicit proposed decision whose authority and reason truthfully identify the inquiry and registration basis.
+An initial request for an answer, framework installation or an unsuccessful lookup alone does not authorize sustained research.
 Give a concise account of what the preliminary work established, what remains unresolved and the concrete research scope proposed, including known decisive constraints or missing facts.
-Make clear that approval would authorize the responding agent to reuse or establish the appropriate Task, take main research responsibility, explore strategies and advance that objective.
+Link the registered Task and ask whether to start it, explaining that approval would authorize main research responsibility, strategy exploration and advancement within that concrete scope.
 Use an ordinary response without a compulsory form, budget questionnaire or invented effort estimate.
 Wait for an actual applicable human response before dependent formal work; silence, elapsed time, a tool result or confidence supplies no approval.
 Honor refusal, deferral and narrower approval at their actual scope.
 Before approval, remain within the initial assignment and its retention and literature duties; do not activate a research Task, start its E or conduct the proposed comprehensive strategy campaign as approval preparation.
-Presenting the proposal requires no proposed Task, approval document or new research container.
-An explicitly requested question registration may use the proposed-Task route below.
+Registration creates no E or host research run.
+Clarify a decisive ambiguity in the mathematical target before recording a precise contract.
+If read-only scope, a missing author fact, write permission or an allocation limitation prevents registration, report the existing Task locator or intended question and the precise uncompleted registration.
+Continue independently supported work and resolve only the concrete missing fact or permission.
+Reuse an adequate existing proposed Task when the question returns.
+For an existing Task in another state, preserve its lifecycle and effective conditions and resolve any required activation or resumption authority.
+Another author's ordinary Task supplies no local execution authority.
 
 Reuse an existing explicit instruction or approval covering formal research on the same objective and scope, including a direct instruction to establish and pursue its Task.
 An inconclusive lookup, continuation, new exploration round or new session creates no recurring approval requirement while that authority remains applicable.
@@ -246,7 +254,10 @@ This boundary concerns the initial inquiry's transition to formal research, with
 Pure explanation, a bounded literature request, a source audit, maintenance and an explicitly limited plan retain their actual deliverable and scope.
 An unanswered bounded request does not become an assignment to prove the underlying assertion.
 
-After sufficient approval, apply the [Task rules](tasks.md#task-records), [main-agent and execution responsibilities](execution.md#main-agent-responsibility-and-exact-maintenance) and [strategy-selection rules](strategies.md#choosing-and-revising-a-route) without another routine grant for setup, main responsibility, ordinary methods or the next authorized investigation.
+After sufficient approval, read or validly reuse the [Task rules](tasks.md#task-records), [main-agent and execution responsibilities](execution.md#main-agent-responsibility-and-exact-maintenance), [research coordination duties](#research-coordination) and [strategy-selection rules](strategies.md#choosing-and-revising-a-route) before dependent research or delegation.
+Reuse the registered contract and make the necessary authorized lifecycle decision with its actual authority and date, adapting the contract under the Task version rules when approval changes its mathematical scope.
+Prepare or reuse the stable E only for selected execution, then enable or reuse permitted [host-supported continuous execution](execution.md#host-supported-continuous-execution) under its actual tool requirements and effective limits.
+Continue the next authorized investigation without another routine grant for setup, main responsibility or ordinary methods.
 Keep necessary current authority and scope in the existing responsible Task decision or E conditions when they actually change.
 An unchanged authorization needs no new decision, full approval transcript, timestamp history, receipt or parallel permission ledger.
 Approval to explore strategies and advance the objective calls for substantive investigation under the [follow-up rule](#candidate-research-follow-up); Task/S/E preparation or a list of possibilities alone does not fulfill that assignment.
@@ -258,7 +269,7 @@ Apply the [Task rules](tasks.md) and distinguish registration, authorization, re
 
 | Instruction or situation | Normal result |
 | --- | --- |
-| Record a question awaiting authorization | proposed Task |
+| Record a question awaiting authorization, including the applicable unanswered-inquiry default above | proposed Task before the startup question |
 | Establish a clearly assigned research objective | active Task under the actual assignment |
 | Continue an existing objective | Inspect its current contract and lifecycle; use the existing Task when it is the intended objective |
 | Begin research as well as establish the objective | Complete setup, then apply the execution policy and any recorded stop/resumption conditions |

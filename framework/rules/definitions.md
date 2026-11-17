@@ -33,7 +33,10 @@ A project-specific construction or formulation stays in its responsible mathemat
 Use the owning Claim when the definition belongs to its statement, or a fixed L account when it needs separate durable exposition.
 State its parameters, construction and necessary conventions there, and identify the source or local adaptation when applicable.
 Direct adoption of an existing definition needs only a precise reference and the applicable parameter choices at the point of use; it does not require rewriting the definition in the ledger.
-Use established terminology first, then a descriptive name where needed; mark a tentative name as provisional.
+Apply the [established-terminology and object-description rule](writing.md#precise-object-names) when naming a definition.
+When no established name is known, use a descriptive phrase that states the object's properties and relations in ordinary mathematical language, with necessary defining conditions and neutral notation.
+Calling a fabricated label provisional does not satisfy that rule.
+When correcting a name, preserve the actual defining content, source attribution and effective human choices at their responsible scope.
 Local introduction, combined references or failure to locate an earlier formulation does not establish originality.
 
 A coherent standalone fixed account uses the author’s existing L convention, such as `mathematics/ledger/Author_L_F0001_v1.md`, with its verified author, actual research line and necessary source/adaptation scope.

@@ -197,6 +197,8 @@ Local and received R use the same need-based finding/target boundary without a m
 ## Computation programs and inputs
 
 J intake receives only the selected README, programs, verification programs, necessary inputs, parameters and explanations actually present in the chosen full fixed Git commit.
+Select the durable representation and required dependencies under the [computation-retention decision](computations.md#retained-data-and-generation-materials).
+For a representation based on generation, receive the actual selected tracked generators, base inputs, parameters, dependency conditions and validation explanations at their real source revisions.
 Preserve actual author, original path, revision, scope and per-file correspondence under the ordinary receiving contract.
 Do not read, copy, query or inventory sending outputs, establish output mappings or alter destination outputs, even when output files happen to be tracked or share a familiar name.
 The optional helper rejects output_attachments, including an empty array, and cannot select output files through include or file_map.
@@ -210,11 +212,14 @@ Actual missing necessary programs/inputs, invalid targets, conflicts and stale p
 
 Program acquisition neither runs the program nor establishes reproduction, adequate evidence or a review verdict.
 When reproduction is needed and authorized, use the actual receiving program, inputs, parameters, dependencies and applicable Task/E limits, generating results in the receiving J's local output home under the [computation rules](computations.md#computation-output-location).
-For an actual authorized research, repair or input-recovery task, recover missing indispensable input using its existing generator/verifier and retain the selected result as tracked native input under the [recovery rule](computations.md#recovery-of-necessary-fixed-inputs), without routine repeat approval or historical reconstruction.
+For an actual authorized research, repair or input-recovery task, generate and verify missing data under the [recovery rule](computations.md#recovery-of-necessary-fixed-inputs), then maintain sufficient retained data or generation materials for its actual consumers.
 Retain real local generation, inspected scope, useful failures and necessary limits at an adequate responsible home, without attributing local results to the sending source or rewriting an old operation.
-Necessary witnesses, non-reconstructible data and still-consumed results retain their [substantive preservation duties](records.md#substantive-material-retention).
-If a result has actually become an indispensable fixed input, the agent selects the necessary data, real provenance and appropriate input home; do not move or rename whole outputs merely to recreate the retired attachment channel.
-An indispensable input not successfully regenerated and checked remains a real gap rather than an assumed result; ordinary intake, reading or navigation does not run generators implicitly.
+Necessary witnesses, irreconstructible data, fixed evidence and actual consumer requirements retain their [substantive preservation duties](records.md#substantive-material-retention).
+Retain selected data in the responsible J's tracked input home when reconstruction is unreliable or too costly, or the adopted object itself requires retention.
+Inspect consumers and complete necessary preservation and checks before replacing or removing retained data under the computation-retention decision.
+Do not move or rename whole outputs merely to recreate the retired attachment channel.
+An unmet data dependency remains a real gap when neither sufficient retained data nor usable reconstruction is available.
+Ordinary intake, reading or navigation does not run generators implicitly.
 Existing local outputs, fixed programs and true old acquisition facts remain intact; ordinary local computation, explicitly selected verification reads and authorized personal-file maintenance retain their own scope.
 
 
@@ -393,7 +398,8 @@ Same-repository clone/pull/merge instead reuses adequate U and prepares original
 Complete both passes before reducing content, then compare adequate receiving candidates and apply the [same-author duplicate and numbering rule](records.md#same-author-transfer-and-duplicate-comparison).
 Default exclusions are Git metadata, the entire execution/ and .venv/ directories, private settings, original literature, J outputs, temporary files and caches; an actually selected settings or execution action retains its separate scope below.
 Preserve the receiver's E, runtime notes and actual environment without adopting another machine's settings; an explicitly authorized personal backup or move uses ordinary selected file work rather than an inferred material-transfer scope.
-Carry necessary shared bibliography, U inspection/edition facts, retained indispensable inputs and manuscript build inputs in their responsible homes, without renaming a whole output store to evade its boundary.
+Carry necessary shared bibliography, U inspection/edition facts, the selected durable computation representation and its dependencies, and manuscript build inputs in their responsible homes, without renaming a whole output store to evade its boundary.
+For J, apply the [data-retention decision](computations.md#retained-data-and-generation-materials), carrying sufficient tracked generation materials where appropriate and preserving actual provenance, run status and receiving-local generation facts.
 Dispatch a missing necessary other-author dependency separately under its actual author and provenance; do not relabel external material as the importing human's original.
 Unavailable necessary inputs remain precise limitations at their consumers without stubs or false completeness.
 

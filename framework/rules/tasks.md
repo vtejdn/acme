@@ -15,7 +15,12 @@ Distinguish user-assigned tasks from agent proposals.
 Determine the actual research assignment under the [inquiry-to-research rule](workflow.md#from-an-inquiry-to-approved-research), including the meaning of a conversational proposal and any existing explicit approval for the same objective and scope.
 An initial request for an answer or an unsuccessful preliminary lookup alone does not assign sustained research.
 A proposed question is not an active objective until it falls within an existing exploration authorization or the user authorizes it.
-After sufficient approval, read likely matching contracts and reuse an adequate same-human Task, preserving its effective conditions instead of duplicating it to avoid them.
+Before allocation or a startup question, inspect relevant entrances and likely matching contracts for an adequate same-human Task.
+Under the inquiry rule, a sufficiently specified unanswered question needing sustained research permits bounded proposed registration within the actual author's write authority before requesting research approval.
+Record its question, hypotheses, quantifiers, scope, completion criteria, useful starting evidence and unresolved gap, with truthful inquiry-based authority and reason.
+Reuse an adequate proposed Task and its selected contract when the question returns.
+Preserve the lifecycle and effective conditions of a Task in another state, obtaining any actual activation or resumption authority instead of duplicating or demoting it.
+After approval, reuse the registered contract and record the necessary authorized decision with its real date and authority, adapting the contract under the existing version rules when scope changes.
 Ordinary methodological choices within an active task do not require another approval.
 
 The selected Task decision owns lifecycle, authority, reason and exact contract/evidence:

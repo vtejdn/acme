@@ -39,6 +39,8 @@ Question, tested range, assumptions and arithmetic mode.
 ## Reproduction
 Working directory, command, required inputs and dependency order.
 Default output: mathematics/computations/outputs/Author_J_W0001/.
+Identify retained prerequisites, generated paths and command order for a checkout without the cache.
+Describe the selected data or generation materials and any reconstruction checks or cost that affect the choice.
 State precision, tolerance, seed and software dependencies when relevant to reproduction.
 Identify verification-only commands and their required existing evidence.
 
@@ -60,7 +62,7 @@ Preserve that content and repair consumers first.
 Resolve output defaults from the actual repository/J location, create the output home on use and name distinct mathematical scopes clearly.
 For a nested entry, identify the containing J directly under `mathematics/computations/programs/`; self inputs, outputs and future locators must follow its actual qualified name.
 Shared helpers receive the calling J's output location explicitly.
-Document explicit parameters for genuine cross-J dependencies and the actual retained files chosen for them, with no same-name fallback or inferred qualified counterpart.
+Document explicit parameters for genuine cross-J dependencies, required retained inputs, generated paths and command order, with no same-name fallback or inferred qualified counterpart.
 Use the actual acquired program path when adapting a source command.
 Intake preserves native code unless an explicitly selected `file_preparations` input supplies permissible adaptation under the responsible author's boundary.
 Preserve actual per-file originals and verify relevant behavior or mathematical-method changes.
@@ -69,11 +71,15 @@ Ordinary commands do not rely on root `.tmp/` or undeclared previous output.
 Keep live limits, error handling, atomic publication and useful continuation interfaces.
 Publish complete output only after the claimed calculation succeeds.
 
-Necessary fixed witnesses, non-reconstructible data and generated results adopted as indispensable input use tracked input storage in the responsible J under the [fixed-input recovery rule](../../rules/computations.md#recovery-of-necessary-fixed-inputs), while ordinary reproducible output remains local.
+Select sufficient tracked data or retained generation materials under the [computation-retention decision](../../rules/computations.md#retained-data-and-generation-materials), keeping temporary pipeline data as replaceable output.
+Retain necessary irreconstructible or costly data and objects whose adoption requires their retention in the responsible J's tracked input home.
+Preserve sufficient witnesses or certificates for the actual conclusion, including coverage evidence for an exhaustive claim.
+Check consumers, fixed evidence and review scope before replacing retained data, then repair references and complete affected checks before cleanup.
 The ignore rule is neither backup nor delivery; a clone can lack output.
 Cross-repository [J intake](../../rules/intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs, retaining source-only context for sending output references.
 A tracked program revision does not attribute an ignored file to its Git tree or establish its generator.
-Within an actual authorized research, repair or recovery task, reproduce necessary missing input with its existing generator/verifier, save the required input and coherent consumers, and state true result/limits without rewriting acquisition facts or requiring a recovery history.
+Within an actual authorized research, repair or recovery task, reproduce missing data with its existing generator/verifier under the [recovery rule](../../rules/computations.md#recovery-of-necessary-fixed-inputs).
+Maintain the selected durable representation and coherent consumers, and state true results and limits without rewriting acquisition facts or requiring a recovery history.
 No ordinary read, link repair or Git delivery implicitly runs the computation.
 
 Apply the [common maintenance boundary](../../rules/records.md#substantive-material-retention) to output cleanup and concise account maintenance.

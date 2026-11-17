@@ -35,6 +35,17 @@ Dans le périmètre autorisé, les [agents](#notion-agent) autonomes ont la resp
 6. Organiser des [vérifications](#material-review) indépendantes lorsque cela est requis et en consigner le périmètre, les constats et les limites.
 7. Préparer et examiner les manuscrits conformément aux usages généraux de la rédaction mathématique et aux préférences de l’auteur responsable.
 
+### Déroulement du travail
+
+La recherche commence par un [Task](#material-task) défini par un humain et précisant les critères d’achèvement.
+Les [agents](#notion-agent) consultent et réutilisent d’abord les documents de recherche et la littérature disponibles localement, puis recherchent au besoin des sources supplémentaires sur le Web.
+Ils vérifient l’applicabilité des résultats, développent des [stratégies](#material-strategy) et alternent tentatives de démonstration, calculs et recherches de contre-exemples.
+Chaque tentative éclaire la suivante : les constats utiles, les échecs et les questions non résolues sont conservés dans les documents de recherche appropriés, notamment les [Claims](#material-claim) et les [Ledgers](#material-ledger).
+Les stratégies évoluent dans le cadre de l’objectif autorisé.
+Les résultats proposés font l’objet d’une [vérification](#material-review) mathématique et l’achèvement du Task est évalué au regard des critères d’origine.
+
+Voir le [schéma de déroulement du travail](workflow.jpg).
+
 ### Collaboration
 
 ACME propose deux façons de collaborer et de partager des documents.
@@ -57,17 +68,6 @@ Lorsque vous déposez une prépublication sur une plateforme telle qu’[arXiv](
 Vous pouvez vous inspirer de l’[exemple de déclaration d’utilisation de l’IA](./ai-disclosure-example.md).
 Vous pouvez aussi consulter l’[exemple de page de publication](./publication-example.md) pour préciser le degré de compréhension et les contributions concrètes des auteurs humains, ainsi que votre position sur le partage et la réutilisation des documents bruts produits par les agents.
 
-### Déroulement du travail
-
-La recherche commence par un [Task](#material-task) défini par un humain et précisant les critères d’achèvement.
-Les [agents](#notion-agent) consultent et réutilisent d’abord les documents de recherche et la littérature disponibles localement, puis recherchent au besoin des sources supplémentaires sur le Web.
-Ils vérifient l’applicabilité des résultats, développent des [stratégies](#material-strategy) et alternent tentatives de démonstration, calculs et recherches de contre-exemples.
-Chaque tentative éclaire la suivante : les constats utiles, les échecs et les questions non résolues sont conservés dans les documents de recherche appropriés, notamment les [Claims](#material-claim) et les [Ledgers](#material-ledger).
-Les stratégies évoluent dans le cadre de l’objectif autorisé.
-Les résultats proposés font l’objet d’une [vérification](#material-review) mathématique et l’achèvement du Task est évalué au regard des critères d’origine.
-
-Voir le [schéma de déroulement du travail](workflow.jpg).
-
 ## <a id="setup"></a>Configuration
 
 Pour un nouveau projet de recherche, suivez les étapes I à III ci-dessous.
@@ -81,9 +81,9 @@ Choisissez des modèles pour la recherche mathématique et les tâches administr
 
 ### <a id="setup-workplace"></a>Étape II. Configurer votre espace de travail
 
-Choisissez un [environnement d’exécution d’agents](agent-harness.md) adapté et connectez-le à un [LLM](#notion-llm) performant.
+Choisissez un [environnement d’exécution d’agents](<harness/Environnement d’exécution d’agents.md>) adapté et connectez-le à un [LLM](#notion-llm) performant.
 
-1. Installez un environnement d’exécution d’agents, sous forme d’application autonome ou au sein d’un [EDI](agent-harness.md#notion-ide), puis connectez-vous si cela est nécessaire ou souhaité.
+1. Installez un environnement d’exécution d’agents, sous forme d’application autonome ou au sein d’un [EDI](<harness/Environnement d’exécution d’agents.md#notion-ide>), puis connectez-vous si cela est nécessaire ou souhaité.
 2. Choisissez le modèle et le fournisseur dans les paramètres ou le sélecteur de modèles.
 3. Choisissez un dossier sur votre appareil pour y conserver le cadre et les futurs documents de recherche.
    Pour une première installation dans un nouveau projet, utilisez un dossier local ne contenant encore aucun contenu de projet.
@@ -107,19 +107,18 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 1. Demandez à un [agent](#notion-agent) de télécharger le [cadre ACME](https://github.com/vtejdn/acme) et de l’installer dans le dossier de votre projet.
    Consultez l’exemple de consigne [Installer ACME](<user-instructions/Exemples de consignes.md#install-acme>).
-2. Choisissez une clé d’auteur unique, par exemple `Alice` ou `Ali`, et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`.
+2. Choisissez une [clé d’auteur](#notion-author-key) unique, par exemple `Alice` ou `Ali`, et choisissez indépendamment le nom à faire figurer dans l’attribution de `LICENSE`.
    Demandez à un agent de vous enregistrer comme auteur et d’ajouter cette attribution.
    Consultez l’exemple de consigne [Enregistrer un auteur](<user-instructions/Exemples de consignes.md#register>).
 3. (Si vous utilisez Git) Configurez le nom et l’adresse électronique associés à vos [commits](#notion-commit), ou demandez à un agent de le faire.
    Consultez l’exemple de consigne [Configurer Git](<user-instructions/Exemples de consignes.md#setup-git>).
-4. (Si vous utilisez Git) Choisissez ou confirmez un nom court pour votre [dépôt](<git-repository/Dépôts Git.md#notion-git-repository>) de recherche et demandez à un agent de vérifier qu’il est correctement enregistré dans le cadre.
-   Consultez l’exemple de consigne [Définir la clé du dépôt](<user-instructions/Exemples de consignes.md#setup-repo>).
+4. (Si vous utilisez Git) Choisissez ou confirmez la clé de votre [dépôt](<git-repository/Dépôts Git.md#notion-git-repository>) de recherche et demandez à un agent de vérifier qu’elle est correctement enregistrée dans le cadre ; consultez l’exemple [Définir la clé du dépôt](<user-instructions/Exemples de consignes.md#setup-repo>).
 5. (Facultatif) Lorsque cela est approprié, nous vous recommandons vivement de partager vos travaux de recherche dans un dépôt public.
 
 ### <a id="setup-collaboration"></a>Rejoindre un [dépôt Git](<git-repository/Dépôts Git.md#notion-git-repository>) existant comme collaborateur
 
 1. Connectez-vous à la plateforme d’hébergement du dépôt et acceptez l’invitation de votre coauteur.
-2. Demandez à un [agent](#notion-agent) de vous aider à configurer l’accès au dépôt partagé.
+2. Demandez à un [agent](#notion-agent) de vous aider à configurer l’accès à la plateforme hébergeant le dépôt distant ; voir [Se connecter à GitHub](<git-repository/Dépôts Git.md#connect-github>).
 3. Créez un nouveau dossier local sur votre ordinateur et ouvrez-le dans votre environnement d’exécution d’agents.
    Donnez l’adresse du dépôt à votre agent et demandez-lui de le [cloner](#notion-clone) dans ce dossier vide.
    Consultez l’exemple de consigne [Cloner un dépôt](<user-instructions/Exemples de consignes.md#clone-repo>).
@@ -132,26 +131,30 @@ Si vous rejoignez un dépôt de recherche existant qui contient déjà ACME, sui
 
 ### Commencer un [Task](#material-task)
 
-1. (Facultatif) Fournissez la littérature pertinente ou demandez à un [agent](#notion-agent) de la rechercher.
-   Demandez à l’agent de conserver les fichiers sources dans le [répertoire local de littérature](../mathematics/literature/pdf) et de vérifier les parties indiquées des articles pertinents au niveau de profondeur demandé.
-2. Définissez un Task en discutant avec les agents, en précisant les questions, les contraintes et les critères d’achèvement.
+1. (Facultatif) Fournissez la littérature pertinente ou demandez à un [agent](#notion-agent) de la rechercher ; voir l’exemple [Rechercher de la littérature](<user-instructions/Exemples de consignes.md#search-article>).
+   Demandez à l’agent de vérifier les parties désignées des articles pertinents ; voir l’exemple [Vérifier la littérature](<user-instructions/Exemples de consignes.md#audit>).
+2. Établissez un Task par la discussion avec les agents, en précisant la question, les contraintes et les critères d’achèvement ; voir l’exemple [Créer un Task](<user-instructions/Exemples de consignes.md#create-task>).
    Vous pouvez choisir une [lettre de ligne de recherche](#notion-research-line-letter) pour organiser le Task et les documents associés.
-3. Pour un travail autonome prolongé, précisez ou adoptez des limites d’exécution et des conditions d’arrêt.
-4. Autorisez les actions nécessaires des outils lorsque cela vous est demandé et répondez aux questions posées par les agents.
-5. Réfléchissez aux documents mathématiques produits par les agents et comprenez-les ; aucun agent ne peut le faire à votre place.
+3. Pour une recherche autonome soutenue, précisez ou adoptez les limites d’exécution et les conditions d’arrêt ; voir l’exemple [Définir les conditions d’arrêt par défaut](<user-instructions/Exemples de consignes.md#set-stop-condition>).
+4. (Facultatif) Discutez et développez des [stratégies de recherche](#material-strategy) avec l’agent ; voir l’exemple [Créer une stratégie](<user-instructions/Exemples de consignes.md#create-strategy>).
+5. Lancez le Task de recherche ; voir l’exemple [Commencer un Task](<user-instructions/Exemples de consignes.md#start-task>).
+   Autorisez les opérations d’outils nécessaires lorsqu’elles vous sont présentées et répondez aux questions des agents.
+6. Réfléchissez aux documents mathématiques produits par les agents et comprenez-les (aucun agent ne peut le faire à votre place).
    Discutez des mathématiques avec les agents pour approfondir et accélérer votre compréhension.
-   Demandez des références pertinentes et questionnez de manière socratique les sources des arguments et des idées, en particulier lorsqu’un argument s’appuie sur les connaissances du modèle sans source explicite.
-6. (Facultatif, si vous utilisez [Git](<git-repository/Dépôts Git.md#notion-git>)) Enregistrez les modifications que vous souhaitez conserver dans des [commits](#notion-commit) ; au besoin, annulez les modifications locales ou utilisez un revert pour annuler des commits.
-   Une fois un dépôt Git distant configuré, l’agent crée et pousse rapidement les commits de recherche par défaut, conformément aux dispositions convenues.
+   Demandez les références pertinentes et interrogez, à la manière socratique, l’origine des arguments et des idées, surtout lorsqu’ils reposent sur les connaissances du modèle sans source explicite.
+7. (Facultatif, si vous utilisez [Git](<git-repository/Dépôts Git.md#notion-git>)) Effectuez un [commit](#notion-commit) des modifications à conserver ; voir l’exemple [Effectuer un commit](<user-instructions/Exemples de consignes.md#commit>).
+   Annulez les modifications locales ou annulez les effets de commits existants selon les besoins.
+   Une fois un dépôt Git distant configuré, l’agent effectue et pousse rapidement les commits de recherche par défaut, selon les dispositions convenues.
 
-- Voir les [exemples de consignes de recherche](<user-instructions/Exemples de consignes.md#research-instructions>).
+- Voir d’autres [exemples de consignes de recherche](<user-instructions/Exemples de consignes.md#research>).
 
 ### <a id="joint-task"></a>Commencer un [Task](#material-task) conjoint
 
 Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour un objectif mathématique commun, en précisant la question commune, les hypothèses, le périmètre et les critères d’achèvement ; chaque participant fait progresser la recherche dans le cadre de son propre Task.
 
-1. Demandez à un [agent](#notion-agent) d’établir un Task conjoint ; si un collaborateur en a déjà établi un qui convient, passez directement à l’étape suivante.
-2. Demandez à l’agent d’établir ou de réutiliser votre Task individuel, de le relier au Task conjoint que vous avez convenu d’adopter avec vos collaborateurs et de préciser votre périmètre de participation et vos critères personnels d’achèvement.
+1. Demandez à un [agent](#notion-agent) d’établir un Task conjoint ; voir l’exemple [Créer un Task conjoint](<user-instructions/Exemples de consignes.md#create-joint-task>).
+   Si un collaborateur en a déjà établi un qui convient, passez directement à l’étape suivante.
+2. Demandez à l’agent de créer ou réutiliser votre Task individuel et de le relier au Task conjoint ; voir l’exemple [Créer un Task individuel](<user-instructions/Exemples de consignes.md#create-personal-task>).
    Un Task individuel peut couvrir tout ou partie de la question commune ; ses critères d’achèvement peuvent être identiques à ceux du Task conjoint ou définis selon le périmètre de participation.
    Les participants peuvent aussi se répartir le travail sur une même question : l’un peut chercher une démonstration, tandis qu’un autre cherche un contre-exemple.
    Il est recommandé de choisir, en concertation avec les collaborateurs, différentes [stratégies de recherche (Strategy)](#material-strategy) afin de limiter les efforts mathématiques redondants et d’utiliser plus efficacement les ressources de calcul pour l’IA.
@@ -160,6 +163,8 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
    au moment opportun, il enregistre dans des [commits](#notion-commit) les progrès de recherche pouvant être partagés et les transmet par des [pushs](#notion-push).
    L’agent traite les conflits administratifs dans les limites de son autorité ; en cas de désaccord mathématique substantiel, il explique le problème et procède à une vérification sur la base d’une autorisation existante ou après avoir obtenu l’autorisation nécessaire.
    Vous pouvez aussi demander de votre propre initiative des opérations de synchronisation telles que les pushs, les pulls et les fusions.
+
+- Voir d’autres [exemples de consignes pour les Tasks conjoints](<user-instructions/Exemples de consignes.md#joint-task>).
 
 ### Points d’attention
 
@@ -181,7 +186,7 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 
 - Interrogez un [agent](#notion-agent) dès que vous avez des questions sur le cadre.
 - Si vous utilisez plusieurs dépôts ACME sur le même appareil, vous pouvez regrouper votre littérature dans un seul dossier local de fichiers PDF.
-  Demandez à un agent de faire pointer le [répertoire local de littérature de chaque dépôt](../mathematics/literature/pdf) vers ce dossier au moyen de jonctions de répertoires (directory junctions).
+  Demandez à l’agent d’utiliser des jonctions de répertoires pour faire pointer [le répertoire local de littérature de chaque dépôt](../mathematics/literature/pdf) vers ce dossier ; voir l’exemple [Créer une jonction](<user-instructions/Exemples de consignes.md#create-junction>).
   Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce dossier.
 - Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les du suivi par [Git](<git-repository/Dépôts Git.md#notion-git>).
 
@@ -197,13 +202,19 @@ ACME organise la rédaction selon quatre niveaux de consignes, par ordre de prio
   Ces consignes et le seul jugement de l’[agent](#notion-agent) peuvent toutefois ne pas suffire aux usages d’un domaine ou aux exigences personnelles d’un auteur.
 - Les préférences générales de rédaction de l’auteur.
   Selon les exigences explicites de l’auteur, l’agent consigne au besoin les préférences générales dans `profiles/<human>/writing/readme.md` (`<human>` est la [clé d’auteur](#notion-author-key), par exemple `Alice`) et les actualise selon ces exigences.
+  Voir l’exemple [Préférences générales de rédaction](<user-instructions/Exemples de consignes.md#personal-preference>).
 - Les préférences de l’auteur pour un domaine de recherche particulier.
   L’agent les consigne au besoin dans le fichier de préférences du domaine concerné sous `profiles/<human>/writing/`.
+  Voir l’exemple [Préférences de rédaction d’un domaine](<user-instructions/Exemples de consignes.md#community-preference>).
 - Les conventions du manuscrit actuel.
   Elles sont généralement consignées dans `writing.md`, `conventions.md` ou une section « Conventions de rédaction » du `readme.md` du répertoire du manuscrit, et tenues à jour par l’agent selon les besoins.
+  Voir l’exemple [Conventions du manuscrit](<user-instructions/Exemples de consignes.md#manuscript-convention>).
+
+Voir d’autres [exemples de consignes de rédaction](<user-instructions/Exemples de consignes.md#writing-instructions>).
 
 Un niveau de priorité supérieure ne remplace que les parties incompatibles des niveaux inférieurs ; toutes les autres exigences restent applicables.
 En l’absence de préférences personnelles, de préférences propres à un domaine et de conventions du manuscrit, l’agent commence à rédiger selon les consignes générales.
+Les préférences de terminologie et de notation de l’auteur communes au dialogue et à la rédaction sont conservées ensemble dans `profiles/<human>/terminology.md`.
 
 ### Ouvrages de référence pour la rédaction
 
@@ -213,10 +224,13 @@ Une même référence peut servir à plusieurs usages, chacun avec son propre p�
 
 - Travaux existants réutilisables.
   Vous pouvez désigner vos travaux ou ceux dont vous êtes coauteur pour que l’agent les réutilise directement dans le périmètre indiqué, éventuellement limité à certaines sections ou à certains passages.
+  Voir l’exemple [Autoriser la réutilisation de texte](<user-instructions/Exemples de consignes.md#record-my-article>).
 - Modèles principaux de style du manuscrit.
   Vous pouvez choisir une ou plusieurs références dont l’agent peut s’inspirer pour l’organisation, l’exposition et le style.
+  Voir l’exemple [Choisir un modèle rédactionnel](<user-instructions/Exemples de consignes.md#style-model>).
 - Références pour la terminologie et les notations du domaine.
   Vous pouvez choisir des travaux pour guider l’agent dans la terminologie, les notations et la présentation des définitions.
+  Voir l’exemple [Choisir des références terminologiques](<user-instructions/Exemples de consignes.md#terminology-references>).
 
 Ces choix peuvent s’appliquer à votre rédaction en général, à un domaine particulier ou au manuscrit actuel, et sont conservés avec les préférences ou conventions correspondantes.
 Les références et leurs usages pour la rédaction en général sont consignés dans `profiles/<human>/writing/readme.md`.
@@ -230,12 +244,14 @@ Sans accord explicite de l’auteur, l’[agent](#notion-agent) ne supprime pas 
 Le cadre permet une relecture rédactionnelle et une vérification mathématique du manuscrit, séparément ou conjointement.
 
 - Relecture rédactionnelle : l’agent vérifie l’exposition, la structure, la terminologie, les notations et les citations selon les quatre niveaux de consignes ; les remarques de révision encore à traiter sont conservées dans `revisions.md`, dans le répertoire du manuscrit.
+  Voir l’exemple [Relecture rédactionnelle](<user-instructions/Exemples de consignes.md#writing-review>).
 - Vérification mathématique : l’agent vérifie les hypothèses, les raisonnements et les conclusions ; les problèmes mathématiques actuellement non résolus et les éléments nécessaires pour les étayer sont conservés dans `review.md`, dans le répertoire du manuscrit, et actualisés lors des vérifications ultérieures.
+  Voir l’exemple [Vérification mathématique du manuscrit](<user-instructions/Exemples de consignes.md#manuscript-review>).
 
 Les résultats indiquent le périmètre réellement examiné, les constats et les points encore non résolus.
 Lorsqu’une vérification indépendante est nécessaire, vous pouvez répartir la rédaction et la vérification entre des sessions distinctes et confier la vérification à un agent qui n’a participé ni à la rédaction de fond ni à l’élaboration des arguments concernés et n’a pas reçu les discussions de fond liées à cette élaboration, afin de préserver un [contexte](#notion-context) indépendant.
 Lors d’un premier examen indépendant, l’agent forme d’abord son propre jugement à partir du manuscrit actuel et des conventions applicables, puis le compare aux remarques existantes.
-Les vérifications ultérieures reprennent les remarques non résolues du tour précédent, examinent les modifications correspondantes et leurs effets, actualisent les remarques et retirent les points résolus.
+L’agent chargé de la rédaction rapporte les corrections ; l’agent chargé de la relecture vérifie les modifications et leurs effets avant d’actualiser ou de retirer les remarques correspondantes.
 
 ### Mémoire de rédaction des agents
 
@@ -253,7 +269,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.11.0.
+La version actuelle du cadre est 0.11.1.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
@@ -315,6 +331,8 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 
 - Chaque calcul dispose d’un répertoire J numéroté contenant ses programmes, les données d’entrée nécessaires et un fichier `readme.md`.
   Les sorties générées sont conservées séparément sous le chemin local `mathematics/computations/outputs/<J>/`, ignoré par [Git](<git-repository/Dépôts Git.md#notion-git>).
+  Pour les données nécessaires à des preuves, vérifications ou reproductions ultérieures, l’agent conserve avec le dépôt soit les données nécessaires elles-mêmes, soit les programmes de génération, données de base, paramètres, conditions relatives aux dépendances et méthodes de validation suffisants pour les reconstruire de manière fiable et à un coût raisonnable.
+  Si la reconstruction n’est pas fiable ou coûte trop cher, ou si un objet particulier doit être conservé, l’agent conserve les données nécessaires elles-mêmes.
 - Les unités de vérification de la littérature sont regroupées par clé de citation sous `mathematics/audits/literature/`.
 - L’[index des définitions](../mathematics/definitions/index.md) organise les définitions, la terminologie et les symboles par concept, avec des liens vers leurs formulations complètes dans les documents C, L ou U qui en sont responsables.
 - La [bibliographie](../mathematics/literature/references.bib) de référence consigne l’identité des publications et leurs clés de citation.
@@ -325,10 +343,10 @@ Selon vos outils et votre configuration, les répertoires suivants peuvent égal
 | Terme | Signification |
 | --- | --- |
 | <a id="notion-llm"></a>LLM (grand modèle de langage) | Modèle d’IA entraîné sur de grandes quantités de texte pour traiter et produire du langage, notamment des explications mathématiques et du code informatique. |
-| <a id="notion-agent"></a>Agent | Système d’IA fondé sur un [LLM](#notion-llm), capable de planifier et d’exécuter des tâches, d’utiliser des outils et d’adapter ses actions aux résultats. Il fonctionne au moyen d’un [environnement d’exécution d’agents](agent-harness.md), dans le périmètre et les limites autorisés par l’utilisateur humain. Il n’a pas encore évolué en [Agent](https://fr.wikipedia.org/wiki/Matrix_%28s%C3%A9rie_de_films%29#Les_Agents). |
+| <a id="notion-agent"></a>Agent | Système d’IA fondé sur un [LLM](#notion-llm), capable de planifier et d’exécuter des tâches, d’utiliser des outils et d’adapter ses actions aux résultats. Il fonctionne au moyen d’un [environnement d’exécution d’agents](<harness/Environnement d’exécution d’agents.md>), dans le périmètre et les limites autorisés par l’utilisateur humain. Il n’a pas encore évolué en [Agent](https://fr.wikipedia.org/wiki/Matrix_%28s%C3%A9rie_de_films%29#Les_Agents). |
 | <a id="notion-context"></a>Contexte (Context) | Informations dont dispose un LLM lors d’un appel au modèle, notamment les consignes, l’historique de la conversation, les documents fournis et les résultats des outils. Le contexte actuel peut ne contenir qu’une sélection ou un résumé de l’historique complet de la [session](#notion-session). |
 | <a id="notion-context-length"></a>Longueur de contexte (Context length) | Longueur totale maximale des entrées et de la sortie qu’un LLM peut traiter en une fois, généralement mesurée en tokens, de petites unités de texte. Elle comprend les consignes, l’historique de la conversation, les documents fournis et la réponse générée. |
-| <a id="notion-session"></a>Session | Interaction continue avec un [agent](#notion-agent), gérée par un [environnement d’exécution d’agents](agent-harness.md). Elle peut comporter plusieurs tours de conversation, chacun commençant généralement par un message de l’utilisateur et comprenant les réponses de l’agent ainsi que les opérations des outils. L’environnement conserve l’historique de la conversation et prépare le [contexte](#notion-context) de chaque appel au modèle ; pour respecter la [longueur de contexte](#notion-context-length) du modèle, il peut sélectionner ou résumer les parties antérieures de l’historique. |
+| <a id="notion-session"></a>Session | Interaction continue avec un [agent](#notion-agent), gérée par un [environnement d’exécution d’agents](<harness/Environnement d’exécution d’agents.md>). Elle peut comporter plusieurs tours de conversation, chacun commençant généralement par un message de l’utilisateur et comprenant les réponses de l’agent ainsi que les opérations des outils. L’environnement conserve l’historique de la conversation et prépare le [contexte](#notion-context) de chaque appel au modèle ; pour respecter la [longueur de contexte](#notion-context-length) du modèle, il peut sélectionner ou résumer les parties antérieures de l’historique. |
 | Identifiant de document | Référence structurée identifiant un document et, le cas échéant, sa version. Par exemple, `Alice_C_F0007_v1.md` identifie un [Claim](#material-claim) par auteur, type, ligne de recherche, numéro de série et version. |
 | <a id="notion-research-line-letter"></a>Lettre de ligne de recherche | Lettre, telle que `F` dans `Alice_C_F0007_v1.md`, servant à organiser les documents de recherche numérotés. Les documents issus d’un Task héritent de sa lettre, mais reçoivent leurs propres numéros de série. Par défaut, la lettre `A` est utilisée lorsqu’aucune ligne n’est indiquée. |
 | <a id="notion-author-key"></a>Clé d’auteur | Clé stable enregistrée pour un auteur humain, par exemple `Alice`, utilisée dans les identifiants de documents et les enregistrements d’auteur. |

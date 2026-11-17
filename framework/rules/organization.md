@@ -191,7 +191,8 @@ Search and cite these by the actual conclusion and applicability; no separate me
 
 Retained computation programs, verification programs, required original inputs and concise accounts use `mathematics/computations/programs/<J>/` under the [computation rules](computations.md).
 Generated results, certificates and verification data use the Git-ignored `mathematics/computations/outputs/<J>/`.
-Data indispensable as fixed proof/check/computation input instead uses tracked native input storage in its responsible J under the [fixed-input and recovery rule](computations.md#recovery-of-necessary-fixed-inputs); it does not remain solely in ignored cache because it was generated.
+Select sufficient tracked native data or retained generation materials for durable proof, verification or computation use under the [computation-retention decision](computations.md#retained-data-and-generation-materials).
+Temporary pipeline data stays in the output home with explicit dependencies and command order, and authorized reconstruction follows the [input-recovery rule](computations.md#recovery-of-necessary-fixed-inputs).
 Both homes preserve the same registered J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 The collection entrance/index remains at `mathematics/computations/`.
 The program README supplies navigation, actual input/output locators and reproduction context, without a second assessment or review.

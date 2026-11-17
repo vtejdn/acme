@@ -194,12 +194,18 @@ Git-dependent helpers remain optional and state their actual prerequisites.
 ## Start or continue research
 
 For an initial question, apply the [inquiry-to-research rule](rules/workflow.md#from-an-inquiry-to-approved-research): use relevant existing evidence and proportionate preliminary lookup, answering directly when sufficient.
-When the question remains unanswered and further work needs formal research, report the findings, unresolved question and concrete proposed scope and wait for applicable human approval before dependent strategy exploration and Task advancement.
+Before allocation or a startup question, look for an adequate same-human Task and applicable earlier authorization at the actual question's scope.
+When a sufficiently specified question remains unanswered, needs sustained research and lacks applicable authorization, register or reuse its proposed Task under the inquiry rule before asking whether to start.
+Link the Task and explain the preliminary findings, unresolved gap and proposed research scope in the ordinary response.
+Await actual applicable approval before activation, execution, sustained strategy exploration or research delegation.
+Registration creates no E or host run; report any concrete author, write or allocation limitation that leaves registration incomplete.
 Reuse an existing explicit research instruction or approval for that objective and scope, without recurring approval because a lookup, round or session changes.
 Explanation, bounded source work, maintenance and an explicitly limited plan keep their actual deliverable and scope.
 
-After sufficient approval, read the [Task setup rules](rules/workflow.md#new-task-setup) and likely matching contracts, reuse an adequate same-human Task or establish the precise approved contract with its actual human author and initial active decision.
-An explicitly requested registration awaiting research authorization uses proposed status.
+After sufficient approval, read or validly reuse the [Task setup rules](rules/workflow.md#new-task-setup), [main-agent duties](rules/execution.md#main-agent-responsibility-and-exact-maintenance), [research coordination](rules/workflow.md#research-coordination) and [route-selection rules](rules/strategies.md#choosing-and-revising-a-route) before dependent research or delegation.
+Reuse the registered contract and make the necessary authorized lifecycle decision with its real authority and date.
+Adapt the contract under the Task version rules when approval changes its mathematical scope.
+For a directly assigned objective without a suitable Task, establish its approved contract with the actual human author and initial active decision.
 The responsible responding agent takes main research responsibility by default under the [execution rule](rules/execution.md#main-agent-responsibility-and-exact-maintenance), coordinating with an existing executing main agent rather than starting overlapping writers.
 Task setup alone creates no E; prepare or reuse the ordinary family's stable local boundary only when execution is actually selected under the [execution rule](rules/execution.md#responsibility-and-version-boundary).
 The same approval may cover setup and first execution; a prepared E starts non-running and work starts only when that approval and effective conditions permit it.
@@ -368,8 +374,10 @@ Read the actual J question, native programs/inputs, parameters, arithmetic mode,
 Choose suitable methods, runtimes, libraries and other tools under the [computation-tool responsibility](rules/computations.md#computation-tool-selection), respecting the actual assignment, project requirements and environment constraints.
 Reuse sufficient actual capabilities, reading only relevant local runtime notes and necessary private resource sections under the [runtime rule](rules/organization.md#machine-local-runtime); notes, activation and a new environment are not prerequisites.
 Keep continued programs in `mathematics/computations/programs/<J>/` and generated results in the ignored `mathematics/computations/outputs/<J>/`.
-Retain generated data indispensable as fixed proof/check/computation input in the responsible J's tracked native inputs; an authorized recovery task may run its existing generator/verifier, check the actual object and finite scope, then repair input locators and consumers under the [recovery rule](rules/computations.md#recovery-of-necessary-fixed-inputs), without repeat approval or historical reconstruction.
-When reproduction is needed, rerun the chosen output set in that same J after preserving necessary inputs, non-reconstructible witnesses and earlier results still consumed by the check.
+Choose sufficient tracked data or retained generation materials under the [computation-retention decision](rules/computations.md#retained-data-and-generation-materials), inspecting the actual consumers, reconstruction reliability and cost.
+Keep temporary pipeline data as replaceable output and document retained prerequisites, generated paths and command order.
+Within actual research, repair or recovery authority, generate missing data and check the required object, finite scope and precision under the [recovery rule](rules/computations.md#recovery-of-necessary-fixed-inputs), then maintain the selected representation and consumers.
+When reproduction is needed, rerun the chosen output set in that same J after preserving its necessary data or generation materials.
 Safe overwriting and removal of reproducible output are allowed with coherent consumers; ordinary reading or maintenance does not require rerunning it.
 Use an acquired program's actual qualified J for self inputs/outputs and explicit paths for genuine cross-J dependencies.
 Keep necessary reproduction context, meaningful failures and actual limits without persistent mathematical digest gates or an archive for every run.

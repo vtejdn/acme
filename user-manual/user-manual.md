@@ -35,6 +35,17 @@ Within the authorized scope, autonomous [agents](#notion-agent) are responsible 
 6. Arranging independent [Reviews](#material-review) when required, and recording their scope, findings and limitations.
 7. Preparing and reviewing manuscripts according to general mathematical writing standards and the responsible author's preferences.
 
+### Workflow
+
+Research begins with a human-defined [Task](#material-task) specifying completion criteria.
+[Agents](#notion-agent) first consult and reuse relevant local research materials and literature, then search the web for additional sources when needed.
+They check the applicability of results, develop [Strategies](#material-strategy), and iterate through proof attempts, computations and counterexample searches.
+Each attempt informs the next: useful findings, failures and unresolved questions are retained in the appropriate research materials, including [Claims](#material-claim) and [Ledgers](#material-ledger).
+Strategies adapt within the authorized objective.
+Candidate results undergo mathematical [Review](#material-review), and Task completion is judged against the original criteria.
+
+See [workflow](workflow.jpg).
+
 ### Collaboration
 
 ACME provides two ways to collaborate and share materials.
@@ -57,17 +68,6 @@ When posting a preprint on platforms such as [arXiv](https://arxiv.org/) or [Hex
 You can adapt the [example disclosure of AI use](./ai-disclosure-example.md).
 You can also refer to the [example publication page](./publication-example.md) to describe the human authors' level of understanding and specific contributions, and state your position on sharing and reusing raw agent-generated materials.
 
-### Workflow
-
-Research begins with a human-defined [Task](#material-task) specifying completion criteria.
-[Agents](#notion-agent) first consult and reuse relevant local research materials and literature, then search the web for additional sources when needed.
-They check the applicability of results, develop [Strategies](#material-strategy), and iterate through proof attempts, computations and counterexample searches.
-Each attempt informs the next: useful findings, failures and unresolved questions are retained in the appropriate research materials, including [Claims](#material-claim) and [Ledgers](#material-ledger).
-Strategies adapt within the authorized objective.
-Candidate results undergo mathematical [Review](#material-review), and Task completion is judged against the original criteria.
-
-See [workflow](workflow.jpg).
-
 ## <a id="setup"></a>Setup
 
 For a new research project, follow Steps I–III below. If you are joining an existing collaboration, [set up your workspace](#setup-workplace) and then follow the [collaboration setup steps](#setup-collaboration).
@@ -80,9 +80,9 @@ Choose models for mathematical research and administrative tasks, taking into ac
 
 ### <a id="setup-workplace"></a>Step II. Set up your workspace
 
-Choose a suitable [agent harness](agent-harness.md) and connect it to a capable [LLM](#notion-llm).
+Choose a suitable [agent harness](harness/agent-harness.md) and connect it to a capable [LLM](#notion-llm).
 
-1. Install an agent harness, either as a standalone application or within an [IDE](agent-harness.md#notion-ide), and sign in if required or desired.
+1. Install an agent harness, either as a standalone application or within an [IDE](harness/agent-harness.md#notion-ide), and sign in if required or desired.
 2. Select the model and provider in the settings or model picker.
 3. Choose a folder on your device to store the framework and future research materials.
    For a first installation in a new project, use a local folder that contains no project content.
@@ -104,16 +104,16 @@ Whether to make it public and whether to push research records for synchronizati
 If you are joining an existing research repository that already contains ACME, follow the steps in the next section instead.
 
 1. Ask an [agent](#notion-agent) to download and install the [ACME framework](https://github.com/vtejdn/acme) in your project folder; see [install ACME](user-instructions/user-instructions.md#install-acme) for an instruction example.
-2. Choose a unique author key, such as `Alice` or `Ali`, and independently choose the name to appear in the `LICENSE` attribution.
+2. Choose a unique [author key](#notion-author-key), such as `Alice` or `Ali`, and independently choose the name to appear in the `LICENSE` attribution.
    Ask an agent to register you as an author and add that attribution; see [register](user-instructions/user-instructions.md#register) for an instruction example.
 3. (When using Git) Configure the name and email associated with your [commits](#notion-commit), or ask an agent to do so; see [set up Git](user-instructions/user-instructions.md#setup-git) for an instruction example.
-4. (When using Git) Choose or confirm a short name for your research [repository](git-repository/git-repository.md#notion-git-repository) and ask an agent to ensure it is recorded correctly in the framework; see [set the repository key](user-instructions/user-instructions.md#setup-repo) for an instruction example.
+4. (When using Git) Choose or confirm the repository key for your research [repository](git-repository/git-repository.md#notion-git-repository) and ask an agent to ensure it is recorded correctly in the framework; see [set the repository key](user-instructions/user-instructions.md#setup-repo) for an instruction example.
 5. (Optional) When appropriate, we strongly recommend sharing your research records through a public repository.
 
 ### <a id="setup-collaboration"></a>Join an existing [Git repository](git-repository/git-repository.md#notion-git-repository) as a collaborator
 
 1. Sign in to the repository hosting platform and accept your coauthor's invitation.
-2. Ask an [agent](#notion-agent) to help configure access to the shared repository.
+2. Ask an [agent](#notion-agent) to help configure access to the remote repository hosting platform; see [Connect to GitHub](git-repository/git-repository.md#connect-github).
 3. Create a new local folder on your computer and open that folder in your agent harness.
    Give your agent the repository address and ask it to [clone](#notion-clone) the repository into that empty folder; see [clone repository](user-instructions/user-instructions.md#clone-repo) for an instruction example.
 4. If you are not yet registered in the research repository, choose an author key distinct from those of your collaborators and independently choose the name to appear in the `LICENSE` attribution, then ask an agent to register you and add that attribution; see [register](user-instructions/user-instructions.md#register) for an instruction example.
@@ -123,26 +123,30 @@ If you are joining an existing research repository that already contains ACME, f
 
 ### Start a [Task](#material-task)
 
-1. (Optional) Provide relevant literature or ask an [agent](#notion-agent) to find it.
-   Ask the agent to store source files in [the local literature directory](../mathematics/literature/pdf) and audit the specified portions of relevant articles at the requested depth.
-2. Establish a Task through discussion with agents, specifying the questions, constraints and completion criteria.
+1. (Optional) Provide relevant literature or ask an [agent](#notion-agent) to find it; see [search for literature](user-instructions/user-instructions.md#search-article) for an instruction example.
+   Ask the agent to review specified portions of relevant articles; see [audit literature](user-instructions/user-instructions.md#audit) for an instruction example.
+2. Establish a Task through discussion with agents, specifying the question, constraints and completion criteria; see [set up a Task](user-instructions/user-instructions.md#create-task) for an instruction example.
    You may choose a [research-line letter](#notion-research-line-letter) to organize the Task and its related materials.
-3. For sustained autonomous work, specify or adopt execution limits and stopping conditions.
-4. Approve necessary tool actions when prompted, and respond to questions raised by agents.
-5. Think through and understand the mathematical materials produced by agents (no agent can do this for you).
+3. For sustained autonomous research, specify or adopt execution limits and stopping conditions; see [set default stopping conditions](user-instructions/user-instructions.md#set-stop-condition) for an instruction example.
+4. (Optional) Discuss and develop [research strategies](#material-strategy) with the agent; see [create a strategy](user-instructions/user-instructions.md#create-strategy) for an instruction example.
+5. Start the research Task; see [start a Task](user-instructions/user-instructions.md#start-task) for an instruction example.
+   Approve necessary tool actions when prompted, and respond to questions raised by agents.
+6. Think through and understand the mathematical materials produced by agents (no agent can do this for you).
    Discuss the mathematics with agents to deepen and accelerate your understanding.
    Ask for relevant references and question the sources of arguments and ideas Socratically, especially when an argument relies on model knowledge without explicit source support.
-6. (Optional, when using [Git](git-repository/git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; use undo for local edits or revert commits when appropriate.
+7. (Optional, when using [Git](git-repository/git-repository.md#notion-git)) [Commit](#notion-commit) changes you want to keep; see [commit](user-instructions/user-instructions.md#commit) for an instruction example.
+   Undo local edits or revert existing commits when needed.
    Once a remote Git repository is configured, the agent promptly commits and pushes research updates by default, in accordance with the agreed arrangements.
 
-- See also [research instruction examples](user-instructions/user-instructions.md#research-instructions).
+- See more [research instruction examples](user-instructions/user-instructions.md#research).
 
 ### <a id="joint-task"></a>Start a joint [Task](#material-task)
 
 Collaborators in the same repository can establish a joint Task for a common mathematical goal, specifying the shared question, hypotheses, scope and completion criteria; each participant advances their research through their own Task.
 
-1. Ask an [agent](#notion-agent) to establish a joint Task; if a collaborator has already established a suitable one, proceed directly to the next step.
-2. Ask the agent to establish or reuse your individual Task, link it to the joint Task that you and your collaborators agreed to adopt, and specify your scope of participation and personal completion criteria.
+1. Ask an [agent](#notion-agent) to establish a joint Task; see [create a joint Task](user-instructions/user-instructions.md#create-joint-task) for an instruction example.
+   If a collaborator has already established a suitable joint Task, proceed directly to the next step.
+2. Ask the agent to establish or reuse your individual Task and link it to the joint Task; see [create an individual Task](user-instructions/user-instructions.md#create-personal-task) for an instruction example.
    An individual Task can cover all or part of the common question; its completion criteria can match those of the joint Task or be determined by your scope of participation.
    Participants can also divide work on the same question: one person may attempt a proof while another looks for a counterexample.
    We recommend choosing different research [Strategies](#material-strategy) in consultation with your collaborators to reduce repeated mathematical work and make more effective use of AI computational resources.
@@ -150,6 +154,8 @@ Collaborators in the same repository can establish a joint Task for a common mat
 3. During joint research, the [main research agent](#notion-main-research-agent) synchronizes collaborators' updates before each round through operations such as [pulls](#notion-pull) and [merges](#notion-merge), and [commits](#notion-commit) and [pushes](#notion-push) shareable research progress at appropriate times.
    The agent handles administrative conflicts within its authority; for substantive mathematical disagreements, it explains the issue and conducts a recheck under existing authorization or after obtaining the necessary authorization.
    You can also explicitly request synchronization operations such as pushes, pulls and merges.
+
+- See more [joint Task instruction examples](user-instructions/user-instructions.md#joint-task).
 
 ### Cautions
 
@@ -171,7 +177,7 @@ Collaborators in the same repository can establish a joint Task for a common mat
 
 - Ask an [agent](#notion-agent) whenever you have questions about the framework.
 - If you use multiple ACME repositories on the same device, you can store your literature in a single local PDF folder.
-  Ask an agent to use directory junctions to point [each repository's local literature directory](../mathematics/literature/pdf) to that folder.
+  Ask an agent to use directory junctions to point [each repository's local literature directory](../mathematics/literature/pdf) to that folder; see [create a junction](user-instructions/user-instructions.md#create-junction) for an instruction example.
   Grant the agent the permissions needed to read and manage files in that folder.
 - When agents automate related tasks involving credentials, store secrets appropriately and exclude them from [Git](git-repository/git-repository.md#notion-git) tracking.
 
@@ -187,13 +193,19 @@ ACME organizes manuscript writing through four layers of standards, in order of 
   General standards and an [agent](#notion-agent)'s own judgment alone may still fall short of field-specific conventions or an author's personal requirements.
 - The author's general writing preferences.
   Based on the author's explicit requirements, the agent records general writing preferences as needed in `profiles/<human>/writing/readme.md` (`<human>` is the [author key](#notion-author-key), such as `Alice`) and updates them as those requirements change.
+  See [general writing preferences](user-instructions/user-instructions.md#personal-preference) for an instruction example.
 - The author's preferences for a particular research field.
   The agent records these preferences as needed in the relevant field-specific preference file under `profiles/<human>/writing/`.
+  See [field-specific writing preferences](user-instructions/user-instructions.md#community-preference) for an instruction example.
 - Conventions for the current manuscript.
   These are usually recorded in `writing.md`, `conventions.md` or a “Writing conventions” section of `readme.md` in the manuscript directory, and maintained by the agent as needed.
+  See [manuscript conventions](user-instructions/user-instructions.md#manuscript-convention) for an instruction example.
+
+See more [writing instruction examples](user-instructions/user-instructions.md#writing-instructions).
 
 A higher-priority layer overrides only the conflicting parts of a lower-priority layer; all other requirements continue to apply.
 When no personal or field-specific preferences or manuscript conventions have been set, the agent begins with the general standards.
+Author terminology and notation preferences shared by dialogue and writing are kept together in `profiles/<human>/terminology.md`.
 
 ### Reference works for writing
 
@@ -203,10 +215,13 @@ The same work can serve several purposes, each with its own scope.
 
 - Existing works available for reuse.
   You can identify your own or coauthored works for direct reuse by the agent within a specified scope, with further limits to particular sections or passages if desired.
+  See [allow manuscript text reuse](user-instructions/user-instructions.md#record-my-article) for an instruction example.
 - Primary models for manuscript prose style.
   You can select one or more reference works whose organization, exposition and prose style the agent can draw on.
+  See [choose a model for prose style](user-instructions/user-instructions.md#style-model) for an instruction example.
 - References for field-specific terminology and notation.
   You can select reference works to guide the agent's use of terminology, notation and the presentation of definitions.
+  See [choose terminology references](user-instructions/user-instructions.md#terminology-references) for an instruction example.
 
 These choices can apply to your writing in general, a particular research field or the current manuscript, and are saved with the corresponding preferences or conventions.
 Reference works and their purposes for general writing are recorded in `profiles/<human>/writing/readme.md`.
@@ -220,12 +235,14 @@ Without the author's explicit agreement, an [agent](#notion-agent) will not remo
 The framework supports writing review and mathematical review of manuscripts, separately or together.
 
 - Writing review: the agent checks exposition, structure, terminology, notation and citations against the four writing layers; outstanding revision comments are kept in `revisions.md` in the manuscript directory.
+  See [writing review](user-instructions/user-instructions.md#writing-review) for an instruction example.
 - Mathematical review: the agent checks hypotheses, reasoning and conclusions; current unresolved mathematical problems and their necessary grounds are kept in `review.md` in the manuscript directory and updated through rechecks.
+  See [manuscript mathematical review](user-instructions/user-instructions.md#manuscript-review) for an instruction example.
 
 Review results state the actual scope checked, the findings and any unresolved matters.
 When independent review is needed, you can arrange writing and review in separate sessions, assigning the review to an agent that neither participated in substantive writing or argument development for the content nor received substantive discussions of that development, to maintain an independent [context](#notion-context).
 An independent initial review forms its own findings from the current manuscript and applicable conventions before comparing them with existing comments.
-Subsequent rechecks consider the previous round's unresolved comments, examine the relevant manuscript changes and their effects, update the comments and remove resolved items.
+The writing agent reports corrections; the reviewing agent checks the changes and their effects before updating or removing the corresponding opinions.
 
 ### Agent writing memory
 
@@ -243,7 +260,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.11.0.
+The current framework version is 0.11.1.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.
@@ -305,6 +322,8 @@ Depending on your tools and setup, you may also see the following directories.
 
 - Each computation has a numbered J directory containing its programs, required inputs and `readme.md`.
   Generated outputs are stored separately under the local, [Git](git-repository/git-repository.md#notion-git)-ignored path `mathematics/computations/outputs/<J>/`.
+  For data needed by later proofs, checks or reproduction, the agent retains with the repository either the necessary data themselves or sufficient generation programs, base inputs, parameters, dependency conditions and validation methods to reconstruct them reliably at reasonable cost.
+  If reconstruction is unreliable or too costly, or a particular object must be retained, the agent retains the necessary data themselves.
 - Literature audit units are grouped by citation key under `mathematics/audits/literature/`.
 - The [definition index](../mathematics/definitions/index.md) organizes definitions, terminology and symbols by concept, with links to their complete formulations in the responsible C, L or U materials.
 - The canonical [bibliography](../mathematics/literature/references.bib) records publication identity and citation keys.
@@ -315,10 +334,10 @@ Depending on your tools and setup, you may also see the following directories.
 | Term | Meaning |
 | --- | --- |
 | <a id="notion-llm"></a>LLM (large language model) | An AI model trained on large amounts of text to process and generate language, including mathematical explanations and computer code. |
-| <a id="notion-agent"></a>Agent | An AI system powered by an [LLM](#notion-llm) that can plan and carry out tasks, use tools and adjust its actions based on results. It works through an [agent harness](agent-harness.md) within the scope and limits authorized by the human user. It has not yet evolved into an [Agent](https://en.wikipedia.org/wiki/Agent_%28The_Matrix%29). |
+| <a id="notion-agent"></a>Agent | An AI system powered by an [LLM](#notion-llm) that can plan and carry out tasks, use tools and adjust its actions based on results. It works through an [agent harness](harness/agent-harness.md) within the scope and limits authorized by the human user. It has not yet evolved into an [Agent](https://en.wikipedia.org/wiki/Agent_%28The_Matrix%29). |
 | <a id="notion-context"></a>Context | The information available to an LLM during a model call, including instructions, conversation history, supplied materials and tool results. The current context may contain only a selection or summary of the full [session](#notion-session) history. |
 | <a id="notion-context-length"></a>Context length | The maximum combined length of input and output an LLM can handle at once, usually measured in tokens (small units of text). This includes instructions, conversation history, supplied material and the generated response. |
-| <a id="notion-session"></a>Session | A continuing interaction with an [agent](#notion-agent), managed by an [agent harness](agent-harness.md). It may contain multiple conversation turns, each typically beginning with a user message and including the agent's responses and tool operations. The harness maintains the conversation history and prepares the [context](#notion-context) for each model call; to stay within the model's [context length](#notion-context-length), it may select or summarize earlier history. |
+| <a id="notion-session"></a>Session | A continuing interaction with an [agent](#notion-agent), managed by an [agent harness](harness/agent-harness.md). It may contain multiple conversation turns, each typically beginning with a user message and including the agent's responses and tool operations. The harness maintains the conversation history and prepares the [context](#notion-context) for each model call; to stay within the model's [context length](#notion-context-length), it may select or summarize earlier history. |
 | Material identifier | A structured reference identifying a material and, where applicable, its version. For example, `Alice_C_F0007_v1.md` identifies a [Claim](#material-claim) by author, kind, research line, serial number and version. |
 | <a id="notion-research-line-letter"></a>Research-line letter | A letter, such as `F` in `Alice_C_F0007_v1.md`, used to organize numbered research materials. Task-derived materials inherit the Task's letter but receive their own serial numbers. The default is `A` when no line is specified. |
 | <a id="notion-author-key"></a>Author key | A stable registered key for a human author, such as `Alice`, used in material identifiers and authorship records. |

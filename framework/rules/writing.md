@@ -217,6 +217,8 @@ Use them proportionately in other authored mathematical prose without extending 
 2. **Make the problem and contribution easy to find.**
    Introduce the actual question and relevant objects, explain the role of the result or construction, and identify the main conclusion and important conditions early enough to orient the technical development.
    Distinguish established background, the document's contribution, conjectures and unresolved limits.
+   An abstract, when present or requested, concentrates on the core problem, principal conclusions and substantive contribution, retaining essential conditions and explaining the key method or mechanism when it conveys essential content.
+   Keep its stated strength and scope consistent with the supported results.
    Use an overview when helpful without requiring an abstract, roadmap or fixed section order for every document.
 3. **Organize the exposition around the mathematical argument.**
    Order definitions, results and explanations so their roles are apparent when needed, giving each paragraph a coherent purpose connected to its neighbors.
@@ -224,6 +226,8 @@ Use them proportionately in other authored mathematical prose without extending 
    Fit local edits to the surrounding argument while retaining the authorized local scope.
 4. **Explain the steps that create a real obstacle.**
    Give enough justification for the selected reader to follow deductions, explaining a non-obvious reduction, construction, estimate, hypothesis use or source application where needed.
+   Proof exposition combines mathematical correctness, precision and readability, preserving hypotheses, quantifiers, logical dependencies and distinctions needed to justify the conclusion.
+   Retain symbols, formulas and intermediate calculations that help the reader follow the objects, reductions, estimates or transitions, using concise prose where needed to explain their role or the passage between steps.
    Calling a step clear or standard cannot hide a missing argument or unsupported application; familiar applicable steps can remain concise.
    Intuition, a proof outline, an example or a citation does not replace the proof or source evidence the assertion requires.
 5. **Reduce unnecessary reading effort while preserving precision.**
@@ -250,7 +254,12 @@ Keep necessary explanation, hypotheses and reader navigation; word removal or a 
 
 <a id="precise-object-names"></a>
 **Prefer precise object names.**
-When describing mathematical objects, hypotheses and conclusions, prefer names that directly correspond to the definitions, notation or conditions.
+Use established mathematical terminology in its actual meaning, matching the object, hypotheses and property being described.
+Do not fabricate technical terms or improvise word combinations that merely look like established terminology.
+When no established name is known, describe the object precisely using established mathematical concepts and state the defining properties, relations and conditions needed to identify it.
+Use necessary definitions and neutral notation to keep subsequent references clear.
+Apply this requirement to expressions inherited from drafts, strategies or agent suggestions.
+Repeated use or marking a fabricated label as provisional does not satisfy the terminology requirement.
 
 When using a term, abbreviation or modifier, check which object actually has the stated property and keep the wording consistent with the definitions, symbols and proofs.
 When revising terminology, check the mathematical meaning of the affected sentences and subsequent uses as well as the words themselves.
@@ -286,11 +295,13 @@ Repeated use alone does not justify another name.
 If an existing expression is short and clear, prefer it when an alias would only require the reader to translate between symbols.
 When unifying notation or adapting an earlier draft, reassess the usefulness of inherited aliases.
 Separate symbols remain appropriate for new constructions, repeatedly used long expressions or objects whose names help organize the argument.
+When simplifying notation, preserve symbols that help the intended reader follow the argument.
 
 <a id="formulas-and-prose"></a>
 **Use formulas for precise relations and prose for their role.**
 When a short formula clearly expresses the relation between two quantities, state it directly and use concise prose to explain its purpose or consequences.
 Avoid restating each operation, constant factor or normalization before or after the formula.
+Keep formulas and intermediate calculations that aid understanding of the argument, with the assumptions and logical connections needed to justify each step.
 Explain particular steps when they present a real obstacle to understanding.
 Explanations following a definition should help the reader understand the object or advance the argument.
 Prefer useful mathematical properties and consequences to repeated normalization details or information already conveyed by the defining formula; retain conventions needed to determine the meaning or value of the object.
@@ -513,8 +524,12 @@ Self-checks do not establish independent review, and ordinary writing does not r
 
 Writing self-checks and the writing part of an assigned manuscript review use this standard and procedure at their actual scope.
 Check mathematical meaning, assumptions, object references, terminology, notation, definition and argument expression, citations and attribution, coherence, wording and actual human requirements under the applicable writing layers.
+Check affected terms, compound expressions and subsequent references against the [object-naming rule](#precise-object-names), including inherited and provisional expressions.
+Judge their mathematical meaning and use through contextual reading and necessary source lookup.
 Apply the [modifier rule](#direct-results-and-modifiers) to each modifier's function in context, including noun modifiers and compound object names; preserve necessary mathematical distinctions and human choices rather than optimizing a word count.
 Local work covers new, modified and adopted content and direct effects; requested whole-manuscript review requires actual whole-manuscript coverage.
+In a checked abstract, apply the [common writing defaults](#common-mathematical-writing-defaults) to its core problem, principal conclusions, contribution, essential conditions and any method needed to convey the result's substance.
+In checked proof exposition, apply the same correctness, precision and readability requirements, retaining symbols, formulas, intermediate calculations and explanations that aid the intended reader.
 Searches locate candidates and tools supply stated mechanical facts; reading rules, keyword matches, compilation, formatting and link checks do not replace contextual content judgment.
 
 1. Determine the actual manuscript, responsible writer(s), intended reader and purpose, requested scope and applicable choices, and whether the work is self-checking, assigned review or an already authorized recheck.
