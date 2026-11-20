@@ -159,7 +159,7 @@ Collaborators in the same repository can establish a joint Task for a common mat
 
 ### Cautions
 
-- [Agents](#notion-agent) will try to download publicly available literature to [the local literature directory](../mathematics/literature/pdf).
+- [Agents](#notion-agent) will try to download publicly available literature to `mathematics/literature/pdf/` under the current repository root.
   This directory is ignored by [Git](git-repository/git-repository.md#notion-git) by default.
   If you put your own private material there, make sure this directory is ignored by Git and is not uploaded to a public repository.
 - If collaborators would otherwise use the same author key, agree on distinct keys, such as `Wang1` and `Wang2`.
@@ -177,7 +177,7 @@ Collaborators in the same repository can establish a joint Task for a common mat
 
 - Ask an [agent](#notion-agent) whenever you have questions about the framework.
 - If you use multiple ACME repositories on the same device, you can store your literature in a single local PDF folder.
-  Ask an agent to use directory junctions to point [each repository's local literature directory](../mathematics/literature/pdf) to that folder; see [create a junction](user-instructions/user-instructions.md#create-junction) for an instruction example.
+  On Windows, ask an agent to use directory junctions to point `mathematics/literature/pdf/` under each repository root to that folder. See [create a junction](user-instructions/user-instructions.md#create-junction) for an instruction example.
   Grant the agent the permissions needed to read and manage files in that folder.
 - When agents automate related tasks involving credentials, store secrets appropriately and exclude them from [Git](git-repository/git-repository.md#notion-git) tracking.
 
@@ -244,6 +244,19 @@ When independent review is needed, you can arrange writing and review in separat
 An independent initial review forms its own findings from the current manuscript and applicable conventions before comparing them with existing comments.
 The writing agent reports corrections; the reviewing agent checks the changes and their effects before updating or removing the corresponding opinions.
 
+### Literature search and citations
+
+Once your manuscript contains specific mathematical statements, you can ask an [agent](#notion-agent) to [search for relevant literature](user-instructions/user-instructions.md#refs-seek) for the whole manuscript or selected sections, or focus the search on a single theorem, lemma or property.
+When the search finds relevant sources, the agent compares their hypotheses and conclusions with those of the manuscript statements.
+It explains whether each source gives the same result, under what conditions it implies the manuscript statement, or whether it only covers a special case or offers a related method.
+
+The agent records the findings in `literature-seek.md` in the manuscript's directory, noting the known editions, the locations of relevant passages in the originals, what it checked and which leads still need checking.
+
+If you ask the agent to search and edit the manuscript in the same instruction, it handles substantive new mathematical findings or changes to a result's basis before revising the affected text.
+It checks the source's applicability, records the necessary evidence and local reasoning in the relevant mathematical materials, and carries out the assessment and review the change requires.
+If the source requires an extra hypothesis and the deduction of the broader statement remains unproved, the agent records what remains to be proved and uses the source within the scope it supports.
+For citations it adds or changes in TeX, it records their locations, purposes, grounds for use and outstanding checks in `citation.md`.
+
 ### Agent writing memory
 
 During writing and revision, the [agent](#notion-agent) proactively summarizes feedback and experience into useful writing notes maintained for each author.
@@ -260,7 +273,7 @@ Under construction.
 
 ### Framework version
 
-The current framework version is 0.11.1.
+The current framework version is 0.12.0.
 
 When automatic checks are enabled and network access is permitted,
 the [agent](#notion-agent) checks the [official ACME framework](https://github.com/vtejdn/acme) for a newer version at the start of work, at most once per UTC day.
@@ -369,6 +382,7 @@ A Task organizes research around a precise mathematical objective, its authorize
 | `retired` | The investigation has been discontinued. Its reasons, useful findings and unfinished parts remain recorded. |
 
 - A Task may remain active while no [agent](#notion-agent) is currently working on it.
+- When an individual Task is selected for execution, the agent creates or reuses a separate local execution record (E) in the current working copy for the Task’s run state, effective allowances and stopping conditions.
 - A Task brings together the research materials supporting your investigation.
   Related manuscripts, progress reports and other documents you request can be collected in a project such as `mathematics/manuscripts/Alice/Alice_T_A0007/`.
   Manuscript projects are organized by the author responsible for writing and associated with the relevant research Task.

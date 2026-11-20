@@ -1,10 +1,9 @@
 """Bounded derived navigation retaining fixed history and original source scope."""
 import posixpath
-from pathlib import PurePosixPath
 from urllib.parse import quote
 from . import discovery, documents, identity, validation, review
 from .navigation import cell
-from ..core import source_refs, paths as storage_paths
+from ..core import source_refs
 
 INDEXES = {'C': 'mathematics/claims/index.md', 'T': 'mathematics/tasks/index.md'}
 require = identity.require
@@ -20,28 +19,8 @@ def link(index, label, locator):
     return '[' + cell(label) + '](' + href + ')'
 
 
-def native_target(locator):
-    """Classify a declared J child without probing or loading its payload."""
-    path = locator['path']
-    storage_paths.check_local_role(path)
-    storage_paths.check_public_target(path)
-    try:
-        ident = identity.parse(path)
-    except ValueError:
-        return False
-    if ident.kind != 'J':
-        return False
-    entrance = 'mathematics/computations/programs/' + ident.name + '/readme.md'
-    parts = PurePosixPath(path).parts
-    require(len(parts) >= 5 and parts[3] == ident.name
-            and parts[:3] in {('mathematics', 'computations', 'programs'),
-                             ('mathematics', 'computations', 'outputs')},
-            'A declared computation target needs its actual J storage identity.')
-    return path != entrance
-
-
 def target_link(index, label, locator):
-    if not source_refs.external(locator['path']) and native_target(locator):
+    if not source_refs.external(locator['path']) and validation.native_computation_target(locator['path']):
         # A code locator preserves a native fragment without promising a
         # currently available local data link or treating it as a source URI.
         address = locator['path'] + ('#' + locator['anchor'] if locator.get('anchor') else '')
@@ -53,7 +32,7 @@ def target_link(index, label, locator):
 
 
 def check_target(locator, read):
-    if not native_target(locator):
+    if not validation.native_computation_target(locator['path']):
         validation.validate_locator_targets([locator], read)
 
 def views(paths, read, *, source_info=None, strategy_paths=()):
@@ -114,21 +93,26 @@ def views(paths, read, *, source_info=None, strategy_paths=()):
                                     'Selected primary material has another family or original family identity.')
                     if role in refs:
                         refs[role].append(('Source only: ' if external else '') + target_link(index, scope, vars(loc)))
-                    if role == 'review' and kind == 'C':
+                    if role == 'review':
+                        if not external:
+                            account = document(loc.path)
+                            bound = review.bindings(account, finding=loc)
+                            for _finding, target, _checked_scope in bound:
+                                if not source_refs.external(target.path):
+                                    check_target(vars(target), source)
+                        if kind != 'C':
+                            continue
                         claim = link(index, row['family'], {'path': row['path']})
                         decision_link = link(index, doc.current.anchor, vars(doc.current))
                         finding_link = ('Source only: ' if external else '') + link(index, loc.anchor or 'Whole account', vars(loc))
                         if external:
                             findings.append([claim, decision_link, finding_link, 'Unavailable source finding', 'Unavailable', 'Unavailable'])
                             continue
-                        account = document(loc.path)
                         relationship = review.relationships(account, finding=loc).get(loc, 'Not declared')
-                        bound = review.bindings(account, finding=loc)
                         if not bound:
                             findings.append([claim, decision_link, finding_link, cell(relationship), 'Not declared', 'Not declared'])
                         for _finding, target, checked_scope in bound:
                             unavailable = source_refs.external(target.path)
-                            if not unavailable: check_target(vars(target), source)
                             inspected = ('Source only: ' if unavailable else '') + target_link(index, target.path + ('#' + target.anchor if target.anchor else ''), vars(target))
                             findings.append([claim, decision_link, finding_link, cell(relationship), inspected, cell(checked_scope)])
             origin = doc.identity.source_repository if imported else 'Local original'

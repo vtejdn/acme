@@ -168,7 +168,7 @@ Los colaboradores de un mismo repositorio pueden establecer un Task conjunto par
 
 ### Precauciones
 
-- Los [agentes](#notion-agent) intentarán descargar la literatura de acceso público en [el directorio local de literatura](../mathematics/literature/pdf).
+- Los [agentes](#notion-agent) intentarán descargar la literatura de acceso público en el directorio `mathematics/literature/pdf/`, relativo a la raíz del repositorio actual.
   [Git](<git-repository/Repositorios Git.md#notion-git>) ignora este directorio de forma predeterminada.
   Si guarda allí sus propios materiales privados, asegúrese de que Git ignore el directorio y de que este no se suba a un repositorio público.
 - Si varios colaboradores fueran a utilizar la misma clave de autor, acuerden claves distintas, como `Wang1` y `Wang2`.
@@ -186,7 +186,7 @@ Los colaboradores de un mismo repositorio pueden establecer un Task conjunto par
 
 - Pregunte a un [agente](#notion-agent) siempre que tenga dudas sobre el marco.
 - Si utiliza varios repositorios ACME en el mismo equipo, puede reunir la literatura en una única carpeta local de archivos PDF.
-  Pida al agente que utilice uniones de directorio (junctions) para que [el directorio local de literatura de cada repositorio](../mathematics/literature/pdf) apunte a esa carpeta; consulte el ejemplo [Crear una unión](<user-instructions/Ejemplos de instrucciones.md#create-junction>).
+  En Windows, pida al agente que cree una unión de directorio para que la ruta `mathematics/literature/pdf/`, relativa a la raíz de cada repositorio, apunte a esa carpeta. Consulte el ejemplo [Crear una unión](<user-instructions/Ejemplos de instrucciones.md#create-junction>).
   Conceda al agente los permisos necesarios para leer y gestionar los archivos de esa carpeta.
 - Cuando los agentes automaticen tareas relacionadas que utilicen credenciales, guarde los secretos de forma adecuada y exclúyalos del seguimiento de [Git](<git-repository/Repositorios Git.md#notion-git>).
 
@@ -253,6 +253,19 @@ Cuando se necesite una revisión independiente, puede organizar la redacción y 
 En una primera revisión independiente, el agente forma su propio juicio a partir del manuscrito actual y las convenciones aplicables antes de compararlo con los comentarios existentes.
 El agente redactor informa de las correcciones; el agente revisor comprueba los cambios y sus efectos antes de actualizar o retirar los comentarios correspondientes.
 
+### Búsqueda bibliográfica y citas
+
+Cuando el manuscrito ya contiene enunciados matemáticos concretos, puede pedir a un [agente](#notion-agent) que [busque bibliografía pertinente](<user-instructions/Ejemplos de instrucciones.md#refs-seek>) para todo el manuscrito, para determinadas secciones o para un teorema, un lema o una propiedad en particular.
+Si encuentra una fuente pertinente, el agente compara sus hipótesis y conclusiones con las de los enunciados del manuscrito.
+Indica si la fuente ofrece el mismo resultado, en qué condiciones permite deducir el enunciado del manuscrito, si solo cubre un caso particular o si aporta un método afín.
+
+El agente registra los hallazgos en `literature-seek.md`, en el directorio del manuscrito, con las ediciones conocidas, la ubicación de los pasajes en los originales, el alcance real de la comprobación y las pistas pendientes de revisar.
+
+Si en el mismo encargo pide al agente que busque bibliografía y modifique el manuscrito, este atiende los hallazgos matemáticos de fondo o los cambios en el fundamento de un resultado antes de modificar los pasajes afectados.
+Comprueba que la fuente sea aplicable, conserva la evidencia y los razonamientos necesarios en los materiales matemáticos correspondientes y realiza la evaluación y la revisión matemática que requiera el cambio.
+Si la fuente exige una hipótesis adicional y todavía falta una demostración del enunciado más general, el agente registra lo que queda por demostrar y utiliza la fuente dentro del alcance que esta respalda.
+Para las citas que añade o modifica en los archivos TeX, el agente anota en `citation.md` su ubicación, su propósito, qué justifica su uso y qué falta por comprobar.
+
 ### Memoria de redacción de los agentes
 
 Durante la redacción y la modificación, el [agente](#notion-agent) resume activamente los comentarios recibidos y la experiencia para elaborar notas de redacción útiles, guardadas por autor.
@@ -269,7 +282,7 @@ En elaboración.
 
 ### Versión del marco
 
-La versión actual del marco es 0.11.1.
+La versión actual del marco es 0.12.0.
 
 Cuando las comprobaciones automáticas estén activadas y se permita el acceso a la red,
 el [agente](#notion-agent) comprobará al comenzar el trabajo si hay una versión más reciente del [marco ACME oficial](https://github.com/vtejdn/acme), como máximo una vez por día UTC.
@@ -378,6 +391,7 @@ Un Task organiza la investigación en torno a un objetivo matemático preciso, s
 | `retired` | La investigación se ha abandonado. Sus razones, hallazgos útiles y partes pendientes siguen registrados. |
 
 - Un Task puede seguir activo aunque ningún [agente](#notion-agent) esté trabajando en él en ese momento.
+- Cuando se selecciona un Task individual para su ejecución, el agente crea o reutiliza un registro local de ejecución (E) en la copia de trabajo actual para anotar por separado el estado de ejecución, las cuotas vigentes y las condiciones de parada.
 - Un Task reúne los materiales de investigación que sustentan su estudio.
   Los manuscritos relacionados, los informes de progreso y los demás documentos que solicite pueden reunirse en un proyecto como `mathematics/manuscripts/Alice/Alice_T_A0007/`.
   Los proyectos de manuscritos se organizan por el autor responsable de la redacción y se vinculan al Task de investigación correspondiente.

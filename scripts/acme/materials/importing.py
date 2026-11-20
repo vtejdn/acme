@@ -148,6 +148,7 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
     r.require(isinstance(correspondence, dict) and all(value == author for value in correspondence.values()),
               'Prepared same-human source correspondence belongs only to this importing human.')
     own, foreign, notices, reservations = [], [], [], []
+    reused = set()
     for entry in entries:
         if 'unavailable' in entry:
             r.require(isinstance(entry['unavailable'], str) and entry['unavailable'].strip(),
@@ -159,14 +160,10 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
             continue
         path = entry['local']
         if entry.get('reuse'):
-            raw = batch.snapshot.bytes(path)
             # Reuse may name already-local foreign or already-intaken own
             # evidence. It writes neither a conversion nor a shadow original.
-            if names.candidate(path):
-                doc = documents.parse(path, raw.decode('utf-8-sig'))
-                if doc.identity.source_repository:
-                    from ..intake.acquire import material_info
-                    material_info(repo, doc)
+            batch.snapshot.bytes(path)
+            reused.add(path)
             own.append(path)
             continue
         target = _destination(repo, path, author)
@@ -227,9 +224,13 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
 
     def validate(read, view):
         from ..execution import records
-        entrances = set(discovery.candidates(repo.root)) | set(batch.pending)
+        entrances = None
         units = []
         for path in own:
+            reuse = path in reused
+            if reuse and path in batch.pending:
+                r.require(batch.pending[path] == batch.snapshot.bytes(path),
+                          'A reused file must retain its selected local bytes: ' + path)
             raw = read(path)
             ident = material_identity(path)
             if ident and ident.kind == 'J' and not _authored_entrance(path, ident):
@@ -238,7 +239,23 @@ def import_content(repo, source_root, plan, *, author=None, timeout=30):
                 r.require(owner.identity == ident, 'A native J input needs its actual same-group authored entrance.')
             if ident and _authored_entrance(path, ident):
                 doc = documents.parse(path, raw)
-                documents.check(doc, read, paths=entrances)
+                if ident.kind in 'STU' and entrances is None:
+                    entrances = set(discovery.candidates(repo.root)) | set(batch.pending)
+                source_info = None
+                if reuse and ident.source_repository:
+                    from ..intake.acquire import material_info
+                    original = material_info(repo, doc, read=read)
+                    source_info = lambda _document: original
+                if reuse and ident.kind in 'RL':
+                    # The reuse entry names a file. A consumer selecting a
+                    # finding supplies the scope for reading its bound inputs.
+                    from . import review
+                    review.bindings(doc)
+                else:
+                    inputs = (doc.current,) if doc.current is not None else ()
+                    documents.check(doc, read, paths=entrances or (), source_info=source_info,
+                                    writing=not reuse and batch.snapshot.watch(path) is None,
+                                    decision_inputs=inputs)
                 if ident.kind == 'U':
                     units.extend(candidate for candidate in entrances if discovery.unit_namespace(candidate, ident))
         if units:

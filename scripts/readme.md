@@ -125,7 +125,9 @@ Agent-led upgrades may use fixed official public files and ordinary recovery cop
 Material creation supports C/T/S/R/D/J/L.
 For C, absent or actually empty Current assessment means unselected, not open or an unknown fourth state; malformed nonempty selectors and malformed existing decisions remain errors, and no initial decision/date is invented.
 T keeps its required Current decision; actual key C and Task-completion premises retain their separate [assessment/adoption duties](../framework/rules/claims.md#mathematical-assessment-and-review-findings).
-`--task PATH` inherits the selected actual Task's line and checks its type, requiring an ordinary Task for S.
+`--task PATH` checks the selected Task's identity, type and applicable coordination declarations and inherits its line.
+Creating S requires an ordinary Task.
+The new material's declarations identify any evidence the creation uses.
 Omitting both `--task` and `--line` uses A for new local material.
 The agent prepares the body's actual associations under the [common preparation-input responsibility](../framework/rules/workflow.md#prepared-work-and-input-applicability).
 C/T/R/L start at physical v1, S/D use stable paths, and J allocates a group README.
@@ -137,7 +139,9 @@ Fixed C/T/R/L/J and continuing S families use the compact [`material_next` state
 For an already used namespace, initialize the state from an agent-confirmed issued-number upper bound before relevant allocation or retirement; surviving filenames alone do not justify resetting it.
 Direct authoring maintains the same state, with no new migration command or automatic Git-history reconstruction.
 
-`material.py check` checks material structure and direct required interfaces; public `show` uses those same shared-material checks and exposes a U's current text and necessary acquisition provenance.
+`material.py check` and `check-files` check material structure and required evidence, including files and anchors bound by findings selected in the current decision.
+Public `show` validates selected finding anchors, declared relationships and binding locators as metadata, leaving native J payload reads to actual evidence checks.
+For U, `show` exposes its current text and necessary acquisition provenance.
 Neither operation consults a local literature account or queries original availability, private source bytes or native HTML anchors.
 For J, `check` and `show` retain current structure, necessary inputs and original-identity checks without requiring every historical acquired anchor in current text.
 For L, those ordinary readers likewise validate historical acquisition facts without requiring an obsolete acquired section to survive a lawful in-place repair under the [historical-locator rule](../framework/rules/intake.md#one-operation-record).
@@ -174,13 +178,19 @@ The expectation compares the locator only and rejects a missing expectation or a
 Prepared Task writes follow the [common preparation-input responsibility](../framework/rules/workflow.md#prepared-work-and-input-applicability), including when the expected locator matches.
 The Python interface uses explicit expected_current=None for an unselected C, distinct from omission; first append/select may establish a missing Current section, while candidate append remains unselected.
 `append-decision` adds a real decision and `select --decision PATH#decision` selects an exact real decision, without a clearing bypass.
+An append checks the supplied decision's inputs and applicable review bindings, including for a candidate.
+A reselection checks the exact decision and its required inputs and applicable declared review bindings.
+Creation and revision check the current decision and explicitly supplied new decisions, including the evidence bound by their selected findings.
+Unchanged historical paths and scopes remain declarations, with target reads reserved for their actual use or explicit verification.
 On a changed premise or exclusive-create collision, prepare again only if the intended operation still applies to the actual selected material.
 Family issuance checks the stored bound and current occupation under the existing short mutation lock, advances the next unissued value and exclusively publishes the destination.
 Deletion or failure does not lower the bound; unused gaps are acceptable.
 A revision preserves its existing family and advances only its physical version.
 The writer creates a genuine research version; ordinary maintenance and pure logical repair, including retained older material, use ordinary authorized edits under the [common repair/version boundary](../framework/rules/records.md#in-place-maintenance-and-logical-repair), without a new family, version or dated correction stream solely for repair.
 Successfully rechecked R logical repair may update the same finding, bindings, relationship and limits truthfully under the [rolling rule](../framework/rules/proof-audits.md#rolling-review-repair); genuinely new independent evidence needing distinct retention uses its appropriate same-topic version.
-The optional R writer and checkers validate the applicable declarations and locators.
+The optional writers reject new or changed formal input selections or review targets under `mathematics/computations/outputs/`.
+Use exact retained inputs or the fixed J material that supplies the generation and verification basis. [Computation retention](../framework/rules/computations.md#retained-data-and-generation-materials)
+The R writer and checkers validate the applicable declarations and locators.
 Prepared formal R bindings follow that common responsibility at the actual inspected input and scope.
 Task setup creates no E or operational link; actual selected ordinary execution prepares or reuses its local boundary, and a joint T has no E or direct S.
 The optional Task coordination table declares task-type joint in every joint physical version, or one exact joint-task parent on an ordinary individual T under the [format](../framework/material-format.md#task-coordination).
@@ -367,6 +377,8 @@ The agent keeps public prose free of private lookup links; explicitly selected a
 Before reading a selected source profile, including for prepared text or edits, the helper derives its human name from the actual safely resolved source path and checks the importing human or an already established author_correspondence.
 This check supplies no path-alias compatibility; the agent confirms the intended object and corrects noncanonical input spellings when needed.
 A reuse entry keeps an adequate actual local counterpart, including already-intaken own content, without conversion or duplication.
+It checks the counterpart's identity, applicable provenance and declarations, and reads adopted inputs such as the selected C/T decision's evidence.
+For a reused review, an actual finding selection determines the target evidence to check.
 An unavailable entry describes the real missing input, which the agent retains at its actual consumer without a stub or unsupported completion claim.
 Foreign necessary dependencies use explicitly reached intake entries and retain their separate authors and required provenance; within this optional interface, neutral publication checks the final selected set before writing.
 Shared publication checks the actual located write destinations for case-insensitive collisions before prepared content writes, including conflicting updates to one existing file, while retaining expected, exclusive creation and rollback protections.

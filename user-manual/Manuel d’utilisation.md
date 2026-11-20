@@ -168,7 +168,7 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 
 ### Points d’attention
 
-- Les [agents](#notion-agent) tenteront de télécharger la littérature publiquement accessible dans le [répertoire local de littérature](../mathematics/literature/pdf).
+- Les [agents](#notion-agent) tenteront de télécharger la littérature publiquement accessible dans le répertoire `mathematics/literature/pdf/`, dont le chemin est relatif à la racine du dépôt courant.
   Ce répertoire est ignoré par [Git](<git-repository/Dépôts Git.md#notion-git>) par défaut.
   Si vous y placez vos propres documents privés, assurez-vous qu’il est ignoré par Git et qu’il n’est pas téléversé vers un dépôt public.
 - Si des collaborateurs devaient utiliser la même clé d’auteur, convenez de clés distinctes, par exemple `Wang1` et `Wang2`.
@@ -186,7 +186,7 @@ Les collaborateurs d’un même dépôt peuvent établir un Task conjoint pour u
 
 - Interrogez un [agent](#notion-agent) dès que vous avez des questions sur le cadre.
 - Si vous utilisez plusieurs dépôts ACME sur le même appareil, vous pouvez regrouper votre littérature dans un seul dossier local de fichiers PDF.
-  Demandez à l’agent d’utiliser des jonctions de répertoires pour faire pointer [le répertoire local de littérature de chaque dépôt](../mathematics/literature/pdf) vers ce dossier ; voir l’exemple [Créer une jonction](<user-instructions/Exemples de consignes.md#create-junction>).
+  Sous Windows, demandez à l’agent de faire pointer le chemin `mathematics/literature/pdf/`, relatif à la racine de chaque dépôt, vers ce dossier à l’aide d’une jonction de répertoires. Voir l’exemple [Créer une jonction](<user-instructions/Exemples de consignes.md#create-junction>).
   Accordez à l’agent les autorisations nécessaires pour lire et gérer les fichiers de ce dossier.
 - Lorsque les agents automatisent des tâches associées nécessitant des identifiants d’accès, conservez les secrets de manière appropriée et excluez-les du suivi par [Git](<git-repository/Dépôts Git.md#notion-git>).
 
@@ -253,6 +253,19 @@ Lorsqu’une vérification indépendante est nécessaire, vous pouvez répartir 
 Lors d’un premier examen indépendant, l’agent forme d’abord son propre jugement à partir du manuscrit actuel et des conventions applicables, puis le compare aux remarques existantes.
 L’agent chargé de la rédaction rapporte les corrections ; l’agent chargé de la relecture vérifie les modifications et leurs effets avant d’actualiser ou de retirer les remarques correspondantes.
 
+### Recherche bibliographique et citations
+
+Lorsque le manuscrit contient déjà des énoncés mathématiques précis, vous pouvez demander à un [agent](#notion-agent) de [rechercher des références pertinentes](<user-instructions/Exemples de consignes.md#refs-seek>) pour l’ensemble du manuscrit, pour certaines sections ou pour un théorème, un lemme ou une propriété en particulier.
+Si la recherche aboutit à une source pertinente, l’agent compare les hypothèses et les conclusions de cette source à celles du manuscrit.
+Il indique si la source établit le même résultat, dans quelles conditions elle permet de déduire l’énoncé, si elle se limite à un cas particulier ou si elle fournit une méthode apparentée.
+
+Les résultats sont consignés dans `literature-seek.md`, dans le répertoire du manuscrit, avec les éditions connues, les passages concernés dans les sources originales, le périmètre effectivement vérifié et les pistes qui restent à examiner.
+
+Si vous demandez à l’agent de rechercher des références et de modifier le manuscrit dans la même consigne, il traite les nouvelles constatations mathématiques de fond ou les changements dans les fondements d’un résultat avant de modifier les passages concernés.
+Il vérifie que la source s’applique, consigne les éléments probants et le raisonnement nécessaire dans les documents mathématiques correspondants, puis procède à l’évaluation et à l’examen mathématique requis par le changement.
+Si la source exige une hypothèse supplémentaire et que la déduction de l’énoncé plus général reste à démontrer, l’agent consigne ce point et limite l’usage de la source à ce qu’elle établit.
+Pour les citations ajoutées ou modifiées dans les sources TeX, l’agent consigne dans `citation.md` leur emplacement, leur rôle, les éléments qui justifient leur emploi et les vérifications qui restent à faire.
+
 ### Mémoire de rédaction des agents
 
 Pendant la rédaction et la révision, l’[agent](#notion-agent) synthétise activement les retours et l’expérience pour en tirer des notes de rédaction utiles, conservées par auteur.
@@ -269,7 +282,7 @@ En cours de rédaction.
 
 ### Version du cadre
 
-La version actuelle du cadre est 0.11.1.
+La version actuelle du cadre est 0.12.0.
 
 Lorsque les vérifications automatiques sont activées et que l’accès au réseau est autorisé,
 l’[agent](#notion-agent) vérifie au début du travail, au plus une fois par jour UTC, si une nouvelle version du [cadre ACME officiel](https://github.com/vtejdn/acme) est disponible.
@@ -378,6 +391,7 @@ Un Task organise la recherche autour d’un objectif mathématique précis, de s
 | `retired` | La recherche a été abandonnée. Ses raisons, les constats utiles et les parties inachevées restent consignés. |
 
 - Un Task peut rester actif même si aucun [agent](#notion-agent) n’y travaille à cet instant.
+- Lorsqu’un Task individuel est sélectionné pour être exécuté, l’agent crée ou réutilise un registre d’exécution local (E) dans la copie de travail courante pour y consigner séparément l’état d’exécution, les quotas en vigueur et les conditions d’arrêt.
 - Un Task rassemble les documents de recherche qui soutiennent votre investigation.
   Les manuscrits associés, rapports d’avancement et autres documents que vous demandez peuvent être réunis dans un projet tel que `mathematics/manuscripts/Alice/Alice_T_A0007/`.
   Les projets de manuscrits sont organisés par auteur responsable de la rédaction et associés au Task de recherche concerné.

@@ -78,7 +78,8 @@ First determine effective human choices under the [actual instruction scope](#in
 Applicable explicit author preferences always prevail over conflicting agent summaries.
 Agent notes remain advisory and create no additional policy layer, adopted author choice or permission.
 Only an actual explicit human instruction or adoption changes the responsible preference; retain an adopted choice at its proper home and remove redundant note content.
-Keep a one-off request within that exchange unless the actual instruction adopts a lasting preference, and correct the application of an existing rule without creating a new personal preference.
+Apply a one-off instruction or correction to the specified exchange or passage without treating it as a lasting preference.
+Correcting the application of an existing rule fulfills that rule; retain any separately supported reusable lesson as advisory guidance.
 
 Maintain shared terminology and notation once in `profiles/<human>/terminology.md`, preserving actual scope and clearly distinguishing explicit author choices from advisory agent suggestions when both are retained.
 Communication and writing files may point to the relevant section instead of copying its list; agent summaries cannot silently change an explicit convention.
@@ -88,20 +89,39 @@ Mathematical definitions, source facts and their evidence retain their existing 
 
 ### Active summarization and rolling maintenance
 
-During actual dialogue, writing and revision, proactively extract useful lasting guidance from feedback and experience and update the responsible notes without routine per-entry approval.
-Summarize retained experience as clear, general current guidance with only the scope needed for correct use.
+Before delivering a substantive reply or writing result, judge whether the actual feedback, instructions and results from the work supply a lasting choice or a reusable lesson.
+When they do, compare with the applicable current entries and complete the necessary authorized update at its responsible home before delivery.
+This bounded retention is part of the requested work and needs no separate request to remember it, subject to explicit limits on writing or retention and the actual author's write scope.
+Record explicit lasting choices at their applicable preference or manuscript home; retain inferred reusable experience in the actual author's communication or writing notes with the scope needed for correct reuse.
+A single concrete result can support useful advisory guidance; retain only what the feedback or observed result supports.
+
+Summarize retained experience as clear, general current guidance.
 Revise, combine or remove entries as understanding improves, consolidating overlapping lessons rather than appending one entry after each exchange or revision.
 Keep no accumulating transcript, incident list, correction history, dated learning log or score, and impose no arbitrary note-size quota.
 Retain no observation that supplies no useful general guidance and create no empty profile, note or section.
-Record explicit author instructions at their preference home rather than as agent inference; draft usage, silence and agent recommendations establish no explicit preference.
+Create a note file when there is a first useful entry to retain.
+Draft usage, silence and agent recommendations establish no explicit preference.
+
+When asked to summarize actual writing or revision experience, consolidate any new reusable guidance before returning the summary.
+An explanation of existing rules or a summary with no new reusable guidance needs no retained update.
+Record a durable choice explicitly adopted in that exchange at its applicable preference or manuscript home.
 
 ### Reading and tool boundaries
 
-For dialogue under the [conversation norm](organization.md#mathematical-conversation), read the actual human's applicable communication guidance; for writing, read the actual responsible writer's applicable choices and notes, using relevant shared terminology in either case.
-Reuse adequate current-context reading and select necessary sections without loading every profile file for each response.
+Before ordinary repository dialogue, identify the actual human and topic, then read that person's applicable communication choices, relevant `communication/notes.md` sections and shared terminology.
+This includes mathematical dialogue under the [conversation norm](organization.md#mathematical-conversation) and work discussions such as updates, handoffs or how to communicate.
+
+For manuscript writing or a directly requested edit, identify the responsible writer(s) and document scope, then read the current manuscript, its effective choices, applicable `writing/notes.md` and shared terminology before editing.
+This applies whether the request describes changes directly or names selected revision findings.
+Preserve [current-manuscript authority](writing.md#current-manuscript-authority); an experience note cannot restore outdated text or override that actual material and its effective choices.
+Joint writing uses its adopted shared choices and applies individual guidance only within its authorized scope, without importing a new operator's personal preferences or notes automatically.
+
+For a requested summary of writing rules, resolve the requested source and scope.
+For an explanation of common rules, read the selected framework rules.
+For a summary of the author's conventions or actual revision experience, read the applicable author and manuscript choices, relevant writing notes and shared terminology, together with the feedback or examples needed for that summary.
+
+Select only guidance relevant to the actual work and reuse adequate current-context reading while it remains applicable to the same owner and scope, without loading every profile file for each response.
 Absent notes leave the common defaults usable, without a startup creation or whole-profile reading requirement.
-Before revision, read the current manuscript and its effective choices under [current-manuscript authority](writing.md#current-manuscript-authority); an experience note cannot restore outdated text or override that actual material and its effective choices.
-Joint writing retains its adopted shared choices without automatically importing an operator's personal preferences or notes when the operator changes.
 Keep shared notes suitable for the [existing profile visibility](organization.md#machine-local-locators), retaining concise nonsensitive guidance rather than raw private exchanges or speculation about the author.
 Mathematical evidence, research status and execution authority retain their responsible homes.
 [Independent review](proof-audits.md#review-arrangements) receives only its necessary scoped instructions rather than automatic conversation-memory context.

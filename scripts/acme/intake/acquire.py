@@ -872,7 +872,8 @@ def acquire(repo, source_root, selections, *, revision, instruction, source_repo
                     material_info(view, document, read=read)
                 relatives = snapshot.family(document.identity) if document.identity.kind == 'T' else ()
                 documents.check(document, read, paths=set(relatives) | set(batch.pending),
-                                source_info=lambda doc: material_info(view, doc, read=read))
+                                source_info=lambda doc: material_info(view, doc, read=read),
+                                writing=snapshot.watch(document.path) is None)
                 check_selection(document, item['local'].get('anchor', ''))
                 if item['kind'] == 'J':
                     r.require(not item['local']['anchor'] or links.anchor_occurrences(document.text)[item['local']['anchor']] == 1,

@@ -69,7 +69,7 @@ class Reader:
         from ..intake import acquire
         return acquire.material_info(self.repo, document)
 
-    def check(self, path):
+    def check(self, path, *, read_native=True):
         doc = self.document(path)
         shared.require(doc.identity.kind != 'L' or PurePosixPath(path).parts[:2] == ('mathematics', 'ledger'), 'All L material belongs in mathematics/ledger/.')
         acquired = None
@@ -87,7 +87,7 @@ class Reader:
             else:
                 route_paths = entrances(tree.names, strict=False)
         documents.check(doc, self.read, paths=route_paths, source_info=self.source_info,
-                        candidate_paths=candidate_paths)
+                        candidate_paths=candidate_paths, read_native=read_native)
         if doc.identity.kind == 'U':
             from . import discovery
             prefix = str(PurePosixPath(path).parent) + '/'
@@ -104,8 +104,8 @@ class Reader:
         return doc
 
     def show(self, path):
-        """Display selected shared material without querying local originals."""
-        return self.check(path)
+        """Display selected shared material without querying native J payloads or local originals."""
+        return self.check(path, read_native=False)
 
     def destination(self, document, href, *, mapping=()):
         """Decode one supplied address, optionally applying its exact correspondence."""

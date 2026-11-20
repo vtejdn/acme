@@ -166,7 +166,11 @@ Authored-material intake carries no sender-private originals or local source acc
 ## Claim and Task decisions
 
 A C file may omit `## Current assessment` or have one actually empty section, meaning no selected assessment; a nonempty section contains exactly one Markdown link to a lawful decision in its own family.
-Duplicate sections or malformed nonempty selectors are errors, not empty assessment values, and existing decisions remain fully checked even when none is selected.
+Validate the form of retained decision declarations even when no decision is selected.
+Duplicate sections and malformed nonempty selectors are errors.
+Check the actual files, exact versions, anchors and applicable review bindings for evidence required by the write, adoption or explicit verification.
+Use the current decision or the decisions explicitly selected for the operation, including any genuinely new decisions the operation makes.
+Follow only the findings those decisions select and validate their declared relationships and bindings at the operation's scope.
 A T file instead uses `## Current decision`.
 A decision may be in an older fixed material version.
 An unacquired acme-source Current selector on received C/T first checks its original repository, exact author/kind/line/number family and original version order against source_material or existing explicit acquisition facts.
@@ -254,7 +258,9 @@ Any genuinely new assessment records the actual present decision and its evidenc
 The optional `material.py create` allocates the next numeric address for the bound human author and chosen line.
 Supply a complete Markdown document, including its author header, from `--file PATH` or standard input with `--file -`.
 An explicit `--line F` selects that series.
-`--task mathematics/tasks/Alice_T_F0001_v1.md` inherits the actual Task's line letter and checks its type, requiring an ordinary Task for S.
+`--task mathematics/tasks/Alice_T_F0001_v1.md` verifies the Task identity, type and applicable coordination declarations and inherits its line letter.
+Creating S requires an ordinary Task.
+The creation context selects those Task facts, and the new material's explicit declarations identify any mathematical inputs it uses.
 The agent prepares the body's actual associations under the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability).
 Omitting both `--task` and `--line` uses A for new local material, with independent counters by author, kind and line.
 C/T/R/L creation starts at physical v1, while S/D and a J directory use their adopted stable addresses.
@@ -287,6 +293,9 @@ The command reads the material, checks the locator and current main, and publish
 It rejects a missing or mismatched expectation before writing.
 Prepared declarations, associations and decisions follow the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability), including when the expected locator matches.
 Candidate appends read the fresh history even when the selector is unchanged, retaining all earlier decisions.
+An append checks the new decision's inputs, including for a candidate.
+A reselection checks the chosen decision's inputs and its applicable declared review bindings.
+The writer preserves unchanged historical paths and scopes as declarations and resolves their evidence when the actual operation requires it.
 The command does not retry a supplied mathematical decision against a different predecessor.
 The writer's latest-main restriction applies to creating new research versions and actual current-adoption operations; ordinary maintenance or pure logical repair of current or retained older materials uses ordinary authorized editing under the [repair/version boundary](rules/records.md#in-place-maintenance-and-logical-repair).
 Local authors must match the actual operator; an external author representation requires explicit adopted local_human correspondence at its existing person record.
@@ -295,7 +304,11 @@ Initial intake adaptation retains necessary mathematics and truthful author/sour
 Stable local S/D and J children remain ordinary owned edits, not artificial fixed publications.
 Direct mathematical inputs must have a valid author/origin header.
 A tracked J child uses its program group's `readme.md` header, without a separate material identity or repeated header.
-An explicitly used local output locates that same J program entrance, but its generation and evidence limits remain actual local facts rather than inherited authorship or Git revision.
+New or changed C/T decision inputs and R/L review bindings use exact retained inputs or the fixed J material that supplies the generation and verification basis.
+The optional writers reject new or changed formal selections under `mathematics/computations/outputs/`.
+For a newly made or changed decision, the writer applies this location check to required inputs bound by the exact findings it uses.
+Use generated paths as code in the J README with the commands that produce and verify them.
+An explicit local read of generated data retains its actual generation and inspection scope, separate from the J program's authorship and Git revision.
 
 ## Review bindings for new accepted decisions
 
@@ -323,6 +336,7 @@ An explicit permitted `unknown` is distinguishable from omission; the structural
 Targets match exact physical paths and anchors.
 Prepared formal R bindings follow the [common preparation-input responsibility](rules/workflow.md#prepared-work-and-input-applicability) at their actual inspected inputs and scope.
 Each Target cell names exactly one explicit material locator; repeat the Review locator in separate rows when one finding checks several targets, retaining their actual joint scope and limitations.
+When a finding inspects a particular native file, retain the object at its fixed input home and bind the finding to that exact file.
 Composite Target cells are unsupported in R/L reading, comparison, revision, receiving and navigation, including same-anchor findings; unselected findings remain outside an explicitly selected operation's scope.
 Retaining an external identity or source header does not make a local revision the earlier acquired physical target.
 An explicitly recorded acquisition correspondence applies only at its actual original and receiving scope; it supplies neither coverage of local additions nor equivalence of proofs.
@@ -369,7 +383,7 @@ Apply the [common maintenance boundary](rules/records.md#substantive-material-re
 Structural success is not mathematical review.
 Keep useful facts in existing responsible materials and repair actual references when condensing or relocating reports.
 Generated output and bulk tables follow their actual reproduction and retention duties.
-Keep logs only for troubleshooting and checkpoints only for useful continuation, preserving necessary mathematics and consumers before cleanup.
+Keep disposable logs and checkpoints with generated output and preserve necessary continuation state in fixed inputs before relying on it.
 Concrete identity/reference errors and separately fixed C/L/R mathematics and review bindings keep their existing checks.
 
 ## Explicit checks during construction
@@ -379,11 +393,13 @@ Kind-specific discovery strictly checks only that kind; authoring checks the cho
 Malformed address candidates in that namespace remain errors, while unrelated namespaces do not become prerequisites.
 Explicit whole-material discovery and full-navigation regeneration retain their complete requested scope.
 Source-assessed status remains attributed to its original author and exact acquired scope.
-A missing unacquired original is an explicit source locator; an actually selected required local input remains an error when absent, while navigation-only declaration reading does not check native payload availability.
-Navigation reads its necessary C/T selectors, decisions, material identities, selected R finding anchors, relationships, bindings and source/entrance metadata, retaining every exact path, physical version, fragment and Scope.
-It does not open, query availability or capture native J payloads merely to display declared targets, whether ordinary output or retained fixed input; identify native children by their existing J/group entrance rather than an extension whitelist.
-Preserve such native locators as code text, optionally linking a real responsible J entrance, without inventing an entrance or a broken local-data link.
-Actual input reading, reproduction, adoption and material writing retain strict required-input defaults; protected targets, malformed bindings, nonempty broken selectors, missing selected decisions/findings and necessary metadata anchors still fail.
+A missing unacquired original is an explicit source locator.
+An explicitly checked required local input must be available.
+Ordinary display and navigation read their necessary C/T selectors, decisions, material identities, R finding anchors, relationships, bindings and source or entrance metadata.
+They identify declared native J targets from their group addresses and leave payload access to an actual evidence check.
+Navigation preserves each declared path, physical version, fragment and Scope, with native locators shown as code and optional links to the actual J entrance.
+Actual input reading, reproduction, adoption and material writing retain strict required-input checks.
+Protected targets, malformed bindings, nonempty broken selectors, missing selected decisions or findings, and invalid metadata anchors remain errors.
 Navigation does not catch and ignore all missing files, drop rows, remove bindings, infer a new availability state or observe payloads that supply no navigation fact; actual declaration/identity/entrance changes still invalidate stale publication.
 Explicit field, reference and source readers use the actual chosen files or Git view, without local holding enrichment or private-source byte checks outside their stated scope.
 Public U display exposes its actual current text and necessary acquisition provenance, without a machine-derived inspection summary or original-availability notices.
@@ -672,6 +688,8 @@ For adapted older content, the helper reads necessary scalar author, origin, pat
 Obsolete source headers or an older Task layout alone do not require a source upgrade; the prepared receiving result still satisfies its actual current format and author/type boundaries.
 A differing existing rolling/profile/document file additionally supplies its exact expected receiving text; occupied fixed versions require adequate reuse or the appropriate new physical version.
 A reuse entry supplies local and reuse true, retaining that exact adequate object without writing, conversion or another allocation.
+The helper checks the chosen counterpart's identity, applicable provenance and declarations, with target reads for adopted inputs such as the selected C/T decision's evidence.
+When a decision adopts a reused finding, the finding's declared bindings determine the required target checks.
 An unavailable entry supplies the concrete unavailable dependency limitation, also stated by the agent at its actual consumer; no placeholder file is created.
 The optional author_correspondence maps actual source names to the importing registered human from already established facts for this preparation only, without retained import provenance.
 Before reading a selected source profile, the helper derives its human name from the actual safely resolved source path, including when prepared text or edits will replace the source text.

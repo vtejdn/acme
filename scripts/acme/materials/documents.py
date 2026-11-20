@@ -233,6 +233,7 @@ def new_decision(document, decision):
     """Validate genuinely new declarations, leaving past/source facts readable."""
     current_decision(document, decision)
     for role, loc, _scope in decision.relations:
+        material_checks.check_fixed_input_location(loc.path)
         if role == 'review':
             require(identity.parse(loc.path).kind == 'R', 'New/current local formal reviews require fixed R findings.')
 
@@ -421,15 +422,43 @@ def selected(document, read):
     return selection(document, read)[1]
 
 
-def check(document, read, *, paths=(), source_info=None, candidate_paths=None):
+def _check_written_targets(document, chosen, review_bindings, previous, new_decisions):
+    """Check direct targets and identify decisions adopting inputs in this write."""
+    written_decisions = set()
+    prior_decisions = previous.decisions if previous is not None else {}
+    new_decisions = set(new_decisions)
+    for decision in document.decisions.values():
+        if decision.anchor in new_decisions or decision != prior_decisions.get(decision.anchor):
+            written_decisions.add(Locator(document.path, decision.anchor))
+            for _role, loc, _scope in decision.relations:
+                material_checks.check_fixed_input_location(loc.path)
+    if chosen is not None and (previous is None or document.current != previous.current):
+        written_decisions.add(document.current)
+        for _role, loc, _scope in chosen.relations:
+            material_checks.check_fixed_input_location(loc.path)
+
+    if review_bindings:
+        from . import review
+        prior_bindings = set() if previous is None else {
+            (finding.anchor, target, scope)
+            for finding, target, scope in review.bindings(previous, validate_anchors=False)
+        }
+        for finding, target, scope in review_bindings:
+            if (finding.anchor, target, scope) not in prior_bindings:
+                material_checks.check_fixed_input_location(target.path)
+    return written_decisions
+
+
+def check(document, read, *, paths=(), source_info=None, candidate_paths=None,
+          read_native=True, writing=False, previous=None, decision_inputs=None, new_decisions=()):
+    """Check declarations and the evidence of the current or requested decisions."""
     if document.identity.kind == 'T':
         from . import tasks
         tasks.validate(document, read, paths=paths, candidate_paths=candidate_paths)
-    review_targets = []
+    review_bindings = ()
     if document.identity.kind in 'RL':
         from . import review
-        review_targets = [vars(target) for _finding, target, _scope in review.bindings(document)
-                          if not source_refs.external(target.path)]
+        review_bindings = review.bindings(document)
     if document.identity.kind == 'S':
         from . import navigation as material_navigation
         material_navigation.validate_routes([document], read, paths=paths, candidate_paths=candidate_paths)
@@ -444,6 +473,7 @@ def check(document, read, *, paths=(), source_info=None, candidate_paths=None):
         return loaded[path]
 
     decisions = [(document, decision) for decision in document.decisions.values()]
+    chosen = None
     if document.current:
         try:
             owner, decision = selection(document, lambda path: target(path).text, source_info=source_info)
@@ -451,13 +481,25 @@ def check(document, read, *, paths=(), source_info=None, candidate_paths=None):
             if not source_refs.external(document.current.path):
                 raise
         else:
-            decisions.append((owner, decision))
+            if owner is not document:
+                decisions.append((owner, decision))
+            chosen = decision
+    written_decisions = set()
+    if writing:
+        written_decisions = _check_written_targets(document, chosen, review_bindings, previous, new_decisions)
+    decision_inputs = {document.current} if decision_inputs is None else set(decision_inputs)
+    locators = [vars(target) for _finding, target, _scope in review_bindings if not source_refs.external(target.path)]
     for owner, decision in decisions:
         primary = 'statement' if owner.identity.kind == 'C' else 'contract'
+        pointer = Locator(owner.path, decision.anchor)
+        required = pointer in decision_inputs
         for role, loc, _ in decision.relations:
             if source_refs.external(loc.path):
                 require(bool(document.identity.source_repository), 'An unacquired source locator cannot supply a local fixed decision input.')
                 continue
+            if not required:
+                continue
+            locators.append(vars(loc))
             if identity.parse(loc.path).kind == 'U':
                 check_source_unit(target(loc.path))
             if role == primary:
@@ -468,7 +510,16 @@ def check(document, read, *, paths=(), source_info=None, candidate_paths=None):
                         'Selected ' + primary + ' belongs to another original family.')
                 require(chosen.identity.version <= owner.identity.version,
                         'Decision cannot bind a later material revision.')
-    locators = review_targets + [vars(loc) for _, decision in decisions for _, loc, _ in decision.relations if not source_refs.external(loc.path)]
+            if role == 'review':
+                from . import review
+                for _finding, bound, _scope in review.bindings(target(loc.path), finding=loc):
+                    if source_refs.external(bound.path):
+                        continue
+                    if pointer in written_decisions:
+                        material_checks.check_fixed_input_location(bound.path)
+                    locators.append(vars(bound))
+    if not read_native:
+        locators = [loc for loc in locators if not material_checks.native_computation_target(loc['path'])]
     material_checks.validate_locator_targets(locators, lambda path: loaded[path].text if path in loaded else read(path))
 
 

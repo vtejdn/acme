@@ -112,5 +112,11 @@ Diese Anleitung verwendet SSH, damit sich Git mit einem Schlüssel auf Ihrem Com
 5. **Verbinden Sie Ihr Projekt mit GitHub.**
 
    Verwenden Sie für ein bestehendes lokales Projekt die [Verbindungsanweisung](../user-instructions/Anweisungsbeispiele.md#connect-github) und ersetzen Sie die Beispieladresse durch die Adresse des Ziel-Repositorys.
+
+   Umfasst Ihr Auftrag die Einrichtung des GitHub-Repositorys für das Projekt, fügt der Agent das Topic `acme-math` hinzu, falls es im gewählten Repository fehlt.
+   Dabei behält er die vorhandenen Topics und die Sichtbarkeit bei.
+   Er bestätigt, dass das Topic vorhanden ist, oder nennt den konkreten Grund, aus dem er es nicht prüfen oder hinzufügen konnte.
+   Wenn Sie nur die lokale Konfiguration des entfernten Repositorys beauftragen, beschränkt der Agent die Änderungen auf die lokalen Git-Einstellungen.
+
    Zum Beitritt zum bestehenden Repository eines Mitwirkenden verwenden Sie die [Klonanweisung](../user-instructions/Anweisungsbeispiele.md#clone-repo) und bitten den Agenten ausdrücklich, das Repository in den in Schritt 3 vorbereiteten leeren Ordner zu klonen.
    Folgen Sie nach dem Klonen den [Schritten zum Beitritt](../Benutzerhandbuch.md#setup-collaboration), um bei Bedarf Ihre Autorenregistrierung und die Einrichtung der Git-Commit-Identität abzuschließen.

@@ -1,4 +1,8 @@
 """Shared necessary material locator checks, independent of storage schemas."""
+import os
+from pathlib import PurePosixPath
+
+from . import identity
 from ..core import repository as r
 from ..core import paths as public_paths
 
@@ -42,6 +46,34 @@ def validate_locator_targets(locators, read, paths=()):
 def validate_locators(repo, locators, paths=(), material_data=None):
     """Check declared local files/anchors, without judging bytes or mathematics."""
     validate_locator_targets(locators, lambda path: read_material(repo, path, material_data), paths)
+
+
+def check_fixed_input_location(path):
+    local = path
+    if os.name == 'nt':
+        # Windows can open the same local directory with trailing dots or spaces.
+        local = '/'.join(part.rstrip(' .') for part in PurePosixPath(path).parts)
+    r.require(not public_paths.in_computation_outputs(local),
+              'A fixed input or review target needs a retained location outside computation outputs: ' + path)
+
+
+def native_computation_target(path):
+    """Identify a declared J child from its address without reading the payload."""
+    public_paths.check_local_role(path)
+    public_paths.check_public_target(path)
+    try:
+        ident = identity.parse(path)
+    except ValueError:
+        return False
+    if ident.kind != 'J':
+        return False
+    entrance = 'mathematics/computations/programs/' + ident.name + '/readme.md'
+    parts = PurePosixPath(path).parts
+    r.require(len(parts) >= 5 and parts[3] == ident.name
+              and parts[:3] in {('mathematics', 'computations', 'programs'),
+                               ('mathematics', 'computations', 'outputs')},
+              'A declared computation target needs its actual J storage identity.')
+    return path != entrance
 
 
 def _navigation_path(root, owner, path, planned):

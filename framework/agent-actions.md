@@ -11,6 +11,8 @@ Identify the responsible Task, material, manuscript, repository or selected path
 Interpret a continuation in that object's actual context, evaluate explicit conditions before dependent actions, and order requested work by its dependencies.
 Clarify only missing information that determines the work while completing independent authorized work.
 Apply [instruction and policy scope](rules/preferences.md#instruction-scope) when distinguishing a correction, a personal choice, a Task change or separately authorized framework maintenance.
+For ordinary repository conversation or a requested summary of writing rules or experience, use the [personal guidance rule](rules/preferences.md#reading-and-tool-boundaries) to select and read the relevant guidance before preparing the response.
+Before the substantive reply, complete any useful authorized preference or advisory-note update under its [pre-delivery retention duty](rules/preferences.md#active-summarization-and-rolling-maintenance).
 When actually selected content or input is incompatible with current rules, read it and autonomously choose and complete suitable bounded adaptation within the current assignment and existing authority.
 Use ordinary reading, editing, current receiving preparation, direct-reference repair or another adequate tool path; an optional helper's refusal supplies a concrete limitation rather than a requirement to stop all work or upgrade the source repository.
 Judge the needed scope, responsible home, retention/reuse, actual mathematical changes and checks under the [content and adaptation rule](rules/records.md#receiving-and-adapting-selected-content), preserving authorship, fixed evidence, true provenance and Task/E limits.
@@ -328,6 +330,7 @@ Use the optional [fetch or bibliography helper](../scripts/readme.md#local-sourc
 ## Write or revise a manuscript
 
 Determine the actual responsible writer(s), intended reader, writing assignment and purpose, any relevant Task and direct source/review inputs under the [writing rules](rules/writing.md), then read the actual current TeX manuscript and needed supporting records.
+Read applicable writing notes and shared terminology under the [personal guidance rule](rules/preferences.md#reading-and-tool-boundaries) before editing, including when the request describes changes directly without a revision list.
 Use the [six common mathematical writing defaults](rules/writing.md#common-mathematical-writing-defaults) and actual higher-layer choices, with the default reader of other interested professional mathematicians when no more specific choice applies.
 ACME supports TeX manuscripts; human authors use those sources to guide the agent or edit them directly under the [supported writing scope](rules/writing.md#tex-manuscripts-and-supporting-records).
 A manuscript assignment calls for the actual TeX deliverable, while a request limited to agent-facing Markdown records keeps that scope without inventing a manuscript or compilation.
@@ -339,13 +342,26 @@ For a gap requiring formal research beyond the writing assignment, apply the [in
 Read the evidence for the findings selected for revision under the [writing execution rule](rules/writing.md#writing-rule-execution).
 Use the [manuscript's writing opinions](rules/writing.md#manuscript-revisions) for writing findings and the [manuscript's current mathematical problems](rules/writing.md#manuscript-review-and-mathematical-provenance) for proof findings.
 Perform proportionate source preparation and definition registration; source observations remain evidence rather than a fifth writing layer.
+When the instruction includes a search for literature related to manuscript statements, follow the [manuscript search action](#search-literature-for-manuscript-statements) before adopting its findings in the affected text.
 Use actual own/coauthored source designations or manuscript-specific permissions under the [text-reuse rule](rules/writing.md#default-reuse-permission); a style-only reference grants no text reuse.
 
 Before delivery, apply the [common manuscript writing-rule checks](rules/writing.md#manuscript-writing-rule-checks), correct required problems within authority and recheck their actual effects.
+Complete any useful authorized guidance update under the [pre-delivery retention duty](rules/preferences.md#active-summarization-and-rolling-maintenance) before returning the edit.
 Route mathematical and source problems to their responsible homes, reconcile affected [mathematical review and citation evidence](rules/writing.md#manuscript-review-and-citation-records) and actual companion records, and compile or inspect layout as applicable to the delivery.
 Select available build and inspection capabilities under the [host-capability responsibility](rules/workflow.md#agent-and-tool-responsibilities), reusing applicable project settings and the [local-build convention](rules/writing.md#reproducible-local-builds).
 If a required build or check remains unavailable, report the specific affected scope, consequence and useful next action to the human author while continuing independent authorized work.
 Return actual corrections and remaining mathematical, writing-rule, citation, build or layout limits, identifying writing opinions or mathematical findings still awaiting reviewer recheck under the execution rule without closing them as the writer.
+
+## Search literature for manuscript statements
+
+A single explicit request to find literature for selected manuscript statements authorizes the search, its record and applicable source preparation within the actual writer's authority.
+Read the actual current TeX and identify each selected statement and its mathematical scope under the [manuscript literature search rule](rules/writing.md#manuscript-literature-search).
+Reuse adequate local evidence before extending the search under the existing [search and stopping rules](rules/literature-search.md#autonomous-literature-search) and [disclosure limits](rules/literature.md#unpublished-material).
+Compare each useful source with the particular manuscript statement and maintain findings and limits in that manuscript's `literature-seek.md`.
+Apply [common source preparation](rules/literature.md#source-preparation) for confirmed bibliography and reusable source evidence.
+Handle substantive new findings or changes to a result's basis at their responsible homes before drafting or revising the affected text. [Mathematical findings from the search](rules/writing.md#mathematical-findings-from-a-manuscript-search)
+If the same instruction also assigns writing, use the [writing action](#write-or-revise-a-manuscript) after any necessary mathematical handling and map adopted citations in `citation.md`.
+Return the search record, actual coverage and remaining limitations.
 
 <a id="review-a-manuscript-against-writing-rules"></a>
 ## Review a manuscript
@@ -370,15 +386,19 @@ Return the findings, inspected scope and limits, distinguishing review completio
 
 ## Develop or reproduce a computation
 
-Read the actual J question, native programs/inputs, parameters, arithmetic mode, earlier useful results and consuming mathematical reduction under the [computation rules](rules/computations.md).
+For an explicit request to clear local computation outputs, apply the [direct clearing rule](rules/computations.md#clearing-local-computation-outputs) after any necessary adaptation in the actual working copy and once the confirmed directory is idle.
+Report whether the directory was cleared or already absent, or identify the unresolved condition preventing the clear.
+
+To develop or reproduce a computation, read the actual J question, native programs/inputs, parameters, arithmetic mode, earlier useful results and consuming mathematical reduction under the [computation rules](rules/computations.md).
 Choose suitable methods, runtimes, libraries and other tools under the [computation-tool responsibility](rules/computations.md#computation-tool-selection), respecting the actual assignment, project requirements and environment constraints.
 Reuse sufficient actual capabilities, reading only relevant local runtime notes and necessary private resource sections under the [runtime rule](rules/organization.md#machine-local-runtime); notes, activation and a new environment are not prerequisites.
-Keep continued programs in `mathematics/computations/programs/<J>/` and generated results in the ignored `mathematics/computations/outputs/<J>/`.
-Choose sufficient tracked data or retained generation materials under the [computation-retention decision](rules/computations.md#retained-data-and-generation-materials), inspecting the actual consumers, reconstruction reliability and cost.
-Keep temporary pipeline data as replaceable output and document retained prerequisites, generated paths and command order.
+Keep continued programs and durable inputs in `mathematics/computations/programs/<J>/` and replaceable files in the ignored `mathematics/computations/outputs/<J>/`.
+When a result becomes a dependency, retain the necessary object or a sufficient generation and verification basis under the [computation-retention decision](rules/computations.md#retained-data-and-generation-materials).
+Use the actual consumer's scope, reconstruction reliability and cost to choose what to keep.
+Keep temporary pipeline data as replaceable output and document the retained prerequisites, generated paths and command order for a run from empty outputs.
 Within actual research, repair or recovery authority, generate missing data and check the required object, finite scope and precision under the [recovery rule](rules/computations.md#recovery-of-necessary-fixed-inputs), then maintain the selected representation and consumers.
-When reproduction is needed, rerun the chosen output set in that same J after preserving its necessary data or generation materials.
-Safe overwriting and removal of reproducible output are allowed with coherent consumers; ordinary reading or maintenance does not require rerunning it.
+When reproduction is needed, rerun the chosen output set in the same J using its retained inputs and verify the required scope.
+Ordinary reading uses the formal references and entrance information.
 Use an acquired program's actual qualified J for self inputs/outputs and explicit paths for genuine cross-J dependencies.
 Keep necessary reproduction context, meaningful failures and actual limits without persistent mathematical digest gates or an archive for every run.
 Return the real command, inputs, result and checked scope; finite or floating-point observations do not prove an unrestricted theorem.

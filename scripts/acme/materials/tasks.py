@@ -28,6 +28,31 @@ def contracts(document):
             if role == 'contract' and loc.path == document.path}
 
 
+def _joint_parent(ident, parent, read):
+    require(not source_refs.external(parent.path), 'A joint parent must be an actual contract in this repository.')
+    target_ident = identity.parse(parent.path)
+    require(target_ident.kind == 'T' and target_ident.family != ident.family,
+            'A joint parent must be a different numbered T family.')
+    target = documents.parse(parent.path, read(parent.path))
+    require(target.task_type == 'joint' and target.joint_task is None,
+            'The exact parent must be a joint Task without a parent.')
+    require(parent.anchor in contracts(target) and links.anchor_occurrences(target.text)[parent.anchor] == 1,
+            'The joint parent must name an exact fixed contract anchor.')
+    return target
+
+
+def context_type(path, read):
+    """Read the Task identity and coordination used by a creation context."""
+    ident, _header, content = documents.author_header(path, read(path))
+    require(ident.kind == 'T', 'The selected parent must be a Task.')
+    kind, parent = declarations(path, documents.MarkdownInput(content))
+    require(not ident.source_repository or kind == 'joint',
+            'Only a necessary joint contract can be received as an external Task.')
+    if parent is not None:
+        _joint_parent(ident, parent, read)
+    return kind
+
+
 def validate(document, read, *, paths=(), previous=(), candidate_paths=None):
     if document.identity.kind != 'T':
         return
@@ -43,13 +68,5 @@ def validate(document, read, *, paths=(), previous=(), candidate_paths=None):
             'Only a necessary joint contract can be received as an external Task.')
     parent = document.joint_task
     if parent:
-        require(not source_refs.external(parent.path), 'A joint parent must be an actual contract in this repository.')
-        ident = identity.parse(parent.path)
-        require(ident.kind == 'T' and ident.family != document.identity.family,
-                'A joint parent must be a different numbered T family.')
-        target = documents.parse(parent.path, read(parent.path))
-        require(target.task_type == 'joint' and target.joint_task is None,
-                'The exact parent must be a joint Task without a parent.')
-        require(parent.anchor in contracts(target) and links.anchor_occurrences(target.text)[parent.anchor] == 1,
-                'The joint parent must name an exact fixed contract anchor.')
+        target = _joint_parent(document.identity, parent, read)
         validate(target, read, paths=paths, candidate_paths=candidate_paths)

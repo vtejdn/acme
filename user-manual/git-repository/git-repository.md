@@ -112,5 +112,10 @@ This walkthrough uses SSH, which lets Git sign in to GitHub with a key from your
 5. **Connect your project to GitHub.**
 
    For an existing local project, use the [connection instruction](../user-instructions/user-instructions.md#connect-github) and replace the example address with the target repository's address.
+
+   If your request includes setting up the GitHub repository for the project, the agent adds the `acme-math` Topic when absent, preserving the repository's existing Topics and visibility.
+   It confirms that the Topic is present or explains what prevented it from checking or adding it.
+   If you ask only to configure the remote locally, the agent limits the changes to local Git settings.
+
    To join a collaborator's existing repository, use the [clone instruction](../user-instructions/user-instructions.md#clone-repo) and explicitly ask the agent to clone into the empty folder prepared in step 3.
    After cloning, follow the [collaboration setup steps](../user-manual.md#setup-collaboration) to complete any necessary author registration and configuration of your Git commit identity.

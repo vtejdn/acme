@@ -112,5 +112,10 @@ Ce guide utilise SSH, qui permet à Git de s’authentifier auprès de GitHub av
 5. **Reliez votre projet à GitHub.**
 
    Pour un projet local existant, utilisez la [consigne de connexion](<../user-instructions/Exemples de consignes.md#connect-github>) et remplacez l’adresse d’exemple par celle du dépôt cible.
+
+   Si votre demande comprend la mise en place du dépôt GitHub du projet, l’agent ajoute le topic `acme-math` au dépôt choisi s’il est absent, en conservant les topics existants et la visibilité du dépôt.
+   Il confirme que le topic est présent ou précise ce qui l’a empêché de le vérifier ou de l’ajouter.
+   Si vous demandez uniquement de configurer le dépôt distant du côté local, l’agent limite les changements à la configuration Git locale.
+
    Pour rejoindre le dépôt existant d’un collaborateur, utilisez la [consigne de clonage](<../user-instructions/Exemples de consignes.md#clone-repo>) et demandez explicitement à l’agent de cloner le dépôt dans le dossier vide préparé à l’étape 3.
    Après le clonage, suivez les [étapes pour rejoindre une collaboration](<../Manuel d’utilisation.md#setup-collaboration>) pour compléter, si nécessaire, votre enregistrement comme auteur et la configuration de l’identité utilisée pour vos commits Git.

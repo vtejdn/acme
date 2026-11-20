@@ -112,5 +112,10 @@ GitHub 是常用的托管与协作平台，使用 Git 本身并不要求使用 G
 5. **将项目连接到 GitHub。**
 
    已有本地项目时，使用[连接指令](../user-instructions/用户指令.md#connect-github)，将示例地址替换为目标仓库地址。
+
+   如果你同时委托初始化项目在 GitHub 上的仓库，agent 会在目标仓库缺少 `acme-math` 时添加这个 Topic，并保留已有 Topics 和仓库可见性。
+   Agent 会确认该 Topic 已存在，或说明无法核实或添加的具体原因。
+   如果你只要求在本地配置远端，改动限于本地 Git 设置。
+
    加入合作者的已有仓库时，使用[克隆指令](../user-instructions/用户指令.md#clone-repo)，并明确将仓库克隆到第 3 步准备的空文件夹。
    克隆后，请按[手册中的加入步骤](../用户手册.md#setup-collaboration)完成必要的作者登记和 Git 提交身份设置。

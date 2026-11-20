@@ -18,7 +18,7 @@ First apply the [common content decision](records.md#substantive-material-retent
 Useful failed or not-yet-run continuing programs may need retention; routine moves, link-repair scripts and disposable trials do not become J archives.
 This adds no per-run fixed version or output-history obligation.
 A temporary trial with no consequential finding requires neither a Claim ID nor a standalone computation record.
-When an executed computation is retained or cited as evidence, changes a route decision or supports a handoff, preserve the relevant reproducibility information below.
+When an executed computation is retained or cited as evidence, changes a route decision or supports a handoff, apply the [retention decision](#retained-data-and-generation-materials) before relying on it.
 Its context may be an authorized question, Task, route, exploration entry, Claim or source unit.
 A script supplied for future execution must remain marked not run until actually executed.
 
@@ -28,14 +28,13 @@ Preserve decisive parameters, outcomes and limitations when they matter; do not 
 
 Retain programs, necessary inputs, decisive parameters, usable commands and mathematical checks.
 Runtime and library details matter when a concrete method, representation or known behavior affects the calculation or its reproduction.
-Generated output may be regenerated, overwritten or removed only when its actual consumers remain coherent.
-Select necessary witnesses, certificates, base data and earlier results under the [data-retention decision](#retained-data-and-generation-materials), including when another program reads them.
+Record the retained basis for durable dependencies and the generation order for temporary pipeline inputs.
 Keep the exact finite scope, precision or error control, actual outcome and coverage, useful failures and any real checking relationship in the existing responsible material.
 Unknown generation or inspection facts remain unknown.
 Execution dates, elapsed time, machine identity, invocation counts and empty stderr have no generic retention duty.
 Fixed R review facts and E authority/stop facts retain their separate responsibilities.
-Retain logs locally only while needed for troubleshooting and checkpoints only while useful for continuation.
-After necessary content is retained and consumers repaired, clear redundant diagnostics and obsolete continuation state.
+Keep troubleshooting logs and disposable checkpoints with local output while they are useful.
+Keep continuation state that must survive clearing with the J's retained inputs.
 Do not create a raw-log archive, execution chronology, per-run report, fingerprint gate or substitute receipt.
 Keep live resource limits, failure handling, atomic publication and useful resume interfaces.
 Publish complete output only after its claimed calculation succeeds; failed or incomplete calculations remain truthful.
@@ -50,15 +49,14 @@ The responsible agent inspects relevant changes and retains needed programs, inp
 Concrete identity, reference, native-format, explicit-decision and review-binding errors remain checked, with actual source unavailability and recorded limitations at their scope.
 J/E/intake edits do not trigger generic reminders.
 A quiet structural check supplies no proof review or assertion that a result is unchanged.
-Generated JSON, Markdown and other reproducible output may be regenerated or removed with coherent consumers; this permission does not authorize overwriting fixed mathematics, review evidence or acquired originals.
 
-When reproduction is needed, the agent may delete only the generated outputs it will replace and rerun using the same responsible J program and output homes.
-Existing safe overwrite commands remain usable; deletion is optional.
+When reproduction is needed, use the same responsible J program and output homes.
+Use a safe overwrite or remove the replaceable files needed for the run.
 Document replaceable outputs, required inputs and command order.
 Preserve the programs, parameters and sufficient retained data or generation materials that the chosen check requires under the [data-retention decision](#retained-data-and-generation-materials).
 A failed rerun remains failed or incomplete: do not advertise an absent replacement, report an old success as a new pass or change tolerances/scope to force agreement.
 Ordinary reading, link/layout maintenance and hash removal do not require reproduction.
-No per-run directory, archive or cleanup approval is required.
+Use the [direct clearing rule](#clearing-local-computation-outputs) for an authorized clear of the output directory.
 
 <a id="computation-output-location"></a>
 ## Work and Output Location
@@ -72,15 +70,15 @@ Short disposable arithmetic may remain interactive or in an existing working dra
 Continuing mathematical arguments belong in D, with useful findings and failures retained in their responsible mathematical materials.
 
 Programs, verification programs, required original inputs and the concise README use `mathematics/computations/programs/<J>/`.
-Generated results, certificates and verification data use `mathematics/computations/outputs/<J>/`, beside programs/ in the same computation collection.
-Select necessary tracked data or sufficient retained generation materials under the [data-retention decision](#retained-data-and-generation-materials).
-Required durable inputs and truthful consumer locators must be available at adoption or delivery through that representation.
+Replaceable results, verification files, temporary pipeline data, logs and disposable checkpoints use `mathematics/computations/outputs/<J>/`.
+Make required durable inputs and their precise consumer locators available at adoption under the [retention decision](#retained-data-and-generation-materials).
 Reuse sufficient existing input and keep shared data at one responsible home with explicit cross-J references.
 Use the exact existing J directory identity, including the receiving authorN/repoN and established receiving serial of an acquired group.
 Both homes belong to that one J; output separation creates no new identity or per-run directory.
-The shared output root is local to the checkout and ignored by Git through `/mathematics/computations/outputs/`, for files of every extension.
+The checkout's output root is Git-ignored for files of every extension and follows the [direct clearing rule](#clearing-local-computation-outputs).
 Generic discovery, ordinary staging and common-framework copying exclude it.
-Explicit local reads and declared verification inputs may access actual files there under the usual path-safety rules; cross-repository intake receives fixed programs and inputs only.
+Explicit local runs and checks may read generated files there under the usual path-safety rules.
+Formal dependencies refer to the retained inputs or to the fixed J material that supplies generation and verification.
 
 Resolve default paths from the actual repository and J location, independently of the caller's working directory.
 The containing J is the directory directly under `mathematics/computations/programs/`, including any acquired repository component; a nested `programs/` or `checks/` directory is not the J identity.
@@ -93,12 +91,13 @@ Complete declared prerequisite generation within actual execution authority when
 Maintain source programs and their callers; intake preserves native bytes unless an explicitly selected `file_preparations` input supplies permissible adaptation under the responsible author's boundary.
 Preserve actual per-file originals and verify relevant behavior or mathematical-method changes.
 Keep meaningful child names for distinct mathematical scopes and distinguish author output from independent verification output.
-The documented generation command must work without root `tmp/` or `.tmp/` and without prior generated output, except declared input dependencies.
+Document the commands and prerequisite order to generate the needed files from an empty output directory using the retained inputs.
+Keep the programs and prerequisites in their responsible homes so generation also works without root `tmp/` or `.tmp/`.
 An explicitly identified verification-only command requires the actual input files supplied by retained data or completed prerequisite generation.
 For a temporary cross-J pipeline, name the actual dependency and command order and read generated data from the producing J's output home.
 For durable proof, verification or later-computation use, select the sufficient retained data or generation materials under the [data-retention decision](#retained-data-and-generation-materials), reusing adequate input by exact reference.
 Missing necessary input follows the [existing authorized recovery rule](#recovery-of-necessary-fixed-inputs).
-The README links actual output files and explains input requirements, command order, observed scope and limitations.
+The README links fixed inputs, shows generated paths as code, and explains input requirements, command order, observed scope and limitations.
 
 Keep an explicit output option when useful, using the responsible J output home in ordinary examples.
 A small control must not replace evidence for a different claimed range.
@@ -108,24 +107,52 @@ Preserve existing necessary local results and their actual provenance, distingui
 Ignoring output provides neither a backup nor delivery to another checkout.
 A clone can lack ignored output; report actual missing scope without a substitute or claim of completed acquisition, and recover necessary input only under an actual research, repair or recovery assignment.
 
+### Clearing local computation outputs
+
+On an authorized request, confirm the current checkout and its exact `mathematics/computations/outputs/` directory.
+An absent directory already satisfies the request, and programs create output directories on use.
+Complete any outstanding [local adaptation](#adapting-outputs-in-an-existing-working-copy) before the first affected clear, including when Git has already brought in the new rules and version metadata.
+Keep the directory intact while a necessary local adaptation remains unresolved.
+Confirm that it is an ordinary directory within that checkout and is idle.
+Clear it in full using ordinary file operations that leave other paths and link targets intact.
+Once the local condition is established, the clear includes logs, temporary data and disposable checkpoints and requires no retention audit or regeneration.
+
+### Adapting outputs in an existing working copy
+
+When an explicit framework upgrade or ordinary Git integration brings in the clearable-output rule, apply the transition in the receiving working copy using its actual local outputs and responsible J materials.
+Identify affected outputs that serve current consumers, hold necessary continuation state or constitute known fixed evidence.
+A stopped calculation can leave a needed checkpoint in an idle directory.
+Ordinary synchronization suffices when the working copy has no affected dependency.
+
+Preserve each particular object or checkpoint that must remain available in its fixed home, or establish sufficient reconstruction where the dependency permits it.
+Repair the exact consumer references and verify that the retained prerequisites suffice from empty outputs, preserving the actual review object and its checked scope.
+If a needed file is missing, use the [recovery rule](#recovery-of-necessary-fixed-inputs) within actual authority and report any unresolved dependency.
+Apply the current Task/E stops and allowances throughout the adaptation.
+Apply the direct clearing rule on a separate authorized cleanup request.
+
 ### Retained data and generation materials
 
-At generation, adoption, handoff or input recovery, examine actual consumers, the data's role and duration of use, available generation evidence and reconstruction cost.
-Another program reading a result calls for this judgment about the dependency.
+Before a proof, formal review, later computation, delivery or handoff relies on a result, identify its actual dependencies and assess their scope, available generation evidence and reconstruction cost.
+Make the necessary inputs available through the responsible J or an existing fixed source at that point.
 Choose a compact sufficient durable representation for the actual mathematical, verification and reproduction need.
 
 | Actual data use | Retention |
 | --- | --- |
 | Temporary intermediate result, cache or pipeline input | Keep it in the responsible J's ignored output home and document dependencies and command order. |
 | Required data reliably reconstructible at reasonable cost | Retain the sufficient generator, base inputs, parameters, relevant dependency conditions and validation method, generating replaceable data in the output home when needed. |
-| Necessary data whose reconstruction is unreliable or too costly, or a particular adopted object whose retention is required | Retain the necessary selected native data, witness or certificate in tracked `inputs/` or another appropriate native input home under the responsible J. |
+| Necessary data whose reconstruction is unreliable or too costly, or a particular object or continuation state that must remain available | Retain the selected native data, witness, certificate or state in tracked `inputs/` or another fixed input home. |
 
 For generation-based retention, establish from available evidence and applicable checks that reconstruction supplies the object, mathematical properties, finite scope and precision required by the consumer.
 Judge reliability and cost against actual resources, reusing adequate applicable checks.
 A seed or proposed command alone does not establish reconstruction sufficiency.
 Retain irreconstructible base data and selected witnesses when needed.
 If neither sufficient retained data nor usable reconstruction is available, report the actual unmet dependency.
-Distinguish retained prerequisites from generated paths and document their command order so reproduction can proceed in a checkout without the cache under actual execution authority.
+Distinguish retained prerequisites from generated paths and document their command order so reproduction can begin with empty outputs under actual execution authority.
+On a later authorized use, generate any replaceable files needed and verify the object at the scope and precision the consumer requires.
+
+C/T decisions and R findings identify the exact retained input or the fixed J material supplying the applicable generation and verification basis.
+If a finding inspects a particular file, preserve the inspected object and its precise review binding.
+Record actual local generation and inspection facts with their true provenance, scope and limitations.
 
 Prefer a compact sufficient witness or certificate for the conclusion and checking scope.
 For a counterexample, preserve the admissible object and sufficient evidence of its violation.
@@ -133,7 +160,7 @@ For exhaustive finite coverage, preserve enough evidence or a justified reproduc
 Use selection, lossless compression and shared references when they preserve necessary content and usable verification, keeping shared data at one responsible home with its actual provenance.
 
 Before replacing or removing retained data, inspect actual consumers, applicable fixed evidence, historical dependencies and review scope under the [common content decision](records.md#substantive-material-retention).
-Establish that the selected representation preserves required content, repair paths, commands and consumers, and complete affected checks or evidence updates before cleanup within actual maintenance and author authority.
+Establish that the selected representation preserves required content, repair paths, commands and consumers, and complete affected checks or evidence updates before changing the durable inputs.
 Preserve continuing work and unique necessary evidence.
 Apply the decision during selected generation or maintenance as data becomes useful, replaceable or no longer needed.
 Before a large calculation, choose what must be generated and retained, consume intermediate results in batches where useful and select necessary data before tracking or delivery.
@@ -147,15 +174,14 @@ Check the actual object, parameters, primes, finite scope, arithmetic and certif
 After success, apply the [data-retention decision](#retained-data-and-generation-materials) to the recovered input, preserving selected tracked data when required or sufficient retained generation materials when appropriate.
 Repair real consumers, command arguments and necessary current J explanation, reusing adequate existing commands and checking.
 Do not require recovery of lost historical bytes, hashes, timestamps, serialization, unknown old scripts or machine environments when the current format and environment satisfy the actual computation and consumer contract.
+When a required particular inspected object cannot be recovered, report the unresolved dependency and retain the actual limits of its review.
 Keep current necessary programs, inputs, commands, mathematical scope, actual result and limits; do not label a new generation as rediscovery of an old execution original.
 No loss history, recovery report, execution-date table, per-recovery version, compatibility copy, permanent address map or archive receipt is required.
 Reuse adequate review when the object, necessary parameters and supporting role are unchanged; changed methods, mathematics or adopted scope retain their real review/version obligations.
 Failed generation or verification, irreconstructible base data, scope mismatch or insufficient resources leaves a concrete unfinished dependency, without replacing a prime, shrinking a range or weakening tolerances to manufacture success.
 Ordinary reads, indexes, cloning, program intake and unrelated maintenance do not implicitly run a computation chain; assigned conformity repair keeps its existing isolated stages, acceptance and authorized cleanup rather than treating reproduction self-check as acceptance.
 
-Retained diagnostic logs, useful checkpoints and atomic-write intermediates use the same J output home and remain distinguishable from complete results.
-A file called progress or checkpoint may contain necessary mathematical evidence or input; read its actual role and consumers before cleanup.
-Preserve necessary content and repair consumers before removing a container.
+Disposable logs, checkpoints and atomic-write intermediates use the same J output home and remain distinguishable from complete results.
 A checkpoint does not establish completion, resume a stopped Task or authorize a larger computation.
 Deliberate corruption controls use an isolated copy under the [temporary-storage rule](organization.md#temporary-storage).
 
@@ -183,7 +209,7 @@ The root `.tmp/` is for disposable operational isolation, not a normal calculati
   Original literature PDFs stay in their literature store and manuscript PDFs in their manuscript project; J links those sources rather than retaining PDF copies.
 - Retained inspection summaries preserve the actual conclusion and checking scope; whole computation reports need not be byte-locked.
   A `versions/vN/` directory alone does not make every native child immutable.
-  Programs, required inputs and coherent consumers must remain available, while reproducible outputs may be regenerated or cleaned up.
+  Keep programs, required inputs and coherent consumers available when the output directory is empty.
   A README links separately fixed mathematics or C/L material without replacing its proof, assessment or review.
 - Give a usable command and working directory, required inputs and parameters, relevant random seeds, precision and tolerance.
   State a runtime or dependency version when it affects the method or reproduction.

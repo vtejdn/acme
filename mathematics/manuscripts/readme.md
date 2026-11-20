@@ -6,8 +6,9 @@ Manuscripts use TeX under the [supported writing scope](../../framework/rules/wr
 Markdown supplies agent-facing project instructions, explanations, choices, citation/review records and necessary working documents rather than alternative manuscripts.
 Writing or reviewing a manuscript selects its actual current TeX sources; delivering Markdown prose alone does not complete a TeX manuscript assignment.
 
-Use the action matching the assignment to write, revise or review a manuscript.
+Choose the action that matches the manuscript assignment.
 See [Write or revise a manuscript](../../framework/agent-actions.md#write-or-revise-a-manuscript) and [Review a manuscript](../../framework/agent-actions.md#review-a-manuscript).
+Record literature findings for selected statements in the manuscript's own `literature-seek.md`. [Search literature for manuscript statements](../../framework/agent-actions.md#search-literature-for-manuscript-statements)
 Writing self-checks and writing review use the same standards.
 See the [common manuscript checks](../../framework/rules/writing.md#manuscript-writing-rule-checks).
 Use the [selected manuscript's revision list](../../framework/rules/writing.md#manuscript-revisions) for writing opinions, including the rule for carrying forward attributable opinions from a prior single-manuscript list.

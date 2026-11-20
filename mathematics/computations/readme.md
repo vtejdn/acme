@@ -5,16 +5,17 @@ Preserve useful failed or continuing code/data with honest status; routine file 
 Follow the [kind-specific rules](../../framework/rules/computations.md#when-to-retain-a-computation-record).
 
 Programs, verification programs, required original inputs and the concise README use `programs/<J>/`.
-Generated results, certificates and verification data use the Git-ignored `mathematics/computations/outputs/<J>/`.
-Select necessary tracked data or sufficient retained generation materials under the [computation-retention decision](../../framework/rules/computations.md#retained-data-and-generation-materials), with explicit retained prerequisites, generated paths and command order.
+Replaceable results, verification files, temporary pipeline data, logs and disposable checkpoints use the Git-ignored `mathematics/computations/outputs/<J>/`.
+The checkout's `mathematics/computations/outputs/` directory can be [cleared in full](../../framework/rules/computations.md#clearing-local-computation-outputs) after any necessary local adaptation and once it is idle.
+Before relying on a result, keep the needed native object or a sufficient generation and verification basis in its fixed home. [Computation retention](../../framework/rules/computations.md#retained-data-and-generation-materials)
 Generate missing data within the actual assignment under the [recovery rule](../../framework/rules/computations.md#recovery-of-necessary-fixed-inputs).
 Both homes retain the exact same J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 Use the [README template](../../framework/templates/mathematics/computation.md) and [computation rules](../../framework/rules/computations.md).
-Keep logs only for troubleshooting and checkpoints only for useful continuation.
 Preserve necessary mathematics, inputs, finite results, actual checking relationships and reproduction limits in existing responsible materials.
 
 The [current index](index.md) provides navigation.
-Follow the program README to actual files, required inputs, command order, results and limitations.
-Generic discovery and common-framework copying exclude generated output; a clone can lack it.
+Follow the program README to exact retained inputs and the commands needed to generate and verify replaceable files from an empty output directory.
+Show generated paths as code alongside those commands.
+Generic discovery and common-framework copying exclude generated output.
 [J intake](../../framework/rules/intake.md#computation-programs-and-inputs) receives selected fixed programs and necessary inputs; outputs remain local, with source-only references and separately authorized reproduction when needed.
 A surviving dataset needs no invented program, and an unknown generator remains unknown.

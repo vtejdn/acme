@@ -416,6 +416,7 @@ Resolve administrative conflicts within existing authority, preserve competing m
 Read relevant incoming content and changed applicable rules under the work-start and [current-rule duties](workflow.md#proportionate-execution) before dependent use.
 Ordinary same-repository integration creates no intake, exact-contract adoption, E activation or resumption, stop reset or fresh allowance.
 Private settings, original literature, execution/, .venv/ and ignored outputs retain their local boundaries.
+When project integration brings in the clearable-output rule, apply the [output adaptation](computations.md#adapting-outputs-in-an-existing-working-copy) to the receiving working copy's affected local dependencies.
 
 Honor explicit offline instructions and postponed synchronization within their actual scope.
 For strictly read-only or fixed-commit work, make only permitted remote queries, preserve the selected input and do not integrate into the inspected object merely to make it current.

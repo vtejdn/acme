@@ -112,5 +112,10 @@ Esta guía utiliza SSH para que Git se autentique en GitHub mediante una clave d
 5. **Conecte su proyecto a GitHub.**
 
    Para un proyecto local existente, utilice la [instrucción de conexión](<../user-instructions/Ejemplos de instrucciones.md#connect-github>) y sustituya la dirección de ejemplo por la del repositorio de destino.
+
+   Si el encargo incluye configurar el repositorio de GitHub del proyecto, el agente añade el tema `acme-math` al repositorio elegido si aún falta, conservando los temas existentes y la visibilidad del repositorio.
+   Confirma que el tema está presente o explica qué le impidió comprobarlo o añadirlo.
+   Si solo pide configurar el remoto en el entorno local, el agente limita los cambios a la configuración local de Git.
+
    Para incorporarse al repositorio existente de un colaborador, utilice la [instrucción de clonación](<../user-instructions/Ejemplos de instrucciones.md#clone-repo>) e indique explícitamente al agente que lo clone en la carpeta vacía preparada en el paso 3.
    Después de clonar, siga los [pasos para incorporarse a la colaboración](<../Manual de usuario.md#setup-collaboration>) para completar, cuando sea necesario, el registro como autor y la configuración de la identidad de los commits de Git.

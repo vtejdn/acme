@@ -190,14 +190,16 @@ Reusable arguments, failed findings and reviewed constructions remain in their r
 Search and cite these by the actual conclusion and applicability; no separate method type or mandatory feedback workflow is used.
 
 Retained computation programs, verification programs, required original inputs and concise accounts use `mathematics/computations/programs/<J>/` under the [computation rules](computations.md).
-Generated results, certificates and verification data use the Git-ignored `mathematics/computations/outputs/<J>/`.
-Select sufficient tracked native data or retained generation materials for durable proof, verification or computation use under the [computation-retention decision](computations.md#retained-data-and-generation-materials).
+Replaceable computation files use the Git-ignored `mathematics/computations/outputs/<J>/`.
+Apply the [direct clearing rule](computations.md#clearing-local-computation-outputs) once applicable local adaptation is complete and the directory is idle.
+Before adopting a computational result, retain necessary tracked native data or sufficient generation and verification materials under the [computation-retention decision](computations.md#retained-data-and-generation-materials).
 Temporary pipeline data stays in the output home with explicit dependencies and command order, and authorized reconstruction follows the [input-recovery rule](computations.md#recovery-of-necessary-fixed-inputs).
 Both homes preserve the same registered J identity, including receiving authorN/repoN and the established receiving serial for acquired groups.
 The collection entrance/index remains at `mathematics/computations/`.
-The program README supplies navigation, actual input/output locators and reproduction context, without a second assessment or review.
-Generic discovery and common-framework copying skip live output; explicit contained reads and selected transfers remain available.
-Keep logs only for troubleshooting and checkpoints only for useful continuation, preserving necessary mathematics and consumers before cleanup.
+The program README links fixed inputs and shows generated paths as code, with the prerequisites, command order and verification scope.
+Generic discovery and common-framework copying skip live output.
+Explicit contained reads and selected transfers retain their own scope.
+Use local output for disposable logs and checkpoints, and keep indispensable continuation state in the responsible fixed input home.
 
 Source inspection belongs in mathematics/audits/literature/.
 Project Claim statements, selected assessments and arguments belong in C: select the actual reasoning in the same or another applicable fixed C.

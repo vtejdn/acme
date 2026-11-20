@@ -168,7 +168,7 @@ Mitwirkende im selben Repository können für ein gemeinsames mathematisches Zie
 
 ### Hinweise
 
-- [Agenten](#notion-agent) versuchen, öffentlich zugängliche Literatur in den [lokalen Literaturordner](../mathematics/literature/pdf) herunterzuladen.
+- [Agenten](#notion-agent) versuchen, öffentlich zugängliche Literatur in den Ordner `mathematics/literature/pdf/` unter dem Stammverzeichnis des aktuellen Repositorys herunterzuladen.
   Dieses Verzeichnis wird standardmäßig von [Git](git-repository/Git-Repositorys.md#notion-git) ignoriert.
   Wenn Sie dort eigene private Materialien ablegen, stellen Sie sicher, dass Git dieses Verzeichnis ignoriert und es nicht in ein öffentliches Repository hochgeladen wird.
 - Wenn Mitwirkende sonst denselben Autorenschlüssel verwenden würden, vereinbaren Sie unterschiedliche Schlüssel, etwa `Wang1` und `Wang2`.
@@ -186,7 +186,7 @@ Mitwirkende im selben Repository können für ein gemeinsames mathematisches Zie
 
 - Fragen Sie einen [Agenten](#notion-agent), wenn Sie Fragen zum Rahmenwerk haben.
 - Wenn Sie mehrere ACME-Repositories auf demselben Gerät verwenden, können Sie Ihre Literatur zentral in einem einzigen lokalen PDF-Ordner speichern.
-  Bitten Sie den Agenten, [das lokale Literaturverzeichnis jedes Repositorys](../mathematics/literature/pdf) über Verzeichnisverknüpfungen (Junctions) auf diesen Ordner zeigen zu lassen; siehe das Beispiel [Junction erstellen](user-instructions/Anweisungsbeispiele.md#create-junction).
+  Bitten Sie den Agenten unter Windows, `mathematics/literature/pdf/` unter dem Stammverzeichnis jedes Repositorys über eine Verzeichnisverknüpfung (Junction) mit dem Ordner zu verbinden. Siehe [Junction erstellen](user-instructions/Anweisungsbeispiele.md#create-junction) für ein Anweisungsbeispiel.
   Erteilen Sie dem Agenten die Berechtigungen, die er zum Lesen und Verwalten der Dateien in diesem Ordner benötigt.
 - Wenn Agenten zugehörige Aufgaben automatisieren, bei denen Zugangsdaten verwendet werden, bewahren Sie Geheimnisse angemessen auf und schließen Sie sie von der Versionsverwaltung durch [Git](git-repository/Git-Repositorys.md#notion-git) aus.
 
@@ -253,6 +253,19 @@ Wenn eine unabhängige Prüfung benötigt wird, können Sie Schreiben und Prüfu
 Bei einer unabhängigen Erstprüfung bildet der Agent zunächst anhand des aktuellen Manuskripts und der geltenden Vereinbarungen ein eigenes Urteil und vergleicht es erst danach mit vorhandenen Hinweisen.
 Der schreibende Agent berichtet die Korrekturen; der prüfende Agent untersucht die Änderungen und ihre Auswirkungen, bevor er die entsprechenden Hinweise aktualisiert oder entfernt.
 
+### Literaturrecherche und Literaturverweise
+
+Sobald im Manuskript konkrete mathematische Aussagen vorliegen, können Sie einen [Agenten](#notion-agent) bitten, für das gesamte Manuskript, für bestimmte Abschnitte oder für einen einzelnen Satz, ein Lemma oder eine Eigenschaft [nach einschlägiger Literatur zu suchen](user-instructions/Anweisungsbeispiele.md#refs-seek).
+Findet der Agent einschlägige Quellen, vergleicht er deren Voraussetzungen und Schlussfolgerungen mit denen der Aussagen im Manuskript.
+Er gibt an, ob die Quelle dasselbe Ergebnis liefert, unter welchen Bedingungen daraus die Aussage des Manuskripts folgt, ob sie nur einen Spezialfall abdeckt oder ob sie eine verwandte Methode bietet.
+
+Die Rechercheergebnisse hält der Agent in `literature-seek.md` im Verzeichnis des Manuskripts fest und gibt die bekannten Fassungen, Fundstellen in den Originalquellen, den tatsächlich geprüften Umfang und noch zu prüfende Hinweise an.
+
+Wenn Sie den Agenten im selben Auftrag um eine Literaturrecherche und Änderungen am Manuskript bitten, prüft und dokumentiert er wesentliche neue mathematische Erkenntnisse oder Änderungen an der Grundlage eines Ergebnisses vor der Überarbeitung der betroffenen Textstellen.
+Er prüft die Anwendbarkeit der Quelle, hält die nötigen Belege und Herleitungen in den zuständigen mathematischen Materialien fest und führt die erforderliche Bewertung und mathematische Prüfung durch.
+Verlangt die Quelle eine zusätzliche Voraussetzung und fehlt noch eine Herleitung der allgemeineren Aussage, hält der Agent die offene Beweisaufgabe fest und verwendet die Quelle im belegten Geltungsbereich.
+In `citation.md` hält er zu den im TeX-Text ergänzten oder geänderten Verweisen fest, wo und wozu die Quellen zitiert werden, worauf ihre Anwendbarkeit beruht und welche Prüfungen noch ausstehen.
+
 ### Schreibgedächtnis der Agenten
 
 Beim Schreiben und Überarbeiten fasst der [Agent](#notion-agent) Rückmeldungen und Erfahrungen aktiv zu nützlichen, nach Autor geführten Schreibnotizen zusammen.
@@ -269,7 +282,7 @@ In Arbeit.
 
 ### Version des Rahmenwerks
 
-Die aktuelle Version des Rahmenwerks ist 0.11.1.
+Die aktuelle Version des Rahmenwerks ist 0.12.0.
 
 Wenn automatische Prüfungen aktiviert sind und Netzwerkzugriff erlaubt ist,
 prüft der [Agent](#notion-agent) zu Arbeitsbeginn höchstens einmal pro UTC-Tag, ob eine neuere Version des [offiziellen ACME-Rahmenwerks](https://github.com/vtejdn/acme) verfügbar ist.
@@ -378,6 +391,7 @@ Ein Task organisiert Forschung um ein präzises mathematisches Ziel, seinen frei
 | `retired` | Die Untersuchung wurde eingestellt. Gründe, nützliche Befunde und unvollendete Teile bleiben dokumentiert. |
 
 - Ein Task kann aktiv bleiben, auch wenn gerade kein [Agent](#notion-agent) daran arbeitet.
+- Wird ein persönlicher Task zur Ausführung ausgewählt, legt der Agent in der aktuellen Arbeitskopie einen lokalen Ausführungseintrag (E) an oder verwendet den vorhandenen Eintrag weiter, um den Ausführungszustand, geltende Kontingente und Stoppbedingungen gesondert festzuhalten.
 - Ein Task führt die Forschungsmaterialien zusammen, die Ihre Untersuchung unterstützen.
   Zugehörige Manuskripte, Fortschrittsberichte und andere von Ihnen angeforderte Dokumente können in einem Projekt wie `mathematics/manuscripts/Alice/Alice_T_A0007/` gesammelt werden.
   Manuskriptprojekte werden nach dem für das Schreiben verantwortlichen Autor geordnet und dem zugehörigen Forschungs-Task zugeordnet.

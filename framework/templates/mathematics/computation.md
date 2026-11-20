@@ -7,20 +7,22 @@ A template does not justify a process-only record.
 ## Computation Directory README
 
 Use one `readme.md` at `mathematics/computations/programs/<J>/`, with actual programs, verification programs and required original inputs.
-Generated results, certificates and verification data belong at the Git-ignored `mathematics/computations/outputs/<J>/`.
+Use tracked `inputs/` or an existing fixed input home for necessary data, witnesses, certificates and continuation state.
+Use the Git-ignored `mathematics/computations/outputs/<J>/` for replaceable results, verification files and temporary pipeline data.
 Both homes share the same J identity; imported groups use receiving `authorN_repoN_J_Fxxxx` identities and explicitly chosen receiving serials.
 Preserve the exact original author, repository, research line, family/serial, physical version where applicable, path and revision in existing provenance/correspondence, separately from the chosen receiving identity.
 Repeated acquisition and later versions reuse the established receiving family, distinguishing original identity from immediate transport.
 New J families maintain their actual [`material_next` namespace](../../material-format.md#material-family-allocation-state); an established receiving correspondence or an output file does not allocate another family.
 See the [computation rules](../../rules/computations.md#computation-output-location).
 Within one core computation topic, optional versions/vN/ keeps only necessary distinct algorithms, inputs or certificate evidence; no vN main directory, mandatory v1 or per-run version is introduced, and pure logical/implementation repair may remain in place with actual checking.
-The inert example below uses `Author_J_W0001`; replace it and its file rows with the actual retained group and files.
+The inert example below uses `Alice_J_W0001`.
+Replace it and its file rows with the actual retained group and files.
 Do not invent programs, data or a run to fill the template.
 Use the minimal author/source header from the [material format](../../material-format.md).
 
 ```markdown
 ---
-author: Author
+author: Alice
 ---
 # Mathematical computation title
 
@@ -34,12 +36,11 @@ Question, tested range, assumptions and arithmetic mode.
 | --- | --- |
 | [main.py](main.py) | Actual program role. |
 | [input.json](inputs/input.json) | Required original input and scope. |
-| [Result](../../outputs/Author_J_W0001/result.json) | Generated result; state actual local availability. |
 
 ## Reproduction
 Working directory, command, required inputs and dependency order.
-Default output: mathematics/computations/outputs/Author_J_W0001/.
-Identify retained prerequisites, generated paths and command order for a checkout without the cache.
+Replaceable result: `mathematics/computations/outputs/Alice_J_W0001/result.json`.
+Give the retained prerequisites and commands in the order needed to generate and verify the result from empty outputs.
 Describe the selected data or generation materials and any reconstruction checks or cost that affect the choice.
 State precision, tolerance, seed and software dependencies when relevant to reproduction.
 Identify verification-only commands and their required existing evidence.
@@ -55,9 +56,8 @@ An optional inspection summary preserves actual checked scope, checking relation
 Unknown details remain unknown; a suggested command is not a new run.
 Retain runtime/version details only when they affect the method or reproduction.
 There is no generic execution-date duty, raw-log archive, invocation history or report per run.
-Logs remain only while useful for troubleshooting; checkpoints only while useful for continuation.
-Read actual content and consumers before clearing them: a diagnostic container may hold necessary mathematical data.
-Preserve that content and repair consumers first.
+Keep troubleshooting logs and disposable checkpoints in the clearable output directory.
+Keep any continuation state that must survive clearing with the J's retained inputs.
 
 Resolve output defaults from the actual repository/J location, create the output home on use and name distinct mathematical scopes clearly.
 For a nested entry, identify the containing J directly under `mathematics/computations/programs/`; self inputs, outputs and future locators must follow its actual qualified name.
@@ -71,18 +71,18 @@ Ordinary commands do not rely on root `.tmp/` or undeclared previous output.
 Keep live limits, error handling, atomic publication and useful continuation interfaces.
 Publish complete output only after the claimed calculation succeeds.
 
-Select sufficient tracked data or retained generation materials under the [computation-retention decision](../../rules/computations.md#retained-data-and-generation-materials), keeping temporary pipeline data as replaceable output.
+Before adopting a result, select sufficient tracked data or retained generation and verification materials under the [computation-retention decision](../../rules/computations.md#retained-data-and-generation-materials).
 Retain necessary irreconstructible or costly data and objects whose adoption requires their retention in the responsible J's tracked input home.
 Preserve sufficient witnesses or certificates for the actual conclusion, including coverage evidence for an exhaustive claim.
-Check consumers, fixed evidence and review scope before replacing retained data, then repair references and complete affected checks before cleanup.
-The ignore rule is neither backup nor delivery; a clone can lack output.
+Check consumers, fixed evidence and review scope before replacing retained data, then repair references and complete affected checks.
+An authorized clear of idle local output uses the [direct clearing rule](../../rules/computations.md#clearing-local-computation-outputs).
 Cross-repository [J intake](../../rules/intake.md#computation-programs-and-inputs) receives fixed programs and necessary inputs, retaining source-only context for sending output references.
 A tracked program revision does not attribute an ignored file to its Git tree or establish its generator.
 Within an actual authorized research, repair or recovery task, reproduce missing data with its existing generator/verifier under the [recovery rule](../../rules/computations.md#recovery-of-necessary-fixed-inputs).
 Maintain the selected durable representation and coherent consumers, and state true results and limits without rewriting acquisition facts or requiring a recovery history.
 No ordinary read, link repair or Git delivery implicitly runs the computation.
 
-Apply the [common maintenance boundary](../../rules/records.md#substantive-material-retention) to output cleanup and concise account maintenance.
+Apply the [common maintenance boundary](../../rules/records.md#substantive-material-retention) to changes in retained inputs and concise accounts.
 Preserve fixed mathematics, actual review scope and acquired originals.
 Full proofs belong in their responsible mathematical materials; the README supplies no separate Claim assessment or review.
 For candidate counterexamples, retain decisive evidence and outstanding checks under [counterexample validation](../../rules/computations.md#counterexample-validation).

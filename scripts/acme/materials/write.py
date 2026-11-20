@@ -83,33 +83,39 @@ def _owned_current(repo, path, expected_current):
     expected = vars(expected_current) if isinstance(expected_current, documents.Locator) else expected_current
     require(expected == actual, 'Stale expected current decision; read the current material again.')
     documents.check(doc, lambda target: _read(repo, target),
-                    paths=discovery.candidates(repo.root) if doc.identity.kind in 'ST' else ())
+                    paths=discovery.candidates(repo.root) if doc.identity.kind in 'ST' else (),
+                    decision_inputs=())
     return doc
 
 
-def _validated(repo, path, body):
+def _validated(repo, path, body, *, previous=None, decision_inputs=None, new_decisions=()):
     require(isinstance(body, str), 'Material body must be explicit Markdown text.')
     # New writes have a uniform newline convention; previous fixed files remain
     # untouched. Decision edits preserve existing text except the chosen section.
     doc = documents.parse(path, body)
     humans.require_author(repo, doc.identity.author, doc.identity.source_repository)
+    if new_decisions:
+        require(set(new_decisions) <= doc.decisions.keys(), 'Choose actual new decision anchors explicitly.')
+        selected = (doc.current,) if decision_inputs is None else tuple(decision_inputs)
+        decision_inputs = selected + tuple(documents.Locator(path, anchor) for anchor in new_decisions)
     documents.check(doc, lambda target: body if target == path else _read(repo, target),
-                    paths=discovery.candidates(repo.root) if doc.identity.kind in 'ST' else ())
+                    paths=discovery.candidates(repo.root) if doc.identity.kind in 'ST' else (),
+                    writing=True, previous=previous, decision_inputs=decision_inputs, new_decisions=new_decisions)
     return doc
 
 
 def _check_new_decisions(repo, doc, anchors, *, previous=None, new_date_anchors=None):
     anchors = list(anchors)
     new_date_anchors = set(anchors if new_date_anchors is None else new_date_anchors)
-    from . import review as material_review
+    from . import review as material_review, runtime
     if doc.identity.kind == 'R':
         material_review.check_findings(doc, previous=previous, read=lambda target: _read(repo, target))
     # A canonical-looking filename is not the evidence's authorship/provenance.
     # J children locate their program entrance, including native reports without
-    # individual headers. This does not attribute output bytes to its generator
-    # or to the program's Git revision. Other Markdown inputs own their header.
+    # individual headers. Other Markdown inputs own their header.
     # Do not traverse selected decisions or rejudge historical evidence.
     loaded = {doc.path}
+    read = lambda target: doc.text if target == doc.path else _read(repo, target)
     for anchor in anchors:
         decision = doc.decisions[anchor]
         documents.new_decision(doc, decision)
@@ -121,36 +127,24 @@ def _check_new_decisions(repo, doc, anchors, *, previous=None, new_date_anchors=
             ident = names.parse(loc.path)
             evidence = loc.path
             if ident.kind == 'J':
-                if paths.in_computation_outputs(loc.path):
-                    evidence = 'mathematics/computations/programs/' + ident.name + '/readme.md'
-                else:
-                    parts = PurePosixPath(loc.path).parts
-                    group = parts.index(ident.name)
-                    evidence = PurePosixPath(*parts[:group + 1], 'readme.md').as_posix()
+                parts = PurePosixPath(loc.path).parts
+                group = parts.index(ident.name)
+                evidence = PurePosixPath(*parts[:group + 1], 'readme.md').as_posix()
             if evidence not in loaded and evidence.lower().endswith('.md'):
                 documents.parse(evidence, _read(repo, evidence))
             loaded.add(evidence)
-    # The explicit review bindings are a structural input/target contract,
-    # never a rerun or a new mathematical verdict on existing historical data.
-    accepted = [anchor for anchor in anchors if
-                (doc.identity.kind == 'C' and doc.decisions[anchor].fields['status'].startswith(('proved', 'refuted')))
-                or (doc.identity.kind == 'T' and doc.decisions[anchor].fields['status'] == 'completed')]
-    if not accepted:
-        return
-    from . import runtime as runtime
-    for anchor in accepted:
-        read = lambda target: doc.text if target == doc.path else _read(repo, target)
-        material_review.check_decision(doc, doc.decisions[anchor], read, repo=repo)
+        material_review.check_decision(doc, decision, read, repo=repo)
         runtime.validate_inputs(repo, replace(doc, current=documents.Locator(doc.path, anchor)), read)
 
 
-def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None):
-    doc = _validated(repo, path, body)
+def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None, decision_inputs=None):
+    new_decisions = tuple(new_decisions)
+    doc = _validated(repo, path, body, previous=previous, decision_inputs=decision_inputs,
+                     new_decisions=new_decisions)
     if doc.identity.source_repository:
         from ..intake.acquire import material_info
         material_info(repo, doc, read=lambda source: body if source == path else _read(repo, source))
     if new_decisions:
-        require(set(new_decisions) <= doc.decisions.keys(), 'Choose actual new decision anchors explicitly.')
         _check_new_decisions(repo, doc, new_decisions, previous=previous)
     if doc.identity.kind == 'T' and previous is not None:
         from . import tasks
@@ -159,7 +153,7 @@ def _publish(repo, path, body, *, exclusive, new_decisions=(), previous=None):
     if doc.identity.kind == 'R':
         from . import review as material_review
         material_review.check_findings(doc, previous=previous, read=lambda source: _read(repo, source))
-    if doc.identity.kind in 'CT' and doc.current is not None:
+    if doc.current is not None and (decision_inputs is None or doc.current in decision_inputs):
         from . import runtime as runtime
         runtime.validate_inputs(repo, doc,
             lambda source: doc.text if source == doc.path else _read(repo, source))
@@ -182,10 +176,9 @@ def create(repo, *, kind, body, line=None, task=None, author=None, new_decisions
     """
     actor = _actor(repo, author)
     if task is not None:
-        parent = documents.parse(task, _read(repo, task))
-        require(parent.identity.kind == 'T', 'The selected parent must be a Task.')
-        require(kind != 'S' or parent.task_type == 'ordinary', 'Strategies belong to individual Tasks, not joint Tasks.')
-        documents.check(parent, lambda target: _read(repo, target))
+        from . import tasks
+        task_type = tasks.context_type(task, lambda target: _read(repo, target))
+        require(kind != 'S' or task_type == 'ordinary', 'Strategies belong to individual Tasks, not joint Tasks.')
     sequence = names.allocate([], author=actor, kind=kind, line=line, task=task)
     with shared.locked(repo.root):
         existing = [item for item, _ in _inventory(repo, kind=kind, author=actor, line=sequence.line, local=True)]
@@ -229,7 +222,7 @@ def _revise(repo, path, body, expected_current, new_decisions=()):
     ident = replace(old.identity, version=old.identity.version + 1)
     target = str(PurePosixPath(path).with_name(ident.name + '.md'))
     body = _newlines(body)
-    doc = _validated(repo, target, body)
+    doc = _validated(repo, target, body, previous=old)
     if doc.current:
         require(doc.current.path == target and doc.current.anchor in doc.decisions,
                 'A revised statement/contract needs an explicit new local decision; reopen or adopt applicable evidence.')
@@ -307,14 +300,15 @@ def _append_decision(repo, path, decision, expected_current, select):
     else:
         end = section[1]
         body = doc.text[:end] + '\n' + decision + '\n' + doc.text[end:]
-    proposed = _validated(repo, path, body)
+    proposed = documents.parse(path, body)
     added = proposed.decisions.keys() - doc.decisions.keys()
     require(len(added) == 1 and len(proposed.decisions) == len(doc.decisions) + 1,
             'Append exactly one new decision without replacing a historical decision.')
-    _check_new_decisions(repo, proposed, added, previous=doc)
+    chosen = documents.Locator(path, next(iter(added)))
     if select:
-        body = _select_text(proposed, documents.Locator(path, next(iter(added))))
-    return _publish(repo, path, body, exclusive=False)
+        body = _select_text(proposed, chosen)
+    return _publish(repo, path, body, exclusive=False, previous=doc,
+                    new_decisions=added, decision_inputs=(chosen,))
 
 
 def select_decision(repo, path, *, target, expected_current):
@@ -328,4 +322,4 @@ def select_decision(repo, path, *, target, expected_current):
         proposed = documents.parse(path, body)
         owner, chosen = documents.selection(proposed, lambda name: _read(repo, name))
         documents.current_decision(owner, chosen)
-        return _publish(repo, path, body, exclusive=False)
+        return _publish(repo, path, body, exclusive=False, previous=doc, decision_inputs=(target,))
